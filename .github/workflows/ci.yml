@@ -28,8 +28,18 @@ jobs:
         with:
           version: 4.7.2
           use-dotnet: false
-          # Export templates (~800 MB) are needed for the build steps.
-          templates: true
+          # Export templates (~1.2 GB) are needed for the build steps.
+          # The input is `include-templates`, NOT `templates`.
+          include-templates: true
+
+      - name: Verify export templates are present
+        run: |
+          TPL="$HOME/.local/share/godot/export_templates/4.7.2.stable"
+          ls "$TPL" | head -20
+          test -f "$TPL/windows_release_x86_64.exe" \
+            || { echo "::error::Windows export template missing"; exit 1; }
+          test -f "$TPL/linux_release.x86_64" \
+            || { echo "::error::Linux export template missing"; exit 1; }
 
       - name: Cache Godot import
         uses: actions/cache@v4
