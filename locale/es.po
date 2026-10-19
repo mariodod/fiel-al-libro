@@ -178,29 +178,27 @@ msgstr ""
 "del amor que en ella había."
 
 msgid "ui.shelf.count"
-msgid_plural "ui.shelf.counts"
-msgstr[0] "%d libro en la estantería"
-msgstr[1] "%d libros en la estantería"
+msgstr "%d libro en la estantería"
+
+msgid "ui.shelf.count.plural"
+msgstr "%d libros en la estantería"
 
 msgid "ui.library.total"
-msgid_plural "ui.library.totals"
-msgstr[0] "%d de %d libros hallados"
-msgstr[1] "%d de %d libros hallados"
+msgstr "%d de %d libros hallados"
 
-msgctxt "ui.book"
-msgid "ui.word.page"
+msgid "ui.library.total.plural"
+msgstr "%d de %d libros hallados"
+
+msgid "ui.word.page.book"
 msgstr "página"
 
-msgctxt "ui.navigation"
-msgid "ui.word.page"
+msgid "ui.word.page.nav"
 msgstr "página"
 
-msgctxt "character"
-msgid "ui.word.quixote"
+msgid "character.quixote"
 msgstr "Don Quijote"
 
-msgctxt "character"
-msgid "ui.word.sancho"
+msgid "character.sancho"
 msgstr "Sancho"
 
 #. META: namespace=ui

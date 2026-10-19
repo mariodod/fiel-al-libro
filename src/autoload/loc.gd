@@ -73,6 +73,21 @@ func tf(key: StringName, args: Array) -> String:
 	return tr(key) % args
 
 
+## Translate a PLURAL.
+##
+## Godot has no ngettext: its PO loader exposes only msgstr[0] and drops
+## msgstr[1+]. So the plural form is its own ordinary key, and this picks
+## between them:
+##     "ui.shelf.count"          -> 1 book on the shelf
+##     "ui.shelf.count.plural"   -> %d books on the shelf
+##
+## Never hand-roll "1 libro / N libros" in a script — that is exactly the
+## bug the i18n QA pass is for.
+func tp(base_key: StringName, count: int) -> String:
+	var key: StringName = base_key if count == 1 else StringName("%s.plural" % base_key)
+	return tf(key, [count])
+
+
 ## True if the current locale reads right-to-left. Not shipped yet, but the
 ## UI is built to survive it (see TECH_STACK.md §7.5).
 func is_rtl() -> bool:

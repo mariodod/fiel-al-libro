@@ -66,6 +66,20 @@ func _init() -> void:
 				file_name, orphans.size(), ", ".join(orphans.slice(0, 5))
 			])
 
+		# Duplicates: the same msgid twice in one file. The importer keeps
+		# one occurrence and silently drops the other translation.
+		var seen_ids := {}
+		var duplicates: Array[String] = []
+		for entry: Dictionary in entries:
+			var id := _identity(entry)
+			if seen_ids.has(id):
+				duplicates.append(str(entry.get("msgid", "?")))
+			seen_ids[id] = true
+		if not duplicates.is_empty():
+			printerr("[sync_locales] %s has %d duplicate entry/entries: %s" % [
+				file_name, duplicates.size(), ", ".join(duplicates.slice(0, 5))
+			])
+
 		if missing.is_empty():
 			print("[sync_locales] %-12s ok (%d entries)" % [file_name, entries.size()])
 			continue
@@ -124,7 +138,10 @@ func _parse(text: String) -> Array[Dictionary]:
 		var line := raw_line.strip_edges()
 
 		if line.is_empty():
-			if not current.get("msgid", "").is_empty() or not current.get("comments", []).is_empty():
+			# A block that never had a msgid is just a comment banner, not
+			# an entry. The file header IS an entry (msgid ""), so this must
+			# be tracked with has_msgid rather than "msgid is non-empty".
+			if current.get("has_msgid", false):
 				entries.append(current)
 			current = _new_entry()
 			field = ""
@@ -142,10 +159,12 @@ func _parse(text: String) -> Array[Dictionary]:
 			continue
 		if line.begins_with("msgid_plural "):
 			current["msgid_plural"] = _unquote(line.substr("msgid_plural ".length()))
+			current["has_msgid"] = true
 			field = "msgid_plural"
 			continue
 		if line.begins_with("msgid "):
 			current["msgid"] = _unquote(line.substr("msgid ".length()))
+			current["has_msgid"] = true
 			field = "msgid"
 			continue
 		if line.begins_with("msgstr["):
@@ -170,7 +189,7 @@ func _parse(text: String) -> Array[Dictionary]:
 			continue
 
 	# Trailing entry.
-	if not current.get("msgid", "").is_empty() or not current.get("comments", []).is_empty():
+	if current.get("has_msgid", false):
 		entries.append(current)
 	return entries
 
@@ -182,6 +201,7 @@ func _new_entry() -> Dictionary:
 		"msgid": "",
 		"msgid_plural": "",
 		"msgstr": "",
+		"has_msgid": false,
 	}
 
 

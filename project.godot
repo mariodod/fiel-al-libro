@@ -165,6 +165,7 @@ pointing/emulate_touch_from_mouse=true
 
 [internationalization]
 
+locale/translations=Array[String](["res://locale/en.po", "res://locale/es.po", "res://locale/fr.po"])
 locale/fallback="es"
 
 [layer_names]

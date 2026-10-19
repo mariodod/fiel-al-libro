@@ -89,7 +89,8 @@ godot .                 # open the editor
 |---|---|
 | `godot --headless res://tests/test_runner.tscn` | Runs the test suite. Exit 0 = green. |
 | `godot --headless --script res://src/tools/setup_input_map.gd` | Writes the input map into `project.godot`. |
-| `godot --headless --script res://src/tools/sync_locales.gd` | Brings every `locale/*.po` in line with `messages.pot`. |
+| `godot --headless --script res://src/tools/setup_translations.gd` | Registers `locale/*.po` with the engine. **Run after adding a language** — without it every `tr()` silently returns the raw key. |
+| `godot --headless --script res://src/tools/sync_locales.gd` | Brings every `locale/*.po` in line with `messages.pot`; reports orphans and duplicates. |
 | `godot --headless --export-release "Windows Desktop" build/FielAlLibro.exe` | Builds. Needs export templates (Editor → Manage Export Templates). |
 
 **The grey-box scene** (`src/world/main.tscn`) is the Phase 0 milestone: walk around, press

@@ -213,29 +213,27 @@ msgstr ""
 "that was in it."
 
 msgid "ui.shelf.count"
-msgid_plural "ui.shelf.counts"
-msgstr[0] "%d book on the shelf"
-msgstr[1] "%d books on the shelf"
+msgstr "%d book on the shelf"
+
+msgid "ui.shelf.count.plural"
+msgstr "%d books on the shelf"
 
 msgid "ui.library.total"
-msgid_plural "ui.library.totals"
-msgstr[0] "%d of %d books found"
-msgstr[1] "%d of %d books found"
+msgstr "%d of %d books found"
 
-msgctxt "ui.book"
-msgid "ui.word.page"
+msgid "ui.library.total.plural"
+msgstr "%d of %d books found"
+
+msgid "ui.word.page.book"
 msgstr "page"
 
-msgctxt "ui.navigation"
-msgid "ui.word.page"
+msgid "ui.word.page.nav"
 msgstr "page"
 
-msgctxt "character"
-msgid "ui.word.quixote"
+msgid "character.quixote"
 msgstr "Don Quixote"
 
-msgctxt "character"
-msgid "ui.word.sancho"
+msgid "character.sancho"
 msgstr "Sancho"
 
 #. META: namespace=bk

@@ -121,16 +121,21 @@ msgstr ""
 "trouvaient sur la rive."
 
 msgid "ui.shelf.count"
-msgid_plural "ui.shelf.counts"
-msgstr[0] "%d livre sur l'étagère"
-msgstr[1] "%d livres sur l'étagère"
+msgstr "%d livre sur l'étagère"
 
-msgctxt "character"
-msgid "ui.word.quixote"
+msgid "ui.shelf.count.plural"
+msgstr "%d livres sur l'étagère"
+
+msgid "ui.library.total"
+msgstr "%d sur %d livres trouvés"
+
+msgid "ui.library.total.plural"
+msgstr "%d sur %d livres trouvés"
+
+msgid "character.quixote"
 msgstr "Don Quichotte"
 
-msgctxt "character"
-msgid "ui.word.sancho"
+msgid "character.sancho"
 msgstr "Sancho"
 
 #. META: namespace=ui
@@ -257,21 +262,14 @@ msgstr ""
 msgid "bk.ch50.impertinente.01.modern"
 msgstr ""
 
-msgid "ui.library.total"
-msgid_plural "ui.library.totals"
-msgstr[0] ""
-msgstr[1] ""
-
 # ------------------------------------------------------------------
 # CONTEXT EXAMPLE
 # The same Spanish/English word with different meanings. Use msgctxt.
 # ------------------------------------------------------------------
 #. TRANSLATORS: "page" of a book (leaf). Context: the manuscript.
-msgctxt "ui.book"
-msgid "ui.word.page"
+msgid "ui.word.page.book"
 msgstr ""
 
 #. TRANSLATORS: "page" of a location. Context: navigation.
-msgctxt "ui.navigation"
-msgid "ui.word.page"
+msgid "ui.word.page.nav"
 msgstr ""

@@ -49,6 +49,21 @@ func suite(t: TestHarness) -> void:
 		var translated := _translated_count(path)
 		t.expect_gt(float(translated), 0.0, "%s should have translated strings" % path.get_file())
 
+	t.test("no file has duplicate keys")
+	# A duplicate msgid is a silent bug: the importer keeps one occurrence
+	# and the other translation is lost.
+	for path: String in _locale_files() + [TEMPLATE]:
+		var keys := _parse_po(path)
+		var seen := {}
+		var duplicates: Array[String] = []
+		for key: String in keys:
+			if seen.has(key):
+				duplicates.append(key)
+			seen[key] = true
+		t.expect_eq(duplicates.size(), 0, "%s has duplicate key(s): %s" % [
+			path.get_file(), ", ".join(duplicates.slice(0, 5))
+		])
+
 
 func _locale_files() -> Array[String]:
 	var out: Array[String] = []

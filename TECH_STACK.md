@@ -468,19 +468,56 @@ feel scholarly and it's nearly free to implement** — the texts are on Wikisour
 - Keys are `StringName` (compile-time interned) — use `&"ui.menu.new_game"` not `"ui.menu.new_game"`.
 - One key = one string. Never concatenate translated fragments.
 - `display_name_key` in every data resource; no literal display names in `.tres` files.
-- Pluralization: use Godot's plural support (`msgid`/`msgid_plural`) — do NOT hand-roll
-  "item/items" logic.
-- **Context matters:** "Sancho" and "saco" and "Satanás" are different. Use `msgctxt` to
-  disambiguate. If your PO importer doesn't compose context into the key, adopt the convention
-  `key::context` and be consistent.
 - **Character limits:** for UI strings that must fit a fixed panel, add a translator comment
   `# MAXLEN: 24` and keep 35% slack. Never hard-code a fixed-width text box.
 
+#### ⚠️ Two Godot 4.7 limitations that shape this convention
+
+These were found empirically (probe files, then confirmed by the test suite) and they are
+**not** how standard gettext works. Both are load-time behaviours of
+`core/io/translation_loader_po.cpp`:
+
+| gettext feature | Godot 4.7 reality | What we do instead |
+|---|---|---|
+| `msgctxt` | Creates the key `context<U+0004>msgid` but leaves the **value empty**. A contextual string can never be translated. | **No `msgctxt`.** The context is part of the key name: `ui.word.page.book`, `ui.word.page.nav`, `character.quixote`. |
+| `msgid_plural` | Only `msgstr[0]` is exposed; `msgstr[1+]` are dropped. A file using `msgid_plural` is **rejected outright** unless the header carries a valid `Plural-Forms` line. There is no `ngettext`. | **No `msgid_plural`.** The plural form is its own ordinary key: `ui.shelf.count` / `ui.shelf.count.plural`, selected with `Loc.tp(key, n)`. |
+
+Both are verified by `tests/test_translations.gd`, so a future Godot upgrade that changes the
+behaviour fails the build instead of silently breaking every contextual and plural string.
+
+**Plurals**
+
+```gdscript
+Loc.tp(&"ui.shelf.count", 1)   # "1 book on the shelf"
+Loc.tp(&"ui.shelf.count", 4)   # "4 books on the shelf"
+```
+
+Never hand-roll `"1 libro / N libros"` in a script — that is exactly the bug the i18n QA pass
+is for, and languages disagree about it (Russian has three plural forms, Arabic six).
+
+### 7.2b Registering the locales with the engine
+
+**This is the step that is easy to miss and fails silently.** Godot imports `locale/*.po` into
+`Translation` resources perfectly, but the engine does not load them into `TranslationServer`
+unless they are listed in `Project Settings > Localization > Translations`. Without that list
+every `tr()` call returns the raw key — `ui.menu.new_game` instead of `Begin the manuscript` —
+and nothing errors.
+
+Run the tool after adding a language:
+
+```bash
+godot --headless --script res://src/tools/setup_translations.gd
+```
+
+It discovers every `locale/*.po` and writes the list into `project.godot`. The test suite
+(`tests/test_translations.gd`) asserts the list is populated and that each locale really returns
+its own text, so this can never silently regress.
+
 ### 7.3 Toolchain
 
-**Authoring format: `gettext` PO** (`.po`/`.pot`). Chosen because it natively supports:
-translator comments, contexts (`msgctxt`), plural forms, and fuzzy matching — and every
-translation platform speaks it.
+**Authoring format: `gettext` PO** (`.po`/`.pot`). Chosen because it natively supports translator
+comments and fuzzy matching, and every translation platform speaks it. (Contexts and plurals are
+*not* used — see the table above for why.)
 
 ```
 locale/

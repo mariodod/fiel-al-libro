@@ -3,7 +3,16 @@
 # Regenerate with:
 #   godot --headless --script res://src/tools/extract_strings.gd
 #
-# FORMAT: gettext PO. Contexts via msgctxt, plurals via msgid_plural.
+# FORMAT: gettext PO, with two Godot-specific rules.
+#
+#  - NO msgctxt. Godot 4.7 creates the key "context<U+0004>msgid" but leaves
+#    the VALUE EMPTY, so a contextual string can never be translated. Put
+#    the context in the key name instead: ui.word.page.book,
+#    ui.word.page.nav, character.quixote.
+#  - NO msgid_plural. Godot exposes only msgstr[0]; msgstr[1+] are dropped,
+#    and a file using msgid_plural is rejected unless the header carries a
+#    valid "Plural-Forms" line. There is no ngettext. The plural form is
+#    its own ordinary key: ui.shelf.count.plural.
 # RULES:
 #   - Never translate the msgid. Never use the source text as a key.
 #   - Translator comments start with "TRANSLATORS:" (shown to translators) or
@@ -287,39 +296,58 @@ msgid "bk.ch50.impertinente.01.modern"
 msgstr ""
 
 # ------------------------------------------------------------------
-# PLURAL EXAMPLE
-# Godot's PO importer handles msgid_plural. Never hand-roll "1 libro / N libros".
+# PLURAL CONVENTION
+# Godot has no ngettext, so the plural form is its own key.
+# Never hand-roll "1 libro / N libros" in a script.
 # ------------------------------------------------------------------
+# Godot 4.7 does NOT support msgctxt: it creates the key
+# "context<U+0004>msgid" but leaves the VALUE EMPTY, so a contextual
+# string can never be translated. DO NOT use msgctxt.
+#
+# Put the context in the key name instead:
+#     ui.word.page.book   a page of a book
+#     ui.word.page.nav    a page of a location
+#     character.quixote
+#
+# PLURALS: Godot exposes only msgstr[0]; msgstr[1+] are dropped, and a
+# file using msgid_plural is rejected outright unless the header carries
+# a valid "Plural-Forms" line. There is no ngettext in Godot. So the
+# plural form is its own ordinary key:
+#     ui.shelf.count          -> 1 book on the shelf
+#     ui.shelf.count.plural   -> %d books on the shelf
+#
+# Use Loc.tp("ui.shelf.count", n) to pick the right one. Never hand-roll
+# "1 libro / N libros" in a script.
+# ────────────────────────────────────────────────────────────────────────
+
 msgid "ui.shelf.count"
-msgid_plural "ui.shelf.counts"
-msgstr[0] ""
-msgstr[1] ""
+msgstr ""
+
+msgid "ui.shelf.count.plural"
+msgstr ""
 
 msgid "ui.library.total"
-msgid_plural "ui.library.totals"
-msgstr[0] ""
-msgstr[1] ""
+msgstr ""
+
+msgid "ui.library.total.plural"
+msgstr ""
 
 # ------------------------------------------------------------------
-# CONTEXT EXAMPLE
-# The same Spanish/English word with different meanings. Use msgctxt.
+# CONTEXT CONVENTION
+# The same word with different meanings. The context is part of the key.
 # ------------------------------------------------------------------
 #. TRANSLATORS: "page" of a book (leaf). Context: the manuscript.
-msgctxt "ui.book"
-msgid "ui.word.page"
+msgid "ui.word.page.book"
 msgstr ""
 
 #. TRANSLATORS: "page" of a location. Context: navigation.
-msgctxt "ui.navigation"
-msgid "ui.word.page"
+msgid "ui.word.page.nav"
 msgstr ""
 
 #. TRANSLATORS: The player character Quixote, formal register.
-msgctxt "character"
-msgid "ui.word.quixote"
+msgid "character.quixote"
 msgstr ""
 
 #. TRANSLATORS: The player character Sancho, informal register.
-msgctxt "character"
-msgid "ui.word.sancho"
+msgid "character.sancho"
 msgstr ""
