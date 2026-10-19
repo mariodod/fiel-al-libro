@@ -3,7 +3,7 @@
 > Pick the project up here. Everything below is written so that you do not
 > have to re-derive anything.
 >
-> Last updated: **2026-10-19** · after: *"Phase 1, weeks 1–2: the grey box, the
+> Last updated: **2026-10-20** · after: *"Phase 1, weeks 1–2: the grey box, the
 > reading rule, and the first playtest protocol"*
 
 ---

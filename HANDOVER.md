@@ -3,7 +3,7 @@
 > **Read this first if you have not seen this project before.**
 > Written to be sufficient on its own. You should be able to pick this up cold.
 >
-> Last updated: **2026-10-19** · Repo: **https://github.com/mariodod/fiel-al-libro**
+> Last updated: **2026-10-20** · Repo: **https://github.com/mariodod/fiel-al-libro**
 
 ---
 
