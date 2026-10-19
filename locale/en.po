@@ -1,0 +1,255 @@
+# FIEL AL LIBRO — English (en)
+# Reference implementation. This file shows the TONE, not just the mechanics:
+# plain, dry, slightly archaic in the Book layer, modern and dry in the game layer.
+msgid ""
+msgstr ""
+"Project-Id-Version: Fiel al Libro 0.1.0\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "ui.menu.new_game"
+msgstr "Begin the manuscript"
+
+msgid "ui.menu.continue"
+msgstr "Continue"
+
+msgid "ui.menu.load"
+msgstr "Read the manuscript"
+
+msgid "ui.menu.settings"
+msgstr "Settings"
+
+msgid "ui.menu.quit"
+msgstr "Close the book"
+
+msgid "ui.menu.codes"
+msgstr "Codes"
+
+msgid "ui.menu.codes.hint"
+msgstr "Read the game in another language, or add your own translation."
+
+msgid "ui.prompt.interact"
+msgstr "Examine"
+
+msgid "ui.prompt.read"
+msgstr "Read"
+
+msgid "ui.prompt.switch_character"
+msgstr "Change companion"
+
+msgid "ui.prompt.rest"
+msgstr "Rest"
+
+msgid "ui.prompt.leave"
+msgstr "Leave"
+
+msgid "ui.hud.madness"
+msgstr "Madness"
+
+msgid "ui.hud.recuerdos"
+msgstr "Memories"
+
+msgid "ui.hud.humanity"
+msgstr "Humanity"
+
+msgid "ui.manuscript.title"
+msgstr "The Manuscript"
+
+msgid "ui.manuscript.unwritten_page"
+msgstr "An unwritten page"
+
+msgid "ui.shelf.title"
+msgstr "The Shelf"
+
+msgid "ui.shelf.empty"
+msgstr "The shelf is bare. There is nothing here to believe in yet."
+
+msgid "ui.shelf.equip"
+msgstr "Keep on the shelf"
+
+msgid "ui.codex.title"
+msgstr "The Manifest"
+
+msgid "ui.codex.source"
+msgstr "Source"
+
+msgid "bk.note.original_reads"
+msgstr "The original reads:"
+
+msgid "bk.note.translation"
+msgstr "In other words"
+
+msgid "bk.note.translator"
+msgstr "This is a modern rendering. The old words are above."
+
+msgid "bk.chapter"
+msgstr "Chapter"
+
+msgid "ui.language.name.es"
+msgstr "Spanish (Spain)"
+
+msgid "ui.language.name.es_419"
+msgstr "Spanish (Latin America)"
+
+msgid "ui.language.name.en"
+msgstr "English"
+
+msgid "ui.language.name.fr"
+msgstr "French"
+
+msgid "ui.language.name.de"
+msgstr "German"
+
+msgid "ui.language.name.pt_BR"
+msgstr "Portuguese (Brazil)"
+
+msgid "ui.language.name.ja"
+msgstr "Japanese"
+
+msgid "ui.language.name.ko"
+msgstr "Korean"
+
+msgid "ui.language.name.zh_Hans"
+msgstr "Chinese (Simplified)"
+
+msgid "ui.language.name.ru"
+msgstr "Russian"
+
+msgid "ui.language.name.pl"
+msgstr "Polish"
+
+msgid "ui.language.name.it"
+msgstr "Italian"
+
+msgid "ui.language.name.tr"
+msgstr "Turkish"
+
+msgid "it.book.cid.name"
+msgstr "The Song of My Cid"
+
+msgid "it.book.cid.desc"
+msgstr "Homage and oath. Those who hear it hesitate before striking."
+
+msgid "it.book.tio_andalus.name"
+msgstr "The Tale of the Uncle from Andalus"
+
+msgid "it.book.tio_andalus.desc"
+msgstr "A house that smells of blood. The cellar door is not where it should be."
+
+msgid "it.book.celestina.name"
+msgstr "Celestina"
+
+msgid "it.book.celestina.desc"
+msgstr "Every thread is a rope, and every rope is in her hand."
+
+msgid "it.ability.desvelar.name"
+msgstr "Unveil"
+
+msgid "it.ability.desvelar.desc"
+msgstr "Strip the book-skin from a thing and see what it truly is."
+
+msgid "it.ability.refutar.name"
+msgstr "Refute"
+
+msgid "it.ability.refutar.desc"
+msgstr "Deny what the world claims. For a moment, it must listen."
+
+msgid "it.ability.juramento.name"
+msgstr "The Oath"
+
+msgid "it.ability.juramento.desc"
+msgstr "Those who made a vow once do not break it easily."
+
+msgid "dia.sancho.bark.001"
+msgstr "By all the saints, it's a mill."
+
+msgid "dia.sancho.bark.002"
+msgstr "Master, they're only stones and wood."
+
+msgid "dia.quixote.bark.001"
+msgstr "Woe upon you, mortal beast! I will cleave you from your shoulders!"
+
+msgid "dia.quixote.bark.002"
+msgstr "I know your kind. I know the mischief you have done in the world."
+
+msgid "tip.lectura.intro"
+msgstr "Hold on to the page. Some things only show themselves to a patient eye."
+
+msgid "tip.switch.intro"
+msgstr "Change companion. The world is the same; only the reading differs."
+
+msgid "tip.posada.intro"
+msgstr "Rest, and the road will still be there."
+
+# --- BOOK LAYER -------------------------------------------------------
+# The 1605 original is CONTENT and stays in Spanish in every build. It lives in
+# assets/manifiesto/*.json. Only the ".modern" strings are translated.
+
+msgid "bk.ch08.molinos.01.modern"
+msgstr ""
+"And there appeared to him some thirty or forty monstrous mills that stand "
+"on the plain, and so great and tall that they cover the millraces, and "
+"the sails of them, going round, made such a din that it seemed as if the "
+"winds were grinding the wheat there."
+
+msgid "bk.ch23.montesinos.01.modern"
+msgstr ""
+"And he told him how he had found a certain enchanted cave in that place, "
+"and how a knight came out of it, and how he was leaving him now to go and "
+"seek him."
+
+msgid "bk.ch26.galimatias.01.modern"
+msgstr ""
+"It must be one of three things: the widow is in love with the youth, and "
+"the youth with the maiden, and the maiden with neither."
+
+msgid "bk.ch50.impertinente.01.modern"
+msgstr ""
+"For the tale of the Curious Impertinent is the one I would have written, "
+"were it not that my pen is not so bold as to paint the charm of the love "
+"that was in it."
+
+msgid "ui.shelf.count"
+msgid_plural "ui.shelf.counts"
+msgstr[0] "%d book on the shelf"
+msgstr[1] "%d books on the shelf"
+
+msgid "ui.library.total"
+msgid_plural "ui.library.totals"
+msgstr[0] "%d of %d books found"
+msgstr[1] "%d of %d books found"
+
+msgctxt "ui.book"
+msgid "ui.word.page"
+msgstr "page"
+
+msgctxt "ui.navigation"
+msgid "ui.word.page"
+msgstr "page"
+
+msgctxt "character"
+msgid "ui.word.quixote"
+msgstr "Don Quixote"
+
+msgctxt "character"
+msgid "ui.word.sancho"
+msgstr "Sancho"
+
+#. META: namespace=bk
+msgid "bk.ch08.molinos.01"
+msgstr ""
+
+#. META: namespace=bk
+msgid "bk.ch23.montesinos.01"
+msgstr ""
+
+#. META: namespace=bk
+msgid "bk.ch26.galimatias.01"
+msgstr ""
+
+#. META: namespace=bk
+msgid "bk.ch50.impertinente.01"
+msgstr ""

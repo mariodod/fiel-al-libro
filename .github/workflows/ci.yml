@@ -1,0 +1,65 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+# Cancel superseded runs on the same branch.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Import, test, export
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout (with LFS)
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Set up Godot
+        uses: chickensoft-games/setup-godot@v2
+        with:
+          version: 4.7.2
+          use-dotnet: false
+          # Export templates (~800 MB) are needed for the build steps.
+          templates: true
+
+      - name: Cache Godot import
+        uses: actions/cache@v4
+        with:
+          path: .godot
+          key: godot-import-${{ hashFiles('**/*.gd', '**/*.tscn', '**/*.tres', 'project.godot') }}
+          restore-keys: godot-import-
+
+      - name: Import project (headless)
+        # Fails the job if any scene, resource or script is broken.
+        run: godot --headless --editor --quit
+
+      - name: Run unit tests
+        # Run as a SCENE, not via --script, so Godot's autoloads exist
+        # exactly as they do in a real run.
+        run: godot --headless res://tests/test_runner.tscn
+
+      - name: Build Windows export
+        run: |
+          mkdir -p build
+          godot --headless --export-release "Windows Desktop" build/FielAlLibro.exe
+
+      - name: Build Linux export
+        run: |
+          mkdir -p build
+          godot --headless --export-release "Linux/X11" build/FielAlLibro.x86_64
+
+      - name: Upload builds
+        uses: actions/upload-artifact@v4
+        with:
+          name: builds-${{ github.sha }}
+          path: build/
+          retention-days: 14

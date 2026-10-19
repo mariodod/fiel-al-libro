@@ -1,0 +1,272 @@
+# FIEL AL LIBRO — Español (es-ES, fuente)
+# Idioma fuente. El español de es-ES es el "original" de la capa de juego.
+# NOTA: es-419 (español latinoamericano) es un archivo SEPARADO, no una copia.
+#       Tuteo, léxico propio, registro distinto. Se revisa como traducción.
+msgid ""
+msgstr ""
+"Project-Id-Version: Fiel al Libro 0.1.0\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "ui.menu.new_game"
+msgstr "Empezar el manuscrito"
+
+msgid "ui.menu.continue"
+msgstr "Continuar"
+
+msgid "ui.menu.load"
+msgstr "Leer el manuscrito"
+
+msgid "ui.menu.settings"
+msgstr "Ajustes"
+
+msgid "ui.menu.quit"
+msgstr "Cerrar el libro"
+
+msgid "ui.menu.codes"
+msgstr "Códigos"
+
+msgid "ui.menu.codes.hint"
+msgstr "Lee el juego en otro idioma o añade tu propia traducción."
+
+msgid "ui.prompt.interact"
+msgstr "Examinar"
+
+msgid "ui.prompt.read"
+msgstr "Leer"
+
+msgid "ui.prompt.switch_character"
+msgstr "Cambiar de compañero"
+
+msgid "ui.prompt.rest"
+msgstr "Descansar"
+
+msgid "ui.prompt.leave"
+msgstr "Salir"
+
+msgid "ui.hud.madness"
+msgstr "Locura"
+
+msgid "ui.hud.recuerdos"
+msgstr "Recuerdos"
+
+msgid "ui.hud.humanity"
+msgstr "Humanidad"
+
+msgid "ui.manuscript.title"
+msgstr "El Manuscrito"
+
+msgid "ui.manuscript.unwritten_page"
+msgstr "Una página por escribir"
+
+msgid "ui.shelf.title"
+msgstr "La Estantería"
+
+msgid "ui.shelf.empty"
+msgstr "La estantería está vacía. Aún no hay nada en que creer."
+
+msgid "ui.shelf.equip"
+msgstr "Dejar en la estantería"
+
+msgid "ui.codex.title"
+msgstr "El Manifiesto"
+
+msgid "ui.codex.source"
+msgstr "Fuente"
+
+msgid "bk.note.original_reads"
+msgstr "El original dice:"
+
+msgid "bk.note.translation"
+msgstr "Dicho de otro modo"
+
+msgid "bk.note.translator"
+msgstr "Esta es una versión actualizada. Las palabras viejas están arriba."
+
+msgid "bk.chapter"
+msgstr "Capítulo"
+
+msgid "it.book.cid.name"
+msgstr "Cantar de Mio Cid"
+
+msgid "it.book.cid.desc"
+msgstr "Homenaje y juramento. Quien lo oye duda antes de golpear."
+
+msgid "it.book.tio_andalus.name"
+msgstr "Leyenda del Tío Andalus"
+
+msgid "it.book.tio_andalus.desc"
+msgstr "Una casa que huele a sangre. La puerta de la bodega no está donde debería."
+
+msgid "it.book.celestina.name"
+msgstr "La Celestina"
+
+msgid "it.book.celestina.desc"
+msgstr "Cada hilo es un cabo, y cada cabo está en su mano."
+
+msgid "it.ability.desvelar.name"
+msgstr "Desvelar"
+
+msgid "it.ability.desvelar.desc"
+msgstr "Quítale a la cosa la piel de libro y mira lo que es de verdad."
+
+msgid "it.ability.refutar.name"
+msgstr "Refutar"
+
+msgid "it.ability.refutar.desc"
+msgstr "Niega lo que el mundo afirma. Por un momento, el mundo obedece."
+
+msgid "it.ability.juramento.name"
+msgstr "El Juramento"
+
+msgid "it.ability.juramento.desc"
+msgstr "Quien juró una vez no rompe su juramento con facilidad."
+
+msgid "dia.sancho.bark.001"
+msgstr "Por todos los santos, es un molino."
+
+msgid "dia.sancho.bark.002"
+msgstr "Señor, si no son más que piedra y madera..."
+
+msgid "dia.quixote.bark.001"
+msgstr "¡Ay de ti, animal mortal! ¡Te cortaré de los hombros!"
+
+msgid "dia.quixote.bark.002"
+msgstr "Conozco tu linaje. Conozco los males que habéis hecho en el mundo."
+
+msgid "tip.lectura.intro"
+msgstr "Aguanta la página. Algunas cosas solo se muestran a quien mira con calma."
+
+msgid "tip.switch.intro"
+msgstr "Cambia de compañero. El mundo es el mismo; solo cambia la lectura."
+
+msgid "tip.posada.intro"
+msgstr "Descansa. El camino seguirá allí."
+
+# --- CAPA DE LIBRO -----------------------------------------------------
+# El original de 1605 es CONTENIDO y permanece en español en todas las
+# versiones. Solo se traducen las Chains ".modern".
+
+msgid "bk.ch08.molinos.01.modern"
+msgstr ""
+"Y le parecieron unos treinta o cuarenta molinos de gigantica grandeza, "
+"que están en aquel llano, y tan altos y grandes que los adiveles de sus "
+"ailes, que van volteando, parecían herir a los que están en la riba."
+"\n"
+"(Nota del traductor: la versión definitiva de este pasaje cita el original "
+"de 1605 palabra por palabra y ofrece esta paráfrasis moderna en lugar de "
+"traducir el arcaísmo.)"
+
+msgid "bk.ch23.montesinos.01.modern"
+msgstr ""
+"Y le contó cómo había encontrado cierta cueva encantada en aquel lugar, "
+"y cómo salía de ella un caballero, y cómo le dejaba agora para ir a "
+"buscarle."
+
+msgid "bk.ch26.galimatias.01.modern"
+msgstr ""
+"Una de estas tres cosas ha de ser: la viuda ama al mancebo, y el mancebo "
+"ama a la doncella, y la doncella no ama a ninguno."
+
+msgid "bk.ch50.impertinente.01.modern"
+msgstr ""
+"Porque la historia del curioso impertinente es la que yo quisiera haber "
+"escrito, a no ser que mi pluma no tiene acierto para pintar la hechura "
+"del amor que en ella había."
+
+msgid "ui.shelf.count"
+msgid_plural "ui.shelf.counts"
+msgstr[0] "%d libro en la estantería"
+msgstr[1] "%d libros en la estantería"
+
+msgid "ui.library.total"
+msgid_plural "ui.library.totals"
+msgstr[0] "%d de %d libros hallados"
+msgstr[1] "%d de %d libros hallados"
+
+msgctxt "ui.book"
+msgid "ui.word.page"
+msgstr "página"
+
+msgctxt "ui.navigation"
+msgid "ui.word.page"
+msgstr "página"
+
+msgctxt "character"
+msgid "ui.word.quixote"
+msgstr "Don Quijote"
+
+msgctxt "character"
+msgid "ui.word.sancho"
+msgstr "Sancho"
+
+#. META: namespace=ui
+msgid "ui.language.name.es"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.language.name.es_419"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.language.name.en"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.language.name.fr"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.language.name.de"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.language.name.pt_BR"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.language.name.ja"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.language.name.ko"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.language.name.zh_Hans"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.language.name.ru"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.language.name.pl"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.language.name.it"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.language.name.tr"
+msgstr ""
+
+#. META: namespace=bk
+msgid "bk.ch08.molinos.01"
+msgstr ""
+
+#. META: namespace=bk
+msgid "bk.ch23.montesinos.01"
+msgstr ""
+
+#. META: namespace=bk
+msgid "bk.ch26.galimatias.01"
+msgstr ""
+
+#. META: namespace=bk
+msgid "bk.ch50.impertinente.01"
+msgstr ""

@@ -1,0 +1,56 @@
+# ─────────────────────────────────────────────────────────────────────────
+#  Godot 4 — Fiel al Libro
+#  Rules of the repo (see TECH_STACK.md §3.5)
+# ─────────────────────────────────────────────────────────────────────────
+
+# ─────────────────────────────────────────────────────────────────────────
+#  The Game Design Document is NOT published.
+#
+#  GDD.md holds the full design: the thesis, the endings, the DLC plan, the
+#  IP and cultural-sensitivity rules. It stays on this machine only, and is
+#  deliberately kept OUT of git history (not just untracked) so it cannot
+#  be recovered from a previous commit.
+#
+#  The public repo carries the implementation and the supporting docs
+#  (README, TECH_STACK, ROADMAP, TODO). The GDD is untracked for now.
+#  To publish it later: remove this line and `git add GDD.md`.
+# ─────────────────────────────────────────────────────────────────────────
+GDD.md
+
+# Godot's import cache and per-machine settings. NEVER commit: it contains
+# absolute paths and will conflict on every machine.
+.godot/
+/android/
+
+# Exported builds
+/build/
+/export/
+*.exe
+*.pck
+*.zip
+
+# Export presets: desktop platforms carry no secrets, so export_presets.cfg
+# IS committed (CI needs it to build). If you add an Android/iOS target,
+# move its keystore and credentials into a template instead.
+export_credentials.cfg
+
+# Godot's own cache / logs
+*.translation.import
+logs/
+*.log
+
+# OS noise
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+
+# ─────────────────────────────────────────────────────────────────────────
+#  LFS-tracked binary formats are declared in .gitattributes
+#  Blender scenes, textures, audio and fonts are LFS; the .import sidecar
+#  files stay as plain text so import presets survive a fresh clone.
+# ─────────────────────────────────────────────────────────────────────────

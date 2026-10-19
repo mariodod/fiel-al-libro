@@ -1,0 +1,277 @@
+# FIEL AL LIBRO — Français (fr)
+# Exemple de traduction. Registre : sec, contemporain, légèrement littéraire.
+# ÉVASION OBLIGATOIRE : les mots de la « couche Livre » (bk.*.modern) doivent
+# conserver le rythme de l'original, sans le moderniser ni le domestiquer.
+msgid ""
+msgstr ""
+"Project-Id-Version: Fiel al Libro 0.1.0\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "ui.menu.new_game"
+msgstr "Commencer le manuscrit"
+
+msgid "ui.menu.continue"
+msgstr "Continuer"
+
+msgid "ui.menu.load"
+msgstr "Lire le manuscrit"
+
+msgid "ui.menu.settings"
+msgstr "Réglages"
+
+msgid "ui.menu.quit"
+msgstr "Fermer le livre"
+
+msgid "ui.menu.codes"
+msgstr "Langues"
+
+msgid "ui.menu.codes.hint"
+msgstr "Lisez le jeu dans une autre langue, ou ajoutez votre propre traduction."
+
+msgid "ui.prompt.interact"
+msgstr "Examiner"
+
+msgid "ui.prompt.read"
+msgstr "Lire"
+
+msgid "ui.prompt.switch_character"
+msgstr "Changer de compagnon"
+
+msgid "ui.prompt.rest"
+msgstr "Se reposer"
+
+msgid "ui.prompt.leave"
+msgstr "Sortir"
+
+msgid "ui.hud.madness"
+msgstr "Folie"
+
+msgid "ui.hud.recuerdos"
+msgstr "Souvenirs"
+
+msgid "ui.hud.humanity"
+msgstr "Humanité"
+
+msgid "ui.manuscript.title"
+msgstr "Le Manuscrit"
+
+msgid "ui.manuscript.unwritten_page"
+msgstr "Une page à écrire"
+
+msgid "ui.shelf.title"
+msgstr "L'Étagère"
+
+msgid "ui.shelf.empty"
+msgstr "L'étagère est vide. Il n'y a encore rien à croire."
+
+msgid "ui.shelf.equip"
+msgstr "Laisser sur l'étagère"
+
+msgid "ui.codex.title"
+msgstr "Le Manifeste"
+
+msgid "bk.note.original_reads"
+msgstr "L'original dit :"
+
+msgid "bk.note.translation"
+msgstr "Autrement dit"
+
+msgid "bk.chapter"
+msgstr "Chapitre"
+
+msgid "it.book.cid.name"
+msgstr "Le Cantar de Mio Cid"
+
+msgid "it.book.cid.desc"
+msgstr "Hommage et serment. Ceux qui l'entendent hésitent avant de frapper."
+
+msgid "it.ability.desvelar.name"
+msgstr "Démasquer"
+
+msgid "it.ability.desvelar.desc"
+msgstr "Ôtez à la chose la peau du livre, et voyez ce qu'elle est."
+
+msgid "it.ability.refutar.name"
+msgstr "Réfuter"
+
+msgid "it.ability.refutar.desc"
+msgstr "Niez ce que le monde affirme. Un instant, il doit obéir."
+
+msgid "dia.sancho.bark.001"
+msgstr "Par tous les saints, c'est un moulin."
+
+msgid "dia.quixote.bark.001"
+msgstr "Misère à toi, bête mortelle ! Je te fendrai de l'épaule !"
+
+msgid "tip.lectura.intro"
+msgstr "Tenez la page. Certaines choses ne se montrent qu'à qui regarde patiemment."
+
+msgid "tip.switch.intro"
+msgstr "Changez de compagnon. Le monde est le même ; seule la lecture diffère."
+
+msgid "bk.ch08.molinos.01.modern"
+msgstr ""
+"Et lui parurent une trentaine ou une quarantaine de moulins d'une "
+"gigantesque grandeur, qui sont dans cette plaine, si hauts et si grands "
+"que leurs ailes, qui tournaient, semblaient frapper ceux qui se "
+"trouvaient sur la rive."
+
+msgid "ui.shelf.count"
+msgid_plural "ui.shelf.counts"
+msgstr[0] "%d livre sur l'étagère"
+msgstr[1] "%d livres sur l'étagère"
+
+msgctxt "character"
+msgid "ui.word.quixote"
+msgstr "Don Quichotte"
+
+msgctxt "character"
+msgid "ui.word.sancho"
+msgstr "Sancho"
+
+#. META: namespace=ui
+msgid "ui.codex.source"
+msgstr ""
+
+#. META: namespace=ui
+msgid "bk.note.translator"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.language.name.es"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.language.name.es_419"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.language.name.en"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.language.name.fr"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.language.name.de"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.language.name.pt_BR"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.language.name.ja"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.language.name.ko"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.language.name.zh_Hans"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.language.name.ru"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.language.name.pl"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.language.name.it"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.language.name.tr"
+msgstr ""
+
+#. META: namespace=it
+msgid "it.book.tio_andalus.name"
+msgstr ""
+
+#. META: namespace=it
+msgid "it.book.tio_andalus.desc"
+msgstr ""
+
+#. META: namespace=it
+msgid "it.book.celestina.name"
+msgstr ""
+
+#. META: namespace=it
+msgid "it.book.celestina.desc"
+msgstr ""
+
+#. META: namespace=it
+msgid "it.ability.juramento.name"
+msgstr ""
+
+#. META: namespace=it
+msgid "it.ability.juramento.desc"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.sancho.bark.002"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.quixote.bark.002"
+msgstr ""
+
+#. META: namespace=tip
+msgid "tip.posada.intro"
+msgstr ""
+
+#. META: namespace=bk
+msgid "bk.ch08.molinos.01"
+msgstr ""
+
+#. META: namespace=bk
+msgid "bk.ch23.montesinos.01"
+msgstr ""
+
+#. META: namespace=bk
+msgid "bk.ch23.montesinos.01.modern"
+msgstr ""
+
+#. META: namespace=bk
+msgid "bk.ch26.galimatias.01"
+msgstr ""
+
+#. META: namespace=bk
+msgid "bk.ch26.galimatias.01.modern"
+msgstr ""
+
+#. META: namespace=bk
+msgid "bk.ch50.impertinente.01"
+msgstr ""
+
+#. META: namespace=bk
+msgid "bk.ch50.impertinente.01.modern"
+msgstr ""
+
+msgid "ui.library.total"
+msgid_plural "ui.library.totals"
+msgstr[0] ""
+msgstr[1] ""
+
+# ------------------------------------------------------------------
+# CONTEXT EXAMPLE
+# The same Spanish/English word with different meanings. Use msgctxt.
+# ------------------------------------------------------------------
+#. TRANSLATORS: "page" of a book (leaf). Context: the manuscript.
+msgctxt "ui.book"
+msgid "ui.word.page"
+msgstr ""
+
+#. TRANSLATORS: "page" of a location. Context: navigation.
+msgctxt "ui.navigation"
+msgid "ui.word.page"
+msgstr ""

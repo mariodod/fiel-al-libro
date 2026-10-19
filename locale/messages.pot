@@ -1,0 +1,325 @@
+# FIEL AL LIBRO — sample translation template
+# This is a WORKING EXAMPLE of the key convention and file format.
+# Regenerate with:
+#   godot --headless --script res://src/tools/extract_strings.gd
+#
+# FORMAT: gettext PO. Contexts via msgctxt, plurals via msgid_plural.
+# RULES:
+#   - Never translate the msgid. Never use the source text as a key.
+#   - Translator comments start with "TRANSLATORS:" (shown to translators) or
+#     "# META:" (metadata for the tooling, hidden from translators).
+#   - MAXLEN comments are hints for fixed-width UI slots. Leave 35% slack.
+
+msgid ""
+msgstr ""
+"Project-Id-Version: Fiel al Libro 0.1.0\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. META: namespace=ui
+msgid "ui.menu.new_game"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.menu.continue"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.menu.load"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.menu.settings"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.menu.quit"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.menu.codes"
+msgstr ""
+
+#. TRANSLATORS: "Codes" refers to the in-game translation screen where the player
+#. can read or import translations. Not "passwords". Keep it short.
+msgid "ui.menu.codes.hint"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.prompt.interact"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.prompt.read"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.prompt.switch_character"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.prompt.rest"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.prompt.leave"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.hud.madness"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.hud.recuerdos"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.hud.humanity"
+msgstr ""
+
+#. TRANSLATORS: This is the name of the save system / the file the player writes.
+msgid "ui.manuscript.title"
+msgstr ""
+
+#. TRANSLATORS: "Unwritten page" - the page of the manuscript that has not been
+#. written yet. A metaphor for a death. Keep the metaphor intact if possible.
+msgid "ui.manuscript.unwritten_page"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.shelf.title"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.shelf.empty"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.shelf.equip"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.codex.title"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.codex.source"
+msgstr ""
+
+#. TRANSLATORS: "The original reads:" - introduces the 1605 Spanish text shown
+#. alongside the modern rendering. Do NOT translate the Spanish that follows.
+msgid "bk.note.original_reads"
+msgstr ""
+
+#. META: namespace=ui
+msgid "bk.note.translation"
+msgstr ""
+
+#. META: namespace=ui
+msgid "bk.note.translator"
+msgstr ""
+
+#. META: namespace=ui
+msgid "bk.chapter"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.language.name.es"
+msgstr "Spanish (Spain)"
+
+#. META: namespace=ui
+msgid "ui.language.name.es_419"
+msgstr "Spanish (Latin America)"
+
+#. META: namespace=ui
+msgid "ui.language.name.en"
+msgstr "English"
+
+#. META: namespace=ui
+msgid "ui.language.name.fr"
+msgstr "French"
+
+#. META: namespace=ui
+msgid "ui.language.name.de"
+msgstr "German"
+
+#. META: namespace=ui
+msgid "ui.language.name.pt_BR"
+msgstr "Portuguese (Brazil)"
+
+#. META: namespace=ui
+msgid "ui.language.name.ja"
+msgstr "Japanese"
+
+#. META: namespace=ui
+msgid "ui.language.name.ko"
+msgstr "Korean"
+
+#. META: namespace=ui
+msgid "ui.language.name.zh_Hans"
+msgstr "Chinese (Simplified)"
+
+#. META: namespace=ui
+msgid "ui.language.name.ru"
+msgstr "Russian"
+
+#. META: namespace=ui
+msgid "ui.language.name.pl"
+msgstr "Polish"
+
+#. META: namespace=ui
+msgid "ui.language.name.it"
+msgstr "Italian"
+
+#. META: namespace=ui
+msgid "ui.language.name.tr"
+msgstr "Turkish"
+
+#. META: namespace=it
+msgid "it.book.cid.name"
+msgstr ""
+
+#. META: namespace=it
+msgid "it.book.cid.desc"
+msgstr ""
+
+#. META: namespace=it
+msgid "it.book.tio_andalus.name"
+msgstr ""
+
+#. META: namespace=it
+msgid "it.book.tio_andalus.desc"
+msgstr ""
+
+#. META: namespace=it
+msgid "it.book.celestina.name"
+msgstr ""
+
+#. META: namespace=it
+msgid "it.book.celestina.desc"
+msgstr ""
+
+#. META: namespace=it
+msgid "it.ability.desvelar.name"
+msgstr ""
+
+#. META: namespace=it
+msgid "it.ability.desvelar.desc"
+msgstr ""
+
+#. META: namespace=it
+msgid "it.ability.refutar.name"
+msgstr ""
+
+#. META: namespace=it
+msgid "it.ability.refutar.desc"
+msgstr ""
+
+#. META: namespace=it
+msgid "it.ability.juramento.name"
+msgstr ""
+
+#. META: namespace=it
+msgid "it.ability.juramento.desc"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.sancho.bark.001"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.sancho.bark.002"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.quixote.bark.001"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.quixote.bark.002"
+msgstr ""
+
+#. META: namespace=tip
+msgid "tip.lectura.intro"
+msgstr ""
+
+#. META: namespace=tip
+msgid "tip.switch.intro"
+msgstr ""
+
+#. META: namespace=tip
+msgid "tip.posada.intro"
+msgstr ""
+
+#. META: namespace=bk
+msgid "bk.ch08.molinos.01"
+msgstr ""
+
+#. META: namespace=bk
+msgid "bk.ch08.molinos.01.modern"
+msgstr ""
+
+#. META: namespace=bk
+msgid "bk.ch23.montesinos.01"
+msgstr ""
+
+#. META: namespace=bk
+msgid "bk.ch23.montesinos.01.modern"
+msgstr ""
+
+#. META: namespace=bk
+msgid "bk.ch26.galimatias.01"
+msgstr ""
+
+#. META: namespace=bk
+msgid "bk.ch26.galimatias.01.modern"
+msgstr ""
+
+#. META: namespace=bk
+msgid "bk.ch50.impertinente.01"
+msgstr ""
+
+#. META: namespace=bk
+msgid "bk.ch50.impertinente.01.modern"
+msgstr ""
+
+# ------------------------------------------------------------------
+# PLURAL EXAMPLE
+# Godot's PO importer handles msgid_plural. Never hand-roll "1 libro / N libros".
+# ------------------------------------------------------------------
+msgid "ui.shelf.count"
+msgid_plural "ui.shelf.counts"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "ui.library.total"
+msgid_plural "ui.library.totals"
+msgstr[0] ""
+msgstr[1] ""
+
+# ------------------------------------------------------------------
+# CONTEXT EXAMPLE
+# The same Spanish/English word with different meanings. Use msgctxt.
+# ------------------------------------------------------------------
+#. TRANSLATORS: "page" of a book (leaf). Context: the manuscript.
+msgctxt "ui.book"
+msgid "ui.word.page"
+msgstr ""
+
+#. TRANSLATORS: "page" of a location. Context: navigation.
+msgctxt "ui.navigation"
+msgid "ui.word.page"
+msgstr ""
+
+#. TRANSLATORS: The player character Quixote, formal register.
+msgctxt "character"
+msgid "ui.word.quixote"
+msgstr ""
+
+#. TRANSLATORS: The player character Sancho, informal register.
+msgctxt "character"
+msgid "ui.word.sancho"
+msgstr ""
