@@ -161,6 +161,11 @@ func shift_to(new_layer: int, instant: bool = false) -> void:
 		return
 	var old := _layer
 	_target = new_layer
+	# Both paths announce the change. An instant change has no blend to
+	# speak of, but anything listening for "the world is turning" — the
+	# page turn, the VFX — must hear it either way, or the same change
+	# behaves differently depending on how it was made.
+	EventBus.truth_blend_started.emit(new_layer)
 	if instant:
 		_blend = 1.0 if new_layer == Layer.BOOK else 0.0
 		_layer = new_layer
@@ -169,7 +174,6 @@ func shift_to(new_layer: int, instant: bool = false) -> void:
 		EventBus.truth_blend_finished.emit(_layer)
 	else:
 		_blending = true
-		EventBus.truth_blend_started.emit(new_layer)
 	EventBus.truth_layer_changed.emit(old, new_layer)
 
 

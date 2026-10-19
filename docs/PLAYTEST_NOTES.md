@@ -222,6 +222,26 @@ this is exactly the kind of thing that silently merges back.
 | P5 | Somebody will try to attack the mill | **Yes** — the stranger wanted to interact with the book and the giant |
 | P6 | The rock-as-a-book is the thesis in one object | **Yes** |
 
+### The page turn — the owner's idea, built after the playtest
+
+The owner's note on the playtest: *"Maybe adding some kind of effect in the screen when
+pressing T could make it more clear and pleasing that something is happening, some effect
+related to a book."*
+
+It is built. Pressing **`T`** turns a page: a sheet of paper crosses the screen, carrying
+a line of the **1605 original** — *"En un lugar de la Mancha, de cuyo nombre no quiero
+acordarme…"* — while the world changes behind it. GDD.md §4.3 asked for exactly this:
+*"Pages curl… the occasional line of the actual 1605 Spanish text, faint, as if the world
+is being written under your feet."*
+
+The 1605 original is **content**: the same words in every build, in every language,
+because it is a quotation and not a translation. It is printed from
+`assets/manifiesto/bk.ch01.apertura.json`, the first real Manifiesto fragment.
+
+**It is untested.** The effect was built after the last playtest, so nobody has seen it
+except the two of us. It is a candidate for the next run: does the page make the change
+*clearer*, or does it get in the way of a change that is already clear?
+
 ### What is still owed
 
 - **A stranger who does not already know the keys.** The stranger's note *"expected
@@ -233,6 +253,9 @@ this is exactly the kind of thing that silently merges back.
   and the giant. This is the most-requested thing in the build and it is scheduled for
   week 5–7. Consider pulling it into week 3–4: a player who cannot touch the thing that
   made them curious will not come back.
+- **The page turn, untested.** Built after the last run. It needs one run of its own:
+  does it make the change clearer, or does it get in the way of a change that is already
+  clear?
 
 ---
 

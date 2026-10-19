@@ -38,7 +38,8 @@ someone willing to pay for the lesson with their own mind.*
 | `GDD.md` | ⚠️ **PRIVATE — on the owner's machine only.** The full design: pillars, the two-truths system, characters, the *Lectura* mechanic, progression, the library, the bestiary, the regions, the endings, the 4 DLCs, the credits song, art/audio direction, cultural-sensitivity rules, the locked decisions D1–D7. |
 | `docs/IP_CLEARANCE.md` | ⚠️ **PRIVATE — owner's machine only.** Title clearance memo: what was searched, the "Don Quijote" finding, the trademark strategy, the manual search checklist. |
 | `docs/NEXT_STEPS.md` | **The plan for the next 12 weeks, task by task.** |
-| `docs/PLAYTEST_NOTES.md` | The week 1–2 playtest protocol, the predictions, and the (empty) observation log. **The live task.** |
+| `docs/NEXT_SESSION.md` | **Start here if you are picking this up.** What is done, what is next, in what order, and what not to do. |
+| `docs/PLAYTEST_NOTES.md` | The playtest: the protocol, the findings, the eight "but"s. **The most valuable document in the repo.** |
 | `HANDOVER.md` | This file. |
 | `src/` | All game code. |
 | `src/world/slice.tscn` | **The Week 1–2 grey box — the playable build, and the main scene.** Windmill/giant, rock/book, two characters, two readings. |
@@ -148,6 +149,7 @@ a written page. The ending is a page you can read.
 | **The reading rule** | `src/systems/perception.gd` — the world has one truth; each character makes two things of it |
 | **An object with two faces** | `src/world/truth_object.gd` + `src/data/truth_object_data.gd` (`.tres` content) |
 | The visual identity | `assets/shaders/truth_layer.gdshader` — reality / book / ink in one uniform |
+| **The page turn** | `src/ui/post_process.gd` — a sheet of paper carrying a line of the 1605 original crosses the screen when the truth flips |
 | Character abstraction | `src/characters/character_pawn.gd` (base), `player_controller.gd`, `companion_ai.gd` |
 | Data-driven content | `src/data/*.gd` — `Resource` subclasses; tune in the inspector, never in code |
 | Save system | `src/autoload/manuscrito.gd` — atomic writes, snapshot semantics, version migration |
@@ -301,6 +303,44 @@ passes `--path <repo root>` explicitly. So every documented command works from a
 directory, and `build/` always lands in the project. Check the `[project]` line it prints —
 if that path is wrong, `res://` is resolving against the wrong project.
 
+### 7.14 A file whose name starts with `_` is invisible to Godot
+
+`FileAccess.open("res://assets/manifiesto/_SAMPLE.bk_ch08_molinos.json")` returned null
+with `ERR_FILE_CANT_OPEN`, while `DirAccess` happily listed the file. Godot treats a
+leading underscore as "hidden": the file never enters the FileSystem, so it cannot be
+read at runtime and it is not exported.
+
+That is why the sample Manifiesto fragment was documentation and never content, and why
+the first real fragment is `assets/manifiesto/bk.ch01.apertura.json` — no underscore. If a
+data file has to be read by the game, it must not start with `_`.
+
+### 7.15 A game run does not re-import
+
+Change a `.gdshader` and run the game: it uses the **cached** shader, not the one on
+disk. You will debug a shader that is not the one you wrote. Run
+`.\tools\godot.ps1 --headless --editor --quit` after touching any imported resource —
+shaders, textures, `.tres`.
+
+This cost about twenty minutes of "the shader is not doing what I wrote" before the
+cause was obvious.
+
+### 7.16 The viewport texture cannot be read while the world is changing
+
+`get_viewport().get_texture().get_image()` returns **null** from inside a signal handler
+or during `_process` on the frame the change happens. So a wipe that shows the *old*
+frame while the new one is drawn is not available.
+
+The page turn does not need it: the sheet covers the change instead of hiding it behind
+the old picture. That is also the better effect — the sheet says "a page turned" rather
+than pretending nothing happened.
+
+### 7.17 A SubViewport's image is already the right way up
+
+The printed line for the page turn is rendered into a `SubViewport` and read back with
+`get_image()`. That image is **upright** — do not `flip_y()` it. And in the shader it is
+sampled with `uv.y` directly: the screen's v is bottom-up and the image's is not, and the
+two cancel out. Flipping either one puts the text upside down on the sheet.
+
 ---
 
 ## 8. The IP situation — read before you write store copy
@@ -368,20 +408,31 @@ turning over.
 that is fun. Seven data points is a sample, not a signal, and the strangest data point
 still missing is a player who does not know the controls.
 
+**The next milestone is week 3–4 — combat — and the first task in it is not a rig.** Two
+people, one of them a stranger, asked to *touch* the thing that surprised them, so the
+cheapest possible **Examine** beat comes first: walk up to an object, press `E`, and the
+game tells you what it is in your truth and in the other one. A player who cannot touch
+the thing that made them curious will not come back.
+
 ---
 
 ## 10. If you are picking this up, do this
 
 1. Read `README.md`, then this file, then `GDD.md` (ask the owner for it if you don't have it).
 2. Run `tools\setup.ps1` and get the tests green.
-3. Play the grey box: `tools\play.cmd`. `T` flips the world, `TAB` swaps characters, `V`
-   gives Sancho the second sight, `L` pushes Quixote's Locura from Lucid to Lost, `F2`
-   hides the perception tags.
-4. Read `docs/PLAYTEST_NOTES.md` §6 — the playtest findings, the eight "but"s (six fixed),
-   and the two named tasks (B6: the Examine verb, which two people asked for; B5:
-   Quixote's reaction).
-5. **The next task is week 3–4 — but the Examine verb first.** It is the one thing a
+3. **Read `docs/NEXT_SESSION.md`.** It has the state, the order of work, and the list of
+   things not to do yet.
+4. Play the grey box: `tools\play.cmd`. `T` flips the world (and turns a page), `TAB`
+   swaps characters, `V` gives Sancho the second sight, `L` pushes Quixote's Locura from
+   Lucid to Lost, `F2` hides the perception tags.
+5. Read `docs/PLAYTEST_NOTES.md` §6 — the playtest findings, the eight "but"s (six fixed),
+   and the two named tasks: **B6, the Examine verb** (do this first) and B5, Quixote's
+   reaction.
+6. **The next task is week 3–4 — but the Examine verb first.** It is the one thing a
    player who had never seen the game asked to do, and it is scheduled for week 5–7.
+7. **The one thing that matters:** the vertical slice exists to answer a single question —
+   *is the two-truths mechanic fun?* The answer is yes. Everything from here is about
+   turning a proven mechanic into a game.
 
 **Three rules for this project:**
 

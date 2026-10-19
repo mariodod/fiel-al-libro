@@ -70,6 +70,27 @@ uniform float ink_smear : hint_range(0.0, 1.0) = 0.35;
 uniform float ink_darken : hint_range(0.0, 1.0) = 0.25;
 group_uniforms;
 
+// ── The page turn ──────────────────────────────────────────────────────
+//  When the world's truth flips, a sheet of paper crosses the screen.
+//
+//  GDD.md §4.3: "Pages curl", and "typeographic elements bleed in: the
+//  occasional line of the actual 1605 Spanish text, faint, as if the world
+//  is being written under your feet". The Book layer is a TEXT, and the
+//  moment the text changes, you should see a page of it turn.
+//
+//  The sheet carries a line of the 1605 original. The original is
+//  CONTENT: it stays in Spanish in every build (GDD.md §20), because it is
+//  not a translation, it is a quotation.
+group_uniforms page;
+uniform float page_turn : hint_range(0.0, 1.0) = 0.0;
+uniform sampler2D page_text : hint_default_white, filter_linear, repeat_enable;
+uniform vec4 page_paper : source_color = vec4(0.90, 0.85, 0.72, 1.0);
+uniform float page_ink : hint_range(0.0, 1.0) = 0.8;
+// 0 until the printed line is actually on the sheet. A sampler with no
+// texture reads as solid white, which would print ink over the whole page.
+uniform float page_text_amount : hint_range(0.0, 1.0) = 0.0;
+group_uniforms;
+
 
 float hash21(vec2 p) {
 	p = fract(p * vec2(233.34, 851.73));
@@ -181,6 +202,34 @@ void fragment() {
 	vec2 d = SCREEN_UV - vec2(0.5);
 	float vig = 1.0 - dot(d, d) * vignette_strength * 2.4;
 	col *= clamp(vig, 0.0, 1.0);
+
+	// ── The page turn ─────────────────────────────────────────────────
+	//  A sheet crosses the screen from right to left while the world
+	//  changes behind it. The change is not hidden by it: the page is
+	//  there to say "a page turned", not to hide the fact.
+	if (page_turn > 0.0001) {
+		float edge = mix(1.30, -0.30, page_turn);
+		// A slight curl: the sheet is not a flat rectangle.
+		float curl = 0.030 * sin(uv.y * 3.14159265);
+		float d_page = edge + curl - uv.x;   // > 0 where the sheet is
+
+		if (d_page > 0.0) {
+			// The paper, lifting toward its leading edge.
+			float lift = exp(-d_page * 5.0);
+			vec3 paper = page_paper.rgb * (1.0 - 0.28 * lift);
+			// Grain.
+			paper += (hash21(uv * vec2(1600.0, 900.0)) - 0.5) * 0.05;
+			// The printed line, travelling with the sheet.
+			vec4 ink = texture(page_text, vec2(uv.x - edge, uv.y));
+			paper = mix(paper, vec3(0.17, 0.13, 0.10), ink.a * page_ink * page_text_amount);
+			col = paper;
+		} else {
+			// The shadow the sheet casts on the world behind it.
+			col *= 1.0 - 0.45 * exp(d_page * 9.0);
+		}
+		// The lit edge of the sheet.
+		col += exp(-abs(d_page) * 70.0) * vec3(1.0, 0.94, 0.82) * 0.45;
+	}
 
 	COLOR = vec4(col, 1.0);
 }

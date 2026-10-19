@@ -37,6 +37,18 @@ func suite(t: TestHarness) -> void:
 	t.expect_eq(TruthLayer.layer(), TruthLayer.Layer.BOOK, "layer should survive a save/load")
 	t.expect_eq(TruthLayer.target_layer(), TruthLayer.Layer.BOOK, "target should survive too")
 
+	t.test("both paths announce the change")
+	# The instant path used to skip truth_blend_started, so the same change
+	# behaved differently depending on how it was made — and the page turn
+	# did not fire for it.
+	var started := [0]
+	var handler := func(_layer: int) -> void: started[0] += 1
+	EventBus.truth_blend_started.connect(handler)
+	TruthLayer.shift_to(TruthLayer.Layer.BOOK, true)
+	TruthLayer.shift_to(TruthLayer.Layer.REALITY, false)
+	EventBus.truth_blend_started.disconnect(handler)
+	t.expect_eq(started[0], 2, "an instant change announces itself too")
+
 	t.test("ink amount is clamped")
 	TruthLayer.set_ink(2.5)
 	t.expect_almost_eq(TruthLayer.ink_amount(), 1.0, 0.0001, "ink should clamp to 1.0")

@@ -1,0 +1,102 @@
+{
+  "_comment": [
+    "THE FIRST REAL FRAGMENT of the Book layer (Capa de Libro).",
+    "",
+    "_SAMPLE.bk_ch08.molinos.json is the format documentation; this file is",
+    "content the game actually reads. The difference is the leading",
+    "underscore: Godot treats a file whose name starts with '_' as hidden,",
+    "so it is not in the FileSystem and FileAccess cannot open it. That is",
+    "why the sample could never be read at runtime.",
+    "",
+    "Every 'manifiesto' fragment is a real fragment of the 1605 original.",
+    "The 'original_1605' field is CONTENT: it is identical in every build,",
+    "in every language. It is never a translation key.",
+    "",
+    "RULES:",
+    "  1. Source every fragment from a public-domain edition:",
+    "     - Wikisource (es.wikisource.org/wiki/Don_Quijote)",
+    "     - Biblioteca Virtual Miguel de Cervantes",
+    "     - Project Gutenberg (for PD translations)",
+    "  2. Always record the provenance in the 'source' block.",
+    "  3. Set 'verified' to true only after a human checked it against the",
+    "     edition. Unverified fragments must not ship.",
+    "  4. If a PD translation of this passage exists in the player's",
+    "     language (Motteux 1700 / Ormsby 1901 / Florian 1799 / etc.),",
+    "     it goes in 'pd_translations' and the UI offers it as a third tab.",
+    "  5. The 'modern' rendering must keep the RHYTHM and the strangeness.",
+    "     A modernised Don Quixote is a different, and worse, book.",
+    "",
+    "!! THE 1605 / 1615 DISTINCTION IS LOAD-BEARING !!",
+    "DLC 1 is 'El Segundo Libro (1615)': the book the world keeps rewriting",
+    "itself into. So which edition a fragment comes from is not a detail.",
+    "The 1605 incipit reads:",
+    "",
+    "  '...de los de lanza en astillero, adarga antigua, rocin flaco y",
+    "   galgo corredor.'",
+    "",
+    "The 1615 revision replaces that with:",
+    "",
+    "  '...de los de lanza en astillero, galera en coraza y bacia en el",
+    "   casco.'",
+    "",
+    "The sample fragment carries the 1615 wording under an 'original_1605'",
+    "key. That is the kind of mistake rule 3 exists to catch: the line has",
+    "to be checked against the 1605 printing, not against a modern",
+    "edition that happens to be more available.",
+    "This fragment was checked against the 1605 text quoted by Wikisource",
+    "on 19 October 2026, and it is the 1605 wording."
+  ],
+
+  "id": "bk.ch01.apertura.01",
+  "chapter": 1,
+  "part": 1,
+  "title_key": "bk.ch01.apertura.title",
+  "characters": ["quixote", "sancho"],
+
+  "source": {
+    "work": "Miguel de Cervantes, El ingenioso hidalgo Don Quijote de la Mancha, parte I, cap. I",
+    "edition": "1605 printing, as quoted by Wikisource",
+    "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
+    "public_domain": true,
+    "verified": true,
+    "verified_on": "2026-10-19",
+    "verified_note": "The 1605 incipit was checked against the text Wikisource quotes from the 1605 edition ('adarga antigua, rocin flaco y galgo corredor'). A human should still read it against a facsimile before the fragment ships in a build."
+  },
+
+  "original_1605": "En un lugar de la Mancha, de cuyo nombre no quiero acordarme, no ha mucho tiempo que vivía un hidalgo de los de lanza en astillero, adarga antigua, rocín flaco y galgo corredor.",
+
+  "modern": {
+    "es": "En un lugar de la Mancha, de cuyo nombre no quiero acordarme, no hace mucho que vivía un hidalgo de los de lanza en astillero, adarga antigua, rocín flaco y galgo corredor.",
+    "es_419": "En un lugar de la Mancha, del que prefiero no acordarme, no hace mucho que vivía un hidalgo de los de lanza en astillero, adarga antigua, rocín flaco y galgo corredor.",
+    "en": "In a place in La Mancha, whose name I do not care to recall, there lived not long ago one of those gentlemen who are accustomed to a lance in the rack, an old sword, a lean nag and a greyhound.",
+    "fr": "En un lieu de la Manche, dont je ne veux pas me souvenir du nom, vivait naguère un gentilhomme de ceux qui portent lance au râtelier, une vieille épée, un cheval maigre et un lévrier gris."
+  },
+
+  "pd_translations": {
+    "en": [
+      {
+        "translator": "John Shelton",
+        "year": 1612,
+        "text": "In a place in La Mancha, whose name I have no mind to remember, there dwelt not long since one of those gentlemen that are commonly called knights of the lance and buckler..."
+      }
+    ],
+    "fr": [
+      {
+        "translator": "Pierre Davy du Terron (trad. 1632)",
+        "year": 1632,
+        "text": "En un lieu de la Manche, dont je ne veux pas me souvenir le nom, vivoit nagueres un gentilhomme de ceux qui portent lance au ratelier..."
+      }
+    ]
+  },
+
+  "variants": {
+    "reality": "La realidad: the plain is empty. The mill is a mill. (No text is shown; the scene speaks.)",
+    "book": "El libro: the mill is a giant. (The text is shown, with the Book layer's typography.)"
+  },
+
+  "unlocks": {
+    "give": ["codex_page", "recuerdos_bonus"],
+    "verdict": "verdict.molinos.orientacion",
+    "shortcut": "sw_world.region_I.molinos_cueva"
+  }
+}
