@@ -46,6 +46,7 @@ someone willing to pay for the lesson with their own mind.*
 | `src/systems/perception.gd` | The reading rule: the world has one truth, the characters make two things of it. |
 | `src/world/truth_object.gd` | An object with two faces. The data shape the whole game is built on. |
 | `src/data/` | `Resource` subclasses and the `.tres` content: characters, primitives. |
+| `reference/` | **Local only, gitignored.** The reference texts: the 1605 first part, the 1615 second part, and the OCR of the 1605 printing. Fetch them with `tools\fetch_reference.ps1`. |
 | `tests/` | 11 suites, 183 assertions. |
 | `locale/` | gettext PO files: es, en, fr + the template. |
 | `assets/` | Shaders, the Manifiesto content format. |
@@ -94,6 +95,7 @@ admin rights to create the alias). Use it instead of calling `godot` directly:
 | `.\tools\godot.ps1 --headless --script res://src/tools/setup_translations.gd` | **Register `locale/*.po` with the engine.** Run after adding a language. |
 | `.\tools\godot.ps1 --headless --script res://src/tools/sync_locales.gd` | Bring every locale in line with the template; report orphans and duplicates. |
 | `.\tools\godot.ps1 --headless --export-release "Windows Desktop" build/FielAlLibro.exe` | Build (needs `build/` to exist). |
+| `powershell -ExecutionPolicy Bypass -File tools\fetch_reference.ps1` | **Fetch the reference texts** (the 1605 and 1615 editions) into `reference\`. |
 
 > **To play, use `tools\play.cmd`, not `.\tools\godot.ps1 <scene>`.** Windows resolves a
 > `.ps1` and a `.tscn` by file association, and on some machines that hands the scene to
@@ -340,6 +342,36 @@ The printed line for the page turn is rendered into a `SubViewport` and read bac
 `get_image()`. That image is **upright** — do not `flip_y()` it. And in the shader it is
 sampled with `uv.y` directly: the screen's v is bottom-up and the image's is not, and the
 two cancel out. Flipping either one puts the text upside down on the sheet.
+
+### 7.18 A `.ps1` without a BOM is read as Windows-1252
+
+Windows PowerShell 5.1 reads a `.ps1` file **without a BOM** as Windows-1252, not as
+UTF-8. Every non-ASCII character in it is then silently mangled — and the failure is
+silent, because a mangled *string literal* or *regular expression* simply stops
+matching.
+
+This cost an afternoon: `tools\fetch_reference.ps1` had a regex with an accented `í` in
+it, it matched zero chapters, and the only symptom was an empty output file and a
+confident "0 chapters" message.
+
+**Keep `.ps1` files ASCII-only**, or give them a UTF-8 BOM. `tools\fetch_reference.ps1`
+is ASCII-only on purpose and says so at the top.
+
+### 7.19 Wikisource's 1905 transcription loses the first letter of small capitals
+
+The 1905 edition sets the first word of a paragraph in *versalitas*. Wikisource's
+transcription renders those as `{{May|n}}` for "En" — the leading capital is gone from
+the source, in about 190 lines, and it cannot be repaired from the source.
+
+Project Gutenberg #2000 has the same edition, clean, with all 52 chapters and the
+*Curioso Impertinente* in its 1605 place. Use that for the reference text and the
+facsimile for checking a wording.
+
+And the reason it matters: **the 1605 and 1615 editions differ**, and DLC 1 is the 1615
+book. The 1605 incipit is *"…de los de lanza en astillero, adarga antigua, rocín flaco y
+galgo corredor"*; the 1615 revision replaces it with *"…galera en coraza y bacía en el
+casco"*. A fragment quoted from the wrong edition is a fragment from the wrong book, and
+your own sample fragment had the 1615 wording under an `original_1605` key.
 
 ---
 

@@ -179,6 +179,23 @@ alone on purpose: it is the owner's file, and it is their call whether the moder
 renderings get re-sourced from the 1605 text too — they currently follow the 1615 incipit
 as well.
 
+### The reference texts are on disk
+
+```bash
+powershell -ExecutionPolicy Bypass -File tools\fetch_reference.ps1
+```
+
+| File | What it is |
+|---|---|
+| `reference\quijote_1605_parte1.txt` | the **1605 first part**, all 52 chapters, the *Curioso Impertinente* in its 1605 place, unwrapped for reading. **This is the copy the fragments are quoted from.** |
+| `reference\quijote_1615_parte2.txt` | the 1615 second volume — the book the world rewrites itself into, and DLC 1's material. |
+| `reference\quijote_1605_facsimil_ocr.txt` | OCR of the actual 1605 printing (Juan de Cuesta, Madrid 1605). Noisy — the long s is misread — so it is a **variant reference**, not a text to quote from. Use it to check a wording. |
+
+`reference\` is gitignored: two megabytes of public-domain text is not a source.
+
+**Rule 3 still applies.** Every fragment gets checked against an edition before it ships,
+and the check is the owner's, not the machine's.
+
 ---
 
 ## 8. The command set

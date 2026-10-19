@@ -28,6 +28,13 @@ docs/IP_CLEARANCE.md
 .godot/
 /android/
 
+# The reference texts for the Manifiesto fragments: the 1605 first part, the
+# 1615 second part, and the OCR of the 1605 printing. They are reference
+# material, not sources: two megabytes of public-domain text that the repo
+# has no business carrying. Re-fetch them with:
+#   powershell -ExecutionPolicy Bypass -File tools\fetch_reference.ps1
+/reference/
+
 # Screenshots and playtest captures. Local only: they are outputs,
 # not sources, and the repo should not fill up with them. The .gdignore
 # IS committed, so Godot never imports them into a build.
