@@ -12,12 +12,12 @@
 - [x] Truth-layer shader (the whole art direction in one uniform)
 - [x] `CharacterPawn` + `PlayerController` + `CompanionAI` — the D3 architecture
 - [x] Save system with atomic writes and version migration
-- [x] PO pipeline + `sync_locales.gd` + locale key-parity test
-- [x] Test harness and 7 suites, 84 assertions, all green
+- [x] PO pipeline + `sync_locales.gd` + `setup_translations.gd` + locale key-parity test
+- [x] Test harness and 8 suites, 109 assertions, all green
 - [x] CI: import check → tests → Windows + Linux exports
-- [x] Git + Git LFS, GitHub repo
-- [ ] **Install Godot export templates locally** (Editor → Manage Export Templates) so `build/` works on this machine
-- [ ] Set up the monthly cloud backup (Blobs / Backblaze B2 / Google Drive) — *you are one disk failure from losing two years*
+- [x] Git + Git LFS, public GitHub repo, CI green
+- [x] Godot export templates installed locally; Windows + Linux builds produced
+- [ ] **Set up the monthly cloud backup** (Blobs / Backblaze B2 / Google Drive) — *you are one disk failure from losing two years*
 - [ ] Apply the Steam Direct $100 application
 - [ ] **Trademark check on "Fiel al Libro"** (EU + US, classes 9 & 41) — blocking for the store page (D6)
 - [ ] Read the novel end to end and pick the first 16 Manifiesto fragments (D7)
