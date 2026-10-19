@@ -19,7 +19,9 @@
 - [x] Godot export templates installed locally; Windows + Linux builds produced
 - [ ] **Set up the monthly cloud backup** (Blobs / Backblaze B2 / Google Drive) — *you are one disk failure from losing two years*
 - [ ] Apply the Steam Direct $100 application
-- [ ] **Trademark check on "Fiel al Libro"** (EU + US, classes 9 & 41) — blocking for the store page (D6)
+- [ ] **Trademark: manual register searches** (TMview, OEPM, USPTO, WIPO) — 1–2 hours, checklist in `docs/IP_CLEARANCE.md` §4
+- [ ] **Trademark: file the COMPOSITE mark** `FIEL AL LIBRO: LA LOCURA Y LA VERDAD` (EUIPO classes 9+41, ~€1,150, then USPTO ~$700). The bare phrase is descriptive and weak. Register `fielallibro.es`/`.com` first.
+- [ ] **Play "Hidalgo" and "Dark Bound"** before locking the vertical slice — the closest thematic neighbours in the market
 - [ ] Read the novel end to end and pick the first 16 Manifiesto fragments (D7)
 
 ## Next (Phase 1 — Vertical Slice, weeks 5–12)

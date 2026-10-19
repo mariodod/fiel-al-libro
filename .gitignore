@@ -4,18 +4,24 @@
 # ─────────────────────────────────────────────────────────────────────────
 
 # ─────────────────────────────────────────────────────────────────────────
-#  The Game Design Document is NOT published.
+#  Private design documents.
 #
 #  GDD.md holds the full design: the thesis, the endings, the DLC plan, the
-#  IP and cultural-sensitivity rules. It stays on this machine only, and is
-#  deliberately kept OUT of git history (not just untracked) so it cannot
-#  be recovered from a previous commit.
+#  IP and cultural-sensitivity rules.
+#  docs/IP_CLEARANCE.md holds the title clearance memo: it names
+#  competitors, their positioning and their weaknesses.
+#
+#  Both stay on this machine only, and are deliberately kept OUT of git
+#  history (not just untracked) so they cannot be recovered from a previous
+#  commit.
 #
 #  The public repo carries the implementation and the supporting docs
-#  (README, TECH_STACK, ROADMAP, TODO). The GDD is untracked for now.
-#  To publish it later: remove this line and `git add GDD.md`.
+#  (README, TECH_STACK, ROADMAP, TODO).
+#
+#  To publish either later: remove the line and `git add <path>`.
 # ─────────────────────────────────────────────────────────────────────────
 GDD.md
+docs/IP_CLEARANCE.md
 
 # Godot's import cache and per-machine settings. NEVER commit: it contains
 # absolute paths and will conflict on every machine.
