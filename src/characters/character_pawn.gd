@@ -45,7 +45,7 @@ const WALK_SPEED := 4.2
 const RUN_SPEED := 6.8
 const ACCELERATION := 12.0
 const FRICTION := 14.0
-const TURN_SPEED := 12.0
+const TURN_SPEED := 8.0
 
 
 func _ready() -> void:
@@ -71,7 +71,20 @@ func move(input_direction: Vector2, sprint: bool) -> void:
 
 	if input.length_squared() > 0.001:
 		var facing := Vector3(input_direction.x, 0.0, input_direction.y).normalized()
-		look_at(global_position + facing, Vector3.UP)
+		_turn_towards(facing)
+
+
+## Turn towards a direction, at a rate a person can follow.
+##
+## The character used to snap to face its movement direction with
+## look_at(). A snap is what makes the camera whip sideways, so the turn is
+## rate-limited here and the camera smooths its own yaw on top of it.
+func _turn_towards(direction: Vector3) -> void:
+	# The node faces -Z, so facing `direction` means this yaw.
+	var desired := atan2(-direction.x, -direction.z)
+	var diff := wrapf(desired - rotation.y, -PI, PI)
+	var step := TURN_SPEED * get_process_delta_time()
+	rotation.y += clampf(diff, -step, step)
 
 
 func light_attack() -> void:

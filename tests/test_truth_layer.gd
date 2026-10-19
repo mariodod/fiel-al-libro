@@ -54,6 +54,21 @@ func suite(t: TestHarness) -> void:
 	t.expect_almost_eq(TruthLayer.view_blend(), 1.0, 0.0001, "the view fades to the Book")
 	t.expect_eq(TruthLayer.layer(), TruthLayer.Layer.REALITY, "the world's truth has not moved")
 
+	t.test("the world's look and the reader's reading are separate")
+	# The stranger's first run: "what is the difference between pressing T
+	# and L, both do the same". They DID do the same, because the grade
+	# followed the reader as well as the objects. The world's look must
+	# follow the world; only the objects follow the reader.
+	#
+	#   T  the world changes   -> the whole picture changes
+	#   L  his madness changes -> only the objects change
+	TruthLayer.shift_to(TruthLayer.Layer.REALITY, true)
+	TruthLayer.set_view_layer(TruthLayer.Layer.BOOK)
+	TruthLayer.advance_blend(2.0)
+	t.expect_almost_eq(TruthLayer.world_blend(), 0.0, 0.0001, "the world's look has not changed")
+	t.expect_almost_eq(TruthLayer.view_blend(), 1.0, 0.0001, "the reader is reading the Book")
+	t.expect_ne(TruthLayer.world_blend(), TruthLayer.view_blend(), "the two are not the same value")
+
 	t.test("releasing the view follows the world again")
 	TruthLayer.set_view_layer(-1)
 	TruthLayer.advance_blend(2.0)

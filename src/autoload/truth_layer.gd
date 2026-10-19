@@ -21,11 +21,17 @@ const GLOBAL_SPEED := &"layer_blend_speed"
 
 ## Seconds for a full Reality <-> Book cross-fade.
 ##
-## GDD.md §4.3 says 0.6-1.2s. The first playtest came back with "change of
-## view should be fater when pressing T, it takes too much time" — so this
-## is the fast end, and 0.5 it is. The fade has to be long enough to read
-## as a change of world and short enough that you are not waiting for it.
-@export var blend_seconds: float = 0.5
+## GDD.md §4.3 says 0.6-1.2s. Two people have now said the same thing
+## about it: "change of view should be fater when pressing T, it takes too
+## much time", and — from somebody who had never seen the game — "expected
+## change to be immediate with T". A world turning over should read as a
+## blink, not a dissolve. This is 0.3s, which is well below the GDD's
+## range: the GDD is the design, the playtest is the data, and the data
+## says the GDD is wrong here.
+##
+## The authored, story-beat version of this — a Verdict — can still take
+## its time. That is a different moment and it gets its own transition.
+@export var blend_seconds: float = 0.3
 
 var _layer: int = Layer.REALITY
 var _target: int = Layer.REALITY
@@ -33,14 +39,16 @@ var _blend: float = 0.0
 var _ink: float = 0.0
 var _blending: bool = false
 
-## The truth the CAMERA is filtered to, or -1 to follow the world.
+## What the READER sees, or -1 to follow the world.
 ##
-## The world's truth is global (D2) and this never changes it. But a camera
-## is a person's eyes: look through Sancho's and the picture is filtered the
-## way Sancho filters it, even while the world itself is in Book Truth.
+## This does NOT change the world's truth and does not change the world's
+## look. It is the truth the character you are driving is *reading*, and it
+## decides which form the objects take: the windmill is a mill or a giant
+## depending on who is looking at it.
 ##
-## This is the camera, not a second world. One world, one save field, one
-## truth — and two people making two things of it.
+## The camera is a person's eyes, but the world is still the world: one
+## world, one save field, one truth — and two people making two things of
+## it.
 var view_layer: int = -1
 var _view_blend: float = 0.0
 
@@ -87,32 +95,46 @@ func advance_blend(delta: float) -> void:
 			_layer = _target
 			EventBus.truth_blend_finished.emit(_layer)
 
-	var shown := _blend
+	# THE WORLD'S LOOK follows the world's truth. Always. One world, one
+	# uniform, one save field (D2).
+	RenderingServer.global_shader_parameter_set(GLOBAL_TRUTH, _blend)
+
+	# WHAT THE READER SEES is a separate value, and it drives the objects.
+	#
+	# The two have to be separate, or the game cannot tell its own two
+	# levers apart. The first stranger test asked, of the truth toggle and
+	# the madness toggle, "what is the difference? — they do the same".
+	# They looked the same because the grade followed the reader as well
+	# as the objects. Now:
+	#
+	#   T  the world changes   -> the whole picture changes
+	#   L  his madness changes -> only the objects change
+	#
+	# A mad knight insisting on a giant, standing in a world that has not
+	# changed, is a different picture from a world that has.
+	var speed := blend_seconds if blend_seconds > 0.0 else 1.0
 	if view_layer >= 0:
-		# The camera is looking through someone's eyes, and those eyes have
-		# their own idea of what is true.
-		var speed := blend_seconds if blend_seconds > 0.0 else 1.0
 		var view_target := 1.0 if view_layer == Layer.BOOK else 0.0
 		_view_blend = move_toward(_view_blend, view_target, delta / speed)
-		shown = _view_blend
 	else:
 		_view_blend = _blend
 
-	RenderingServer.global_shader_parameter_set(GLOBAL_TRUTH, shown)
 
-
-## Filter the camera to a truth. -1 follows the world again.
+## Set what the reader sees. -1 follows the world again.
 func set_view_layer(layer: int) -> void:
-	if view_layer == layer:
-		return
 	view_layer = layer
-	# Start the cross-fade from where the picture is now.
-	_view_blend = _blend
 
 
 ## The value the shader is showing right now: 0 = Reality, 1 = Book.
 func view_blend() -> float:
 	return _view_blend
+
+
+## The world's own truth, 0 = Reality, 1 = Book. This is what the shader
+## shows and what the save file stores. The reader's view_blend() is a
+## different thing: it is what one pair of eyes makes of it.
+func world_blend() -> float:
+	return _blend
 
 
 ## The current truth of the world.

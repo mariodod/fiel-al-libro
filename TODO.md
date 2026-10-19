@@ -10,37 +10,41 @@
       differently. TAB swaps; the world visibly changes because *you* changed.
 - [x] The reading rule, pinned down in code and in tests: `src/systems/perception.gd`
 - [x] The truth-layer shader actually renders (it had never rendered — see HANDOVER §7.7)
-- [x] **First playtest — six runs. The premise holds.** Run 4: *"less interesting when
-      both see the same thing"*. The disagreement is the thing, not the filter.
-      Full write-up: `docs/PLAYTEST_NOTES.md` §6.
-- [x] **Four of the six "but"s fixed and shipped** (same commit): camera-relative
-      movement, the camera cuts on a swap instead of sliding, the truth fade 0.9s → 0.5s,
-      and the perception tags are now a toggle (`F2`) instead of permanent handholding.
+- [x] **First playtest — six runs plus a stranger. The premise holds.** Run 4: *"less
+      interesting when both see the same thing"*. The stranger was surprised by the swap.
+      The disagreement is the thing, not the filter. Full write-up:
+      `docs/PLAYTEST_NOTES.md` §6.
+- [x] **Six of the eight "but"s fixed and shipped:** camera-relative movement, the camera
+      cuts on a swap instead of sliding, the truth fade 0.9s → 0.3s, the perception tags
+      are a toggle (`F2`), the camera's yaw is smoothed so it stops whipping sideways, and
+      **T and L now do visibly different things** (the world's look follows the world;
+      only the objects follow the reader).
 
 ### Still owed, and it is not code
 
-- [ ] **The stranger test.** Runs 18–19 of the playtest, still empty. Tags **off** (`F2`).
-      It is the only run that says whether the premise is legible to somebody who has
-      not been told. Do this before anything else.
-- [ ] **Press `L`.** Nobody has tested the madness. Push Quixote to Lost and then press
-      `T`: the world stops changing for him. That is the mechanic behind the meter, and
-      it is the most interesting lever in the build with no data on it.
-- [ ] **The other fourteen runs.** Six is a sample, not a signal.
+- [ ] **A stranger who does not know the keys.** The stranger inferred what `T` did from
+      its effect. Whether the mechanic teaches itself is the remaining question.
+- [ ] **Press `L` properly.** The stranger saw the madness; nobody has *tested* it. Push
+      Quixote to Lost and press `T`: the world stops changing for him. That is the
+      mechanic behind the meter.
+- [ ] **The other fourteen runs.** Seven data points is a sample, not a signal.
 
 ### Named work, straight out of the playtest
 
+- [ ] **B6 — the Examine verb, pulled forward. Highest priority.** *"I wanted to interact
+      with the book and the giant"* — two people, one of them a stranger. `Lectura` was
+      week 5–7; a player who cannot touch the thing that made them curious will not come
+      back. Build the cheapest possible "look at it and see what it really is" beat, and
+      do it before week 3–4's combat work.
 - [ ] **B5 — Quixote's reaction when he stops seeing the giant.** *"When quixote goes
       back to seeing reality some reaction from his side should happen."* A character
       beat, not a filter change. Barks, week 3–4.
-- [ ] **B6 — the Examine verb, pulled forward.** *"Seeing the rock i wanted to interact
-      with it, even more the book i expected to be able to interact with it and read
-      it."* `Lectura` was week 5–7; the player wants it in the first minute. Either pull
-      it forward or build the cheapest possible "examine and read one line" beat.
 - [ ] **B3 — the shipped game owes the companion barks.** The tag carried the second
       reading; a label is not a character. The disagreement has to be *told*, not read.
 
-> **The rule:** no more than two more primitives get built until the stranger's run is in
-> the observation log in `docs/PLAYTEST_NOTES.md`.
+> **The rule:** the premise is proven, so the rule against building more primitives is
+> lifted. Week 3–4 (combat) is the next milestone — but the Examine verb first, because
+> two people asked to touch the thing that surprised them.
 
 ## Still open (admin, not game work — these have long lead times)
 

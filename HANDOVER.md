@@ -165,6 +165,12 @@ loses the ability to perceive Reality as his Locura rises; Sancho needs the seco
 to perceive the Book at all. That is the whole mechanic, and it is why the truth toggle
 alone is not the game — the *swap* is.
 
+**Two values, and they must stay separate.** The world's *look* (`world_blend()`, the
+shader) follows the world's truth. The *reader's* reading (`view_blend()`, the objects)
+follows the character you are driving. When they were tangled together, pressing `T` and
+pressing `L` produced an identical picture, and a stranger asked what the difference was.
+There wasn't one. `tests/test_truth_layer.gd` now pins them apart.
+
 ---
 
 ## 7. Hard-won gotchas — read this before you write code
@@ -344,16 +350,23 @@ question.** The mechanic is built and legible: press `T` and the windmill become
 press `TAB` and, through Sancho's eyes, it is a windmill again. That is the premise, made
 visible.
 
-**And it has its first evidence.** Six runs of the grey box, 19 October 2026, written up
-in `docs/PLAYTEST_NOTES.md` §6. The verdict is *"yes, but"*: the premise holds — *"less
-interesting when both see the same thing"* (run 4) says the disagreement, not the filter,
-is what carries the game — and four of the six "but"s are fixed and shipped. The stranger
-test is still owed, and it is the only run that says whether the premise is legible to
-somebody who has not been told.
+**And it has its first evidence.** Six runs of the grey box by the owner and one by a
+stranger, 19 October 2026, written up in `docs/PLAYTEST_NOTES.md` §6. The verdict is
+*"yes, but"*: the premise holds — *"less interesting when both see the same thing"*
+(run 4) says the disagreement, not the filter, carries the game, and the stranger was
+surprised by the swap. Six of the eight "but"s are fixed and shipped, and the two that
+remain are named.
+
+**The stranger's run also found the best bug in the project.** "What is the difference
+between pressing T and L? They do the same." They did, because the shader's grade
+followed the reader as well as the objects. Now the world's *look* follows the world's
+truth and only the *objects* follow the reader, so a mad knight insisting on a giant
+stands in a world that has not changed — a different picture from the world itself
+turning over.
 
 **The fun is not fully proven.** A build that demonstrates a mechanic is not a mechanic
-that is fun. Six runs is a sample, not a signal, and the strangest data point in the
-project — a player who has never seen the game — is still missing.
+that is fun. Seven data points is a sample, not a signal, and the strangest data point
+still missing is a player who does not know the controls.
 
 ---
 
@@ -364,11 +377,11 @@ project — a player who has never seen the game — is still missing.
 3. Play the grey box: `tools\play.cmd`. `T` flips the world, `TAB` swaps characters, `V`
    gives Sancho the second sight, `L` pushes Quixote's Locura from Lucid to Lost, `F2`
    hides the perception tags.
-4. Read `docs/PLAYTEST_NOTES.md` §6 — the first playtest's findings, the four "but"s
-   already fixed, and the two named tasks (B5: Quixote's reaction; B6: the Examine verb).
-5. **The next task is not code.** It is the stranger's run: give the build to somebody
-   who has not seen it, with the tags off, and write down what they do in the first
-   thirty seconds. Weeks 3–4 (combat) can wait for that.
+4. Read `docs/PLAYTEST_NOTES.md` §6 — the playtest findings, the eight "but"s (six fixed),
+   and the two named tasks (B6: the Examine verb, which two people asked for; B5:
+   Quixote's reaction).
+5. **The next task is week 3–4 — but the Examine verb first.** It is the one thing a
+   player who had never seen the game asked to do, and it is scheduled for week 5–7.
 
 **Three rules for this project:**
 

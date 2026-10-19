@@ -137,19 +137,23 @@ has done its job — better now than in month 24.
 | 5 | when quijote goes back to seeing reality some reaction from his side should happen |  |  |  |
 | 6 | Seeing the rock i wanted to interact with it, even more the book i expected to be able to interact with it and read it |  |  |  |
 
-**The stranger's run** (run 18–19). What did they do in the first 30 seconds, without
-being told anything?
+**The stranger's run** (run 18–19), 19 October 2026. Somebody who had never seen the
+game, with the tags off, and nothing explained:
 
 ```
-(still owed)
+- Surprised by the swap mechanic.
+- Expected the change with T to be immediate.
+- The camera rotates sideways too fast.
+- "What is the difference between pressing T and L? They do the same."
+- Wanted to interact with the book and the giant.
 ```
 
 ---
 
-## 6. Findings — six runs, 19 October 2026
+## 6. Findings — six runs plus a stranger, 19 October 2026
 
-Six runs, not twenty, and no stranger yet. That is enough to answer the one question
-this exercise was built to answer, and not enough to answer the rest.
+Six runs of the owner's, and one stranger. That is enough to answer the one question this
+exercise was built to answer, and not enough to answer the rest.
 
 ### The premise holds
 
@@ -159,10 +163,16 @@ this exercise was built to answer, and not enough to answer the rest.
 | "Mechanic is still cool" — it survived repetition | 3 |
 | **"less interesting when both see the same thing"** | 4 |
 | "Seeing the rock i wanted to interact with it, even more the book i expected to be able to interact with it and read it" | 6 |
+| **"surprised by the swap mechanic"** | stranger |
 
 **Run 4 is the whole project in one line.** With the second sight on, the two characters
 agree — and the world got *less* interesting. The disagreement, not the filter, is what
 carries it. Everything downstream is built on that, or it is not built.
+
+**The stranger's surprise at the swap is the second half of the same finding.** Somebody
+who had never been told about the mechanic was surprised by the *character swap* — not by
+the truth toggle. That is P2 confirmed, and it is the closest thing to a verdict the
+project has.
 
 **Run 6 is the other half of the thesis**: a rock that is a book made the player want to
 pick it up and read it. The Book layer has to be *desirable*, not merely different, or
@@ -175,29 +185,54 @@ nobody will ever go looking for it.
 | B1 | "movement and camera feel weird… it moves relative to plane not camera" | The input was world-space. "Forward" has to mean *away from the camera*. | **Fixed** — camera-relative input |
 | B2 | "not sure about the transition when swapping… in the objects morphing rather than a direct view switch" | The camera *slid* across to the other character while the objects morphed. A cut reads as a page turn; a slide reads as a camera that lost the player. | **Fixed** — the camera cuts on a swap |
 | B3 | "Text showing what the other sees feels like too handholding" | The tag is a debug affordance. In the finished game the disagreement is carried by barks and VFX, not by a label. | **F2 toggles it now.** The shipped game still owes the barks. |
-| B4 | "change of view should be fater when pressing T, it takes too much time" | The cross-fade was 0.9s. | **Fixed** — 0.5s |
+| B4 | "change of view should be fater when pressing T, it takes too much time" / "expected change to be immediate with T" | The cross-fade was 0.9s. Two people, including a stranger, said the same thing. | **Fixed** — 0.3s |
 | B5 | "when quijote goes back to seeing reality some reaction from his side should happen" | A character beat is missing. The moment he stops seeing the giant has to be *felt*, not just observed. | **Named task** — barks, week 3–4 |
-| B6 | "Seeing the rock i wanted to interact with it, even more the book i expected to be able to interact with it and read it" | The *Examine* verb is wanted in the first minute of the game, not in week 5. | **Named task** — pull `Lectura` forward |
+| B6 | "Seeing the rock i wanted to interact with it… expected to be able to interact with it and read it" + "wanted to interact with book and giant" | The *Examine* verb is wanted in the first minute of the game, not in week 5. **Two independent people, one of them a stranger.** | **Named task** — pull `Lectura` forward |
+| B7 | "what is the difference between pressing T and L? they do the same" | **A real fault, and the most valuable note in the set.** The truth toggle and the madness toggle produced an *identical picture*. | **Fixed** — see below |
+| B8 | "camera rotates sideways too fast" | The camera copied the character's facing every frame, and the character snapped. | **Fixed** — the camera's yaw is smoothed, the character's turn is rate-limited |
+
+### B7 — the two levers looked the same, and it was a design fault, not a bug
+
+Pressing **T** changes the *world*. Pressing **L** changes *Quixote's madness*, and
+therefore only what *he* sees. But the shader's grade followed the reader as well as the
+objects, so both keys produced a giant on a gilded screen. The stranger asked the only
+question that mattered: *what is the difference?* There wasn't one.
+
+The fix separates the two values that were tangled together:
+
+| | the world's look | the objects |
+|---|---|---|
+| **T** — the world changes | changes | change |
+| **L** — his madness changes | does **not** change | change |
+
+So a mad knight insisting on a giant now stands in a flat, honest, Reality-graded world
+that has not changed — a completely different picture from the world itself turning over,
+and a better picture than either of them was alone. **The madness became a picture
+instead of a filter.** `tests/test_truth_layer.gd` now pins the two values apart, because
+this is exactly the kind of thing that silently merges back.
 
 ### The predictions, scored
 
 | # | Prediction | Verdict |
 |---|---|---|
 | P1 | The first `T` press lands | **Yes.** "exited to see something for the first time" |
-| P2 | The swap is the best moment, not the toggle | **Unclear.** The toggle landed; the *swap* was called "not sure" — but that was the transition, not the idea. Re-test after B2. |
+| P2 | The swap is the best moment, not the toggle | **Yes.** The stranger was surprised by the swap. Only the *transition* was wrong (B2). |
 | P3 | The tag is read once and ignored | **Yes** — and worse: it is handholdy, not merely ignorable |
-| P4 | Madness makes it *better* | **Untested.** Nobody pressed `L`. It is the most interesting lever in the build and it has no data. |
-| P5 | Somebody will try to attack the mill | **Yes, in spirit** — run 6: they reached for the rock and the book |
+| P4 | Madness makes it *better* | **Seen, not tested.** The stranger saw it working; it also produced a distinct picture, which is what B7 was missing. Give it a proper run. |
+| P5 | Somebody will try to attack the mill | **Yes** — the stranger wanted to interact with the book and the giant |
 | P6 | The rock-as-a-book is the thesis in one object | **Yes** |
 
 ### What is still owed
 
-- **The stranger test (runs 18–19).** Not done, and it is the only run that says whether
-  the premise is legible to somebody who has not been told. Do it with the tags **off**
-  (`F2`): a stranger should find the second reading by swapping, not by reading it.
-- **The other fourteen runs.** Six is a sample, not a signal.
-- **P4 — the madness.** Untouched. Push Quixote to Lost (`L`) and then press `T`: the
-  world stops changing for him, and that is the mechanic behind the meter.
+- **A stranger who does not already know the keys.** The stranger's note *"expected
+  change to be immediate with T"* suggests they did not know what T did and inferred it
+  from the effect. A stranger who does not know the controls is a different test, and it
+  is the one that decides whether the mechanic teaches itself.
+- **The other fourteen runs.** Seven data points is a sample, not a signal.
+- **B6 — the Examine verb.** Two people, one of them a stranger, reached for the book
+  and the giant. This is the most-requested thing in the build and it is scheduled for
+  week 5–7. Consider pulling it into week 3–4: a player who cannot touch the thing that
+  made them curious will not come back.
 
 ---
 
@@ -212,11 +247,13 @@ nobody will ever go looking for it.
   work that is now named instead of guessed at. The "but" is the most valuable output of
   this exercise.
 
-> **Verdict, 19 October 2026: "yes, but."** The premise holds — run 4 says the
-> disagreement is the thing, and run 6 says the Book layer is worth reaching for. Four of
-> the six "but"s are fixed and shipped in the same commit. B5 and B6 are named work, and
-> the stranger test is still owed. Nothing else gets built until the log has a stranger
-> in it.
+> **Verdict, 19 October 2026: "yes, but."** The premise holds, and the stranger confirms
+> it from the outside: the swap surprised them, and the two levers now do visibly
+> different things. Six of the eight "but"s are fixed and shipped. B5 and B6 are named
+> work, and B6 now has two independent people asking for it.
+>
+> **The next task is week 3–4 — but the Examine verb first.** It is the one thing a
+> player who has never seen the game asked to do.
 
 
 **The rule:** no more than two more primitives get built until this file has an
