@@ -28,6 +28,15 @@ param(
 
 $ErrorActionPreference = 'Stop'
 
+# The project root: this script's directory's parent.
+#
+# Godot resolves `res://` against the CURRENT WORKING DIRECTORY. Run it
+# from anywhere else and Godot finds no project, so instead of the game
+# you get the Project Manager. Every documented command therefore runs
+# from the repository root, whatever directory you typed it in.
+$repoRoot = Split-Path -Parent $PSScriptRoot
+Set-Location $repoRoot
+
 function Find-Godot {
     if ($env:GODOT_BIN -and (Test-Path $env:GODOT_BIN)) {
         return $env:GODOT_BIN
@@ -94,6 +103,14 @@ if ($GodotArgs.Count -eq 0) {
 }
 
 Write-Host "[godot] $godot" -ForegroundColor DarkGray
+Write-Host "[project] $repoRoot" -ForegroundColor DarkGray
+
+# Pin the project explicitly as well as through the working directory:
+# `res://` then always means THIS project, whatever the caller asked for.
+$projectArgs = @()
+if ($GodotArgs -notcontains '--path') {
+    $projectArgs = @('--path', $repoRoot)
+}
 
 # Godot writes warnings and errors to stderr even when the run SUCCEEDS,
 # and PowerShell turns native stderr into a terminating error when
@@ -106,5 +123,5 @@ $ErrorActionPreference = 'Continue'
 if (Get-Variable -Name PSNativeCommandUseErrorActionPreference -ErrorAction SilentlyContinue) {
     $PSNativeCommandUseErrorActionPreference = $false
 }
-& $godot @GodotArgs 2>&1 | ForEach-Object { "$_" }
+& $godot @projectArgs @GodotArgs 2>&1 | ForEach-Object { "$_" }
 exit $LASTEXITCODE

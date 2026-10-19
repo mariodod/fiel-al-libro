@@ -14,5 +14,10 @@ setlocal
 set "SCENE=%~1"
 if "%SCENE%"=="" set "SCENE=res://src/world/slice.tscn"
 
+REM Run from the project root. Godot resolves res:// against the current
+REM working directory: launched from anywhere else it finds no project,
+REM and shows the Project Manager instead of the game.
+cd /d "%~dp0.."
+
 powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0godot.ps1" "%SCENE%"
 endlocal

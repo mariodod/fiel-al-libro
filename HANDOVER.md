@@ -284,6 +284,17 @@ natively by `cmd.exe` — no association, no execution policy, and it works from
 and from a double-click in Explorer. Use it for anything interactive; keep `godot.ps1`
 for the headless commands, which never touch a scene file by association.
 
+### 7.13 Godot resolves `res://` against the working directory
+
+The same command then opened **Godot** — the Project Manager — instead of the game. Cause:
+Godot looks for `project.godot` in the **current working directory**. Launched from
+anywhere else it finds no project, so it shows the manager.
+
+`tools\godot.ps1` now does two things: it changes directory to the repository root, and it
+passes `--path <repo root>` explicitly. So every documented command works from any
+directory, and `build/` always lands in the project. Check the `[project]` line it prints —
+if that path is wrong, `res://` is resolving against the wrong project.
+
 ---
 
 ## 8. The IP situation — read before you write store copy
