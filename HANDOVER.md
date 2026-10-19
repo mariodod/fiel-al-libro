@@ -344,10 +344,16 @@ question.** The mechanic is built and legible: press `T` and the windmill become
 press `TAB` and, through Sancho's eyes, it is a windmill again. That is the premise, made
 visible.
 
-**The fun has still not been proven.** A build that demonstrates a mechanic is not a
-mechanic that is fun. The next task is twenty runs of the grey box and a page of honest
-notes — `docs/PLAYTEST_NOTES.md`, whose observation log is deliberately empty. Nothing
-else gets built until it has entries in it.
+**And it has its first evidence.** Six runs of the grey box, 19 October 2026, written up
+in `docs/PLAYTEST_NOTES.md` §6. The verdict is *"yes, but"*: the premise holds — *"less
+interesting when both see the same thing"* (run 4) says the disagreement, not the filter,
+is what carries the game — and four of the six "but"s are fixed and shipped. The stranger
+test is still owed, and it is the only run that says whether the premise is legible to
+somebody who has not been told.
+
+**The fun is not fully proven.** A build that demonstrates a mechanic is not a mechanic
+that is fun. Six runs is a sample, not a signal, and the strangest data point in the
+project — a player who has never seen the game — is still missing.
 
 ---
 
@@ -356,13 +362,13 @@ else gets built until it has entries in it.
 1. Read `README.md`, then this file, then `GDD.md` (ask the owner for it if you don't have it).
 2. Run `tools\setup.ps1` and get the tests green.
 3. Play the grey box: `tools\play.cmd`. `T` flips the world, `TAB` swaps characters, `V`
-   gives Sancho the second sight, `L` pushes Quixote's Locura from Lucid to Lost. Play it
-   twenty times and fill in `docs/PLAYTEST_NOTES.md`.
-4. Read `docs/NEXT_STEPS.md`. **Weeks 1–2 are built; week 3–4 is the next thing to build
-   — but not before the playtest log has entries in it.**
-5. **The one thing that matters:** the vertical slice exists to answer a single question —
-   *is the two-truths mechanic fun?* If it isn't, find out in month 3, not month 24. Everything
-   else is secondary.
+   gives Sancho the second sight, `L` pushes Quixote's Locura from Lucid to Lost, `F2`
+   hides the perception tags.
+4. Read `docs/PLAYTEST_NOTES.md` §6 — the first playtest's findings, the four "but"s
+   already fixed, and the two named tasks (B5: Quixote's reaction; B6: the Examine verb).
+5. **The next task is not code.** It is the stranger's run: give the build to somebody
+   who has not seen it, with the tags off, and write down what they do in the first
+   thirty seconds. Weeks 3–4 (combat) can wait for that.
 
 **Three rules for this project:**
 

@@ -47,8 +47,25 @@ func _process(delta: float) -> void:
 
 	var direction := Input.get_vector(&"move_left", &"move_right", &"move_forward", &"move_back")
 	var sprint := Input.is_action_pressed(&"sprint")
-	active_pawn.move(direction, sprint)
+	active_pawn.move(_in_camera_frame(direction), sprint)
 	active_pawn.block(Input.is_action_pressed(&"block"))
+
+
+## Put the input into the camera's frame of reference.
+##
+## "Forward" has to mean "away from the camera", not "north". Moving
+## relative to the world plane is the classic third-person mistake, and
+## the first playtest named it on run 1: "it moves relative to plane not
+## camera". The pawn's own movement stays world-space — the companion AI
+## uses that too, and it has no camera.
+func _in_camera_frame(direction: Vector2) -> Vector2:
+	if direction.length_squared() < 0.0001:
+		return direction
+	var camera := get_viewport().get_camera_3d()
+	if camera == null:
+		return direction
+	var world := Basis(Vector3.UP, camera.global_rotation.y) * Vector3(direction.x, 0.0, direction.y)
+	return Vector2(world.x, world.z).normalized()
 
 
 ## Swap characters. Free, instant, no pause.

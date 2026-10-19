@@ -41,6 +41,17 @@ extends Node3D
 
 var _objects: Array[TruthObject] = []
 var _show_help: bool = true
+## The floating tags that say what the companion is looking at.
+##
+## The first playtest: "Text showing what the other sees feels like too
+## handholding, the layer should change characters to see the whole world".
+## That is right — in the finished game the disagreement has to be carried
+## by barks and VFX, not by a label. The tag stays here as a test
+## affordance, and F2 turns it off.
+##
+## For the stranger test (runs 18-19 of the playtest), turn it OFF: a
+## stranger should find the second reading by swapping, not by reading it.
+var _show_tags: bool = true
 ## Sancho's second sight.
 ##
 ## OFF by default, and that default is the whole point: without the lens
@@ -155,6 +166,10 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif event.is_action_pressed(&"toggle_madness"):
 		_madness_high = not _madness_high
 		Locura.set_for(&"quixote", LOCURA_LOST if _madness_high else LOCURA_LUCID)
+	elif event.is_action_pressed(&"toggle_tags"):
+		_show_tags = not _show_tags
+		for object in _objects:
+			object.show_tag = _show_tags
 
 
 # ── Per frame ───────────────────────────────────────────────────────────
@@ -271,6 +286,11 @@ func _on_character_switched(_from_id: StringName, _to_id: StringName) -> void:
 	# Move the camera to whoever we are now driving, and hand the other
 	# one to the companion AI.
 	if camera_rig != null and player != null and player.active_pawn != null:
+		# Cut, do not drift. The first playtest: "not sure about the
+		# transition when swapping... in the objects morphing rather than a
+		# direct view switch". A cut reads as a page turn; a slide reads as
+		# a camera that lost track of the player.
+		camera_rig.snap()
 		camera_rig.target = player.active_pawn
 	if ai != null and player != null:
 		ai.pawn = player.other_pawn

@@ -314,7 +314,7 @@ msgstr "TAB changer de compagnon · T la vérité du monde"
 
 #. TRANSLATORS: Control hint, line 3.
 msgid "ui.slice.help.3"
-msgstr "V seconde vue · L Folie · F1 cette aide"
+msgstr "V seconde vue · L Folie · F1 cette aide · F2 les étiquettes"
 
 #. TRANSLATORS: The Reality layer: what actually happened.
 msgid "ui.layer.reality"

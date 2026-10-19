@@ -27,6 +27,7 @@ const KEY_BINDINGS := {
 	"toggle_second_sight": [KEY_V],
 	"toggle_madness": [KEY_L],
 	"toggle_help": [KEY_F1],
+	"toggle_tags": [KEY_F2],
 	"toggle_hud": [KEY_H],
 	"shelf": [KEY_I],
 	"codex": [KEY_C],

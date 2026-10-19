@@ -292,7 +292,7 @@ msgstr "TAB swap character · T the world's truth"
 
 #. TRANSLATORS: Control hint, line 3.
 msgid "ui.slice.help.3"
-msgstr "V second sight · L Locura · F1 this help"
+msgstr "V second sight · L Locura · F1 this help · F2 the tags"
 
 #. TRANSLATORS: The Reality layer: what actually happened.
 msgid "ui.layer.reality"

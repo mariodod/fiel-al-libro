@@ -10,13 +10,37 @@
       differently. TAB swaps; the world visibly changes because *you* changed.
 - [x] The reading rule, pinned down in code and in tests: `src/systems/perception.gd`
 - [x] The truth-layer shader actually renders (it had never rendered — see HANDOVER §7.7)
-- [ ] **Play it 20 times and fill in `docs/PLAYTEST_NOTES.md`.** The build is the easy
-      part. This is the task.
-- [ ] **Show it to two people who have not seen it. Record it. Watch it later.**
-- [ ] Write down the "but" — every "but" they come back with is a named week of work.
+- [x] **First playtest — six runs. The premise holds.** Run 4: *"less interesting when
+      both see the same thing"*. The disagreement is the thing, not the filter.
+      Full write-up: `docs/PLAYTEST_NOTES.md` §6.
+- [x] **Four of the six "but"s fixed and shipped** (same commit): camera-relative
+      movement, the camera cuts on a swap instead of sliding, the truth fade 0.9s → 0.5s,
+      and the perception tags are now a toggle (`F2`) instead of permanent handholding.
 
-> **The rule:** no more than two more primitives get built until the observation log in
-> `docs/PLAYTEST_NOTES.md` has entries in it.
+### Still owed, and it is not code
+
+- [ ] **The stranger test.** Runs 18–19 of the playtest, still empty. Tags **off** (`F2`).
+      It is the only run that says whether the premise is legible to somebody who has
+      not been told. Do this before anything else.
+- [ ] **Press `L`.** Nobody has tested the madness. Push Quixote to Lost and then press
+      `T`: the world stops changing for him. That is the mechanic behind the meter, and
+      it is the most interesting lever in the build with no data on it.
+- [ ] **The other fourteen runs.** Six is a sample, not a signal.
+
+### Named work, straight out of the playtest
+
+- [ ] **B5 — Quixote's reaction when he stops seeing the giant.** *"When quixote goes
+      back to seeing reality some reaction from his side should happen."* A character
+      beat, not a filter change. Barks, week 3–4.
+- [ ] **B6 — the Examine verb, pulled forward.** *"Seeing the rock i wanted to interact
+      with it, even more the book i expected to be able to interact with it and read
+      it."* `Lectura` was week 5–7; the player wants it in the first minute. Either pull
+      it forward or build the cheapest possible "examine and read one line" beat.
+- [ ] **B3 — the shipped game owes the companion barks.** The tag carried the second
+      reading; a label is not a character. The disagreement has to be *told*, not read.
+
+> **The rule:** no more than two more primitives get built until the stranger's run is in
+> the observation log in `docs/PLAYTEST_NOTES.md`.
 
 ## Still open (admin, not game work — these have long lead times)
 

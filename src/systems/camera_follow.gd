@@ -17,6 +17,14 @@ var _desired: Vector3 = Vector3.ZERO
 var _placed: bool = false
 
 
+## Snap the camera to its target on the next frame instead of easing there.
+##
+## Used when you swap characters. A camera that slides across to the other
+## character reads as a mistake; a camera that cuts reads as a page turn.
+func snap() -> void:
+	_placed = false
+
+
 func _process(delta: float) -> void:
 	if target == null:
 		return

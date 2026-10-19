@@ -20,7 +20,12 @@ const GLOBAL_INK := &"ink_amount"
 const GLOBAL_SPEED := &"layer_blend_speed"
 
 ## Seconds for a full Reality <-> Book cross-fade.
-@export var blend_seconds: float = 0.9
+##
+## GDD.md §4.3 says 0.6-1.2s. The first playtest came back with "change of
+## view should be fater when pressing T, it takes too much time" — so this
+## is the fast end, and 0.5 it is. The fade has to be long enough to read
+## as a change of world and short enough that you are not waiting for it.
+@export var blend_seconds: float = 0.5
 
 var _layer: int = Layer.REALITY
 var _target: int = Layer.REALITY
