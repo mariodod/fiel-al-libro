@@ -12,11 +12,15 @@ mad knight and his sane squire.**
 
 | File | What it is |
 |---|---|
-| [`GDD.md`](GDD.md) | The game design. Two-truths system, characters, the *Lectura* investigation mechanic, combat, progression, the library of Spanish myths, bestiary, regions, the 4 DLCs, the credits song, art & audio direction, cultural-sensitivity and IP rules. |
+| **[`HANDOVER.md`](HANDOVER.md)** | **Start here.** Full orientation for anyone picking this up cold: what's built, the architecture, the hard-won Godot gotchas, and the IP situation. |
+| **[`docs/NEXT_STEPS.md`](docs/NEXT_STEPS.md)** | The plan for the next 12 weeks, task by task, with acceptance criteria. |
+| [`GDD.md`](GDD.md) | The game design. Two-truths system, characters, the *Lectura* investigation mechanic, combat, progression, the library of Spanish myths, bestiary, regions, the 4 DLCs, the credits song, art & audio direction, cultural-sensitivity and IP rules. *(Private — on the owner's machine, gitignored and kept out of git history.)* |
 | [`TECH_STACK.md`](TECH_STACK.md) | Engine choice and why, engine configuration, project architecture, asset pipeline, performance budgets, save system, testing/CI, Steam, and the **full i18n pipeline**. |
 | [`ROADMAP.md`](ROADMAP.md) | 12-week vertical slice, 30-month plan, scope-cut tiers, weekly rituals, risk register. |
+| [`TODO.md`](TODO.md) | The live task list. |
 | [`locale/`](locale/) | Working sample translation files: `messages.pot` (template), `en.po`, `es.po`, `fr.po`. |
 | [`assets/manifiesto/`](assets/manifiesto/) | Sample "Book layer" content structure — how a real 1605 fragment is stored, sourced, and modernized per language. |
+| [`tools/`](tools/) | `setup.ps1` (one-command machine setup) and `godot.ps1` (finds the Godot binary and forwards args). |
 
 ---
 
@@ -75,27 +79,34 @@ Settled and binding — see [`GDD.md` §21](GDD.md) for the reasoning behind eac
 ## Getting started
 
 ```bash
-# Godot 4.7.2+ and Git LFS are the only requirements.
 git clone https://github.com/mariodod/fiel-al-libro.git
 cd fiel-al-libro
-git lfs install          # once per machine
-godot --headless --editor --quit   # first import
-godot .                 # open the editor
+powershell -ExecutionPolicy Bypass -File tools\setup.ps1
 ```
+
+That checks git/LFS/Godot, imports the project, runs the test suite, and prints the four things
+that still need a human. Then:
+
+```bash
+.\tools\godot.ps1 res://src/world/main.tscn   # play the grey-box
+```
+
+**The grey-box scene** is the Phase 0 milestone: walk around, press **TAB** to swap Quixote
+and Sancho, press **T** to flip the world between Reality and Book. Ugly on purpose — it proves
+the two core systems work.
 
 **Tools in this repo** (all run headless, no extra dependencies):
 
 | Command | What it does |
 |---|---|
-| `godot --headless res://tests/test_runner.tscn` | Runs the test suite. Exit 0 = green. |
-| `godot --headless --script res://src/tools/setup_input_map.gd` | Writes the input map into `project.godot`. |
-| `godot --headless --script res://src/tools/setup_translations.gd` | Registers `locale/*.po` with the engine. **Run after adding a language** — without it every `tr()` silently returns the raw key. |
-| `godot --headless --script res://src/tools/sync_locales.gd` | Brings every `locale/*.po` in line with `messages.pot`; reports orphans and duplicates. |
-| `godot --headless --export-release "Windows Desktop" build/FielAlLibro.exe` | Builds. Needs export templates (Editor → Manage Export Templates). |
+| `.\tools\godot.ps1 --headless res://tests/test_runner.tscn` | Runs the test suite. Exit 0 = green. |
+| `.\tools\godot.ps1 --headless --script res://src/tools/setup_input_map.gd` | Writes the input map into `project.godot`. |
+| `.\tools\godot.ps1 --headless --script res://src/tools/setup_translations.gd` | Registers `locale/*.po` with the engine. **Run after adding a language** — without it every `tr()` silently returns the raw key. |
+| `.\tools\godot.ps1 --headless --script res://src/tools/sync_locales.gd` | Brings every `locale/*.po` in line with `messages.pot`; reports orphans and duplicates. |
+| `.\tools\godot.ps1 --headless --export-release "Windows Desktop" build/FielAlLibro.exe` | Builds. Needs export templates (Editor → Manage Export Templates). |
 
-**The grey-box scene** (`src/world/main.tscn`) is the Phase 0 milestone: walk around, press
-**TAB** to swap Quixote and Sancho, press **T** to flip the world between Reality and Book.
-Ugly on purpose — it proves the two core systems work.
+> `tools/godot.ps1` exists because winget may not put Godot on PATH (it needs admin rights to
+> create the alias). Use it instead of calling `godot` directly.
 
 ---
 
