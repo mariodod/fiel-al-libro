@@ -34,7 +34,7 @@ impressions in it.
 `res://src/world/slice.tscn` — run it with:
 
 ```bash
-.\tools\godot.ps1 res://src/world/slice.tscn
+tools\play.cmd
 ```
 
 | Key | What it does |

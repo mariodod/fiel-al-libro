@@ -86,13 +86,19 @@ admin rights to create the alias). Use it instead of calling `godot` directly:
 
 | Command | What it does |
 |---|---|
+| `tools\play.cmd` | **Play the week 1–2 grey box.** `tools\play.cmd res://some/scene.tscn` plays any scene. |
 | `.\tools\godot.ps1 --headless res://tests/test_runner.tscn` | **Run the tests.** Exit 0 = green. |
 | `.\tools\godot.ps1 --headless --editor --quit` | Import the project (first run, or after adding assets). |
 | `.\tools\godot.ps1 --headless --script res://src/tools/setup_input_map.gd` | Write the input map into `project.godot`. |
 | `.\tools\godot.ps1 --headless --script res://src/tools/setup_translations.gd` | **Register `locale/*.po` with the engine.** Run after adding a language. |
 | `.\tools\godot.ps1 --headless --script res://src/tools/sync_locales.gd` | Bring every locale in line with the template; report orphans and duplicates. |
 | `.\tools\godot.ps1 --headless --export-release "Windows Desktop" build/FielAlLibro.exe` | Build (needs `build/` to exist). |
-| `.\tools\godot.ps1 res://src/world/slice.tscn` | **Play the week 1–2 grey box.** TAB swaps characters, T flips the world, V the second sight, L the Locura. |
+
+> **To play, use `tools\play.cmd`, not `.\tools\godot.ps1 <scene>`.** Windows resolves a
+> `.ps1` and a `.tscn` by file association, and on some machines that hands the scene to
+> a text editor or a notes app instead of to Godot. A `.cmd` is executed natively by
+> `cmd.exe`: no association, no execution policy, works from any shell and from a
+> double-click. `.\tools\godot.ps1` with no arguments prints this list.
 
 CI (`.github/workflows/ci.yml`) runs on every push: import check → tests → Windows + Linux
 exports → artifacts.
@@ -265,6 +271,19 @@ the scene root, not to the node that owns the property. Rather than fight it, wi
 references in code (`camera_rig.target = quixote`) — a camera pointed at nothing is a
 silent failure, and code makes it impossible to miss.
 
+### 7.12 Windows will hand a `.tscn` to your notes app if you let it
+
+`.\tools\godot.ps1 res://src/world/slice.tscn` worked on the build machine and opened the
+scene **in the notes app** on the owner's. Nothing was wrong with the script: Windows
+resolves `.ps1` and `.tscn` by *file association*, and whatever the machine has
+associated with those extensions wins over what you typed. A scene file is not a document;
+it is an argument.
+
+The fix is to stop depending on associations: **`tools\play.cmd`**. A `.cmd` is executed
+natively by `cmd.exe` — no association, no execution policy, and it works from any shell
+and from a double-click in Explorer. Use it for anything interactive; keep `godot.ps1`
+for the headless commands, which never touch a scene file by association.
+
 ---
 
 ## 8. The IP situation — read before you write store copy
@@ -325,9 +344,9 @@ else gets built until it has entries in it.
 
 1. Read `README.md`, then this file, then `GDD.md` (ask the owner for it if you don't have it).
 2. Run `tools\setup.ps1` and get the tests green.
-3. Play the grey box: `.\tools\godot.ps1 res://src/world/slice.tscn`. `T` flips the world,
-   `TAB` swaps characters, `V` gives Sancho the second sight, `L` pushes Quixote's Locura
-   from Lucid to Lost. Play it twenty times and fill in `docs/PLAYTEST_NOTES.md`.
+3. Play the grey box: `tools\play.cmd`. `T` flips the world, `TAB` swaps characters, `V`
+   gives Sancho the second sight, `L` pushes Quixote's Locura from Lucid to Lost. Play it
+   twenty times and fill in `docs/PLAYTEST_NOTES.md`.
 4. Read `docs/NEXT_STEPS.md`. **Weeks 1–2 are built; week 3–4 is the next thing to build
    — but not before the playtest log has entries in it.**
 5. **The one thing that matters:** the vertical slice exists to answer a single question —

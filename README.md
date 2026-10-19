@@ -88,8 +88,15 @@ That checks git/LFS/Godot, imports the project, runs the test suite, and prints 
 that still need a human. Then:
 
 ```bash
-.\tools\godot.ps1 res://src/world/slice.tscn   # play the grey-box
+tools\play.cmd   # play the grey-box
 ```
+
+> **Use `tools\play.cmd`, not `.\tools\godot.ps1 <scene>`, to play.** Windows decides what
+> to do with a `.ps1` and a `.tscn` by file association, and on some machines that means
+> the scene gets handed to a text editor or a notes app instead of to Godot. A `.cmd` is
+> executed natively by `cmd.exe`, with no association and no execution policy in the way.
+> `play.cmd` takes a scene as an argument, so `tools\play.cmd res://src/world/main.tscn`
+> works too.
 
 **The grey-box scene** is the vertical slice's week 1–2 build: a windmill that is a giant
 in the Book, a rock that is a book in the Book, and two characters reading the same world

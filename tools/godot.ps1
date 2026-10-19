@@ -81,6 +81,18 @@ Or set the path explicitly:
     exit 1
 }
 
+if ($GodotArgs.Count -eq 0) {
+    Write-Host ""
+    Write-Host "  Usage:" -ForegroundColor Cyan
+    Write-Host "    .\tools\godot.ps1 res://src/world/slice.tscn               play a scene"
+    Write-Host "    .\tools\godot.ps1 --headless res://tests/test_runner.tscn   run the tests"
+    Write-Host "    .\tools\godot.ps1 --headless --editor --quit             import the project"
+    Write-Host ""
+    Write-Host "  Or just play the game:  .\tools\play.cmd" -ForegroundColor DarkCyan
+    Write-Host ""
+    exit 0
+}
+
 Write-Host "[godot] $godot" -ForegroundColor DarkGray
 
 # Godot writes warnings and errors to stderr even when the run SUCCEEDS,
