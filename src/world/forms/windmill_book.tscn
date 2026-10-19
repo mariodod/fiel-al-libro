@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3]
+
+[sub_resource type="BoxMesh" id="BoxMesh_leg"]
+size = Vector3(1, 4, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_torso"]
+size = Vector3(2.8, 3.8, 1.8)
+
+[sub_resource type="BoxMesh" id="BoxMesh_belt"]
+size = Vector3(2.95, 0.5, 1.95)
+
+[sub_resource type="BoxMesh" id="BoxMesh_arm"]
+size = Vector3(0.55, 6.4, 0.55)
+
+[sub_resource type="BoxMesh" id="BoxMesh_head"]
+size = Vector3(1.1, 1.1, 1.1)
+
+[sub_resource type="StandardMaterial3D" id="Mat_flesh"]
+albedo_color = Color(0.56, 0.45, 0.36, 1)
+roughness = 0.75
+
+[sub_resource type="StandardMaterial3D" id="Mat_cloth"]
+albedo_color = Color(0.47, 0.29, 0.25, 1)
+roughness = 0.85
+
+[node name="WindmillBook" type="Node3D"]
+
+[node name="LegLeft" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.85, 2, 0)
+mesh = SubResource("BoxMesh_leg")
+material_override = SubResource("Mat_flesh")
+
+[node name="LegRight" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.85, 2, 0)
+mesh = SubResource("BoxMesh_leg")
+material_override = SubResource("Mat_flesh")
+
+[node name="Belt" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.3, 0)
+mesh = SubResource("BoxMesh_belt")
+material_override = SubResource("Mat_cloth")
+
+[node name="Torso" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.9, 0)
+mesh = SubResource("BoxMesh_torso")
+material_override = SubResource("Mat_flesh")
+
+[node name="Head" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.6, 0)
+mesh = SubResource("BoxMesh_head")
+material_override = SubResource("Mat_flesh")
+
+[node name="ArmLeft" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.85, 7, 0)
+mesh = SubResource("BoxMesh_arm")
+material_override = SubResource("Mat_flesh")
+
+[node name="ArmRight" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.85, 7, 0)
+mesh = SubResource("BoxMesh_arm")
+material_override = SubResource("Mat_flesh")

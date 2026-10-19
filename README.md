@@ -88,12 +88,14 @@ That checks git/LFS/Godot, imports the project, runs the test suite, and prints 
 that still need a human. Then:
 
 ```bash
-.\tools\godot.ps1 res://src/world/main.tscn   # play the grey-box
+.\tools\godot.ps1 res://src/world/slice.tscn   # play the grey-box
 ```
 
-**The grey-box scene** is the Phase 0 milestone: walk around, press **TAB** to swap Quixote
-and Sancho, press **T** to flip the world between Reality and Book. Ugly on purpose — it proves
-the two core systems work.
+**The grey-box scene** is the vertical slice's week 1–2 build: a windmill that is a giant
+in the Book, a rock that is a book in the Book, and two characters reading the same world
+differently. Walk around, press **TAB** to swap Quixote and Sancho, press **T** to flip the
+world between Reality and Book, **V** for Sancho's second sight, **L** to push Quixote's
+Locura from Lucid to Lost. Ugly on purpose — it proves the two core systems work.
 
 **Tools in this repo** (all run headless, no extra dependencies):
 

@@ -33,6 +33,13 @@ var is_dead: bool = false
 ## sees Reality. Set by the driver.
 var perceived_layer: int = 0
 
+## The second sight: the lens that lets Sancho see the Book.
+##
+## In the full game this is an ability and an item you find. In the slice it
+## is a key, because the slice exists to show the disagreement between the
+## two readings, and the disagreement needs a switch.
+var second_sight: bool = false
+
 const GRAVITY := 18.0
 const WALK_SPEED := 4.2
 const RUN_SPEED := 6.8
@@ -46,7 +53,7 @@ func _ready() -> void:
 		character_id = data.id
 		max_health = 100.0
 		stamina = data.max_stamina
-		perceived_layer = data.truth_layer_affinity
+	perceived_layer = Perception.reading_for(character_id, TruthLayer.layer(), second_sight)
 	add_to_group(&"pawns")
 	EventBus.player_spawned.emit(self)
 
@@ -149,11 +156,21 @@ func revive() -> void:
 ## Can this pawn perceive a given truth? Quixote cannot, while he is deep in
 ## his madness. See GDD.md §4.2.
 func can_perceive(layer: int) -> bool:
-	if character_id == &"sancho":
-		return true
-	if layer == 0:
-		return Locura.can_perceive_reality(character_id)
-	return true
+	return Perception.can_perceive(character_id, layer, second_sight)
+
+
+## The truth this pawn is reading right now, given the world's truth.
+##
+## This is the whole mechanic in one line: the world has one truth, and two
+## people make two things of it.
+func perceived_layer_for(world_layer: int) -> int:
+	return Perception.reading_for(character_id, world_layer, second_sight)
+
+
+## Recompute and cache the reading.
+func refresh_perception(world_layer: int) -> int:
+	perceived_layer = perceived_layer_for(world_layer)
+	return perceived_layer
 
 
 ## Switch which truth this pawn reads. Called by the Verdict system and by

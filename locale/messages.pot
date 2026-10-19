@@ -351,3 +351,105 @@ msgstr ""
 #. TRANSLATORS: The player character Sancho, informal register.
 msgid "character.sancho"
 msgstr ""
+
+# --- WEEK 1-2 GREY BOX (the vertical slice sandbox) -------------------------
+
+#. TRANSLATORS: The title of the Week 1-2 grey box HUD.
+msgid "ui.slice.title"
+msgstr ""
+
+#. TRANSLATORS: HUD line: the truth the world is in. Format: %s.
+msgid "ui.slice.line.world"
+msgstr ""
+
+#. TRANSLATORS: HUD line: the character you are driving and what they read. Format: %s, %s.
+msgid "ui.slice.line.you"
+msgstr ""
+
+#. TRANSLATORS: HUD line: the companion and what they read. Format: %s, %s.
+msgid "ui.slice.line.companion"
+msgstr ""
+
+#. TRANSLATORS: HUD line: whether Sancho has the second sight. Format: %s.
+msgid "ui.slice.line.second_sight"
+msgstr ""
+
+#. TRANSLATORS: HUD line: Quixote's madness. Format: %d, %s.
+msgid "ui.slice.line.locura"
+msgstr ""
+
+#. TRANSLATORS: HUD line: one object and what each character calls it. Format: %s, %s, %s, %s, %s.
+msgid "ui.slice.line.object"
+msgstr ""
+
+#. TRANSLATORS: Control hint, line 1.
+msgid "ui.slice.help.1"
+msgstr ""
+
+#. TRANSLATORS: Control hint, line 2.
+msgid "ui.slice.help.2"
+msgstr ""
+
+#. TRANSLATORS: Control hint, line 3.
+msgid "ui.slice.help.3"
+msgstr ""
+
+#. TRANSLATORS: The Reality layer: what actually happened.
+msgid "ui.layer.reality"
+msgstr ""
+
+#. TRANSLATORS: The Book layer: what the novel says.
+msgid "ui.layer.book"
+msgstr ""
+
+#. TRANSLATORS: The word "on", for a switch.
+msgid "ui.on"
+msgstr ""
+
+#. TRANSLATORS: The word "off", for a switch.
+msgid "ui.off"
+msgstr ""
+
+#. TRANSLATORS: The lowest madness band: Lucid.
+msgid "ui.locura.lucid"
+msgstr ""
+
+#. TRANSLATORS: Madness band 2: Displaced.
+msgid "ui.locura.displaced"
+msgstr ""
+
+#. TRANSLATORS: Madness band 3: Lost.
+msgid "ui.locura.lost"
+msgstr ""
+
+#. TRANSLATORS: Madness band 4: Absorbed.
+msgid "ui.locura.absorbed"
+msgstr ""
+
+#. TRANSLATORS: What the windmill is called in the Reality layer.
+msgid "ui.form.molino"
+msgstr ""
+
+#. TRANSLATORS: What the windmill is called in the Book layer.
+msgid "ui.form.gigante"
+msgstr ""
+
+#. TRANSLATORS: What the rock is called in the Reality layer.
+msgid "ui.form.roca"
+msgstr ""
+
+#. TRANSLATORS: What the rock is called in the Book layer.
+msgid "ui.form.libro"
+msgstr ""
+
+#. TRANSLATORS: The windmill itself.
+msgid "ui.object.molino"
+msgstr ""
+
+#. TRANSLATORS: The rock itself.
+msgid "ui.object.roca"
+msgstr ""
+
+#. TRANSLATORS: Floating tag over an object: who is looking, and what they see. Format: %s, %s.
+msgid "ui.perception.tag"
+msgstr ""

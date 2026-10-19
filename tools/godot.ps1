@@ -82,5 +82,17 @@ Or set the path explicitly:
 }
 
 Write-Host "[godot] $godot" -ForegroundColor DarkGray
-& $godot @GodotArgs
+
+# Godot writes warnings and errors to stderr even when the run SUCCEEDS,
+# and PowerShell turns native stderr into a terminating error when
+# $ErrorActionPreference is 'Stop'. The result: a green test run reports
+# itself as a failure, and setup.ps1 tells the owner their build is broken.
+#
+# Merge the streams, do not stop on them, and trust the exit code — it is
+# the only thing that says whether the run actually worked.
+$ErrorActionPreference = 'Continue'
+if (Get-Variable -Name PSNativeCommandUseErrorActionPreference -ErrorAction SilentlyContinue) {
+    $PSNativeCommandUseErrorActionPreference = $false
+}
+& $godot @GodotArgs 2>&1 | ForEach-Object { "$_" }
 exit $LASTEXITCODE

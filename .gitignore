@@ -28,6 +28,12 @@ docs/IP_CLEARANCE.md
 .godot/
 /android/
 
+# Screenshots and playtest captures. Local only: they are outputs,
+# not sources, and the repo should not fill up with them. The .gdignore
+# IS committed, so Godot never imports them into a build.
+/artifacts/*
+!/artifacts/.gdignore
+
 # Exported builds
 /build/
 /export/

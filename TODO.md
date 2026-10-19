@@ -3,20 +3,23 @@
 > Three goals per week. No more. Update this file on Monday.
 > See `ROADMAP.md` §6 for the weekly ritual.
 
-## Now (Phase 0 — Foundation)
+## Now (Phase 1, weeks 1–2 — does the premise hold?)
 
-- [x] Godot 4.7 project opens and runs the grey-box scene
-- [x] Input map written into `project.godot` (`src/tools/setup_input_map.gd`)
-- [x] Autoload spine: EventBus, GameState, TruthLayer, Locura, Loc, Memoria, Biblioteca, Manuscrito, AudioDirector
-- [x] Data-driven `Resource` classes: Character, Enemy, Form, Ability, Book, Chapter, Venture
-- [x] Truth-layer shader (the whole art direction in one uniform)
-- [x] `CharacterPawn` + `PlayerController` + `CompanionAI` — the D3 architecture
-- [x] Save system with atomic writes and version migration
-- [x] PO pipeline + `sync_locales.gd` + `setup_translations.gd` + locale key-parity test
-- [x] Test harness and 8 suites, 109 assertions, all green
-- [x] CI: import check → tests → Windows + Linux exports
-- [x] Git + Git LFS, public GitHub repo, CI green
-- [x] Godot export templates installed locally; Windows + Linux builds produced
+- [x] **Week 1–2 grey box** — `res://src/world/slice.tscn`. A windmill that is a giant, a
+      rock that is a book, one truth toggle, and two characters reading the same world
+      differently. TAB swaps; the world visibly changes because *you* changed.
+- [x] The reading rule, pinned down in code and in tests: `src/systems/perception.gd`
+- [x] The truth-layer shader actually renders (it had never rendered — see HANDOVER §7.7)
+- [ ] **Play it 20 times and fill in `docs/PLAYTEST_NOTES.md`.** The build is the easy
+      part. This is the task.
+- [ ] **Show it to two people who have not seen it. Record it. Watch it later.**
+- [ ] Write down the "but" — every "but" they come back with is a named week of work.
+
+> **The rule:** no more than two more primitives get built until the observation log in
+> `docs/PLAYTEST_NOTES.md` has entries in it.
+
+## Still open (admin, not game work — these have long lead times)
+
 - [ ] **Set up the monthly cloud backup** (Blobs / Backblaze B2 / Google Drive) — *you are one disk failure from losing two years*
 - [ ] Apply the Steam Direct $100 application
 - [ ] **Trademark: manual register searches** (TMview, OEPM, USPTO, WIPO) — 1–2 hours, checklist in `docs/IP_CLEARANCE.md` §4
@@ -24,22 +27,27 @@
 - [ ] **Play "Hidalgo" and "Dark Bound"** before locking the vertical slice — the closest thematic neighbours in the market
 - [ ] Read the novel end to end and pick the first 16 Manifiesto fragments (D7)
 
-## Next (Phase 1 — Vertical Slice, weeks 5–12)
+## Next (Phase 1 — weeks 3–4, combat)
 
-- [ ] Combat: light / heavy / dodge / block, stamina, poise, hit reactions
-- [ ] 4 enemy archetypes, each with a Book form and a Reality form
-- [ ] Sancho's `Desvelar` — the form-swap VFX. This is the best verb in the game; make it feel good
-- [ ] `Lectura` mode: the screen-space highlight and one anamorphosis you must view from a spot
-- [ ] The Posada: checkpoint, the shelf, 2 NPCs, the musician
-- [ ] Rocinante: riding and dismounting
-- [ ] The Verdict system: one scripted truth-shift
-- [ ] The windmill Venture, in both forms
-- [ ] The Manuscript UI shell: title, HUD, dialogue, shelf, codex
-- [ ] 15 environment kits (or at least the 4 the slice needs)
-- [ ] The commissioned credits song
-- [ ] **Ship the itch.io demo**
+- [ ] `PlayerController`: walk, run, dodge, lock-on, a soft camera (2.5)
+- [ ] Combat: light combo, heavy, dodge, block/parry, stamina, poise, hit reactions (2.6)
+- [ ] **Quixote rig** — silhouette, lance, 8 animations (2.7)
+- [ ] **Sancho rig** — a *different* silhouette, sack + flail (2.8)
+- [ ] Sancho's `Desvelar` — the form-swap VFX (2.9)
+- [ ] The asymmetry rules: Humanity cost, and Sancho's control kit (2.10)
 
-## Later
+## Later (Phase 1, weeks 5–12)
+
+- [ ] The windmill Venture, in both forms (2.11)
+- [ ] `Lectura` mode, and three anamorphoses (2.12, 2.13)
+- [ ] One Verdict — the world changes layer (2.15)
+- [ ] The Posada: checkpoint, the shelf, 2 NPCs, the musician (2.16)
+- [ ] The shelf UI, `Biblioteca` wired to real data, and the first book (2.17–2.19)
+- [ ] The Manuscript UI shell: title, HUD, dialogue, shelf, codex, pause (2.20)
+- [ ] 4 environment kits, the credits song, the min-spec performance pass (2.21–2.23)
+- [ ] **Ship the itch.io demo** (2.25)
+
+## Later (after the slice)
 
 - [ ] Region streaming and the chapter graph (`RegionGraph` in `GameState`)
 - [ ] The full 15-book library with real passives

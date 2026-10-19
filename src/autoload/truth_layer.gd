@@ -28,6 +28,17 @@ var _blend: float = 0.0
 var _ink: float = 0.0
 var _blending: bool = false
 
+## The truth the CAMERA is filtered to, or -1 to follow the world.
+##
+## The world's truth is global (D2) and this never changes it. But a camera
+## is a person's eyes: look through Sancho's and the picture is filtered the
+## way Sancho filters it, even while the world itself is in Book Truth.
+##
+## This is the camera, not a second world. One world, one save field, one
+## truth — and two people making two things of it.
+var view_layer: int = -1
+var _view_blend: float = 0.0
+
 
 func _ready() -> void:
 	# Make sure the global shader parameters exist even if project.godot was
@@ -40,6 +51,15 @@ func _ready() -> void:
 
 
 func _ensure_global(name: StringName, value: float) -> void:
+	# The globals are declared in project.godot, so this is only a safety
+	# net for an editor session.
+	#
+	# It MUST be skipped in a game run: RenderingServer
+	# .global_shader_parameter_get_list() is an editor-only call. In a game
+	# it returns nothing useful AND logs an error for every call, and the
+	# add() that follows then fails because the parameter already exists.
+	if not Engine.is_editor_hint():
+		return
 	if not RenderingServer.global_shader_parameter_get_list().has(name):
 		RenderingServer.global_shader_parameter_add(
 			name,
@@ -49,6 +69,11 @@ func _ensure_global(name: StringName, value: float) -> void:
 
 
 func _process(delta: float) -> void:
+	advance_blend(delta)
+
+
+## The blending, split out of _process so the tests can drive it directly.
+func advance_blend(delta: float) -> void:
 	if _blending:
 		var speed := blend_seconds if blend_seconds > 0.0 else 1.0
 		_blend = move_toward(_blend, 1.0 if _target == Layer.BOOK else 0.0, delta / speed)
@@ -56,7 +81,33 @@ func _process(delta: float) -> void:
 			_blending = false
 			_layer = _target
 			EventBus.truth_blend_finished.emit(_layer)
-	RenderingServer.global_shader_parameter_set(GLOBAL_TRUTH, _blend)
+
+	var shown := _blend
+	if view_layer >= 0:
+		# The camera is looking through someone's eyes, and those eyes have
+		# their own idea of what is true.
+		var speed := blend_seconds if blend_seconds > 0.0 else 1.0
+		var view_target := 1.0 if view_layer == Layer.BOOK else 0.0
+		_view_blend = move_toward(_view_blend, view_target, delta / speed)
+		shown = _view_blend
+	else:
+		_view_blend = _blend
+
+	RenderingServer.global_shader_parameter_set(GLOBAL_TRUTH, shown)
+
+
+## Filter the camera to a truth. -1 follows the world again.
+func set_view_layer(layer: int) -> void:
+	if view_layer == layer:
+		return
+	view_layer = layer
+	# Start the cross-fade from where the picture is now.
+	_view_blend = _blend
+
+
+## The value the shader is showing right now: 0 = Reality, 1 = Book.
+func view_blend() -> float:
+	return _view_blend
 
 
 ## The current truth of the world.
@@ -131,6 +182,10 @@ func load_state(data: Dictionary) -> void:
 	_blend = float(data.get("blend", 0.0))
 	_ink = float(data.get("ink", 0.0))
 	_blending = false
+	# A loaded world speaks for itself: the camera stops filtering it until
+	# whatever is driving the camera says otherwise.
+	view_layer = -1
+	_view_blend = _blend
 	RenderingServer.global_shader_parameter_set(GLOBAL_TRUTH, _blend)
 	RenderingServer.global_shader_parameter_set(GLOBAL_INK, _ink)
 	EventBus.truth_layer_changed.emit(_layer, _layer)

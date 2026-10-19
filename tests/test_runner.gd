@@ -12,6 +12,8 @@ extends Node
 
 const SUITES: Array[String] = [
 	"res://tests/test_truth_layer.gd",
+	"res://tests/test_perception.gd",
+	"res://tests/test_truth_object.gd",
 	"res://tests/test_locura.gd",
 	"res://tests/test_memoria.gd",
 	"res://tests/test_biblioteca.gd",
@@ -19,6 +21,7 @@ const SUITES: Array[String] = [
 	"res://tests/test_ending.gd",
 	"res://tests/test_locales.gd",
 	"res://tests/test_translations.gd",
+	"res://tests/test_slice_scene.gd",
 ]
 
 var harness := TestHarness.new()
@@ -28,14 +31,22 @@ func _ready() -> void:
 	for suite_path: String in SUITES:
 		if not ResourceLoader.exists(suite_path):
 			push_error("[TestRunner] Missing suite: %s" % suite_path)
+			harness.failures.append("[TestRunner] Missing suite: %s" % suite_path)
 			continue
 		var script: Script = load(suite_path)
-		if script == null:
+		# A suite with a parse error still loads as a GDScript object, but
+		# it cannot be instantiated. Catching that HERE matters: otherwise
+		# the runner dies mid-_ready, never calls quit(), and CI hangs
+		# forever instead of failing. A broken suite is a failure, not a
+		# hang.
+		if script == null or not script.can_instantiate():
 			push_error("[TestRunner] %s failed to load" % suite_path)
+			harness.failures.append("[TestRunner] %s failed to load" % suite_path)
 			continue
 		var instance: Object = script.new()
 		if instance == null or not instance.has_method("suite"):
 			push_error("[TestRunner] %s has no suite() method" % suite_path)
+			harness.failures.append("[TestRunner] %s has no suite() method" % suite_path)
 			continue
 		instance.call("suite", harness)
 

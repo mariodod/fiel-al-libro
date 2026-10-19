@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/data/character_data.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"quixote"
+display_name_key = &"character.quixote"
+max_stamina = 100.0
+poise = 34.0
+truth_layer_affinity = 1
+can_harm_innocents = false
+companion_aggression = 1.0
+ink_color = Color(0.35, 0.28, 0.22, 1)

@@ -1,0 +1,118 @@
+[gd_scene load_steps=18 format=3]
+
+[ext_resource type="Script" path="res://src/world/slice.gd" id="1_slice"]
+[ext_resource type="Script" path="res://src/world/truth_object.gd" id="2_object"]
+[ext_resource type="Script" path="res://src/characters/character_pawn.gd" id="3_pawn"]
+[ext_resource type="Script" path="res://src/characters/player_controller.gd" id="4_player"]
+[ext_resource type="Script" path="res://src/characters/companion_ai.gd" id="5_ai"]
+[ext_resource type="Script" path="res://src/systems/camera_follow.gd" id="6_camera"]
+[ext_resource type="Resource" path="res://src/data/primitives/windmill.tres" id="7_windmill"]
+[ext_resource type="Resource" path="res://src/data/primitives/rock.tres" id="8_rock"]
+[ext_resource type="Resource" path="res://src/data/characters/quixote.tres" id="9_quixote"]
+[ext_resource type="Resource" path="res://src/data/characters/sancho.tres" id="10_sancho"]
+
+[sub_resource type="PlaneMesh" id="Plane_ground"]
+size = Vector2(300, 300)
+
+[sub_resource type="StandardMaterial3D" id="Mat_ground"]
+albedo_color = Color(0.55, 0.47, 0.31, 1)
+roughness = 0.95
+
+[sub_resource type="BoxShape3D" id="Shape_ground"]
+size = Vector3(300, 1, 300)
+
+[sub_resource type="CapsuleMesh" id="Capsule_body"]
+radius = 0.42
+height = 1.75
+radial_segments = 16
+rings = 4
+
+[sub_resource type="CapsuleShape3D" id="Shape_body"]
+radius = 0.42
+height = 1.75
+
+[sub_resource type="StandardMaterial3D" id="Mat_quixote"]
+albedo_color = Color(0.42, 0.34, 0.28, 1)
+roughness = 0.8
+
+[sub_resource type="StandardMaterial3D" id="Mat_sancho"]
+albedo_color = Color(0.36, 0.42, 0.34, 1)
+roughness = 0.8
+
+[node name="Slice" type="Node3D"]
+script = ExtResource("1_slice")
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+mesh = SubResource("Plane_ground")
+material_override = SubResource("Mat_ground")
+
+[node name="GroundBody" type="StaticBody3D" parent="."]
+
+[node name="GroundShape" type="CollisionShape3D" parent="GroundBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("Shape_ground")
+
+[node name="Windmill" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20)
+script = ExtResource("2_object")
+data = ExtResource("7_windmill")
+
+[node name="Rock" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -11)
+script = ExtResource("2_object")
+data = ExtResource("8_rock")
+
+[node name="Characters" type="Node3D" parent="."]
+
+[node name="Quixote" type="CharacterBody3D" parent="Characters"]
+script = ExtResource("3_pawn")
+data = ExtResource("9_quixote")
+
+[node name="Body" type="MeshInstance3D" parent="Characters/Quixote"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.88, 0)
+mesh = SubResource("Capsule_body")
+material_override = SubResource("Mat_quixote")
+
+[node name="Collider" type="CollisionShape3D" parent="Characters/Quixote"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.88, 0)
+shape = SubResource("Shape_body")
+
+[node name="Sancho" type="CharacterBody3D" parent="Characters"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+script = ExtResource("3_pawn")
+data = ExtResource("10_sancho")
+
+[node name="Body" type="MeshInstance3D" parent="Characters/Sancho"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.88, 0)
+mesh = SubResource("Capsule_body")
+material_override = SubResource("Mat_sancho")
+
+[node name="Collider" type="CollisionShape3D" parent="Characters/Sancho"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.88, 0)
+shape = SubResource("Shape_body")
+
+[node name="PlayerController" type="Node" parent="."]
+script = ExtResource("4_player")
+
+[node name="CompanionAI" type="Node" parent="."]
+script = ExtResource("5_ai")
+
+[node name="CameraRig" type="Node3D" parent="."]
+script = ExtResource("6_camera")
+distance = 12.0
+height = 5.5
+
+[node name="Camera3D" type="Camera3D" parent="CameraRig"]
+fov = 62.0
+current = true
+
+[node name="HudLayer" type="CanvasLayer" parent="."]
+layer = 20
+
+[node name="Hud" type="Label" parent="HudLayer"]
+offset_left = 16.0
+offset_top = 12.0
+offset_right = 1180.0
+offset_bottom = 460.0
+theme_override_font_sizes/font_size = 16
+theme_override_colors/font_color = Color(0.94, 0.9, 0.8, 1)

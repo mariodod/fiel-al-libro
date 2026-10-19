@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="TruthObjectData" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://src/data/truth_object_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://src/world/forms/rock_reality.tscn" id="2_reality"]
+[ext_resource type="PackedScene" path="res://src/world/forms/rock_book.tscn" id="3_book"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"rock"
+display_name_key = &"ui.object.roca"
+reality_form = ExtResource("2_reality")
+book_form = ExtResource("3_book")
+reality_name_key = &"ui.form.roca"
+book_name_key = &"ui.form.libro"
+book_form_hovers = true
+tag_height = 3.4

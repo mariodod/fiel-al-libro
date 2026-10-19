@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3]
+
+[sub_resource type="SphereMesh" id="Sphere_boulder"]
+radius = 1.0
+height = 2.0
+radial_segments = 12
+rings = 7
+
+[sub_resource type="SphereMesh" id="Sphere_chip"]
+radius = 0.35
+height = 0.7
+radial_segments = 8
+rings = 5
+
+[sub_resource type="StandardMaterial3D" id="Mat_rock"]
+albedo_color = Color(0.46, 0.42, 0.35, 1)
+roughness = 0.95
+
+[node name="RockReality" type="Node3D"]
+
+[node name="Boulder" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1.3, 0, 1, 0)
+mesh = SubResource("Sphere_boulder")
+material_override = SubResource("Mat_rock")
+
+[node name="Chip" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.3, 0.6)
+mesh = SubResource("Sphere_chip")
+material_override = SubResource("Mat_rock")
+
+[node name="ChipSmall" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, 0.25, 0.85)
+mesh = SubResource("Sphere_chip")
+material_override = SubResource("Mat_rock")

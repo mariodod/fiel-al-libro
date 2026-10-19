@@ -273,3 +273,105 @@ msgstr ""
 #. TRANSLATORS: "page" of a location. Context: navigation.
 msgid "ui.word.page.nav"
 msgstr ""
+
+# --- WEEK 1-2 GREY BOX (the vertical slice sandbox) -------------------------
+
+#. TRANSLATORS: The title of the Week 1-2 grey box HUD.
+msgid "ui.slice.title"
+msgstr "FIEL AL LIVRE — boîte grise, semaines 1–2"
+
+#. TRANSLATORS: HUD line: the truth the world is in. Format: %s.
+msgid "ui.slice.line.world"
+msgstr "Vérité du monde : %s"
+
+#. TRANSLATORS: HUD line: the character you are driving and what they read. Format: %s, %s.
+msgid "ui.slice.line.you"
+msgstr "Tu conduis : %s — il lit %s"
+
+#. TRANSLATORS: HUD line: the companion and what they read. Format: %s, %s.
+msgid "ui.slice.line.companion"
+msgstr "Compagnon : %s — il lit %s"
+
+#. TRANSLATORS: HUD line: whether Sancho has the second sight. Format: %s.
+msgid "ui.slice.line.second_sight"
+msgstr "Seconde vue : %s"
+
+#. TRANSLATORS: HUD line: Quixote's madness. Format: %d, %s.
+msgid "ui.slice.line.locura"
+msgstr "Folie de Don Quichotte : %d (%s)"
+
+#. TRANSLATORS: HUD line: one object and what each character calls it. Format: %s, %s, %s, %s, %s.
+msgid "ui.slice.line.object"
+msgstr "%s — %s : %s · %s : %s"
+
+#. TRANSLATORS: Control hint, line 1.
+msgid "ui.slice.help.1"
+msgstr "ZQSD/WASD marcher · Maj courir · Espace esquiver"
+
+#. TRANSLATORS: Control hint, line 2.
+msgid "ui.slice.help.2"
+msgstr "TAB changer de compagnon · T la vérité du monde"
+
+#. TRANSLATORS: Control hint, line 3.
+msgid "ui.slice.help.3"
+msgstr "V seconde vue · L Folie · F1 cette aide"
+
+#. TRANSLATORS: The Reality layer: what actually happened.
+msgid "ui.layer.reality"
+msgstr "Réalité"
+
+#. TRANSLATORS: The Book layer: what the novel says.
+msgid "ui.layer.book"
+msgstr "Livre"
+
+#. TRANSLATORS: The word "on", for a switch.
+msgid "ui.on"
+msgstr "oui"
+
+#. TRANSLATORS: The word "off", for a switch.
+msgid "ui.off"
+msgstr "non"
+
+#. TRANSLATORS: The lowest madness band: Lucid.
+msgid "ui.locura.lucid"
+msgstr "Lucide"
+
+#. TRANSLATORS: Madness band 2: Displaced.
+msgid "ui.locura.displaced"
+msgstr "Déplacé"
+
+#. TRANSLATORS: Madness band 3: Lost.
+msgid "ui.locura.lost"
+msgstr "Perdu"
+
+#. TRANSLATORS: Madness band 4: Absorbed.
+msgid "ui.locura.absorbed"
+msgstr "Absorbé"
+
+#. TRANSLATORS: What the windmill is called in the Reality layer.
+msgid "ui.form.molino"
+msgstr "moulin"
+
+#. TRANSLATORS: What the windmill is called in the Book layer.
+msgid "ui.form.gigante"
+msgstr "géant"
+
+#. TRANSLATORS: What the rock is called in the Reality layer.
+msgid "ui.form.roca"
+msgstr "roche"
+
+#. TRANSLATORS: What the rock is called in the Book layer.
+msgid "ui.form.libro"
+msgstr "livre"
+
+#. TRANSLATORS: The windmill itself.
+msgid "ui.object.molino"
+msgstr "Le moulin"
+
+#. TRANSLATORS: The rock itself.
+msgid "ui.object.roca"
+msgstr "Le rocher"
+
+#. TRANSLATORS: Floating tag over an object: who is looking, and what they see. Format: %s, %s.
+msgid "ui.perception.tag"
+msgstr "%s : %s"

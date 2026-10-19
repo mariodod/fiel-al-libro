@@ -24,6 +24,8 @@ const KEY_BINDINGS := {
 	"lectura": [KEY_Q],
 	"switch_character": [KEY_TAB],
 	"toggle_truth": [KEY_T],
+	"toggle_second_sight": [KEY_V],
+	"toggle_madness": [KEY_L],
 	"toggle_help": [KEY_F1],
 	"toggle_hud": [KEY_H],
 	"shelf": [KEY_I],

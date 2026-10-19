@@ -47,14 +47,29 @@ everything below.
 
 The cheapest possible test of the core idea, before any rig exists.
 
-| # | Task | Done when |
-|---|---|---|
-| 2.1 | Two primitives in the grey box: a **windmill** and a **rock**. Same object, two states. | You can see both. |
-| 2.2 | A "truth" toggle that swaps the whole scene's look: the windmill becomes a giant; the rock becomes a book. | The screenshot is unmistakable. |
-| 2.3 | The same toggle in a single world with **two characters**: Quixote reads one state, Sancho the other, and you can see what each is looking at. | You understand the co-op premise without being told. |
-| 2.4 | **Write down what you feel.** Not what you built. Play it 20 times. | A page of notes. |
+| # | Task | Done when | Status |
+|---|---|---|---|
+| 2.1 | Two primitives in the grey box: a **windmill** and a **rock**. Same object, two states. | You can see both. | ✅ `src/world/slice.tscn` |
+| 2.2 | A "truth" toggle that swaps the whole scene's look: the windmill becomes a giant; the rock becomes a book. | The screenshot is unmistakable. | ✅ `T` toggles it; `artifacts/slice_book.png` |
+| 2.3 | The same toggle in a single world with **two characters**: Quixote reads one state, Sancho the other, and you can see what each is looking at. | You understand the co-op premise without being told. | ✅ `TAB` swaps; the picture changes because *you* changed |
+| 2.4 | **Write down what you feel.** Not what you built. Play it 20 times. | A page of notes. | 🟡 protocol written, **the 20 runs are not done** |
 
 **Stop here if it isn't working.** Change the premise now. Everything downstream is cheaper.
+
+> **The build:** `res://src/world/slice.tscn` — `.\tools\godot.ps1 res://src/world/slice.tscn`.
+> `T` flips the world's truth, `TAB` swaps characters, `V` gives Sancho the second sight,
+> `L` pushes Quixote's Locura from Lucid to Lost. The tag floating over each object says
+> what the character you are *not* driving is looking at.
+>
+> **The reading rule** lives in `src/systems/perception.gd`: the world has one truth, and
+> each character makes two things of it. Quixote is made of the Book, Sancho of Reality;
+> a character who cannot perceive the world's current truth falls back on the truth they
+> are made of. That is the whole mechanic in one function.
+>
+> **2.4 is not done.** The protocol and the predictions are written
+> (`docs/PLAYTEST_NOTES.md`); the observation log is empty and it can only be filled in
+> by a human with a keyboard. **Do not build another primitive until it has entries.**
+
 
 ### Week 3–4 — Combat, and the two characters
 

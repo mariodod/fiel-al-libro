@@ -38,9 +38,14 @@ someone willing to pay for the lesson with their own mind.*
 | `GDD.md` | ⚠️ **PRIVATE — on the owner's machine only.** The full design: pillars, the two-truths system, characters, the *Lectura* mechanic, progression, the library, the bestiary, the regions, the endings, the 4 DLCs, the credits song, art/audio direction, cultural-sensitivity rules, the locked decisions D1–D7. |
 | `docs/IP_CLEARANCE.md` | ⚠️ **PRIVATE — owner's machine only.** Title clearance memo: what was searched, the "Don Quijote" finding, the trademark strategy, the manual search checklist. |
 | `docs/NEXT_STEPS.md` | **The plan for the next 12 weeks, task by task.** |
+| `docs/PLAYTEST_NOTES.md` | The week 1–2 playtest protocol, the predictions, and the (empty) observation log. **The live task.** |
 | `HANDOVER.md` | This file. |
 | `src/` | All game code. |
-| `tests/` | 8 suites, 109 assertions. |
+| `src/world/slice.tscn` | **The Week 1–2 grey box — the playable build, and the main scene.** Windmill/giant, rock/book, two characters, two readings. |
+| `src/systems/perception.gd` | The reading rule: the world has one truth, the characters make two things of it. |
+| `src/world/truth_object.gd` | An object with two faces. The data shape the whole game is built on. |
+| `src/data/` | `Resource` subclasses and the `.tres` content: characters, primitives. |
+| `tests/` | 11 suites, 183 assertions. |
 | `locale/` | gettext PO files: es, en, fr + the template. |
 | `assets/` | Shaders, the Manifiesto content format. |
 | `tools/` | `godot.ps1` (locator), `setup.ps1` (one-command setup). |
@@ -87,7 +92,7 @@ admin rights to create the alias). Use it instead of calling `godot` directly:
 | `.\tools\godot.ps1 --headless --script res://src/tools/setup_translations.gd` | **Register `locale/*.po` with the engine.** Run after adding a language. |
 | `.\tools\godot.ps1 --headless --script res://src/tools/sync_locales.gd` | Bring every locale in line with the template; report orphans and duplicates. |
 | `.\tools\godot.ps1 --headless --export-release "Windows Desktop" build/FielAlLibro.exe` | Build (needs `build/` to exist). |
-| `.\tools\godot.ps1 res://src/world/main.tscn` | **Play the grey-box.** TAB swaps characters, T flips the world. |
+| `.\tools\godot.ps1 res://src/world/slice.tscn` | **Play the week 1–2 grey box.** TAB swaps characters, T flips the world, V the second sight, L the Locura. |
 
 CI (`.github/workflows/ci.yml`) runs on every push: import check → tests → Windows + Linux
 exports → artifacts.
@@ -134,6 +139,8 @@ a written page. The ending is a page you can read.
 | Decision | Where it is |
 |---|---|
 | Global truth layer | `src/autoload/truth_layer.gd` + the `truth_layer` global shader parameter |
+| **The reading rule** | `src/systems/perception.gd` — the world has one truth; each character makes two things of it |
+| **An object with two faces** | `src/world/truth_object.gd` + `src/data/truth_object_data.gd` (`.tres` content) |
 | The visual identity | `assets/shaders/truth_layer.gdshader` — reality / book / ink in one uniform |
 | Character abstraction | `src/characters/character_pawn.gd` (base), `player_controller.gd`, `companion_ai.gd` |
 | Data-driven content | `src/data/*.gd` — `Resource` subclasses; tune in the inspector, never in code |
@@ -143,6 +150,14 @@ a written page. The ending is a page you can read.
 | Localisation | `src/autoload/loc.gd` + `locale/*.po` |
 | The ending logic | `GameState.compute_ending()` in `src/autoload/game_state.gd` — pure, and unit-tested |
 | Everything is a signal | `src/autoload/event_bus.gd` — no direct references between systems |
+
+**The reading rule, in one paragraph.** The world's truth is global (D2) — one value, one
+shader uniform, one save field. What each character *makes of it* is not. A character who
+can perceive the world's truth reads the world as it is; a character who cannot falls back
+on the truth they are made of: Quixote is made of the Book, Sancho of Reality. Quixote
+loses the ability to perceive Reality as his Locura rises; Sancho needs the second sight
+to perceive the Book at all. That is the whole mechanic, and it is why the truth toggle
+alone is not the game — the *swap* is.
 
 ---
 
@@ -193,6 +208,63 @@ This caused a parse error in the test harness that took a while to find.
 `save_state()` returns `duplicate()`d collections. Returning the live array means clearing the
 shelf also clears the "saved" shelf. The test suite caught this.
 
+### 7.7 A `Control` under a `CanvasLayer` gets no size from its anchors
+
+**The truth-layer shader had never rendered.** The post-process is a `ColorRect` on a
+`CanvasLayer`; the anchors were set to full-rect, and the rect stayed **0×0**, so the
+shader never drew a single pixel. The game looked flat, and because "flat" is what a grey
+box looks like, nobody noticed.
+
+A `Control` whose parent is a `CanvasLayer` has no `Control` parent, so it is not laid out
+against a parent rect and it is not told when the window is resized. Drive the size from
+the viewport instead:
+
+```gdscript
+set_anchors_preset(Control.PRESET_TOP_LEFT)
+position = Vector2.ZERO
+size = get_viewport().get_visible_rect().size
+get_viewport().size_changed.connect(_fit_to_viewport)
+```
+
+See `src/ui/post_process.gd`. If the game ever looks flat and the shader is fine, check the
+rect's size first.
+
+### 7.8 `RenderingServer.global_shader_parameter_get_list()` is editor-only
+
+Calling it in a game run logs *"This function should never be used outside the editor"* for
+every call, returns nothing useful, and the `add()` that follows then fails because the
+parameter already exists (it is declared in `project.godot`). Guard the whole thing with
+`Engine.is_editor_hint()`. See `src/autoload/truth_layer.gd`.
+
+### 7.9 The tree root is busy while the main scene's `_ready` runs
+
+`root.add_child(x)` from inside the main scene's `_ready` **fails**: *"Parent node is busy
+setting up children"*, and the child never gets its `_ready()`. The tree root is mid-way
+through propagating readiness at that point.
+
+This bites in tests, where a suite runs inside the runner's own `_ready`. Use the current
+scene as the parent instead — it is already ready:
+
+```gdscript
+var parent: Node = tree.current_scene if tree.current_scene != null else tree.root
+parent.add_child(scene)
+```
+
+### 7.10 A broken test suite hangs CI forever
+
+A suite with a parse error still loads as a `GDScript` object, but it cannot be
+instantiated. The runner used to call `.new()` on it, die mid-`_ready`, never call
+`quit()` — and CI hung instead of failing. The runner now checks `can_instantiate()` and
+records a broken suite as a **failure**. Keep that check.
+
+### 7.11 An exported `NodePath` in a `.tscn` does not resolve the way you hope
+
+`target = NodePath("Characters/Quixote")` on a node that is a *sibling* of `Characters`
+resolved to nothing, and so did `../Characters/Quixote`. The path is stored relative to
+the scene root, not to the node that owns the property. Rather than fight it, wire node
+references in code (`camera_rig.target = quixote`) — a camera pointed at nothing is a
+silent failure, and code makes it impossible to miss.
+
 ---
 
 ## 8. The IP situation — read before you write store copy
@@ -230,15 +302,22 @@ Full memo: `docs/IP_CLEARANCE.md` (private).
 
 | | |
 |---|---|
-| **Phase** | Phase 0 complete. **Phase 1 (vertical slice) not started.** |
-| **Working code** | ~20 GDScript files: autoload spine, data resources, character abstraction, the truth-layer shader, the save system, the i18n pipeline, a grey-box scene. |
-| **Tests** | 8 suites, 109 assertions, all green, enforced in CI. |
+| **Phase** | Phase 0 complete. **Phase 1, weeks 1–2: the grey box exists. The playtest has not happened.** |
+| **Working code** | ~28 GDScript files: autoload spine, data resources, character abstraction, the truth-layer shader, the save system, the i18n pipeline, the reading rule, and the week 1–2 grey box. |
+| **Tests** | 11 suites, 183 assertions, all green, enforced in CI. |
 | **CI** | Green on every push. Produces Windows + Linux builds as artifacts. |
-| **Game content** | **None yet.** No art, no levels, no enemies, no audio. The grey box is grey boxes. |
+| **Game content** | Two primitives (a windmill/giant, a rock/book) as low-poly placeholders. No art, no levels, no enemies, no audio. |
 | **Money spent** | €0. Godot is free, assets are CC0, the only planned spend is the credits song (~$200–800) and later the EUIPO filing (~€1,150). |
 
-**What exists is the skeleton, the tooling and the plan.** The fun has not been proven yet —
-that is what the vertical slice is for, and it is the single most important thing in the project.
+**What exists is the skeleton, the tooling, the plan — and now a box that answers the
+question.** The mechanic is built and legible: press `T` and the windmill becomes a giant;
+press `TAB` and, through Sancho's eyes, it is a windmill again. That is the premise, made
+visible.
+
+**The fun has still not been proven.** A build that demonstrates a mechanic is not a
+mechanic that is fun. The next task is twenty runs of the grey box and a page of honest
+notes — `docs/PLAYTEST_NOTES.md`, whose observation log is deliberately empty. Nothing
+else gets built until it has entries in it.
 
 ---
 
@@ -246,8 +325,11 @@ that is what the vertical slice is for, and it is the single most important thin
 
 1. Read `README.md`, then this file, then `GDD.md` (ask the owner for it if you don't have it).
 2. Run `tools\setup.ps1` and get the tests green.
-3. Play the grey box: `.\tools\godot.ps1 res://src/world/main.tscn`. TAB swaps, T flips the world.
-4. Read `docs/NEXT_STEPS.md` and start at **Week 1**.
+3. Play the grey box: `.\tools\godot.ps1 res://src/world/slice.tscn`. `T` flips the world,
+   `TAB` swaps characters, `V` gives Sancho the second sight, `L` pushes Quixote's Locura
+   from Lucid to Lost. Play it twenty times and fill in `docs/PLAYTEST_NOTES.md`.
+4. Read `docs/NEXT_STEPS.md`. **Weeks 1–2 are built; week 3–4 is the next thing to build
+   — but not before the playtest log has entries in it.**
 5. **The one thing that matters:** the vertical slice exists to answer a single question —
    *is the two-truths mechanic fun?* If it isn't, find out in month 3, not month 24. Everything
    else is secondary.

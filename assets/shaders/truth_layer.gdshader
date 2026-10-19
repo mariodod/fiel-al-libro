@@ -47,9 +47,15 @@ group_uniforms;
 group_uniforms line_art;
 // Screen-space edge detect → pen-and-ink contour. This is what makes
 // low-poly read as illustration instead of as a blockout.
-uniform float line_strength : hint_range(0.0, 4.0) = 1.6;
-uniform float line_width : hint_range(1.0, 6.0) = 1.7;
-uniform float line_threshold : hint_range(0.0, 1.0) = 0.09;
+//
+// These numbers were set before the post-process ever actually rendered
+// (a Control under a CanvasLayer does not get a size from its anchors —
+// see src/ui/post_process.gd), so they had never been looked at. They
+// are now tuned against a real screenshot: heavy enough to read as ink,
+// light enough that a character is still a character and not a blob.
+uniform float line_strength : hint_range(0.0, 4.0) = 1.25;
+uniform float line_width : hint_range(1.0, 6.0) = 1.2;
+uniform float line_threshold : hint_range(0.0, 1.0) = 0.12;
 uniform vec4 ink_color : source_color = vec4(0.09, 0.07, 0.05, 1.0);
 group_uniforms;
 

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/data/character_data.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"sancho"
+display_name_key = &"character.sancho"
+max_stamina = 120.0
+poise = 24.0
+truth_layer_affinity = 0
+can_harm_innocents = true
+companion_aggression = 0.3
+ink_color = Color(0.3, 0.34, 0.28, 1)

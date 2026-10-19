@@ -1,0 +1,68 @@
+[gd_scene load_steps=11 format=3]
+
+[ext_resource type="Script" path="res://src/world/forms/spin_sails.gd" id="1_spin"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_tower"]
+size = Vector3(3, 8, 3)
+
+[sub_resource type="StandardMaterial3D" id="Mat_tower"]
+albedo_color = Color(0.44, 0.36, 0.26, 1)
+roughness = 0.9
+
+[sub_resource type="CylinderMesh" id="Cyl_cap"]
+top_radius = 0.0
+bottom_radius = 2.3
+height = 2.2
+radial_segments = 8
+
+[sub_resource type="StandardMaterial3D" id="Mat_cap"]
+albedo_color = Color(0.33, 0.27, 0.21, 1)
+roughness = 0.85
+
+[sub_resource type="BoxMesh" id="BoxMesh_sail_v"]
+size = Vector3(0.35, 5.6, 1.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_sail_h"]
+size = Vector3(5.6, 0.35, 1.1)
+
+[sub_resource type="StandardMaterial3D" id="Mat_sail"]
+albedo_color = Color(0.75, 0.68, 0.53, 1)
+roughness = 0.8
+
+[sub_resource type="SphereMesh" id="Sphere_hub"]
+radius = 0.55
+height = 1.1
+radial_segments = 12
+rings = 6
+
+[sub_resource type="StandardMaterial3D" id="Mat_hub"]
+albedo_color = Color(0.28, 0.23, 0.18, 1)
+roughness = 0.7
+
+[node name="WindmillReality" type="Node3D"]
+
+[node name="Tower" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+mesh = SubResource("BoxMesh_tower")
+material_override = SubResource("Mat_tower")
+
+[node name="Cap" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.1, 0)
+mesh = SubResource("Cyl_cap")
+material_override = SubResource("Mat_cap")
+
+[node name="Sails" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.4, 1.7)
+script = ExtResource("1_spin")
+
+[node name="SailVertical" type="MeshInstance3D" parent="Sails"]
+mesh = SubResource("BoxMesh_sail_v")
+material_override = SubResource("Mat_sail")
+
+[node name="SailHorizontal" type="MeshInstance3D" parent="Sails"]
+mesh = SubResource("BoxMesh_sail_h")
+material_override = SubResource("Mat_sail")
+
+[node name="Hub" type="MeshInstance3D" parent="Sails"]
+mesh = SubResource("Sphere_hub")
+material_override = SubResource("Mat_hub")

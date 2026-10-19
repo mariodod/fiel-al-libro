@@ -1,0 +1,5 @@
+# Godot must not import or pack this folder.
+#
+# The screenshots in artifacts/ are playtest captures — outputs, not
+# sources. Without this file they get imported as textures and shipped
+# inside the .pck, which is 2 MB of somebody's playtest in every build.

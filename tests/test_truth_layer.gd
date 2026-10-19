@@ -44,5 +44,21 @@ func suite(t: TestHarness) -> void:
 	t.expect_almost_eq(TruthLayer.ink_amount(), 0.0, 0.0001, "ink should clamp to 0.0")
 	TruthLayer.set_ink(0.0)
 
+	t.test("the camera can be filtered to a truth of its own")
+	# The world's truth is global and never moves because of this. But a
+	# camera is a person's eyes: look through Sancho's while the world is
+	# in Book Truth, and the picture is filtered the way Sancho filters it.
+	TruthLayer.shift_to(TruthLayer.Layer.REALITY, true)
+	TruthLayer.set_view_layer(TruthLayer.Layer.BOOK)
+	TruthLayer.advance_blend(2.0)
+	t.expect_almost_eq(TruthLayer.view_blend(), 1.0, 0.0001, "the view fades to the Book")
+	t.expect_eq(TruthLayer.layer(), TruthLayer.Layer.REALITY, "the world's truth has not moved")
+
+	t.test("releasing the view follows the world again")
+	TruthLayer.set_view_layer(-1)
+	TruthLayer.advance_blend(2.0)
+	t.expect_almost_eq(TruthLayer.view_blend(), 0.0, 0.0001, "the view falls back to the world")
+	t.expect_eq(TruthLayer.layer(), TruthLayer.Layer.REALITY, "the world's truth is still Reality")
+
 	# Leave the world in a known state for the next suite.
 	TruthLayer.shift_to(TruthLayer.Layer.REALITY, true)
