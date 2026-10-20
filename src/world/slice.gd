@@ -27,6 +27,7 @@ extends Node3D
 ##   L              Quixote's Locura: Lucid <-> Lost
 ##   Space          dodge
 ##   LMB / RMB      light attack / heavy attack
+##   M              lock on: the target you are looking at
 ##   K              reset the yard (the dummy and anyone who fell)
 ##   F1             this help
 ##   F2             the floating perception tags
@@ -100,6 +101,8 @@ var _madness_high: bool = false
 var _last_reading: Dictionary = {}
 ## The dummy in the yard.
 var _dummy: TrainingDummy = null
+## The marker over the locked target.
+var _lock_marker: Label3D = null
 
 const LOCURA_LUCID := 10.0
 const LOCURA_LOST := 60.0
@@ -114,6 +117,7 @@ func _ready() -> void:
 	_build_post_process()
 	_build_examine_panel()
 	_build_bark_line()
+	_build_lock_marker()
 
 	EventBus.character_switched.connect(_on_character_switched)
 	EventBus.character_died.connect(_on_character_died)
@@ -273,6 +277,25 @@ func _build_bark_line() -> void:
 	layer.add_child(bark)
 
 
+## The marker over the locked target.
+##
+## A soft lock you cannot see is not a lock. The marker says what you
+## are locked onto, and it goes away when the lock does.
+func _build_lock_marker() -> void:
+	_lock_marker = Label3D.new()
+	_lock_marker.name = "LockMarker"
+	_lock_marker.billboard = BaseMaterial3D.BILLBOARD_ENABLED
+	_lock_marker.no_depth_test = true
+	_lock_marker.double_sided = true
+	_lock_marker.font_size = 48
+	_lock_marker.pixel_size = 0.014
+	_lock_marker.outline_size = 0
+	_lock_marker.modulate = Color(0.95, 0.85, 0.65)
+	_lock_marker.text = ""
+	_lock_marker.visible = false
+	add_child(_lock_marker)
+
+
 # ── Characters ──────────────────────────────────────────────────────────
 
 func _build_characters() -> void:
@@ -337,7 +360,28 @@ func _reset_yard() -> void:
 
 func _process(_delta: float) -> void:
 	_update_readings()
+	_update_lock()
 	_update_hud()
+
+
+## Keep the camera and the marker on the locked target.
+##
+## The lock belongs to the character the player is driving, so it is
+## re-read every frame: swap characters and the lock goes with them.
+func _update_lock() -> void:
+	var driven: CharacterPawn = player.active_pawn
+	var locked: Node3D = driven.lock_target if driven != null else null
+	if camera_rig != null:
+		camera_rig.lock_target = locked
+	if _lock_marker == null:
+		return
+	if locked == null or not is_instance_valid(locked):
+		_lock_marker.visible = false
+		_lock_marker.text = ""
+		return
+	_lock_marker.visible = true
+	_lock_marker.global_position = locked.global_position + Vector3(0.0, 2.6, 0.0)
+	_lock_marker.text = Loc.t(&"ui.lockon.marker")
 
 
 ## Work out what each character is reading, and show it.
@@ -451,6 +495,11 @@ func _update_hud() -> void:
 			int(_dummy.health), int(_dummy.max_health),
 		]))
 
+	if driven.is_locked():
+		lines.append(Loc.tf(&"ui.slice.line.locked", [
+			_lock_target_name(driven.lock_target),
+		]))
+
 	if _show_help:
 		lines.append("")
 		lines.append(Loc.t(&"ui.slice.help.1"))
@@ -464,6 +513,13 @@ func _update_hud() -> void:
 
 func _form_name_key(character: CharacterPawn, object: TruthObject) -> StringName:
 	return Examine.reading_key(object, character)
+
+
+## The name of a locked target, if it has one.
+func _lock_target_name(target: Node3D) -> String:
+	if target != null and target.has_method("display_name"):
+		return str(target.call("display_name"))
+	return ""
 
 
 func _layer_name(layer: int) -> String:

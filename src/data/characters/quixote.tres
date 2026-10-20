@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="CharacterData" load_steps=5 format=3]
 
 [ext_resource type="Script" path="res://src/data/character_data.gd" id="1_data"]
-[ext_resource type="Resource" path="res://src/data/abilities/dodge.tres" id="2_dodge"]
+[ext_resource type="Resource" path="res://src/data/abilities/dodge_quixote.tres" id="2_dodge"]
 [ext_resource type="Resource" path="res://src/data/abilities/light_attack.tres" id="3_light"]
 [ext_resource type="Resource" path="res://src/data/abilities/heavy_attack.tres" id="4_heavy"]
 

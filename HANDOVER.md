@@ -46,12 +46,13 @@ someone willing to pay for the lesson with their own mind.*
 | `src/systems/perception.gd` | The reading rule: the world has one truth, the characters make two things of it. |
 | `src/systems/examine.gd` | The Examine verb: what you are looking at, and what **this character** makes of it. |
 | `src/systems/attack_hitbox.gd` | A swing: the short window in which what is in front of you takes the hit. |
+| `src/systems/lock_on.gd` | The soft lock-on: the target you are looking at, and when the lock is given up. |
 | `src/systems/reaction.gd` | The reaction: what a character says when the world moves under them. |
 | `src/world/truth_object.gd` | An object with two faces. The data shape the whole game is built on. |
 | `src/world/training_dummy.gd` | The thing to fight: a telegraphed swing in a walled yard. |
 | `src/data/` | `Resource` subclasses and the `.tres` content: characters, primitives. |
 | `reference/` | **Local only, gitignored.** The reference texts: the 1605 first part, the 1615 second part, and the OCR of the 1605 printing. Fetch them with `tools\fetch_reference.ps1`. |
-| `tests/` | 15 suites, 289 assertions. |
+| `tests/` | 16 suites, 316 assertions. |
 | `locale/` | gettext PO files: es, en, fr + the template. |
 | `assets/` | Shaders, the Manifiesto content format. |
 | `tools/` | `godot.ps1` (locator), `setup.ps1` (one-command setup). |
@@ -159,7 +160,8 @@ a written page. The ending is a page you can read.
 | **The page turn** | `src/ui/post_process.gd` — a sheet of paper carrying a line of the 1605 original crosses the screen when the truth flips |
 | **The Examine verb** | `src/systems/examine.gd` + `src/ui/examine_panel.gd` — `E` on a thing, and the game says what **this character** sees: the name, the description, the title, the text on the page, and the one detail that does not add up. Never the truth table, never the other character |
 | **The reaction** | `src/systems/reaction.gd` + `src/ui/bark_line.gd` — when a character's reading changes, they say so, with their name on it |
-| **The verbs** | `src/characters/character_pawn.gd` — the dodge: a directional burst, i-frames, and the stamina that comes back; and the swing, which spends stamina and puts a hitbox in front of you |
+| **The verbs** | `src/characters/character_pawn.gd` — the dodge: a directional burst, a window of invulnerability, and the stamina that comes back; and the swing, which spends stamina and puts a hitbox in front of you |
+| **The lock-on** | `src/systems/lock_on.gd` + `src/systems/camera_follow.gd` — `M` picks the target you are looking at; the character turns towards it and walks around it, and the camera frames both |
 | **Something to fight** | `src/world/training_dummy.gd` + the yard in `src/world/slice.gd` — a telegraphed swing, a health bar, and four walls. The dodge cannot be judged without an enemy and a space limit |
 | Character abstraction | `src/characters/character_pawn.gd` (base), `player_controller.gd`, `companion_ai.gd` |
 | Data-driven content | `src/data/*.gd` — `Resource` subclasses; tune in the inspector, never in code |
@@ -437,7 +439,7 @@ Full memo: `docs/IP_CLEARANCE.md` (private).
 |---|---|
 | **Phase** | Phase 0 complete. **Phase 1, weeks 1–2: the grey box exists, the playtest has happened twice, and week 3–4 (combat) has started.** |
 | **Working code** | ~37 GDScript files: autoload spine, data resources, character abstraction, the truth-layer shader, the save system, the i18n pipeline, the reading rule, the Examine verb, the reactions, the dodge, the swing, the training dummy, and the week 1–2 grey box. |
-| **Tests** | 15 suites, 289 assertions, all green, enforced in CI. |
+| **Tests** | 16 suites, 316 assertions, all green, enforced in CI. |
 | **CI** | Green on every push. Produces Windows + Linux builds as artifacts. |
 | **Game content** | Two primitives (a windmill/giant, a rock/book) as low-poly placeholders, a training dummy and a walled yard, eight reaction lines in three languages, and one real Manifiesto fragment. No art, no levels, no enemies, no audio. |
 | **Money spent** | €0. Godot is free, assets are CC0, the only planned spend is the credits song (~$200–800) and later the EUIPO filing (~€1,150). |
@@ -474,10 +476,12 @@ one detail that does not add up. And: *"For the dodge it is difficult to assess 
 fine at this stage without any enemies or space limitations."* A dodge on an empty plain
 is a dash. There is now a training dummy in a walled yard, with swings that land.
 
-**What still needs judging is the numbers.** The dodge is 15 m/s for 0.4 s — about six
-metres, where a souls-like roll is two or three. The dummy's wind-up is 0.62 s, its reach
-2.9 m, its arc 110°. They are all data, and all of them are now measurable in a rig
-that has something to fight. Full write-up: `docs/PLAYTEST_NOTES.md` §7.
+**What still needs judging is the numbers.** The dodge is 4 m for Quixote and 2 m for
+Sancho — half of it — and Quixote is untouchable for a quarter of a second, because he
+is not a fighter. The dummy's wind-up is 0.62 s, its reach 2.9 m, its arc 110°. They are
+all data, and all of them are now measurable in a rig that has something to fight. The
+lock-on (`M`) is in too: the target you are looking at, and a camera that frames both.
+Full write-up: `docs/PLAYTEST_NOTES.md` §7.
 
 **The next milestone is week 3–4 — combat — and the first task in it is not a rig.** Two
 people, one of them a stranger, asked to *touch* the thing that surprised them, so the
@@ -504,16 +508,17 @@ owner's.
    things not to do yet.
 4. Play the grey box: `tools\play.cmd`. `T` flips the world (and turns a page), `TAB`
    swaps characters, `E` examines the thing in front of you, `Space` dodges, `LMB`/`RMB`
-   swing, `V` gives Sancho the second sight, `L` pushes Quixote's Locura from Lucid to
-   Lost, `F2` hides the perception tags, `H` hides the HUD, `K` resets the practice yard
-   (to the west).
+   swing, `M` locks on, `V` gives Sancho the second sight, `L` pushes Quixote's Locura
+   from Lucid to Lost, `F2` hides the perception tags, `H` hides the HUD, `K` resets the
+   practice yard (to the west).
 5. Read `docs/PLAYTEST_NOTES.md` §6 and §7 — the playtest findings, the ten "but"s, and
    the two that have just been built: **B9, the Examine panel that shows a perception
    instead of the truth table**, and **B10, the training dummy in the walled yard**.
    Both are untested.
-6. **The next task is week 3–4.** It is not the Examine verb any more — that is done.
-   It is 2.5, the verbs: the lock-on and the soft camera, now that there is a target to
-   lock onto and a yard to fight in.
+6. **The next task is week 3–4.** The lock-on and the soft camera are in, and the dodge
+   has been retuned (4 m for Quixote, 2 m for Sancho, and a quarter of a second of
+   invulnerability for the knight, who is not a fighter). What is left of 2.6 is the
+   light combo, the block/parry, the poise and the hit reactions.
 7. **The one thing that matters:** the vertical slice exists to answer a single question —
    *is the two-truths mechanic fun?* The answer is yes. Everything from here is about
    turning a proven mechanic into a game.

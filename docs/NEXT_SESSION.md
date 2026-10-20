@@ -14,10 +14,10 @@
 
 | | |
 |---|---|
-| **Phase** | Phase 1. **Weeks 1–2 are done.** Week 3–4 (combat) has started. |
+| **Phase** | Phase 1. **Weeks 1–2 are done.** Week 3–4 (combat) is under way. |
 | **The premise** | **Proven.** The playtest says so. |
-| **The build** | `res://src/world/slice.tscn` — the main scene. Two primitives, one truth toggle, two characters reading the same world differently — and now **five verbs**: `E` to examine, `Space` to dodge, a light attack, a heavy attack, and a line of dialogue when the world moves under a character. Plus a **walled yard with a training dummy** in it. |
-| **Tests** | 15 suites, 289 assertions, green, enforced in CI. |
+| **The build** | `res://src/world/slice.tscn` — the main scene. Two primitives, one truth toggle, two characters reading the same world differently — and now **six verbs**: `E` to examine, `Space` to dodge, a light attack, a heavy attack, `M` to lock on, and a line of dialogue when the world moves under a character. Plus a **walled yard with a training dummy** in it. |
+| **Tests** | 16 suites, 316 assertions, green, enforced in CI. |
 | **The fun** | Not fully proven. Seven data points is a sample, not a signal. |
 
 **The one thing that matters:** the mechanic is legible and liked. The *game*
@@ -52,8 +52,9 @@ tools\play.cmd
 | `TAB` | swap character — the camera cuts, the objects morph |
 | `T` | the world's truth flips — **a page turns** |
 | `E` | **examine the thing in front of you** — *what this character sees* |
-| `Space` | **dodge** — a burst, 0.4s of i-frames, 20 stamina |
+| `Space` | **dodge** — a burst, a window of invulnerability, stamina |
 | `LMB` / `RMB` | **light attack / heavy attack** — a swing, a hitbox, stamina |
+| `M` | **lock on** — the target you are looking at; the camera frames both |
 | `K` | reset the yard (the dummy, and anyone who fell) |
 | `V` | Sancho's second sight (off by default: the two readings disagree) |
 | `L` | Quixote's Locura: Lucid ↔ Lost |
@@ -87,20 +88,25 @@ tags as well.
 
 ### B. Week 3–4, task 2.5: the soft camera, and 2.6: a real fight
 
-What is in: walk, run, a soft camera, the dodge (a burst, i-frames, stamina
-that comes back), a light attack that lands, a heavy attack that lands, the
-training dummy, the walled yard, and the lock-on target the dummy finally
-provides.
+What is in: walk, run, a soft camera, the dodge (a burst, a window of
+invulnerability, stamina that comes back), a light attack that lands, a heavy
+attack that lands, the training dummy, the walled yard, and the **lock-on**
+(`M`): the target you are looking at, the character turning towards it and
+walking around it, and the camera framing both.
 
-What is not in: **the lock-on itself.** `M` is bound and does nothing. The
-dummy is the thing to lock onto; the camera that frames both characters while
-locked is the next slice of work. Then: the light combo, the block/parry, the
-poise, the hit reactions — 2.6 proper.
+What is not in: the light **combo**, the block/parry, the poise and the hit
+reactions — 2.6 proper. And the asymmetry rules: Quixote cannot harm
+innocents without a Humanity cost, and Sancho cannot meaningfully damage.
 
-**Before any of it: judge the dodge.** The numbers are the point now, and
-the yard is the rig. The burst is 15 m/s for 0.4 s — about **six metres**,
-where a souls-like roll is two or three. Change `DODGE_SPEED` in
-`src/characters/character_pawn.gd`, play it, and write down what changed.
+**Before any of it: judge the dodge, with the new numbers.** The owner
+retuned it: the roll is **4 m** for Quixote and **2 m** for Sancho, and
+Quixote is only untouchable for **0.25 s**, because he is not a fighter.
+That is a much tighter window than the 0.4 s the plan called for, and the
+question is whether a dodge is still worth 20 stamina when it saves you for
+a quarter of a second. The numbers are data, in
+`src/data/abilities/dodge_quixote.tres` and `dodge_sancho.tres`
+(`roll_distance` and `iframe_seconds`): change them, play it, write down
+what changed.
 
 ### C. B3, the rest: the companion's chatter
 
@@ -116,8 +122,8 @@ is looking at.
 
 | # | Task |
 |---|---|
-| 2.5 | The **soft camera** and the **lock-on** (`M`), now that there is a target |
-| 2.6 | Combat: light combo, heavy, block/parry, poise, hit reactions |
+| 2.5 | The **soft camera** and the **lock-on** (`M`) — ✅ done |
+| 2.6 | Combat: light combo, block/parry, poise, hit reactions (2.6b — the dummy — is ✅ done) |
 | 2.7 | **Quixote rig** — silhouette, lance, 8 animations |
 | 2.8 | **Sancho rig** — a *different* silhouette, sack + flail |
 | 2.9 | Sancho's `Desvelar` — the form-swap VFX |
@@ -152,7 +158,8 @@ Quixote makes the whole idea collapse.
 
 1. Run the build. Play it for ten minutes with the tags **off** (`F2`).
 2. Go to the yard, let the dummy swing at you, and dodge *through* it. Feel
-   the 0.4 seconds of i-frames. That is the number 2.6 has to be judged against.
+   the window of invulnerability — a quarter of a second for Quixote, twice
+   that for Sancho. That is the number 2.6 has to be judged against.
 3. Read `docs/PLAYTEST_NOTES.md` §7 and add a line to the observation log
    about what you feel now.
 4. Open `TODO.md` and set three goals for the week. No more than three.
@@ -180,12 +187,19 @@ a **training dummy** in a **walled yard**: it swings on a rhythm, it hurts,
 you can hit it, and the walls mean there is nowhere to run. It is the
 missing task 2.6b from the plan, written down and built.
 
-**What still needs judging:** the dodge's *numbers*. The burst is 15 m/s for
-0.4 s — about **six metres**, a third of the way across the yard. A souls-like
-roll is two or three metres. It is now measurable, and it is the first thing to
-measure. The number is one constant in `src/characters/character_pawn.gd`
-(`DODGE_SPEED`); change it, play it, and write down what changed. The dummy's
-numbers are data too: wind-up 0.62 s, reach 2.9 m, arc 110°.
+**What still needs judging:** the dodge's *numbers*. The owner has already
+retuned them once: the roll is **4 m** for Quixote and **2 m** for Sancho,
+and Quixote's invulnerability is **0.25 s** instead of 0.4 s, because he is
+not a fighter. The numbers are data now (`roll_distance` and
+`iframe_seconds` in `src/data/abilities/dodge_quixote.tres` and
+`dodge_sancho.tres`), and the speed follows from them. The dummy's numbers
+are data too: wind-up 0.62 s, reach 2.9 m, arc 110°.
+
+**And the lock-on is in.** `M` picks the target you are looking at, the
+character turns towards it and walks around it, and the camera stands on
+the line between them and frames both. It is half a camera tool and half a
+combat tool, and the camera half is the one that matters: a fight you
+cannot see is not a fight.
 
 Full write-up: `docs/PLAYTEST_NOTES.md` §7.
 

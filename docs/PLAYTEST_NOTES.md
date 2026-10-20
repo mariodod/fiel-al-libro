@@ -45,6 +45,7 @@ tools\play.cmd
 | `E` | examine the thing in front of you — *what this character sees* |
 | `Space` | dodge |
 | `LMB` / `RMB` | light attack / heavy attack |
+| `M` | lock on — the target you are looking at, and a camera that frames both |
 | `V` | Sancho's second sight, on/off |
 | `L` | Quixote's Locura: Lucid ↔ Lost |
 | `K` | reset the practice yard |
@@ -389,16 +390,51 @@ plan**:
   both cost stamina and have a rhythm of their own. Without something to
   hit, the dummy is scenery.
 
-**What still needs judging is the numbers.** The dodge is a burst of
-**15 m/s for 0.4 s** — about **six metres**, nearly a third of the yard.
-A souls-like roll is two or three metres. It is now measurable, and it is
-the first thing to measure: change `DODGE_SPEED` in
-`src/characters/character_pawn.gd`, play it, and write down what
-changed. The dummy's numbers are data too — its wind-up is 0.62 s, its
-reach 2.9 m, its arc 110°.
+**What still needs judging is the numbers.** And they have moved, because the owner
+read the first numbers and did not like them:
+
+| | the roll | the invulnerability | the speed it follows |
+|---|---|---|---|
+| **before** | 6 m (both) | 0.4 s (both) | 15 m/s |
+| **now — Quixote** | **4 m** | **0.25 s** | 16 m/s |
+| **now — Sancho** | **2 m** (half) | 0.4 s | 5 m/s |
+
+*"Let's reduce the roll distance a bit, also Sancho's roll should be half the distance
+and the invulnerability of Quixote as he should not be a fighter."*
+
+**The numbers are now data, not a constant.** A dodge says how far it carries you and
+how long you are safe for, and the speed follows: you move for as long as you cannot
+be hit. The two are different because the two men are different:
+
+- **Quixote** scrambles four metres and is untouchable for a quarter of a second. He is
+  not a fighter, and the game no longer lets him pretend otherwise: his dodge is a
+  nervous, committed lunge that will not save him if he rolls early.
+- **Sancho** rolls **two** — half of it — and is safe for twice as long. He is a heavy
+  man with a buckler: he does not go anywhere, he throws himself under the blow and
+  gets up.
+
+The rule that makes it data is in `src/data/abilities/dodge_quixote.tres` and
+`dodge_sancho.tres`: `roll_distance` and `iframe_seconds`. Change them, play it, write
+down what changed. The dummy's numbers are data too — its wind-up is 0.62 s, its reach
+2.9 m, its arc 110°.
 
 **Both are untested.** They were built after the note, so nobody has seen
 them except the two of us.
+
+### The lock-on — the thing the dummy was for
+
+The dummy was built so that a target existed at all, and a target is what a **lock-on**
+(`M`) is for. It is a *soft* lock: the target is the one you are looking at, the
+character turns towards it and walks around it, and the camera stands on the line
+between them and frames both.
+
+It is half a camera tool and half a combat tool, and the camera half is the one that
+matters: **a fight you cannot see is not a fight.** The camera pulls back with the
+distance to the target, looks past the character, and steps to the shoulder so the
+character does not stand in front of the thing it is fighting.
+
+The lock is given up when the target goes down, when it gets too far, and when you
+swap characters — a lock belongs to the character that took it.
 
 ### The page turn, untested
 

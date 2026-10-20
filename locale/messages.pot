@@ -515,6 +515,18 @@ msgstr ""
 msgid "ui.slice.down"
 msgstr ""
 
+#. TRANSLATORS: HUD line: what the player is locked onto. Format: %s.
+msgid "ui.slice.line.locked"
+msgstr ""
+
+#. TRANSLATORS: The marker over a locked target.
+msgid "ui.lockon.marker"
+msgstr ""
+
+#. TRANSLATORS: The training dummy, as the HUD and the lock-on call it.
+msgid "ui.target.dummy"
+msgstr ""
+
 #. TRANSLATORS: The name of the light attack.
 msgid "it.ability.attack_light.name"
 msgstr ""

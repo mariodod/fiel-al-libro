@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="AbilityData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/data/ability_data.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"dodge"
+display_name_key = &"it.ability.dodge.name"
+description_key = &"it.ability.dodge.desc"
+kind = 2
+stamina_cost = 20.0
+cooldown = 0.6
+iframe_seconds = 0.4
+roll_distance = 2.0

@@ -84,8 +84,8 @@ The cheapest possible test of the core idea, before any rig exists.
 
 | # | Task | Done when |
 |---|---|---|
-| 2.5 | `PlayerController`: walk, run, dodge, lock-on, a soft camera | Feels like a souls-like camera, not a platformer — 🟡 walk, run, a soft camera and the **dodge** are in; the **lock-on** waits for a target — and now there *is* one |
-| 2.6 | Combat: light combo, heavy, dodge, block/parry, stamina, poise, hit reactions | A 60-second exchange with a dummy is fun — 🟡 the dodge, the stamina pool and the swings that land are in; the **combo**, the block/parry, the poise and the hit reactions are not |
+| 2.5 | `PlayerController`: walk, run, dodge, lock-on, a soft camera | Feels like a souls-like camera, not a platformer — ✅ walk, run, a soft camera, the **dodge** and the **lock-on** are in: `M` picks the target you are looking at, the character turns towards it and walks around it, and the camera frames both |
+| 2.6 | Combat: light combo, heavy, dodge, block/parry, stamina, poise, hit reactions | A 60-second exchange with a dummy is fun — 🟡 the dodge, the stamina pool, the light and heavy swings and the lock-on are in; the **combo**, the block/parry, the poise and the hit reactions are not |
 | 2.7 | **Quixote rig** — silhouette, lance, 8 animations (idle, run, roll, 3× light, heavy, block, hit) | He reads as a *mad nobleman*, not a knight in costume |
 | 2.8 | **Sancho rig** — a *different* silhouette, sack + flail, his own 8 animations | You could tell them apart with the sound off |
 | 2.9 | `Desvelar` — Sancho strips the Book skin off a target and reveals its Reality form | It is the best-feeling verb in the game |

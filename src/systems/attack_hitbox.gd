@@ -31,6 +31,9 @@ const TARGET_GROUP := &"damageable"
 @export var active_seconds: float = 0.12
 ## Who swung it.
 var source: Node = null
+## What the swing is aimed at. A locked-on target, or nothing: then the
+## swing goes where the character is looking.
+var aim_at: Node3D = null
 
 var _age: float = 0.0
 ## The targets already hit, so one swing cannot count twice.
@@ -48,6 +51,9 @@ static func swing(pawn: CharacterPawn, ability: AbilityData) -> void:
 	box.arc_degrees = ability.arc_degrees
 	box.active_seconds = ability.active_seconds
 	box.source = pawn
+	# A locked-on swing goes at the target, not at wherever the
+	# character happens to be facing: the character is still turning.
+	box.aim_at = pawn.lock_target
 	pawn.add_child(box)
 
 
@@ -59,16 +65,32 @@ func _physics_process(delta: float) -> void:
 	_resolve()
 
 
+## Where the swing is pointing.
+##
+## At the locked target if there is one, and at the character's own
+## facing otherwise. The character's turn is rate-limited, so a swing
+## that used its facing would miss a target the player is clearly
+## aiming at.
+func _swing_direction() -> Vector3:
+	var forward := Vector3.ZERO
+	if aim_at != null and is_instance_valid(aim_at):
+		forward = aim_at.global_position - source.global_position
+	else:
+		forward = -source.global_transform.basis.z
+	forward.y = 0.0
+	if forward.length_squared() < 0.0001:
+		return Vector3.ZERO
+	return forward.normalized()
+
+
 ## Hurt everything inside the arc.
 func _resolve() -> void:
 	if source == null or not is_instance_valid(source):
 		return
 	var origin: Vector3 = source.global_position
-	var forward: Vector3 = -source.global_transform.basis.z
-	forward.y = 0.0
-	if forward.length_squared() < 0.0001:
+	var forward := _swing_direction()
+	if forward == Vector3.ZERO:
 		return
-	forward = forward.normalized()
 	var half_arc := deg_to_rad(arc_degrees * 0.5)
 
 	var tree := get_tree()

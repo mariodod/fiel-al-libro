@@ -23,6 +23,9 @@ var _swap_cooldown: float = 0.0
 var _examine_target: TruthObject = null
 var _examine_candidates: Array[Node] = []
 var _candidate_timer: float = 0.0
+## The things that can be locked onto, refreshed a few times a second.
+var _lock_candidates: Array[Node] = []
+var _lock_timer: float = 0.0
 
 
 func _ready() -> void:
@@ -43,6 +46,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		active_pawn.heavy_attack()
 	elif event.is_action_pressed(&"dodge"):
 		active_pawn.dodge()
+	elif event.is_action_pressed(&"lock_on"):
+		_toggle_lock()
 	elif event.is_action_pressed(&"lectura"):
 		EventBus.lectura_entered.emit()
 	elif event.is_action_pressed(&"interact"):
@@ -58,10 +63,49 @@ func _process(delta: float) -> void:
 
 	var direction := Input.get_vector(&"move_left", &"move_right", &"move_forward", &"move_back")
 	var sprint := Input.is_action_pressed(&"sprint")
-	active_pawn.move(_in_camera_frame(direction), sprint)
+	active_pawn.move(_in_fight_frame(direction), sprint)
 	active_pawn.block(Input.is_action_pressed(&"block"))
 
 	_update_examine_target(delta)
+	_update_lock(delta)
+
+
+# ── The lock-on ────────────────────────────────────────────────────────
+
+## Lock onto the thing you are looking at, or let go of it.
+##
+## The lock is soft: it is given up when the target leaves the fight, and
+## it is a camera tool before it is a combat tool. A fight you cannot
+## see is not a fight.
+func _toggle_lock() -> void:
+	if active_pawn == null:
+		return
+	if active_pawn.is_locked():
+		active_pawn.clear_lock_target()
+		return
+	_refresh_lock_candidates()
+	var target := LockOn.find_target(
+		_lock_candidates, active_pawn.global_position, _facing())
+	if target == null:
+		return
+	active_pawn.set_lock_target(target)
+
+
+## Keep the lock honest: a target that is dead, or too far, is no target.
+func _update_lock(delta: float) -> void:
+	_lock_timer -= delta
+	if _lock_timer <= 0.0:
+		_refresh_lock_candidates()
+	if active_pawn == null or not active_pawn.is_locked():
+		return
+	if LockOn.is_valid(active_pawn.lock_target, active_pawn.global_position):
+		return
+	active_pawn.clear_lock_target()
+
+
+func _refresh_lock_candidates() -> void:
+	_lock_timer = 0.2
+	_lock_candidates = get_tree().get_nodes_in_group(LockOn.GROUP)
 
 
 # ── The Examine verb ───────────────────────────────────────────────────
@@ -111,6 +155,31 @@ func _facing() -> Vector3:
 ## the first playtest named it on run 1: "it moves relative to plane not
 ## camera". The pawn's own movement stays world-space — the companion AI
 ## uses that too, and it has no camera.
+##
+## With a target locked, the frame is the TARGET's, not the camera's:
+## forward is towards the thing you are fighting, so `W` closes the
+## distance and `A`/`D` walk around it.
+func _in_fight_frame(direction: Vector2) -> Vector2:
+	if active_pawn != null and active_pawn.is_locked():
+		return _in_lock_frame(direction)
+	return _in_camera_frame(direction)
+
+
+## The input, in the frame of the locked target.
+func _in_lock_frame(direction: Vector2) -> Vector2:
+	if direction.length_squared() < 0.0001:
+		return direction
+	var to_target := active_pawn.lock_target.global_position - active_pawn.global_position
+	to_target.y = 0.0
+	if to_target.length_squared() < 0.0001:
+		return direction
+	var forward := to_target.normalized()
+	var right := Vector3(forward.z, 0.0, -forward.x)
+	var world := right * direction.x + forward * direction.y
+	return Vector2(world.x, world.z).normalized()
+
+
+## The input, in the camera's frame of reference.
 func _in_camera_frame(direction: Vector2) -> Vector2:
 	if direction.length_squared() < 0.0001:
 		return direction
@@ -126,6 +195,12 @@ func request_swap() -> void:
 	if _swap_cooldown > 0.0 or other_pawn == null:
 		return
 	_swap_cooldown = 0.25  # a beat, so you cannot machine-gun the swap
+	# A lock belongs to the character that took it. The new one starts
+	# with nothing locked, and the old one is not still fighting.
+	if active_pawn != null:
+		active_pawn.clear_lock_target()
+	if other_pawn != null:
+		other_pawn.clear_lock_target()
 	var previous := active_pawn
 	active_pawn = other_pawn
 	other_pawn = previous

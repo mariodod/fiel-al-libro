@@ -33,8 +33,51 @@ func suite(t: TestHarness) -> void:
 	t.test("both characters can dodge")
 	t.expect_true(quixote.data != null and quixote.data.dodge != null, "Quixote has a dodge")
 	var sancho: CharacterPawn = scene.get_node_or_null("Characters/Sancho")
+	t.expect_true(sancho != null and sancho.data != null, "Sancho should be in the scene")
 	if sancho != null and sancho.data != null:
 		t.expect_true(sancho.data.dodge != null, "Sancho has a dodge")
+
+	t.test("the roll is a distance, and it is less than it was")
+	# The second playtest: the roll was six metres, which is a third of
+	# the yard. It is four now.
+	t.expect_almost_eq(quixote.roll_distance(), 4.0, 0.001, "Quixote's roll is four metres")
+
+	t.test("Sancho's roll is half of Quixote's")
+	# *"Sancho's roll should be half the distance."* He is a heavier man
+	# with a sack: he goes nowhere, and he is safe while he does it.
+	t.expect_almost_eq(sancho.roll_distance(), quixote.roll_distance() * 0.5, 0.001,
+		"half the distance")
+
+	t.test("Quixote's invulnerability is shorter: he is not a fighter")
+	# *"The invulnerability of Quixote, as he should not be a fighter."*
+	t.expect_almost_eq(quixote.invulnerability_seconds(), 0.25, 0.001,
+		"a quarter of a second, not four tenths")
+	t.expect_gt(sancho.invulnerability_seconds(), quixote.invulnerability_seconds(),
+		"and Sancho, who is the practical one, keeps the full window")
+
+	t.test("the dodge carries you exactly that far")
+	# You move for as long as you cannot be hit, so the distance and the
+	# window together fix the speed.
+	for i in 40:
+		quixote._physics_process(0.05)
+	quixote.stamina = quixote.max_stamina
+	quixote.dodge()
+	var quixote_speed: float = quixote.get("_dodge_speed")
+	var quixote_window: float = quixote.get("_dodge_time")
+	t.expect_almost_eq(quixote_speed * quixote_window, 4.0, 0.01,
+		"four metres over the window")
+	# Let the cooldown run out, so the next dodge is allowed.
+	for i in 40:
+		quixote._physics_process(0.05)
+
+	for i in 40:
+		sancho._physics_process(0.05)
+	sancho.stamina = sancho.max_stamina
+	sancho.dodge()
+	var sancho_speed: float = sancho.get("_dodge_speed")
+	var sancho_window: float = sancho.get("_dodge_time")
+	t.expect_almost_eq(sancho_speed * sancho_window, 2.0, 0.01,
+		"two metres over the window")
 
 	t.test("a dodge costs stamina")
 	var before: float = quixote.stamina

@@ -36,6 +36,14 @@ var is_dead: bool = false
 ## sees Reality. Set by the driver.
 var perceived_layer: int = 0
 
+## The thing this character is locked onto, if any.
+##
+## While it is locked, the character faces the target and moves around
+## it, and the camera frames both. It is a soft lock: the target is the
+## one you are LOOKING at, and the lock is given up when the target
+## leaves the fight.
+var lock_target: Node3D = null
+
 ## The second sight: the lens that lets Sancho see the Book.
 ##
 ## In the full game this is an ability and an item you find. In the slice it
@@ -52,6 +60,11 @@ const TURN_SPEED := 8.0
 
 ## How fast a dodge throws you, in metres per second. Faster than a
 ## sprint: that is the point of it.
+##
+## This is only the FALLBACK, for a dodge whose data does not say how far
+## it carries you. A dodge that does say travels at whatever speed that
+## distance needs over the window you are safe for — see
+## `_dodge_speed_for()`.
 const DODGE_SPEED := 15.0
 ## How long before the stamina comes back, after the last thing you spent
 ## it on. GDD.md §7.1: "Shared pool, regenerates after 1s idle".
@@ -75,6 +88,8 @@ var _iframe_time: float = 0.0
 var _stamina_delay: float = 0.0
 ## The direction of the current dodge.
 var _dodge_direction: Vector3 = Vector3.FORWARD
+## How fast the current dodge throws you. Read from the ability.
+var _dodge_speed: float = DODGE_SPEED
 ## True while the dodge burst is running.
 var _dodging: bool = false
 
@@ -102,9 +117,23 @@ func move(input_direction: Vector2, sprint: bool) -> void:
 	velocity.x = move_toward(velocity.x, target.x, ACCELERATION * get_process_delta_time())
 	velocity.z = move_toward(velocity.z, target.z, ACCELERATION * get_process_delta_time())
 
-	if input.length_squared() > 0.001:
+	if lock_target != null and is_instance_valid(lock_target):
+		# Locked on: the character faces the target, and the input moves
+		# it around the target rather than away from it. This is the
+		# difference between fighting and running about.
+		_turn_towards(_flat_direction_to(lock_target))
+	elif input.length_squared() > 0.001:
 		var facing := Vector3(input_direction.x, 0.0, input_direction.y).normalized()
 		_turn_towards(facing)
+
+
+## The direction to a point, flat on the ground.
+func _flat_direction_to(node: Node3D) -> Vector3:
+	var to_node := node.global_position - global_position
+	to_node.y = 0.0
+	if to_node.length_squared() < 0.0001:
+		return -global_transform.basis.z
+	return to_node.normalized()
 
 
 ## Turn towards a direction, at a rate a person can follow.
@@ -136,6 +165,22 @@ func dodge() -> void:
 	_dodge_time = data.dodge.iframe_seconds
 	_iframe_time = data.dodge.iframe_seconds
 	_dodge_cooldown = data.dodge.cooldown
+	_dodge_speed = _dodge_speed_for(data.dodge)
+
+
+## How fast this dodge throws the character.
+##
+## A dodge that says how far it carries you travels at the speed that
+## distance needs over the window you are safe for: you move for as long
+## as you cannot be hit, and how far that is depends on the character.
+##
+## Quixote scrambles four metres and is safe for a quarter of a second.
+## Sancho rolls two — half of it — and is safe for twice as long, which
+## is the difference between a fighter and a man with a buckler.
+func _dodge_speed_for(ability: AbilityData) -> float:
+	if ability.roll_distance > 0.0 and ability.iframe_seconds > 0.0:
+		return ability.roll_distance / ability.iframe_seconds
+	return DODGE_SPEED
 
 
 func light_attack() -> void:
@@ -189,8 +234,8 @@ func _physics_process(delta: float) -> void:
 	# The dodge overrides the walking velocity: for a moment you are not
 	# walking, you are being thrown.
 	if _dodge_time > 0.0:
-		velocity.x = _dodge_direction.x * DODGE_SPEED
-		velocity.z = _dodge_direction.z * DODGE_SPEED
+		velocity.x = _dodge_direction.x * _dodge_speed
+		velocity.z = _dodge_direction.z * _dodge_speed
 		_dodging = true
 	elif _dodging:
 		# A dodge ends with your feet planted, not with a slide. The
@@ -267,6 +312,38 @@ func revive() -> void:
 ## his madness. See GDD.md §4.2.
 func can_perceive(layer: int) -> bool:
 	return Perception.can_perceive(character_id, layer, second_sight)
+
+
+## Lock onto a thing.
+func set_lock_target(target: Node3D) -> void:
+	lock_target = target
+
+
+## Let go of it.
+func clear_lock_target() -> void:
+	lock_target = null
+
+
+## Is this character locked onto something?
+func is_locked() -> bool:
+	return lock_target != null and is_instance_valid(lock_target)
+
+
+## How far this character's dodge carries them, in metres.
+##
+## The number the playtest judges. It is data, and it is different for
+## the two of them.
+func roll_distance() -> float:
+	if data == null or data.dodge == null:
+		return 0.0
+	return data.dodge.roll_distance
+
+
+## How long this character is untouchable after a dodge, in seconds.
+func invulnerability_seconds() -> float:
+	if data == null or data.dodge == null:
+		return 0.0
+	return data.dodge.iframe_seconds
 
 
 ## The character's name, in the current language.

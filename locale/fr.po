@@ -427,7 +427,7 @@ msgstr "E examiner ce que vous avez devant vous"
 
 #. TRANSLATORS: Control hint, line 5: where the practice yard is.
 msgid "ui.slice.help.5"
-msgstr "À l'ouest : la cour et le mannequin · K pour remettre"
+msgstr "À l'ouest : la cour et le mannequin · M verrouiller · K pour remettre"
 
 #. TRANSLATORS: HUD line: the training dummy and how much of it is left. Format: %d, %d.
 msgid "ui.slice.line.dummy"
@@ -436,6 +436,18 @@ msgstr "Mannequin : %d/%d"
 #. TRANSLATORS: Shown when a character goes down in the practice yard.
 msgid "ui.slice.down"
 msgstr "Vous êtes à terre. Appuyez sur K pour vous relever."
+
+#. TRANSLATORS: HUD line: what the player is locked onto. Format: %s.
+msgid "ui.slice.line.locked"
+msgstr "Verrouillé sur : %s"
+
+#. TRANSLATORS: The marker over a locked target.
+msgid "ui.lockon.marker"
+msgstr "VERROUILLÉ"
+
+#. TRANSLATORS: The training dummy, as the HUD and the lock-on call it.
+msgid "ui.target.dummy"
+msgstr "le mannequin d'entraînement"
 
 #. TRANSLATORS: The name of the light attack.
 msgid "it.ability.attack_light.name"

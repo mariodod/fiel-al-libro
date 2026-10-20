@@ -10,4 +10,5 @@ description_key = &"it.ability.dodge.desc"
 kind = 2
 stamina_cost = 20.0
 cooldown = 0.6
-iframe_seconds = 0.4
+iframe_seconds = 0.25
+roll_distance = 4.0

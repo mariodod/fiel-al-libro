@@ -23,6 +23,14 @@ enum Kind {
 ## The dodge burst lasts the same time — you are moving for as long as
 ## you cannot be hit.
 @export var iframe_seconds: float = 0.0
+## For dodges: how far the roll carries you, in metres.
+##
+## The second playtest asked for less distance, and for the two of them
+## to be different: *Sancho's roll should be half the distance, and
+## Quixote's invulnerability should be shorter, because he is not a
+## fighter.* So the distance is data, and the speed follows from it:
+## a dodge carries you this far over the window you are safe for.
+@export var roll_distance: float = 0.0
 
 @export_group("Damage")
 @export var damage: float = 10.0

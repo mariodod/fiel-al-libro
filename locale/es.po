@@ -360,7 +360,7 @@ msgstr "E examinar lo que tienes delante"
 
 #. TRANSLATORS: Control hint, line 5: where the practice yard is.
 msgid "ui.slice.help.5"
-msgstr "Al oeste: el patio y el maniquí · K reiniciar"
+msgstr "Al oeste: el patio y el maniquí · M fijar · K reiniciar"
 
 #. TRANSLATORS: HUD line: the training dummy and how much of it is left. Format: %d, %d.
 msgid "ui.slice.line.dummy"
@@ -369,6 +369,18 @@ msgstr "Maniquí: %d/%d"
 #. TRANSLATORS: Shown when a character goes down in the practice yard.
 msgid "ui.slice.down"
 msgstr "Estás en el suelo. Pulsa K para levantarte."
+
+#. TRANSLATORS: HUD line: what the player is locked onto. Format: %s.
+msgid "ui.slice.line.locked"
+msgstr "Fijado: %s"
+
+#. TRANSLATORS: The marker over a locked target.
+msgid "ui.lockon.marker"
+msgstr "FIJADO"
+
+#. TRANSLATORS: The training dummy, as the HUD and the lock-on call it.
+msgid "ui.target.dummy"
+msgstr "el maniquí de entrenamiento"
 
 #. TRANSLATORS: The name of the light attack.
 msgid "it.ability.attack_light.name"

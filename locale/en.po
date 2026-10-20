@@ -343,7 +343,7 @@ msgstr "E examine what is in front of you"
 
 #. TRANSLATORS: Control hint, line 5: where the practice yard is.
 msgid "ui.slice.help.5"
-msgstr "West: the yard and the dummy · K resets it"
+msgstr "West: the yard and the dummy · M lock on · K resets it"
 
 #. TRANSLATORS: HUD line: the training dummy and how much of it is left. Format: %d, %d.
 msgid "ui.slice.line.dummy"
@@ -352,6 +352,18 @@ msgstr "Dummy: %d/%d"
 #. TRANSLATORS: Shown when a character goes down in the practice yard.
 msgid "ui.slice.down"
 msgstr "You are down. Press K to get up."
+
+#. TRANSLATORS: HUD line: what the player is locked onto. Format: %s.
+msgid "ui.slice.line.locked"
+msgstr "Locked on: %s"
+
+#. TRANSLATORS: The marker over a locked target.
+msgid "ui.lockon.marker"
+msgstr "LOCKED ON"
+
+#. TRANSLATORS: The training dummy, as the HUD and the lock-on call it.
+msgid "ui.target.dummy"
+msgstr "the training dummy"
 
 #. TRANSLATORS: The name of the light attack.
 msgid "it.ability.attack_light.name"

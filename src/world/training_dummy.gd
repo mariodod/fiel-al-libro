@@ -33,6 +33,8 @@ enum State {
 
 ## How much punishment it takes.
 @export var max_health: float = 120.0
+## What the HUD and the lock-on call it.
+@export var display_name_key: StringName = &"ui.target.dummy"
 ## How much a hit from the dummy hurts.
 @export var damage: float = 16.0
 ## How far the swing reaches.
@@ -72,8 +74,9 @@ const WOOD := Color(0.52, 0.38, 0.25, 1.0)
 func _ready() -> void:
 	health = max_health
 	_build()
-	# Something a swing can find.
+	# Something a swing can find, and something the lock-on can pick.
 	add_to_group(AttackHitbox.TARGET_GROUP)
+	add_to_group(LockOn.GROUP)
 	# The dummy is a target: it is on the "enemy" layer as well as the
 	# "world" one, so a swing finds it and the character cannot walk
 	# through it.
@@ -81,6 +84,11 @@ func _ready() -> void:
 	if body != null:
 		body.collision_layer = 5
 		body.collision_mask = 5
+
+
+## What the HUD and the lock-on marker call it.
+func display_name() -> String:
+	return Loc.t(display_name_key)
 
 
 ## ── The look ───────────────────────────────────────────────────────────
@@ -332,6 +340,9 @@ func _knock_down() -> void:
 	if _body != null:
 		_body.rotation.z = deg_to_rad(78.0)
 		_body.position.y = -0.25
+	# A thing that is out of the fight is not a target. The lock goes
+	# with it, and the player has to pick it up again when it stands.
+	remove_from_group(LockOn.GROUP)
 
 
 ## And it gets up.
@@ -340,6 +351,7 @@ func _get_up() -> void:
 	if _body != null:
 		_body.rotation.z = 0.0
 		_body.position.y = 0.0
+	add_to_group(LockOn.GROUP)
 	_enter(State.IDLE, idle_seconds)
 
 
@@ -352,6 +364,7 @@ func reset() -> void:
 		_body.position = Vector3.ZERO
 	if _material != null:
 		_material.albedo_color = WOOD
+	add_to_group(LockOn.GROUP)
 	_enter(State.IDLE, idle_seconds)
 
 

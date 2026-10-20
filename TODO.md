@@ -41,16 +41,27 @@
       `src/systems/reaction.gd`, `src/ui/bark_line.gd`.
 - [x] **B3, in part — the barks are heard.** `EventBus.toast` had no listener at all, so
       every bark the companion ever said went into the void. There is a voice now.
-- [x] **The dodge (2.5).** `Space` dodges: a directional burst, 0.4s of i-frames, 20
-      stamina, and it ends with your feet planted. **And the stamina comes back** — it did
-      not before: nothing in the build restored it, so the second dodge of a run was the
-      last one. `src/data/abilities/dodge.tres`, `src/characters/character_pawn.gd`.
+- [x] **The dodge (2.5).** `Space` dodges: a directional burst, a window of
+      invulnerability, 20 stamina, and it ends with your feet planted. **And the
+      stamina comes back** — it did not before: nothing in the build restored it, so
+      the second dodge of a run was the last one.
+      `src/data/abilities/dodge_quixote.tres`, `src/characters/character_pawn.gd`.
 - [x] **B10 — something to dodge, and somewhere you cannot run.** The second playtest:
       *"For the dodge it is difficult to assess if it's fine at this stage without any
       enemies or space limitations."* There is now a **training dummy** (a telegraphed
       swing, a health bar, `K` to reset it) in a **walled yard** to the west, and the
       swings that make the dodge a decision: `LMB` light, `RMB` heavy, both costing
       stamina. `src/world/training_dummy.gd`, `src/systems/attack_hitbox.gd`.
+- [x] **The dodge, retuned.** The owner read the numbers and did not like them: the roll
+      is **4 m** now (not 6), **Sancho's is half of that (2 m)**, and **Quixote's
+      invulnerability is 0.25 s** (not 0.4) because he is not a fighter. The distance and
+      the window are **data** now — `roll_distance` and `iframe_seconds` in
+      `src/data/abilities/dodge_quixote.tres` and `dodge_sancho.tres` — and the speed
+      follows from them.
+- [x] **The lock-on (2.5).** `M` locks onto the thing you are looking at: the character
+      turns towards it and walks around it, the camera pulls back and frames both, and
+      the lock is given up when the target goes down or you swap characters.
+      `src/systems/lock_on.gd`, `src/systems/camera_follow.gd`.
 - [x] **`H` hides the HUD.** It is the developer's readout — it spells out both readings.
       A stranger must not have it.
 
@@ -60,11 +71,11 @@
    the only one who can run it. The mechanic has to teach itself. Give it to somebody who
    has never seen it, say nothing, and write down what they do in the first thirty
    seconds. Press `H` before you hand it over.
-2. **Judge the dodge.** The numbers are the point now, and the yard is the rig: the
-   burst is 15 m/s for 0.4 s — about **six metres**, where a souls-like roll is two or
-   three. Change `DODGE_SPEED` in `src/characters/character_pawn.gd`, play it, and write
-   down what changed. The dummy's numbers are data too: wind-up 0.62 s, reach 2.9 m,
-   arc 110°.
+2. **Judge the dodge, with the new numbers.** The roll is 4 m for Quixote and 2 m for
+   Sancho, and Quixote is only untouchable for a quarter of a second. That is a much
+   tighter window than before: the question is whether a dodge is still worth 20
+   stamina when it saves you for 0.25 s. Play it in the yard and write down what
+   changed.
 3. **B3, the rest: the companion's chatter.** The barks are visible now, but the idle
    ones are still picked at random from a pool of two. They should be about what the
    companion is actually looking at — the `TODO(Phase 1)` in `companion_ai.gd` says so,

@@ -17,6 +17,7 @@ extends Node
 ##   shot_examine.png    the Examine panel, in the Book: a book in a rock
 ##   shot_examine_real.png  the same panel, in Reality: a stone
 ##   shot_yard.png       the practice yard, and the dummy in it
+##   shot_lock.png       the same yard, locked on: the camera frames both
 ##
 ## See HANDOVER.md §4.
 
@@ -51,6 +52,8 @@ func _ready() -> void:
 
 	# And the Examine verb, in the Book, where the two of them disagree.
 	var controller: PlayerController = scene.get_node("PlayerController")
+	var camera: Camera3D = scene.get_node("CameraRig/Camera3D")
+	var dummy: TrainingDummy = scene.get_node("Yard/TrainingDummy")
 	controller.call("_update_examine_target", 1.0)
 	var press := InputEventAction.new()
 	press.action = &"interact"
@@ -73,6 +76,16 @@ func _ready() -> void:
 	quixote.rotation.y = PI * 0.5
 	await _settle(scene)
 	await _shoot("shot_yard.png")
+
+	# And the same yard with the lock on: the camera pulls back and
+	# frames the character and the thing it is fighting.
+	var lock := InputEventAction.new()
+	lock.action = &"lock_on"
+	lock.pressed = true
+	controller._unhandled_input(lock)
+	for i in 30:
+		await get_tree().process_frame
+	await _shoot("shot_lock.png")
 
 	# Leave the world as we found it.
 	TruthLayer.shift_to(TruthLayer.Layer.REALITY, true)
