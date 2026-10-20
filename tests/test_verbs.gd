@@ -29,10 +29,12 @@ func suite(t: TestHarness) -> void:
 		parent.remove_child(scene)
 		scene.free()
 		return
+	var sancho: CharacterPawn = scene.get_node_or_null("Characters/Sancho")
+	var dummy: TrainingDummy = scene.get_node_or_null("Yard/TrainingDummy")
+	t.expect_true(sancho != null and dummy != null, "the yard should have Sancho and a dummy in it")
 
 	t.test("both characters can dodge")
 	t.expect_true(quixote.data != null and quixote.data.dodge != null, "Quixote has a dodge")
-	var sancho: CharacterPawn = scene.get_node_or_null("Characters/Sancho")
 	t.expect_true(sancho != null and sancho.data != null, "Sancho should be in the scene")
 	if sancho != null and sancho.data != null:
 		t.expect_true(sancho.data.dodge != null, "Sancho has a dodge")
@@ -131,5 +133,111 @@ func suite(t: TestHarness) -> void:
 	quixote.dodge()
 	t.expect_eq(quixote.get("_dodge_time"), 0.0, "no dodge, no burst")
 
+	# ── The chain ──────────────────────────────────────────────────────
+	t.test("the light attack is a chain of three")
+	# GDD.md §7.1: "2–3 hit combo, low commitment". Each step of the
+	# chain hits harder than the last.
+	var damages: Array[float] = []
+	for step in 3:
+		# Long enough for the swing's own rhythm, short enough to stay
+		# inside the chain's window.
+		for i in 10:
+			quixote._physics_process(0.05)
+		quixote.stamina = quixote.max_stamina
+		quixote._attack_cooldown = 0.0
+		_clear_hitboxes(quixote)
+		quixote.light_attack()
+		var box: AttackHitbox = quixote.get_node_or_null("Hitbox")
+		if box != null:
+			damages.append(box.damage)
+			box.free()
+	t.expect_eq(damages.size(), 3, "three swings")
+	if damages.size() == 3:
+		t.expect_true(damages[0] < damages[1], "the second hits harder")
+		t.expect_true(damages[1] < damages[2], "and the third harder still")
+
+	t.test("the chain closes if you wait")
+	for i in 40:
+		quixote._physics_process(0.05)
+	quixote.stamina = quixote.max_stamina
+	quixote._attack_cooldown = 0.0
+	_clear_hitboxes(quixote)
+	quixote.light_attack()
+	var reopened: AttackHitbox = quixote.get_node_or_null("Hitbox")
+	t.expect_true(reopened != null, "the swing came out")
+	if reopened != null:
+		t.expect_eq(reopened.damage, 14.0, "and it starts the chain again")
+		reopened.free()
+
+	# ── The guard ──────────────────────────────────────────────────────
+	t.test("the guard stops most of a blow")
+	for i in 20:
+		quixote._physics_process(0.05)
+	quixote.health = 100.0
+	quixote.stamina = quixote.max_stamina
+	quixote.block(true)
+	t.expect_true(quixote.is_blocking(), "the guard is up")
+	quixote.take_damage(20.0)
+	t.expect_true(quixote.health > 90.0, "most of it did not get through, got %f" % quixote.health)
+
+	t.test("and the guard costs stamina")
+	var guard_stamina := quixote.stamina
+	quixote.take_damage(20.0)
+	t.expect_true(quixote.stamina < guard_stamina, "catching a blow costs stamina")
+
+	t.test("a guard with no stamina breaks")
+	quixote.stamina = 0.0
+	quixote.health = 100.0
+	quixote.take_damage(20.0)
+	t.expect_true(quixote.health < 90.0, "the blow landed in full, got %f" % quixote.health)
+	quixote.block(false)
+
+	# ── The parry ──────────────────────────────────────────────────────
+	t.test("only Sancho can parry")
+	# GDD.md §7.1: "Quixote: lance = wide block, no parry. Sancho:
+	# buckler = parry, tight window, huge reward."
+	t.expect_false(quixote.data.can_parry, "Quixote's lance cannot parry")
+	t.expect_true(sancho.data.can_parry, "Sancho's buckler can")
+	t.expect_gt(sancho.data.parry_window, 0.0, "and it has a window")
+
+	t.test("a parry costs no health and opens the attacker")
+	for i in 20:
+		sancho._physics_process(0.05)
+	sancho.health = 100.0
+	sancho.stamina = sancho.max_stamina
+	sancho.block(true)
+	t.expect_true(sancho.can_parry_now(), "the window is open")
+	sancho.take_damage(20.0, dummy)
+	t.expect_eq(sancho.health, 100.0, "the blow did not touch him")
+	t.expect_eq(dummy.state, TrainingDummy.State.STAGGER, "and the attacker is open")
+	sancho.block(false)
+
+	# ── The poise ──────────────────────────────────────────────────────
+	t.test("blows take the poise, and a broken poise staggers")
+	for i in 20:
+		quixote._physics_process(0.05)
+	quixote.health = 100.0
+	quixote.poise = 0.0
+	quixote.take_damage(10.0, null, 10.0)
+	t.expect_true(quixote.poise > 0.0, "the poise is down")
+	t.expect_false(quixote.is_staggered(), "but the character is still up")
+	quixote.take_damage(10.0, null, 100.0)
+	t.expect_true(quixote.is_staggered(), "the poise broke, and the character reels")
+
+	t.test("a staggered character cannot swing back")
+	quixote.stamina = quixote.max_stamina
+	quixote._attack_cooldown = 0.0
+	_clear_hitboxes(quixote)
+	quixote.light_attack()
+	t.expect_eq(quixote.get_node_or_null("Hitbox"), null, "no swing while staggered")
+
 	parent.remove_child(scene)
 	scene.free()
+
+
+## The hitboxes of a swing. They free themselves in the game; in a test
+## they have to be cleared by hand, or the last one is still there.
+func _clear_hitboxes(pawn: CharacterPawn) -> void:
+	for child in pawn.get_children():
+		if child is AttackHitbox:
+			child.free()

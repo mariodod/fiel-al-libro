@@ -48,11 +48,12 @@ someone willing to pay for the lesson with their own mind.*
 | `src/systems/attack_hitbox.gd` | A swing: the short window in which what is in front of you takes the hit. |
 | `src/systems/lock_on.gd` | The soft lock-on: the target you are looking at, and when the lock is given up. |
 | `src/systems/reaction.gd` | The reaction: what a character says when the world moves under them. |
+| `src/systems/chatter.gd` | The chatter: what the companion says about the thing it is looking at. |
 | `src/world/truth_object.gd` | An object with two faces. The data shape the whole game is built on. |
 | `src/world/training_dummy.gd` | The thing to fight: a telegraphed swing in a walled yard. |
 | `src/data/` | `Resource` subclasses and the `.tres` content: characters, primitives. |
 | `reference/` | **Local only, gitignored.** The reference texts: the 1605 first part, the 1615 second part, and the OCR of the 1605 printing. Fetch them with `tools\fetch_reference.ps1`. |
-| `tests/` | 16 suites, 316 assertions. |
+| `tests/` | 17 suites, 352 assertions. |
 | `locale/` | gettext PO files: es, en, fr + the template. |
 | `assets/` | Shaders, the Manifiesto content format. |
 | `tools/` | `godot.ps1` (locator), `setup.ps1` (one-command setup). |
@@ -160,8 +161,9 @@ a written page. The ending is a page you can read.
 | **The page turn** | `src/ui/post_process.gd` — a sheet of paper carrying a line of the 1605 original crosses the screen when the truth flips |
 | **The Examine verb** | `src/systems/examine.gd` + `src/ui/examine_panel.gd` — `E` on a thing, and the game says what **this character** sees: the name, the description, the title, the text on the page, and the one detail that does not add up. Never the truth table, never the other character |
 | **The reaction** | `src/systems/reaction.gd` + `src/ui/bark_line.gd` — when a character's reading changes, they say so, with their name on it |
-| **The verbs** | `src/characters/character_pawn.gd` — the dodge: a directional burst, a window of invulnerability, and the stamina that comes back; and the swing, which spends stamina and puts a hitbox in front of you |
+| **The verbs** | `src/characters/character_pawn.gd` — the dodge: a directional burst, a window of invulnerability, and the stamina that comes back; the swing, which chains three and spends stamina; and the guard, which stops most of a blow, costs stamina, and — for Sancho — **parries** |
 | **The lock-on** | `src/systems/lock_on.gd` + `src/systems/camera_follow.gd` — `M` picks the target you are looking at; the character turns towards it and walks around it, and the camera frames both |
+| **The companion's voice** | `src/systems/chatter.gd` + `src/characters/companion_ai.gd` — a line about the thing it is looking at, or an idle line, never the same thing twice |
 | **Something to fight** | `src/world/training_dummy.gd` + the yard in `src/world/slice.gd` — a telegraphed swing, a health bar, and four walls. The dodge cannot be judged without an enemy and a space limit |
 | Character abstraction | `src/characters/character_pawn.gd` (base), `player_controller.gd`, `companion_ai.gd` |
 | Data-driven content | `src/data/*.gd` — `Resource` subclasses; tune in the inspector, never in code |
@@ -439,7 +441,7 @@ Full memo: `docs/IP_CLEARANCE.md` (private).
 |---|---|
 | **Phase** | Phase 0 complete. **Phase 1, weeks 1–2: the grey box exists, the playtest has happened twice, and week 3–4 (combat) has started.** |
 | **Working code** | ~37 GDScript files: autoload spine, data resources, character abstraction, the truth-layer shader, the save system, the i18n pipeline, the reading rule, the Examine verb, the reactions, the dodge, the swing, the training dummy, and the week 1–2 grey box. |
-| **Tests** | 16 suites, 316 assertions, all green, enforced in CI. |
+| **Tests** | 17 suites, 352 assertions, all green, enforced in CI. |
 | **CI** | Green on every push. Produces Windows + Linux builds as artifacts. |
 | **Game content** | Two primitives (a windmill/giant, a rock/book) as low-poly placeholders, a training dummy and a walled yard, eight reaction lines in three languages, and one real Manifiesto fragment. No art, no levels, no enemies, no audio. |
 | **Money spent** | €0. Godot is free, assets are CC0, the only planned spend is the credits song (~$200–800) and later the EUIPO filing (~€1,150). |
@@ -508,17 +510,19 @@ owner's.
    things not to do yet.
 4. Play the grey box: `tools\play.cmd`. `T` flips the world (and turns a page), `TAB`
    swaps characters, `E` examines the thing in front of you, `Space` dodges, `LMB`/`RMB`
-   swing, `M` locks on, `V` gives Sancho the second sight, `L` pushes Quixote's Locura
+   swing (the light one chains three), `F` raises the guard (Sancho can parry, Quixote
+   cannot), `M` locks on, `V` gives Sancho the second sight, `L` pushes Quixote's Locura
    from Lucid to Lost, `F2` hides the perception tags, `H` hides the HUD, `K` resets the
    practice yard (to the west).
 5. Read `docs/PLAYTEST_NOTES.md` §6 and §7 — the playtest findings, the ten "but"s, and
    the two that have just been built: **B9, the Examine panel that shows a perception
    instead of the truth table**, and **B10, the training dummy in the walled yard**.
    Both are untested.
-6. **The next task is week 3–4.** The lock-on and the soft camera are in, and the dodge
-   has been retuned (4 m for Quixote, 2 m for Sancho, and a quarter of a second of
-   invulnerability for the knight, who is not a fighter). What is left of 2.6 is the
-   light combo, the block/parry, the poise and the hit reactions.
+6. **The next task is week 3–4.** The lock-on and the soft camera are in, the dodge has
+   been retuned (4 m for Quixote, 2 m for Sancho, and a quarter of a second of
+   invulnerability for the knight, who is not a fighter), and the combat verbs are in:
+   the chain of three, the guard, the parry and the poise. What is left of 2.6 is the
+   **asymmetry rules** (2.10) and the hit reactions that are not a push.
 7. **The one thing that matters:** the vertical slice exists to answer a single question —
    *is the two-truths mechanic fun?* The answer is yes. Everything from here is about
    turning a proven mechanic into a game.

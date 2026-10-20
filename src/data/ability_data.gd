@@ -17,11 +17,13 @@ enum Kind {
 @export var kind: Kind = Kind.ACTIVE
 
 @export_group("Cost")
+## What performing the ability costs. For a BLOCK it is what a blocked
+## blow costs the guard.
 @export var stamina_cost: float = 0.0
 @export var cooldown: float = 0.0
 ## For dodges: how long the invulnerability lasts. GDD.md §7.1 says 0.4s.
 ## The dodge burst lasts the same time — you are moving for as long as
-## you cannot be hit.
+## you cannot be hit. Quixote's is shorter: he is not a fighter.
 @export var iframe_seconds: float = 0.0
 ## For dodges: how far the roll carries you, in metres.
 ##
@@ -41,6 +43,16 @@ enum Kind {
 ## How long the hitbox is live, in seconds. The window in which the
 ## swing can actually connect.
 @export var active_seconds: float = 0.12
+
+@export_group("Combo")
+## How many hits are in the chain. One is a single swing.
+@export var combo_steps: int = 1
+## How long after a hit the chain is still open, in seconds. Press the
+## attack again inside this window and the next step of the chain comes
+## out.
+@export var combo_window: float = 0.0
+## The extra damage on each step of the chain.
+@export var combo_damage_step: float = 0.0
 
 @export_group("Gating")
 ## Which truth layer this ability functions in. 0 = Reality only, 1 = Book only,

@@ -26,6 +26,11 @@ signal character_switched(from_id: StringName, to_id: StringName)
 signal character_died(character_id: StringName)
 signal character_revived(character_id: StringName)
 signal player_spawned(pawn: Node)
+## A blow was caught on the guard instead of landing. The parry is
+## Sancho's, not Quixote's: GDD.md §7.1.
+signal character_parried(character_id: StringName)
+## The poise broke and the character is on their heels.
+signal character_staggered(character_id: StringName)
 
 
 # ── Investigation (Lectura) ─────────────────────────────────────────────

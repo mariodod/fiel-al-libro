@@ -23,6 +23,9 @@ const TARGET_GROUP := &"damageable"
 
 ## How much damage a hit does.
 @export var damage: float = 10.0
+## How much poise the hit takes away. GDD.md §7.1: "Enemy attacks have
+## both damage and poise".
+@export var poise_damage: float = 10.0
 ## How far the swing reaches, from the character.
 @export var reach: float = 2.6
 ## The width of the swing, in degrees.
@@ -41,12 +44,13 @@ var _hit: Dictionary = {}
 
 
 ## Swing at something. Spawns the hitbox in front of the character.
-static func swing(pawn: CharacterPawn, ability: AbilityData) -> void:
+static func swing(pawn: CharacterPawn, ability: AbilityData, damage: float = -1.0) -> void:
 	if pawn == null or ability == null:
 		return
 	var box := AttackHitbox.new()
 	box.name = "Hitbox"
-	box.damage = ability.damage
+	box.damage = ability.damage if damage < 0.0 else damage
+	box.poise_damage = ability.poise_damage
 	box.reach = ability.reach
 	box.arc_degrees = ability.arc_degrees
 	box.active_seconds = ability.active_seconds
@@ -115,4 +119,4 @@ func _resolve() -> void:
 			if angle > half_arc:
 				continue
 		_hit[id] = true
-		target.take_damage(damage)
+		target.take_damage(damage, source, poise_damage)

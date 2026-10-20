@@ -58,6 +58,17 @@
       the window are **data** now — `roll_distance` and `iframe_seconds` in
       `src/data/abilities/dodge_quixote.tres` and `dodge_sancho.tres` — and the speed
       follows from them.
+- [x] **B3 — the companion's chatter.** The idle barks were a random draw from a pool of
+      two. The companion now says something **about the thing it is looking at** — the
+      rock, the mill, the dummy — and about what the player is doing: locked onto
+      something, or on the ground. A line about the thing, or an idle line, never the
+      same thing twice. `src/systems/chatter.gd`, `src/characters/companion_ai.gd`.
+- [x] **2.6 — the rest of the combat.** The light attack is a **chain of three** (14 →
+      20 → 26). The **guard** (`F`) stops most of a blow and costs stamina, and breaks
+      without it. **Sancho can parry and Quixote cannot** (GDD.md §7.1) — a parry costs
+      no health and leaves the attacker staggered. Blows take **poise**, and a broken
+      poise **staggers** the character. A landed blow pushes and stops the swing.
+      `src/characters/character_pawn.gd`, `src/data/ability_data.gd`.
 - [x] **The lock-on (2.5).** `M` locks onto the thing you are looking at: the character
       turns towards it and walks around it, the camera pulls back and frames both, and
       the lock is given up when the target goes down or you swap characters.
@@ -71,15 +82,12 @@
    the only one who can run it. The mechanic has to teach itself. Give it to somebody who
    has never seen it, say nothing, and write down what they do in the first thirty
    seconds. Press `H` before you hand it over.
-2. **Judge the dodge, with the new numbers.** The roll is 4 m for Quixote and 2 m for
-   Sancho, and Quixote is only untouchable for a quarter of a second. That is a much
-   tighter window than before: the question is whether a dodge is still worth 20
-   stamina when it saves you for 0.25 s. Play it in the yard and write down what
-   changed.
-3. **B3, the rest: the companion's chatter.** The barks are visible now, but the idle
-   ones are still picked at random from a pool of two. They should be about what the
-   companion is actually looking at — the `TODO(Phase 1)` in `companion_ai.gd` says so,
-   and `Examine.find_target` is the tool: the AI can ask what it is looking at.
+2. **A minute in the yard, with the new verbs.** The chain, the guard, the parry and the
+   poise are all in, and the numbers are all data. The question is whether a *chain*
+   against a dummy is satisfying, and whether the parry is a moment or a button.
+3. **The rest of 2.6 and 2.10.** What is left: the **asymmetry rules** (Quixote cannot
+   harm innocents without a Humanity cost, Sancho cannot meaningfully damage) and the
+   **hit reactions** that are not a push. Then the rigs, 2.7 and 2.8.
 
 ### Still owed, and it is not code
 
@@ -94,19 +102,21 @@
 - [x] **B5 — Quixote's reaction.** Built. Untested.
 - [x] **B9 — the Examine panel shows a perception, not the truth table.** Built. Untested.
 - [x] **B10 — the training dummy and the walled yard.** Built. Untested.
-- [ ] **B3 — the shipped game owes the companion barks.** The barks are heard now, and
-      they fire when a reading changes. What is missing is the *idle* chatter: lines
-      about the thing in front of them, not a random draw from a pool of two.
+- [x] **B3 — the companion's chatter.** Built. Untested.
+- [ ] **B3 — the shipped game owes the companion barks** *as content*: there are now lines
+      about the rock, the mill, the dummy, the lock-on and the player going down, but
+      the idle pool is three lines and the game has a hundred objects. The rule
+      survives; the content does not.
 - [ ] **The sample Manifiesto fragment carries the 1615 wording, not the 1605.** DLC 1 is
       the 1615 book, so this is load-bearing. Only the owner can re-source it. See
       `docs/NEXT_SESSION.md` §7.
 
 ## Next (Phase 1 — weeks 3–4, combat)
 
-- [ ] `PlayerController`: walk, run, dodge, lock-on, a soft camera (2.5) — 🟡 the **lock-on**
-      is the rest of it, and the dummy is the target to lock onto
-- [ ] Combat: light combo, heavy, dodge, block/parry, stamina, poise, hit reactions (2.6) —
-      🟡 the dodge, the stamina and the swings that land are in
+- [ ] `PlayerController`: walk, run, dodge, lock-on, a soft camera (2.5) — ✅ done
+- [ ] Combat: light combo, heavy, block/parry, poise, hit reactions (2.6) — 🟡 the chain,
+      the guard, the parry, the poise and the push are in; the **hit reactions** that are
+      not a push are not
 - [ ] **Quixote rig** — silhouette, lance, 8 animations (2.7)
 - [ ] **Sancho rig** — a *different* silhouette, sack + flail (2.8)
 - [ ] Sancho's `Desvelar` — the form-swap VFX (2.9). The playtest is already asking for it.

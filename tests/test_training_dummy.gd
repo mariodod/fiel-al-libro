@@ -117,6 +117,10 @@ func suite(t: TestHarness) -> void:
 	# ── Hitting it back ────────────────────────────────────────────────
 	t.test("a light attack lands on the dummy")
 	dummy.reset()
+	# Let the reeling from the last blow wear off: a character that has
+	# just been hit cannot swing back.
+	for i in 20:
+		quixote._physics_process(0.05)
 	# The dummy faces east, towards the gate. The character stands east
 	# of it and faces west, into the dummy.
 	quixote.global_position = dummy.global_position + Vector3(1.6, 0.0, 0.0)

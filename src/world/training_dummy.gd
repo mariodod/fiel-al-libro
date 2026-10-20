@@ -29,11 +29,17 @@ enum State {
 	STRIKE,   ## the arm is coming down. This is the hit.
 	RECOVER,  ## the arm is back down; the dummy is open.
 	DOWN,     ## knocked over. It gets up on its own.
+	STAGGER,  ## the poise broke. It is reeling, and it is open.
 }
 
 ## How much punishment it takes.
 @export var max_health: float = 120.0
-## What the HUD and the lock-on call it.
+## How much punishment it takes before it staggers. Blows take the poise
+## away, and a broken poise leaves it open. GDD.md §7.1.
+@export var max_poise: float = 60.0
+## How long it reels when the poise breaks.
+@export var stagger_seconds: float = 1.4
+## What the character is called.
 @export var display_name_key: StringName = &"ui.target.dummy"
 ## How much a hit from the dummy hurts.
 @export var damage: float = 16.0
@@ -58,6 +64,8 @@ enum State {
 
 ## How much health it has left.
 var health: float = 0.0
+## How much poise it has left. A broken poise staggers it.
+var poise: float = 0.0
 ## What it is doing right now. Read by the HUD and by the tests.
 var state: int = State.IDLE
 
@@ -195,6 +203,10 @@ func _physics_process(delta: float) -> void:
 		State.RECOVER:
 			if _timer <= 0.0:
 				_enter(State.IDLE, idle_seconds)
+		State.STAGGER:
+			# Reeling. It does not swing, and it does not turn.
+			if _timer <= 0.0:
+				_enter(State.IDLE, idle_seconds)
 		State.DOWN:
 			if _timer <= 0.0:
 				_get_up()
@@ -323,20 +335,36 @@ func _update_flinch() -> void:
 
 ## Take a hit. The same interface a character has, so a swing does not
 ## need to know what it is hitting.
-func take_damage(amount: float) -> void:
+func take_damage(amount: float, source: Node = null, poise_damage: float = 0.0) -> void:
 	if state == State.DOWN:
 		return
 	health = maxf(0.0, health - amount)
 	_flinch = 0.25
 	if _material != null:
 		_material.albedo_color = WOOD
+	# The poise. A broken poise leaves it open, and that is the whole
+	# point of a heavy swing.
+	if poise_damage > 0.0:
+		poise += poise_damage
+		if poise >= max_poise:
+			poise = 0.0
+			stagger()
 	if health <= 0.0:
 		_knock_down()
+
+
+## The poise broke. It reels, and for a moment it cannot swing.
+func stagger() -> void:
+	if state == State.DOWN or state == State.STAGGER:
+		return
+	_enter(State.STAGGER, stagger_seconds)
+	_flinch = 0.4
 
 
 ## It goes over.
 func _knock_down() -> void:
 	_enter(State.DOWN, down_seconds)
+	poise = 0.0
 	if _body != null:
 		_body.rotation.z = deg_to_rad(78.0)
 		_body.position.y = -0.25
@@ -348,6 +376,7 @@ func _knock_down() -> void:
 ## And it gets up.
 func _get_up() -> void:
 	health = max_health
+	poise = 0.0
 	if _body != null:
 		_body.rotation.z = 0.0
 		_body.position.y = 0.0
@@ -358,6 +387,7 @@ func _get_up() -> void:
 ## Put everything back: the dummy stands up, and the yard is quiet.
 func reset() -> void:
 	health = max_health
+	poise = 0.0
 	_flinch = 0.0
 	if _body != null:
 		_body.rotation.z = 0.0

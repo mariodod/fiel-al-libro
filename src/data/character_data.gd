@@ -11,6 +11,19 @@ extends Resource
 @export var poise: float = 30.0
 @export var max_madness: float = 100.0
 
+@export_group("Defence")
+## Can this character parry? Sancho's buckler can; Quixote's lance is
+## a wide block and no parry at all. GDD.md §7.1.
+@export var can_parry: bool = false
+## How long after the guard goes up a parry still counts, in seconds.
+@export var parry_window: float = 0.0
+## How long a broken poise staggers the character, in seconds.
+@export var stagger_seconds: float = 1.2
+## How much of a blocked blow still gets through.
+@export var block_damage_ratio: float = 0.15
+## How long a character reels after a hit that was not blocked.
+@export var hit_reaction_seconds: float = 0.3
+
 @export_group("Kit")
 @export var light_attack: AbilityData
 @export var heavy_attack: AbilityData

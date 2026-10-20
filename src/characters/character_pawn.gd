@@ -30,6 +30,10 @@ var stamina: float = 100.0
 ## The size of the stamina pool. It comes from the data — Sancho has more
 ## of it than Quixote, and until now the pawn did not know that.
 var max_stamina: float = 100.0
+## The poise left. Blows take it away; when it is gone, the character
+## staggers and cannot do anything for a moment. GDD.md §7.1.
+var poise: float = 0.0
+var max_poise: float = 30.0
 var is_dead: bool = false
 
 ## The truth this pawn currently perceives. Quixote sees the Book; Sancho
@@ -57,6 +61,10 @@ const RUN_SPEED := 6.8
 const ACCELERATION := 12.0
 const FRICTION := 14.0
 const TURN_SPEED := 8.0
+## How fast a blow pushes a character that was not ready for it.
+const KNOCKBACK_SPEED := 4.0
+## How quickly that push dies away.
+const KNOCKBACK_DECAY := 12.0
 
 ## How fast a dodge throws you, in metres per second. Faster than a
 ## sprint: that is the point of it.
@@ -92,6 +100,20 @@ var _dodge_direction: Vector3 = Vector3.FORWARD
 var _dodge_speed: float = DODGE_SPEED
 ## True while the dodge burst is running.
 var _dodging: bool = false
+## Which step of the light chain is out. Zero when the chain is closed.
+var _combo_step: int = 0
+## How long the light chain is still open.
+var _combo_timer: float = 0.0
+## True while the guard is up.
+var _blocking: bool = false
+## How long a parry still counts, after the guard goes up.
+var _parry_timer: float = 0.0
+## How long the character is reeling from a hit.
+var _hurt_timer: float = 0.0
+## How long the character is staggered, with the poise broken.
+var _stagger_timer: float = 0.0
+## The push from the last hit that was not blocked.
+var _knockback: Vector3 = Vector3.ZERO
 
 
 func _ready() -> void:
@@ -100,6 +122,8 @@ func _ready() -> void:
 		max_health = 100.0
 		max_stamina = data.max_stamina
 		stamina = data.max_stamina
+		max_poise = data.poise
+		poise = 0.0
 	perceived_layer = Perception.reading_for(character_id, TruthLayer.layer(), second_sight)
 	add_to_group(&"pawns")
 	EventBus.player_spawned.emit(self)
@@ -112,6 +136,9 @@ func move(input_direction: Vector2, sprint: bool) -> void:
 	var input := Vector3(input_direction.x, 0.0, input_direction.y)
 	_input_direction = input_direction
 	var speed := RUN_SPEED if sprint else WALK_SPEED
+	if _blocking:
+		# A guard is not a run.
+		speed *= 0.45
 	var target := input.normalized() * speed
 
 	velocity.x = move_toward(velocity.x, target.x, ACCELERATION * get_process_delta_time())
@@ -150,7 +177,7 @@ func _turn_towards(direction: Vector3) -> void:
 
 
 func dodge() -> void:
-	if is_dead or _dodge_cooldown > 0.0:
+	if is_dead or _dodge_cooldown > 0.0 or _stagger_timer > 0.0:
 		return
 	if data == null or data.dodge == null:
 		return
@@ -184,21 +211,53 @@ func _dodge_speed_for(ability: AbilityData) -> float:
 
 
 func light_attack() -> void:
-	if _attack_cooldown > 0.0:
+	if _attack_cooldown > 0.0 or _hurt_timer > 0.0 or _stagger_timer > 0.0:
 		return
 	if data != null and data.light_attack != null:
 		_perform(data.light_attack)
 
 
 func heavy_attack() -> void:
-	if _attack_cooldown > 0.0:
+	if _attack_cooldown > 0.0 or _hurt_timer > 0.0 or _stagger_timer > 0.0:
 		return
 	if data != null and data.heavy_attack != null:
 		_perform(data.heavy_attack)
 
 
-func block(_held: bool) -> void:
-	pass
+## Raise the guard, or lower it.
+##
+## The guard is the other half of the dodge, and the two of them answer
+## different things: the dodge moves you out of the blow, the guard
+## stops it. Holding it costs nothing; *catching* a blow on it costs
+## stamina, and if the stamina runs out the guard breaks and the blow
+## lands in full.
+func block(held: bool) -> void:
+	if held and not _blocking:
+		# The guard goes up. For a character who can parry, this is the
+		# window: a blow that lands now is parried, not blocked.
+		_parry_timer = data.parry_window if data != null and data.can_parry else 0.0
+	_blocking = held
+
+
+## Is the guard up?
+func is_blocking() -> bool:
+	return _blocking
+
+
+## Can this character parry right now?
+func can_parry_now() -> bool:
+	return _parry_timer > 0.0
+
+
+## Is the character reeling from a hit, or staggered?
+func is_disabled() -> bool:
+	return _hurt_timer > 0.0 or _stagger_timer > 0.0
+
+
+## Is the poise broken? The character is on their heels and can do
+## nothing.
+func is_staggered() -> bool:
+	return _stagger_timer > 0.0
 
 
 func ability(ability_id: StringName) -> bool:
@@ -218,6 +277,12 @@ func _physics_process(delta: float) -> void:
 	_dodge_cooldown = maxf(0.0, _dodge_cooldown - delta)
 	_attack_cooldown = maxf(0.0, _attack_cooldown - delta)
 	_iframe_time = maxf(0.0, _iframe_time - delta)
+	_combo_timer = maxf(0.0, _combo_timer - delta)
+	_parry_timer = maxf(0.0, _parry_timer - delta)
+	_hurt_timer = maxf(0.0, _hurt_timer - delta)
+	_stagger_timer = maxf(0.0, _stagger_timer - delta)
+	if _combo_timer <= 0.0:
+		_combo_step = 0
 
 	# The stamina comes back once you stop spending it. It did not come
 	# back at all before: nothing in the build restored it, so the second
@@ -243,6 +308,15 @@ func _physics_process(delta: float) -> void:
 		_dodging = false
 		velocity.x = 0.0
 		velocity.z = 0.0
+	elif _stagger_timer > 0.0:
+		# Staggered: you are on your heels and going nowhere.
+		velocity.x = 0.0
+		velocity.z = 0.0
+	elif _knockback.length_squared() > 0.0001:
+		# The push from the last blow.
+		velocity.x = _knockback.x
+		velocity.z = _knockback.z
+		_knockback = _knockback.move_toward(Vector3.ZERO, KNOCKBACK_DECAY * delta)
 
 	move_and_slide()
 
@@ -279,20 +353,111 @@ func _perform(ability: AbilityData) -> bool:
 ## that keeps the next one from coming straight away.
 func _swing(ability: AbilityData) -> void:
 	_attack_cooldown = maxf(_attack_cooldown, ability.cooldown)
-	AttackHitbox.swing(self, ability)
+	AttackHitbox.swing(self, ability, _combo_damage(ability))
 
 
-func take_damage(amount: float) -> void:
+## The damage of this swing, given where it is in the chain.
+##
+## The light attack is a chain of three (GDD.md §7.1: "2–3 hit combo,
+## low commitment"). Press it again inside the window and the next step
+## comes out, harder than the last.
+func _combo_damage(ability: AbilityData) -> float:
+	if ability.combo_steps <= 1:
+		return ability.damage
+	if _combo_timer > 0.0 and _combo_step > 0 and _combo_step < ability.combo_steps:
+		_combo_step += 1
+	else:
+		_combo_step = 1
+	_combo_timer = ability.combo_window
+	return ability.damage + float(_combo_step - 1) * ability.combo_damage_step
+
+
+## Take a hit.
+##
+## The order matters, and it is the whole of the fight:
+##   1. the i-frames — you dodged, so it does not touch you;
+##   2. the parry — you caught it on the buckler, so it does not touch
+##      you either, and the man who threw it is open;
+##   3. the guard — it mostly does not get through, and it costs you
+##      stamina. If the stamina is not there, the guard breaks;
+##   4. the hit — it lands, it takes poise, and it pushes you.
+func take_damage(amount: float, source: Node = null, poise_damage: float = 0.0) -> void:
 	if is_dead:
 		return
 	# The i-frames. This is the whole point of a dodge.
 	if _iframe_time > 0.0:
 		return
+	# A parry. No damage, and the attacker is left open.
+	if _parry_timer > 0.0:
+		_parry_timer = 0.0
+		EventBus.character_parried.emit(character_id)
+		if source != null and source.has_method("stagger"):
+			source.call("stagger")
+		return
+	# The guard.
+	if _blocking:
+		if not _pay_for_the_block():
+			# The guard broke. The blow lands in full.
+			health -= amount
+			_react_to_hit(source, poise_damage)
+		else:
+			health -= amount * _block_ratio()
+			_push_away(source, 0.5)
+		damaged.emit(amount)
+		if health <= 0.0:
+			health = 0.0
+			_die()
+		return
 	health -= amount
 	damaged.emit(amount)
+	_react_to_hit(source, poise_damage)
 	if health <= 0.0:
 		health = 0.0
 		_die()
+
+
+## The guard holds: the blow costs stamina, and a character without the
+## stamina cannot hold it.
+func _pay_for_the_block() -> bool:
+	if data == null or data.block == null:
+		return false
+	var cost := data.block.stamina_cost
+	if cost <= 0.0:
+		return true
+	if stamina < cost:
+		return false
+	stamina -= cost
+	_stamina_delay = STAMINA_REGEN_DELAY
+	return true
+
+
+func _block_ratio() -> float:
+	if data == null:
+		return 0.0
+	return data.block_damage_ratio
+
+
+## A hit that landed: it takes poise, it pushes, and it makes the
+## character reel.
+func _react_to_hit(source: Node, poise_damage: float) -> void:
+	poise += poise_damage
+	if poise >= max_poise:
+		poise = 0.0
+		_stagger_timer = data.stagger_seconds if data != null else 1.2
+		EventBus.character_staggered.emit(character_id)
+	_hurt_timer = data.hit_reaction_seconds if data != null else 0.3
+	_push_away(source, 1.0)
+
+
+## The push from a blow. Away from whoever threw it.
+func _push_away(source: Node, strength: float) -> void:
+	var away := Vector3.ZERO
+	if source != null and source is Node3D:
+		away = global_position - (source as Node3D).global_position
+		away.y = 0.0
+	if away.length_squared() < 0.0001:
+		away = -global_transform.basis.z
+	_knockback = away.normalized() * KNOCKBACK_SPEED * strength
 
 
 func _die() -> void:

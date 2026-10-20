@@ -218,6 +218,83 @@ msgstr "The stone has turned into a book, master."
 msgid "dia.sancho.reaction.rock.reality"
 msgstr "A stone. Only a stone."
 
+# --- THE CHATTER (B3) ---------------------------------------------------
+# What the companion says about the thing it is looking at. The key is
+# composed: dia.<character>.chatter.<thing>.
+
+#. TRANSLATORS: Quixote, looking at the rock. He is formal, and a little mad.
+msgid "dia.quixote.chatter.rock"
+msgstr "A stone, Sancho... though by tomorrow it may be a book again, and rightly so."
+
+#. TRANSLATORS: Quixote, looking at the windmill.
+msgid "dia.quixote.chatter.windmill"
+msgstr "Mills, Sancho. And giants, if the wind is in the mood for giants."
+
+#. TRANSLATORS: Quixote, looking at the training dummy. He will call it a giant.
+msgid "dia.quixote.chatter.dummy"
+msgstr "A dummy, Sancho. A wooden giant, if you would have it so."
+
+#. TRANSLATORS: Quixote, when the player locks onto something.
+msgid "dia.quixote.chatter.locked"
+msgstr "At the giant, Sancho! Do you see it? It moves on its own. To battle!"
+
+#. TRANSLATORS: Quixote, when the player goes down.
+msgid "dia.quixote.chatter.down"
+msgstr "Get up, Sancho! It is not your fault: the stone was badly placed."
+
+#. TRANSLATORS: Quixote, with nothing in front of him. Line 1 of 3.
+msgid "dia.quixote.chatter.idle.1"
+msgstr "The plain says nothing, Sancho. Not even she does."
+
+#. TRANSLATORS: Quixote, with nothing in front of him. Line 2 of 3.
+msgid "dia.quixote.chatter.idle.2"
+msgstr "And to think that from here to a castle — no, a mill, we shall have seen a castle."
+
+#. TRANSLATORS: Quixote, with nothing in front of him. Line 3 of 3.
+msgid "dia.quixote.chatter.idle.3"
+msgstr "Silence, Sancho. It is the silence before a battle."
+
+#. TRANSLATORS: Sancho, looking at the rock. Plain, practical, not impressed.
+msgid "dia.sancho.chatter.rock"
+msgstr "A stone, your lordship. The sort there are plenty of."
+
+#. TRANSLATORS: Sancho, looking at the windmill.
+msgid "dia.sancho.chatter.windmill"
+msgstr "A mill, your lordship. The usual sort: stone and wind."
+
+#. TRANSLATORS: Sancho, looking at the training dummy. He knows what it is.
+msgid "dia.sancho.chatter.dummy"
+msgstr "A dummy, your lordship. Put there to be hit."
+
+#. TRANSLATORS: Sancho, when the player locks onto something.
+msgid "dia.sancho.chatter.locked"
+msgstr "Ah, are we going for it, your lordship? Oh, but nobody moves it."
+
+#. TRANSLATORS: Sancho, when the player goes down.
+msgid "dia.sancho.chatter.down"
+msgstr "Get up, they are hitting you! And get out of the way!"
+
+#. TRANSLATORS: Sancho, with nothing in front of him. Line 1 of 3.
+msgid "dia.sancho.chatter.idle.1"
+msgstr "This place is quieter than your Rocinante, your lordship."
+
+#. TRANSLATORS: Sancho, with nothing in front of him. Line 2 of 3.
+msgid "dia.sancho.chatter.idle.2"
+msgstr "Not a soul here, your lordship. Not one of the kind that looks for trouble."
+
+#. TRANSLATORS: Sancho, with nothing in front of him. Line 3 of 3.
+msgid "dia.sancho.chatter.idle.3"
+msgstr "At this rate we will reach the inn before dark."
+
+#. TRANSLATORS: Quixote, after a parry. He cannot parry, so this line is
+#. only ever heard if the character who is driving is Sancho.
+msgid "dia.quixote.chatter.parry"
+msgstr "There! I have him! Right on the nose, Sancho!"
+
+#. TRANSLATORS: Sancho, after a parry.
+msgid "dia.sancho.chatter.parry"
+msgstr "I caught that one, your lordship! Did you see?"
+
 msgid "tip.lectura.intro"
 msgstr "Hold on to the page. Some things only show themselves to a patient eye."
 
@@ -348,6 +425,10 @@ msgstr "West: the yard and the dummy · M lock on · K resets it"
 #. TRANSLATORS: HUD line: the training dummy and how much of it is left. Format: %d, %d.
 msgid "ui.slice.line.dummy"
 msgstr "Dummy: %d/%d"
+
+#. TRANSLATORS: HUD line: the character you are driving and how they are. Format: %s, %d, %d, %d, %d.
+msgid "ui.slice.line.vitals"
+msgstr "%s: %d health · %d stamina · %d poise (/%d)"
 
 #. TRANSLATORS: Shown when a character goes down in the practice yard.
 msgid "ui.slice.down"

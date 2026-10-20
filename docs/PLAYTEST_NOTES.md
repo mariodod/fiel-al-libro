@@ -46,6 +46,7 @@ tools\play.cmd
 | `Space` | dodge |
 | `LMB` / `RMB` | light attack / heavy attack |
 | `M` | lock on — the target you are looking at, and a camera that frames both |
+| `F` | the guard — hold it. Sancho's buckler can parry; Quixote's lance cannot |
 | `V` | Sancho's second sight, on/off |
 | `L` | Quixote's Locura: Lucid ↔ Lost |
 | `K` | reset the practice yard |
@@ -435,6 +436,47 @@ character does not stand in front of the thing it is fighting.
 
 The lock is given up when the target goes down, when it gets too far, and when you
 swap characters — a lock belongs to the character that took it.
+
+### B3 — the companion finally says something about what it is looking at
+
+The barks were heard, and they fire when a reading changes. What was missing was the
+*idle* chatter: a random draw from a pool of two, every twenty-five seconds. A
+companion that says "sí, señor" on a loop is a label, not a person.
+
+So the line is **about the thing in front of it**:
+
+```
+Sancho: Una piedra, señor. De las que hay a montones.
+Quixote: Molinos, Sancho. Y gigantes, si el viento quiere que lo sean.
+Sancho: Un maniquí, señor. Está puesto para que le den.
+```
+
+and about what the player is doing — the yard made two new beats possible:
+
+```
+Sancho: Ah, ¿vamos a por él, señor? Ay, no lo mueve nadie.
+Quixote: ¡Levántese, Sancho! No es culpa suya: la piedra estaba mal puesta.
+```
+
+The rule is one line: **a line about the thing, or an idle line — never the same thing
+twice in a row.** The idle lines are a pool of three per character, so the companion
+has something to say even on an empty plain.
+
+### 2.6 — the rest of the combat
+
+The verbs are all in now, and they are all in the yard where they can be judged:
+
+| | |
+|---|---|
+| **The chain** | The light attack is three hits, each harder than the last (14 → 20 → 26). Press it again inside the window and the next step comes out. |
+| **The guard** (`F`) | Holding it stops most of a blow and costs stamina. A guard with no stamina **breaks**, and the blow lands in full. |
+| **The parry** | Sancho's buckler parries: a blow in the first 0.18 s of the guard costs no health and leaves the attacker **staggered**. Quixote's lance cannot parry — GDD.md §7.1. |
+| **The poise** | Blows take it away. When it is gone, the character **staggers** and cannot swing back. |
+| **The hit reaction** | A blow that lands pushes the character and stops them swinging for a moment. |
+
+The asymmetry is in the numbers, not in a rule that says so: **Sancho can parry and
+Quixote cannot**, because a buckler is a parry and a lance is a wide block. The
+parry is also the biggest moment in a fight, so somebody says something about it.
 
 ### The page turn, untested
 

@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="CharacterData" load_steps=5 format=3]
+[gd_resource type="Resource" script_class="CharacterData" load_steps=6 format=3]
 
 [ext_resource type="Script" path="res://src/data/character_data.gd" id="1_data"]
 [ext_resource type="Resource" path="res://src/data/abilities/dodge_sancho.tres" id="2_dodge"]
 [ext_resource type="Resource" path="res://src/data/abilities/light_attack.tres" id="3_light"]
 [ext_resource type="Resource" path="res://src/data/abilities/heavy_attack.tres" id="4_heavy"]
+[ext_resource type="Resource" path="res://src/data/abilities/block.tres" id="5_block"]
 
 [resource]
 script = ExtResource("1_data")
@@ -11,9 +12,15 @@ id = &"sancho"
 display_name_key = &"character.sancho"
 max_stamina = 120.0
 poise = 24.0
+can_parry = true
+parry_window = 0.18
+stagger_seconds = 1.5
+block_damage_ratio = 0.2
+hit_reaction_seconds = 0.25
 light_attack = ExtResource("3_light")
 heavy_attack = ExtResource("4_heavy")
 dodge = ExtResource("2_dodge")
+block = ExtResource("5_block")
 truth_layer_affinity = 0
 can_harm_innocents = true
 companion_aggression = 0.3

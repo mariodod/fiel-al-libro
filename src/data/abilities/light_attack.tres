@@ -14,3 +14,6 @@ poise_damage = 10.0
 reach = 2.6
 arc_degrees = 70.0
 active_seconds = 0.12
+combo_steps = 3
+combo_window = 0.8
+combo_damage_step = 6.0

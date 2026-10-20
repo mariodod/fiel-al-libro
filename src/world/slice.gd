@@ -121,6 +121,7 @@ func _ready() -> void:
 
 	EventBus.character_switched.connect(_on_character_switched)
 	EventBus.character_died.connect(_on_character_died)
+	EventBus.character_parried.connect(_on_character_parried)
 
 
 # ── World ───────────────────────────────────────────────────────────────
@@ -479,6 +480,13 @@ func _update_hud() -> void:
 		int(Locura.get_for(&"quixote")),
 		Loc.t(&"ui.locura.%s" % _locura_band()),
 	]))
+	lines.append(Loc.tf(&"ui.slice.line.vitals", [
+		_character_name(driven),
+		int(driven.health),
+		int(driven.stamina),
+		int(driven.poise),
+		int(driven.max_poise),
+	]))
 
 	lines.append("")
 	for object in _objects:
@@ -562,3 +570,11 @@ func _on_character_switched(_from_id: StringName, _to_id: StringName) -> void:
 ## and is not told how is a stuck build, so the yard says so.
 func _on_character_died(character_id: StringName) -> void:
 	EventBus.toast.emit(&"ui.slice.down", [])
+
+
+## A blow was caught on the guard.
+##
+## The parry is Sancho's and not Quixote's, and it is the biggest moment
+## in a fight, so somebody says something about it.
+func _on_character_parried(character_id: StringName) -> void:
+	EventBus.character_spoke.emit(character_id, Chatter.key_for(character_id, &"parry"), [])

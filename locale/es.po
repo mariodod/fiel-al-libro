@@ -180,6 +180,83 @@ msgstr "La piedra se ha puesto libro, señor."
 msgid "dia.sancho.reaction.rock.reality"
 msgstr "Una piedra. Solo una piedra."
 
+# --- LA CHARLA (B3) -----------------------------------------------------
+# Lo que dice el compañero de lo que tiene delante. La clave se compone:
+# dia.<personaje>.chatter.<cosa>.
+
+#. TRANSLATORS: Quixote, looking at the rock. He is formal, and a little mad.
+msgid "dia.quixote.chatter.rock"
+msgstr "Una piedra, Sancho. Aunque mañana me parezca un libro, y con razón."
+
+#. TRANSLATORS: Quixote, looking at the windmill.
+msgid "dia.quixote.chatter.windmill"
+msgstr "Molinos, Sancho. Y gigantes, si el viento quiere que lo sean."
+
+#. TRANSLATORS: Quixote, looking at the training dummy. He will call it a giant.
+msgid "dia.quixote.chatter.dummy"
+msgstr "Un maniquí, Sancho. Un gigante de madera, si usted lo quiere así."
+
+#. TRANSLATORS: Quixote, when the player locks onto something.
+msgid "dia.quixote.chatter.locked"
+msgstr "¡Al gigante, Sancho! ¿Lo ve? Se mueve solo. ¡A la batalla!"
+
+#. TRANSLATORS: Quixote, when the player goes down.
+msgid "dia.quixote.chatter.down"
+msgstr "¡Levántese, Sancho! No es culpa suya: la piedra estaba mal puesta."
+
+#. TRANSLATORS: Quixote, with nothing in front of him. Line 1 of 3.
+msgid "dia.quixote.chatter.idle.1"
+msgstr "La llanura no dice nada, Sancho. Ni siquiera ella."
+
+#. TRANSLATORS: Quixote, with nothing in front of him. Line 2 of 3.
+msgid "dia.quixote.chatter.idle.2"
+msgstr "Y pensar que de aquí a un castillo... no, un molino, habremos visto un castillo."
+
+#. TRANSLATORS: Quixote, with nothing in front of him. Line 3 of 3.
+msgid "dia.quixote.chatter.idle.3"
+msgstr "Silencio, Sancho. Es el silencio de antes de una batalla."
+
+#. TRANSLATORS: Sancho, looking at the rock. Plain, practical, not impressed.
+msgid "dia.sancho.chatter.rock"
+msgstr "Una piedra, señor. De las que hay a montones."
+
+#. TRANSLATORS: Sancho, looking at the windmill.
+msgid "dia.sancho.chatter.windmill"
+msgstr "Un molino, señor. De los de siempre, de piedra y de viento."
+
+#. TRANSLATORS: Sancho, looking at the training dummy. He knows what it is.
+msgid "dia.sancho.chatter.dummy"
+msgstr "Un maniquí, señor. Está puesto para que le den."
+
+#. TRANSLATORS: Sancho, when the player locks onto something.
+msgid "dia.sancho.chatter.locked"
+msgstr "Ah, ¿vamos a por él, señor? Ay, no lo mueve nadie."
+
+#. TRANSLATORS: Sancho, when the player goes down.
+msgid "dia.sancho.chatter.down"
+msgstr "¡Levántese, que le están dando! ¡Y quítese de en medio!"
+
+#. TRANSLATORS: Sancho, with nothing in front of him. Line 1 of 3.
+msgid "dia.sancho.chatter.idle.1"
+msgstr "Esto está más quieto que su Rocinante, señor."
+
+#. TRANSLATORS: Sancho, with nothing in front of him. Line 2 of 3.
+msgid "dia.sancho.chatter.idle.2"
+msgstr "Aquí no se ve ni un alma, señor. Ni un alma de las que buscan."
+
+#. TRANSLATORS: Sancho, with nothing in front of him. Line 3 of 3.
+msgid "dia.sancho.chatter.idle.3"
+msgstr "Si seguimos así, llegaremos a la posada antes de que anochezca."
+
+#. TRANSLATORS: Quixote, after a parry. He cannot parry, so this line is
+#. only ever heard if the character who is driving is Sancho.
+msgid "dia.quixote.chatter.parry"
+msgstr "¡Ahí lo tengo! ¡Con un palmo de la frente, Sancho!"
+
+#. TRANSLATORS: Sancho, after a parry.
+msgid "dia.sancho.chatter.parry"
+msgstr "¡Le he parado yo, señor! ¿Lo ha visto?"
+
 msgid "tip.lectura.intro"
 msgstr "Aguanta la página. Algunas cosas solo se muestran a quien mira con calma."
 
@@ -365,6 +442,10 @@ msgstr "Al oeste: el patio y el maniquí · M fijar · K reiniciar"
 #. TRANSLATORS: HUD line: the training dummy and how much of it is left. Format: %d, %d.
 msgid "ui.slice.line.dummy"
 msgstr "Maniquí: %d/%d"
+
+#. TRANSLATORS: HUD line: the character you are driving and how they are. Format: %s, %d, %d, %d, %d.
+msgid "ui.slice.line.vitals"
+msgstr "%s: %d de vida · %d de aliento · %d de aplomo (/%d)"
 
 #. TRANSLATORS: Shown when a character goes down in the practice yard.
 msgid "ui.slice.down"

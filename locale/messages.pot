@@ -499,6 +499,84 @@ msgstr ""
 msgid "dia.sancho.reaction.rock.reality"
 msgstr ""
 
+# --- THE CHATTER (B3) ----------------------------------------------------
+# What the companion says about the thing it is looking at. The key is
+# composed: dia.<character>.chatter.<thing>. The "thing" is the object's
+# id (rock, windmill, dummy) or one of the situations (locked, down).
+
+#. TRANSLATORS: Quixote, looking at the rock. He is formal, and a little mad.
+msgid "dia.quixote.chatter.rock"
+msgstr ""
+
+#. TRANSLATORS: Quixote, looking at the windmill.
+msgid "dia.quixote.chatter.windmill"
+msgstr ""
+
+#. TRANSLATORS: Quixote, looking at the training dummy. He will call it a giant.
+msgid "dia.quixote.chatter.dummy"
+msgstr ""
+
+#. TRANSLATORS: Quixote, when the player locks onto something.
+msgid "dia.quixote.chatter.locked"
+msgstr ""
+
+#. TRANSLATORS: Quixote, when the player goes down.
+msgid "dia.quixote.chatter.down"
+msgstr ""
+
+#. TRANSLATORS: Quixote, with nothing in front of him. Line 1 of 3.
+msgid "dia.quixote.chatter.idle.1"
+msgstr ""
+
+#. TRANSLATORS: Quixote, with nothing in front of him. Line 2 of 3.
+msgid "dia.quixote.chatter.idle.2"
+msgstr ""
+
+#. TRANSLATORS: Quixote, with nothing in front of him. Line 3 of 3.
+msgid "dia.quixote.chatter.idle.3"
+msgstr ""
+
+#. TRANSLATORS: Sancho, looking at the rock. Plain, practical, not impressed.
+msgid "dia.sancho.chatter.rock"
+msgstr ""
+
+#. TRANSLATORS: Sancho, looking at the windmill.
+msgid "dia.sancho.chatter.windmill"
+msgstr ""
+
+#. TRANSLATORS: Sancho, looking at the training dummy. He knows what it is.
+msgid "dia.sancho.chatter.dummy"
+msgstr ""
+
+#. TRANSLATORS: Sancho, when the player locks onto something.
+msgid "dia.sancho.chatter.locked"
+msgstr ""
+
+#. TRANSLATORS: Sancho, when the player goes down.
+msgid "dia.sancho.chatter.down"
+msgstr ""
+
+#. TRANSLATORS: Sancho, with nothing in front of him. Line 1 of 3.
+msgid "dia.sancho.chatter.idle.1"
+msgstr ""
+
+#. TRANSLATORS: Sancho, with nothing in front of him. Line 2 of 3.
+msgid "dia.sancho.chatter.idle.2"
+msgstr ""
+
+#. TRANSLATORS: Sancho, with nothing in front of him. Line 3 of 3.
+msgid "dia.sancho.chatter.idle.3"
+msgstr ""
+
+#. TRANSLATORS: Quixote, after a parry. He cannot parry, so this line is
+#. only ever heard if the character who is driving is Sancho.
+msgid "dia.quixote.chatter.parry"
+msgstr ""
+
+#. TRANSLATORS: Sancho, after a parry.
+msgid "dia.sancho.chatter.parry"
+msgstr ""
+
 #. TRANSLATORS: Control hint, line 4.
 msgid "ui.slice.help.4"
 msgstr ""
@@ -509,6 +587,10 @@ msgstr ""
 
 #. TRANSLATORS: HUD line: the training dummy and how much of it is left. Format: %d, %d.
 msgid "ui.slice.line.dummy"
+msgstr ""
+
+#. TRANSLATORS: HUD line: the character you are driving and how they are. Format: %s, %d, %d, %d, %d.
+msgid "ui.slice.line.vitals"
 msgstr ""
 
 #. TRANSLATORS: Shown when a character goes down in the practice yard.
