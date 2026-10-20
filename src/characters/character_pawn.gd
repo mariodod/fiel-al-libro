@@ -27,6 +27,9 @@ var character_id: StringName = &""
 var health: float = 100.0
 var max_health: float = 100.0
 var stamina: float = 100.0
+## The size of the stamina pool. It comes from the data — Sancho has more
+## of it than Quixote, and until now the pawn did not know that.
+var max_stamina: float = 100.0
 var is_dead: bool = false
 
 ## The truth this pawn currently perceives. Quixote sees the Book; Sancho
@@ -47,11 +50,37 @@ const ACCELERATION := 12.0
 const FRICTION := 14.0
 const TURN_SPEED := 8.0
 
+## How fast a dodge throws you, in metres per second. Faster than a
+## sprint: that is the point of it.
+const DODGE_SPEED := 15.0
+## How long before the stamina comes back, after the last thing you spent
+## it on. GDD.md §7.1: "Shared pool, regenerates after 1s idle".
+const STAMINA_REGEN_DELAY := 1.0
+## Stamina per second, once it starts coming back.
+const STAMINA_REGEN := 28.0
+
+## The direction the player asked to move in, last frame. The dodge is
+## directional (GDD.md §7.1), so it needs to know.
+var _input_direction: Vector2 = Vector2.ZERO
+## Seconds left of the dodge burst.
+var _dodge_time: float = 0.0
+## Seconds left before you can dodge again.
+var _dodge_cooldown: float = 0.0
+## Seconds left during which damage does nothing.
+var _iframe_time: float = 0.0
+## Seconds left before the stamina starts coming back.
+var _stamina_delay: float = 0.0
+## The direction of the current dodge.
+var _dodge_direction: Vector3 = Vector3.FORWARD
+## True while the dodge burst is running.
+var _dodging: bool = false
+
 
 func _ready() -> void:
 	if data != null:
 		character_id = data.id
 		max_health = 100.0
+		max_stamina = data.max_stamina
 		stamina = data.max_stamina
 	perceived_layer = Perception.reading_for(character_id, TruthLayer.layer(), second_sight)
 	add_to_group(&"pawns")
@@ -63,6 +92,7 @@ func _ready() -> void:
 
 func move(input_direction: Vector2, sprint: bool) -> void:
 	var input := Vector3(input_direction.x, 0.0, input_direction.y)
+	_input_direction = input_direction
 	var speed := RUN_SPEED if sprint else WALK_SPEED
 	var target := input.normalized() * speed
 
@@ -87,6 +117,24 @@ func _turn_towards(direction: Vector3) -> void:
 	rotation.y += clampf(diff, -step, step)
 
 
+func dodge() -> void:
+	if is_dead or _dodge_cooldown > 0.0:
+		return
+	if data == null or data.dodge == null:
+		return
+	if not _perform(data.dodge):
+		return
+
+	# Directional: where you were going, or where you are facing.
+	var direction := Vector3(_input_direction.x, 0.0, _input_direction.y)
+	if direction.length_squared() < 0.001:
+		direction = -global_transform.basis.z
+	_dodge_direction = direction.normalized()
+	_dodge_time = data.dodge.iframe_seconds
+	_iframe_time = data.dodge.iframe_seconds
+	_dodge_cooldown = data.dodge.cooldown
+
+
 func light_attack() -> void:
 	if data != null and data.light_attack != null:
 		_perform(data.light_attack)
@@ -95,11 +143,6 @@ func light_attack() -> void:
 func heavy_attack() -> void:
 	if data != null and data.heavy_attack != null:
 		_perform(data.heavy_attack)
-
-
-func dodge() -> void:
-	if data != null and data.dodge != null:
-		_perform(data.dodge)
 
 
 func block(_held: bool) -> void:
@@ -119,32 +162,66 @@ func ability(ability_id: StringName) -> bool:
 ## ── The pawn's own logic ────────────────────────────────────────────────
 
 func _physics_process(delta: float) -> void:
+	_dodge_time = maxf(0.0, _dodge_time - delta)
+	_dodge_cooldown = maxf(0.0, _dodge_cooldown - delta)
+	_iframe_time = maxf(0.0, _iframe_time - delta)
+
+	# The stamina comes back once you stop spending it. It did not come
+	# back at all before: nothing in the build restored it, so the second
+	# dodge of a run was the last one.
+	_stamina_delay = maxf(0.0, _stamina_delay - delta)
+	if _stamina_delay <= 0.0 and stamina < max_stamina:
+		stamina = minf(max_stamina, stamina + STAMINA_REGEN * delta)
+
 	if not is_on_floor():
 		velocity.y -= GRAVITY * delta
 	else:
 		velocity.y = 0.0
+
+	# The dodge overrides the walking velocity: for a moment you are not
+	# walking, you are being thrown.
+	if _dodge_time > 0.0:
+		velocity.x = _dodge_direction.x * DODGE_SPEED
+		velocity.z = _dodge_direction.z * DODGE_SPEED
+		_dodging = true
+	elif _dodging:
+		# A dodge ends with your feet planted, not with a slide. The
+		# friction alone would leave you coasting for over a second.
+		_dodging = false
+		velocity.x = 0.0
+		velocity.z = 0.0
+
 	move_and_slide()
 
 
-func _perform(ability: AbilityData) -> void:
+## Run an ability. Returns whether it actually went off.
+##
+## The gating is the asymmetry (GDD.md §8.3): which truth the ability
+## works in, how mad you have to be, and what it costs.
+func _perform(ability: AbilityData) -> bool:
 	if ability == null or is_dead:
-		return
+		return false
 	# Gating: layer and madness. This is how "Book builds" and "Reality
 	# builds" differ (GDD.md §8.3).
 	if not ability.available_in_layer(TruthLayer.layer()):
-		return
+		return false
 	if not ability.available_at_locura(Locura.get_for(character_id)):
-		return
+		return false
 	if not Memoria.has_milestone(character_id, ability.min_milestone):
-		return
+		return false
 	if stamina < ability.stamina_cost:
-		return
+		return false
 	stamina -= ability.stamina_cost
+	_stamina_delay = STAMINA_REGEN_DELAY
 	# TODO(Phase 1): spawn the ability's VFX and hitbox.
+	return true
 
 
 func take_damage(amount: float) -> void:
 	if is_dead:
+		return
+	# The i-frames. This is the whole point of a dodge.
+	if _iframe_time > 0.0:
 		return
 	health -= amount
 	damaged.emit(amount)

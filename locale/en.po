@@ -163,6 +163,12 @@ msgstr "The Oath"
 msgid "it.ability.juramento.desc"
 msgstr "Those who made a vow once do not break it easily."
 
+msgid "it.ability.dodge.name"
+msgstr "Dodge"
+
+msgid "it.ability.dodge.desc"
+msgstr "A step to the side, and the blow goes past."
+
 msgid "dia.sancho.bark.001"
 msgstr "By all the saints, it's a mill."
 

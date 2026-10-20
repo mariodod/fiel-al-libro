@@ -49,7 +49,7 @@ someone willing to pay for the lesson with their own mind.*
 | `src/world/truth_object.gd` | An object with two faces. The data shape the whole game is built on. |
 | `src/data/` | `Resource` subclasses and the `.tres` content: characters, primitives. |
 | `reference/` | **Local only, gitignored.** The reference texts: the 1605 first part, the 1615 second part, and the OCR of the 1605 printing. Fetch them with `tools\fetch_reference.ps1`. |
-| `tests/` | 13 suites, 226 assertions. |
+| `tests/` | 14 suites, 239 assertions. |
 | `locale/` | gettext PO files: es, en, fr + the template. |
 | `assets/` | Shaders, the Manifiesto content format. |
 | `tools/` | `godot.ps1` (locator), `setup.ps1` (one-command setup). |
@@ -157,6 +157,7 @@ a written page. The ending is a page you can read.
 | **The page turn** | `src/ui/post_process.gd` — a sheet of paper carrying a line of the 1605 original crosses the screen when the truth flips |
 | **The Examine verb** | `src/systems/examine.gd` + `src/ui/examine_panel.gd` — `E` on a thing, and the game says what it is in each truth and what each of you calls it |
 | **The reaction** | `src/systems/reaction.gd` + `src/ui/bark_line.gd` — when a character's reading changes, they say so, with their name on it |
+| **The verbs** | `src/characters/character_pawn.gd` — the dodge: a directional burst, i-frames, and the stamina that comes back |
 | Character abstraction | `src/characters/character_pawn.gd` (base), `player_controller.gd`, `companion_ai.gd` |
 | Data-driven content | `src/data/*.gd` — `Resource` subclasses; tune in the inspector, never in code |
 | Save system | `src/autoload/manuscrito.gd` — atomic writes, snapshot semantics, version migration |
@@ -432,8 +433,8 @@ Full memo: `docs/IP_CLEARANCE.md` (private).
 | | |
 |---|---|
 | **Phase** | Phase 0 complete. **Phase 1, weeks 1–2: the grey box exists, and the playtest has happened.** |
-| **Working code** | ~33 GDScript files: autoload spine, data resources, character abstraction, the truth-layer shader, the save system, the i18n pipeline, the reading rule, the Examine verb, the reactions, and the week 1–2 grey box. |
-| **Tests** | 13 suites, 226 assertions, all green, enforced in CI. |
+| **Working code** | ~35 GDScript files: autoload spine, data resources, character abstraction, the truth-layer shader, the save system, the i18n pipeline, the reading rule, the Examine verb, the reactions, the dodge, and the week 1–2 grey box. |
+| **Tests** | 14 suites, 239 assertions, all green, enforced in CI. |
 | **CI** | Green on every push. Produces Windows + Linux builds as artifacts. |
 | **Game content** | Two primitives (a windmill/giant, a rock/book) as low-poly placeholders, eight reaction lines in three languages, and one real Manifiesto fragment. No art, no levels, no enemies, no audio. |
 | **Money spent** | €0. Godot is free, assets are CC0, the only planned spend is the credits song (~$200–800) and later the EUIPO filing (~€1,150). |
@@ -485,8 +486,9 @@ owner's.
 3. **Read `docs/NEXT_SESSION.md`.** It has the state, the order of work, and the list of
    things not to do yet.
 4. Play the grey box: `tools\play.cmd`. `T` flips the world (and turns a page), `TAB`
-   swaps characters, `E` examines the thing in front of you, `V` gives Sancho the second
-   sight, `L` pushes Quixote's Locura from Lucid to Lost, `F2` hides the perception tags.
+   swaps characters, `E` examines the thing in front of you, `Space` dodges, `V` gives
+   Sancho the second sight, `L` pushes Quixote's Locura from Lucid to Lost, `F2` hides
+   the perception tags.
 5. Read `docs/PLAYTEST_NOTES.md` §6 — the playtest findings, the eight "but"s (six
    fixed), and the two that have just been built: **B6, the Examine verb** and **B5,
    Quixote's reaction**. Both are untested.

@@ -222,6 +222,14 @@ msgstr ""
 msgid "it.ability.juramento.desc"
 msgstr ""
 
+#. META: namespace=it
+msgid "it.ability.dodge.name"
+msgstr "Esquive"
+
+#. META: namespace=it
+msgid "it.ability.dodge.desc"
+msgstr "Un pas de côté, et le coup passe à côté."
+
 #. META: namespace=dia
 msgid "dia.sancho.bark.002"
 msgstr ""

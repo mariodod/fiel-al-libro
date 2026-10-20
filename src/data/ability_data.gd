@@ -19,6 +19,10 @@ enum Kind {
 @export_group("Cost")
 @export var stamina_cost: float = 0.0
 @export var cooldown: float = 0.0
+## For dodges: how long the invulnerability lasts. GDD.md §7.1 says 0.4s.
+## The dodge burst lasts the same time — you are moving for as long as
+## you cannot be hit.
+@export var iframe_seconds: float = 0.0
 
 @export_group("Damage")
 @export var damage: float = 10.0

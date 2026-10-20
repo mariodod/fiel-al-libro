@@ -34,6 +34,10 @@
       `src/systems/reaction.gd`, `src/ui/bark_line.gd`.
 - [x] **B3, in part — the barks are heard.** `EventBus.toast` had no listener at all, so
       every bark the companion ever said went into the void. There is a voice now.
+- [x] **The dodge (2.5).** `Space` dodges: a directional burst, 0.4s of i-frames, 20
+      stamina, and it ends with your feet planted. **And the stamina comes back** — it did
+      not before: nothing in the build restored it, so the second dodge of a run was the
+      last one. `src/data/abilities/dodge.tres`, `src/characters/character_pawn.gd`.
 
 ### This week's three goals
 
@@ -41,13 +45,15 @@
    the only one who can run it. The mechanic has to teach itself. Give it to somebody who
    has never seen it, say nothing, and write down what they do in the first thirty
    seconds. The Examine prompt (`E — Examinar`) is the one new thing they will meet.
-2. **Week 3–4, task 2.5: the verbs.** `PlayerController` has walk, run and a
-   camera-relative direction. It needs dodge, lock-on and a soft camera before combat can
-   be anything but a numbers test. The input map already has the actions; nothing reads
-   them yet.
+2. **Week 3–4, task 2.5, the rest of it: lock-on and the soft camera.** The dodge is
+   real; walk, run and the camera were already there. The lock-on needs something to lock
+   onto — and **the plan has no enemy until 2.11**, while 2.6's criterion is *"a 60-second
+   exchange with a dummy is fun"*. A training dummy is the task that is missing from the
+   list, and it is the one to write down.
 3. **B3, the rest: the companion's chatter.** The barks are visible now, but the idle
    ones are still picked at random from a pool of two. They should be about what the
-   companion is actually looking at — the `TODO(Phase 1)` in `companion_ai.gd` says so.
+   companion is actually looking at — the `TODO(Phase 1)` in `companion_ai.gd` says so,
+   and `Examine.find_target` is the tool: the AI can ask what it is looking at.
 
 ### Still owed, and it is not code
 

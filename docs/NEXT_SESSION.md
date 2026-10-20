@@ -14,8 +14,8 @@
 |---|---|
 | **Phase** | Phase 1. **Weeks 1–2 are done.** Week 3–4 (combat) has not started. |
 | **The premise** | **Proven.** The playtest says so. |
-| **The build** | `res://src/world/slice.tscn` — the main scene. Two primitives, one truth toggle, two characters reading the same world differently — and now **two verbs**: `E` to examine a thing, and a line of dialogue when the world moves under a character. |
-| **Tests** | 13 suites, 226 assertions, green, enforced in CI. |
+| **The build** | `res://src/world/slice.tscn` — the main scene. Two primitives, one truth toggle, two characters reading the same world differently — and now **three verbs**: `E` to examine a thing, `Space` to dodge, and a line of dialogue when the world moves under a character. |
+| **Tests** | 14 suites, 239 assertions, green, enforced in CI. |
 | **Commits** | `46f67c7` the grey box · `c0061f5` the first playtest · `630439c` the stranger's run and the T/L fix · `f5a3a39` the page turn · `76b995a` the reference texts · *(the Examine verb and the reactions)* |
 | **The fun** | Not fully proven. Seven data points is a sample, not a signal. |
 
@@ -51,6 +51,7 @@ tools\play.cmd
 | `TAB` | swap character — the camera cuts, the objects morph |
 | `T` | the world's truth flips — **a page turns** |
 | `E` | **examine the thing in front of you** — the two faces, and what each of you calls it |
+| `Space` | **dodge** — a burst, 0.4s of i-frames, 20 stamina |
 | `V` | Sancho's second sight (off by default: the two readings disagree) |
 | `L` | Quixote's Locura: Lucid ↔ Lost |
 | `F1` / `F2` | help / the perception tags |
@@ -88,12 +89,18 @@ problem, and it is a week 3–4 problem.
 The one new thing they will meet is the Examine prompt (`E — Examinar`). Watch what
 they do with it.
 
-### B. Week 3–4, task 2.5: the verbs
+### B. Week 3–4, task 2.5: the rest of it — lock-on, and something to lock onto
 
-`PlayerController` has walk, run and a camera-relative direction. Before combat can be
-anything but a numbers test it needs **dodge, lock-on and a soft camera**. The input map
-already has the actions (`dodge`, `lock_on`, `block`); nothing reads them yet. This is
-the rest of `docs/NEXT_STEPS.md` §2's 2.5, and it is the week 3–4 milestone.
+`PlayerController` has walk, run and a camera-relative direction, and the **dodge is
+real** now: a directional burst, 0.4s of i-frames, 20 stamina, and it ends with your feet
+planted. (The stamina also comes back now. It did not: nothing in the build restored it,
+so the second dodge of a run was the last one.)
+
+What is left of 2.5 is the **lock-on** and the **soft camera**. The lock-on needs
+something to lock onto, and here is the gap in the plan: **2.6's acceptance criterion is
+*"a 60-second exchange with a dummy is fun"*, but the task list has no dummy and no
+enemy until 2.11** (the windmill Venture). A training dummy is the missing task. Write
+it down, and it makes 2.6 testable.
 
 ### C. B3, the rest: the companion's chatter
 

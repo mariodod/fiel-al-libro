@@ -125,6 +125,12 @@ msgstr "El Juramento"
 msgid "it.ability.juramento.desc"
 msgstr "Quien juró una vez no rompe su juramento con facilidad."
 
+msgid "it.ability.dodge.name"
+msgstr "Esquivar"
+
+msgid "it.ability.dodge.desc"
+msgstr "Un paso al lado, y el golpe pasa de largo."
+
 msgid "dia.sancho.bark.001"
 msgstr "Por todos los santos, es un molino."
 

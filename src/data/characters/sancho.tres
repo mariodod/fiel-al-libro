@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="CharacterData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="CharacterData" load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://src/data/character_data.gd" id="1_data"]
+[ext_resource type="Resource" path="res://src/data/abilities/dodge.tres" id="2_dodge"]
 
 [resource]
 script = ExtResource("1_data")
@@ -8,6 +9,7 @@ id = &"sancho"
 display_name_key = &"character.sancho"
 max_stamina = 120.0
 poise = 24.0
+dodge = ExtResource("2_dodge")
 truth_layer_affinity = 0
 can_harm_innocents = true
 companion_aggression = 0.3
