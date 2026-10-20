@@ -44,10 +44,12 @@ someone willing to pay for the lesson with their own mind.*
 | `src/` | All game code. |
 | `src/world/slice.tscn` | **The Week 1–2 grey box — the playable build, and the main scene.** Windmill/giant, rock/book, two characters, two readings. |
 | `src/systems/perception.gd` | The reading rule: the world has one truth, the characters make two things of it. |
+| `src/systems/examine.gd` | The Examine verb: what you are looking at, and what it is called in each truth. |
+| `src/systems/reaction.gd` | The reaction: what a character says when the world moves under them. |
 | `src/world/truth_object.gd` | An object with two faces. The data shape the whole game is built on. |
 | `src/data/` | `Resource` subclasses and the `.tres` content: characters, primitives. |
 | `reference/` | **Local only, gitignored.** The reference texts: the 1605 first part, the 1615 second part, and the OCR of the 1605 printing. Fetch them with `tools\fetch_reference.ps1`. |
-| `tests/` | 11 suites, 183 assertions. |
+| `tests/` | 13 suites, 226 assertions. |
 | `locale/` | gettext PO files: es, en, fr + the template. |
 | `assets/` | Shaders, the Manifiesto content format. |
 | `tools/` | `godot.ps1` (locator), `setup.ps1` (one-command setup). |
@@ -89,6 +91,7 @@ admin rights to create the alias). Use it instead of calling `godot` directly:
 | Command | What it does |
 |---|---|
 | `tools\play.cmd` | **Play the week 1–2 grey box.** `tools\play.cmd res://some/scene.tscn` plays any scene. |
+| `tools\play.cmd res://src/tools/shot.tscn` | **Take the screenshots.** Writes `artifacts/shot_*.png` — the evidence a playtest runs on. |
 | `.\tools\godot.ps1 --headless res://tests/test_runner.tscn` | **Run the tests.** Exit 0 = green. |
 | `.\tools\godot.ps1 --headless --editor --quit` | Import the project (first run, or after adding assets). |
 | `.\tools\godot.ps1 --headless --script res://src/tools/setup_input_map.gd` | Write the input map into `project.godot`. |
@@ -152,6 +155,8 @@ a written page. The ending is a page you can read.
 | **An object with two faces** | `src/world/truth_object.gd` + `src/data/truth_object_data.gd` (`.tres` content) |
 | The visual identity | `assets/shaders/truth_layer.gdshader` — reality / book / ink in one uniform |
 | **The page turn** | `src/ui/post_process.gd` — a sheet of paper carrying a line of the 1605 original crosses the screen when the truth flips |
+| **The Examine verb** | `src/systems/examine.gd` + `src/ui/examine_panel.gd` — `E` on a thing, and the game says what it is in each truth and what each of you calls it |
+| **The reaction** | `src/systems/reaction.gd` + `src/ui/bark_line.gd` — when a character's reading changes, they say so, with their name on it |
 | Character abstraction | `src/characters/character_pawn.gd` (base), `player_controller.gd`, `companion_ai.gd` |
 | Data-driven content | `src/data/*.gd` — `Resource` subclasses; tune in the inspector, never in code |
 | Save system | `src/autoload/manuscrito.gd` — atomic writes, snapshot semantics, version migration |
@@ -357,7 +362,23 @@ confident "0 chapters" message.
 **Keep `.ps1` files ASCII-only**, or give them a UTF-8 BOM. `tools\fetch_reference.ps1`
 is ASCII-only on purpose and says so at the top.
 
-### 7.19 Wikisource's 1905 transcription loses the first letter of small capitals
+### 7.19 A signal nobody listens to is a feature that does not exist
+
+`EventBus.toast` was emitted by the companion AI every twelve seconds, for a whole
+playtest, and **nothing was subscribed to it**. Every bark the companion ever said went
+into the void.
+
+The playtest noticed the symptom — *"Text showing what the other sees feels like too
+handholding"* — and read it as "the tag is the wrong UI". The tag was not the wrong UI.
+The barks were the right UI and they were invisible. The build had a character who could
+not speak.
+
+There is a voice now: `src/ui/bark_line.gd` listens to `EventBus.character_spoke`, and
+the barks carry the speaker's name. The rule for the future: **if a system announces
+something, something has to be listening.** If you add a signal and nothing subscribes to
+it, the feature is not half-built — it does not exist, and no test will catch it.
+
+### 7.20 Wikisource's 1905 transcription loses the first letter of small capitals
 
 The 1905 edition sets the first word of a paragraph in *versalitas*. Wikisource's
 transcription renders those as `{{May|n}}` for "En" — the leading capital is gone from
@@ -410,11 +431,11 @@ Full memo: `docs/IP_CLEARANCE.md` (private).
 
 | | |
 |---|---|
-| **Phase** | Phase 0 complete. **Phase 1, weeks 1–2: the grey box exists. The playtest has not happened.** |
-| **Working code** | ~28 GDScript files: autoload spine, data resources, character abstraction, the truth-layer shader, the save system, the i18n pipeline, the reading rule, and the week 1–2 grey box. |
-| **Tests** | 11 suites, 183 assertions, all green, enforced in CI. |
+| **Phase** | Phase 0 complete. **Phase 1, weeks 1–2: the grey box exists, and the playtest has happened.** |
+| **Working code** | ~33 GDScript files: autoload spine, data resources, character abstraction, the truth-layer shader, the save system, the i18n pipeline, the reading rule, the Examine verb, the reactions, and the week 1–2 grey box. |
+| **Tests** | 13 suites, 226 assertions, all green, enforced in CI. |
 | **CI** | Green on every push. Produces Windows + Linux builds as artifacts. |
-| **Game content** | Two primitives (a windmill/giant, a rock/book) as low-poly placeholders. No art, no levels, no enemies, no audio. |
+| **Game content** | Two primitives (a windmill/giant, a rock/book) as low-poly placeholders, eight reaction lines in three languages, and one real Manifiesto fragment. No art, no levels, no enemies, no audio. |
 | **Money spent** | €0. Godot is free, assets are CC0, the only planned spend is the credits song (~$200–800) and later the EUIPO filing (~€1,150). |
 
 **What exists is the skeleton, the tooling, the plan — and now a box that answers the
@@ -446,6 +467,15 @@ cheapest possible **Examine** beat comes first: walk up to an object, press `E`,
 game tells you what it is in your truth and in the other one. A player who cannot touch
 the thing that made them curious will not come back.
 
+**And now it can.** The Examine verb is built, and so is the other half of the same
+note: when a character's reading changes, they say so. *"Don Quijote: ¡Un libro! ¡Mirad,
+un libro! ¿Quién lo ha puesto aquí?"* The barks used to go into the void — nothing
+listened to `EventBus.toast` — so the companion was a label and not a character. It is a
+character now.
+
+**Both are untested.** They were built after the last playtest, and the next run is the
+owner's.
+
 ---
 
 ## 10. If you are picking this up, do this
@@ -455,13 +485,13 @@ the thing that made them curious will not come back.
 3. **Read `docs/NEXT_SESSION.md`.** It has the state, the order of work, and the list of
    things not to do yet.
 4. Play the grey box: `tools\play.cmd`. `T` flips the world (and turns a page), `TAB`
-   swaps characters, `V` gives Sancho the second sight, `L` pushes Quixote's Locura from
-   Lucid to Lost, `F2` hides the perception tags.
-5. Read `docs/PLAYTEST_NOTES.md` §6 — the playtest findings, the eight "but"s (six fixed),
-   and the two named tasks: **B6, the Examine verb** (do this first) and B5, Quixote's
-   reaction.
-6. **The next task is week 3–4 — but the Examine verb first.** It is the one thing a
-   player who had never seen the game asked to do, and it is scheduled for week 5–7.
+   swaps characters, `E` examines the thing in front of you, `V` gives Sancho the second
+   sight, `L` pushes Quixote's Locura from Lucid to Lost, `F2` hides the perception tags.
+5. Read `docs/PLAYTEST_NOTES.md` §6 — the playtest findings, the eight "but"s (six
+   fixed), and the two that have just been built: **B6, the Examine verb** and **B5,
+   Quixote's reaction**. Both are untested.
+6. **The next task is week 3–4.** It is not the Examine verb any more — that is done.
+   It is 2.5, the verbs: dodge, lock-on and a soft camera.
 7. **The one thing that matters:** the vertical slice exists to answer a single question —
    *is the two-truths mechanic fun?* The answer is yes. Everything from here is about
    turning a proven mechanic into a game.

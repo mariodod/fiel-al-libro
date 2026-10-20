@@ -453,3 +453,56 @@ msgstr ""
 #. TRANSLATORS: Floating tag over an object: who is looking, and what they see. Format: %s, %s.
 msgid "ui.perception.tag"
 msgstr ""
+
+# --- B5: THE REACTIONS -----------------------------------------------------
+# The line a character says when the world moves under them. The key is
+# composed: dia.<character>.reaction.<thing>.<book|reality>. "book" is the
+# reading they have just arrived at, not the one they left.
+
+#. TRANSLATORS: Quixote sees the windmill as a giant.
+msgid "dia.quixote.reaction.windmill.book"
+msgstr ""
+
+#. TRANSLATORS: Quixote sees the windmill as a windmill again.
+msgid "dia.quixote.reaction.windmill.reality"
+msgstr ""
+
+#. TRANSLATORS: Quixote sees the rock as a book.
+msgid "dia.quixote.reaction.rock.book"
+msgstr ""
+
+#. TRANSLATORS: Quixote sees the rock as a rock again.
+msgid "dia.quixote.reaction.rock.reality"
+msgstr ""
+
+#. TRANSLATORS: Sancho sees the windmill as a giant.
+msgid "dia.sancho.reaction.windmill.book"
+msgstr ""
+
+#. TRANSLATORS: Sancho sees the windmill as a windmill again.
+msgid "dia.sancho.reaction.windmill.reality"
+msgstr ""
+
+#. TRANSLATORS: Sancho sees the rock as a book.
+msgid "dia.sancho.reaction.rock.book"
+msgstr ""
+
+#. TRANSLATORS: Sancho sees the rock as a rock again.
+msgid "dia.sancho.reaction.rock.reality"
+msgstr ""
+
+#. TRANSLATORS: Control hint, line 4.
+msgid "ui.slice.help.4"
+msgstr ""
+
+#. TRANSLATORS: The Examine prompt: what to press to look at a thing.
+msgid "ui.examine.prompt"
+msgstr ""
+
+#. TRANSLATORS: The two names a thing has, one per truth. Format: %s, %s, %s, %s.
+msgid "ui.examine.faces"
+msgstr ""
+
+#. TRANSLATORS: What each of the two characters calls a thing right now. Format: %s, %s, %s, %s.
+msgid "ui.examine.readings"
+msgstr ""

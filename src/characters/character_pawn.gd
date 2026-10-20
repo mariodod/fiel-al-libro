@@ -172,6 +172,16 @@ func can_perceive(layer: int) -> bool:
 	return Perception.can_perceive(character_id, layer, second_sight)
 
 
+## The character's name, in the current language.
+##
+## "Don Quijote", "Sancho". The display name lives in the data, so the
+## name follows the locale like everything else.
+func display_name() -> String:
+	if data != null:
+		return Loc.t(data.display_name_key)
+	return String(character_id)
+
+
 ## The truth this pawn is reading right now, given the world's truth.
 ##
 ## This is the whole mechanic in one line: the world has one truth, and two

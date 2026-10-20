@@ -3,8 +3,8 @@
 > Pick the project up here. Everything below is written so that you do not
 > have to re-derive anything.
 >
-> Last updated: **2026-10-20** · after: *"Phase 1, weeks 1–2: the grey box, the
-> reading rule, and the first playtest protocol"*
+> Last updated: **2026-10-20** · after: *"Phase 1, weeks 1–2: the grey box, the reading
+> rule, the first playtest, the Examine verb and the reactions"*
 
 ---
 
@@ -14,9 +14,9 @@
 |---|---|
 | **Phase** | Phase 1. **Weeks 1–2 are done.** Week 3–4 (combat) has not started. |
 | **The premise** | **Proven.** The playtest says so. |
-| **The build** | `res://src/world/slice.tscn` — the main scene. Two primitives, one truth toggle, two characters reading the same world differently. |
-| **Tests** | 11 suites, 187 assertions, green, enforced in CI. |
-| **Commits** | `46f67c7` the grey box · `c0061f5` the first playtest · `630439c` the stranger's run and the T/L fix · *(the page turn)* |
+| **The build** | `res://src/world/slice.tscn` — the main scene. Two primitives, one truth toggle, two characters reading the same world differently — and now **two verbs**: `E` to examine a thing, and a line of dialogue when the world moves under a character. |
+| **Tests** | 13 suites, 226 assertions, green, enforced in CI. |
+| **Commits** | `46f67c7` the grey box · `c0061f5` the first playtest · `630439c` the stranger's run and the T/L fix · `f5a3a39` the page turn · `76b995a` the reference texts · *(the Examine verb and the reactions)* |
 | **The fun** | Not fully proven. Seven data points is a sample, not a signal. |
 
 **The one thing that matters:** the mechanic is legible and liked. The *game* around it does
@@ -50,6 +50,7 @@ tools\play.cmd
 | `WASD` / `Shift` | walk, run (camera-relative) |
 | `TAB` | swap character — the camera cuts, the objects morph |
 | `T` | the world's truth flips — **a page turns** |
+| `E` | **examine the thing in front of you** — the two faces, and what each of you calls it |
 | `V` | Sancho's second sight (off by default: the two readings disagree) |
 | `L` | Quixote's Locura: Lucid ↔ Lost |
 | `F1` / `F2` | help / the perception tags |
@@ -58,40 +59,23 @@ The three-beat demo, and the thing to judge: **`T`**, then **`TAB`**. The windmi
 giant; through Sancho's eyes it is a windmill again; the tag above it says
 *"Don Quijote: gigante"*. Same world, two readings.
 
+**The new beat:** stand next to the rock and press **`E`**.
+
+```
+La roca
+Realidad: roca · Libro: libro
+Don Quijote: libro · Sancho: roca
+```
+
+The third line is recomputed every frame, so it moves when the world moves. And when a
+character's reading changes, they say so — *"Don Quijote: ¡Un libro! ¡Mirad, un libro!
+¿Quién lo ha puesto aquí?"*
+
 ---
 
 ## 3. The three things to do next, in this order
 
-### A. The Examine verb — **highest priority, do this first**
-
-> *"Seeing the rock i wanted to interact with it, even more the book i expected to be
-> able to interact with it and read it."* — run 6
-> *"Wanted to interact with book and giant."* — the stranger
-
-**Two independent people, one of them a stranger, reached for the thing that surprised
-them.** It was scheduled for week 5–7. Pull it forward.
-
-**The cheapest version that answers the note** (do this one, not the whole `Lectura`
-system): the player walks up to an object and presses `E`, and the game tells them what
-the object is — in *their* truth and in the other one.
-
-```
-A rock.                            ← what you see
-He would call it a book.           ← what the other one sees
-```
-
-Most of the data already exists: `TruthObjectData.reality_name_key` /
-`book_name_key` are the names in each truth, and `EventBus.lectura_entered` /
-`anamorphosis_spotted` are already wired for the real system.
-
-Where it goes: a raycast in `PlayerController` (there is a `TODO(Phase 1)` for exactly
-this), a small UI panel, and a `TruthObject` method that returns the two names. **One
-afternoon.**
-
-Why it is first: a player who cannot touch the thing that made them curious will not come
-back. This is the difference between a demo and a game.
-
-### B. A stranger who does not know the keys
+### A. A stranger who does not know the keys — **the owner's test, and the build is ready**
 
 The stranger inferred what `T` did from its effect (*"expected change to be immediate"*).
 That is a finding: the mechanic does not yet teach itself.
@@ -101,15 +85,61 @@ does**. Do not explain. Write down what they do in the first thirty seconds, and
 especially whether they find the *swap* on their own. If they do not, that is a tutorial
 problem, and it is a week 3–4 problem.
 
-### C. Quixote's reaction — B5, the barks
+The one new thing they will meet is the Examine prompt (`E — Examinar`). Watch what
+they do with it.
+
+### B. Week 3–4, task 2.5: the verbs
+
+`PlayerController` has walk, run and a camera-relative direction. Before combat can be
+anything but a numbers test it needs **dodge, lock-on and a soft camera**. The input map
+already has the actions (`dodge`, `lock_on`, `block`); nothing reads them yet. This is
+the rest of `docs/NEXT_STEPS.md` §2's 2.5, and it is the week 3–4 milestone.
+
+### C. B3, the rest: the companion's chatter
+
+The barks are heard now, and they fire when a character's reading changes. What is
+missing is the *idle* chatter: lines about the thing in front of them, not a random draw
+from a pool of two. The `TODO(Phase 1)` in `src/characters/companion_ai.gd` says exactly
+this, and `Examine.find_target` is the tool: the AI can ask what it is looking at.
+
+---
+
+## 3b. What was just built, and is untested
+
+Both of these came out of the first playtest, and **neither has been played by a
+human**. They are the next run's material.
+
+### B6 — the Examine verb
+
+> *"Seeing the rock i wanted to interact with it, even more the book i expected to be
+> able to interact with it and read it."* — run 6
+> *"Wanted to interact with book and giant."* — the stranger
+
+`E` near a thing, and the game tells you what it is: the object, the name each truth
+gives it, and the name each of the two of you is calling it right now. The third line
+is recomputed from the reading rule every frame, so it moves when the world moves.
+
+`src/systems/examine.gd` (the rule) · `src/ui/examine_panel.gd` (the panel) ·
+`src/characters/player_controller.gd` (the targeting).
+
+**The question for the next run:** does the panel teach the two-truths idea, or does it
+give it away too cheaply? A player who already knows the rock is a book in the Book's
+reading has one less reason to press `T`.
+
+### B5 — the reaction
 
 > *"When quixote goes back to seeing reality some reaction from his side should happen."*
 
-When Quixote stops being able to see the giant, something has to happen **on his side**:
-a bark, a line, a beat. The mechanic is proven; this is about making it a *character*.
+When a character's reading changes, they say so, with their name on it. The barks used
+to be emitted into the void — `EventBus.toast` had **no listener at all** — so the
+companion was a label and not a character. It is a character now.
 
-The companion AI already has a bark pool (`CompanionAI._maybe_bark`) and `EventBus.toast`
-exists. The barks have to be about *what they are looking at*, not generic.
+`src/systems/reaction.gd` (the rule) · `src/ui/bark_line.gd` (the voice) ·
+`src/world/slice.gd` (the trigger).
+
+**The question for the next run:** does the reaction land, or is it a line in a corner?
+And is the *pair* — the Book arriving and Reality coming back — the beat the playtest
+asked for?
 
 ---
 
@@ -140,6 +170,10 @@ the playtest's *"I wanted to interact with the book"* is a player asking for it.
 - **Do not build more primitives.** Two are enough to test the mechanic; a dozen built on
   an unproven premise is the most expensive way to find out the premise is wrong. (The
   premise is now proven — but the *content* still has to earn its place.)
+- **Do not build the whole `Lectura` system.** GDD.md §6 is weeks 5–7: the eye-marks, the
+  vantage points, the found fragments, the rewards. The Examine verb is the *verb* the
+  system will grow out of, not a smaller version of it. Building the system now builds
+  it against an unproven reading of what a reading is.
 - **Do not cut the Locura meter.** It is pillar P2 and the stranger's "L" is the one
   untested lever in the build.
 - **Do not touch `assets/manifiesto/_SAMPLE.bk_ch08.molinos.json`.** It is the format
@@ -151,9 +185,11 @@ the playtest's *"I wanted to interact with the book"* is a player asking for it.
 ## 6. If you only have an hour
 
 1. Run the build. Play it for ten minutes with the tags **off** (`F2`).
-2. Read `docs/PLAYTEST_NOTES.md` §6 and add a line to the observation log about what
+2. Stand next to the rock, press `E`, and read the panel. Then press `T` and read it
+   again: the third line has moved. That is the whole mechanic, in one panel.
+3. Read `docs/PLAYTEST_NOTES.md` §6 and add a line to the observation log about what
    *you* feel now, after the fixes. Six lines is what the last one came to.
-3. Open `TODO.md` and set three goals for the week. No more than three.
+4. Open `TODO.md` and set three goals for the week. No more than three.
 
 ---
 
@@ -203,6 +239,7 @@ and the check is the owner's, not the machine's.
 | | |
 |---|---|
 | `tools\play.cmd` | play the grey box (any scene: `tools\play.cmd res://…`) |
+| `tools\play.cmd res://src/tools/shot.tscn` | **the screenshots** — writes `artifacts/shot_*.png` |
 | `.\tools\godot.ps1 --headless res://tests/test_runner.tscn` | the tests |
 | `.\tools\godot.ps1 --headless --editor --quit` | import (run after adding assets) |
 | `.\tools\godot.ps1 --headless --export-release "Windows Desktop" build/FielAlLibro.exe` | build |

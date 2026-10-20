@@ -230,6 +230,43 @@ msgstr ""
 msgid "dia.quixote.bark.002"
 msgstr ""
 
+# --- B5: THE REACTIONS -----------------------------------------------------
+# The line a character says when the world moves under them. The key is
+# composed: dia.<character>.reaction.<thing>.<book|reality>. "book" is the
+# reading they have just arrived at, not the one they left.
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.windmill.book"
+msgstr "Un géant ! Regardez, un géant ! Il n'y a pas de vent dans mes livres !"
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.windmill.reality"
+msgstr "Ah. Un moulin. Juste un moulin. Pardonnez-moi, Sancho."
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.rock.book"
+msgstr "Un livre ! Regardez, un livre ! Qui l'a mis là ?"
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.rock.reality"
+msgstr "Une pierre. Une pierre là où il y avait un livre. Pardonnez-moi."
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.windmill.book"
+msgstr "Euh... ce moulin est devenu géant."
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.windmill.reality"
+msgstr "Le voilà. Un moulin, comme toujours."
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.rock.book"
+msgstr "La pierre est devenue un livre, seigneur."
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.rock.reality"
+msgstr "Une pierre. Juste une pierre."
+
 #. META: namespace=tip
 msgid "tip.posada.intro"
 msgstr ""
@@ -375,3 +412,19 @@ msgstr "Le rocher"
 #. TRANSLATORS: Floating tag over an object: who is looking, and what they see. Format: %s, %s.
 msgid "ui.perception.tag"
 msgstr "%s : %s"
+
+#. TRANSLATORS: Control hint, line 4.
+msgid "ui.slice.help.4"
+msgstr "E examiner ce que vous avez devant vous"
+
+#. TRANSLATORS: The Examine prompt: what to press to look at a thing.
+msgid "ui.examine.prompt"
+msgstr "E — Examiner"
+
+#. TRANSLATORS: The two names a thing has, one per truth. Format: %s, %s, %s, %s.
+msgid "ui.examine.faces"
+msgstr "%s : %s · %s : %s"
+
+#. TRANSLATORS: What each of the two characters calls a thing right now. Format: %s, %s, %s, %s.
+msgid "ui.examine.readings"
+msgstr "%s : %s · %s : %s"

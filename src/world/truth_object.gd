@@ -36,6 +36,9 @@ var _hover_time: float = 0.0
 
 func _ready() -> void:
 	_setup_tag()
+	# Anything with two faces can be examined. The Examine verb finds the
+	# candidates through this group.
+	add_to_group(Examine.GROUP)
 	if _reality_form == null and _book_form == null:
 		setup(data)
 	else:

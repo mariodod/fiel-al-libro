@@ -1,0 +1,201 @@
+extends RefCounted
+## The Examine verb: the thing in front of you, and what it is.
+##
+## The first playtest asked for this verb twice, by two people who had
+## never spoken to each other: "seeing the rock I wanted to interact with
+## it, even more the book I expected to be able to interact with it and
+## read it", and "wanted to interact with book and giant". There was
+## nothing to press.
+##
+## So: the targeting (what are you looking at), the two faces (an object
+## has one name per truth), the reading (what each character calls it
+## right now), and the panel that says all three.
+
+const SLICE := "res://src/world/slice.tscn"
+
+
+func suite(t: TestHarness) -> void:
+	t.suite("Examine")
+
+	var tree := Engine.get_main_loop() as SceneTree
+	var parent: Node = tree.current_scene if tree != null and tree.current_scene != null else null
+
+	# ── Targeting ──────────────────────────────────────────────────────
+	var ahead := _make_object(&"ahead")
+	var behind := _make_object(&"behind")
+	var distant := _make_object(&"distant")
+	var sideways := _make_object(&"sideways")
+	if parent != null:
+		parent.add_child(ahead)
+		parent.add_child(behind)
+		parent.add_child(distant)
+		parent.add_child(sideways)
+
+	var origin := Vector3.ZERO
+	var forward := Vector3(0.0, 0.0, -1.0)
+
+	t.test("the object in front of you is the one you examine")
+	ahead.global_position = Vector3(0.0, 0.0, -3.0)
+	behind.global_position = Vector3(0.0, 0.0, 3.0)
+	distant.global_position = Vector3(0.0, 0.0, -30.0)
+	sideways.global_position = Vector3(20.0, 0.0, 0.0)
+	t.expect_eq(Examine.find_target([ahead, behind, distant, sideways], origin, forward), ahead,
+		"the object in front should be the target")
+
+	t.test("what is behind you is not the target")
+	t.expect_eq(Examine.find_target([behind], origin, forward), null,
+		"an object behind the player should not be examined")
+
+	t.test("what is too far away is not the target")
+	t.expect_eq(Examine.find_target([distant], origin, forward), null,
+		"an object out of reach should not be examined")
+
+	t.test("the one you are looking at most directly wins")
+	# The windmill is eleven metres tall and the rock is a pebble: the
+	# player is looking at the windmill, so the windmill is the target,
+	# even though the pebble is nearer and off to one side.
+	var tall := _make_object(&"tall")
+	var pebble := _make_object(&"pebble")
+	if parent != null:
+		parent.add_child(tall)
+		parent.add_child(pebble)
+	tall.global_position = Vector3(0.0, 0.0, -4.0)
+	pebble.global_position = Vector3(1.2, 0.0, -1.5)
+	t.expect_eq(Examine.find_target([pebble, tall], origin, forward), tall,
+		"the thing you are facing is the target, not the nearest thing")
+
+	t.test("nothing to look at is no target")
+	t.expect_eq(Examine.find_target([], origin, forward), null, "no candidates, no target")
+
+	# ── The two faces ──────────────────────────────────────────────────
+	t.test("a thing has one name per truth")
+	var faces := Examine.face_keys(ahead)
+	t.expect_eq(faces.size(), 2, "two names")
+	if faces.size() == 2:
+		t.expect_eq(faces[0], &"ui.form.molino", "the Reality name")
+		t.expect_eq(faces[1], &"ui.form.gigante", "the Book name")
+
+	# ── The panel ──────────────────────────────────────────────────────
+	var locale := TranslationServer.get_locale()
+	TranslationServer.set_locale("en")
+
+	var packed: PackedScene = load(SLICE)
+	t.expect_true(packed != null, "slice.tscn should load")
+	if packed != null and parent != null:
+		var scene: Node = packed.instantiate()
+		parent.add_child(scene)
+		_settle(scene)
+
+		var panel: Control = scene.get_node_or_null("ExamineLayer/ExaminePanel")
+		t.expect_true(panel != null, "the slice should build the Examine panel")
+
+		if panel != null:
+			t.test("examining a thing says what it is in each truth")
+			# The signal is the real path: the controller emits it, the
+			# panel listens.
+			EventBus.object_examined.emit(&"rock", &"quixote")
+			var text: String = panel.call("examination_text")
+			t.expect_true(text.contains("The rock"), "it names the thing, got '%s'" % text)
+			t.expect_true(text.contains("Reality: rock"), "it says what Reality calls it, got '%s'" % text)
+			t.expect_true(text.contains("Book: book"), "it says what the Book calls it, got '%s'" % text)
+
+			t.test("it also says what each of the two of you calls it")
+			t.expect_true(text.contains("Don Quixote: rock"), "the reader's reading, got '%s'" % text)
+			t.expect_true(text.contains("Sancho: rock"), "the companion's reading, got '%s'" % text)
+
+			t.test("the readings move with the world")
+			# The world turns over to the Book. Quixote reads the book as a
+			# book; Sancho has no second sight, so he still sees a rock.
+			# The disagreement, in three lines.
+			TruthLayer.shift_to(TruthLayer.Layer.BOOK, true)
+			_settle(scene)
+			var moved: String = panel.call("examination_text")
+			t.expect_true(moved.contains("Don Quixote: book"), "Quixote reads the book, got '%s'" % moved)
+			t.expect_true(moved.contains("Sancho: rock"), "Sancho cannot see the Book, got '%s'" % moved)
+
+			t.test("a mad Quixote reads a rock as a book even in Reality")
+			TruthLayer.shift_to(TruthLayer.Layer.REALITY, true)
+			Locura.set_for(&"quixote", 60.0)
+			_settle(scene)
+			var mad: String = panel.call("examination_text")
+			t.expect_true(mad.contains("Don Quixote: book"), "the Book is all he has ever seen, got '%s'" % mad)
+			t.expect_true(mad.contains("Sancho: rock"), "Sancho sees the rock, got '%s'" % mad)
+
+			t.test("the prompt appears when there is something in front of you")
+			EventBus.examine_target_changed.emit(&"rock")
+			var prompt: Label = panel.get_node_or_null("Prompt")
+			t.expect_true(prompt != null, "the panel has a prompt")
+			if prompt != null:
+				t.expect_true(prompt.visible, "the prompt shows")
+				t.expect_true(prompt.text.contains("Examine"), "the prompt says what to do, got '%s'" % prompt.text)
+			EventBus.examine_target_changed.emit(&"")
+			if prompt != null:
+				t.expect_false(prompt.visible, "the prompt goes away when there is nothing in front")
+
+			t.test("walk up to it, press E, and the game answers")
+			# The whole chain, with the real player controller: the pawn
+			# stands next to the rock and faces it, the controller finds it,
+			# and the key press is what the player's hands do.
+			var controller: PlayerController = scene.get_node_or_null("PlayerController")
+			var quixote: CharacterPawn = scene.get_node_or_null("Characters/Quixote")
+			t.expect_true(controller != null and quixote != null, "the slice has a player and a controller")
+			if controller != null and quixote != null:
+				quixote.global_position = Vector3(11.0, 0.0, -9.0)
+				quixote.rotation.y = 0.0
+				controller.call("_update_examine_target", 1.0)
+
+				var press := InputEventAction.new()
+				press.action = &"interact"
+				press.pressed = true
+				controller._unhandled_input(press)
+
+				var said: String = panel.call("examination_text")
+				t.expect_true(said.contains("The rock"), "the game tells you what it is, got '%s'" % said)
+
+		Locura.set_for(&"quixote", 10.0)
+		TruthLayer.shift_to(TruthLayer.Layer.REALITY, true)
+		TruthLayer.set_view_layer(-1)
+		if scene != null:
+			parent.remove_child(scene)
+			scene.free()
+
+	TranslationServer.set_locale(locale)
+
+	for object in [ahead, behind, distant, sideways]:
+		if parent != null:
+			parent.remove_child(object)
+		object.free()
+
+
+## A TruthObject with two empty forms, so the test does not need the art.
+func _make_object(id: StringName) -> TruthObject:
+	var data := TruthObjectData.new()
+	data.id = id
+	data.display_name_key = &"ui.object.molino"
+	data.reality_name_key = &"ui.form.molino"
+	data.book_name_key = &"ui.form.gigante"
+	data.reality_form = _pack_form()
+	data.book_form = _pack_form()
+
+	var object := TruthObject.new()
+	object.data = data
+	object.setup(data)
+	return object
+
+
+func _pack_form() -> PackedScene:
+	var packed := PackedScene.new()
+	var root := Node3D.new()
+	root.name = "Form"
+	packed.pack(root)
+	# pack() copies; it does not take the node. Free it or it leaks.
+	root.free()
+	return packed
+
+
+## Two frames' worth of settling: the view fades to the new reading, and
+## then the objects follow it.
+func _settle(scene: Node) -> void:
+	scene.call("_update_readings")
+	TruthLayer.advance_blend(2.0)
+	scene.call("_update_readings")

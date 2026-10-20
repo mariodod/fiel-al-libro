@@ -16,6 +16,7 @@ extends Node3D
 ##   WASD / Shift   walk, run
 ##   TAB            swap character
 ##   T              the world's truth flips
+##   E              examine the thing in front of you
 ##   V              Sancho's second sight. WITHOUT it he cannot see the Book
 ##                  at all, so the two readings disagree — which is the
 ##                  point. Turn it on and he sees what you see.
@@ -61,6 +62,8 @@ var _show_tags: bool = true
 var _second_sight: bool = false
 ## Quixote's madness, toggled between Lucid and Lost.
 var _madness_high: bool = false
+## The reading each character had last frame, so we can tell when it moves.
+var _last_reading: Dictionary = {}
 
 const LOCURA_LUCID := 10.0
 const LOCURA_LOST := 60.0
@@ -72,6 +75,8 @@ func _ready() -> void:
 	_build_environment()
 	_build_characters()
 	_build_post_process()
+	_build_examine_panel()
+	_build_bark_line()
 
 	EventBus.character_switched.connect(_on_character_switched)
 
@@ -125,6 +130,38 @@ func _build_post_process() -> void:
 	post.name = "PostProcess"
 	post.set_script(load("res://src/ui/post_process.gd"))
 	layer.add_child(post)
+
+
+## The Examine panel.
+##
+## Its own layer, between the post-process and the HUD, so the truth
+## shader does not wash out the text but the HUD still sits on top.
+func _build_examine_panel() -> void:
+	var layer := CanvasLayer.new()
+	layer.name = "ExamineLayer"
+	layer.layer = 15
+	add_child(layer)
+
+	var panel := Control.new()
+	panel.name = "ExaminePanel"
+	panel.set_script(load("res://src/ui/examine_panel.gd"))
+	layer.add_child(panel)
+
+
+## The line somebody said.
+##
+## Its own layer with the Examine panel, above the post-process so the
+## truth shader does not wash the words out.
+func _build_bark_line() -> void:
+	var layer := CanvasLayer.new()
+	layer.name = "BarkLayer"
+	layer.layer = 15
+	add_child(layer)
+
+	var bark := Control.new()
+	bark.name = "BarkLine"
+	bark.set_script(load("res://src/ui/bark_line.gd"))
+	layer.add_child(bark)
 
 
 # ── Characters ──────────────────────────────────────────────────────────
@@ -200,6 +237,40 @@ func _update_readings() -> void:
 		object.apply_blend(blend)
 		object.set_tag_text(_tag_text_for(other, object))
 
+	_check_reactions(driven, other)
+
+
+## B5: when a character's reading changes, they say something.
+##
+## *"When quixote goes back to seeing reality some reaction from his side
+## should happen."* A filter change is invisible. A character who says so
+## is a character, and it is the only way the player finds out that the
+## world they are in is not the world they were in.
+##
+## The reading changes when the world's truth turns over, and when the
+## madness lets go and Reality comes back to Quixote.
+func _check_reactions(driven: CharacterPawn, other: CharacterPawn) -> void:
+	for character in [driven, other]:
+		if character == null:
+			continue
+		var previous: int = int(_last_reading.get(character.character_id, -1))
+		var current: int = character.perceived_layer
+		_last_reading[character.character_id] = current
+		if previous < 0 or previous == current:
+			continue
+		_react(character, current)
+
+
+## The line, and the thing it is about.
+func _react(character: CharacterPawn, layer: int) -> void:
+	var target: TruthObject = player.examine_target
+	if target == null or target.data == null:
+		return
+	var key := Reaction.bark_key(character.character_id, target.data.id, layer)
+	if key.is_empty():
+		return
+	EventBus.character_spoke.emit(character.character_id, key, [])
+
 
 ## What the companion is looking at, written over the object.
 func _tag_text_for(character: CharacterPawn, object: TruthObject) -> String:
@@ -209,9 +280,9 @@ func _tag_text_for(character: CharacterPawn, object: TruthObject) -> String:
 
 
 func _character_name(character: CharacterPawn) -> String:
-	if character != null and character.data != null:
-		return Loc.t(character.data.display_name_key)
-	return String(character.character_id) if character != null else ""
+	if character == null:
+		return ""
+	return character.display_name()
 
 
 func _update_hud() -> void:
@@ -256,6 +327,7 @@ func _update_hud() -> void:
 		lines.append(Loc.t(&"ui.slice.help.1"))
 		lines.append(Loc.t(&"ui.slice.help.2"))
 		lines.append(Loc.t(&"ui.slice.help.3"))
+		lines.append(Loc.t(&"ui.slice.help.4"))
 
 	hud.text = "\n".join(lines)
 

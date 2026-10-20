@@ -11,7 +11,18 @@ var active_pawn: CharacterPawn = null
 ## The pawn the player is NOT driving. It runs its own AI.
 var other_pawn: CharacterPawn = null
 
+## The thing the player is looking at, if anything. The Examine verb acts
+## on it, and the barks are about it.
+var examine_target: TruthObject = null:
+	get:
+		return _examine_target
+
 var _swap_cooldown: float = 0.0
+## The thing the player is looking at, and the ones they could be looking
+## at. The Examine verb needs both.
+var _examine_target: TruthObject = null
+var _examine_candidates: Array[Node] = []
+var _candidate_timer: float = 0.0
 
 
 func _ready() -> void:
@@ -35,20 +46,62 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif event.is_action_pressed(&"lectura"):
 		EventBus.lectura_entered.emit()
 	elif event.is_action_pressed(&"interact"):
-		# TODO(Phase 1): raycast for an interactable and trigger it.
-		pass
+		_examine()
 
 
 func _process(delta: float) -> void:
 	if _swap_cooldown > 0.0:
 		_swap_cooldown -= delta
 	if active_pawn == null:
+		_set_examine_target(null)
 		return
 
 	var direction := Input.get_vector(&"move_left", &"move_right", &"move_forward", &"move_back")
 	var sprint := Input.is_action_pressed(&"sprint")
 	active_pawn.move(_in_camera_frame(direction), sprint)
 	active_pawn.block(Input.is_action_pressed(&"block"))
+
+	_update_examine_target(delta)
+
+
+# ── The Examine verb ───────────────────────────────────────────────────
+
+## Look at the thing in front of you and learn what it is.
+##
+## The first playtest asked for this: "wanted to interact with book and
+## giant". What it shows is the object's two faces and the two readings,
+## which is the whole mechanic in three lines.
+func _examine() -> void:
+	if _examine_target == null or _examine_target.data == null or active_pawn == null:
+		return
+	EventBus.object_examined.emit(_examine_target.data.id, active_pawn.character_id)
+
+
+## Keep track of what the player is looking at.
+##
+## The candidates are refreshed a few times a second rather than every
+## frame: the group lookup allocates an array, and this runs on every
+## frame of every build.
+func _update_examine_target(delta: float) -> void:
+	_candidate_timer -= delta
+	if _candidate_timer <= 0.0:
+		_candidate_timer = 0.2
+		_examine_candidates = get_tree().get_nodes_in_group(Examine.GROUP)
+	_set_examine_target(Examine.find_target(
+		_examine_candidates, active_pawn.global_position, _facing()))
+
+
+func _set_examine_target(target: TruthObject) -> void:
+	if target == _examine_target:
+		return
+	_examine_target = target
+	var id := &"" if target == null or target.data == null else target.data.id
+	EventBus.examine_target_changed.emit(id)
+
+
+## The direction the pawn is looking. The node faces -Z.
+func _facing() -> Vector3:
+	return -active_pawn.global_transform.basis.z
 
 
 ## Put the input into the camera's frame of reference.

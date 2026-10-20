@@ -25,34 +25,44 @@
       if the world is being written under your feet."*
 - [x] The first real Manifiesto fragment, loadable at runtime:
       `assets/manifiesto/bk.ch01.apertura.json` (the 1605 wording, verified)
+- [x] **B6 — the Examine verb.** Press `E` next to a thing and the game tells you what it
+      is: the object, the name each truth gives it, and the name each of the two of you is
+      calling it right now. The third line is recomputed every frame, so it moves when the
+      world moves. `src/systems/examine.gd`, `src/ui/examine_panel.gd`.
+- [x] **B5 — the reaction.** When a character's reading changes, they say so, with their
+      name on it: *"Don Quijote: ¡Un libro! ¡Mirad, un libro! ¿Quién lo ha puesto aquí?"*
+      `src/systems/reaction.gd`, `src/ui/bark_line.gd`.
+- [x] **B3, in part — the barks are heard.** `EventBus.toast` had no listener at all, so
+      every bark the companion ever said went into the void. There is a voice now.
 
 ### This week's three goals
 
-1. **B6 — the Examine verb. Highest priority.** Two people, one a stranger, reached for
-   the book and the giant. Build the cheapest possible "look at it and see what it
-   really is" beat: **`E` near an object, and the game tells you what it is in your truth
-   and in the other one.** It was scheduled for week 5–7; a player who cannot touch the
-   thing that made them curious will not come back. One afternoon.
-2. **B5 — Quixote's reaction when he stops seeing the giant.** *"When quixote goes back
-   to seeing reality some reaction from his side should happen."* A character beat, not a
-   filter change. Barks, about what they are looking at.
-3. **A stranger who does not know the keys.** The mechanic has to teach itself. Give it to
-   somebody who has never seen it, say nothing, and write down what they do in the first
-   thirty seconds.
+1. **A stranger who does not know the keys.** The build is ready for it and the owner is
+   the only one who can run it. The mechanic has to teach itself. Give it to somebody who
+   has never seen it, say nothing, and write down what they do in the first thirty
+   seconds. The Examine prompt (`E — Examinar`) is the one new thing they will meet.
+2. **Week 3–4, task 2.5: the verbs.** `PlayerController` has walk, run and a
+   camera-relative direction. It needs dodge, lock-on and a soft camera before combat can
+   be anything but a numbers test. The input map already has the actions; nothing reads
+   them yet.
+3. **B3, the rest: the companion's chatter.** The barks are visible now, but the idle
+   ones are still picked at random from a pool of two. They should be about what the
+   companion is actually looking at — the `TODO(Phase 1)` in `companion_ai.gd` says so.
 
 ### Still owed, and it is not code
 
 - [ ] **The other fourteen runs.** Seven data points is a sample, not a signal.
 - [ ] **Press `L` properly.** The stranger saw the madness; nobody has *tested* it. Push
       Quixote to Lost and press `T`: the world stops changing for him. That is the
-      mechanic behind the meter.
+      mechanic behind the meter. (B5 now makes the change audible — it still needs a run.)
 
 ### Named work, straight out of the playtest
 
-- [ ] **B6 — the Examine verb.** See this week's goals.
-- [ ] **B5 — Quixote's reaction.** See this week's goals.
-- [ ] **B3 — the shipped game owes the companion barks.** The tag carried the second
-      reading; a label is not a character. The disagreement has to be *told*, not read.
+- [x] **B6 — the Examine verb.** Built. Untested.
+- [x] **B5 — Quixote's reaction.** Built. Untested.
+- [ ] **B3 — the shipped game owes the companion barks.** The barks are heard now, and
+      they fire when a reading changes. What is missing is the *idle* chatter: lines
+      about the thing in front of them, not a random draw from a pool of two.
 - [ ] **The sample Manifiesto fragment carries the 1615 wording, not the 1605.** DLC 1 is
       the 1615 book, so this is load-bearing. Only the owner can re-source it. See
       `docs/NEXT_SESSION.md` §7.

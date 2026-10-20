@@ -137,6 +137,43 @@ msgstr "¡Ay de ti, animal mortal! ¡Te cortaré de los hombros!"
 msgid "dia.quixote.bark.002"
 msgstr "Conozco tu linaje. Conozco los males que habéis hecho en el mundo."
 
+# --- B5: THE REACTIONS -----------------------------------------------------
+# The line a character says when the world moves under them. The key is
+# composed: dia.<character>.reaction.<thing>.<book|reality>. "book" is the
+# reading they have just arrived at, not the one they left.
+
+#. TRANSLATORS: Quixote sees the windmill as a giant.
+msgid "dia.quixote.reaction.windmill.book"
+msgstr "¡Un gigante! ¡Mirad, un gigante! ¡En mis libros no sopla el viento!"
+
+#. TRANSLATORS: Quixote sees the windmill as a windmill again.
+msgid "dia.quixote.reaction.windmill.reality"
+msgstr "¡Ah! Un molino de viento. Solo un molino. Perdonad, Sancho."
+
+#. TRANSLATORS: Quixote sees the rock as a book.
+msgid "dia.quixote.reaction.rock.book"
+msgstr "¡Un libro! ¡Mirad, un libro! ¿Quién lo ha puesto aquí?"
+
+#. TRANSLATORS: Quixote sees the rock as a rock again.
+msgid "dia.quixote.reaction.rock.reality"
+msgstr "Una piedra. Una piedra donde antes había un libro. Perdonadme."
+
+#. TRANSLATORS: Sancho sees the windmill as a giant.
+msgid "dia.sancho.reaction.windmill.book"
+msgstr "Eh... ese molino se ha puesto gigante."
+
+#. TRANSLATORS: Sancho sees the windmill as a windmill again.
+msgid "dia.sancho.reaction.windmill.reality"
+msgstr "Ya está. Un molino, como siempre."
+
+#. TRANSLATORS: Sancho sees the rock as a book.
+msgid "dia.sancho.reaction.rock.book"
+msgstr "La piedra se ha puesto libro, señor."
+
+#. TRANSLATORS: Sancho sees the rock as a rock again.
+msgid "dia.sancho.reaction.rock.reality"
+msgstr "Una piedra. Solo una piedra."
+
 msgid "tip.lectura.intro"
 msgstr "Aguanta la página. Algunas cosas solo se muestran a quien mira con calma."
 
@@ -310,6 +347,22 @@ msgstr "TAB cambiar de compañero · T la verdad del mundo"
 #. TRANSLATORS: Control hint, line 3.
 msgid "ui.slice.help.3"
 msgstr "V segunda vista · L Locura · F1 esta ayuda · F2 las etiquetas"
+
+#. TRANSLATORS: Control hint, line 4.
+msgid "ui.slice.help.4"
+msgstr "E examinar lo que tienes delante"
+
+#. TRANSLATORS: The Examine prompt: what to press to look at a thing.
+msgid "ui.examine.prompt"
+msgstr "E — Examinar"
+
+#. TRANSLATORS: The two names a thing has, one per truth. Format: %s, %s, %s, %s.
+msgid "ui.examine.faces"
+msgstr "%s: %s · %s: %s"
+
+#. TRANSLATORS: What each of the two characters calls a thing right now. Format: %s, %s, %s, %s.
+msgid "ui.examine.readings"
+msgstr "%s: %s · %s: %s"
 
 #. TRANSLATORS: The Reality layer: what actually happened.
 msgid "ui.layer.reality"

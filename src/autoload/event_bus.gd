@@ -36,6 +36,13 @@ signal anamorphosis_resolved(id: StringName)
 signal evidence_collected(id: StringName, total: int)
 
 
+# ── Examine (B6) ───────────────────────────────────────────────────────
+## The thing in front of the player changed. An empty id means "nothing".
+signal examine_target_changed(object_id: StringName)
+## The player examined a thing. The reader is the character they drive.
+signal object_examined(object_id: StringName, reader_id: StringName)
+
+
 # ── Verdicts (asserting a version of events) ────────────────────────────
 signal verdict_offered(id: StringName)
 signal verdict_resolved(id: StringName, mode: int)
@@ -65,6 +72,9 @@ signal posada_entered(id: StringName)
 
 # ── UI & system ─────────────────────────────────────────────────────────
 signal toast(text_key: StringName, args: Array)
+## A character said something. The speaker is part of the line: the
+## disagreement has to be told, not read.
+signal character_spoke(character_id: StringName, text_key: StringName, args: Array)
 signal game_saved(slot: int)
 signal game_loaded(slot: int)
 signal ending_reached(id: StringName)

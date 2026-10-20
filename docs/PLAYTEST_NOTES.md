@@ -242,17 +242,51 @@ because it is a quotation and not a translation. It is printed from
 except the two of us. It is a candidate for the next run: does the page make the change
 *clearer*, or does it get in the way of a change that is already clear?
 
+### B5 and B6 — built after the playtest, waiting for a run
+
+Two of the "but"s are now code.
+
+**B6, the Examine verb.** Press **`E`** next to a thing and the game tells you what it
+is: the object, the name each truth gives it, and the name each of the two of you is
+calling it *right now*.
+
+```
+La roca
+Realidad: roca · Libro: libro
+Don Quijote: libro · Sancho: roca
+```
+
+It is the cheapest possible version of the `Lectura` beat (GDD.md §6), and it is the
+thing two people asked for by name. The third line is the one that moves: it is
+recomputed from the reading rule every frame, so flipping the world with `T` changes it
+under your eyes.
+
+**B5, the reaction.** The other half of the same note: *"when quixote goes back to seeing
+reality some reaction from his side should happen."* When a character's reading changes,
+they now say so, out loud, with their name on it:
+
+```
+Don Quijote: ¡Un libro! ¡Mirad, un libro! ¿Quién lo ha puesto aquí?
+```
+
+The barks used to be emitted into the void — `EventBus.toast` had **no listener at all** —
+so the companion was a label and not a character. That is the B3 debt, and the reason the
+playtest said the tag felt like handholding: a tag is not a character, and the
+disagreement has to be *told*, not read.
+
+**Both are untested.** They were built after the last playtest, so nobody has seen them
+except the two of us.
+
 ### What is still owed
 
 - **A stranger who does not already know the keys.** The stranger's note *"expected
   change to be immediate with T"* suggests they did not know what T did and inferred it
   from the effect. A stranger who does not know the controls is a different test, and it
-  is the one that decides whether the mechanic teaches itself.
+  is the one that decides whether the mechanic teaches itself. The build is ready for it.
 - **The other fourteen runs.** Seven data points is a sample, not a signal.
-- **B6 — the Examine verb.** Two people, one of them a stranger, reached for the book
-  and the giant. This is the most-requested thing in the build and it is scheduled for
-  week 5–7. Consider pulling it into week 3–4: a player who cannot touch the thing that
-  made them curious will not come back.
+- **B6 and B5, untested.** Built after the last run. They need one run of their own: does
+  the Examine panel teach the two-truths idea, or does it give it away too cheaply? And
+  does Quixote's reaction land, or is it a line in a corner?
 - **The page turn, untested.** Built after the last run. It needs one run of its own:
   does it make the change clearer, or does it get in the way of a change that is already
   clear?

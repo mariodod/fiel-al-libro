@@ -66,9 +66,11 @@ func _process(delta: float) -> void:
 func _maybe_bark() -> void:
 	if _bark_cooldown > 0.0:
 		return
-	_bark_cooldown = 12.0
+	_bark_cooldown = 25.0
 	var pool: Array[StringName] = BARK_KEYS if pawn.character_id == &"sancho" else QUIXOTE_BARK_KEYS
 	if pool.is_empty():
 		return
 	var key: StringName = pool[randi() % pool.size()]
-	EventBus.toast.emit(key, [])
+	# With the speaker attached, so the line reads as somebody talking and
+	# not as a notification.
+	EventBus.character_spoke.emit(pawn.character_id, key, [])
