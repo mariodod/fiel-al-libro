@@ -66,6 +66,9 @@ var _input_direction: Vector2 = Vector2.ZERO
 var _dodge_time: float = 0.0
 ## Seconds left before you can dodge again.
 var _dodge_cooldown: float = 0.0
+## Seconds left before you can swing again. A weapon has a rhythm, and
+## the rhythm is what makes the dodge a decision.
+var _attack_cooldown: float = 0.0
 ## Seconds left during which damage does nothing.
 var _iframe_time: float = 0.0
 ## Seconds left before the stamina starts coming back.
@@ -136,11 +139,15 @@ func dodge() -> void:
 
 
 func light_attack() -> void:
+	if _attack_cooldown > 0.0:
+		return
 	if data != null and data.light_attack != null:
 		_perform(data.light_attack)
 
 
 func heavy_attack() -> void:
+	if _attack_cooldown > 0.0:
+		return
 	if data != null and data.heavy_attack != null:
 		_perform(data.heavy_attack)
 
@@ -164,6 +171,7 @@ func ability(ability_id: StringName) -> bool:
 func _physics_process(delta: float) -> void:
 	_dodge_time = maxf(0.0, _dodge_time - delta)
 	_dodge_cooldown = maxf(0.0, _dodge_cooldown - delta)
+	_attack_cooldown = maxf(0.0, _attack_cooldown - delta)
 	_iframe_time = maxf(0.0, _iframe_time - delta)
 
 	# The stamina comes back once you stop spending it. It did not come
@@ -213,8 +221,20 @@ func _perform(ability: AbilityData) -> bool:
 		return false
 	stamina -= ability.stamina_cost
 	_stamina_delay = STAMINA_REGEN_DELAY
-	# TODO(Phase 1): spawn the ability's VFX and hitbox.
+	# A swing puts a hitbox in front of the character. It is the crudest
+	# possible version of a combat hitbox (task 2.6 does the real one),
+	# and it exists so that the training dummy can be hit: a dodge with
+	# nothing to dodge against, and nothing to hit, cannot be judged.
+	if ability.kind == AbilityData.Kind.LIGHT or ability.kind == AbilityData.Kind.HEAVY:
+		_swing(ability)
 	return true
+
+
+## The swing itself: a hitbox in front of the character, and the rhythm
+## that keeps the next one from coming straight away.
+func _swing(ability: AbilityData) -> void:
+	_attack_cooldown = maxf(_attack_cooldown, ability.cooldown)
+	AttackHitbox.swing(self, ability)
 
 
 func take_damage(amount: float) -> void:

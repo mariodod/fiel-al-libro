@@ -14,7 +14,9 @@ extends Node
 ## The shots it takes:
 ##   shot_reality.png    the grey box, the world in Reality
 ##   shot_book.png       the same, the world in the Book
-##   shot_examine.png    the Examine panel, next to the rock
+##   shot_examine.png    the Examine panel, in the Book: a book in a rock
+##   shot_examine_real.png  the same panel, in Reality: a stone
+##   shot_yard.png       the practice yard, and the dummy in it
 ##
 ## See HANDOVER.md §4.
 
@@ -24,6 +26,9 @@ const OUT_DIR := "res://artifacts/"
 ## The rock is at (11, 0, -11) in the slice. This is a spot next to it,
 ## facing it.
 const SPOT := Vector3(11.0, 0.0, -8.0)
+
+## The practice yard, and a spot inside it facing the dummy.
+const YARD_SPOT := Vector3(-11.0, 0.0, -4.0)
 
 
 func _ready() -> void:
@@ -53,6 +58,21 @@ func _ready() -> void:
 	controller._unhandled_input(press)
 	await _settle(scene)
 	await _shoot("shot_examine.png")
+
+	# The same panel in Reality: the same object, read the other way.
+	TruthLayer.shift_to(TruthLayer.Layer.REALITY, true)
+	await _settle(scene)
+	controller.call("_update_examine_target", 1.0)
+	controller._unhandled_input(press)
+	await _settle(scene)
+	await _shoot("shot_examine_real.png")
+
+	# And the yard: the walls, the dummy, and the space the dodge is
+	# supposed to be judged in.
+	quixote.global_position = YARD_SPOT
+	quixote.rotation.y = PI * 0.5
+	await _settle(scene)
+	await _shoot("shot_yard.png")
 
 	# Leave the world as we found it.
 	TruthLayer.shift_to(TruthLayer.Layer.REALITY, true)

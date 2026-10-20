@@ -1,15 +1,28 @@
-[gd_resource type="Resource" script_class="TruthObjectData" load_steps=4 format=3]
+[gd_resource type="Resource" script_class="TruthObjectData" load_steps=7 format=3]
 
 [ext_resource type="Script" path="res://src/data/truth_object_data.gd" id="1_data"]
-[ext_resource type="PackedScene" path="res://src/world/forms/windmill_reality.tscn" id="2_reality"]
-[ext_resource type="PackedScene" path="res://src/world/forms/windmill_book.tscn" id="3_book"]
+[ext_resource type="Script" path="res://src/data/truth_face.gd" id="2_face"]
+[ext_resource type="PackedScene" path="res://src/world/forms/windmill_reality.tscn" id="3_reality"]
+[ext_resource type="PackedScene" path="res://src/world/forms/windmill_book.tscn" id="4_book"]
+
+[sub_resource type="Resource" id="RealityFace"]
+script = ExtResource("2_face")
+name_key = &"ui.form.molino"
+description_key = &"ui.face.windmill.reality.desc"
+tell_key = &"ui.face.windmill.reality.tell"
+
+[sub_resource type="Resource" id="BookFace"]
+script = ExtResource("2_face")
+name_key = &"ui.form.gigante"
+description_key = &"ui.face.windmill.book.desc"
+tell_key = &"ui.face.windmill.book.tell"
 
 [resource]
 script = ExtResource("1_data")
 id = &"windmill"
 display_name_key = &"ui.object.molino"
-reality_form = ExtResource("2_reality")
-book_form = ExtResource("3_book")
-reality_name_key = &"ui.form.molino"
-book_name_key = &"ui.form.gigante"
+reality_form = ExtResource("3_reality")
+book_form = ExtResource("4_book")
+reality_face = SubResource("RealityFace")
+book_face = SubResource("BookFace")
 tag_height = 11.5

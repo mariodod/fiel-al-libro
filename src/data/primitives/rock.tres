@@ -1,16 +1,31 @@
-[gd_resource type="Resource" script_class="TruthObjectData" load_steps=4 format=3]
+[gd_resource type="Resource" script_class="TruthObjectData" load_steps=7 format=3]
 
 [ext_resource type="Script" path="res://src/data/truth_object_data.gd" id="1_data"]
-[ext_resource type="PackedScene" path="res://src/world/forms/rock_reality.tscn" id="2_reality"]
-[ext_resource type="PackedScene" path="res://src/world/forms/rock_book.tscn" id="3_book"]
+[ext_resource type="Script" path="res://src/data/truth_face.gd" id="2_face"]
+[ext_resource type="PackedScene" path="res://src/world/forms/rock_reality.tscn" id="3_reality"]
+[ext_resource type="PackedScene" path="res://src/world/forms/rock_book.tscn" id="4_book"]
+
+[sub_resource type="Resource" id="RealityFace"]
+script = ExtResource("2_face")
+name_key = &"ui.form.roca"
+description_key = &"ui.face.rock.reality.desc"
+tell_key = &"ui.face.rock.reality.tell"
+
+[sub_resource type="Resource" id="BookFace"]
+script = ExtResource("2_face")
+name_key = &"ui.form.libro"
+description_key = &"ui.face.rock.book.desc"
+tell_key = &"ui.face.rock.book.tell"
+title_key = &"ui.face.rock.book.title"
+fragment_id = &"bk.ch01.apertura"
 
 [resource]
 script = ExtResource("1_data")
 id = &"rock"
 display_name_key = &"ui.object.roca"
-reality_form = ExtResource("2_reality")
-book_form = ExtResource("3_book")
-reality_name_key = &"ui.form.roca"
-book_name_key = &"ui.form.libro"
+reality_form = ExtResource("3_reality")
+book_form = ExtResource("4_book")
+reality_face = SubResource("RealityFace")
+book_face = SubResource("BookFace")
 book_form_hovers = true
 tag_height = 3.4

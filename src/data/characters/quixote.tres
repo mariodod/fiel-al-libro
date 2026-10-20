@@ -1,7 +1,9 @@
-[gd_resource type="Resource" script_class="CharacterData" load_steps=3 format=3]
+[gd_resource type="Resource" script_class="CharacterData" load_steps=5 format=3]
 
 [ext_resource type="Script" path="res://src/data/character_data.gd" id="1_data"]
 [ext_resource type="Resource" path="res://src/data/abilities/dodge.tres" id="2_dodge"]
+[ext_resource type="Resource" path="res://src/data/abilities/light_attack.tres" id="3_light"]
+[ext_resource type="Resource" path="res://src/data/abilities/heavy_attack.tres" id="4_heavy"]
 
 [resource]
 script = ExtResource("1_data")
@@ -9,6 +11,8 @@ id = &"quixote"
 display_name_key = &"character.quixote"
 max_stamina = 100.0
 poise = 34.0
+light_attack = ExtResource("3_light")
+heavy_attack = ExtResource("4_heavy")
 dodge = ExtResource("2_dodge")
 truth_layer_affinity = 1
 can_harm_innocents = false

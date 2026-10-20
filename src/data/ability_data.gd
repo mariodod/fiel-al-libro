@@ -30,6 +30,9 @@ enum Kind {
 @export var reach: float = 2.0
 ## For sweeping arcs: half-angle in degrees.
 @export var arc_degrees: float = 60.0
+## How long the hitbox is live, in seconds. The window in which the
+## swing can actually connect.
+@export var active_seconds: float = 0.12
 
 @export_group("Gating")
 ## Which truth layer this ability functions in. 0 = Reality only, 1 = Book only,

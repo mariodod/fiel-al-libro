@@ -1,5 +1,6 @@
 extends Node3D
-## WEEK 1–2 GREY BOX — the cheapest possible test of the core idea.
+## THE GREY BOX — the cheapest possible test of the core idea, and then
+## the cheapest possible test of the dodge.
 ##
 ## NEXT_STEPS.md §2, tasks 2.1–2.4:
 ##
@@ -7,6 +8,9 @@ extends Node3D
 ##   2.2  one toggle that changes the world's truth
 ##   2.3  two characters reading the same world differently
 ##   2.4  play it twenty times, and write down what you feel
+##
+## And, from week 3–4, the practice yard (2.6b): something to fight, and
+## somewhere you cannot run.
 ##
 ## Nothing in here is final. If the two-truths mechanic is not fun in this
 ## box it will not be fun in a real level, and we find out in week 12
@@ -21,7 +25,13 @@ extends Node3D
 ##                  at all, so the two readings disagree — which is the
 ##                  point. Turn it on and he sees what you see.
 ##   L              Quixote's Locura: Lucid <-> Lost
+##   Space          dodge
+##   LMB / RMB      light attack / heavy attack
+##   K              reset the yard (the dummy and anyone who fell)
 ##   F1             this help
+##   F2             the floating perception tags
+##   H              the HUD — the developer's readout. Turn it off before
+##                  you hand the build to somebody.
 ##
 ## ── What to look at ────────────────────────────────────────────────────
 ##   Press T. The windmill becomes a giant and the rock becomes a book.
@@ -30,6 +40,13 @@ extends Node3D
 ##
 ##   That gap — between what the world is and what each of them makes of
 ##   it — is the entire game. Everything else is level design.
+##
+## ── Where to go ────────────────────────────────────────────────────────
+##   To the west is a walled yard with a training dummy in it. The
+##   dummy swings on a rhythm and it hurts. The walls mean there is
+##   nowhere to run. That is the rig the dodge needs: a dodge with no
+##   enemy and no walls is a dash, and you cannot tell a good one from a
+##   bad one.
 
 @onready var quixote: CharacterPawn = $Characters/Quixote
 @onready var sancho: CharacterPawn = $Characters/Sancho
@@ -40,8 +57,25 @@ extends Node3D
 @onready var windmill: TruthObject = $Windmill
 @onready var rock: TruthObject = $Rock
 
+## The practice yard: a bounded space with something in it to fight.
+##
+## The second playtest, in one line: *"For the dodge it is difficult to
+## assess if it's fine at this stage without any enemies or space
+## limitations."* This is the answer — four walls, a gate, and a dummy
+## that swings on a rhythm.
+const YARD_CENTER := Vector3(-16.0, 0.0, -4.0)
+## How far the yard is from its centre to each wall.
+const YARD_HALF := 9.0
+const WALL_HEIGHT := 2.5
+const WALL_THICKNESS := 0.8
+## How wide the gate in the east wall is.
+const GATE_HALF := 3.0
+
 var _objects: Array[TruthObject] = []
 var _show_help: bool = true
+## The developer's readout. A stranger must not have it: it spells out
+## both readings, which is the whole mechanic, handed over.
+var _show_hud: bool = true
 ## The floating tags that say what the companion is looking at.
 ##
 ## The first playtest: "Text showing what the other sees feels like too
@@ -64,6 +98,8 @@ var _second_sight: bool = false
 var _madness_high: bool = false
 ## The reading each character had last frame, so we can tell when it moves.
 var _last_reading: Dictionary = {}
+## The dummy in the yard.
+var _dummy: TrainingDummy = null
 
 const LOCURA_LUCID := 10.0
 const LOCURA_LOST := 60.0
@@ -73,12 +109,14 @@ func _ready() -> void:
 	_objects = [windmill, rock]
 
 	_build_environment()
+	_build_yard()
 	_build_characters()
 	_build_post_process()
 	_build_examine_panel()
 	_build_bark_line()
 
 	EventBus.character_switched.connect(_on_character_switched)
+	EventBus.character_died.connect(_on_character_died)
 
 
 # ── World ───────────────────────────────────────────────────────────────
@@ -118,6 +156,77 @@ func _build_environment() -> void:
 	sun.light_color = Color(1.0, 0.93, 0.80)
 	sun.shadow_enabled = true
 	add_child(sun)
+
+
+## The practice yard: four walls, a gate, and a dummy.
+##
+## A dodge on an open plain is a dash. You cannot tell a good one from a
+## bad one, because there is nothing to dodge and nowhere you cannot go.
+## The walls are the space limit and the dummy is the thing to dodge
+## against; between them they are the rig the dodge has been missing.
+func _build_yard() -> void:
+	var yard := Node3D.new()
+	yard.name = "Yard"
+	add_child(yard)
+
+	# North, south and west are solid.
+	_add_wall(yard,
+		Vector3(YARD_CENTER.x, WALL_HEIGHT * 0.5, YARD_CENTER.z - YARD_HALF),
+		Vector3(YARD_HALF * 2.0, WALL_HEIGHT, WALL_THICKNESS))
+	_add_wall(yard,
+		Vector3(YARD_CENTER.x, WALL_HEIGHT * 0.5, YARD_CENTER.z + YARD_HALF),
+		Vector3(YARD_HALF * 2.0, WALL_HEIGHT, WALL_THICKNESS))
+	_add_wall(yard,
+		Vector3(YARD_CENTER.x - YARD_HALF, WALL_HEIGHT * 0.5, YARD_CENTER.z),
+		Vector3(WALL_THICKNESS, WALL_HEIGHT, YARD_HALF * 2.0))
+
+	# The east wall has the gate in it, so the yard can be entered.
+	var gate_length := YARD_HALF - GATE_HALF
+	var gate_offset := (YARD_HALF + GATE_HALF) * 0.5
+	_add_wall(yard,
+		Vector3(YARD_CENTER.x + YARD_HALF, WALL_HEIGHT * 0.5, YARD_CENTER.z - gate_offset),
+		Vector3(WALL_THICKNESS, WALL_HEIGHT, gate_length))
+	_add_wall(yard,
+		Vector3(YARD_CENTER.x + YARD_HALF, WALL_HEIGHT * 0.5, YARD_CENTER.z + gate_offset),
+		Vector3(WALL_THICKNESS, WALL_HEIGHT, gate_length))
+
+	# The dummy stands in the middle of it, facing the gate.
+	_dummy = TrainingDummy.new()
+	_dummy.name = "TrainingDummy"
+	_dummy.position = YARD_CENTER
+	# The dummy faces -Z, like everything else in this build. Turn it to
+	# face east, towards the way in.
+	_dummy.rotation.y = -PI * 0.5
+	yard.add_child(_dummy)
+
+
+## One wall: a box you cannot walk through.
+func _add_wall(parent: Node3D, position: Vector3, size: Vector3) -> void:
+	var wall := StaticBody3D.new()
+	wall.name = "Wall"
+	wall.position = position
+	wall.collision_layer = 1
+	wall.collision_mask = 1
+
+	var collider := CollisionShape3D.new()
+	collider.name = "Shape"
+	var shape := BoxShape3D.new()
+	shape.size = size
+	collider.shape = shape
+	wall.add_child(collider)
+
+	var mesh := MeshInstance3D.new()
+	mesh.name = "Mesh"
+	var box := BoxMesh.new()
+	box.size = size
+	mesh.mesh = box
+	var material := StandardMaterial3D.new()
+	material.albedo_color = Color(0.44, 0.38, 0.30, 1.0)
+	material.roughness = 0.95
+	mesh.material_override = material
+	wall.add_child(mesh)
+
+	parent.add_child(wall)
 
 
 func _build_post_process() -> void:
@@ -207,6 +316,21 @@ func _unhandled_input(event: InputEvent) -> void:
 		_show_tags = not _show_tags
 		for object in _objects:
 			object.show_tag = _show_tags
+	elif event.is_action_pressed(&"toggle_hud"):
+		_show_hud = not _show_hud
+		if hud != null:
+			hud.visible = _show_hud
+	elif event.is_action_pressed(&"reset_dummy"):
+		_reset_yard()
+
+
+## Put the yard back: the dummy stands up, and anyone who fell gets up.
+func _reset_yard() -> void:
+	if _dummy != null:
+		_dummy.reset()
+	for pawn in [player.active_pawn, player.other_pawn]:
+		if pawn != null and pawn.is_dead:
+			pawn.revive()
 
 
 # ── Per frame ───────────────────────────────────────────────────────────
@@ -322,18 +446,24 @@ func _update_hud() -> void:
 			Loc.t(_form_name_key(other, object)),
 		]))
 
+	if _dummy != null:
+		lines.append(Loc.tf(&"ui.slice.line.dummy", [
+			int(_dummy.health), int(_dummy.max_health),
+		]))
+
 	if _show_help:
 		lines.append("")
 		lines.append(Loc.t(&"ui.slice.help.1"))
 		lines.append(Loc.t(&"ui.slice.help.2"))
 		lines.append(Loc.t(&"ui.slice.help.3"))
 		lines.append(Loc.t(&"ui.slice.help.4"))
+		lines.append(Loc.t(&"ui.slice.help.5"))
 
 	hud.text = "\n".join(lines)
 
 
 func _form_name_key(character: CharacterPawn, object: TruthObject) -> StringName:
-	return object.name_key_for(character.perceived_layer)
+	return Examine.reading_key(object, character)
 
 
 func _layer_name(layer: int) -> String:
@@ -367,3 +497,12 @@ func _on_character_switched(_from_id: StringName, _to_id: StringName) -> void:
 	if ai != null and player != null:
 		ai.pawn = player.other_pawn
 		ai.leader = player.active_pawn
+
+
+## Somebody went down in the yard.
+##
+## There is no death screen in the grey box — that is a whole system
+## (GDD.md §7.3, the unwritten page). But a character who cannot get up
+## and is not told how is a stuck build, so the yard says so.
+func _on_character_died(character_id: StringName) -> void:
+	EventBus.toast.emit(&"ui.slice.down", [])

@@ -94,6 +94,18 @@ func name_key_for(layer: int) -> StringName:
 	return data.name_key_for(layer)
 
 
+## The face of the object in a truth layer: what it is called, how it
+## looks, and the one detail that does not add up.
+##
+## This is what a character *perceives*, and it is the only thing the
+## Examine panel is allowed to say. The other truth is not printed
+## anywhere: the player has to put the two together themselves.
+func face_for(layer: int) -> TruthFace:
+	if data == null:
+		return null
+	return data.face_for(layer)
+
+
 ## The truth layer this object is currently showing, at full strength.
 func current_layer() -> int:
 	return 1 if _blend >= 0.5 else 0

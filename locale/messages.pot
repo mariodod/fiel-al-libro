@@ -503,14 +503,76 @@ msgstr ""
 msgid "ui.slice.help.4"
 msgstr ""
 
+#. TRANSLATORS: Control hint, line 5: where the practice yard is.
+msgid "ui.slice.help.5"
+msgstr ""
+
+#. TRANSLATORS: HUD line: the training dummy and how much of it is left. Format: %d, %d.
+msgid "ui.slice.line.dummy"
+msgstr ""
+
+#. TRANSLATORS: Shown when a character goes down in the practice yard.
+msgid "ui.slice.down"
+msgstr ""
+
+#. TRANSLATORS: The name of the light attack.
+msgid "it.ability.attack_light.name"
+msgstr ""
+
+#. TRANSLATORS: The name of the heavy attack.
+msgid "it.ability.attack_heavy.name"
+msgstr ""
+
 #. TRANSLATORS: The Examine prompt: what to press to look at a thing.
 msgid "ui.examine.prompt"
 msgstr ""
 
-#. TRANSLATORS: The two names a thing has, one per truth. Format: %s, %s, %s, %s.
-msgid "ui.examine.faces"
+#. TRANSLATORS: The Examine panel: the text written on the thing, in
+#. quotation marks. Format: %s.
+msgid "ui.examine.quote"
 msgstr ""
 
-#. TRANSLATORS: What each of the two characters calls a thing right now. Format: %s, %s, %s, %s.
-msgid "ui.examine.readings"
+# --- THE FACES: what a character perceives -------------------------------
+# One face per truth, per object. The Examine panel shows ONE of them —
+# the one the reader is reading right now — and never the other truth and
+# never the other character's reading.
+#
+# The "tell" is the seam: the one detail that does not add up. It is the
+# seed of the Lectura system (GDD.md §6), and it is the only thing the
+# player is meant to notice without a marker.
+
+#. TRANSLATORS: The rock in the Reality truth: how it looks.
+msgid "ui.face.rock.reality.desc"
+msgstr ""
+
+#. TRANSLATORS: The rock in the Reality truth: the one detail that does not add up.
+msgid "ui.face.rock.reality.tell"
+msgstr ""
+
+#. TRANSLATORS: The rock in the Book truth: how it looks.
+msgid "ui.face.rock.book.desc"
+msgstr ""
+
+#. TRANSLATORS: The rock in the Book truth: the one detail that does not add up.
+msgid "ui.face.rock.book.tell"
+msgstr ""
+
+#. TRANSLATORS: The title written on the cover of the book the rock is.
+msgid "ui.face.rock.book.title"
+msgstr ""
+
+#. TRANSLATORS: The windmill in the Reality truth: how it looks.
+msgid "ui.face.windmill.reality.desc"
+msgstr ""
+
+#. TRANSLATORS: The windmill in the Reality truth: the one detail that does not add up.
+msgid "ui.face.windmill.reality.tell"
+msgstr ""
+
+#. TRANSLATORS: The windmill in the Book truth: how it looks.
+msgid "ui.face.windmill.book.desc"
+msgstr ""
+
+#. TRANSLATORS: The windmill in the Book truth: the one detail that does not add up.
+msgid "ui.face.windmill.book.tell"
 msgstr ""

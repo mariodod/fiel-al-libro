@@ -71,6 +71,31 @@ func suite(t: TestHarness) -> void:
 	t.expect_eq(controller.active_pawn, quixote, "the player starts with Quixote")
 	t.expect_eq(controller.other_pawn, sancho, "Sancho is the companion")
 
+	t.test("the practice yard is there, with a dummy in it")
+	# The dodge cannot be judged without an enemy and a space limit.
+	var yard: Node = scene.get_node_or_null("Yard")
+	var dummy: TrainingDummy = scene.get_node_or_null("Yard/TrainingDummy")
+	t.expect_true(yard != null, "the yard should be in the scene")
+	t.expect_true(dummy != null, "the dummy should be in the yard")
+	if dummy != null:
+		t.expect_gt(dummy.max_health, 0.0, "the dummy can be hurt")
+		t.expect_gt(dummy.reach, 0.0, "the dummy can reach")
+
+	t.test("the HUD can be turned off")
+	# The HUD is the developer's readout: it spells out both readings. A
+	# stranger must not have it.
+	var hud: Label = scene.get_node_or_null("HudLayer/Hud")
+	t.expect_true(hud != null, "the slice has a HUD")
+	if hud != null:
+		t.expect_true(hud.visible, "the HUD starts on")
+		var press := InputEventAction.new()
+		press.action = &"toggle_hud"
+		press.pressed = true
+		scene.call("_unhandled_input", press)
+		t.expect_false(hud.visible, "H turns it off")
+		scene.call("_unhandled_input", press)
+		t.expect_true(hud.visible, "and H turns it back on")
+
 	t.test("the camera follows the character you are driving")
 	var rig: CameraFollow = scene.get_node_or_null("CameraRig")
 	t.expect_true(rig != null, "the camera rig should be in the scene")

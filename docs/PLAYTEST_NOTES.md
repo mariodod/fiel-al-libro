@@ -2,7 +2,7 @@
 
 > The deliverable for task 2.4: **write down what you feel. Not what you built.**
 >
-> Last updated: **2026-10-19**
+> Last updated: **2026-10-20**
 
 ---
 
@@ -42,11 +42,18 @@ tools\play.cmd
 | `WASD` / `Shift` | walk, run |
 | `TAB` | swap between Quixote and Sancho |
 | `T` | the world's truth flips: Reality ↔ Book |
+| `E` | examine the thing in front of you — *what this character sees* |
+| `Space` | dodge |
+| `LMB` / `RMB` | light attack / heavy attack |
 | `V` | Sancho's second sight, on/off |
 | `L` | Quixote's Locura: Lucid ↔ Lost |
+| `K` | reset the practice yard |
 | `F1` | the help overlay |
+| `F2` | the floating perception tags |
+| `H` | the HUD — the developer's readout. **Turn it off before a stranger sees it.** |
 
-The scene: a windmill and a rock on a dry plain. Quixote and Sancho. The windmill is a
+The scene: a windmill and a rock on a dry plain, and a **walled yard to
+the west** with a **training dummy** in it. Quixote and Sancho. The windmill is a
 windmill in Reality and a **giant** in the Book. The rock is a rock in Reality and a
 **book** in the Book. The tag floating over each object says what the character you are
 *not* driving is looking at.
@@ -291,9 +298,116 @@ except the two of us.
   does it make the change clearer, or does it get in the way of a change that is already
   clear?
 
+> The second round of notes came back on 20 October, and it changed the answer to the
+> first of those: the Examine panel was giving the mechanic away. See **§7**.
+
 ---
 
-## 7. What to do with the answers
+## 7. The second playtest — 20 October 2026, the owner's notes
+
+Two notes came back from playing the build with the Examine verb and the
+dodge in it. They are about the same thing from opposite ends: **the
+build was showing the player too much, and asking the player too
+little.**
+
+### The two new "but"s
+
+| # | What they said | What it means | Where it goes |
+|---|---|---|---|
+| B9 | *"Examining shouldn't give away all the information. It should give the information the character sees. If it's a rock a rock, it can describe how it looks. If it's a book, a book, with its title maybe some text and a mention that it is heavier than it should."* | The panel was printing the truth table **and** the reading of both characters. That is the whole mechanic, handed over before the player had touched anything. | **Fixed** — the panel prints **one character's perception**: the name, the description, the title, the text on the page, and the one detail that does not add up |
+| B10 | *"For the dodge it is difficult to assess if it's fine at this stage without any enemies or space limitations."* | A dodge on an empty plain is a dash. You cannot tell a good one from a bad one: there is nothing to dodge, and nowhere you cannot go. | **Fixed** — a **training dummy** in a **walled yard**, and the attacks that make the dodge a decision |
+
+### B9 — the panel was the answer sheet
+
+The panel used to print three lines:
+
+```
+La roca
+Realidad: roca · Libro: libro
+Don Quijote: libro · Sancho: roca
+```
+
+The second line is the truth table. The third line is the other
+character's reading. Together they are the whole game, given away for
+free — and the player was handed it *before* they had touched anything.
+
+Now it prints one character's perception, and only that:
+
+```
+roca
+Una piedra gris del tamaño de un puño, con el liquen seco en la parte de
+arriba y la base hundida en la tierra.
+Pesa más de lo que debería pesar una piedra de ese tamaño.
+```
+
+and, in the Book, the same object read the other way:
+
+```
+libro
+Un libro pequeño, encuadernado en cuero pardo y atado con una correa. Los
+cantos de las hojas están dorados y manchan los dedos.
+El ingenioso hidalgo Don Quijote de la Mancha
+«En un lugar de la Mancha, de cuyo nombre no quiero acordarme, no hace
+mucho que vivía un hidalgo de los de lanza en astillero, adarga antigua,
+rocín flaco y galgo corredor.»
+Pesa más de lo que debería pesar un libro de ese tamaño.
+```
+
+**The last line is the point.** It is the *seam*: the one detail the
+character cannot explain, and the thing the player is meant to notice
+without a marker. GDD.md §6 says the Lectura system is built on
+anamorphoses the player finds unaided — and a seam is the seed of one.
+
+Note what is *not* in the panel any more: the truth table, and the other
+character. Note also that the seam is **mirrored** — the stone is too
+heavy for a stone, and the book is too heavy for a book. The player who
+examines the same object in both truths finds the *same anomaly in two
+words*, and that is the anamorphosis, found by looking.
+
+The panel is still **live**: the description is recomputed from the
+reading rule every frame, so `T` and `TAB` change what is written under
+your eyes. What is gone is the table, not the mechanic.
+
+### B10 — the dodge had nothing to dodge
+
+Fair, and it is a note about the *test rig*, not about the dodge. A dodge
+on an open plain is a dash: you cannot tell a good one from a bad one,
+because there is nothing to dodge and nowhere you cannot go. You cannot
+even tell whether the i-frames are the right length.
+
+So the slice grew the missing piece — **task 2.6b, the hole in the
+plan**:
+
+- **A training dummy.** It stands up, it takes a hit, it goes down, and
+  `K` puts it back on its feet. It swings on a rhythm: a **wind-up** you
+  can read, a strike, and a rest. The hit is resolved *when the arm comes
+  down*, not when it went up — so a character who has already moved is
+  not hit. That is the whole test.
+- **A walled yard**, to the west, with a gate in the east wall. The
+  walls are the space limit: there is room to fight and nowhere to run.
+- **Attacks that land.** `LMB` is a light swing, `RMB` a heavy one, and
+  both cost stamina and have a rhythm of their own. Without something to
+  hit, the dummy is scenery.
+
+**What still needs judging is the numbers.** The dodge is a burst of
+**15 m/s for 0.4 s** — about **six metres**, nearly a third of the yard.
+A souls-like roll is two or three metres. It is now measurable, and it is
+the first thing to measure: change `DODGE_SPEED` in
+`src/characters/character_pawn.gd`, play it, and write down what
+changed. The dummy's numbers are data too — its wind-up is 0.62 s, its
+reach 2.9 m, its arc 110°.
+
+**Both are untested.** They were built after the note, so nobody has seen
+them except the two of us.
+
+### The page turn, untested
+
+Still on the list from the last round: the page turn was built after the
+playtest too, and it has never been judged.
+
+---
+
+## 8. What to do with the answers
 
 - **If the answers are yes** → the premise holds. Go to week 3–4 (combat) and keep
   building on this rock. The mechanic is a foundation, not a gimmick.

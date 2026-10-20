@@ -39,17 +39,19 @@ someone willing to pay for the lesson with their own mind.*
 | `docs/IP_CLEARANCE.md` | ⚠️ **PRIVATE — owner's machine only.** Title clearance memo: what was searched, the "Don Quijote" finding, the trademark strategy, the manual search checklist. |
 | `docs/NEXT_STEPS.md` | **The plan for the next 12 weeks, task by task.** |
 | `docs/NEXT_SESSION.md` | **Start here if you are picking this up.** What is done, what is next, in what order, and what not to do. |
-| `docs/PLAYTEST_NOTES.md` | The playtest: the protocol, the findings, the eight "but"s. **The most valuable document in the repo.** |
+| `docs/PLAYTEST_NOTES.md` | The playtest: the protocol, the findings, the ten "but"s. **The most valuable document in the repo.** |
 | `HANDOVER.md` | This file. |
 | `src/` | All game code. |
-| `src/world/slice.tscn` | **The Week 1–2 grey box — the playable build, and the main scene.** Windmill/giant, rock/book, two characters, two readings. |
+| `src/world/slice.tscn` | **The Week 1–2 grey box — the playable build, and the main scene.** Windmill/giant, rock/book, two characters, two readings, and a walled practice yard with a training dummy in it. |
 | `src/systems/perception.gd` | The reading rule: the world has one truth, the characters make two things of it. |
-| `src/systems/examine.gd` | The Examine verb: what you are looking at, and what it is called in each truth. |
+| `src/systems/examine.gd` | The Examine verb: what you are looking at, and what **this character** makes of it. |
+| `src/systems/attack_hitbox.gd` | A swing: the short window in which what is in front of you takes the hit. |
 | `src/systems/reaction.gd` | The reaction: what a character says when the world moves under them. |
 | `src/world/truth_object.gd` | An object with two faces. The data shape the whole game is built on. |
+| `src/world/training_dummy.gd` | The thing to fight: a telegraphed swing in a walled yard. |
 | `src/data/` | `Resource` subclasses and the `.tres` content: characters, primitives. |
 | `reference/` | **Local only, gitignored.** The reference texts: the 1605 first part, the 1615 second part, and the OCR of the 1605 printing. Fetch them with `tools\fetch_reference.ps1`. |
-| `tests/` | 14 suites, 239 assertions. |
+| `tests/` | 15 suites, 289 assertions. |
 | `locale/` | gettext PO files: es, en, fr + the template. |
 | `assets/` | Shaders, the Manifiesto content format. |
 | `tools/` | `godot.ps1` (locator), `setup.ps1` (one-command setup). |
@@ -155,9 +157,10 @@ a written page. The ending is a page you can read.
 | **An object with two faces** | `src/world/truth_object.gd` + `src/data/truth_object_data.gd` (`.tres` content) |
 | The visual identity | `assets/shaders/truth_layer.gdshader` — reality / book / ink in one uniform |
 | **The page turn** | `src/ui/post_process.gd` — a sheet of paper carrying a line of the 1605 original crosses the screen when the truth flips |
-| **The Examine verb** | `src/systems/examine.gd` + `src/ui/examine_panel.gd` — `E` on a thing, and the game says what it is in each truth and what each of you calls it |
+| **The Examine verb** | `src/systems/examine.gd` + `src/ui/examine_panel.gd` — `E` on a thing, and the game says what **this character** sees: the name, the description, the title, the text on the page, and the one detail that does not add up. Never the truth table, never the other character |
 | **The reaction** | `src/systems/reaction.gd` + `src/ui/bark_line.gd` — when a character's reading changes, they say so, with their name on it |
-| **The verbs** | `src/characters/character_pawn.gd` — the dodge: a directional burst, i-frames, and the stamina that comes back |
+| **The verbs** | `src/characters/character_pawn.gd` — the dodge: a directional burst, i-frames, and the stamina that comes back; and the swing, which spends stamina and puts a hitbox in front of you |
+| **Something to fight** | `src/world/training_dummy.gd` + the yard in `src/world/slice.gd` — a telegraphed swing, a health bar, and four walls. The dodge cannot be judged without an enemy and a space limit |
 | Character abstraction | `src/characters/character_pawn.gd` (base), `player_controller.gd`, `companion_ai.gd` |
 | Data-driven content | `src/data/*.gd` — `Resource` subclasses; tune in the inspector, never in code |
 | Save system | `src/autoload/manuscrito.gd` — atomic writes, snapshot semantics, version migration |
@@ -432,11 +435,11 @@ Full memo: `docs/IP_CLEARANCE.md` (private).
 
 | | |
 |---|---|
-| **Phase** | Phase 0 complete. **Phase 1, weeks 1–2: the grey box exists, and the playtest has happened.** |
-| **Working code** | ~35 GDScript files: autoload spine, data resources, character abstraction, the truth-layer shader, the save system, the i18n pipeline, the reading rule, the Examine verb, the reactions, the dodge, and the week 1–2 grey box. |
-| **Tests** | 14 suites, 239 assertions, all green, enforced in CI. |
+| **Phase** | Phase 0 complete. **Phase 1, weeks 1–2: the grey box exists, the playtest has happened twice, and week 3–4 (combat) has started.** |
+| **Working code** | ~37 GDScript files: autoload spine, data resources, character abstraction, the truth-layer shader, the save system, the i18n pipeline, the reading rule, the Examine verb, the reactions, the dodge, the swing, the training dummy, and the week 1–2 grey box. |
+| **Tests** | 15 suites, 289 assertions, all green, enforced in CI. |
 | **CI** | Green on every push. Produces Windows + Linux builds as artifacts. |
-| **Game content** | Two primitives (a windmill/giant, a rock/book) as low-poly placeholders, eight reaction lines in three languages, and one real Manifiesto fragment. No art, no levels, no enemies, no audio. |
+| **Game content** | Two primitives (a windmill/giant, a rock/book) as low-poly placeholders, a training dummy and a walled yard, eight reaction lines in three languages, and one real Manifiesto fragment. No art, no levels, no enemies, no audio. |
 | **Money spent** | €0. Godot is free, assets are CC0, the only planned spend is the credits song (~$200–800) and later the EUIPO filing (~€1,150). |
 
 **What exists is the skeleton, the tooling, the plan — and now a box that answers the
@@ -462,11 +465,25 @@ turning over.
 that is fun. Seven data points is a sample, not a signal, and the strangest data point
 still missing is a player who does not know the controls.
 
+**The second playtest, 20 October 2026, added two more "but"s** — and they are the
+sharpest ones yet, because they are about the *test rig*, not the idea. *"Examining
+shouldn't give away all the information. It should give the information the character
+sees."* The panel had been printing the truth table and both characters' readings: the
+whole mechanic, handed over for free. It now prints one character's perception and the
+one detail that does not add up. And: *"For the dodge it is difficult to assess if it's
+fine at this stage without any enemies or space limitations."* A dodge on an empty plain
+is a dash. There is now a training dummy in a walled yard, with swings that land.
+
+**What still needs judging is the numbers.** The dodge is 15 m/s for 0.4 s — about six
+metres, where a souls-like roll is two or three. The dummy's wind-up is 0.62 s, its reach
+2.9 m, its arc 110°. They are all data, and all of them are now measurable in a rig
+that has something to fight. Full write-up: `docs/PLAYTEST_NOTES.md` §7.
+
 **The next milestone is week 3–4 — combat — and the first task in it is not a rig.** Two
 people, one of them a stranger, asked to *touch* the thing that surprised them, so the
 cheapest possible **Examine** beat comes first: walk up to an object, press `E`, and the
-game tells you what it is in your truth and in the other one. A player who cannot touch
-the thing that made them curious will not come back.
+game tells you what **you** see. A player who cannot touch the thing that made them
+curious will not come back.
 
 **And now it can.** The Examine verb is built, and so is the other half of the same
 note: when a character's reading changes, they say so. *"Don Quijote: ¡Un libro! ¡Mirad,
@@ -474,7 +491,7 @@ un libro! ¿Quién lo ha puesto aquí?"* The barks used to go into the void — 
 listened to `EventBus.toast` — so the companion was a label and not a character. It is a
 character now.
 
-**Both are untested.** They were built after the last playtest, and the next run is the
+**All of it is untested.** It was built after the last playtest, and the next run is the
 owner's.
 
 ---
@@ -486,14 +503,17 @@ owner's.
 3. **Read `docs/NEXT_SESSION.md`.** It has the state, the order of work, and the list of
    things not to do yet.
 4. Play the grey box: `tools\play.cmd`. `T` flips the world (and turns a page), `TAB`
-   swaps characters, `E` examines the thing in front of you, `Space` dodges, `V` gives
-   Sancho the second sight, `L` pushes Quixote's Locura from Lucid to Lost, `F2` hides
-   the perception tags.
-5. Read `docs/PLAYTEST_NOTES.md` §6 — the playtest findings, the eight "but"s (six
-   fixed), and the two that have just been built: **B6, the Examine verb** and **B5,
-   Quixote's reaction**. Both are untested.
+   swaps characters, `E` examines the thing in front of you, `Space` dodges, `LMB`/`RMB`
+   swing, `V` gives Sancho the second sight, `L` pushes Quixote's Locura from Lucid to
+   Lost, `F2` hides the perception tags, `H` hides the HUD, `K` resets the practice yard
+   (to the west).
+5. Read `docs/PLAYTEST_NOTES.md` §6 and §7 — the playtest findings, the ten "but"s, and
+   the two that have just been built: **B9, the Examine panel that shows a perception
+   instead of the truth table**, and **B10, the training dummy in the walled yard**.
+   Both are untested.
 6. **The next task is week 3–4.** It is not the Examine verb any more — that is done.
-   It is 2.5, the verbs: dodge, lock-on and a soft camera.
+   It is 2.5, the verbs: the lock-on and the soft camera, now that there is a target to
+   lock onto and a yard to fight in.
 7. **The one thing that matters:** the vertical slice exists to answer a single question —
    *is the two-truths mechanic fun?* The answer is yes. Everything from here is about
    turning a proven mechanic into a game.

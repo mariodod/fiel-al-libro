@@ -9,14 +9,17 @@ extends RefCounted
 ## only watch is a demo. This is the verb that turns it into a game.
 ##
 ## It is the cheapest possible version: walk up to a thing, press `E`, and
-## the game tells you what it is in your truth and in the other one. Not
-## the Lectura system (GDD.md §6) — that is weeks 5–7, and it is the same
-## muscle made explicit. This is the muscle itself.
+## the game tells you **what this character sees**: how it looks, what it
+## is called, what is written on it, and the one detail that does not add
+## up. Not the Lectura system (GDD.md §6) — that is weeks 5–7, and it is
+## the same muscle made explicit. This is the muscle itself.
 ##
 ## The rule it obeys is the reading rule (Perception): a character calls an
-## object by the truth they are reading right now. So the panel can say
-## "rock" and "book" in the same breath, and the disagreement it shows is
-## the game's whole subject.
+## object by the truth they are reading right now. So the panel describes
+## the rock as a stone or as a book, depending on who is looking — and it
+## never says what the other one is looking at. The second playtest was
+## blunt about it: *"Examining shouldn't give away all the information.
+## It should give the information the character sees."*
 
 ## The group every object that can be examined belongs to.
 const GROUP := &"interactables"
@@ -64,15 +67,35 @@ static func find_target(candidates: Array, origin: Vector3, facing: Vector3) -> 
 	return best
 
 
-## The two names an object has: one per truth.
+## The face of an object in a truth layer.
 ##
-## This is the payload of the Examine beat. A rock is a rock in Reality
-## and a book in the Book, and the panel says both, because that is the
-## fact the player is there to learn.
-static func face_keys(object: TruthObject) -> Array[StringName]:
+## A face is one truth's worth of a thing: what it is called, how it
+## looks, and the one detail that does not add up. See `TruthFace`.
+static func face_for(object: TruthObject, layer: int) -> TruthFace:
 	if object == null or object.data == null:
-		return []
-	return [object.name_key_for(Perception.REALITY), object.name_key_for(Perception.BOOK)]
+		return null
+	return object.data.face_for(layer)
+
+
+## What a character makes of an object right now.
+##
+## This is the whole payload of the Examine beat. The second playtest said
+## the panel "gives away all the information" because it printed the
+## object in both truths and the reading of both characters — the whole
+## mechanic, handed over. It does not any more: a character only ever
+## gets their OWN reading, and the seam inside it (the weight, the
+## creak, the wind that is not there) is the clue that makes them look
+## again.
+##
+## The reading comes from the reading rule (Perception), so it moves with
+## the world: flip the truth, and the same object is described in the
+## other way.
+static func perception_for(object: TruthObject, character: CharacterPawn) -> TruthFace:
+	if object == null or object.data == null:
+		return null
+	if character == null:
+		return object.data.face_for(Perception.REALITY)
+	return object.data.face_for(character.perceived_layer)
 
 
 ## What a character calls an object right now.

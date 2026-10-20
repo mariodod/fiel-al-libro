@@ -29,6 +29,13 @@
       is: the object, the name each truth gives it, and the name each of the two of you is
       calling it right now. The third line is recomputed every frame, so it moves when the
       world moves. `src/systems/examine.gd`, `src/ui/examine_panel.gd`.
+- [x] **B9 — the Examine panel gives a perception, not the truth table.** The second
+      playtest: *"Examining shouldn't give away all the information. It should give the
+      information the character sees."* The panel printed `Realidad: roca · Libro: libro`
+      and `Don Quijote: libro · Sancho: roca` — the whole mechanic, handed over. It now
+      prints one character's perception: the name, the description, the title, the text on
+      the page, and **the one detail that does not add up**. The truth table and the other
+      character are gone. `src/data/truth_face.gd`, `src/ui/examine_panel.gd`.
 - [x] **B5 — the reaction.** When a character's reading changes, they say so, with their
       name on it: *"Don Quijote: ¡Un libro! ¡Mirad, un libro! ¿Quién lo ha puesto aquí?"*
       `src/systems/reaction.gd`, `src/ui/bark_line.gd`.
@@ -38,18 +45,26 @@
       stamina, and it ends with your feet planted. **And the stamina comes back** — it did
       not before: nothing in the build restored it, so the second dodge of a run was the
       last one. `src/data/abilities/dodge.tres`, `src/characters/character_pawn.gd`.
+- [x] **B10 — something to dodge, and somewhere you cannot run.** The second playtest:
+      *"For the dodge it is difficult to assess if it's fine at this stage without any
+      enemies or space limitations."* There is now a **training dummy** (a telegraphed
+      swing, a health bar, `K` to reset it) in a **walled yard** to the west, and the
+      swings that make the dodge a decision: `LMB` light, `RMB` heavy, both costing
+      stamina. `src/world/training_dummy.gd`, `src/systems/attack_hitbox.gd`.
+- [x] **`H` hides the HUD.** It is the developer's readout — it spells out both readings.
+      A stranger must not have it.
 
 ### This week's three goals
 
 1. **A stranger who does not know the keys.** The build is ready for it and the owner is
    the only one who can run it. The mechanic has to teach itself. Give it to somebody who
    has never seen it, say nothing, and write down what they do in the first thirty
-   seconds. The Examine prompt (`E — Examinar`) is the one new thing they will meet.
-2. **Week 3–4, task 2.5, the rest of it: lock-on and the soft camera.** The dodge is
-   real; walk, run and the camera were already there. The lock-on needs something to lock
-   onto — and **the plan has no enemy until 2.11**, while 2.6's criterion is *"a 60-second
-   exchange with a dummy is fun"*. A training dummy is the task that is missing from the
-   list, and it is the one to write down.
+   seconds. Press `H` before you hand it over.
+2. **Judge the dodge.** The numbers are the point now, and the yard is the rig: the
+   burst is 15 m/s for 0.4 s — about **six metres**, where a souls-like roll is two or
+   three. Change `DODGE_SPEED` in `src/characters/character_pawn.gd`, play it, and write
+   down what changed. The dummy's numbers are data too: wind-up 0.62 s, reach 2.9 m,
+   arc 110°.
 3. **B3, the rest: the companion's chatter.** The barks are visible now, but the idle
    ones are still picked at random from a pool of two. They should be about what the
    companion is actually looking at — the `TODO(Phase 1)` in `companion_ai.gd` says so,
@@ -66,6 +81,8 @@
 
 - [x] **B6 — the Examine verb.** Built. Untested.
 - [x] **B5 — Quixote's reaction.** Built. Untested.
+- [x] **B9 — the Examine panel shows a perception, not the truth table.** Built. Untested.
+- [x] **B10 — the training dummy and the walled yard.** Built. Untested.
 - [ ] **B3 — the shipped game owes the companion barks.** The barks are heard now, and
       they fire when a reading changes. What is missing is the *idle* chatter: lines
       about the thing in front of them, not a random draw from a pool of two.
@@ -75,8 +92,10 @@
 
 ## Next (Phase 1 — weeks 3–4, combat)
 
-- [ ] `PlayerController`: walk, run, dodge, lock-on, a soft camera (2.5)
-- [ ] Combat: light combo, heavy, dodge, block/parry, stamina, poise, hit reactions (2.6)
+- [ ] `PlayerController`: walk, run, dodge, lock-on, a soft camera (2.5) — 🟡 the **lock-on**
+      is the rest of it, and the dummy is the target to lock onto
+- [ ] Combat: light combo, heavy, dodge, block/parry, stamina, poise, hit reactions (2.6) —
+      🟡 the dodge, the stamina and the swings that land are in
 - [ ] **Quixote rig** — silhouette, lance, 8 animations (2.7)
 - [ ] **Sancho rig** — a *different* silhouette, sack + flail (2.8)
 - [ ] Sancho's `Desvelar` — the form-swap VFX (2.9). The playtest is already asking for it.

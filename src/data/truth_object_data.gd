@@ -21,19 +21,30 @@ extends Resource
 @export var reality_form: PackedScene
 ## What the Book says it is.
 @export var book_form: PackedScene
-## What each character calls it, in each truth.
-@export var reality_name_key: StringName = &""
-@export var book_name_key: StringName = &""
 ## The Book form hovers a little above the ground. Pure theatre, but it is
 ## what makes "a book in every rock" read at a glance.
 @export var book_form_hovers: bool = false
 ## How high above the object the perception tag floats.
 @export var tag_height: float = 3.0
 
+@export_group("Readings")
+## What a character makes of this object in the Reality truth: the name
+## they give it, how it looks, and the one detail that does not add up.
+@export var reality_face: TruthFace
+## The same, in the Book truth. This is where the "book in every rock"
+## lives: the Book face of the rock is a book, heavier than a book.
+@export var book_face: TruthFace
+
+
+## The face for a truth layer: what it is called, and what it looks like.
+func face_for(layer: int) -> TruthFace:
+	return book_face if layer == 1 else reality_face
+
 
 ## The name key for a truth layer.
 func name_key_for(layer: int) -> StringName:
-	return book_name_key if layer == 1 else reality_name_key
+	var face := face_for(layer)
+	return face.name_key if face != null else &""
 
 
 ## The name key of the object itself, which does not change with the truth.

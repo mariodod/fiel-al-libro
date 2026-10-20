@@ -3,7 +3,7 @@
 > The plan for the next 12 weeks, and the admin work that has to happen around it.
 > Assume you have read `HANDOVER.md` first.
 >
-> Last updated: **2026-10-19**
+> Last updated: **2026-10-20**
 
 ---
 
@@ -72,19 +72,25 @@ The cheapest possible test of the core idea, before any rig exists.
 > "but"s are fixed; B5 and B6 are named work. Full write-up: `docs/PLAYTEST_NOTES.md` §6.
 > **Weeks 1–2 are done. Week 3–4 is next — but the Examine verb (B6) comes first**, because
 > two people, one of them a stranger, asked to touch the thing that surprised them.
+>
+> **And then the playtest happened again, on 20 October 2026**, with two more notes:
+> the Examine panel was giving the whole mechanic away (B9 — it now prints one
+> character's perception and the one detail that does not add up), and the dodge had
+> nothing to dodge (B10 — there is now a training dummy in a walled yard). Full
+> write-up: `docs/PLAYTEST_NOTES.md` §7.
 
 
 ### Week 3–4 — Combat, and the two characters
 
 | # | Task | Done when |
 |---|---|---|
-| 2.5 | `PlayerController`: walk, run, dodge, lock-on, a soft camera | Feels like a souls-like camera, not a platformer — 🟡 walk, run, a soft camera and the **dodge** are in; the lock-on waits for a target |
-| 2.6 | Combat: light combo, heavy, dodge, block/parry, stamina, poise, hit reactions | A 60-second exchange with a dummy is fun — 🟡 the dodge and the stamina pool are in; the dummy, the attacks and the poise are not |
+| 2.5 | `PlayerController`: walk, run, dodge, lock-on, a soft camera | Feels like a souls-like camera, not a platformer — 🟡 walk, run, a soft camera and the **dodge** are in; the **lock-on** waits for a target — and now there *is* one |
+| 2.6 | Combat: light combo, heavy, dodge, block/parry, stamina, poise, hit reactions | A 60-second exchange with a dummy is fun — 🟡 the dodge, the stamina pool and the swings that land are in; the **combo**, the block/parry, the poise and the hit reactions are not |
 | 2.7 | **Quixote rig** — silhouette, lance, 8 animations (idle, run, roll, 3× light, heavy, block, hit) | He reads as a *mad nobleman*, not a knight in costume |
 | 2.8 | **Sancho rig** — a *different* silhouette, sack + flail, his own 8 animations | You could tell them apart with the sound off |
 | 2.9 | `Desvelar` — Sancho strips the Book skin off a target and reveals its Reality form | It is the best-feeling verb in the game |
 | 2.10 | The asymmetry rules: Quixote cannot harm innocents without a Humanity cost; Sancho cannot meaningfully damage | Both rules create a reason to swap mid-fight |
-| 2.6b | **A training dummy** — something to fight, something to lock onto, something to hit | See below |
+| 2.6b | **A training dummy** — something to fight, something to lock onto, something to hit | ✅ **Built.** A telegraphed swing, a health bar, a yard with walls around it, and `K` to put it back on its feet. `src/world/training_dummy.gd`, `tests/test_training_dummy.gd` |
 
 > **2.7 and 2.8 are the two most under-rated tasks here.** Distinct animation sets sell the
 > asymmetry better than any mechanic. A reskinned Quixote makes the whole idea collapse.
@@ -94,6 +100,11 @@ The cheapest possible test of the core idea, before any rig exists.
 > dummy in the plan and no enemy until 2.11. Without something to fight, 2.5's lock-on and
 > 2.6's hit reactions cannot be built or seen. A dummy is the cheapest thing that makes
 > both of them real.
+>
+> **It was built because the second playtest asked for it**: *"For the dodge it is
+> difficult to assess if it's fine at this stage without any enemies or space
+> limitations."* A dodge on an empty plain is a dash — you cannot tell a good one from a
+> bad one. See `docs/PLAYTEST_NOTES.md` §7, B10.
 
 ### Week 5–7 — The Venture, and reading the world
 

@@ -341,17 +341,79 @@ msgstr "V second sight · L Locura · F1 this help · F2 the tags"
 msgid "ui.slice.help.4"
 msgstr "E examine what is in front of you"
 
+#. TRANSLATORS: Control hint, line 5: where the practice yard is.
+msgid "ui.slice.help.5"
+msgstr "West: the yard and the dummy · K resets it"
+
+#. TRANSLATORS: HUD line: the training dummy and how much of it is left. Format: %d, %d.
+msgid "ui.slice.line.dummy"
+msgstr "Dummy: %d/%d"
+
+#. TRANSLATORS: Shown when a character goes down in the practice yard.
+msgid "ui.slice.down"
+msgstr "You are down. Press K to get up."
+
+#. TRANSLATORS: The name of the light attack.
+msgid "it.ability.attack_light.name"
+msgstr "Light attack"
+
+#. TRANSLATORS: The name of the heavy attack.
+msgid "it.ability.attack_heavy.name"
+msgstr "Heavy attack"
+
 #. TRANSLATORS: The Examine prompt: what to press to look at a thing.
 msgid "ui.examine.prompt"
 msgstr "E — Examine"
 
-#. TRANSLATORS: The two names a thing has, one per truth. Format: %s, %s, %s, %s.
-msgid "ui.examine.faces"
-msgstr "%s: %s · %s: %s"
+#. TRANSLATORS: The Examine panel: the text written on the thing, in
+#. quotation marks. Format: %s.
+msgid "ui.examine.quote"
+msgstr "“%s”"
 
-#. TRANSLATORS: What each of the two characters calls a thing right now. Format: %s, %s, %s, %s.
-msgid "ui.examine.readings"
-msgstr "%s: %s · %s: %s"
+# --- THE FACES: what a character perceives -------------------------------
+# One face per truth, per object. The Examine panel shows ONE of them —
+# the one the reader is reading right now — and never the other truth and
+# never the other character's reading.
+#
+# The "tell" is the seam: the one detail that does not add up. It is the
+# seed of the Lectura system (GDD.md §6), and it is the only thing the
+# player is meant to notice without a marker.
+
+#. TRANSLATORS: The rock in the Reality truth: how it looks.
+msgid "ui.face.rock.reality.desc"
+msgstr "A grey stone about the size of a fist, with dry lichen on the top and its base sunk into the earth."
+
+#. TRANSLATORS: The rock in the Reality truth: the one detail that does not add up.
+msgid "ui.face.rock.reality.tell"
+msgstr "It is heavier than a stone that size should be."
+
+#. TRANSLATORS: The rock in the Book truth: how it looks.
+msgid "ui.face.rock.book.desc"
+msgstr "A small book, bound in brown leather and tied with a strap. The edges of the leaves are gilt and they stain your fingers."
+
+#. TRANSLATORS: The rock in the Book truth: the one detail that does not add up.
+msgid "ui.face.rock.book.tell"
+msgstr "It is heavier than a book that size should be."
+
+#. TRANSLATORS: The title written on the cover of the book the rock is.
+msgid "ui.face.rock.book.title"
+msgstr "The Ingenious Gentleman Don Quixote of La Mancha"
+
+#. TRANSLATORS: The windmill in the Reality truth: how it looks.
+msgid "ui.face.windmill.reality.desc"
+msgstr "A stone mill with its four sails spread and a low door, so worn that the hinge no longer fits."
+
+#. TRANSLATORS: The windmill in the Reality truth: the one detail that does not add up.
+msgid "ui.face.windmill.reality.tell"
+msgstr "There is no wind at all, and yet the sails are turning."
+
+#. TRANSLATORS: The windmill in the Book truth: how it looks.
+msgid "ui.face.windmill.book.desc"
+msgstr "A giant of the kind that stories are made of, with arms so long they brush the ground and a small head sunk between his shoulders."
+
+#. TRANSLATORS: The windmill in the Book truth: the one detail that does not add up.
+msgid "ui.face.windmill.book.tell"
+msgstr "What looks like an arm on him is a mill's sail."
 
 #. TRANSLATORS: The Reality layer: what actually happened.
 msgid "ui.layer.reality"

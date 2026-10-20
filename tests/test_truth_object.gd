@@ -31,6 +31,22 @@ func suite(t: TestHarness) -> void:
 	t.expect_eq(object.name_key_for(0), &"ui.form.molino", "Reality name")
 	t.expect_eq(object.name_key_for(1), &"ui.form.gigante", "Book name")
 
+	t.test("each truth has its own face")
+	# A face is one truth's worth of a thing: what it is called, how it
+	# looks, and the one detail that does not add up.
+	var reality := object.face_for(0)
+	var book := object.face_for(1)
+	t.expect_true(reality != null and book != null, "both faces exist")
+	if reality != null and book != null:
+		t.expect_eq(reality.name_key, &"ui.form.molino", "the Reality face")
+		t.expect_eq(book.name_key, &"ui.form.gigante", "the Book face")
+		t.expect_ne(reality.description_key, book.description_key,
+			"the two truths are described differently")
+		t.expect_true(reality.has_tell(), "the Reality face has a seam")
+		t.expect_true(book.has_tell(), "the Book face has a seam")
+		t.expect_false(reality.has_fragment(), "the Reality face carries no page")
+		t.expect_false(book.has_fragment(), "the Book face carries no page")
+
 	t.test("the change is a cross-fade, not a pop")
 	# Halfway through the change both forms are half size: the object never
 	# disappears for a frame.
@@ -49,11 +65,16 @@ func suite(t: TestHarness) -> void:
 	t.test("the data carries both forms")
 	var data := TruthObjectData.new()
 	data.id = &"windmill"
-	data.reality_name_key = &"ui.form.molino"
-	data.book_name_key = &"ui.form.gigante"
+	data.reality_face = _face(&"ui.form.molino", &"ui.face.windmill.reality.desc")
+	data.book_face = _face(&"ui.form.gigante", &"ui.face.windmill.book.desc")
 	t.expect_eq(data.name_key_for(0), &"ui.form.molino", "Reality name key")
 	t.expect_eq(data.name_key_for(1), &"ui.form.gigante", "Book name key")
 	t.expect_true(data.reality_form == null or data.reality_form != null, "reality form slot exists")
+
+	t.test("a data resource with no face has no name")
+	var bare := TruthObjectData.new()
+	t.expect_eq(bare.name_key_for(0), &"", "no face, no name")
+	t.expect_eq(bare.face_for(1), null, "no face, no face")
 
 	if parent != null:
 		parent.remove_child(object)
@@ -65,8 +86,8 @@ func _make_object() -> TruthObject:
 	var data := TruthObjectData.new()
 	data.id = &"test"
 	data.display_name_key = &"ui.object.molino"
-	data.reality_name_key = &"ui.form.molino"
-	data.book_name_key = &"ui.form.gigante"
+	data.reality_face = _face(&"ui.form.molino", &"ui.face.windmill.reality.desc")
+	data.book_face = _face(&"ui.form.gigante", &"ui.face.windmill.book.desc")
 	data.reality_form = _pack_form()
 	data.book_form = _pack_form()
 
@@ -74,6 +95,15 @@ func _make_object() -> TruthObject:
 	object.data = data
 	object.setup(data)
 	return object
+
+
+## A face: a name, a description, and the one detail that does not add up.
+func _face(name_key: StringName, description_key: StringName) -> TruthFace:
+	var face := TruthFace.new()
+	face.name_key = name_key
+	face.description_key = description_key
+	face.tell_key = &"ui.face.windmill.reality.tell"
+	return face
 
 
 func _pack_form() -> PackedScene:
