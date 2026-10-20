@@ -85,11 +85,11 @@ The cheapest possible test of the core idea, before any rig exists.
 | # | Task | Done when |
 |---|---|---|
 | 2.5 | `PlayerController`: walk, run, dodge, lock-on, a soft camera | Feels like a souls-like camera, not a platformer — ✅ walk, run, a soft camera, the **dodge** and the **lock-on** are in: `M` picks the target you are looking at, the character turns towards it and walks around it, and the camera frames both |
-| 2.6 | Combat: light combo, heavy, dodge, block/parry, stamina, poise, hit reactions | A 60-second exchange with a dummy is fun — 🟡 the dodge, the stamina pool, the light and heavy swings, the **lock-on**, the **chain of three**, the **guard**, the **parry** and the **poise** are in; the **asymmetry rules** (2.10) and the hit reactions that are not a push are not |
-| 2.7 | **Quixote rig** — silhouette, lance, 8 animations (idle, run, roll, 3× light, heavy, block, hit) | He reads as a *mad nobleman*, not a knight in costume |
-| 2.8 | **Sancho rig** — a *different* silhouette, sack + flail, his own 8 animations | You could tell them apart with the sound off |
-| 2.9 | `Desvelar` — Sancho strips the Book skin off a target and reveals its Reality form | It is the best-feeling verb in the game |
-| 2.10 | The asymmetry rules: Quixote cannot harm innocents without a Humanity cost; Sancho cannot meaningfully damage | Both rules create a reason to swap mid-fight |
+| 2.6 | Combat: light combo, heavy, dodge, block/parry, stamina, poise, hit reactions | A 60-second exchange with a dummy is fun — ✅ the dodge, the stamina pool, the light and heavy swings, the **lock-on**, the **chain of three**, the **guard**, the **parry** and the **poise** are in; the **animations** are not |
+| 2.7 | **Quixote rig** — silhouette, lance, 8 animations (idle, run, roll, 3× light, heavy, block, hit) | He reads as a *mad nobleman*, not a knight in costume — 🟡 the **silhouette** (lance and basin) is in; the eight clips are an art budget |
+| 2.8 | **Sancho rig** — a *different* silhouette, sack + flail, his own 8 animations | You could tell them apart with the sound off — 🟡 the **silhouette** (sack and flail) is in; the eight clips are an art budget |
+| 2.9 | `Desvelar` — Sancho strips the Book skin off a target and reveals its Reality form | It is the best-feeling verb in the game — ✅ the **verb** works (`X`, eight seconds, for both characters); the **VFX** are still plain |
+| 2.10 | The asymmetry rules: Quixote cannot harm innocents without a Humanity cost; Sancho cannot meaningfully damage | Both rules create a reason to swap mid-fight — ✅ both are in, and the **yard** shows them: a straw man for the innocent, and a dummy that only Quixote can break |
 | 2.6b | **A training dummy** — something to fight, something to lock onto, something to hit | ✅ **Built.** A telegraphed swing, a health bar, a yard with walls around it, and `K` to put it back on its feet. `src/world/training_dummy.gd`, `tests/test_training_dummy.gd` |
 
 > **2.7 and 2.8 are the two most under-rated tasks here.** Distinct animation sets sell the

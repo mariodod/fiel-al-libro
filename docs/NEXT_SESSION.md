@@ -16,8 +16,8 @@
 |---|---|
 | **Phase** | Phase 1. **Weeks 1–2 are done.** Week 3–4 (combat) is under way. |
 | **The premise** | **Proven.** The playtest says so. |
-| **The build** | `res://src/world/slice.tscn` — the main scene. Two primitives, one truth toggle, two characters reading the same world differently — and now the **verbs**: `E` to examine, `Space` to dodge, a light attack that chains, a heavy attack, `F` for the guard, `M` to lock on, and a line of dialogue when the world moves under a character. Plus a **walled yard with a training dummy** in it. |
-| **Tests** | 17 suites, 352 assertions, green, enforced in CI. |
+| **The build** | `res://src/world/slice.tscn` — the main scene. Two primitives, one truth toggle, two characters reading the same world differently — and now the **verbs**: `E` to examine, `Space` to dodge, a light attack that chains, a heavy attack, `F` for the guard, `M` to lock on, `X` for Sancho's Desvelar, and a line of dialogue when the world moves under a character. Plus a **walled yard** with a training dummy and a straw man in it. |
+| **Tests** | 18 suites, 373 assertions, green, enforced in CI. |
 | **The fun** | Not fully proven. Seven data points is a sample, not a signal. |
 
 **The one thing that matters:** the mechanic is legible and liked. The *game*
@@ -56,7 +56,8 @@ tools\play.cmd
 | `LMB` / `RMB` | **light attack / heavy attack** — the light one chains three |
 | `F` | **the guard** — hold it. Sancho's buckler parries; Quixote's lance cannot |
 | `M` | **lock on** — the target you are looking at; the camera frames both |
-| `K` | reset the yard (the dummy, and anyone who fell) |
+| `X` | **Desvelar** — Sancho strips the Book skin off a thing, for eight seconds |
+| `K` | reset the yard (the dummy, the straw man, and anyone who fell) |
 | `V` | Sancho's second sight (off by default: the two readings disagree) |
 | `L` | Quixote's Locura: Lucid ↔ Lost |
 | `F1` / `F2` / `H` | help / the perception tags / the HUD |
@@ -93,18 +94,28 @@ What is in: walk, run, a soft camera, the dodge (a burst, a window of
 invulnerability, stamina that comes back), a light attack that **chains
 three** (14 → 20 → 26), a heavy attack, the **guard** (`F`) and the
 **parry** (Sancho's buckler can; Quixote's lance cannot), the **poise**
-and the stagger it causes, the training dummy, the walled yard, and the
+and the stagger it causes, the training dummy, the walled yard, the
 **lock-on** (`M`): the target you are looking at, the character turning
-towards it and walking around it, and the camera framing both.
+towards it and walking around it, and the camera framing both — and
+**2.9, Desvelar** (`X`): Sancho strips the Book skin off a thing for
+eight seconds, and both characters see its true form.
 
-What is not in: the **asymmetry rules** (2.10 — Quixote cannot harm
-innocents without a Humanity cost, Sancho cannot meaningfully damage),
-the hit reactions that are not a push, and the rigs (2.7, 2.8).
+**And 2.10, the asymmetry rules**, which are what the whole combat design
+is built on: Quixote **cannot harm the innocent** (the blow does not
+land, and it costs 20 Humanity), Sancho **cannot meaningfully damage an
+enemy** (40 % of the damage, all of the poise — he staggers, he does not
+kill). The yard shows both: a **straw man** for the first, and a dummy
+that only Quixote can break for the second.
+
+What is not in: the **animations**. 2.7 and 2.8 want eight clips each,
+and the hit reactions want to be animations rather than a flash and a
+push. That is the next real piece of work, and it is not code.
 
 **Before any of it: a minute in the yard.** The chain, the guard, the
-parry and the poise are all in, and all the numbers are data. The
-question is whether a *chain* against a dummy is satisfying, and whether
-the parry is a moment or a button. The dodge's own numbers are settled
+parry, the poise, the straw man and the Desvelar are all in, and all the
+numbers are data. The question is whether **swapping to Quixote to break
+the dummy** feels like the answer it is meant to be, and whether the
+straw man makes the player hesitate. The dodge's own numbers are settled
 for now — 4 m for Quixote, 2 m for Sancho, and a quarter of a second of
 invulnerability for the knight, who is not a fighter.
 
@@ -127,11 +138,11 @@ not. `src/systems/chatter.gd` is where the next hundred lines go.
 | # | Task |
 |---|---|
 | 2.5 | The **soft camera** and the **lock-on** (`M`) — ✅ done |
-| 2.6 | Combat: the chain, the guard, the parry, the poise and the push are in. What is left: the hit reactions that are not a push, and **2.10**, the asymmetry rules |
-| 2.7 | **Quixote rig** — silhouette, lance, 8 animations |
-| 2.8 | **Sancho rig** — a *different* silhouette, sack + flail |
-| 2.9 | Sancho's `Desvelar` — the form-swap VFX |
-| 2.10 | The asymmetry rules: Quixote cannot harm innocents without a Humanity cost; Sancho cannot meaningfully damage |
+| 2.6 | The chain, the guard, the parry, the poise and the hit reaction — ✅ done (the animations are not) |
+| 2.7 | **Quixote rig** — the silhouette (lance and basin) ✅; **8 animations** to go |
+| 2.8 | **Sancho rig** — the silhouette (sack and flail) ✅; **8 animations** to go |
+| 2.9 | Sancho's `Desvelar` — the verb ✅; the **VFX** are still plain |
+| 2.10 | The asymmetry rules: Quixote cannot harm innocents without a Humanity cost; Sancho cannot meaningfully damage — ✅ both, and the yard shows them |
 
 **2.7 and 2.8 are the two most under-rated tasks in the plan.** Distinct
 animation sets sell the asymmetry better than any mechanic. A reskinned

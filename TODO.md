@@ -73,6 +73,21 @@
       turns towards it and walks around it, the camera pulls back and frames both, and
       the lock is given up when the target goes down or you swap characters.
       `src/systems/lock_on.gd`, `src/systems/camera_follow.gd`.
+- [x] **2.10 — the asymmetry rules.** Quixote **cannot harm the innocent**: the blow does
+      not land and it costs **20 Humanity**. Sancho can, and it costs him 5. Sancho
+      **cannot meaningfully damage an enemy**: his damage is 40 % of Quixote's and his
+      poise is whole, so he staggers and does not kill. The yard has a **straw man** for
+      the first rule and the training dummy is an **enemy** for the second — which means
+      the swap matters. `src/systems/harm.gd`, `src/world/straw_man.gd`.
+- [x] **2.9 — Desvelar.** Sancho's verb: `X` strips the "Book skin" off a thing for
+      eight seconds, and **both** characters see its true form. A book in a rock becomes
+      a stone, and the Examine panel follows. `src/data/abilities/desvelar.tres`.
+- [x] **2.7 and 2.8, the silhouette half.** Quixote is tall and thin with a **lance** and
+      a **basin** on his head; Sancho is short and round with a **sack** and a **flail**.
+      You can tell them apart from across the yard with the sound off. The eight
+      animation sets each still owe an art budget.
+- [x] **The hit reactions.** A blow that lands flashes the body, pushes the character,
+      stops the swing, and **shakes the camera**.
 - [x] **`H` hides the HUD.** It is the developer's readout — it spells out both readings.
       A stranger must not have it.
 
@@ -82,12 +97,14 @@
    the only one who can run it. The mechanic has to teach itself. Give it to somebody who
    has never seen it, say nothing, and write down what they do in the first thirty
    seconds. Press `H` before you hand it over.
-2. **A minute in the yard, with the new verbs.** The chain, the guard, the parry and the
-   poise are all in, and the numbers are all data. The question is whether a *chain*
-   against a dummy is satisfying, and whether the parry is a moment or a button.
-3. **The rest of 2.6 and 2.10.** What is left: the **asymmetry rules** (Quixote cannot
-   harm innocents without a Humanity cost, Sancho cannot meaningfully damage) and the
-   **hit reactions** that are not a push. Then the rigs, 2.7 and 2.8.
+2. **A minute in the yard, with the new rules.** The chain, the guard, the parry, the
+   poise, the straw man and the Desvelar are all in. The question is whether **swapping
+   to Quixote to break the dummy** feels like the answer it is meant to be — and whether
+   the straw man makes the player hesitate.
+3. **The remaining art.** 2.7 and 2.8 want **eight animation clips each** (idle, run,
+   roll, three lights, heavy, block, hit), and the hit reactions want to be animations
+   rather than a flash and a push. That is the next real piece of work, and it is not
+   code.
 
 ### Still owed, and it is not code
 
@@ -114,13 +131,14 @@
 ## Next (Phase 1 — weeks 3–4, combat)
 
 - [ ] `PlayerController`: walk, run, dodge, lock-on, a soft camera (2.5) — ✅ done
-- [ ] Combat: light combo, heavy, block/parry, poise, hit reactions (2.6) — 🟡 the chain,
-      the guard, the parry, the poise and the push are in; the **hit reactions** that are
-      not a push are not
-- [ ] **Quixote rig** — silhouette, lance, 8 animations (2.7)
-- [ ] **Sancho rig** — a *different* silhouette, sack + flail (2.8)
-- [ ] Sancho's `Desvelar` — the form-swap VFX (2.9). The playtest is already asking for it.
-- [ ] The asymmetry rules: Humanity cost, and Sancho's control kit (2.10)
+- [ ] Combat: light combo, heavy, block/parry, poise, hit reactions (2.6) — ✅ the chain,
+      the guard, the parry, the poise and the push are in; the **animations** are not
+- [ ] **Quixote rig** — silhouette ✅ (lance and basin), **8 animations** to go (2.7)
+- [ ] **Sancho rig** — silhouette ✅ (sack and flail), **8 animations** to go (2.8)
+- [ ] Sancho's `Desvelar` — the form-swap VFX (2.9) — ✅ the verb works; the **VFX** is
+      still a plain reveal
+- [ ] The asymmetry rules: Humanity cost, and Sancho's control kit (2.10) — ✅ both are
+      in and visible in the yard
 
 ## Later (Phase 1, weeks 5–12)
 

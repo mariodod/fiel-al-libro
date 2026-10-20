@@ -44,9 +44,10 @@ tools\play.cmd
 | `T` | the world's truth flips: Reality ↔ Book |
 | `E` | examine the thing in front of you — *what this character sees* |
 | `Space` | dodge |
-| `LMB` / `RMB` | light attack / heavy attack |
+| `LMB` / `RMB` | light attack / heavy attack — the light one chains three |
 | `M` | lock on — the target you are looking at, and a camera that frames both |
 | `F` | the guard — hold it. Sancho's buckler can parry; Quixote's lance cannot |
+| `X` | Desvelar — Sancho strips the Book skin off a thing, for eight seconds |
 | `V` | Sancho's second sight, on/off |
 | `L` | Quixote's Locura: Lucid ↔ Lost |
 | `K` | reset the practice yard |
@@ -477,6 +478,61 @@ The verbs are all in now, and they are all in the yard where they can be judged:
 The asymmetry is in the numbers, not in a rule that says so: **Sancho can parry and
 Quixote cannot**, because a buckler is a parry and a lance is a wide block. The
 parry is also the biggest moment in a fight, so somebody says something about it.
+
+### 2.10 — the asymmetry rules, and a straw man to break them
+
+The two rules that make the two characters un-stackable (GDD.md §7.2) are now code, and
+the yard has something to show them with:
+
+| | Quixote | Sancho |
+|---|---|---|
+| **The innocent** | The blow does not land. It costs **20 Humanity**. | The blow lands. It costs **5**. |
+| **The enemy** | The blow is whole. | The blow is **40 %** — but the poise is whole: he staggers, he does not kill. |
+
+The **straw man** in the corner of the yard is the innocent. It does not fight; it stands
+there and looks like a person from a distance, and a blow that lands on it is a blow on
+an innocent. The Humanity counter is in the HUD, and it does not come back on its own.
+
+The enemy is the training dummy, and that is a change of mind. The dummy used to be a
+practice target that anyone could hit for full damage. **It is an enemy now** — it hits
+back, it has a poise, it staggers — and so **Sancho cannot break it. Quixote can.** The
+yard now teaches the thing the whole combat design is built on: *the player must swap
+mid-fight.*
+
+### 2.9 — Desvelar
+
+Sancho's verb, and the GDD calls it the best-designed combat verb in the game: *"a
+cone/line that strips the 'Book skin' off an enemy for eight seconds, exposing its true
+form."*
+
+**`X`** strips it. Point it at the rock in the Book layer and the book becomes a stone —
+for eight seconds, and for **both** characters, because a book in a rock that suddenly
+shows as a stone is a thing the player cannot unsee. The Examine panel follows: the
+description, the title and the page of text are all gone, and what is left is a stone.
+
+It is Sancho's alone. Quixote has no such gift, which is the other half of the same
+asymmetry: one of them can see through the book, and the other one has to break it.
+
+### 2.7 and 2.8 — the silhouettes
+
+The GDD is blunt about this: *"Distinct animation sets sell the asymmetry better than
+any mechanic. A reskinned Quixote makes the whole idea collapse."*
+
+There are no animations yet, and eight of them is an art budget, not a code one. But the
+**silhouette** is the cheapest part of it and the most visible: Quixote is tall and thin
+with a **lance** and a **basin** on his head — the barber's basin of the novel, which is
+where the helmet comes from — and Sancho is short and round with a **sack** on his back
+and a **flail** in his hand. You can tell them apart from across the yard with the sound
+off.
+
+That is the half of 2.7 and 2.8 that is not an art budget. The animation sets still owe
+eight clips each.
+
+### The hit reactions
+
+A blow that lands flashes the body, pushes the character, stops the swing for a moment,
+and **shakes the camera**. It is the cheapest honest version of a hit reaction, and it
+is the one the playtest can judge.
 
 ### The page turn, untested
 

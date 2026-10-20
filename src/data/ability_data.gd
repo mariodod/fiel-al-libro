@@ -53,6 +53,9 @@ enum Kind {
 @export var combo_window: float = 0.0
 ## The extra damage on each step of the chain.
 @export var combo_damage_step: float = 0.0
+## How long the ability's effect lasts, in seconds. GDD.md §5.2:
+## Desvelar strips the Book skin off a target for eight seconds.
+@export var duration: float = 0.0
 
 @export_group("Gating")
 ## Which truth layer this ability functions in. 0 = Reality only, 1 = Book only,

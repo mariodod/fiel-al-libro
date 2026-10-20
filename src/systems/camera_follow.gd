@@ -52,6 +52,17 @@ var _desired: Vector3 = Vector3.ZERO
 var _placed: bool = false
 var _yaw: float = 0.0
 var _yaw_placed: bool = false
+## How hard the camera is being shaken right now.
+var _shake: float = 0.0
+
+
+## Shake the camera.
+##
+## There are no animations and no hit reactions yet, so a blow that lands
+## is a push, a flash and **this**: the picture moves. It is the
+## cheapest thing that makes a hit feel like a hit.
+func shake(amount: float) -> void:
+	_shake = maxf(_shake, amount)
 
 
 ## Snap the camera to its target on the next frame instead of easing there.
@@ -109,4 +120,8 @@ func _process(delta: float) -> void:
 		global_position = _desired
 	else:
 		global_position = global_position.lerp(_desired, clampf(follow_speed * delta, 0.0, 1.0))
+	if _shake > 0.001:
+		_shake = maxf(0.0, _shake - delta * 3.0)
+		global_position += Vector3(
+			randf_range(-1.0, 1.0), randf_range(-1.0, 1.0), 0.0) * _shake * 0.12
 	look_at(focus, Vector3.UP)

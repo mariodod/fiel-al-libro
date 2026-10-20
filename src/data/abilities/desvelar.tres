@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="AbilityData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/data/ability_data.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"desvelar"
+display_name_key = &"it.ability.desvelar.name"
+description_key = &"it.ability.desvelar.desc"
+kind = 4
+stamina_cost = 15.0
+cooldown = 8.0
+duration = 8.0
+damage = 0.0
+poise_damage = 0.0
+reach = 0.0
+arc_degrees = 0.0
+active_seconds = 0.0

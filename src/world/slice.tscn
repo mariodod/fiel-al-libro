@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3]
+[gd_scene load_steps=29 format=3]
 
 [ext_resource type="Script" path="res://src/world/slice.gd" id="1_slice"]
 [ext_resource type="Script" path="res://src/world/truth_object.gd" id="2_object"]
@@ -39,6 +39,58 @@ roughness = 0.8
 albedo_color = Color(0.36, 0.42, 0.34, 1)
 roughness = 0.8
 
+[sub_resource type="CapsuleMesh" id="Capsule_sancho"]
+radius = 0.5
+height = 1.6
+radial_segments = 16
+rings = 4
+
+[sub_resource type="CapsuleShape3D" id="Shape_sancho"]
+radius = 0.5
+height = 1.6
+
+[sub_resource type="BoxMesh" id="Mesh_lance"]
+size = Vector3(0.08, 0.08, 2.4)
+
+[sub_resource type="StandardMaterial3D" id="Mat_lance"]
+albedo_color = Color(0.38, 0.28, 0.18, 1)
+roughness = 0.85
+
+[sub_resource type="SphereMesh" id="Mesh_basin"]
+radius = 0.3
+height = 0.6
+radial_segments = 12
+rings = 6
+
+[sub_resource type="StandardMaterial3D" id="Mat_basin"]
+albedo_color = Color(0.62, 0.63, 0.66, 1)
+metallic = 0.6
+roughness = 0.45
+
+[sub_resource type="SphereMesh" id="Mesh_sack"]
+radius = 0.34
+height = 0.68
+radial_segments = 10
+rings = 5
+
+[sub_resource type="StandardMaterial3D" id="Mat_sack"]
+albedo_color = Color(0.55, 0.46, 0.30, 1)
+roughness = 0.95
+
+[sub_resource type="SphereMesh" id="Mesh_flail_ball"]
+radius = 0.17
+height = 0.34
+radial_segments = 10
+rings = 5
+
+[sub_resource type="StandardMaterial3D" id="Mat_flail"]
+albedo_color = Color(0.24, 0.23, 0.25, 1)
+metallic = 0.4
+roughness = 0.6
+
+[sub_resource type="BoxMesh" id="Mesh_flail_chain"]
+size = Vector3(0.04, 0.04, 0.75)
+
 [node name="Slice" type="Node3D"]
 script = ExtResource("1_slice")
 
@@ -73,6 +125,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.88, 0)
 mesh = SubResource("Capsule_body")
 material_override = SubResource("Mat_quixote")
 
+[node name="Lance" type="MeshInstance3D" parent="Characters/Quixote"]
+transform = Transform3D(1, 0, 0, 0, 0.3, -0.95, 0, 0.95, 0.3, 0.45, 1.55, 0.1)
+mesh = SubResource("Mesh_lance")
+material_override = SubResource("Mat_lance")
+
+[node name="Basin" type="MeshInstance3D" parent="Characters/Quixote"]
+transform = Transform3D(1, 0, 0, 0, 0.45, 0, 0, 0, 1, 0, 1.7, 0)
+mesh = SubResource("Mesh_basin")
+material_override = SubResource("Mat_basin")
+
 [node name="Collider" type="CollisionShape3D" parent="Characters/Quixote"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.88, 0)
 shape = SubResource("Shape_body")
@@ -83,13 +145,28 @@ script = ExtResource("3_pawn")
 data = ExtResource("10_sancho")
 
 [node name="Body" type="MeshInstance3D" parent="Characters/Sancho"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.88, 0)
-mesh = SubResource("Capsule_body")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+mesh = SubResource("Capsule_sancho")
 material_override = SubResource("Mat_sancho")
 
+[node name="Sack" type="MeshInstance3D" parent="Characters/Sancho"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15, 0.4)
+mesh = SubResource("Mesh_sack")
+material_override = SubResource("Mat_sack")
+
+[node name="FlailChain" type="MeshInstance3D" parent="Characters/Sancho"]
+transform = Transform3D(1, 0, 0, 0, 0.866, 0.5, 0, -0.5, 0.866, 0.5, 0.95, -0.25)
+mesh = SubResource("Mesh_flail_chain")
+material_override = SubResource("Mat_flail")
+
+[node name="FlailBall" type="MeshInstance3D" parent="Characters/Sancho"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.78, -0.6)
+mesh = SubResource("Mesh_flail_ball")
+material_override = SubResource("Mat_flail")
+
 [node name="Collider" type="CollisionShape3D" parent="Characters/Sancho"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.88, 0)
-shape = SubResource("Shape_body")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("Shape_sancho")
 
 [node name="PlayerController" type="Node" parent="."]
 script = ExtResource("4_player")

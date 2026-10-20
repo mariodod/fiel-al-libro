@@ -101,6 +101,8 @@ var _madness_high: bool = false
 var _last_reading: Dictionary = {}
 ## The dummy in the yard.
 var _dummy: TrainingDummy = null
+## The straw man in the corner: the innocent, for the second rule.
+var _straw_man: StrawMan = null
 ## The marker over the locked target.
 var _lock_marker: Label3D = null
 
@@ -122,6 +124,8 @@ func _ready() -> void:
 	EventBus.character_switched.connect(_on_character_switched)
 	EventBus.character_died.connect(_on_character_died)
 	EventBus.character_parried.connect(_on_character_parried)
+	EventBus.character_hurt.connect(_on_character_hurt)
+	EventBus.ability_used.connect(_on_ability_used)
 
 
 # ── World ───────────────────────────────────────────────────────────────
@@ -203,6 +207,15 @@ func _build_yard() -> void:
 	# face east, towards the way in.
 	_dummy.rotation.y = -PI * 0.5
 	yard.add_child(_dummy)
+
+	# And a straw man in the corner: the thing that must not be harmed.
+	# GDD.md §7.2 — the second asymmetry rule needs a target, and this is
+	# it. Quixote cannot make the blow; Sancho can, and it still costs
+	# him a little.
+	_straw_man = StrawMan.new()
+	_straw_man.name = "StrawMan"
+	_straw_man.position = YARD_CENTER + Vector3(-6.0, 0.0, 5.0)
+	yard.add_child(_straw_man)
 
 
 ## One wall: a box you cannot walk through.
@@ -502,6 +515,9 @@ func _update_hud() -> void:
 		lines.append(Loc.tf(&"ui.slice.line.dummy", [
 			int(_dummy.health), int(_dummy.max_health),
 		]))
+	lines.append(Loc.tf(&"ui.slice.line.humanity", [
+		GameState.humanity, GameState.HUMANITY_MAX,
+	]))
 
 	if driven.is_locked():
 		lines.append(Loc.tf(&"ui.slice.line.locked", [
@@ -515,6 +531,7 @@ func _update_hud() -> void:
 		lines.append(Loc.t(&"ui.slice.help.3"))
 		lines.append(Loc.t(&"ui.slice.help.4"))
 		lines.append(Loc.t(&"ui.slice.help.5"))
+		lines.append(Loc.t(&"ui.slice.help.6"))
 
 	hud.text = "\n".join(lines)
 
@@ -570,6 +587,54 @@ func _on_character_switched(_from_id: StringName, _to_id: StringName) -> void:
 ## and is not told how is a stuck build, so the yard says so.
 func _on_character_died(character_id: StringName) -> void:
 	EventBus.toast.emit(&"ui.slice.down", [])
+
+
+## A character used an ability.
+##
+## **Desvelar** is Sancho's, and it is the best-designed combat verb in
+## the game (GDD.md §5.2): a line that strips the "Book skin" off a
+## target and exposes its true form — for eight seconds, and for **both**
+## characters, because a book in a rock that suddenly shows as a stone
+## is a thing the player cannot unsee.
+func _on_ability_used(character_id: StringName, ability_id: StringName) -> void:
+	if ability_id != &"desvelar":
+		return
+	if player == null or player.active_pawn == null:
+		return
+	if character_id != player.active_pawn.character_id:
+		return
+	var target := _desvelar_target()
+	if target == null:
+		return
+	var ability := player.active_pawn.ability_data(ability_id)
+	var duration := ability.duration if ability != null else 8.0
+	target.reveal(duration)
+	EventBus.character_spoke.emit(character_id, Chatter.key_for(character_id, &"desvelar"), [])
+
+
+## The thing the Desvelar is pointed at: the locked target if it is a
+## thing with two forms, and otherwise whatever is in front of you.
+func _desvelar_target() -> TruthObject:
+	var driven: CharacterPawn = player.active_pawn
+	if driven == null:
+		return null
+	if driven.lock_target is TruthObject:
+		return driven.lock_target as TruthObject
+	return Examine.find_target(
+		player.examine_candidates(), driven.global_position, -driven.global_transform.basis.z)
+
+
+## A blow landed on the character you are driving. Shake the camera.
+##
+## The picture moving is the cheapest thing that makes a hit feel like a
+## hit, and it is the one reaction the grey box can afford.
+func _on_character_hurt(character_id: StringName, _amount: float) -> void:
+	if player == null or player.active_pawn == null:
+		return
+	if character_id != player.active_pawn.character_id:
+		return
+	if camera_rig != null:
+		camera_rig.shake(1.0)
 
 
 ## A blow was caught on the guard.

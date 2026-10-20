@@ -33,10 +33,13 @@ enum State {
 }
 
 ## How much punishment it takes.
-@export var max_health: float = 120.0
+@export var max_health: float = 100.0
+## Who it is, and what may be done to it. GDD.md §7.2: an enemy is one
+## whose guard Sancho can break but whose flesh he cannot.
+@export var faction: Harm.Faction = Harm.Faction.HOSTILE
 ## How much punishment it takes before it staggers. Blows take the poise
 ## away, and a broken poise leaves it open. GDD.md §7.1.
-@export var max_poise: float = 60.0
+@export var max_poise: float = 40.0
 ## How long it reels when the poise breaks.
 @export var stagger_seconds: float = 1.4
 ## What the character is called.
@@ -338,7 +341,17 @@ func _update_flinch() -> void:
 func take_damage(amount: float, source: Node = null, poise_damage: float = 0.0) -> void:
 	if state == State.DOWN:
 		return
-	health = maxf(0.0, health - amount)
+	var attacker := source as CharacterPawn
+	# What the blow is allowed to do. GDD.md §7.2 and D4.
+	var damage := Harm.damage_for(faction, attacker, amount)
+	var humanity := Harm.humanity_cost(faction, attacker)
+	if humanity > 0:
+		GameState.spend_humanity(humanity)
+		EventBus.humanity_lost.emit(humanity, attacker.character_id if attacker != null else &"")
+	if damage <= 0.0:
+		# The blow did not land. The dummy does not even notice it.
+		return
+	health = maxf(0.0, health - damage)
 	_flinch = 0.25
 	if _material != null:
 		_material.albedo_color = WOOD

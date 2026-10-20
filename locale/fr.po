@@ -352,6 +352,11 @@ msgstr "Le voilà ! Je l'ai tenu ! En plein nez, Sancho !"
 msgid "dia.sancho.chatter.parry"
 msgstr "C'est moi qui l'ai arrêté, seigneur ! L'avez-vous vu ?"
 
+#. TRANSLATORS: Sancho, after a Desvelar: he has stripped the Book skin
+#. off a thing and both of them can see what is under it.
+msgid "dia.sancho.chatter.desvelar"
+msgstr "Voilà la vérité, seigneur ! Regardez-la. Regardez-la bien."
+
 #. META: namespace=tip
 msgid "tip.posada.intro"
 msgstr ""
@@ -428,7 +433,7 @@ msgstr "%s — %s : %s · %s : %s"
 
 #. TRANSLATORS: Control hint, line 1.
 msgid "ui.slice.help.1"
-msgstr "ZQSD/WASD marcher · Maj courir · Espace esquiver"
+msgstr "ZQSD/WASD marcher · Maj courir · Espace esquiver · Clic gauche/droit frapper"
 
 #. TRANSLATORS: Control hint, line 2.
 msgid "ui.slice.help.2"
@@ -506,9 +511,21 @@ msgstr "E examiner ce que vous avez devant vous"
 msgid "ui.slice.help.5"
 msgstr "À l'ouest : la cour et le mannequin · M verrouiller · K pour remettre"
 
+#. TRANSLATORS: Control hint, line 6: the guard, the Desvelar and the reset.
+msgid "ui.slice.help.6"
+msgstr "F la garde (Sancho pare) · X révéler · K pour remettre la cour"
+
 #. TRANSLATORS: HUD line: the training dummy and how much of it is left. Format: %d, %d.
 msgid "ui.slice.line.dummy"
 msgstr "Mannequin : %d/%d"
+
+#. TRANSLATORS: HUD line: Humanity, and how much is left of it. Format: %d, %d.
+msgid "ui.slice.line.humanity"
+msgstr "Humanité : %d/%d"
+
+#. TRANSLATORS: The straw man, as the HUD and the lock-on call it.
+msgid "ui.target.strawman"
+msgstr "l'épouvantail"
 
 #. TRANSLATORS: HUD line: the character you are driving and how they are. Format: %s, %d, %d, %d, %d.
 msgid "ui.slice.line.vitals"

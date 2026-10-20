@@ -46,6 +46,10 @@ func _unhandled_input(event: InputEvent) -> void:
 		active_pawn.heavy_attack()
 	elif event.is_action_pressed(&"dodge"):
 		active_pawn.dodge()
+	elif event.is_action_pressed(&"desvelar"):
+		# Sancho's verb: strip the Book skin off the thing in front of
+		# you. Quixote has no such gift.
+		active_pawn.ability(&"desvelar")
 	elif event.is_action_pressed(&"lock_on"):
 		_toggle_lock()
 	elif event.is_action_pressed(&"lectura"):
@@ -119,6 +123,12 @@ func _examine() -> void:
 	if _examine_target == null or _examine_target.data == null or active_pawn == null:
 		return
 	EventBus.object_examined.emit(_examine_target.data.id, active_pawn.character_id)
+
+
+## The things the player could be examining. The Desvelar uses them to
+## find what is in front of you.
+func examine_candidates() -> Array[Node]:
+	return _examine_candidates
 
 
 ## Keep track of what the player is looking at.

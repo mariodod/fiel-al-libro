@@ -257,6 +257,11 @@ msgstr "¡Ahí lo tengo! ¡Con un palmo de la frente, Sancho!"
 msgid "dia.sancho.chatter.parry"
 msgstr "¡Le he parado yo, señor! ¿Lo ha visto?"
 
+#. TRANSLATORS: Sancho, after a Desvelar: he has stripped the Book skin
+#. off a thing and both of them can see what is under it.
+msgid "dia.sancho.chatter.desvelar"
+msgstr "¡Ahí está la verdad, señor! Mírela. Mírela bien."
+
 msgid "tip.lectura.intro"
 msgstr "Aguanta la página. Algunas cosas solo se muestran a quien mira con calma."
 
@@ -421,7 +426,7 @@ msgstr "%s — %s: %s · %s: %s"
 
 #. TRANSLATORS: Control hint, line 1.
 msgid "ui.slice.help.1"
-msgstr "WASD caminar · Mayús correr · Espacio esquivar"
+msgstr "WASD caminar · Mayús correr · Espacio esquivar · LMB/RMB atacar"
 
 #. TRANSLATORS: Control hint, line 2.
 msgid "ui.slice.help.2"
@@ -439,9 +444,21 @@ msgstr "E examinar lo que tienes delante"
 msgid "ui.slice.help.5"
 msgstr "Al oeste: el patio y el maniquí · M fijar · K reiniciar"
 
+#. TRANSLATORS: Control hint, line 6: the guard, the Desvelar and the reset.
+msgid "ui.slice.help.6"
+msgstr "F la guardia (Sancho para el golpe) · X desvelar · K reiniciar el patio"
+
 #. TRANSLATORS: HUD line: the training dummy and how much of it is left. Format: %d, %d.
 msgid "ui.slice.line.dummy"
 msgstr "Maniquí: %d/%d"
+
+#. TRANSLATORS: HUD line: Humanity, and how much is left of it. Format: %d, %d.
+msgid "ui.slice.line.humanity"
+msgstr "Humanidad: %d/%d"
+
+#. TRANSLATORS: The straw man, as the HUD and the lock-on call it.
+msgid "ui.target.strawman"
+msgstr "el espantapájaros"
 
 #. TRANSLATORS: HUD line: the character you are driving and how they are. Format: %s, %d, %d, %d, %d.
 msgid "ui.slice.line.vitals"

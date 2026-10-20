@@ -31,6 +31,11 @@ signal player_spawned(pawn: Node)
 signal character_parried(character_id: StringName)
 ## The poise broke and the character is on their heels.
 signal character_staggered(character_id: StringName)
+## A blow landed on a character. The camera shakes when it is you.
+signal character_hurt(character_id: StringName, amount: float)
+## A character used an ability. The pawn pays the cost; the world
+## reacts.
+signal ability_used(character_id: StringName, ability_id: StringName)
 
 
 # ── Investigation (Lectura) ─────────────────────────────────────────────
@@ -57,6 +62,9 @@ signal verdict_resolved(id: StringName, mode: int)
 signal recuerdos_gained(character_id: StringName, amount: int)
 signal milestone_reached(character_id: StringName, index: int)
 signal humanity_changed(value: int)
+## Somebody hit a thing that must not be harmed. Format: the Humanity
+## lost, and who lost it. GDD.md D4.
+signal humanity_lost(amount: int, character_id: StringName)
 
 
 # ── Library & manuscript ────────────────────────────────────────────────

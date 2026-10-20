@@ -32,6 +32,9 @@ var _target_blend: float = 0.0
 ## object and the screen change in lockstep).
 var _driven_externally: bool = false
 var _hover_time: float = 0.0
+## How long the Book skin is off this object. GDD.md §5.2: Desvelar
+## strips it for eight seconds.
+var _reveal_time: float = 0.0
 
 
 func _ready() -> void:
@@ -47,6 +50,8 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	_hover_time += delta
+	if _reveal_time > 0.0:
+		_reveal_time = maxf(0.0, _reveal_time - delta)
 	if _driven_externally:
 		_refresh()
 		return
@@ -88,9 +93,14 @@ func apply_blend(blend: float) -> void:
 
 
 ## The name this character would call the object in a truth layer.
+##
+## While the object is unveiled, everybody calls it by its Reality name:
+## the Book skin is off, and both characters can see what is under it.
 func name_key_for(layer: int) -> StringName:
 	if data == null:
 		return &""
+	if is_revealed():
+		return data.name_key_for(Perception.REALITY)
 	return data.name_key_for(layer)
 
 
@@ -103,7 +113,24 @@ func name_key_for(layer: int) -> StringName:
 func face_for(layer: int) -> TruthFace:
 	if data == null:
 		return null
+	if is_revealed():
+		return data.face_for(Perception.REALITY)
 	return data.face_for(layer)
+
+
+## Strip the Book skin off this object for a while.
+##
+## GDD.md §5.2: *"Desvelar — a cone/line that strips the 'Book skin' off
+## an enemy for eight seconds, exposing its true form."* The object shows
+## its Reality form, and **both** characters see it: a book in a rock
+## becomes a stone for as long as the skin is off.
+func reveal(duration: float) -> void:
+	_reveal_time = maxf(_reveal_time, duration)
+
+
+## Is the Book skin off this object?
+func is_revealed() -> bool:
+	return _reveal_time > 0.0
 
 
 ## The truth layer this object is currently showing, at full strength.
@@ -164,7 +191,8 @@ func _setup_tag() -> void:
 
 
 func _refresh() -> void:
-	var t := clampf(_blend, 0.0, 1.0)
+	# While the Book skin is off, the Reality form is what there is.
+	var t := 0.0 if is_revealed() else clampf(_blend, 0.0, 1.0)
 	# Smoothstep, so the two forms overlap in the middle of the change
 	# instead of the object vanishing for a frame.
 	var smooth := t * t * (3.0 - 2.0 * t)

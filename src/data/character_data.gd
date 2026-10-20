@@ -23,6 +23,12 @@ extends Resource
 @export var block_damage_ratio: float = 0.15
 ## How long a character reels after a hit that was not blocked.
 @export var hit_reaction_seconds: float = 0.3
+## What it costs this character in Humanity to hit a thing that must not
+## be harmed. D4: attacking an innocent costs Humanity.
+@export var innocent_humanity_cost: int = 0
+## How much damage this character does against an enemy. Sancho's is
+## well under one: his kit is control, not killing. GDD.md §7.2.
+@export var enemy_damage_scale: float = 1.0
 
 @export_group("Kit")
 @export var light_attack: AbilityData

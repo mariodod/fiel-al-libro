@@ -94,8 +94,8 @@ static func perception_for(object: TruthObject, character: CharacterPawn) -> Tru
 	if object == null or object.data == null:
 		return null
 	if character == null:
-		return object.data.face_for(Perception.REALITY)
-	return object.data.face_for(character.perceived_layer)
+		return object.face_for(Perception.REALITY)
+	return object.face_for(character.perceived_layer)
 
 
 ## What a character calls an object right now.

@@ -577,6 +577,11 @@ msgstr ""
 msgid "dia.sancho.chatter.parry"
 msgstr ""
 
+#. TRANSLATORS: Sancho, after a Desvelar: he has stripped the Book skin
+#. off a thing and both of them can see what is under it.
+msgid "dia.sancho.chatter.desvelar"
+msgstr ""
+
 #. TRANSLATORS: Control hint, line 4.
 msgid "ui.slice.help.4"
 msgstr ""
@@ -585,8 +590,20 @@ msgstr ""
 msgid "ui.slice.help.5"
 msgstr ""
 
+#. TRANSLATORS: Control hint, line 6: the guard, the Desvelar and the reset.
+msgid "ui.slice.help.6"
+msgstr ""
+
 #. TRANSLATORS: HUD line: the training dummy and how much of it is left. Format: %d, %d.
 msgid "ui.slice.line.dummy"
+msgstr ""
+
+#. TRANSLATORS: HUD line: Humanity, and how much is left of it. Format: %d, %d.
+msgid "ui.slice.line.humanity"
+msgstr ""
+
+#. TRANSLATORS: The straw man, as the HUD and the lock-on call it.
+msgid "ui.target.strawman"
 msgstr ""
 
 #. TRANSLATORS: HUD line: the character you are driving and how they are. Format: %s, %d, %d, %d, %d.

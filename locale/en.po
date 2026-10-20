@@ -295,6 +295,11 @@ msgstr "There! I have him! Right on the nose, Sancho!"
 msgid "dia.sancho.chatter.parry"
 msgstr "I caught that one, your lordship! Did you see?"
 
+#. TRANSLATORS: Sancho, after a Desvelar: he has stripped the Book skin
+#. off a thing and both of them can see what is under it.
+msgid "dia.sancho.chatter.desvelar"
+msgstr "There is the truth of it, your lordship! Look at it. Look well."
+
 msgid "tip.lectura.intro"
 msgstr "Hold on to the page. Some things only show themselves to a patient eye."
 
@@ -404,7 +409,7 @@ msgstr "%s — %s: %s · %s: %s"
 
 #. TRANSLATORS: Control hint, line 1.
 msgid "ui.slice.help.1"
-msgstr "WASD walk · Shift run · Space dodge"
+msgstr "WASD walk · Shift run · Space dodge · LMB/RMB attack"
 
 #. TRANSLATORS: Control hint, line 2.
 msgid "ui.slice.help.2"
@@ -422,9 +427,21 @@ msgstr "E examine what is in front of you"
 msgid "ui.slice.help.5"
 msgstr "West: the yard and the dummy · M lock on · K resets it"
 
+#. TRANSLATORS: Control hint, line 6: the guard, the Desvelar and the reset.
+msgid "ui.slice.help.6"
+msgstr "F the guard (Sancho can parry) · X unveil · K reset the yard"
+
 #. TRANSLATORS: HUD line: the training dummy and how much of it is left. Format: %d, %d.
 msgid "ui.slice.line.dummy"
 msgstr "Dummy: %d/%d"
+
+#. TRANSLATORS: HUD line: Humanity, and how much is left of it. Format: %d, %d.
+msgid "ui.slice.line.humanity"
+msgstr "Humanity: %d/%d"
+
+#. TRANSLATORS: The straw man, as the HUD and the lock-on call it.
+msgid "ui.target.strawman"
+msgstr "the scarecrow"
 
 #. TRANSLATORS: HUD line: the character you are driving and how they are. Format: %s, %d, %d, %d, %d.
 msgid "ui.slice.line.vitals"

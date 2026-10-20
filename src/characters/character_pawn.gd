@@ -15,7 +15,6 @@ extends CharacterBody3D
 
 signal died(character_id: StringName)
 signal damaged(amount: float)
-
 @export var data: CharacterData
 
 ## Whoever is currently driving this pawn.
@@ -65,6 +64,10 @@ const TURN_SPEED := 8.0
 const KNOCKBACK_SPEED := 4.0
 ## How quickly that push dies away.
 const KNOCKBACK_DECAY := 12.0
+## The colour a body flashes when it is hit.
+const HIT_COLOR := Color(1.0, 0.72, 0.66)
+## How long the flash lasts.
+const FLASH_SECONDS := 0.18
 
 ## How fast a dodge throws you, in metres per second. Faster than a
 ## sprint: that is the point of it.
@@ -114,6 +117,12 @@ var _hurt_timer: float = 0.0
 var _stagger_timer: float = 0.0
 ## The push from the last hit that was not blocked.
 var _knockback: Vector3 = Vector3.ZERO
+## The body mesh, so a hit can be seen as well as felt.
+var _body_material: StandardMaterial3D = null
+## The body's own colour, before a hit.
+var _body_color: Color = Color.WHITE
+## How long the body is still flashing.
+var _flash_timer: float = 0.0
 
 
 func _ready() -> void:
@@ -124,9 +133,22 @@ func _ready() -> void:
 		stamina = data.max_stamina
 		max_poise = data.poise
 		poise = 0.0
+	_find_body()
 	perceived_layer = Perception.reading_for(character_id, TruthLayer.layer(), second_sight)
 	add_to_group(&"pawns")
 	EventBus.player_spawned.emit(self)
+
+
+## The body mesh, so a hit can be seen.
+func _find_body() -> void:
+	var mesh := get_node_or_null("Body") as MeshInstance3D
+	if mesh == null:
+		return
+	var material := mesh.material_override as StandardMaterial3D
+	if material == null:
+		return
+	_body_material = material
+	_body_color = material.albedo_color
 
 
 ## ── The driver interface ────────────────────────────────────────────────
@@ -281,6 +303,7 @@ func _physics_process(delta: float) -> void:
 	_parry_timer = maxf(0.0, _parry_timer - delta)
 	_hurt_timer = maxf(0.0, _hurt_timer - delta)
 	_stagger_timer = maxf(0.0, _stagger_timer - delta)
+	_update_flash(delta)
 	if _combo_timer <= 0.0:
 		_combo_step = 0
 
@@ -346,7 +369,20 @@ func _perform(ability: AbilityData) -> bool:
 	# nothing to dodge against, and nothing to hit, cannot be judged.
 	if ability.kind == AbilityData.Kind.LIGHT or ability.kind == AbilityData.Kind.HEAVY:
 		_swing(ability)
+	else:
+		# The ability has been paid for. The world reacts to it.
+		EventBus.ability_used.emit(character_id, ability.id)
 	return true
+
+
+## The data of one of this character's abilities, or null.
+func ability_data(ability_id: StringName) -> AbilityData:
+	if data == null:
+		return null
+	for a in data.all_abilities():
+		if a != null and a.id == ability_id:
+			return a
+	return null
 
 
 ## The swing itself: a hitbox in front of the character, and the rhythm
@@ -416,6 +452,21 @@ func take_damage(amount: float, source: Node = null, poise_damage: float = 0.0) 
 		_die()
 
 
+## The cost of a blow in Humanity, when it lands on a thing that must
+## not be harmed. GDD.md D4.
+##
+## The cost is charged by the *target*, because the target is the one
+## that knows what it is. This is the character-side half, so that the
+## pawn can ask the question before it swings.
+func humanity_cost_of(faction: int) -> int:
+	return Harm.humanity_cost(faction, self)
+
+
+## Can this character make this blow land at all?
+func can_land_on(faction: int) -> bool:
+	return Harm.lands(faction, self)
+
+
 ## The guard holds: the blow costs stamina, and a character without the
 ## stamina cannot hold it.
 func _pay_for_the_block() -> bool:
@@ -447,6 +498,29 @@ func _react_to_hit(source: Node, poise_damage: float) -> void:
 		EventBus.character_staggered.emit(character_id)
 	_hurt_timer = data.hit_reaction_seconds if data != null else 0.3
 	_push_away(source, 1.0)
+	_flash()
+	EventBus.character_hurt.emit(character_id, 1.0)
+
+
+## The body flashes when it is hit.
+##
+## There are no animations yet, so the reaction is a colour, a push and
+## a moment where the character cannot swing. It is the cheapest honest
+## version of a hit reaction, and it is the one the playtest can judge.
+func _flash() -> void:
+	if _body_material == null:
+		return
+	_body_material.albedo_color = HIT_COLOR
+	_flash_timer = FLASH_SECONDS
+
+
+## Put the body colour back.
+func _update_flash(delta: float) -> void:
+	if _flash_timer <= 0.0:
+		return
+	_flash_timer = maxf(0.0, _flash_timer - delta)
+	if _flash_timer <= 0.0 and _body_material != null:
+		_body_material.albedo_color = _body_color
 
 
 ## The push from a blow. Away from whoever threw it.
