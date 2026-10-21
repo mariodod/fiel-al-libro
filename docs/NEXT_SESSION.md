@@ -16,8 +16,8 @@
 |---|---|
 | **Phase** | Phase 1. **Weeks 1–2 are done.** Week 3–4 (combat) is under way. |
 | **The premise** | **Proven.** The playtest says so. |
-| **The build** | `res://src/world/slice.tscn` — the main scene. Two primitives, one truth toggle, two characters reading the same world differently — and now the **verbs**: `E` to examine, `Space` to dodge, a light attack that chains, a heavy attack, `F` for the guard, `M` to lock on, `X` for Sancho's Desvelar, and a line of dialogue when the world moves under a character. The two characters are **rigged and animated** (14 clips each), and there is a **walled yard** with a training dummy and a straw man in it. |
-| **Tests** | 20 suites, 440 assertions, green, enforced in CI. |
+| **The build** | `res://src/world/slice.tscn` — the main scene. Two primitives, one truth toggle, two characters reading the same world differently — and now the **verbs**: `E` to examine, `Space` to dodge, a light attack that chains, a heavy attack, `F` for the guard, `M` to lock on, `X` for Sancho's Desvelar, and a line of dialogue when the world moves under a character. The two characters are **rigged and animated** (14 clips each), the **companion is in the fight** (it fights what you are locked onto, and it parries), and there is a **walled yard** with a training dummy and a straw man in it. |
+| **Tests** | 21 suites, 459 assertions, green, enforced in CI. |
 | **The fun** | Not fully proven. Seven data points is a sample, not a signal. |
 
 **The one thing that matters:** the mechanic is legible and liked. The *game*

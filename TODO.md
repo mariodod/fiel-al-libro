@@ -82,7 +82,7 @@
 - [x] **2.9 — Desvelar.** Sancho's verb: `X` strips the "Book skin" off a thing for
       eight seconds, and **both** characters see its true form. A book in a rock becomes
       a stone, and the Examine panel follows. `src/data/abilities/desvelar.tres`.
-- [x] **2.7 and 2.8, the silhouette half.** Quixote is tall and thin with a **lance** and
+- [x] **2.7 and 2.8 — the rigs.** Quixote is tall and thin with a **lance** and
       a **basin** on his head; Sancho is short and round with a **sack** and a **flail**.
       You can tell them apart from across the yard with the sound off. **And they
       ANIMATE**: 14 clips each (idle, walk, run, roll, a chain of three lights,
@@ -90,6 +90,12 @@
       Sancho's parry and Desvelar), wired to the game's own states.
       `assets/models/*.glb`, `src/characters/character_pawn.gd`,
       `tools/build_fiel_al_libro_animations.py`.
+- [x] **The companion is in the fight.** The AI companion used to walk and talk. It now
+      fights **the target you are locked onto**, swings on a rhythm rather than a frenzy,
+      will not touch the straw man, and **catches the wind-up on its guard to parry** —
+      which staggers the attacker and leaves it open for you. That is the design's
+      "one kills, one controls", and it was the last thing standing between a grey box
+      and a fight. `src/characters/companion_ai.gd`.
 - [x] **The hit reactions.** A blow that lands flashes the body, pushes the character,
       stops the swing, and **shakes the camera**.
 - [x] **`H` hides the HUD.** It is the developer's readout — it spells out both readings.
@@ -102,9 +108,9 @@
    has never seen it, say nothing, and write down what they do in the first thirty
    seconds. Press `H` before you hand it over.
 2. **A minute in the yard, with the rigs on.** The chain, the guard, the parry, the
-   poise, the straw man, the Desvelar **and the animation** are all in. The question is
-   whether the *poses* read: a lunge and a tumble, a thrust and a plunge, two men you
-   can tell apart at twenty metres.
+   poise, the straw man, the Desvelar, **the companion in the fight** and the
+   animation are all in. The question is whether the *poses* read: a lunge and a
+   tumble, a thrust and a plunge, two men you can tell apart at twenty metres.
 3. **The asymmetry rules and the art.** 2.10 is in and visible in the yard. What is
    left is the **feel**: the poses are grey-box, and the next pass is the one that
    makes them read as Velazquez rather than as a fighting game.

@@ -243,7 +243,28 @@ func _land() -> void:
 			var angle := forward.angle_to(to_pawn / distance)
 			if angle > half_arc:
 				continue
-		pawn.take_damage(damage)
+		pawn.take_damage(damage, self)
+
+
+## Is this thing about to swing?
+##
+## The convention every target follows: it says so before it hits. That
+## is what makes a parry possible, and a parry is what makes a companion
+## worth having.
+func is_winding_up() -> bool:
+	return state == State.WINDUP
+
+
+## How long until the blow lands, in seconds.
+##
+## A companion that cannot time a parry cannot parry: it would have to
+## raise its guard on the first frame of the wind-up, and the parry
+## window is a quarter of a second. So the target says how long it has
+## left, and the guard goes up inside the window.
+func time_until_strike() -> float:
+	if state != State.WINDUP:
+		return 99.0
+	return _timer
 
 
 ## Turn towards the nearest character, slowly.

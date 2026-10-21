@@ -534,6 +534,28 @@ A blow that lands flashes the body, pushes the character, stops the swing for a 
 and **shakes the camera**. It is the cheapest honest version of a hit reaction, and it
 is the one the playtest can judge.
 
+### The companion is in the fight
+
+Until now the AI companion walked and talked. It is now **in the fight** — and that
+was the last thing standing between "a grey box with two men in it" and a fight.
+
+It fights **the target you are locked onto** (if you point, he hits it), or the nearest
+hostile if you are not pointing at anything. It swings on a rhythm rather than a frenzy,
+because a companion that fights over the same target is a nuisance, not a help. And it
+**will not touch the straw man**: the innocent is an innocent, whoever is swinging.
+
+The best thing it does is the thing the design says only Sancho can do. It **catches the
+wind-up on its guard and parries** — and a parry staggers the attacker. So the moment
+is: the dummy winds up, Sancho's buckler comes up a tenth of a second before the blow,
+the blow goes past, and the dummy is left reeling and open for you to break.
+
+**And that took a bug to get right.** The companion raised its guard at the *start* of the
+wind-up, and the parry window is a quarter of a second while the wind-up is nearly three
+times that — so the parry had already closed by the time the blow arrived, and the
+companion was eating every hit. The guard now goes up **inside the window**, because the
+target says how long it has left before it swings. The player's parry has exactly the same
+timing, and it is the skill.
+
 ### The rigs, and the two men
 
 The characters are no longer capsules. **Quixote is tall and thin with a lance and a
