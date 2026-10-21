@@ -263,7 +263,7 @@ Three copies, two media, one offsite. You are one disk failure from losing 2 yea
 
 | Need | Free tool | Notes |
 |---|---|---|
-| 3D modelling | **Blender 4.x** | Sculpt, retopo, UV, vertex paint. Everything else is optional. |
+| 3D modelling | **Blender 5.2 LTS** | Sculpt, retopo, UV, vertex paint. Everything else is optional. |
 | Texturing | **Blender** + **Quixel Mixer** (free w/ Epic account) | Or **Material Maker** (open source) |
 | Base textures | **ambientCG** (CC0), **Poly Haven** (CC0 HDRIs), **Kenney** (CC0) | 100% legal, shippable |
 | Props / kits | **itch.io** asset packs, **Quixel** free library, **Sketchfab** (check licence per-asset!) | Check every licence |

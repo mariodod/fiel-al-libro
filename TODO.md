@@ -104,7 +104,10 @@
 3. **The remaining art.** 2.7 and 2.8 want **eight animation clips each** (idle, run,
    roll, three lights, heavy, block, hit), and the hit reactions want to be animations
    rather than a flash and a push. That is the next real piece of work, and it is not
-   code.
+   code. **The tool is ready: Blender 5.2 LTS is installed and
+   `.\tools\blender.ps1 -b -P <script.py>` runs it headless.** The full brief — the two
+   characters, the clip list, and the contact frames that must land inside the windows
+   the combat code opens — is in `docs/ANIMATION_BRIEF.md`.
 
 ### Still owed, and it is not code
 

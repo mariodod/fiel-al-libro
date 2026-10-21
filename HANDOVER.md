@@ -40,6 +40,7 @@ someone willing to pay for the lesson with their own mind.*
 | `docs/NEXT_STEPS.md` | **The plan for the next 12 weeks, task by task.** |
 | `docs/NEXT_SESSION.md` | **Start here if you are picking this up.** What is done, what is next, in what order, and what not to do. |
 | `docs/PLAYTEST_NOTES.md` | The playtest: the protocol, the findings, the ten "but"s. **The most valuable document in the repo.** |
+| `docs/ANIMATION_BRIEF.md` | The brief for the hero rigs and their animation sets (2.6–2.8), with the timings they must hit. |
 | `HANDOVER.md` | This file. |
 | `src/` | All game code. |
 | `src/world/slice.tscn` | **The Week 1–2 grey box — the playable build, and the main scene.** Windmill/giant, rock/book, two characters, two readings, and a walled practice yard with a training dummy in it. |
@@ -58,7 +59,7 @@ someone willing to pay for the lesson with their own mind.*
 | `tests/` | 18 suites, 373 assertions. |
 | `locale/` | gettext PO files: es, en, fr + the template. |
 | `assets/` | Shaders, the Manifiesto content format. |
-| `tools/` | `godot.ps1` (locator), `setup.ps1` (one-command setup). |
+| `tools/` | `godot.ps1` (locator), `blender.ps1` (locator), `setup.ps1` (one-command setup). |
 
 > **The two private documents are gitignored on purpose** — they are not merely untracked, they
 > were kept out of git *history* as well, so they cannot be recovered from an old commit. If you
@@ -99,6 +100,7 @@ admin rights to create the alias). Use it instead of calling `godot` directly:
 | `tools\play.cmd` | **Play the week 1–2 grey box.** `tools\play.cmd res://some/scene.tscn` plays any scene. |
 | `tools\play.cmd res://src/tools/shot.tscn` | **Take the screenshots.** Writes `artifacts/shot_*.png` — the evidence a playtest runs on. |
 | `.\tools\godot.ps1 --headless res://tests/test_runner.tscn` | **Run the tests.** Exit 0 = green. |
+| `.\tools\blender.ps1 --version` | **Blender** (5.2 LTS) — it builds the hero rigs and their animation sets. `.\tools\blender.ps1 -b -P script.py` runs a script headless. |
 | `.\tools\godot.ps1 --headless --editor --quit` | Import the project (first run, or after adding assets). |
 | `.\tools\godot.ps1 --headless --script res://src/tools/setup_input_map.gd` | Write the input map into `project.godot`. |
 | `.\tools\godot.ps1 --headless --script res://src/tools/setup_translations.gd` | **Register `locale/*.po` with the engine.** Run after adding a language. |
@@ -518,16 +520,20 @@ owner's.
    cannot), `M` locks on, `X` unveils a thing (Sancho's Desvelar), `V` gives Sancho the
    second sight, `L` pushes Quixote's Locura from Lucid to Lost, `F2` hides the perception
    tags, `H` hides the HUD, `K` resets the practice yard (to the west).
-5. Read `docs/PLAYTEST_NOTES.md` §6 and §7 — the playtest findings, the ten "but"s, and
+5. **The rigs and the animation sets** are the next piece of work, and the tool for them
+   is installed: `.\tools\blender.ps1 -b -P <script.py>` runs Blender headless. The brief
+   is in the conversation: two distinct skeletons, ~16 clips each, and every contact
+   frame landing inside the window the combat code opens.
+6. Read `docs/PLAYTEST_NOTES.md` §6 and §7 — the playtest findings, the ten "but"s, and
    the two that have just been built: **B9, the Examine panel that shows a perception
    instead of the truth table**, and **B10, the training dummy in the walled yard**.
    Both are untested.
-6. **The next task is week 3–4, and it is art.** The lock-on, the dodge, the chain, the
+7. **The next task is week 3–4, and it is art.** The lock-on, the dodge, the chain, the
    guard, the parry, the poise, the asymmetry rules and Desvelar are all in, and the
    silhouettes are distinct (a lance and a basin for Quixote, a sack and a flail for
    Sancho). What is left of 2.6–2.8 is the **animation sets**: eight clips each, and
    hit reactions that are animations rather than a flash and a push.
-7. **The one thing that matters:** the vertical slice exists to answer a single question —
+8. **The one thing that matters:** the vertical slice exists to answer a single question —
    *is the two-truths mechanic fun?* The answer is yes. Everything from here is about
    turning a proven mechanic into a game.
 

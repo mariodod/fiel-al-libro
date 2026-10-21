@@ -56,6 +56,25 @@ if ($godot) {
     }
 }
 
+Section "Blender"
+
+# Blender builds the hero rigs and their animation sets (GDD.md §15.3).
+# It is NOT needed to play or to build the game, so a missing one is a
+# warning and not a failure.
+$blender = & (Join-Path $PSScriptRoot 'blender.ps1') --version 2>$null |
+           Select-String -Pattern 'Blender \d' | Select-Object -First 1
+if ($blender) {
+    Ok ($blender.ToString().Trim())
+} else {
+    Warn "Blender not found - the rigs and the animation sets need it"
+    if ($InstallTools) {
+        Write-Host "    installing via winget..."
+        winget install --id BlenderFoundation.Blender -e --accept-package-agreements --accept-source-agreements --silent --disable-interactivity
+    } else {
+        Write-Host "    run with -InstallTools to install it automatically"
+    }
+}
+
 # Export templates: ~1.2 GB, and the local build step needs them.
 $templateDir = Join-Path $env:APPDATA 'Godot\export_templates'
 $hasTemplates = $false

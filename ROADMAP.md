@@ -155,7 +155,7 @@ very good reason.
 
 ### Weeks 1–2: Tooling
 - [ ] Create the GitHub repo, .gitignore, LFS config
-- [ ] Install Godot 4.x stable, Blender 4.x, Git LFS, Audacity
+- [ ] Install Godot 4.x stable, Blender 5.2 LTS, Git LFS, Audacity
 - [ ] Set up the folder structure from `TECH_STACK.md` §3.1
 - [ ] GitHub Actions: headless import + export to Windows
 - [ ] Write the Blender → Godot import preset guide; verify on a clean clone
