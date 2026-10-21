@@ -582,6 +582,11 @@ msgstr ""
 msgid "dia.sancho.chatter.desvelar"
 msgstr ""
 
+#. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
+#. key is the fragment's own id plus ".title".
+msgid "bk.ch01.apertura.title"
+msgstr ""
+
 #. TRANSLATORS: Control hint, line 4.
 msgid "ui.slice.help.4"
 msgstr ""

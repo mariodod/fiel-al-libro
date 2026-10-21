@@ -503,6 +503,11 @@ msgstr "Le rocher"
 msgid "ui.perception.tag"
 msgstr "%s : %s"
 
+#. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
+#. key is the fragment's own id plus ".title".
+msgid "bk.ch01.apertura.title"
+msgstr "Chapitre premier"
+
 #. TRANSLATORS: Control hint, line 4.
 msgid "ui.slice.help.4"
 msgstr "E examiner ce que vous avez devant vous"

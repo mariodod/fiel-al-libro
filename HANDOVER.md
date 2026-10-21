@@ -105,6 +105,7 @@ admin rights to create the alias). Use it instead of calling `godot` directly:
 | `.\tools\godot.ps1 --headless --script res://src/tools/setup_input_map.gd` | Write the input map into `project.godot`. |
 | `.\tools\godot.ps1 --headless --script res://src/tools/setup_translations.gd` | **Register `locale/*.po` with the engine.** Run after adding a language. |
 | `.\tools\godot.ps1 --headless --script res://src/tools/sync_locales.gd` | Bring every locale in line with the template; report orphans and duplicates. |
+| `.\tools\godot.ps1 --headless --script res://src/tools/validate_manifiesto.gd` | Check the Manifiesto fragments: the 1605/1615 trap, the missing modern renderings, the unverified ones, and the worklist against the 48 the plan wants. |
 | `.\tools\godot.ps1 --headless --export-release "Windows Desktop" build/FielAlLibro.exe` | Build (needs `build/` to exist). |
 | `powershell -ExecutionPolicy Bypass -File tools\fetch_reference.ps1` | **Fetch the reference texts** (the 1605 and 1615 editions) into `reference\`. |
 

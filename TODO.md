@@ -118,6 +118,12 @@
 ### Still owed, and it is not code
 
 - [ ] **The other fourteen runs.** Seven data points is a sample, not a signal.
+- [ ] **The 47 missing fragments.** The plan wants 48 (GDD.md §20.1, locked by D7);
+      there is one. **The writing is the owner's** — the GDD is right that a passage
+      selection cannot be delegated to a machine — but the tool is there now:
+      `.\tools\godot.ps1 --headless --script res://src/tools/validate_manifiesto.gd`
+      prints the worklist for each fragment, and the suite fails the build if a fragment
+      the game reads has not been verified against the edition.
 - [ ] **Press `L` properly.** The stranger saw the madness; nobody has *tested* it. Push
       Quixote to Lost and press `T`: the world stops changing for him. That is the
       mechanic behind the meter. (B5 now makes the change audible — it still needs a run.)
@@ -134,8 +140,10 @@
       the idle pool is three lines and the game has a hundred objects. The rule
       survives; the content does not.
 - [ ] **The sample Manifiesto fragment carries the 1615 wording, not the 1605.** DLC 1 is
-      the 1615 book, so this is load-bearing. Only the owner can re-source it. See
-      `docs/NEXT_SESSION.md` §7.
+      the 1615 book, so this is load-bearing. Only the owner can re-source it. The
+      validator now catches this in every real fragment; the sample itself starts with an
+      underscore, so Godot cannot read it and the tool cannot check it — that one is the
+      owner's to decide on. See `docs/NEXT_SESSION.md` §7.
 
 ## Next (Phase 1 — weeks 3–4, combat)
 

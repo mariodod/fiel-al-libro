@@ -419,6 +419,11 @@ msgstr "TAB swap character · T the world's truth"
 msgid "ui.slice.help.3"
 msgstr "V second sight · L Locura · F1 this help · F2 the tags"
 
+#. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
+#. key is the fragment's own id plus ".title".
+msgid "bk.ch01.apertura.title"
+msgstr "Chapter One"
+
 #. TRANSLATORS: Control hint, line 4.
 msgid "ui.slice.help.4"
 msgstr "E examine what is in front of you"
