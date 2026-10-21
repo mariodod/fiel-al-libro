@@ -110,7 +110,7 @@ The cheapest possible test of the core idea, before any rig exists.
 
 | # | Task | Done when |
 |---|---|---|
-| 2.11 | **The windmill Venture** — a boss with a Book form and a Reality form, different movesets, different rewards | Fighting it in each form is a different fight |
+| 2.11 | **The windmill Venture** - a boss with a Book form and a Reality form, different movesets, different rewards | Fighting it in each form is a different fight - ✅ **built.** The Venture of Montiel stands in the era to the south: the **mill** (it does not walk, its sails deny the ground, it topples) and the **giant** (it walks, it reaches further than your roll). The knight's `T` turns the world over and the boss changes with it; the squire's `X` strips the Book skin and puts it back into its Reality form for eight seconds, which stops the swing it was in the middle of. **The truth resolution and the fragment reward are not in** - the fragment is the owner's to write |
 | 2.12 | `Lectura` mode — the screen desaturates, time slows, a page vignette frames the view | It feels like a different mode of attention, not a filter |
 | 2.13 | **Three anamorphoses**, each viewable only from a specific vantage point | A player finds one **without a marker**. If they need a marker, the mechanic is broken. |
 | 2.14 | `Desvelar` swaps the boss form mid-fight, and the swap is a skill test | A player learns to wait for the window |

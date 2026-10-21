@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="FormData" load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://src/data/form_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://src/world/forms/windmill_book.tscn" id="2_model"]
+[ext_resource type="Resource" path="res://src/data/moves/giant_sweep.tres" id="3_sweep"]
+[ext_resource type="Resource" path="res://src/data/moves/giant_slam.tres" id="4_slam"]
+
+[resource]
+script = ExtResource("1_data")
+display_name_key = &"ui.form.gigante"
+model_scene = ExtResource("2_model")
+max_health = 95.0
+poise = 50.0
+damage_multiplier = 1.15
+moveset = Array[Resource]([ExtResource("3_sweep"), ExtResource("4_slam")])
+move_speed = 3.2
+turn_speed = 1.6
+engage_distance = 4.6
+truth_layer = 1
+codex_note_key = &"ui.codex.venture.giant"

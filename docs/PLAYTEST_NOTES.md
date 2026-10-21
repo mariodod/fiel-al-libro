@@ -655,6 +655,12 @@ exactly why he cannot turn it over.
 >
 > **The next task is week 3–4 — but the Examine verb first.** It is the one thing a
 > player who has never seen the game asked to do.
+>
+> **And since then: the second playtest's eight faults are all fixed (B11–B18), and the
+> first boss is built** — the Venture of Montiel, in the era to the south, with two forms
+> and two movesets. It has never been played. That is what the next run is for: a minute
+> in the era, with the truth turned over and the skin stripped off, and a note of what it
+> felt like.
 
 
 **The rule:** no more than two more primitives get built until this file has an

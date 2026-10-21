@@ -619,3 +619,83 @@ msgstr "La roca"
 #. TRANSLATORS: Floating tag over an object: who is looking, and what they see. Format: %s, %s.
 msgid "ui.perception.tag"
 msgstr "%s: %s"
+
+#. TRANSLATORS: The Venture of Montiel, the first boss.
+msgid "ui.venture.montiel"
+msgstr "El molino de Montiel"
+
+#. TRANSLATORS: The Venture in the Reality truth: how it looks.
+msgid "ui.face.venture.reality.desc"
+msgstr "El molino de Montiel en pie. La piedra está pulida por el trigo, y la puerta baja se ve abierta de par en par."
+
+#. TRANSLATORS: The Venture in the Reality truth: the one detail that does not add up.
+msgid "ui.face.venture.reality.tell"
+msgstr "Las aspas giran hacia donde uno está, y no lo hacen despacio."
+
+#. TRANSLATORS: The Venture in the Book truth: how it looks.
+msgid "ui.face.venture.book.desc"
+msgstr "El gigante de los molinos de Montiel, con los brazos largos como aspas y una cabeza pequeña hundida entre los hombros."
+
+#. TRANSLATORS: The Venture in the Book truth: the one detail that does not add up.
+msgid "ui.face.venture.book.tell"
+msgstr "Lo que en él parece un brazo es un aspa de molino, y lo que parece una cabeza es la piedra del eje."
+
+#. TRANSLATORS: The name of a Venture's move, in the developer's readout.
+msgid "ui.move.mill_sails.name"
+msgstr "Las aspas"
+
+#. TRANSLATORS: The name of a Venture's move, in the developer's readout.
+msgid "ui.move.mill_topple.name"
+msgstr "El derribo"
+
+#. TRANSLATORS: The name of a Venture's move, in the developer's readout.
+msgid "ui.move.giant_sweep.name"
+msgstr "El barrido"
+
+#. TRANSLATORS: The name of a Venture's move, in the developer's readout.
+msgid "ui.move.giant_slam.name"
+msgstr "El golpe"
+
+#. TRANSLATORS: The Venture's health, in the developer's readout. Format: %s, %d, %d.
+msgid "ui.slice.line.venture"
+msgstr "%s: %d/%d"
+
+#. TRANSLATORS: The move the Venture is winding up. Format: %s.
+msgid "ui.slice.line.venture.move"
+msgstr "prepara: %s"
+
+#. TRANSLATORS: The Venture of Montiel is over.
+msgid "ui.slice.venture.down"
+msgstr "El molino de Montiel ha caído."
+
+#. TRANSLATORS: The codex note on the Venture in its Reality form.
+msgid "ui.codex.venture.mill"
+msgstr "El molino de Montiel en su forma verdadera: piedra, trigo, y una puerta baja por la que se entra sin ruido."
+
+#. TRANSLATORS: The codex note on the Venture in its Book form.
+msgid "ui.codex.venture.giant"
+msgstr "El gigante de los molinos de Montiel en la forma del Libro: el hombre que hay dentro del molino, y no la piedra."
+
+#. TRANSLATORS: The companion, remarking on the Venture.
+msgid "dia.quixote.chatter.venture"
+msgstr "¡Un molino! Sancho, un molino de verdad, con su piedra y su trigo. No lo toquéis, que se defiende solo."
+
+#. TRANSLATORS: The companion, remarking on the Venture.
+msgid "dia.sancho.chatter.venture"
+msgstr "Ese molino, mi señor, no muele trigo. Se mueve hacia nosotros."
+
+#. TRANSLATORS: The character says so when the world shows them a mill.
+msgid "dia.quixote.reaction.venture.reality"
+msgstr "Ahora sí: es un molino. Piedra y viento y trigo, y nada más."
+
+#. TRANSLATORS: The character says so when the world shows them a giant.
+msgid "dia.quixote.reaction.venture.book"
+msgstr "¡Ese molino es un gigante! ¡Un gigante con los brazos de piedra! Apartaos, Sancho, que viene."
+
+#. TRANSLATORS: The character says so when the world shows them a mill.
+msgid "dia.sancho.reaction.venture.reality"
+msgstr "Ah. Un molino. Entonces era eso."
+
+#. TRANSLATORS: The character says so when the world shows them a giant.
+msgid "dia.sancho.reaction.venture.book"
+msgstr "¡Señor! ¡El molino es un hombre! ¡Un hombre con los brazos de aspa!"

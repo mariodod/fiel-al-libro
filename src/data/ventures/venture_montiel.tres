@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="VentureData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://src/data/venture_data.gd" id="1_data"]
+[ext_resource type="Resource" path="res://src/data/enemies/windmill.tres" id="2_enemy"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"venture_montiel"
+display_name_key = &"ui.venture.montiel"
+source_reference = "Don Quijote, parte I, capítulos 7-8"
+novel_chapter = "I.7-8"
+enemy = ExtResource("2_enemy")
+is_non_combat = false
+allows_truth_resolution = true

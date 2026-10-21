@@ -705,3 +705,83 @@ msgstr ""
 #. TRANSLATORS: The windmill in the Book truth: the one detail that does not add up.
 msgid "ui.face.windmill.book.tell"
 msgstr ""
+
+#. TRANSLATORS: The Venture of Montiel, the first boss.
+msgid "ui.venture.montiel"
+msgstr ""
+
+#. TRANSLATORS: The Venture in the Reality truth: how it looks.
+msgid "ui.face.venture.reality.desc"
+msgstr ""
+
+#. TRANSLATORS: The Venture in the Reality truth: the one detail that does not add up.
+msgid "ui.face.venture.reality.tell"
+msgstr ""
+
+#. TRANSLATORS: The Venture in the Book truth: how it looks.
+msgid "ui.face.venture.book.desc"
+msgstr ""
+
+#. TRANSLATORS: The Venture in the Book truth: the one detail that does not add up.
+msgid "ui.face.venture.book.tell"
+msgstr ""
+
+#. TRANSLATORS: The name of a Venture's move, in the developer's readout.
+msgid "ui.move.mill_sails.name"
+msgstr ""
+
+#. TRANSLATORS: The name of a Venture's move, in the developer's readout.
+msgid "ui.move.mill_topple.name"
+msgstr ""
+
+#. TRANSLATORS: The name of a Venture's move, in the developer's readout.
+msgid "ui.move.giant_sweep.name"
+msgstr ""
+
+#. TRANSLATORS: The name of a Venture's move, in the developer's readout.
+msgid "ui.move.giant_slam.name"
+msgstr ""
+
+#. TRANSLATORS: The Venture's health, in the developer's readout. Format: %s, %d, %d.
+msgid "ui.slice.line.venture"
+msgstr ""
+
+#. TRANSLATORS: The move the Venture is winding up. Format: %s.
+msgid "ui.slice.line.venture.move"
+msgstr ""
+
+#. TRANSLATORS: The Venture of Montiel is over.
+msgid "ui.slice.venture.down"
+msgstr ""
+
+#. TRANSLATORS: The codex note on the Venture in its Reality form.
+msgid "ui.codex.venture.mill"
+msgstr ""
+
+#. TRANSLATORS: The codex note on the Venture in its Book form.
+msgid "ui.codex.venture.giant"
+msgstr ""
+
+#. TRANSLATORS: The companion, remarking on the Venture.
+msgid "dia.quixote.chatter.venture"
+msgstr ""
+
+#. TRANSLATORS: The companion, remarking on the Venture.
+msgid "dia.sancho.chatter.venture"
+msgstr ""
+
+#. TRANSLATORS: The character says so when the world shows them a mill.
+msgid "dia.quixote.reaction.venture.reality"
+msgstr ""
+
+#. TRANSLATORS: The character says so when the world shows them a giant.
+msgid "dia.quixote.reaction.venture.book"
+msgstr ""
+
+#. TRANSLATORS: The character says so when the world shows them a mill.
+msgid "dia.sancho.reaction.venture.reality"
+msgstr ""
+
+#. TRANSLATORS: The character says so when the world shows them a giant.
+msgid "dia.sancho.reaction.venture.book"
+msgstr ""

@@ -31,6 +31,9 @@ const SPOT := Vector3(11.0, 0.0, -8.0)
 ## The practice yard, and a spot inside it facing the dummy.
 const YARD_SPOT := Vector3(-11.0, 0.0, -4.0)
 
+## The era, and a spot in it facing the Venture.
+const ERA_SPOT := Vector3(0.0, 0.0, 25.0)
+
 
 func _ready() -> void:
 	var scene: Node = load("res://src/world/slice.tscn").instantiate()
@@ -86,6 +89,25 @@ func _ready() -> void:
 	for i in 30:
 		await get_tree().process_frame
 	await _shoot("shot_lock.png")
+
+	# And the Venture of Montiel, in both of its forms. The two forms
+	# are two different fights, and a fight nobody has seen is a fight
+	# nobody can judge.
+	quixote.global_position = ERA_SPOT
+	quixote.rotation.y = PI
+	# The lock turns the character towards what it is locked on, and the
+	# lock is still on the dummy in the yard.
+	quixote.clear_lock_target()
+	# The camera cuts, so the shot is of the Venture and not of the
+	# camera's journey round to it.
+	var rig: CameraFollow = scene.get_node("CameraRig")
+	rig.snap()
+	await _settle(scene)
+	await _shoot("shot_venture_mill.png")
+
+	TruthLayer.shift_to(TruthLayer.Layer.BOOK, true)
+	await _settle(scene)
+	await _shoot("shot_venture_giant.png")
 
 	# Leave the world as we found it.
 	TruthLayer.shift_to(TruthLayer.Layer.REALITY, true)

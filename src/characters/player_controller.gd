@@ -28,7 +28,15 @@ var _lock_candidates: Array[Node] = []
 var _lock_timer: float = 0.0
 
 
+## The group the controller belongs to. A Venture needs to know which
+## of the two characters the player is driving: a boss that turns its
+## back on the player to hit the companion is a boss the player is not
+## in a fight with.
+const GROUP := &"player_controller"
+
+
 func _ready() -> void:
+	add_to_group(GROUP)
 	EventBus.character_switched.connect(_on_character_switched)
 
 

@@ -104,6 +104,26 @@
       happened when both of them went down; T turned the world over for Sancho too; and
       the camera swung round at 180° a second, which read as a whip. All eight fixed.
       `tests/test_playtest_fixes.gd`.
+- [x] **2.11 — the Venture of Montiel, the first boss.** It stands in the era to the south:
+      a round stone floor with a mill in the middle of it and a gap in the wall. **Two
+      forms and two different fights**: the mill does not walk, its sails deny the ground
+      within four metres, and it topples with a long, readable tell; the giant walks, it
+      reaches further than your roll, and it has half the health. **The two levers belong
+      to different people**: `T` (Quixote) turns the world over and the Venture changes
+      with it; `X` (Sancho) strips the Book skin, puts it back into its Reality form for
+      eight seconds, and stops the swing it was in the middle of — the squire does not
+      kill, he controls. The asymmetry rules apply to it like they apply to anything
+      else: Sancho staggers it and cannot kill it.
+      `src/world/venture.gd`, `src/data/ventures/`, `src/data/moves/`,
+      `tests/test_venture.gd`.
+- [ ] **2.11, the rest of it.** The **truth resolution** (the Venture fought and solved
+      rather than killed) and the **fragment reward** — the text of a Manifiesto fragment
+      is the owner's, and the validator prints the worklist. And the companion should use
+      its own verb: the AI never casts the Desvelar, because the slice only applies it
+      for the character the player is driving.
+- [ ] **The Venture's art.** It is built out of the same grey-box mill and giant as the
+      primitives, and the two of them are now a *boss* — the poses have to read as a
+      threat and not as a prop.
 - [x] **The hit reactions.** A blow that lands flashes the body, pushes the character,
       stops the swing, and **shakes the camera**.
 - [x] **`H` hides the HUD.** It is the developer's readout — it spells out both readings.
@@ -111,17 +131,18 @@
 
 ### This week's three goals
 
-1. **A stranger who does not know the keys.** The build is ready for it and the owner is
+1. **A minute in the era, with the Venture in it.** The first boss is built, and it is
+   the first thing in the game that is fought rather than looked at. The question is
+   whether the two forms are two different fights *to play*, not on paper: the mill's
+   sails, the mill's topple, the giant's arm, and the eight seconds in which the squire
+   strips the skin off the giant and it stands still.
+2. **A stranger who does not know the keys.** The build is ready for it and the owner is
    the only one who can run it. The mechanic has to teach itself. Give it to somebody who
    has never seen it, say nothing, and write down what they do in the first thirty
    seconds. Press `H` before you hand it over.
-2. **A minute in the yard, with the rigs on.** The chain, the guard, the parry, the
-   poise, the straw man, the Desvelar, **the companion in the fight** and the
-   animation are all in. The question is whether the *poses* read: a lunge and a
-   tumble, a thrust and a plunge, two men you can tell apart at twenty metres.
-3. **The asymmetry rules and the art.** 2.10 is in and visible in the yard. What is
-   left is the **feel**: the poses are grey-box, and the next pass is the one that
-   makes them read as Velazquez rather than as a fighting game.
+3. **The art pass.** 2.10 and 2.11 are in and visible. What is left is the **feel**: the
+   poses are grey-box, and the next pass is the one that makes them read as Velazquez
+   rather than as a fighting game.
 
 ### Still owed, and it is not code
 

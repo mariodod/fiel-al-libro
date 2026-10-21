@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="FormData" load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://src/data/form_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://src/world/forms/windmill_reality.tscn" id="2_model"]
+[ext_resource type="Resource" path="res://src/data/moves/mill_sails.tres" id="3_sails"]
+[ext_resource type="Resource" path="res://src/data/moves/mill_topple.tres" id="4_topple"]
+
+[resource]
+script = ExtResource("1_data")
+display_name_key = &"ui.form.molino"
+model_scene = ExtResource("2_model")
+max_health = 130.0
+poise = 25.0
+damage_multiplier = 1.0
+moveset = Array[Resource]([ExtResource("3_sails"), ExtResource("4_topple")])
+move_speed = 0.0
+turn_speed = 1.2
+engage_distance = 4.2
+truth_layer = 0
+codex_note_key = &"ui.codex.venture.mill"

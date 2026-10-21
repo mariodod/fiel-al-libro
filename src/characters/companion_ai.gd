@@ -176,6 +176,11 @@ func _fight(delta: float) -> void:
 			_set_guard(false)
 	elif _blocking:
 		_set_guard(false)
+	# The dice are rolled once per wind-up, not once per target: a
+	# companion that can only catch the first blow of a fight is not
+	# catching anything.
+	if not _is_winding_up(target):
+		_guard_rolled = 0
 	if _guard_timer <= 0.0 and _guard_rolled != target.get_instance_id():
 		if _time_until_strike(target) <= parry_lead:
 			_guard_rolled = target.get_instance_id()
@@ -184,7 +189,13 @@ func _fight(delta: float) -> void:
 				_set_guard(true)
 
 	# The approach.
-	if distance > fighting_distance:
+	#
+	# Some things are not fought at arm's length: a Venture with turning
+	# sails says so, and the companion believes it.
+	var stand_off := fighting_distance
+	if target.has_method("safe_distance"):
+		stand_off = maxf(stand_off, float(target.call("safe_distance")))
+	if distance > stand_off:
 		pawn.move(Vector2(to_target.x, to_target.z).normalized(), false)
 	else:
 		# In the reach. Hold, and let the guard and the swing do the

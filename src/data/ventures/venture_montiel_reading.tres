@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="TruthObjectData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://src/data/truth_object_data.gd" id="1_data"]
+[ext_resource type="Script" path="res://src/data/truth_face.gd" id="2_face"]
+
+[sub_resource type="Resource" id="RealityFace"]
+script = ExtResource("2_face")
+name_key = &"ui.form.molino"
+description_key = &"ui.face.venture.reality.desc"
+tell_key = &"ui.face.venture.reality.tell"
+title_key = &"ui.face.venture.reality.title"
+
+[sub_resource type="Resource" id="BookFace"]
+script = ExtResource("2_face")
+name_key = &"ui.form.gigante"
+description_key = &"ui.face.venture.book.desc"
+tell_key = &"ui.face.venture.book.tell"
+title_key = &"ui.face.venture.book.title"
+
+[resource]
+script = ExtResource("1_data")
+id = &"venture"
+display_name_key = &"ui.venture.montiel"
+reality_face = SubResource("RealityFace")
+book_face = SubResource("BookFace")
+tag_height = 11.0

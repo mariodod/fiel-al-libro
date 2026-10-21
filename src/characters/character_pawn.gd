@@ -486,8 +486,11 @@ func ability(ability_id: StringName) -> bool:
 		return false
 	for a: AbilityData in data.abilities:
 		if a.id == ability_id:
-			_perform(a)
-			return true
+			# The truth it returns is whether the ability actually
+			# happened: an ability that was refused — not enough
+			# stamina, the wrong truth, a mind that is not ready — must
+			# not play its animation as if it had.
+			return _perform(a)
 	return false
 
 

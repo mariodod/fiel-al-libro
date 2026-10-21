@@ -626,3 +626,83 @@ msgstr "Un géant de ceux dont on fait les contes, avec des bras si longs qu'ils
 #. TRANSLATORS: The windmill in the Book truth: the one detail that does not add up.
 msgid "ui.face.windmill.book.tell"
 msgstr "Ce qui ressemble à un bras sur lui est une aile de moulin."
+
+#. TRANSLATORS: The Venture of Montiel, the first boss.
+msgid "ui.venture.montiel"
+msgstr "Le moulin de Montiel"
+
+#. TRANSLATORS: The Venture in the Reality truth: how it looks.
+msgid "ui.face.venture.reality.desc"
+msgstr "Le moulin de Montiel, debout. La pierre est polie par le blé, et la basse porte est grande ouverte."
+
+#. TRANSLATORS: The Venture in the Reality truth: the one detail that does not add up.
+msgid "ui.face.venture.reality.tell"
+msgstr "Les ailes tournent vers celui qui regarde, et elles ne tournent pas lentement."
+
+#. TRANSLATORS: The Venture in the Book truth: how it looks.
+msgid "ui.face.venture.book.desc"
+msgstr "Le géant des moulins de Montiel, les bras longs comme des ailes et la petite tête enfoncée entre les épaules."
+
+#. TRANSLATORS: The Venture in the Book truth: the one detail that does not add up.
+msgid "ui.face.venture.book.tell"
+msgstr "Ce qui ressemble à un bras est une aile de moulin, et ce qui ressemble à une tête est la meule."
+
+#. TRANSLATORS: The name of a Venture's move, in the developer's readout.
+msgid "ui.move.mill_sails.name"
+msgstr "Les ailes"
+
+#. TRANSLATORS: The name of a Venture's move, in the developer's readout.
+msgid "ui.move.mill_topple.name"
+msgstr "La chute"
+
+#. TRANSLATORS: The name of a Venture's move, in the developer's readout.
+msgid "ui.move.giant_sweep.name"
+msgstr "Le balayage"
+
+#. TRANSLATORS: The name of a Venture's move, in the developer's readout.
+msgid "ui.move.giant_slam.name"
+msgstr "Le coup"
+
+#. TRANSLATORS: The Venture's health, in the developer's readout. Format: %s, %d, %d.
+msgid "ui.slice.line.venture"
+msgstr "%s : %d/%d"
+
+#. TRANSLATORS: The move the Venture is winding up. Format: %s.
+msgid "ui.slice.line.venture.move"
+msgstr "prépare : %s"
+
+#. TRANSLATORS: The Venture of Montiel is over.
+msgid "ui.slice.venture.down"
+msgstr "Le moulin de Montiel est tombé."
+
+#. TRANSLATORS: The codex note on the Venture in its Reality form.
+msgid "ui.codex.venture.mill"
+msgstr "Le moulin de Montiel sous sa forme vraie : pierre, blé, et une basse porte par où l'on entre sans bruit."
+
+#. TRANSLATORS: The codex note on the Venture in its Book form.
+msgid "ui.codex.venture.giant"
+msgstr "Le géant des moulins de Montiel sous la forme du Livre : l'homme dans le moulin, et non la pierre."
+
+#. TRANSLATORS: The companion, remarking on the Venture.
+msgid "dia.quixote.chatter.venture"
+msgstr "Un moulin ! Sancho, un vrai moulin, avec sa meule et son blé. N'y touchez pas, car il se défend."
+
+#. TRANSLATORS: The companion, remarking on the Venture.
+msgid "dia.sancho.chatter.venture"
+msgstr "Ce moulin, seigneur, ne moud pas de blé. Il vient vers nous."
+
+#. TRANSLATORS: The character says so when the world shows them a mill.
+msgid "dia.quixote.reaction.venture.reality"
+msgstr "C'est un moulin, maintenant. Pierre et vent et blé, et rien d'autre."
+
+#. TRANSLATORS: The character says so when the world shows them a giant.
+msgid "dia.quixote.reaction.venture.book"
+msgstr "Ce moulin est un géant ! Un géant aux bras de pierre ! Écartez-vous, Sancho, il vient."
+
+#. TRANSLATORS: The character says so when the world shows them a mill.
+msgid "dia.sancho.reaction.venture.reality"
+msgstr "Ah. Un moulin. Voilà donc ce que c'était."
+
+#. TRANSLATORS: The character says so when the world shows them a giant.
+msgid "dia.sancho.reaction.venture.book"
+msgstr "Seigneur ! Le moulin est un homme ! Un homme aux bras d'ailes !"

@@ -602,3 +602,83 @@ msgstr "The rock"
 #. TRANSLATORS: Floating tag over an object: who is looking, and what they see. Format: %s, %s.
 msgid "ui.perception.tag"
 msgstr "%s: %s"
+
+#. TRANSLATORS: The Venture of Montiel, the first boss.
+msgid "ui.venture.montiel"
+msgstr "The mill of Montiel"
+
+#. TRANSLATORS: The Venture in the Reality truth: how it looks.
+msgid "ui.face.venture.reality.desc"
+msgstr "The mill of Montiel, standing. The stone is polished smooth by the grain, and the low door stands wide open."
+
+#. TRANSLATORS: The Venture in the Reality truth: the one detail that does not add up.
+msgid "ui.face.venture.reality.tell"
+msgstr "The sails turn towards wherever you are, and they do not turn slowly."
+
+#. TRANSLATORS: The Venture in the Book truth: how it looks.
+msgid "ui.face.venture.book.desc"
+msgstr "The giant of the mills of Montiel, with arms long as sails and a small head sunk between its shoulders."
+
+#. TRANSLATORS: The Venture in the Book truth: the one detail that does not add up.
+msgid "ui.face.venture.book.tell"
+msgstr "What looks like an arm on him is a mill sail, and what looks like a head is the millstone."
+
+#. TRANSLATORS: The name of a Venture's move, in the developer's readout.
+msgid "ui.move.mill_sails.name"
+msgstr "The sails"
+
+#. TRANSLATORS: The name of a Venture's move, in the developer's readout.
+msgid "ui.move.mill_topple.name"
+msgstr "The topple"
+
+#. TRANSLATORS: The name of a Venture's move, in the developer's readout.
+msgid "ui.move.giant_sweep.name"
+msgstr "The sweep"
+
+#. TRANSLATORS: The name of a Venture's move, in the developer's readout.
+msgid "ui.move.giant_slam.name"
+msgstr "The slam"
+
+#. TRANSLATORS: The Venture's health, in the developer's readout. Format: %s, %d, %d.
+msgid "ui.slice.line.venture"
+msgstr "%s: %d/%d"
+
+#. TRANSLATORS: The move the Venture is winding up. Format: %s.
+msgid "ui.slice.line.venture.move"
+msgstr "preparing: %s"
+
+#. TRANSLATORS: The Venture of Montiel is over.
+msgid "ui.slice.venture.down"
+msgstr "The mill of Montiel has fallen."
+
+#. TRANSLATORS: The codex note on the Venture in its Reality form.
+msgid "ui.codex.venture.mill"
+msgstr "The mill of Montiel in its true shape: stone, grain, and a low door you can walk in through."
+
+#. TRANSLATORS: The codex note on the Venture in its Book form.
+msgid "ui.codex.venture.giant"
+msgstr "The giant of the mills of Montiel in the Book's shape: the man in the mill, and not the stone."
+
+#. TRANSLATORS: The companion, remarking on the Venture.
+msgid "dia.quixote.chatter.venture"
+msgstr "A mill! Sancho, a real mill, with its stone and its grain. Do not touch it, for it defends itself."
+
+#. TRANSLATORS: The companion, remarking on the Venture.
+msgid "dia.sancho.chatter.venture"
+msgstr "That mill, my lord, grinds no grain. It is coming towards us."
+
+#. TRANSLATORS: The character says so when the world shows them a mill.
+msgid "dia.quixote.reaction.venture.reality"
+msgstr "Now it is a mill. Stone and wind and grain, and nothing else."
+
+#. TRANSLATORS: The character says so when the world shows them a giant.
+msgid "dia.quixote.reaction.venture.book"
+msgstr "That mill is a giant! A giant with arms of stone! Stand back, Sancho, he is coming."
+
+#. TRANSLATORS: The character says so when the world shows them a mill.
+msgid "dia.sancho.reaction.venture.reality"
+msgstr "Ah. A mill. So that is what it was."
+
+#. TRANSLATORS: The character says so when the world shows them a giant.
+msgid "dia.sancho.reaction.venture.book"
+msgstr "My lord! The mill is a man! A man with sails for arms!"

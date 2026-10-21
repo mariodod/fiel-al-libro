@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="EnemyMoveData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/data/enemy_move_data.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"mill_sails"
+display_name_key = &"ui.move.mill_sails.name"
+shape = 1
+damage = 11.0
+poise_damage = 8.0
+reach = 4.6
+arc_degrees = 360.0
+windup_seconds = 0.4
+strike_seconds = 0.3
+recover_seconds = 0.8
+cooldown = 1.3

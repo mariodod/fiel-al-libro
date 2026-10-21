@@ -57,6 +57,8 @@ extends Node3D
 @onready var hud: Label = $HudLayer/Hud
 @onready var windmill: TruthObject = $Windmill
 @onready var rock: TruthObject = $Rock
+## The Venture of Montiel, in the era to the south.
+@onready var venture: Venture = $Venture
 
 ## The practice yard: a bounded space with something in it to fight.
 ##
@@ -73,6 +75,21 @@ const START_POSITION := Vector3(0.0, 0.0, 0.0)
 const WALL_THICKNESS := 0.8
 ## How wide the gate in the east wall is.
 const GATE_HALF := 3.0
+
+## The era — the threshing floor of a mill, and the Venture's arena.
+##
+## To the south, so it is a walk and not a teleport, and far enough from
+## the windmill on the plain that the two of them are never in the same
+## picture. It is round because a round floor has no corners: the mill
+## denies the ground all the way round it, and a square yard would have
+## four places to stand where the sails cannot reach.
+const ERA_CENTER := Vector3(0.0, 0.0, 36.0)
+const ERA_RADIUS := 13.0
+const ERA_WALL_HEIGHT := 3.2
+## How many stones the wall is made of.
+const ERA_SEGMENTS := 16
+## The gap in the wall, in degrees, on the north side — the way in.
+const ERA_GATE_DEGREES := 36.0
 
 var _objects: Array[TruthObject] = []
 var _show_help: bool = true
@@ -105,6 +122,8 @@ var _last_reading: Dictionary = {}
 var _dummy: TrainingDummy = null
 ## The straw man in the corner: the innocent, for the second rule.
 var _straw_man: StrawMan = null
+## The Venture of Montiel, in the era to the south.
+var _venture: Venture = null
 ## The marker over the locked target.
 var _lock_marker: Label3D = null
 
@@ -117,6 +136,7 @@ func _ready() -> void:
 
 	_build_environment()
 	_build_yard()
+	_build_era()
 	_build_characters()
 	_build_post_process()
 	_build_examine_panel()
@@ -128,6 +148,7 @@ func _ready() -> void:
 	EventBus.character_parried.connect(_on_character_parried)
 	EventBus.character_hurt.connect(_on_character_hurt)
 	EventBus.ability_used.connect(_on_ability_used)
+	EventBus.venture_resolved.connect(_on_venture_resolved)
 
 
 # ── World ───────────────────────────────────────────────────────────────
@@ -220,11 +241,39 @@ func _build_yard() -> void:
 	yard.add_child(_straw_man)
 
 
+## The era: the threshing floor of a mill, and the first boss of the
+## game.
+##
+## NEXT_STEPS.md §2, task 2.11. A round stone floor with a mill in the
+## middle of it and a gap in the wall on the north side, the way in. It
+## is round because a round floor has no corners: the mill denies the
+## ground all the way round it, and a square yard would have four places
+## to stand where the sails cannot reach.
+func _build_era() -> void:
+	var era := Node3D.new()
+	era.name = "Era"
+	add_child(era)
+
+	var half_gate := deg_to_rad(ERA_GATE_DEGREES * 0.5)
+	var chord := 2.0 * ERA_RADIUS * tan(PI / float(ERA_SEGMENTS))
+	for i in range(ERA_SEGMENTS):
+		var angle := TAU * float(i) / float(ERA_SEGMENTS)
+		# The gate faces north, towards the way the player comes from.
+		if absf(wrapf(angle - PI, -PI, PI)) < half_gate:
+			continue
+		var direction := Vector3(sin(angle), 0.0, cos(angle))
+		_add_wall(era,
+			ERA_CENTER + direction * ERA_RADIUS,
+			Vector3(chord, ERA_WALL_HEIGHT, WALL_THICKNESS),
+			angle)
+
+
 ## One wall: a box you cannot walk through.
-func _add_wall(parent: Node3D, position: Vector3, size: Vector3) -> void:
+func _add_wall(parent: Node3D, position: Vector3, size: Vector3, yaw: float = 0.0) -> void:
 	var wall := StaticBody3D.new()
 	wall.name = "Wall"
 	wall.position = position
+	wall.rotation.y = yaw
 	wall.collision_layer = 1
 	wall.collision_mask = 1
 
@@ -372,6 +421,8 @@ func _unhandled_input(event: InputEvent) -> void:
 func _reset_yard() -> void:
 	if _dummy != null:
 		_dummy.reset()
+	if venture != null:
+		venture.reset()
 	for pawn in [player.active_pawn, player.other_pawn]:
 		if pawn != null and pawn.is_dead:
 			pawn.revive()
@@ -543,6 +594,18 @@ func _update_hud() -> void:
 		lines.append(Loc.tf(&"ui.slice.line.dummy", [
 			int(_dummy.health), int(_dummy.max_health),
 		]))
+	if venture != null and not venture.is_down():
+		lines.append(Loc.tf(&"ui.slice.line.venture", [
+			venture.display_name(),
+			int(venture.health), int(venture.max_health),
+		]))
+		# The move it is winding up. This is the developer's readout: a
+		# stranger must not have it, and a player should not need it.
+		var move := venture.current_move()
+		if move != null:
+			lines.append(Loc.tf(&"ui.slice.line.venture.move", [
+				Loc.t(move.display_name_key),
+			]))
 	lines.append(Loc.tf(&"ui.slice.line.humanity", [
 		GameState.humanity, GameState.HUMANITY_MAX,
 	]))
@@ -606,6 +669,16 @@ func _on_character_switched(_from_id: StringName, _to_id: StringName) -> void:
 	if ai != null and player != null:
 		ai.pawn = player.other_pawn
 		ai.leader = player.active_pawn
+
+
+## The Venture of Montiel is over.
+##
+## NEXT_STEPS.md §2, task 2.11 wants "different rewards" for the two
+## forms. The reward here is the memory it leaves behind — and the
+## chapter's first Manifiesto fragment is the owner's to write, so the
+## slice does not pretend to have one.
+func _on_venture_resolved(_id: StringName, _mode: int) -> void:
+	EventBus.toast.emit(&"ui.slice.venture.down", [])
 
 
 ## Somebody went down in the yard.

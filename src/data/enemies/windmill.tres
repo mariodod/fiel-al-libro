@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://src/data/enemy_data.gd" id="1_data"]
+[ext_resource type="Resource" path="res://src/data/forms/mill_form.tres" id="2_reality"]
+[ext_resource type="Resource" path="res://src/data/forms/giant_form.tres" id="3_book"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"venture_montiel"
+display_name_key = &"ui.venture.montiel"
+max_health = 130.0
+poise = 25.0
+reality_form = ExtResource("2_reality")
+book_form = ExtResource("3_book")
+is_boss = true
+aggro_radius = 15.0
+attack_range = 4.5
+recuerdos = 120

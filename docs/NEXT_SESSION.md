@@ -16,8 +16,8 @@
 |---|---|
 | **Phase** | Phase 1. **Weeks 1–2 are done.** Week 3–4 (combat) is under way. |
 | **The premise** | **Proven.** The playtest says so. |
-| **The build** | `res://src/world/slice.tscn` — the main scene. Two primitives, one truth toggle, two characters reading the same world differently — and now the **verbs**: `E` to examine, `Space` to dodge, a light attack that chains, a heavy attack, `F` for the guard, `M` to lock on, `X` for Sancho's Desvelar, and a line of dialogue when the world moves under a character. The two characters are **rigged and animated** (14 clips each), the **companion is in the fight** (it fights what you are locked onto, and it parries), and there is a **walled yard** with a training dummy and a straw man in it. |
-| **Tests** | 23 suites, 482 assertions, green, enforced in CI. |
+| **The build** | `res://src/world/slice.tscn` — the main scene. Two primitives, one truth toggle, two characters reading the same world differently — and now the **verbs**: `E` to examine, `Space` to dodge, a light attack that chains, a heavy attack, `F` for the guard, `M` to lock on, `X` for Sancho's Desvelar, and a line of dialogue when the world moves under a character. The two characters are **rigged and animated** (14 clips each), the **companion is in the fight** (it fights what you are locked onto, and it parries), there is a **walled yard** with a training dummy and a straw man in it, and to the **south** there is the **era of Montiel** and the **Venture of Montiel** — the first boss, in two forms. |
+| **Tests** | 24 suites, 524 assertions, green, enforced in CI. |
 | **The fun** | Not fully proven. Seven data points is a sample, not a signal. |
 
 **The one thing that matters:** the mechanic is legible and liked. The *game*
@@ -66,6 +66,15 @@ tools\play.cmd
 **training dummy**. It telegraphs, it hits back, and the walls mean you cannot dodge
 forever. That is the rig the dodge has been missing.
 
+**The newest beat:** walk **south**, to the era of Montiel, and fight the
+**windmill Venture**. It has two forms and they are two different fights: as a **mill**
+it does not move, its sails deny the ground within four metres, and it topples with a
+long, readable tell; as the **giant** it walks, it reaches further than your roll, and
+it has half the health. Press `T` as Quixote and the world turns over — and the Venture
+turns with it. Swap to Sancho and press `X`: the Book skin comes off, the Venture is
+back in its Reality form for eight seconds, and the swing it was in the middle of never
+arrives. The squire does not kill. He controls.
+
 **The changed beat:** `E` no longer prints a truth table. It prints **what the
 character sees** — a description, the text on the page if it is a book, and the
 one detail that does not add up.
@@ -107,6 +116,13 @@ enemy** (40 % of the damage, all of the poise — he staggers, he does not
 kill). The yard shows both: a **straw man** for the first, and a dummy
 that only Quixote can break for the second.
 
+**And 2.11, the Venture of Montiel**, the first boss, in the era to the south: two
+forms, two movesets, and the two levers that change the shape of the fight — the
+knight's `T` (the world's truth IS the boss's truth) and the squire's `X` (the Desvelar
+puts the boss back in its Reality form and cancels the swing it was in the middle of).
+The fight is the first thing in the game that asks the player to *use the asymmetry as a
+plan* rather than as a rule.
+
 What is not in: the **animations**. 2.7 and 2.8 want eight clips each,
 and the hit reactions want to be animations rather than a flash and a
 push. That is the next real piece of work, and it is not code.
@@ -143,6 +159,7 @@ not. `src/systems/chatter.gd` is where the next hundred lines go.
 | 2.8 | **Sancho rig** — ✅ the rig and 15 clips, and no action shared with Quixote's |
 | 2.9 | Sancho's `Desvelar` — the verb ✅; the **VFX** are still plain |
 | 2.10 | The asymmetry rules: Quixote cannot harm innocents without a Humanity cost; Sancho cannot meaningfully damage — ✅ both, and the yard shows them |
+| 2.11 | **The windmill Venture** — ✅ the boss, its two forms and the two movesets; the truth resolution and the fragment reward are not in |
 
 **2.7 and 2.8 are the two most under-rated tasks in the plan.** Distinct
 animation sets sell the asymmetry better than any mechanic. A reskinned

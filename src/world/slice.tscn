@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3]
+[gd_scene load_steps=21 format=3]
 
 [ext_resource type="Script" path="res://src/world/slice.gd" id="1_slice"]
 [ext_resource type="Script" path="res://src/world/truth_object.gd" id="2_object"]
@@ -12,6 +12,9 @@
 [ext_resource type="Resource" path="res://src/data/characters/sancho.tres" id="10_sancho"]
 [ext_resource type="PackedScene" path="res://assets/models/quixote.glb" id="11_quixote_rig"]
 [ext_resource type="PackedScene" path="res://assets/models/sancho.glb" id="12_sancho_rig"]
+[ext_resource type="Script" path="res://src/world/venture.gd" id="13_venture"]
+[ext_resource type="Resource" path="res://src/data/ventures/venture_montiel.tres" id="14_venture_data"]
+[ext_resource type="Resource" path="res://src/data/ventures/venture_montiel_reading.tres" id="15_venture_reading"]
 
 [sub_resource type="PlaneMesh" id="Plane_ground"]
 size = Vector2(300, 300)
@@ -53,6 +56,12 @@ data = ExtResource("7_windmill")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -11)
 script = ExtResource("2_object")
 data = ExtResource("8_rock")
+
+[node name="Venture" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 36)
+script = ExtResource("13_venture")
+venture = ExtResource("14_venture_data")
+data = ExtResource("15_venture_reading")
 
 [node name="Characters" type="Node3D" parent="."]
 

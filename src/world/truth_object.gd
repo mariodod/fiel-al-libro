@@ -63,6 +63,16 @@ func _process(delta: float) -> void:
 ## Build the two forms from the data.
 func setup(object_data: TruthObjectData) -> void:
 	data = object_data
+	_build_forms()
+	_refresh()
+
+
+## Build the two bodies.
+##
+## The default builds them from the data's PackedScenes. A Venture's
+## bodies come from its enemy data instead — the same two shapes, but
+## owned by the fight rather than by the reading — so it overrides this.
+func _build_forms() -> void:
 	_clear_forms()
 	if data == null:
 		return
@@ -72,7 +82,6 @@ func setup(object_data: TruthObjectData) -> void:
 	if data.book_form != null:
 		_book_form = data.book_form.instantiate()
 		add_child(_book_form)
-	_refresh()
 
 
 ## Show a truth. The default animates; `instant` snaps.

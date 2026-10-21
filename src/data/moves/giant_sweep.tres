@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="EnemyMoveData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/data/enemy_move_data.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"giant_sweep"
+display_name_key = &"ui.move.giant_sweep.name"
+shape = 0
+damage = 21.0
+poise_damage = 18.0
+reach = 5.4
+arc_degrees = 110.0
+windup_seconds = 0.72
+strike_seconds = 0.18
+recover_seconds = 1.05
+cooldown = 1.8
