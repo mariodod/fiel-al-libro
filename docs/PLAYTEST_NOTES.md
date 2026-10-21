@@ -579,7 +579,57 @@ playtest too, and it has never been judged.
 
 ---
 
-## 8. What to do with the answers
+## 8. The second playtest — 21 October 2026, and the seven things it found
+
+A second run of the build, with the yard, the rigs, the lock-on and the companion in it.
+Seven things, and every one of them was a real fault:
+
+| # | What they said | What it was | Where it went |
+|---|---|---|---|
+| B11 | *"When locking an enemy pressing forward moves backwards and viceversa same for left and right."* | The input signs were the wrong way round. `Input.get_vector` returns **-1** for forward and **+1** for back, and the lock-on frame read it the other way. | **Fixed** — one frame function, used by both the camera and the lock |
+| B12 | *"Going backwards without a locked enemy spins the camera non stop."* | The character turned **round** to walk backwards, the camera followed it round, and the two of them chased each other for ever. | **Fixed** — a character steps backwards without turning, and the camera's follow is proportional, not a constant rate |
+| B13 | *"Dodge animation should not be a jump in the air, it should roll or slide never leaving the ground. Sancho dodge looks better but should also stay in the ground."* | The hips were keyed **two metres up** in Quixote's roll and **four** at its end, and up to two in Sancho's. The dodge literally flew. | **Fixed** — the hips go *down* now: a slide for the knight, a shoulder roll for the squire |
+| B14 | *"When you have 0 hp you can still move it, you shouldn't be able to do that."* | The controller stopped driving a dead character, but the body kept its last velocity and slid across the yard. | **Fixed** — a character who is down stays down |
+| B15 | *"Your partner could help lift you."* | Nothing picked the player up. | **Built** — the companion goes over and stands there, and then you are up |
+| B16 | *"If both go to 0 you should get game over and respawn."* | Nothing. | **Built** — the page is blank, and the morning starts again |
+| B17 | *"Pressing T with sancho should do nothing. It's a quijote exclusive ability."* | T turned the world over for both of them. | **Fixed** — the truth is the knight's delusion, and his alone |
+
+Two of them were the *same* bug wearing different clothes, and both are worth a line
+of their own:
+
+**The input frame (B11).** There is now ONE function that puts the input into the frame
+of the thing you are fighting, and it is used twice: the camera's frame when you are
+free, and the target's frame when you are locked. The signs are `-direction.y` for
+forward and `direction.x` for right, because that is what `Input.get_vector` gives you.
+
+**The camera spin (B12).** The camera follows the character's facing, and the character
+used to turn round to walk backwards — so the camera swung after it, and the pair
+circled for ever. Two changes, both of them better anyway:
+
+- **a character does not turn round to walk backwards.** It steps back, facing the same
+  way. That is what a person does, and it is what the Souls does.
+- **the turns are proportional now**, on the character and on the camera. A character
+  that snaps to its target and a camera that swings at it oscillate around each other,
+  and the oscillation grows.
+
+The numbers, measured in the build after the fix: **walking backwards for three seconds
+turns the camera 0.0°** (it was spinning), and strafing settles at 90° instead of
+circling.
+
+**The dodge (B13).** The roll was the one place where the art and the code disagreed
+about the truth: the timing was right, the distance was right, and the character was
+two metres in the air. The rigs are built by a script, so this was a one-line change
+in the data and a rebuild — the hips go down instead of up.
+
+**The down (B14, B15, B16).** A character who is down stays down, the companion picks
+the player up, and when both of them are down the game is over and it starts again.
+
+**The truth (B17).** T is Quixote's alone. Sancho reads the world as it is, which is
+exactly why he cannot turn it over.
+
+---
+
+## 9. What to do with the answers
 
 - **If the answers are yes** → the premise holds. Go to week 3–4 (combat) and keep
   building on this rock. The mechanic is a foundation, not a gimmick.

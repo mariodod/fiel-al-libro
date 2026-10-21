@@ -55,6 +55,9 @@ var _yaw_placed: bool = false
 ## How hard the camera is being shaken right now.
 var _shake: float = 0.0
 
+## How fast the camera closes on its target, per radian of error.
+const TURN_EASE := 4.0
+
 
 ## Shake the camera.
 ##
@@ -98,13 +101,19 @@ func _process(delta: float) -> void:
 
 	# The camera's own yaw, smoothed. The character can turn as fast as it
 	# likes; the camera takes its time.
+	#
+	# The follow is PROPORTIONAL, not a constant rate: the camera eases
+	# towards the character's facing instead of swinging at it. A camera
+	# that swings at a character which is itself easing into a turn
+	# oscillates around it, and the oscillation is what the playtest saw
+	# as *"the camera spins non stop"*.
 	if not _yaw_placed:
 		_yaw = target_yaw
 		_yaw_placed = true
 	else:
 		var diff := wrapf(target_yaw - _yaw, -PI, PI)
 		var step := deg_to_rad(turn_speed) * delta
-		_yaw += clampf(diff, -step, step)
+		_yaw += clampf(diff * TURN_EASE, -step, step)
 
 	var basis_flat := Basis(Vector3.UP, _yaw)
 	# The camera's own right, so the shoulder offset rotates with it and

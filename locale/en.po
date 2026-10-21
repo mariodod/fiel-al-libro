@@ -468,6 +468,19 @@ msgstr "LOCKED ON"
 msgid "ui.target.dummy"
 msgstr "the training dummy"
 
+#. TRANSLATORS: Shown when both characters are down: the game is over and
+#. the morning starts again.
+msgid "ui.slice.gameover"
+msgstr "The page is blank. You begin again."
+
+#. TRANSLATORS: The companion, after picking the player up.
+msgid "dia.quixote.chatter.revive"
+msgstr "Get up, Sancho! I am here. It was nobody's fault."
+
+#. TRANSLATORS: The companion, after picking the player up.
+msgid "dia.sancho.chatter.revive"
+msgstr "Get up, your lordship. Come now, there are still mills to see."
+
 #. TRANSLATORS: The name of the light attack.
 msgid "it.ability.attack_light.name"
 msgstr "Light attack"

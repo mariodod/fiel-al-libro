@@ -60,6 +60,9 @@ const RUN_SPEED := 6.8
 const ACCELERATION := 12.0
 const FRICTION := 14.0
 const TURN_SPEED := 8.0
+## How fast the turn closes on its target, per radian of error. The turn
+## is proportional, so a small correction is a small correction.
+const TURN_EASE := 4.0
 ## How fast a blow pushes a character that was not ready for it.
 const KNOCKBACK_SPEED := 4.0
 ## How quickly that push dies away.
@@ -333,13 +336,23 @@ func move(input_direction: Vector2, sprint: bool) -> void:
 	velocity.z = move_toward(velocity.z, target.z, ACCELERATION * get_process_delta_time())
 
 	if lock_target != null and is_instance_valid(lock_target):
-		# Locked on: the character faces the target, and the input moves
-		# it around the target rather than away from it. This is the
-		# difference between fighting and running about.
+		# Locked on: the character faces the target and the input moves
+		# it around the target. This is the difference between fighting
+		# and running about.
 		_turn_towards(_flat_direction_to(lock_target))
 	elif input.length_squared() > 0.001:
 		var facing := Vector3(input_direction.x, 0.0, input_direction.y).normalized()
-		_turn_towards(facing)
+		# A character does not turn around to walk backwards: it steps
+		# back, facing the same way.
+		#
+		# This is also what stops the camera spinning. The camera follows
+		# the character's facing, so a character that turns around for a
+		# backwards input sends the camera round after it — and the two of
+		# them chase each other for ever. The playtest called it
+		# *"going backwards without a locked enemy spins the camera non
+		# stop."*
+		if not _is_behind(facing):
+			_turn_towards(facing)
 
 
 ## The direction to a point, flat on the ground.
@@ -356,12 +369,28 @@ func _flat_direction_to(node: Node3D) -> Vector3:
 ## The character used to snap to face its movement direction with
 ## look_at(). A snap is what makes the camera whip sideways, so the turn is
 ## rate-limited here and the camera smooths its own yaw on top of it.
+##
+## The turn is PROPORTIONAL, not a constant rate: the character eases
+## into the turn instead of snapping to it. That is the better feel, and
+## it is also what keeps the camera steady — a camera that follows a
+## character which snaps to its target oscillates around it, and the
+## oscillation grows.
 func _turn_towards(direction: Vector3) -> void:
 	# The node faces -Z, so facing `direction` means this yaw.
 	var desired := atan2(-direction.x, -direction.z)
 	var diff := wrapf(desired - rotation.y, -PI, PI)
 	var step := TURN_SPEED * get_process_delta_time()
-	rotation.y += clampf(diff, -step, step)
+	rotation.y += clampf(diff * TURN_EASE, -step, step)
+
+
+## Is this direction behind the character?
+##
+## More than a right angle behind. A character stepping backwards keeps
+## its facing; a character that turns round for it sends the camera
+## spinning after it.
+func _is_behind(direction: Vector3) -> bool:
+	var facing := -global_transform.basis.z
+	return facing.dot(direction) < -0.2
 
 
 func dodge() -> void:
@@ -487,6 +516,16 @@ func _physics_process(delta: float) -> void:
 		velocity.y -= GRAVITY * delta
 	else:
 		velocity.y = 0.0
+
+	if is_dead:
+		# A character who is down stays down. The controller stops
+		# driving them, but the last velocity would otherwise keep
+		# sliding the body across the yard: *"when you have 0 hp you can
+		# still move it."*
+		velocity.x = 0.0
+		velocity.z = 0.0
+		move_and_slide()
+		return
 
 	# The dodge overrides the walking velocity: for a moment you are not
 	# walking, you are being thrown.

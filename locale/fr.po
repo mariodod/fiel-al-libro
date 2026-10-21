@@ -552,6 +552,19 @@ msgstr "VERROUILLÉ"
 msgid "ui.target.dummy"
 msgstr "le mannequin d'entraînement"
 
+#. TRANSLATORS: Shown when both characters are down: the game is over and
+#. the morning starts again.
+msgid "ui.slice.gameover"
+msgstr "La page reste blanche. On recommence."
+
+#. TRANSLATORS: The companion, after picking the player up.
+msgid "dia.quixote.chatter.revive"
+msgstr "Levez-vous, Sancho ! Je suis là. Ce n'est la faute de personne."
+
+#. TRANSLATORS: The companion, after picking the player up.
+msgid "dia.sancho.chatter.revive"
+msgstr "Levez-vous, seigneur. Venez, il reste des moulins à voir."
+
 #. TRANSLATORS: The name of the light attack.
 msgid "it.ability.attack_light.name"
 msgstr "Attaque légère"

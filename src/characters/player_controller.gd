@@ -161,17 +161,23 @@ func _facing() -> Vector3:
 	return -active_pawn.global_transform.basis.z
 
 
-## Put the input into the camera's frame of reference.
+## Put the input into the frame of the thing the character is fighting.
 ##
-## "Forward" has to mean "away from the camera", not "north". Moving
-## relative to the world plane is the classic third-person mistake, and
-## the first playtest named it on run 1: "it moves relative to plane not
-## camera". The pawn's own movement stays world-space — the companion AI
-## uses that too, and it has no camera.
+## One rule, two frames:
+##   - LOCKED: the target's frame. The character faces the target, so
+##     "forward" is "towards it" and left/right circle it.
+##   - FREE: the camera's frame. "Forward" has to mean "away from the
+##     camera", not "north": moving relative to the world plane is the
+##     classic third-person mistake, and the first playtest named it on
+##     run 1 ("it moves relative to plane not camera"). The pawn's own
+##     movement stays world-space — the companion AI uses that too, and
+##     it has no camera.
 ##
-## With a target locked, the frame is the TARGET's, not the camera's:
-## forward is towards the thing you are fighting, so `W` closes the
-## distance and `A`/`D` walk around it.
+## The SIGNS: `Input.get_vector` returns -1 for "forward" and +1 for
+## "back", so forward is `-direction.y` and right is `direction.x`. They
+## were the other way round, and the playtest noticed: *"when locking an
+## enemy pressing forward moves backwards and viceversa, same for left and
+## right."*
 func _in_fight_frame(direction: Vector2) -> Vector2:
 	if active_pawn != null and active_pawn.is_locked():
 		return _in_lock_frame(direction)
@@ -186,10 +192,7 @@ func _in_lock_frame(direction: Vector2) -> Vector2:
 	to_target.y = 0.0
 	if to_target.length_squared() < 0.0001:
 		return direction
-	var forward := to_target.normalized()
-	var right := Vector3(forward.z, 0.0, -forward.x)
-	var world := right * direction.x + forward * direction.y
-	return Vector2(world.x, world.z).normalized()
+	return _in_frame(direction, to_target.normalized())
 
 
 ## The input, in the camera's frame of reference.
@@ -199,7 +202,18 @@ func _in_camera_frame(direction: Vector2) -> Vector2:
 	var camera := get_viewport().get_camera_3d()
 	if camera == null:
 		return direction
-	var world := Basis(Vector3.UP, camera.global_rotation.y) * Vector3(direction.x, 0.0, direction.y)
+	return _in_frame(direction, -camera.global_transform.basis.z)
+
+
+## The input, in the frame of a thing the character faces.
+func _in_frame(direction: Vector2, forward: Vector3) -> Vector2:
+	var f := Vector3(forward.x, 0.0, forward.z)
+	if f.length_squared() < 0.0001:
+		return direction
+	f = f.normalized()
+	# The right of a body facing `f`, with the world up.
+	var right := Vector3(-f.z, 0.0, f.x)
+	var world := right * direction.x - f * direction.y
 	return Vector2(world.x, world.z).normalized()
 
 

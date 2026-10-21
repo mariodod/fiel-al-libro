@@ -68,6 +68,8 @@ const YARD_CENTER := Vector3(-16.0, 0.0, -4.0)
 ## How far the yard is from its centre to each wall.
 const YARD_HALF := 9.0
 const WALL_HEIGHT := 2.5
+## Where the morning starts.
+const START_POSITION := Vector3(0.0, 0.0, 0.0)
 const WALL_THICKNESS := 0.8
 ## How wide the gate in the east wall is.
 const GATE_HALF := 3.0
@@ -339,8 +341,13 @@ func _build_characters() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed(&"toggle_truth"):
-		# The world's truth. This is what a Verdict does.
-		TruthLayer.toggle()
+		# The truth is the knight's delusion, and it is his alone: *"pressing
+		# T with sancho should do nothing. It's a quijote exclusive
+		# ability."* Sancho reads the world as it is, which is exactly why
+		# he cannot turn it over.
+		if player != null and player.active_pawn != null \
+				and player.active_pawn.character_id == &"quixote":
+			TruthLayer.toggle()
 	elif event.is_action_pressed(&"toggle_help"):
 		_show_help = not _show_help
 	elif event.is_action_pressed(&"toggle_second_sight"):
@@ -375,7 +382,28 @@ func _reset_yard() -> void:
 func _process(_delta: float) -> void:
 	_update_readings()
 	_update_lock()
+	_update_game_over()
 	_update_hud()
+
+
+## The game is over when BOTH of them are down.
+##
+## The playtest asked for it: *"if both go to 0 you should get game over
+## and respawn."* In the slice that is a line on the screen and a start
+## again — the page of the manuscript is blank, and they begin the
+## morning over.
+func _update_game_over() -> void:
+	if quixote == null or sancho == null:
+		return
+	if not quixote.is_dead or not sancho.is_dead:
+		return
+	EventBus.toast.emit(&"ui.slice.gameover", [])
+	for pawn: CharacterPawn in [quixote, sancho]:
+		pawn.revive()
+	quixote.global_position = START_POSITION
+	sancho.global_position = START_POSITION + Vector3(2.0, 0.0, 2.0)
+	if player.active_pawn != quixote:
+		player.request_swap()
 
 
 ## Keep the camera and the marker on the locked target.

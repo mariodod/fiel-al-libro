@@ -878,7 +878,14 @@ def author_quixote_animations(arm_obj):
         }
     })
 
-    # 5. roll: 0.25s (8 frames) - Fast panicked forward lunge covering 4m, ends upright and overcommitted
+    # 5. roll: 0.25s (8 frames) - Fast panicked forward SLIDE covering 4m
+    #
+    # The hips go DOWN, never up. A dodge that leaves the floor is a
+    # jump, and a jump is not a dodge. The playtest said so, and it was
+    # right: "dodge animation should not be a jump in the air, it
+    # should roll or slide never leaving the ground". The slide is the
+    # character's whole move - the feet go out in front, the hips drop,
+    # and the body never leaves the ground.
     actions['roll'] = create_character_action(arm_obj, 'roll', 8, {
         0: {
             'hips': ((5, 0, 0), (0, 0, 0)),
@@ -886,9 +893,9 @@ def author_quixote_animations(arm_obj):
             'thigh_l': ((-15, 0, 0), (0, 0, 0)),
             'thigh_r': ((15, 0, 0), (0, 0, 0)),
         },
-        4: { # Midpoint: massive lunge forward, hips high, legs stretched 4m stride
-            'hips': ((-8, 0, 0), (0, 2.0, -0.15)),
-            'spine': ((-5, 0, 0), (0, 0, 0)), # upright stretch
+        4: { # Midpoint: the slide. Hips low, legs out in front, on the floor
+            'hips': ((-8, 0, 0), (0, -0.35, -0.15)),
+            'spine': ((-5, 0, 0), (0, 0, 0)), # forward pitch
             'chest': ((-4, 0, 0), (0, 0, 0)),
             'thigh_l': ((-70, 0, 0), (0, 0, 0)), # far forward lunge
             'shin_l': ((75, 0, 0), (0, 0, 0)),
@@ -899,7 +906,7 @@ def author_quixote_animations(arm_obj):
             'weapon_r': ((-20, 0, 0), (0, 0, 0)),
         },
         8: { # Land upright, slightly overbalanced forward
-            'hips': ((12, 0, 0), (0, 4.0, 0.0)),
+            'hips': ((12, 0, 0), (0, 0.0, 0.0)),
             'spine': ((14, 0, 0), (0, 0, 0)),
             'chest': ((10, 0, 0), (0, 0, 0)),
             'thigh_l': ((-25, 0, 0), (0, 0, 0)),
@@ -1359,6 +1366,12 @@ def author_sancho_animations(arm_obj):
     })
 
     # 4. roll: 0.40s (12 frames) - Slow heavy tumble covering 2m, ends on one knee
+    #
+    # The tumble is the best move in the set - and it was leaving the
+    # floor, because the hips were keyed UP. The playtest: "Sancho dodge
+    # looks better but should also stay in the ground". So the hips drop
+    # instead, and the body rolls over the shoulder with the head
+    # clearing the floor.
     actions['roll'] = create_character_action(arm_obj, 'roll', 12, {
         0: {
             'hips': ((10, 0, 0), (0, 0, 0)),
@@ -1367,7 +1380,7 @@ def author_sancho_animations(arm_obj):
             'thigh_r': ((10, 0, 0), (0, 0, 0)),
         },
         3: { # Tuck into ball
-            'hips': ((75, 0, 0), (0, 0.5, -0.30)),
+            'hips': ((75, 0, 0), (0, -0.25, -0.30)),
             'spine': ((45, 0, 0), (0, 0, 0)), # tight curl
             'chest': ((40, 0, 0), (0, 0, 0)),
             'thigh_l': ((85, 0, 0), (0, 0, 0)),
@@ -1375,8 +1388,8 @@ def author_sancho_animations(arm_obj):
             'thigh_r': ((85, 0, 0), (0, 0, 0)),
             'shin_r': ((90, 0, 0), (0, 0, 0)),
         },
-        6: { # Midpoint: upside down tumble / heavy roll on ground
-            'hips': ((160, 0, 0), (0, 1.0, -0.45)), # inverted tumble
+        6: { # Midpoint: over the shoulder, on the ground
+            'hips': ((100, 0, 0), (0, -0.35, -0.45)), # the roll
             'spine': ((40, 0, 0), (0, 0, 0)), # tightly curled
             'chest': ((35, 0, 0), (0, 0, 0)),
             'head': ((30, 0, 0), (0, 0, 0)),
@@ -1388,14 +1401,14 @@ def author_sancho_animations(arm_obj):
             'upperarm_l': ((-45, 0, 0), (0, 0, 0)),
         },
         9: { # Rolling onto knees
-            'hips': ((45, 0, 0), (0, 1.6, -0.35)),
+            'hips': ((45, 0, 0), (0, -0.30, -0.35)),
             'thigh_l': ((60, 0, 0), (0, 0, 0)),
             'shin_l': ((75, 0, 0), (0, 0, 0)),
             'thigh_r': ((85, 0, 0), (0, 0, 0)),
             'shin_r': ((85, 0, 0), (0, 0, 0)),
         },
         12: { # Ends on one knee panting (2m displacement)
-            'hips': ((15, 0, 0), (0, 2.0, -0.28)),
+            'hips': ((15, 0, 0), (0, -0.20, -0.28)),
             'spine': ((20, 0, 0), (0, 0, 0)),
             'chest': ((15, 0, 0), (0, 0, 0)),
             'thigh_l': ((-10, 0, 0), (0, 0, 0)), # left foot planted

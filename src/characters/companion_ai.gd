@@ -55,6 +55,10 @@ var target: Node3D = null
 @export var parry_lead: float = 0.12
 ## How long the companion holds its guard once it has raised it.
 @export var guard_seconds: float = 0.55
+## How close the companion has to be to pick the player up.
+@export var lift_distance: float = 1.6
+## How long the companion has to be there before the player is up again.
+@export var revive_seconds: float = 1.2
 
 ## Barks are picked from a pool so the companion never repeats itself
 ## immediately. Keyed by the character's id.
@@ -78,6 +82,8 @@ var _idle_index: int = 0
 ## True while the leader is locked onto something, so the companion only
 ## remarks on it once.
 var _leader_was_locked: bool = false
+## How long the companion has been standing over the downed player.
+var _revive_timer: float = 0.0
 
 const BARK_KEYS: Array[StringName] = [
 	&"dia.sancho.bark.001",
@@ -102,6 +108,12 @@ func _process(delta: float) -> void:
 
 	_attack_timer = maxf(0.0, _attack_timer - delta)
 	_guard_timer = maxf(0.0, _guard_timer - delta)
+
+	# The player is down. Go and pick them up.
+	if leader.is_dead:
+		_help_up(delta)
+		_set_guard(false)
+		return
 
 	_pick_target()
 	if target == null:
@@ -207,6 +219,29 @@ func _set_guard(up: bool) -> void:
 
 
 # ── Following ──────────────────────────────────────────────────────────
+
+## Pick the player up.
+##
+## A character who is down is not out. The companion goes to them and
+## stands there for a moment, and then they are up again. The playtest
+## asked for it: *"when you have 0 hp you can still move it, you
+## shouldn't be able to do that, your partner could help lift you."*
+func _help_up(delta: float) -> void:
+	var to_leader := leader.global_position - pawn.global_position
+	to_leader.y = 0.0
+	if to_leader.length() > lift_distance:
+		_revive_timer = 0.0
+		pawn.move(Vector2(to_leader.x, to_leader.z).normalized(), false)
+		return
+	# Close enough. Lift them.
+	pawn.move(Vector2.ZERO, false)
+	_revive_timer += delta
+	if _revive_timer < revive_seconds:
+		return
+	_revive_timer = 0.0
+	leader.revive()
+	EventBus.character_spoke.emit(pawn.character_id, Chatter.key_for(pawn.character_id, &"revive"), [])
+
 
 ## No fight: stay near the player.
 func _follow() -> void:

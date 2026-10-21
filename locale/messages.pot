@@ -631,6 +631,19 @@ msgstr ""
 msgid "ui.target.dummy"
 msgstr ""
 
+#. TRANSLATORS: Shown when both characters are down: the game is over and
+#. the morning starts again.
+msgid "ui.slice.gameover"
+msgstr ""
+
+#. TRANSLATORS: The companion, after picking the player up.
+msgid "dia.quixote.chatter.revive"
+msgstr ""
+
+#. TRANSLATORS: The companion, after picking the player up.
+msgid "dia.sancho.chatter.revive"
+msgstr ""
+
 #. TRANSLATORS: The name of the light attack.
 msgid "it.ability.attack_light.name"
 msgstr ""

@@ -102,7 +102,11 @@ func suite(t: TestHarness) -> void:
 
 	# ── The frame of the fight ─────────────────────────────────────────
 	t.test("with a target locked, forward means towards the target")
-	var forward: Vector2 = controller.call("_in_lock_frame", Vector2(0.0, 1.0))
+	# `Input.get_vector` returns -1 for "forward" and +1 for "back", so
+	# the input has to be read that way. It was the other way round, and
+	# the playtest noticed: *"when locking an enemy pressing forward
+	# moves backwards and viceversa, same for left and right."*
+	var forward: Vector2 = controller.call("_in_lock_frame", Vector2(0.0, -1.0))
 	var to_target := dummy.global_position - quixote.global_position
 	to_target.y = 0.0
 	var wanted := Vector2(to_target.x, to_target.z).normalized()
@@ -110,7 +114,10 @@ func suite(t: TestHarness) -> void:
 
 	t.test("and sideways means sideways")
 	var right: Vector2 = controller.call("_in_lock_frame", Vector2(1.0, 0.0))
-	t.expect_almost_eq(right.dot(wanted), 0.0, 0.01, "D walks around the target")
+	# The right of a body facing the target.
+	var expected_right := Vector2(-wanted.y, wanted.x)
+	t.expect_gt(right.dot(expected_right), 0.99, "D walks around it, got %s" % str(right))
+	t.expect_almost_eq(right.dot(wanted), 0.0, 0.01, "and not towards it")
 
 	# ── The camera ─────────────────────────────────────────────────────
 	t.test("the camera frames the target as well as the character")
