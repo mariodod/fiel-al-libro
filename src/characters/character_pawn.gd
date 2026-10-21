@@ -38,6 +38,8 @@ var is_dead: bool = false
 ## The truth this pawn currently perceives. Quixote sees the Book; Sancho
 ## sees Reality. Set by the driver.
 var perceived_layer: int = 0
+## How long each ability has left before it can be used again, by id.
+var _ability_cooldowns: Dictionary = {}
 
 ## The thing this character is locked onto, if any.
 ##
@@ -486,6 +488,15 @@ func ability(ability_id: StringName) -> bool:
 		return false
 	for a: AbilityData in data.abilities:
 		if a.id == ability_id:
+			# The cooldown, which the data has always had and nothing
+			# ever read. The Desvelar lasts eight seconds and cools down
+			# for eight: one strip of the skin, and then you have to earn
+			# the next one.
+			#
+			# The attacks keep their own clock (`_attack_cooldown`),
+			# which is the one the game has always run on.
+			if ability_cooldown_remaining(ability_id) > 0.0:
+				return false
 			# The truth it returns is whether the ability actually
 			# happened: an ability that was refused — not enough
 			# stamina, the wrong truth, a mind that is not ready — must
@@ -505,6 +516,7 @@ func _physics_process(delta: float) -> void:
 	_parry_timer = maxf(0.0, _parry_timer - delta)
 	_hurt_timer = maxf(0.0, _hurt_timer - delta)
 	_stagger_timer = maxf(0.0, _stagger_timer - delta)
+	_tick_ability_cooldowns(delta)
 	_update_flash(delta)
 	if _attack_cooldown <= 0.0:
 		_attack_clip = &""
@@ -578,6 +590,8 @@ func _perform(ability: AbilityData) -> bool:
 		return false
 	stamina -= ability.stamina_cost
 	_stamina_delay = STAMINA_REGEN_DELAY
+	if ability.cooldown > 0.0:
+		_ability_cooldowns[ability.id] = ability.cooldown
 	# A swing puts a hitbox in front of the character. It is the crudest
 	# possible version of a combat hitbox (task 2.6 does the real one),
 	# and it exists so that the training dummy can be hit: a dodge with
@@ -598,6 +612,26 @@ func ability_data(ability_id: StringName) -> AbilityData:
 		if a != null and a.id == ability_id:
 			return a
 	return null
+
+
+## How long until this ability can be used again.
+func ability_cooldown_remaining(ability_id: StringName) -> float:
+	return float(_ability_cooldowns.get(ability_id, 0.0))
+
+
+## True when this ability is ready to be used right now.
+func ability_is_ready(ability_id: StringName) -> bool:
+	return ability_cooldown_remaining(ability_id) <= 0.0
+
+
+## The cooldowns tick down on their own.
+func _tick_ability_cooldowns(delta: float) -> void:
+	for id: StringName in _ability_cooldowns.keys():
+		var left := float(_ability_cooldowns[id]) - delta
+		if left <= 0.0:
+			_ability_cooldowns.erase(id)
+		else:
+			_ability_cooldowns[id] = left
 
 
 ## The swing itself: a hitbox in front of the character, and the rhythm

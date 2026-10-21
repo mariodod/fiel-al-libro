@@ -700,14 +700,16 @@ func _on_character_died(character_id: StringName) -> void:
 func _on_ability_used(character_id: StringName, ability_id: StringName) -> void:
 	if ability_id != &"desvelar":
 		return
-	if player == null or player.active_pawn == null:
+	# The caster, not the player. The companion has the same verb and
+	# the same right to use it: "one kills, one controls" is a plan, and
+	# a plan the companion cannot carry out is not a plan.
+	var caster := _pawn_with_id(character_id)
+	if caster == null:
 		return
-	if character_id != player.active_pawn.character_id:
-		return
-	var target := _desvelar_target()
+	var target := _desvelar_target_for(caster)
 	if target == null:
 		return
-	var ability := player.active_pawn.ability_data(ability_id)
+	var ability := caster.ability_data(ability_id)
 	var duration := ability.duration if ability != null else 8.0
 	target.reveal(duration)
 	EventBus.character_spoke.emit(character_id, Chatter.key_for(character_id, &"desvelar"), [])
@@ -715,14 +717,25 @@ func _on_ability_used(character_id: StringName, ability_id: StringName) -> void:
 
 ## The thing the Desvelar is pointed at: the locked target if it is a
 ## thing with two forms, and otherwise whatever is in front of you.
-func _desvelar_target() -> TruthObject:
-	var driven: CharacterPawn = player.active_pawn
-	if driven == null:
+func _desvelar_target_for(caster: CharacterPawn) -> TruthObject:
+	if caster == null:
 		return null
-	if driven.lock_target is TruthObject:
-		return driven.lock_target as TruthObject
+	if caster.lock_target is TruthObject:
+		return caster.lock_target as TruthObject
 	return Examine.find_target(
-		player.examine_candidates(), driven.global_position, -driven.global_transform.basis.z)
+		player.examine_candidates(), caster.global_position, -caster.global_transform.basis.z)
+
+
+## The character with this id, wherever it is.
+func _pawn_with_id(character_id: StringName) -> CharacterPawn:
+	for pawn in [player.active_pawn, player.other_pawn]:
+		if pawn != null and pawn.character_id == character_id:
+			return pawn
+	for node in get_tree().get_nodes_in_group(&"pawns"):
+		var pawn := node as CharacterPawn
+		if pawn != null and pawn.character_id == character_id:
+			return pawn
+	return null
 
 
 ## A blow landed on the character you are driving. Shake the camera.

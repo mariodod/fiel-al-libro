@@ -127,11 +127,15 @@
       else: Sancho staggers it and cannot kill it.
       `src/world/venture.gd`, `src/data/ventures/`, `src/data/moves/`,
       `tests/test_venture.gd`.
-- [ ] **2.11, the rest of it.** The **truth resolution** (the Venture fought and solved
+- [x] **2.11, the rest of it.** The **truth resolution** (the Venture fought and solved
       rather than killed) and the **fragment reward** — the text of a Manifiesto fragment
       is the owner's, and the validator prints the worklist. And the companion should use
       its own verb: the AI never casts the Desvelar, because the slice only applies it
-      for the character the player is driving.
+      for the character the player is driving. **Done**: the companion now strips the
+      Book skin off the thing it is fighting, which stops the blow it was in the middle
+      of — the squire does not kill, he controls — and the ability's **cooldown** (in
+      the data since the beginning, read by nothing until now) is enforced: eight
+      seconds of skin, then eight seconds to earn the next.
 - [x] **The Venture's art, first pass.** A concept sheet was generated from the art
       prompt (`docs/reference/venture_of_montiel_concept_sheet.jpg`) and the two forms
       were rebuilt from it: the mill is now a **round tower** with a tile cap, a **low
@@ -139,10 +143,13 @@
       boxes but a gaunt nine-metre man with a **millstone for a head** and **sail-hands
       at the end of arms too long for him**. Low-poly, flat, in the game's palette.
       `src/world/forms/`, `docs/ART_BRIEF_VENTURE.md`.
+- [x] **The rock's art.** The other primitive was a smooth grey blob and is now a
+      faceted stone with dry lichen on top and its base sunk in the earth — and in the
+      Book truth a small leather book on the stone the rock was, tied with a strap and
+      gilt at the edge. The seam is the same in both: it is heavier than it should be.
 - [ ] **The Venture's art, second pass.** The **masonry** on the tower is a hand-painted
-      2K texture on the triplanar material; the sails are three boxes and want real
-      tatter; and the **rock** — the tutorial's centrepiece — is still a smooth grey
-      blob and deserves the same treatment as the mill.
+      2K texture on the triplanar material, and the sails are three boxes that want
+      real tatter.
 - [x] **The hit reactions.** A blow that lands flashes the body, pushes the character,
       stops the swing, and **shakes the camera**.
 - [x] **`H` hides the HUD.** It is the developer's readout — it spells out both readings.

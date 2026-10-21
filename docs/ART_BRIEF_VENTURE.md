@@ -64,11 +64,25 @@ silent. No horns, no glowing eyes, no roar.
   next pass, not this one.
 - **The tatter.** The sails are three boxes of decreasing length. They read as ragged
   at a distance, which is what a silhouette needs, and not much closer.
-- **The rock.** The other primitive, `rock_reality.tscn`, is still a smooth grey blob.
-  It is the tutorial's centrepiece and it deserves the same treatment as the mill.
 - **Quixote and Sancho.** Their rigs are built and animated, but the poses are still
   grey-box: the next pass is the one that makes them read as Velázquez rather than as
   a fighting game (`docs/ANIMATION_BRIEF.md`).
+
+## The other primitive — the rock
+
+The rock is the tutorial's centrepiece, and it is the same idea one scale down: a
+thing with two faces, and a seam in each.
+
+**The stone** (`rock_reality.tscn`) — faceted, not smooth: dry lichen on the top, its
+base sunk in the earth. "A grey stone the size of a fist, with dry lichen on the top
+and its base sunk in the earth."
+
+**The book** (`rock_book.tscn`) — a small book in brown leather on the stone the rock
+was, tied shut with a strap, its leaves gilt at the edge. "A small book, bound in
+brown leather and tied with a strap. The edges of the leaves are gilt and stain the
+fingers."
+
+The seam is the same in both: **it is heavier than it should be.**
 
 ## How to regenerate the reference
 

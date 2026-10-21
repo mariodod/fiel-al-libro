@@ -32,6 +32,7 @@ func suite(t: TestHarness) -> void:
 	var venture: Venture = scene.get_node_or_null("Venture")
 	var quixote: CharacterPawn = scene.get_node_or_null("Characters/Quixote")
 	var sancho: CharacterPawn = scene.get_node_or_null("Characters/Sancho")
+	var ai: CompanionAI = scene.get_node_or_null("CompanionAI")
 	t.expect_true(venture != null and quixote != null and sancho != null,
 		"the slice should have a Venture and the two of them")
 	if venture == null or quixote == null or sancho == null:
@@ -196,6 +197,35 @@ func suite(t: TestHarness) -> void:
 	t.expect_true(venture.is_in_group(LockOn.GROUP), "and lockable")
 	t.expect_true(venture.is_in_group(AttackHitbox.TARGET_GROUP), "and hittable")
 	t.expect_ne(venture.display_name(), "", "and it has a name")
+
+	# ── The companion's verb ───────────────────────────────────────────
+	t.test("and the companion strips the skin off it")
+	# Sancho's own verb, and the reason the squire is in the fight at
+	# all: "one kills, one controls". He does not kill the Venture — he
+	# stops it, and he is the only one who can.
+	venture.reset()
+	# The skin is back on, whatever an earlier test did to it.
+	venture.set("_reveal_time", 0.0)
+	venture._process(0.05)
+	TruthLayer.shift_to(TruthLayer.Layer.BOOK, true)
+	venture._process(0.05)
+	t.expect_eq(venture.current_form_layer(), 1, "the giant to begin with")
+	# The Venture winds up, and the companion is watching it. The
+	# companion has to be near the Venture: it fights the nearest
+	# hostile, and the training dummy is nearer to the start.
+	quixote.global_position = venture.global_position + Vector3(2.0, 0.0, 0.0)
+	sancho.global_position = venture.global_position + Vector3(3.0, 0.0, 0.0)
+	ai._pick_target()
+	venture.state = Venture.State.WINDUP
+	venture.set("_timer", 0.3)
+	sancho.stamina = sancho.max_stamina
+	ai._process(0.05)
+	t.expect_true(venture.is_revealed(), "the skin came off")
+	venture._process(0.05)
+	t.expect_eq(venture.current_form_layer(), 0, "and the Venture is back in its Reality form")
+	t.expect_ne(venture.state, Venture.State.WINDUP, "and the swing it was winding up never came")
+	TruthLayer.shift_to(TruthLayer.Layer.REALITY, true)
+	venture._process(0.05)
 
 	parent.remove_child(scene)
 	scene.free()

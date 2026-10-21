@@ -188,6 +188,14 @@ func _fight(delta: float) -> void:
 				_guard_timer = guard_seconds
 				_set_guard(true)
 
+	# The Desvelar.
+	#
+	# Sancho's own verb, and the one that makes him worth having against
+	# a thing with two faces: it strips the Book skin off the thing you
+	# are fighting, and it stops the blow it was in the middle of. The
+	# squire does not kill. He controls.
+	_try_desvelar()
+
 	# The approach.
 	#
 	# Some things are not fought at arm's length: a Venture with turning
@@ -219,6 +227,25 @@ func _swing() -> void:
 		pawn.heavy_attack()
 	elif pawn.data.light_attack != null:
 		pawn.light_attack()
+
+
+## Strip the Book skin off the thing you are fighting.
+##
+## Only against a thing with two faces — there is no skin to strip off
+## a training dummy — and only when it is about to swing, because that
+## is when stopping it is worth eight seconds of Sancho's cooldowns.
+func _try_desvelar() -> void:
+	if target == null or pawn == null:
+		return
+	if not (target is TruthObject):
+		return
+	if not _is_winding_up(target):
+		return
+	if not pawn.ability_is_ready(&"desvelar"):
+		return
+	if not pawn.ability(&"desvelar"):
+		return
+	pawn.play_action(&"desvelar")
 
 
 ## The guard, up or down.

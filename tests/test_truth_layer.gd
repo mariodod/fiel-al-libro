@@ -84,7 +84,7 @@ func suite(t: TestHarness) -> void:
 	t.expect_eq(TruthLayer.layer(), TruthLayer.Layer.REALITY, "the world is still Reality")
 	# And the picture on the screen is the reader's, not the world's.
 	var shader_truth: Variant = RenderingServer.global_shader_parameter_get(TruthLayer.GLOBAL_TRUTH)
-	t.expect_almost_eq(float(shader_truth), 1.0, 0.0001,
+	t.expect_almost_eq(shader_truth, 1.0, 0.0001,
 		"the grade on the screen is the reader's reading")
 
 	t.test("releasing the view follows the world again")
