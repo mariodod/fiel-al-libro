@@ -338,6 +338,12 @@ That is why the sample Manifiesto fragment was documentation and never content, 
 the first real fragment is `assets/manifiesto/bk.ch01.apertura.json` — no underscore. If a
 data file has to be read by the game, it must not start with `_`.
 
+**The sample is gone.** It had been the format documentation, and a format documented by
+a file that no tool can read is a format that drifts: the sample carried the 1615 wording
+under an `original_1605` key, and nothing could have said so. The format now lives in the
+`_comment` of the first real fragment, where the validator can see it — and it is
+enforced, not merely written down.
+
 ### 7.15 A game run does not re-import
 
 Change a `.gdshader` and run the game: it uses the **cached** shader, not the one on
@@ -409,7 +415,11 @@ And the reason it matters: **the 1605 and 1615 editions differ**, and DLC 1 is t
 book. The 1605 incipit is *"…de los de lanza en astillero, adarga antigua, rocín flaco y
 galgo corredor"*; the 1615 revision replaces it with *"…galera en coraza y bacía en el
 casco"*. A fragment quoted from the wrong edition is a fragment from the wrong book, and
-your own sample fragment had the 1615 wording under an `original_1605` key.
+the project's own sample fragment had the 1615 wording under an `original_1605` key.
+
+**This is checked now, not remembered:** `src/tools/validate_manifiesto.gd` flags any
+fragment whose original carries the 1615 wording, and the test suite fails the build if a
+fragment the game reads has not been verified against the edition.
 
 ---
 

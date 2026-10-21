@@ -14,8 +14,9 @@ extends RefCounted
 ## That is the seed of the Lectura system (GDD.md §6).
 ##
 ## NOTE: a file whose name starts with `_` is invisible to Godot and
-## cannot be read at runtime (HANDOVER.md §7.14). The sample fragment is
-## documentation; the first real one is `bk.ch01.apertura.json`.
+## cannot be read at runtime (HANDOVER.md §7.14), so it cannot be
+## checked either. The format is documented in the `_comment` of the
+## first real fragment, where the validator can see it.
 
 ## Where the fragments live.
 const DIRECTORY := "res://assets/manifiesto/"

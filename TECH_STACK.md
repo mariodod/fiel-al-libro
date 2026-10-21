@@ -411,10 +411,11 @@ translation afterthought.
 | **Game layer** | UI, dialogue, codex prose, item text, tooltips, tutorials | All N languages | `locale/*.po` |
 | **Book layer** | Fragments of the 1605 original + a **modernized rendering** | The original is **identical in every build** (it's source content); the modern rendering is localized | `assets/manifiesto/*.json` (one file per fragment) |
 
-> **Implemented:** `assets/manifiesto/_SAMPLE.bk_ch08_molinos.json` shows the real structure —
+> **Implemented:** `assets/manifiesto/bk.ch01.apertura.json` shows the real structure —
 > the 1605 text, a `modern` object with one entry per language, optional `pd_translations`
 > (Motteux 1700, the French 1632 translation, …), a `source` block with provenance, and a
-> `verified: false` flag. **A fragment with `verified: false` does not ship.**
+> `verified` flag. **A fragment with `verified: false` does not ship**, and the validator
+> and the test suite both enforce it.
 
 **Content budget (D7): 48 fragments** = 32 Venture (8 × 4) + 5 Region + 3 Posada + 6 Colofón +
 2 Ending. Each needs a modernized rendering in 6 launch languages → **288 literary

@@ -139,11 +139,11 @@
       about the rock, the mill, the dummy, the lock-on and the player going down, but
       the idle pool is three lines and the game has a hundred objects. The rule
       survives; the content does not.
-- [ ] **The sample Manifiesto fragment carries the 1615 wording, not the 1605.** DLC 1 is
-      the 1615 book, so this is load-bearing. Only the owner can re-source it. The
-      validator now catches this in every real fragment; the sample itself starts with an
-      underscore, so Godot cannot read it and the tool cannot check it — that one is the
-      owner's to decide on. See `docs/NEXT_SESSION.md` §7.
+- [x] **The sample Manifiesto fragment carried the 1615 wording, not the 1605.** DLC 1 is
+      the 1615 book, so this was load-bearing. **The sample is gone**: a format documented
+      by a file no tool can read is a format that drifts, and the sample taught exactly
+      the error the validator now catches. The format lives in the `_comment` of the
+      first real fragment, where the validator can see it.
 
 ## Next (Phase 1 — weeks 3–4, combat)
 

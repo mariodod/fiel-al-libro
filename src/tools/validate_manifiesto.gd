@@ -38,9 +38,9 @@ func _init() -> void:
 	var referenced := ManifiestoFragment.referenced_files()
 	print("[manifiesto] %d fragment(s) in %s" % [files.size(), ManifiestoFragment.DIRECTORY])
 	print("[manifiesto] the build reads: %s" % (", ".join(referenced) if not referenced.is_empty() else "nothing yet"))
-	print("[manifiesto] note: the sample fragment starts with an underscore, so Godot")
-	print("[manifiesto]       cannot read it and this tool cannot check it. Its content")
-	print("[manifiesto]       is the owner's to decide on.")
+	print("[manifiesto] note: a file whose name starts with an underscore is")
+	print("[manifiesto]       invisible to Godot, so it can be neither read nor")
+	print("[manifiesto]       checked. Every fragment here has a plain name.")
 
 	var errors := 0
 	var warnings := 0

@@ -163,10 +163,8 @@ read as Velazquez rather than as a fighting game.
   verb is the *verb* the system will grow out of, not a smaller version of it.
   What the Examine panel now does — a description plus **one detail that does
   not add up** — is the seed of it. That is the whole of it for now.
-- **Do not cut the Locura meter.** It is pillar P2 and the stranger's "L" is the
+- **Do not touch the Locura meter.** It is pillar P2 and the stranger's "L" is the
   one untested lever in the build.
-- **Do not touch `assets/manifiesto/_SAMPLE.bk_ch08.molinos.json`.** It is the
-  format documentation and it has a content bug that only the owner can decide on.
 - **Do not add languages.** Three shipped; the remaining three are a month-4 problem.
 
 ---
