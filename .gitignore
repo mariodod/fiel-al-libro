@@ -68,6 +68,10 @@ desktop.ini
 .idea/
 *.swp
 
+# Blender's automatic backups. The .blend master is in the repository;
+# the copy of the previous save is not.
+*.blend1
+
 # ─────────────────────────────────────────────────────────────────────────
 #  LFS-tracked binary formats are declared in .gitattributes
 #  Blender scenes, textures, audio and fonts are LFS; the .import sidecar

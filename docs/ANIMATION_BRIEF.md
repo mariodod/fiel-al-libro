@@ -8,11 +8,11 @@
 
 ---
 
-## 0. The tool is installed
+## 0. The tool is installed, and the first build is done
 
 ```
 .\tools\blender.ps1 --version
-.\tools\blender.ps1 -b --factory-startup -P <script.py> -- --out assets\models
+.\tools\blender.ps1 -b --factory-startup -P tools\build_fiel_al_libro_animations.py
 ```
 
 Blender **5.2.2 LTS**, Python 3.13, glTF exporter available (verified by a
@@ -21,6 +21,41 @@ headless smoke test: a rig, an action, a keyframe, exported to `.glb`).
 `tools/blender.ps1` finds the binary wherever winget put it, exactly like
 `tools/godot.ps1` does for Godot, and it runs from the repository root so a
 script writes into *this* project.
+
+**The first build is committed.** `tools/build_fiel_al_libro_animations.py`
+builds both rigs and exports `assets/models/quixote.glb` and
+`assets/models/sancho.glb`, with the editable masters in
+`assets/models/blend/` (behind a `.gdignore`, because Godot's importer
+would otherwise try to import the `.blend` and need a configured Blender
+path). `tests/test_rigs.gd` pins the clips and the lengths.
+
+### Three traps the first build fell into, and the rules that came out of them
+
+1. **The frame rate.** The glTF exporter converts Blender *frames* into glTF
+   *seconds* by dividing by the scene's frame rate, and Blender's default
+   scene is 24 fps. A clip authored on a 30 fps grid and exported from a
+   24 fps scene arrives **25 % long** — the engine reads seconds, so a
+   0.45 s light attack plays as 0.58 s. The scene is now set to 30 fps
+   before anything is authored, and the script **verifies the exported
+   file** (§8, check 7) rather than the frames it wrote.
+2. **Verify the artifact, not the intent.** Every other check measures what
+   the script *meant* to write. The one that matters reads the `.glb` back
+   and measures the seconds in the file, because that is what the engine
+   will see.
+3. **A clip must CONTAIN the window it covers.** The parry's window is
+   0.18 s and the clip was 0.167 s: the animation ended while the game
+   still thought the parry was open. Every clip now declares the window it
+   covers, and the build fails if it is shorter.
+
+### And two things the review found that a number cannot
+
+- The **light attack's contact pose** had the lance pointing at the sky:
+  a thrust is a rotation in the *horizontal* plane (the shoulder's Y), not
+  a lift. The heavy's contact had it right; the light's did not, and the
+  difference is one number in one keyframe.
+- The two characters are visibly different men, which is the point of
+  2.7 and 2.8: a gaunt nobleman with a lance and a basin, and a squat
+  peasant with a sack and a flail.
 
 **Do not retarget and do not share actions between the two characters.** The
 design document says it twice, and it is the whole point of 2.7 and 2.8:
@@ -164,8 +199,10 @@ wrong. Every duration below is a literal constant from the game's data files.
 
 ### Sancho only
 
-- `parry` — **0.18 s.** A sharp snap of the buckler up. It is the tightest
-  window in the game and it has to look like a *decision*, not a flourish.
+- `parry` — **0.20 s (6 frames).** A sharp snap of the buckler up. It is
+  the tightest window in the game and it has to look like a *decision*,
+  not a flourish. Six frames, not five: the window is 0.18 s and the clip
+  has to outlast it.
 - `desvelar` — 0.6 s. A forward gesture with the sack, as if throwing
   something at a thing. It strips the Book skin off a target for 8 seconds.
 
@@ -217,9 +254,13 @@ wrong. Every duration below is a literal constant from the game's data files.
   tables above.
 - Export settings: apply transforms; **mesh compression disabled** (it
   destroys vertex colours); materials extracted; no LOD stripping; 30 fps
-  animation sampling.
-- Also write the `.blend` sources to `assets/models/` — they are the
-  editable master.
+  animation sampling — **and set the scene to 30 fps before authoring**,
+  because the exporter divides the frames by the scene's frame rate and
+  Blender's default is 24 (see §0).
+- The editable `.blend` masters go in `assets/models/blend/`, with a
+  `.gdignore` beside them: Godot's importer would otherwise try to import
+  the `.blend` too, and a `.blend` import needs a configured Blender path,
+  which a headless build does not have.
 - Do not generate textures or write anything into `assets/textures/`.
 - `.blend` and `.glb` are **LFS-tracked**; the `.import` sidecars are
   committed as plain text (TECH_STACK.md §4.1).
@@ -239,6 +280,13 @@ is false:
 5. The two characters share **no action data** for any clip name they have in
    common.
 6. The bone names are identical in both rigs.
+7. **The exported files, measured in seconds.** Read the `.glb` back and
+   check that every clip in the file is as long as the table says it is.
+   This is the check that catches the frame-rate trap, and it is the only
+   one that sees what the engine will see.
+8. **Every clip covers the window it has to cover** — the roll the
+   invulnerability, the hit reaction the reel, the stagger the punishment,
+   the parry its window.
 
 Then write a short `assets/models/README_animations.md` naming each clip, its
 length, its contact frame, and one line on what the pose is doing.

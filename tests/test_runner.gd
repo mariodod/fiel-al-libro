@@ -29,6 +29,7 @@ const SUITES: Array[String] = [
 	"res://tests/test_lock_on.gd",
 	"res://tests/test_chatter.gd",
 	"res://tests/test_asymmetry.gd",
+	"res://tests/test_rigs.gd",
 ]
 
 var harness := TestHarness.new()

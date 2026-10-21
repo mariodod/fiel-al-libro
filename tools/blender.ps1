@@ -23,11 +23,7 @@
     .\tools\blender.ps1 -b --factory-startup -P tools\build_animations.py -- --out assets\models
 #>
 
-[CmdletBinding()]
-param(
-    [Parameter(ValueFromRemainingArguments = $true)]
-    [string[]] $BlenderArgs
-)
+$BlenderArgs = $args
 
 $ErrorActionPreference = 'Stop'
 
@@ -38,6 +34,36 @@ $ErrorActionPreference = 'Stop'
 # into wherever the command was typed.
 $repoRoot = Split-Path -Parent $PSScriptRoot
 Set-Location $repoRoot
+
+# `--out <dir>` is read HERE, not by Blender.
+#
+# Blender's own command-line parser treats the first argument after `--` as
+# a FILE to open. Pass `--out assets\models` through to Blender and the run
+# ends with "unknown argument, loading as file: --out" and a non-zero exit
+# code, after a build that actually worked. So the wrapper takes the
+# argument, puts the directory in the environment, and hands Blender only
+# the flags that are Blender's.
+$BlenderArgs = @()
+$outDir = $env:FIEL_MODELS_OUT
+$i = 0
+while ($i -lt $args.Count) {
+    $arg = $args[$i]
+    if ($arg -eq '--out' -and ($i + 1) -lt $args.Count) {
+        $outDir = $args[$i + 1]
+        $i += 2
+        continue
+    }
+    if ($arg -like '--out=*') {
+        $outDir = $arg.Substring(6)
+        $i += 1
+        continue
+    }
+    $BlenderArgs += $arg
+    $i += 1
+}
+if ($outDir) {
+    $env:FIEL_MODELS_OUT = $outDir
+}
 
 function Find-Blender {
     if ($env:BLENDER_BIN -and (Test-Path $env:BLENDER_BIN)) {
@@ -90,7 +116,8 @@ if ($BlenderArgs.Count -eq 0) {
     Write-Host ""
     Write-Host "  Usage:" -ForegroundColor Cyan
     Write-Host "    .\tools\blender.ps1 --version                              the version"
-    Write-Host "    .\tools\blender.ps1 -b -P tools\build_animations.py       build the rigs and the clips"
+    Write-Host "    .\tools\blender.ps1 -b -P <script.py>                     run a script headless"
+    Write-Host "    .\tools\blender.ps1 -b -P <script.py> -- --out <dir>     ...and tell it where to write"
     Write-Host ""
     exit 0
 }
