@@ -1,42 +1,129 @@
-[gd_scene load_steps=9 format=3]
+[gd_scene load_steps=12 format=3]
 
-[sub_resource type="BoxMesh" id="BoxMesh_leg"]
-size = Vector3(1, 4, 1)
+; The Book form of the windmill: the giant of the mills.
+;
+; Reference: docs/reference/venture_of_montiel_concept_sheet.jpg
+;
+; A gaunt, nine-metre man. The arms are far too long and end in tattered
+; mill sails; the head is the millstone. He is a mill read as a man, and
+; not a monster: tired, workmanlike, silent.
+;
+; Low-poly and flat: boxes and cylinders, warm ochre skin, an olive
+; cloth belt, dirty canvas. The whole thing is under 400 triangles.
 
-[sub_resource type="BoxMesh" id="BoxMesh_torso"]
-size = Vector3(2.8, 3.8, 1.8)
+[sub_resource type="BoxMesh" id="BoxMesh_thigh"]
+size = Vector3(0.62, 2.2, 0.62)
+
+[sub_resource type="BoxMesh" id="BoxMesh_shin"]
+size = Vector3(0.5, 2.1, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_foot"]
+size = Vector3(0.56, 0.26, 1.15)
+
+[sub_resource type="BoxMesh" id="BoxMesh_hips"]
+size = Vector3(1.5, 0.9, 1.05)
 
 [sub_resource type="BoxMesh" id="BoxMesh_belt"]
-size = Vector3(2.95, 0.5, 1.95)
+size = Vector3(1.68, 0.46, 1.2)
 
-[sub_resource type="BoxMesh" id="BoxMesh_arm"]
-size = Vector3(0.55, 6.4, 0.55)
+[sub_resource type="BoxMesh" id="BoxMesh_torso"]
+size = Vector3(1.72, 2.3, 1.02)
 
-[sub_resource type="BoxMesh" id="BoxMesh_head"]
-size = Vector3(1.1, 1.1, 1.1)
+[sub_resource type="BoxMesh" id="BoxMesh_chest"]
+size = Vector3(2.05, 1.3, 1.18)
+
+[sub_resource type="BoxMesh" id="BoxMesh_shoulder"]
+size = Vector3(0.68, 0.62, 0.68)
+
+[sub_resource type="BoxMesh" id="BoxMesh_upperarm"]
+size = Vector3(0.44, 2.6, 0.44)
+
+[sub_resource type="BoxMesh" id="BoxMesh_forearm"]
+size = Vector3(0.38, 2.5, 0.38)
+
+[sub_resource type="BoxMesh" id="BoxMesh_sailhand"]
+size = Vector3(1.15, 2.5, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_sailstrip"]
+size = Vector3(0.9, 0.8, 0.08)
 
 [sub_resource type="StandardMaterial3D" id="Mat_flesh"]
-albedo_color = Color(0.56, 0.45, 0.36, 1)
-roughness = 0.75
+albedo_color = Color(0.6, 0.46, 0.32, 1)
+roughness = 0.78
 
 [sub_resource type="StandardMaterial3D" id="Mat_cloth"]
-albedo_color = Color(0.47, 0.29, 0.25, 1)
-roughness = 0.85
+albedo_color = Color(0.43, 0.45, 0.27, 1)
+roughness = 0.88
+
+[sub_resource type="StandardMaterial3D" id="Mat_canvas"]
+albedo_color = Color(0.87, 0.82, 0.7, 1)
+roughness = 0.9
+
+[sub_resource type="CylinderMesh" id="Cyl_neck"]
+top_radius = 0.28
+bottom_radius = 0.32
+height = 0.5
+radial_segments = 6
+
+[sub_resource type="CylinderMesh" id="Cyl_millstone"]
+top_radius = 1.08
+bottom_radius = 1.08
+height = 0.52
+radial_segments = 10
+
+[sub_resource type="StandardMaterial3D" id="Mat_stone"]
+albedo_color = Color(0.42, 0.38, 0.32, 1)
+roughness = 0.92
+
+[sub_resource type="CylinderMesh" id="Cyl_hole"]
+top_radius = 0.28
+bottom_radius = 0.28
+height = 0.56
+radial_segments = 8
+
+[sub_resource type="StandardMaterial3D" id="Mat_hole"]
+albedo_color = Color(0.12, 0.11, 0.1, 1)
+roughness = 0.95
 
 [node name="WindmillBook" type="Node3D"]
 
 [node name="LegLeft" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.85, 2, 0)
-mesh = SubResource("BoxMesh_leg")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55, 3.1, 0)
+mesh = SubResource("BoxMesh_thigh")
 material_override = SubResource("Mat_flesh")
 
 [node name="LegRight" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.85, 2, 0)
-mesh = SubResource("BoxMesh_leg")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55, 3.1, 0)
+mesh = SubResource("BoxMesh_thigh")
+material_override = SubResource("Mat_flesh")
+
+[node name="ShinLeft" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55, 1, 0.06)
+mesh = SubResource("BoxMesh_shin")
+material_override = SubResource("Mat_flesh")
+
+[node name="ShinRight" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55, 1, 0.06)
+mesh = SubResource("BoxMesh_shin")
+material_override = SubResource("Mat_flesh")
+
+[node name="FootLeft" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55, 0.13, -0.32)
+mesh = SubResource("BoxMesh_foot")
+material_override = SubResource("Mat_flesh")
+
+[node name="FootRight" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55, 0.13, -0.32)
+mesh = SubResource("BoxMesh_foot")
+material_override = SubResource("Mat_flesh")
+
+[node name="Hips" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.3, 0)
+mesh = SubResource("BoxMesh_hips")
 material_override = SubResource("Mat_flesh")
 
 [node name="Belt" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.12, 0)
 mesh = SubResource("BoxMesh_belt")
 material_override = SubResource("Mat_cloth")
 
@@ -45,17 +132,72 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.9, 0)
 mesh = SubResource("BoxMesh_torso")
 material_override = SubResource("Mat_flesh")
 
-[node name="Head" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.6, 0)
-mesh = SubResource("BoxMesh_head")
+[node name="Chest" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.9, -0.05)
+mesh = SubResource("BoxMesh_chest")
 material_override = SubResource("Mat_flesh")
 
-[node name="ArmLeft" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.85, 7, 0)
-mesh = SubResource("BoxMesh_arm")
+[node name="ShoulderLeft" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02, 7.25, 0)
+mesh = SubResource("BoxMesh_shoulder")
 material_override = SubResource("Mat_flesh")
 
-[node name="ArmRight" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.85, 7, 0)
-mesh = SubResource("BoxMesh_arm")
+[node name="ShoulderRight" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.02, 7.25, 0)
+mesh = SubResource("BoxMesh_shoulder")
 material_override = SubResource("Mat_flesh")
+
+[node name="UpperArmLeft" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.38, 5.75, 0)
+mesh = SubResource("BoxMesh_upperarm")
+material_override = SubResource("Mat_flesh")
+
+[node name="UpperArmRight" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.38, 5.75, 0)
+mesh = SubResource("BoxMesh_upperarm")
+material_override = SubResource("Mat_flesh")
+
+[node name="ForearmLeft" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.48, 3.2, 0.05)
+mesh = SubResource("BoxMesh_forearm")
+material_override = SubResource("Mat_flesh")
+
+[node name="ForearmRight" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.48, 3.2, 0.05)
+mesh = SubResource("BoxMesh_forearm")
+material_override = SubResource("Mat_flesh")
+
+[node name="SailHandLeft" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.55, 1.5, 0.05)
+mesh = SubResource("BoxMesh_sailhand")
+material_override = SubResource("Mat_canvas")
+
+[node name="SailHandRight" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.55, 1.5, 0.05)
+mesh = SubResource("BoxMesh_sailhand")
+material_override = SubResource("Mat_canvas")
+
+[node name="SailStripLeft" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.94, 0.34, 0, -0.34, 0.94, 0, 0, 0, 1, -2.02, 1.05, 0.1)
+mesh = SubResource("BoxMesh_sailstrip")
+material_override = SubResource("Mat_canvas")
+
+[node name="SailStripRight" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.94, -0.34, 0, 0.34, 0.94, 0, 0, 0, 1, 2.02, 1.05, 0.1)
+mesh = SubResource("BoxMesh_sailstrip")
+material_override = SubResource("Mat_canvas")
+
+[node name="Neck" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.62, 0)
+mesh = SubResource("Cyl_neck")
+material_override = SubResource("Mat_flesh")
+
+[node name="Millstone" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 8.35, -0.05)
+mesh = SubResource("Cyl_millstone")
+material_override = SubResource("Mat_stone")
+
+[node name="MillstoneHole" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 8.35, -0.05)
+mesh = SubResource("Cyl_hole")
+material_override = SubResource("Mat_hole")

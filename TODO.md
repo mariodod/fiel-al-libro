@@ -132,9 +132,17 @@
       is the owner's, and the validator prints the worklist. And the companion should use
       its own verb: the AI never casts the Desvelar, because the slice only applies it
       for the character the player is driving.
-- [ ] **The Venture's art.** It is built out of the same grey-box mill and giant as the
-      primitives, and the two of them are now a *boss* — the poses have to read as a
-      threat and not as a prop.
+- [x] **The Venture's art, first pass.** A concept sheet was generated from the art
+      prompt (`docs/reference/venture_of_montiel_concept_sheet.jpg`) and the two forms
+      were rebuilt from it: the mill is now a **round tower** with a tile cap, a **low
+      doorway** (the weak point) and **tattered sails**; the giant is no longer six
+      boxes but a gaunt nine-metre man with a **millstone for a head** and **sail-hands
+      at the end of arms too long for him**. Low-poly, flat, in the game's palette.
+      `src/world/forms/`, `docs/ART_BRIEF_VENTURE.md`.
+- [ ] **The Venture's art, second pass.** The **masonry** on the tower is a hand-painted
+      2K texture on the triplanar material; the sails are three boxes and want real
+      tatter; and the **rock** — the tutorial's centrepiece — is still a smooth grey
+      blob and deserves the same treatment as the mill.
 - [x] **The hit reactions.** A blow that lands flashes the body, pushes the character,
       stops the swing, and **shakes the camera**.
 - [x] **`H` hides the HUD.** It is the developer's readout — it spells out both readings.

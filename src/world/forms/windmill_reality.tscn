@@ -1,41 +1,82 @@
-[gd_scene load_steps=11 format=3]
+[gd_scene load_steps=15 format=3]
 
 [ext_resource type="Script" path="res://src/world/forms/spin_sails.gd" id="1_spin"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_tower"]
-size = Vector3(3, 8, 3)
+; The Reality form of the windmill: the mill of Montiel.
+;
+; Reference: docs/reference/venture_of_montiel_concept_sheet.jpg
+;
+; A round tower of ochre limestone, polished smooth by the grain, with a
+; low doorway at the base and four tattered canvas sails on an iron
+; axle. The door is a weak point: the Venture of Montiel is fought at
+; its foot, and the foot is the door.
+;
+; Low-poly and flat: eight-sided cylinders and boxes, the palette of the
+; game. The whole thing is under 200 triangles.
 
-[sub_resource type="StandardMaterial3D" id="Mat_tower"]
-albedo_color = Color(0.44, 0.36, 0.26, 1)
+[sub_resource type="StandardMaterial3D" id="Mat_stone"]
+albedo_color = Color(0.52, 0.4, 0.27, 1)
 roughness = 0.9
+
+[sub_resource type="CylinderMesh" id="Cyl_tower"]
+top_radius = 1.7
+bottom_radius = 1.9
+height = 8.0
+radial_segments = 8
+
+[sub_resource type="StandardMaterial3D" id="Mat_tile"]
+albedo_color = Color(0.42, 0.27, 0.18, 1)
+roughness = 0.85
 
 [sub_resource type="CylinderMesh" id="Cyl_cap"]
 top_radius = 0.0
-bottom_radius = 2.3
+bottom_radius = 2.4
 height = 2.2
 radial_segments = 8
 
-[sub_resource type="StandardMaterial3D" id="Mat_cap"]
-albedo_color = Color(0.33, 0.27, 0.21, 1)
-roughness = 0.85
+[sub_resource type="BoxMesh" id="BoxMesh_door"]
+size = Vector3(1.0, 1.95, 0.34)
+
+[sub_resource type="StandardMaterial3D" id="Mat_door"]
+albedo_color = Color(0.14, 0.12, 0.1, 1)
+roughness = 0.95
+
+[sub_resource type="BoxMesh" id="BoxMesh_lintel"]
+size = Vector3(1.34, 0.22, 0.44)
+
+[sub_resource type="StandardMaterial3D" id="Mat_lintel"]
+albedo_color = Color(0.4, 0.31, 0.22, 1)
+roughness = 0.9
 
 [sub_resource type="BoxMesh" id="BoxMesh_sail_v"]
-size = Vector3(0.35, 5.6, 1.1)
+size = Vector3(0.35, 2.3, 1.05)
+
+[sub_resource type="BoxMesh" id="BoxMesh_sail_v2"]
+size = Vector3(0.35, 1.7, 1.05)
+
+[sub_resource type="BoxMesh" id="BoxMesh_sail_v3"]
+size = Vector3(0.35, 1.1, 1.05)
 
 [sub_resource type="BoxMesh" id="BoxMesh_sail_h"]
-size = Vector3(5.6, 0.35, 1.1)
+size = Vector3(2.3, 0.35, 1.05)
 
-[sub_resource type="StandardMaterial3D" id="Mat_sail"]
-albedo_color = Color(0.75, 0.68, 0.53, 1)
-roughness = 0.8
+[sub_resource type="BoxMesh" id="BoxMesh_sail_h2"]
+size = Vector3(1.7, 0.35, 1.05)
+
+[sub_resource type="BoxMesh" id="BoxMesh_sail_h3"]
+size = Vector3(1.1, 0.35, 1.05)
+
+[sub_resource type="StandardMaterial3D" id="Mat_canvas"]
+albedo_color = Color(0.87, 0.82, 0.7, 1)
+roughness = 0.9
 
 [sub_resource type="SphereMesh" id="Sphere_hub"]
 radius = 0.55
 height = 1.1
-radial_segments = 12
-rings = 6
+radial_segments = 10
+rings = 5
 
-[sub_resource type="StandardMaterial3D" id="Mat_hub"]
+[sub_resource type="StandardMaterial3D" id="Mat_iron"]
 albedo_color = Color(0.28, 0.23, 0.18, 1)
 roughness = 0.7
 
@@ -43,26 +84,58 @@ roughness = 0.7
 
 [node name="Tower" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
-mesh = SubResource("BoxMesh_tower")
-material_override = SubResource("Mat_tower")
+mesh = SubResource("Cyl_tower")
+material_override = SubResource("Mat_stone")
 
 [node name="Cap" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.1, 0)
 mesh = SubResource("Cyl_cap")
-material_override = SubResource("Mat_cap")
+material_override = SubResource("Mat_tile")
+
+[node name="Door" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.98, -1.72)
+mesh = SubResource("BoxMesh_door")
+material_override = SubResource("Mat_door")
+
+[node name="Lintel" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.05, -1.74)
+mesh = SubResource("BoxMesh_lintel")
+material_override = SubResource("Mat_lintel")
 
 [node name="Sails" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.4, 1.7)
 script = ExtResource("1_spin")
 
 [node name="SailVertical" type="MeshInstance3D" parent="Sails"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, 0)
 mesh = SubResource("BoxMesh_sail_v")
-material_override = SubResource("Mat_sail")
+material_override = SubResource("Mat_canvas")
+
+[node name="SailVerticalMid" type="MeshInstance3D" parent="Sails"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15, 0)
+mesh = SubResource("BoxMesh_sail_v2")
+material_override = SubResource("Mat_canvas")
+
+[node name="SailVerticalEnd" type="MeshInstance3D" parent="Sails"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.55, 0)
+mesh = SubResource("BoxMesh_sail_v3")
+material_override = SubResource("Mat_canvas")
 
 [node name="SailHorizontal" type="MeshInstance3D" parent="Sails"]
+transform = Transform3D(0, 1, 0, -1, 0, 0, 0, 0, 1, 1.75, 0, 0)
 mesh = SubResource("BoxMesh_sail_h")
-material_override = SubResource("Mat_sail")
+material_override = SubResource("Mat_canvas")
+
+[node name="SailHorizontalMid" type="MeshInstance3D" parent="Sails"]
+transform = Transform3D(0, 1, 0, -1, 0, 0, 0, 0, 1, -0.15, 0, 0)
+mesh = SubResource("BoxMesh_sail_h2")
+material_override = SubResource("Mat_canvas")
+
+[node name="SailHorizontalEnd" type="MeshInstance3D" parent="Sails"]
+transform = Transform3D(0, 1, 0, -1, 0, 0, 0, 0, 1, -1.55, 0, 0)
+mesh = SubResource("BoxMesh_sail_h3")
+material_override = SubResource("Mat_canvas")
 
 [node name="Hub" type="MeshInstance3D" parent="Sails"]
 mesh = SubResource("Sphere_hub")
-material_override = SubResource("Mat_hub")
+material_override = SubResource("Mat_iron")
