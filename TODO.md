@@ -84,8 +84,12 @@
       a stone, and the Examine panel follows. `src/data/abilities/desvelar.tres`.
 - [x] **2.7 and 2.8, the silhouette half.** Quixote is tall and thin with a **lance** and
       a **basin** on his head; Sancho is short and round with a **sack** and a **flail**.
-      You can tell them apart from across the yard with the sound off. The eight
-      animation sets each still owe an art budget.
+      You can tell them apart from across the yard with the sound off. **And they
+      ANIMATE**: 14 clips each (idle, walk, run, roll, a chain of three lights,
+      heavy, block, hit, stagger, death, interact, and Quixote's madness idle /
+      Sancho's parry and Desvelar), wired to the game's own states.
+      `assets/models/*.glb`, `src/characters/character_pawn.gd`,
+      `tools/build_fiel_al_libro_animations.py`.
 - [x] **The hit reactions.** A blow that lands flashes the body, pushes the character,
       stops the swing, and **shakes the camera**.
 - [x] **`H` hides the HUD.** It is the developer's readout — it spells out both readings.
@@ -97,17 +101,13 @@
    the only one who can run it. The mechanic has to teach itself. Give it to somebody who
    has never seen it, say nothing, and write down what they do in the first thirty
    seconds. Press `H` before you hand it over.
-2. **A minute in the yard, with the new rules.** The chain, the guard, the parry, the
-   poise, the straw man and the Desvelar are all in. The question is whether **swapping
-   to Quixote to break the dummy** feels like the answer it is meant to be — and whether
-   the straw man makes the player hesitate.
-3. **The remaining art.** 2.7 and 2.8 want **eight animation clips each** (idle, run,
-   roll, three lights, heavy, block, hit), and the hit reactions want to be animations
-   rather than a flash and a push. That is the next real piece of work, and it is not
-   code. **The tool is ready: Blender 5.2 LTS is installed and
-   `.\tools\blender.ps1 -b -P <script.py>` runs it headless.** The full brief — the two
-   characters, the clip list, and the contact frames that must land inside the windows
-   the combat code opens — is in `docs/ANIMATION_BRIEF.md`.
+2. **A minute in the yard, with the rigs on.** The chain, the guard, the parry, the
+   poise, the straw man, the Desvelar **and the animation** are all in. The question is
+   whether the *poses* read: a lunge and a tumble, a thrust and a plunge, two men you
+   can tell apart at twenty metres.
+3. **The asymmetry rules and the art.** 2.10 is in and visible in the yard. What is
+   left is the **feel**: the poses are grey-box, and the next pass is the one that
+   makes them read as Velazquez rather than as a fighting game.
 
 ### Still owed, and it is not code
 

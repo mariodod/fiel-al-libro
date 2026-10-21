@@ -16,8 +16,8 @@
 |---|---|
 | **Phase** | Phase 1. **Weeks 1–2 are done.** Week 3–4 (combat) is under way. |
 | **The premise** | **Proven.** The playtest says so. |
-| **The build** | `res://src/world/slice.tscn` — the main scene. Two primitives, one truth toggle, two characters reading the same world differently — and now the **verbs**: `E` to examine, `Space` to dodge, a light attack that chains, a heavy attack, `F` for the guard, `M` to lock on, `X` for Sancho's Desvelar, and a line of dialogue when the world moves under a character. Plus a **walled yard** with a training dummy and a straw man in it. |
-| **Tests** | 18 suites, 373 assertions, green, enforced in CI. |
+| **The build** | `res://src/world/slice.tscn` — the main scene. Two primitives, one truth toggle, two characters reading the same world differently — and now the **verbs**: `E` to examine, `Space` to dodge, a light attack that chains, a heavy attack, `F` for the guard, `M` to lock on, `X` for Sancho's Desvelar, and a line of dialogue when the world moves under a character. The two characters are **rigged and animated** (14 clips each), and there is a **walled yard** with a training dummy and a straw man in it. |
+| **Tests** | 20 suites, 440 assertions, green, enforced in CI. |
 | **The fun** | Not fully proven. Seven data points is a sample, not a signal. |
 
 **The one thing that matters:** the mechanic is legible and liked. The *game*
@@ -138,15 +138,17 @@ not. `src/systems/chatter.gd` is where the next hundred lines go.
 | # | Task |
 |---|---|
 | 2.5 | The **soft camera** and the **lock-on** (`M`) — ✅ done |
-| 2.6 | The chain, the guard, the parry, the poise and the hit reaction — ✅ done (the animations are not) |
-| 2.7 | **Quixote rig** — the silhouette (lance and basin) ✅; **8 animations** to go |
-| 2.8 | **Sancho rig** — the silhouette (sack and flail) ✅; **8 animations** to go |
+| 2.6 | The chain, the guard, the parry, the poise and the hit reaction — ✅ done |
+| 2.7 | **Quixote rig** — ✅ the rig and 14 clips, wired to the game's states |
+| 2.8 | **Sancho rig** — ✅ the rig and 15 clips, and no action shared with Quixote's |
 | 2.9 | Sancho's `Desvelar` — the verb ✅; the **VFX** are still plain |
 | 2.10 | The asymmetry rules: Quixote cannot harm innocents without a Humanity cost; Sancho cannot meaningfully damage — ✅ both, and the yard shows them |
 
 **2.7 and 2.8 are the two most under-rated tasks in the plan.** Distinct
 animation sets sell the asymmetry better than any mechanic. A reskinned
-Quixote makes the whole idea collapse.
+Quixote makes the whole idea collapse. The sets are built and wired; the
+**poses** are still grey-box, and the next pass is the one that makes them
+read as Velazquez rather than as a fighting game.
 
 ---
 

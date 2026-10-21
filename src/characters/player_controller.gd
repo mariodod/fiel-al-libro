@@ -49,7 +49,8 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif event.is_action_pressed(&"desvelar"):
 		# Sancho's verb: strip the Book skin off the thing in front of
 		# you. Quixote has no such gift.
-		active_pawn.ability(&"desvelar")
+		if active_pawn.ability(&"desvelar"):
+			active_pawn.play_action(&"desvelar")
 	elif event.is_action_pressed(&"lock_on"):
 		_toggle_lock()
 	elif event.is_action_pressed(&"lectura"):
@@ -122,6 +123,8 @@ func _refresh_lock_candidates() -> void:
 func _examine() -> void:
 	if _examine_target == null or _examine_target.data == null or active_pawn == null:
 		return
+	# The character leans in to read it.
+	active_pawn.play_action(&"interact")
 	EventBus.object_examined.emit(_examine_target.data.id, active_pawn.character_id)
 
 

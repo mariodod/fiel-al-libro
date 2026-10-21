@@ -117,12 +117,32 @@ var _hurt_timer: float = 0.0
 var _stagger_timer: float = 0.0
 ## The push from the last hit that was not blocked.
 var _knockback: Vector3 = Vector3.ZERO
-## The body mesh, so a hit can be seen as well as felt.
+## The body mesh, so a hit can be seen.
 var _body_material: StandardMaterial3D = null
-## The body's own colour, before a hit.
-var _body_color: Color = Color.WHITE
 ## How long the body is still flashing.
 var _flash_timer: float = 0.0
+
+# ── The animation ─────────────────────────────────────────────────────
+## The AnimationPlayer of the rig, if this character has one.
+##
+## The rig is a CHILD of the character: the pawn is the body and the
+## rules, the rig is how the body moves. A character with no rig (the
+## straw man, the dummy) simply does not animate.
+var _anim: AnimationPlayer = null
+## The clip playing right now.
+var _clip: StringName = &""
+## A one-shot action — the examine, the Desvelar — and the time left.
+var _action: StringName = &""
+var _action_time: float = 0.0
+## The clip of the attack in progress.
+var _attack_clip: StringName = &""
+## Whether the character is sprinting, which is the run clip.
+var _sprinting: bool = false
+
+## How long one clip blends into the next.
+const ANIM_BLEND := 0.12
+## Below this the character is standing still, and the walk would slide.
+const MOVE_THRESHOLD := 0.6
 
 
 func _ready() -> void:
@@ -134,21 +154,166 @@ func _ready() -> void:
 		max_poise = data.poise
 		poise = 0.0
 	_find_body()
+	_find_rig()
 	perceived_layer = Perception.reading_for(character_id, TruthLayer.layer(), second_sight)
 	add_to_group(&"pawns")
 	EventBus.player_spawned.emit(self)
 
 
 ## The body mesh, so a hit can be seen.
+##
+## The rigged characters paint themselves with VERTEX COLOURS, so the
+## base colour of the material is not what you see: the flash has to be
+## an emission, not an albedo change, or it would do nothing at all.
 func _find_body() -> void:
-	var mesh := get_node_or_null("Body") as MeshInstance3D
+	var mesh := _first_mesh(self)
 	if mesh == null:
 		return
-	var material := mesh.material_override as StandardMaterial3D
+	var material := mesh.get_active_material(0) as StandardMaterial3D
 	if material == null:
 		return
+	# A copy, so flashing one character does not flash the other.
+	material = material.duplicate()
+	# The rig paints itself with vertex colours. Godot's glTF importer
+	# does not switch them on by itself, and without this the whole
+	# character is the material's white.
+	material.vertex_color_use_as_albedo = true
+	mesh.material_override = material
 	_body_material = material
-	_body_color = material.albedo_color
+
+
+## The first mesh under this node.
+func _first_mesh(node: Node) -> MeshInstance3D:
+	for child in node.get_children():
+		if child is MeshInstance3D:
+			return child
+		var found := _first_mesh(child)
+		if found != null:
+			return found
+	return null
+
+
+## The rig: the AnimationPlayer with the clips, if this character has one.
+##
+## The looping clips have to loop. The glTF exporter writes everything
+## as one-shot, because a walk that stops at the end of its stride is
+## not a walk.
+func _find_rig() -> void:
+	_anim = _find_anim_player(self)
+	if _anim == null:
+		return
+	for clip in [&"idle", &"walk", &"run"]:
+		var animation := _anim.get_animation(clip)
+		if animation != null:
+			animation.loop_mode = Animation.LOOP_LINEAR
+	_clip = &"idle"
+	_anim.play(&"idle", 0.0)
+
+
+## The AnimationPlayer anywhere under this node.
+##
+## The rig is an imported .glb, and its AnimationPlayer is a child of the
+## glb's ROOT node, which is a child of the character. So it is a
+## grandchild, and a search that only looks one level down finds
+## nothing — and a character with no rig does not animate, quietly.
+func _find_anim_player(node: Node) -> AnimationPlayer:
+	for child in node.get_children():
+		if child is AnimationPlayer:
+			return child
+		var found := _find_anim_player(child)
+		if found != null:
+			return found
+	return null
+
+
+## Play a one-shot action: the examine, the Desvelar.
+##
+## The one-shots are not states — they are things the character DOES,
+## on top of whatever else it was doing. The action holds the floor
+## until it ends.
+func play_action(clip: StringName) -> void:
+	if _anim == null or clip == &"":
+		return
+	var animation := _anim.get_animation(clip)
+	if animation == null:
+		return
+	_action = clip
+	_action_time = animation.length
+
+
+## The clip this character should be playing right now.
+##
+## The order is the order of importance: a dead character is dead, a
+## staggered one cannot act, a reeling one is hurt, an action is an
+## action, a dodge is a dodge, an attack is an attack, a guard is a
+## guard, and only then does the character walk or stand.
+func _wanted_clip() -> StringName:
+	if is_dead:
+		return &"death"
+	if _stagger_timer > 0.0:
+		return &"stagger"
+	if _hurt_timer > 0.0:
+		return &"hit"
+	if _action != &"":
+		return _action
+	if _dodge_time > 0.0:
+		return &"roll"
+	if _attack_clip != &"":
+		return _attack_clip
+	if _blocking:
+		return &"parry" if _can_parry() else &"block"
+	if Vector2(velocity.x, velocity.z).length() > MOVE_THRESHOLD:
+		return &"run" if _sprinting else &"walk"
+	if _is_mad() and _has_clip(&"idle_lost"):
+		return &"idle_lost"
+	return &"idle"
+
+
+## Keep the animation in step with the game.
+func _update_animation(delta: float) -> void:
+	if _anim == null:
+		return
+	_action_time = maxf(0.0, _action_time - delta)
+	if _action_time <= 0.0:
+		_action = &""
+	var wanted := _wanted_clip()
+	if wanted != _clip:
+		_clip = wanted
+		_anim.play(wanted, ANIM_BLEND)
+	_anim.speed_scale = _stride_scale(wanted)
+
+
+## The stride rate, matched to the ground the character is covering.
+##
+## The walk clip is 0.9 s for 4.2 m/s and the run is 0.633 s for
+## 6.8 m/s. If the character is going slower than that — turning,
+## pushing against a wall — the clip has to slow with them, or the feet
+## slide.
+func _stride_scale(clip: StringName) -> float:
+	if clip != &"walk" and clip != &"run":
+		return 1.0
+	var expected := RUN_SPEED if clip == &"run" else WALK_SPEED
+	var actual := Vector2(velocity.x, velocity.z).length()
+	if actual < 0.5:
+		return 1.0
+	return clampf(actual / expected, 0.65, 1.5)
+
+
+## Does this character have this clip?
+func _has_clip(clip: StringName) -> bool:
+	return _anim != null and _anim.get_animation(clip) != null
+
+
+## Can this character parry? Sancho's buckler can; Quixote's lance cannot.
+func _can_parry() -> bool:
+	return data != null and data.can_parry
+
+
+## Is this character lost in his own mind? The madness has its own idle.
+func _is_mad() -> bool:
+	if character_id != &"quixote":
+		return false
+	return Locura.threshold_for(character_id) >= Locura.Threshold.LOST
 
 
 ## ── The driver interface ────────────────────────────────────────────────
@@ -157,6 +322,7 @@ func _find_body() -> void:
 func move(input_direction: Vector2, sprint: bool) -> void:
 	var input := Vector3(input_direction.x, 0.0, input_direction.y)
 	_input_direction = input_direction
+	_sprinting = sprint
 	var speed := RUN_SPEED if sprint else WALK_SPEED
 	if _blocking:
 		# A guard is not a run.
@@ -304,6 +470,9 @@ func _physics_process(delta: float) -> void:
 	_hurt_timer = maxf(0.0, _hurt_timer - delta)
 	_stagger_timer = maxf(0.0, _stagger_timer - delta)
 	_update_flash(delta)
+	if _attack_cooldown <= 0.0:
+		_attack_clip = &""
+	_update_animation(delta)
 	if _combo_timer <= 0.0:
 		_combo_step = 0
 
@@ -389,7 +558,13 @@ func ability_data(ability_id: StringName) -> AbilityData:
 ## that keeps the next one from coming straight away.
 func _swing(ability: AbilityData) -> void:
 	_attack_cooldown = maxf(_attack_cooldown, ability.cooldown)
-	AttackHitbox.swing(self, ability, _combo_damage(ability))
+	var damage := _combo_damage(ability)
+	if ability.kind == AbilityData.Kind.LIGHT:
+		# The chain has a clip of its own: light_1, light_2, light_3.
+		_attack_clip = StringName("light_%d" % _combo_step)
+	else:
+		_attack_clip = &"heavy"
+	AttackHitbox.swing(self, ability, damage)
 
 
 ## The damage of this swing, given where it is in the chain.
@@ -510,7 +685,12 @@ func _react_to_hit(source: Node, poise_damage: float) -> void:
 func _flash() -> void:
 	if _body_material == null:
 		return
-	_body_material.albedo_color = HIT_COLOR
+	# An EMISSION, not an albedo change: the rigged characters paint
+	# themselves with vertex colours, so the base colour is not what you
+	# see and changing it would do nothing.
+	_body_material.emission_enabled = true
+	_body_material.emission = HIT_COLOR
+	_body_material.emission_energy_multiplier = 0.7
 	_flash_timer = FLASH_SECONDS
 
 
@@ -520,7 +700,7 @@ func _update_flash(delta: float) -> void:
 		return
 	_flash_timer = maxf(0.0, _flash_timer - delta)
 	if _flash_timer <= 0.0 and _body_material != null:
-		_body_material.albedo_color = _body_color
+		_body_material.emission_enabled = false
 
 
 ## The push from a blow. Away from whoever threw it.

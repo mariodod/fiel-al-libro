@@ -308,21 +308,51 @@ those choices, not discover them.
 
 ---
 
-## 11. After the assets: the wiring
+## 11. After the assets: the wiring — DONE
 
-The rigs are useless until the game plays them, and that is a **code** task,
-not an art one:
+The rigs are in the game. The pawn drives the clips, and the mapping
+from the game's states to the clip names is in
+`src/characters/character_pawn.gd`:
 
-- `src/characters/character_pawn.gd` is a `CharacterBody3D` with **no
-  `AnimationPlayer`** yet. It needs one, an `AnimationTree` or a small state
-  machine, and the mapping from the states the code already has to the clip
-  names above: `idle`, `walk`, `run`, `roll`, `light_1/2/3`, `heavy`, `block`,
-  `parry`, `hit`, `stagger`, `death`, `interact`, `desvelar`, `idle_lost`.
-- The state machine must read the **same numbers** the animation was authored
-  against: the dodge's i-frames, the attack's active window, the stagger's
-  duration, the parry's window.
-- The prop meshes currently in `src/world/slice.tscn` (the lance, the basin,
-  the sack, the flail) are placeholders and should be replaced by the
-  rigged ones.
-- The truth-layer shader is applied to every material, so the rigged
-  characters must keep the **same material family** as the rest of the game.
+| the game | the clip |
+|---|---|
+| standing | `idle` — or `idle_lost`, when Quixote's Locura has taken him |
+| walking / running | `walk` / `run`, with the stride rate scaled to the ground actually covered |
+| the dodge | `roll` |
+| the light attack | `light_1` → `light_2` → `light_3`, by the step of the chain |
+| the heavy attack | `heavy` |
+| the guard | `block` — and `parry` for Sancho, whose buckler snaps up |
+| a hit that landed | `hit` |
+| a broken poise | `stagger` |
+| the examine | `interact` |
+| the Desvelar | `desvelar` |
+| death | `death` |
+
+The order of those is the order of importance: a dead character is
+dead, a staggered one cannot act, a reeling one is hurt, an action is an
+action, a dodge is a dodge, an attack is an attack, a guard is a guard,
+and only then does the character walk or stand.
+
+Three things that had to be got right:
+
+- **The rig is a grandchild.** The AnimationPlayer is a child of the
+  glb's root node, which is a child of the character. A search that
+  only looks one level down finds nothing, and a character with no rig
+  does not animate — quietly, and with no error anywhere.
+- **The vertex colours have to be switched on.** Godot's glTF importer
+  does not turn them on by itself, and the rigged characters paint
+  themselves with them. Without that line the whole cast is the
+  material's white.
+- **The rig faces +Z, the game faces -Z.** glTF's convention is +Z
+  forward and Blender's is -Y, so the exporter turns the model; the
+  scene turns it back.
+
+`tests/test_animation.gd` pins all of it: the rig is found, the idle
+plays, the walk plays, the dodge rolls, the chain advances, the hit
+flinches, the poise staggers, the guard guards, Sancho's guard parries,
+the madness has its own posture, and an action holds the floor for its
+length.
+
+**What is still not done:** the *feel*. The clips are grey-box
+animation, and the next pass is the art direction — the poses that read
+as a Velazquez rather than as a fighting game.

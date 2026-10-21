@@ -534,6 +534,22 @@ A blow that lands flashes the body, pushes the character, stops the swing for a 
 and **shakes the camera**. It is the cheapest honest version of a hit reaction, and it
 is the one the playtest can judge.
 
+### The rigs, and the two men
+
+The characters are no longer capsules. **Quixote is tall and thin with a lance and a
+basin on his head** — the barber's basin of the novel, which is where the helmet comes
+from — and **Sancho is short and round with a sack and a flail.** You can tell them apart
+from across the yard with the sound off, and the difference is the point: the GDD says
+outright that *"distinct animation sets sell the asymmetry better than any mechanic. A
+reskinned Quixote makes the whole idea collapse."*
+
+They animate too — fourteen clips each, built headless and wired to the game's own
+states, so a dodge rolls, a chain advances from light_1 to light_3, a broken poise
+staggers, and a mad Quixote stands in a different posture than a lucid one.
+
+**They are grey-box animation.** The poses are right — a lunge and a tumble, a thrust and
+a plunge — and the *feel* is the next pass.
+
 ### The page turn, untested
 
 Still on the list from the last round: the page turn was built after the
