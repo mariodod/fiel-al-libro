@@ -215,6 +215,11 @@ The fix separates the two values that were tangled together:
 | **T** — the world changes | changes | change |
 | **L** — his madness changes | does **not** change | change |
 
+> **Superseded by B22 (21 October 2026).** This split is gone: the picture now follows
+> the reader, grade and geometry together, because a Book-graded world with Reality
+> objects is not a reading, it is a mistake. The world's *state* stays global (D2) and
+> that is what tells `T` and `L` apart now. See §8.
+
 So a mad knight insisting on a giant now stands in a flat, honest, Reality-graded world
 that has not changed — a completely different picture from the world itself turning over,
 and a better picture than either of them was alone. **The madness became a picture
@@ -594,6 +599,10 @@ Eight things, and every one of them was a real fault:
 | B16 | *"If both go to 0 you should get game over and respawn."* | Nothing. | **Built** — the page is blank, and the morning starts again |
 | B17 | *"Pressing T with sancho should do nothing. It's a quijote exclusive ability."* | T turned the world over for both of them. | **Fixed** — the truth is the knight's delusion, and his alone |
 | B18 | *"Also from the playtest: make the camera rotation slower its too fast."* | The camera swung round at **180° a second** — a half turn in half a second, which reads as a whip, and the character spends the whole swing off to one side of the screen. | **Fixed** — 100° a second, and a gentler ease. The character still turns faster than the camera follows it, which is the look the genre has |
+| B19 | *"The information dialog should remain open until i close it with E again to read everything."* | The panel closed itself after six seconds. A panel that closes while you are reading it is a panel you cannot read. | **Fixed** — the panel stays until `E` closes it, and `E` on a thing that is already open closes it |
+| B20 | *"In the examine text of the boss i see the text key instead of the text."* | The Venture's faces carried a title key that **nobody had ever written down**, so the panel printed `ui.face.venture.book.title` to the player. The locale suite could not catch it: it only checks that the locales agree with *each other*, never with the game. | **Fixed** — the keys are written, and there is now a suite that checks **every key the code and the data use** is in the template |
+| B21 | *"The last part of the text for quijote is too much of a dead giveaway, it should be more subtle like the book one."* | Quixote's line when the rock came back to being a stone said *"a stone where there used to be a book"* — it handed over the other truth. The Book reaction is subtle; this one was not. | **Fixed** — *"A stone. Only a stone. Forgive me."* The reaction may name the reading it is in, never the other one |
+| B22 | *"After pressing T with quijote and switching to sancho you still see the book world."* | The picture was **half-and-half**: the grade followed the world's truth and the geometry followed the reader's. So Sancho, who reads Reality in a Book world, was looking at a Book-graded world with Reality objects. | **Fixed** — the picture follows the reader, grade and geometry together. One world, two readings: the disagreement is the content, and you have to be able to *see* the reading you are driving |
 
 Two of them were the *same* bug wearing different clothes, and both are worth a line
 of their own:
@@ -634,6 +643,33 @@ the player up, and when both of them are down the game is over and it starts aga
 
 **The truth (B17).** T is Quixote's alone. Sancho reads the world as it is, which is
 exactly why he cannot turn it over.
+
+**The reading (B22).** This is the one that changed a rule rather than a number, so it
+is worth being explicit about.
+
+The build had the world's *grade* (the tint, the ink outlines — the whole look) following
+the **world's truth**, and the world's *geometry* (the mill and the giant, the rock and
+the book) following the **reader's**. That split was deliberate: the first stranger
+asked what the difference was between `T` and `L` and answered *"they do the same"*, and
+splitting the two was the fix.
+
+But it produced a picture that is half of each. Turn the world over, swap to Sancho —
+who reads Reality in a Book world — and you get **a Book-graded world with Reality
+objects**. The playtest called it what it was: *"you still see the book world."*
+
+So the picture follows the reader now, grade and geometry together. One world, two
+readings (GDD.md §4.1): the disagreement is the content, and the player has to be able
+to *see* the reading they are driving. What stays global is the **state** — one world,
+one truth, one save field (D2) — and that is what the Venture wears, what the HUD says
+and what the Desvelar fights against.
+
+The cost, stated plainly: `T` and `L` are no longer told apart by the *picture*. They
+are told apart by the world: `T` changes the world's truth (the Venture changes with
+it, the HUD says so, the save file changes), and `L` changes one man's mind (his
+animation, his line, his meter). `T` is reversible and `L` is not.
+
+**The panel (B19, B20, B21).** The examination stays open until you close it, the keys
+it prints are real keys, and the line it ends with does not hand over the other truth.
 
 ---
 

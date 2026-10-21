@@ -718,12 +718,24 @@ msgstr ""
 msgid "ui.face.venture.reality.tell"
 msgstr ""
 
+#. TRANSLATORS: The Venture in the Reality truth: the name the manuscript gives it.
+msgid "ui.face.venture.reality.title"
+msgstr ""
+
 #. TRANSLATORS: The Venture in the Book truth: how it looks.
 msgid "ui.face.venture.book.desc"
 msgstr ""
 
 #. TRANSLATORS: The Venture in the Book truth: the one detail that does not add up.
 msgid "ui.face.venture.book.tell"
+msgstr ""
+
+#. TRANSLATORS: The Venture in the Book truth: the name the manuscript gives it.
+msgid "ui.face.venture.book.title"
+msgstr ""
+
+#. TRANSLATORS: The name of the guard.
+msgid "it.ability.block.name"
 msgstr ""
 
 #. TRANSLATORS: The name of a Venture's move, in the developer's readout.
@@ -764,6 +776,11 @@ msgstr ""
 
 #. TRANSLATORS: The companion, remarking on the Venture.
 msgid "dia.quixote.chatter.venture"
+msgstr ""
+
+#. TRANSLATORS: The prompt under the examination, when it is open: E
+#. closes it again.
+msgid "ui.examine.close"
 msgstr ""
 
 #. TRANSLATORS: The companion, remarking on the Venture.

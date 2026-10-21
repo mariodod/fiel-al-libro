@@ -66,20 +66,26 @@ func suite(t: TestHarness) -> void:
 	t.expect_almost_eq(TruthLayer.view_blend(), 1.0, 0.0001, "the view fades to the Book")
 	t.expect_eq(TruthLayer.layer(), TruthLayer.Layer.REALITY, "the world's truth has not moved")
 
-	t.test("the world's look and the reader's reading are separate")
-	# The stranger's first run: "what is the difference between pressing T
-	# and L, both do the same". They DID do the same, because the grade
-	# followed the reader as well as the objects. The world's look must
-	# follow the world; only the objects follow the reader.
+	t.test("the picture follows the reader, and the state stays global")
+	# The playtest: *"after pressing T with quijote and switching to
+	# sancho you still see the book world"*. A Book-graded world with
+	# Reality objects is not a reading — it is a mistake. One world, two
+	# readings (GDD.md §4.1): the disagreement IS the content, and the
+	# player has to be able to see the reading they are driving.
 	#
-	#   T  the world changes   -> the whole picture changes
-	#   L  his madness changes -> only the objects change
+	# What stays global is the STATE: one world, one truth, one save
+	# field (D2). That is what the Venture wears, what the HUD says and
+	# what the Desvelar fights against.
 	TruthLayer.shift_to(TruthLayer.Layer.REALITY, true)
 	TruthLayer.set_view_layer(TruthLayer.Layer.BOOK)
 	TruthLayer.advance_blend(2.0)
-	t.expect_almost_eq(TruthLayer.world_blend(), 0.0, 0.0001, "the world's look has not changed")
 	t.expect_almost_eq(TruthLayer.view_blend(), 1.0, 0.0001, "the reader is reading the Book")
-	t.expect_ne(TruthLayer.world_blend(), TruthLayer.view_blend(), "the two are not the same value")
+	t.expect_almost_eq(TruthLayer.world_blend(), 0.0, 0.0001, "but the world's truth has not moved")
+	t.expect_eq(TruthLayer.layer(), TruthLayer.Layer.REALITY, "the world is still Reality")
+	# And the picture on the screen is the reader's, not the world's.
+	var shader_truth: Variant = RenderingServer.global_shader_parameter_get(TruthLayer.GLOBAL_TRUTH)
+	t.expect_almost_eq(float(shader_truth), 1.0, 0.0001,
+		"the grade on the screen is the reader's reading")
 
 	t.test("releasing the view follows the world again")
 	TruthLayer.set_view_layer(-1)

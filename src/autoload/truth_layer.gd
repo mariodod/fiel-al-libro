@@ -95,29 +95,26 @@ func advance_blend(delta: float) -> void:
 			_layer = _target
 			EventBus.truth_blend_finished.emit(_layer)
 
-	# THE WORLD'S LOOK follows the world's truth. Always. One world, one
-	# uniform, one save field (D2).
-	RenderingServer.global_shader_parameter_set(GLOBAL_TRUTH, _blend)
-
-	# WHAT THE READER SEES is a separate value, and it drives the objects.
+	# THE PICTURE FOLLOWS THE READER. The grade and the geometry together.
 	#
-	# The two have to be separate, or the game cannot tell its own two
-	# levers apart. The first stranger test asked, of the truth toggle and
-	# the madness toggle, "what is the difference? — they do the same".
-	# They looked the same because the grade followed the reader as well
-	# as the objects. Now:
+	# One world, two readings (GDD.md §4.1): "the disagreement IS the
+	# content". The player has to be able to SEE the reading they are
+	# driving — the playtest was blunt about it: *"after pressing T with
+	# quijote and switching to sancho you still see the book world"*.
+	# A half-and-half picture, a Book-graded world with Reality objects,
+	# is not a reading. It is a mistake.
 	#
-	#   T  the world changes   -> the whole picture changes
-	#   L  his madness changes -> only the objects change
-	#
-	# A mad knight insisting on a giant, standing in a world that has not
-	# changed, is a different picture from a world that has.
+	# What stays global is the STATE: the world's truth is one truth, one
+	# save field, one world (D2). It is what the Venture wears, what the
+	# HUD says, and what the Desvelar fights against.
 	var speed := blend_seconds if blend_seconds > 0.0 else 1.0
 	if view_layer >= 0:
 		var view_target := 1.0 if view_layer == Layer.BOOK else 0.0
 		_view_blend = move_toward(_view_blend, view_target, delta / speed)
 	else:
 		_view_blend = _blend
+
+	RenderingServer.global_shader_parameter_set(GLOBAL_TRUTH, _view_blend)
 
 
 ## Set what the reader sees. -1 follows the world again.
@@ -170,7 +167,13 @@ func shift_to(new_layer: int, instant: bool = false) -> void:
 		_blend = 1.0 if new_layer == Layer.BOOK else 0.0
 		_layer = new_layer
 		_blending = false
-		RenderingServer.global_shader_parameter_set(GLOBAL_TRUTH, _blend)
+		# The picture is the READER's, so the instant path snaps the
+		# reader's view and not the world's.
+		if view_layer >= 0:
+			_view_blend = 1.0 if view_layer == Layer.BOOK else 0.0
+		else:
+			_view_blend = _blend
+		RenderingServer.global_shader_parameter_set(GLOBAL_TRUTH, _view_blend)
 		EventBus.truth_blend_finished.emit(_layer)
 	else:
 		_blending = true

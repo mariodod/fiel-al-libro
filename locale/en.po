@@ -199,8 +199,11 @@ msgid "dia.quixote.reaction.rock.book"
 msgstr "A book! Look, a book! Who put it here?"
 
 #. TRANSLATORS: Quixote sees the rock as a rock again.
+#. It must NOT name the other truth: the Book reaction is subtle, and
+#. this one has to be as subtle as that one. The playtest called the old
+#. wording a dead giveaway.
 msgid "dia.quixote.reaction.rock.reality"
-msgstr "A stone. A stone where a book was a moment ago. Forgive me."
+msgstr "A stone. Only a stone. Forgive me."
 
 #. TRANSLATORS: Sancho sees the windmill as a giant.
 msgid "dia.sancho.reaction.windmill.book"
@@ -217,6 +220,11 @@ msgstr "The stone has turned into a book, master."
 #. TRANSLATORS: Sancho sees the rock as a rock again.
 msgid "dia.sancho.reaction.rock.reality"
 msgstr "A stone. Only a stone."
+
+#. TRANSLATORS: The prompt under the examination, when it is open: E
+#. closes it again.
+msgid "ui.examine.close"
+msgstr "E - Close"
 
 # --- THE CHATTER (B3) ---------------------------------------------------
 # What the companion says about the thing it is looking at. The key is
@@ -615,6 +623,10 @@ msgstr "The mill of Montiel, standing. The stone is polished smooth by the grain
 msgid "ui.face.venture.reality.tell"
 msgstr "The sails turn towards wherever you are, and they do not turn slowly."
 
+#. TRANSLATORS: The Venture in the Reality truth: the name the manuscript gives it.
+msgid "ui.face.venture.reality.title"
+msgstr "The mill of Montiel"
+
 #. TRANSLATORS: The Venture in the Book truth: how it looks.
 msgid "ui.face.venture.book.desc"
 msgstr "The giant of the mills of Montiel, with arms long as sails and a small head sunk between its shoulders."
@@ -622,6 +634,14 @@ msgstr "The giant of the mills of Montiel, with arms long as sails and a small h
 #. TRANSLATORS: The Venture in the Book truth: the one detail that does not add up.
 msgid "ui.face.venture.book.tell"
 msgstr "What looks like an arm on him is a mill sail, and what looks like a head is the millstone."
+
+#. TRANSLATORS: The Venture in the Book truth: the name the manuscript gives it.
+msgid "ui.face.venture.book.title"
+msgstr "The giant of the mills of Montiel"
+
+#. TRANSLATORS: The name of the guard.
+msgid "it.ability.block.name"
+msgstr "The guard"
 
 #. TRANSLATORS: The name of a Venture's move, in the developer's readout.
 msgid "ui.move.mill_sails.name"

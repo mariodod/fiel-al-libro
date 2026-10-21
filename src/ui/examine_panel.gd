@@ -40,7 +40,12 @@ extends Control
 ## `src/ui/post_process.gd`. See HANDOVER.md §7.7.
 
 ## How long the examination stays up after the press.
-@export var hold_seconds: float = 6.0
+##
+## **Zero means it stays up until you close it.** The playtest asked for
+## that: *"the information dialog should remain open until i close it
+## with E again to read everything."* A panel that closes itself while
+## you are reading it is a panel you cannot read.
+@export var hold_seconds: float = 0.0
 ## How wide the wrapped lines are allowed to get.
 @export var text_width: float = 640.0
 
@@ -185,11 +190,14 @@ func _layout() -> void:
 func _process(delta: float) -> void:
 	if _hold <= 0.0:
 		return
-	_hold -= delta
-	if _hold <= 0.0:
-		_object = null
-		_panel.visible = false
-		return
+	# A hold of zero means the panel waits to be closed.
+	if hold_seconds > 0.0:
+		_hold -= delta
+		if _hold <= 0.0:
+			_object = null
+			_panel.visible = false
+			_update_prompt()
+			return
 	# Live: the description follows the reading while the panel is up.
 	_refresh_text()
 
@@ -201,16 +209,40 @@ func _on_target_changed(object_id: StringName) -> void:
 	var has_target := not object_id.is_empty()
 	_prompt.visible = has_target
 	if has_target:
-		_prompt.text = Loc.t(&"ui.examine.prompt")
+		_prompt.text = Loc.t(&"ui.examine.close") if _object != null else Loc.t(&"ui.examine.prompt")
 
 
 ## The player examined a thing.
+##
+## Pressing `E` on a thing that is already open **closes it**. The
+## playtest: *"the information dialog should remain open until i close
+## it with E again to read everything."* So the verb is a toggle, and
+## the panel is a page you keep.
 func _on_object_examined(object_id: StringName, reader_id: StringName) -> void:
+	if _object != null and _object.data != null and _object.data.id == object_id:
+		_close()
+		return
 	_object = Examine.find_by_id(object_id)
 	_reader_id = reader_id
 	# The floor, in case the exported default ever fails to apply.
 	_hold = hold_seconds if hold_seconds > 0.0 else 6.0
 	_refresh_text()
+	_update_prompt()
+
+
+## Shut the panel.
+func _close() -> void:
+	_hold = 0.0
+	_object = null
+	_panel.visible = false
+	_update_prompt()
+
+
+## The prompt under the panel: what `E` does now.
+func _update_prompt() -> void:
+	if not _prompt.visible:
+		return
+	_prompt.text = Loc.t(&"ui.examine.close") if _object != null else Loc.t(&"ui.examine.prompt")
 
 
 ## The player swapped characters. The panel now describes the thing the

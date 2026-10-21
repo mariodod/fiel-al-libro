@@ -65,6 +65,82 @@ func suite(t: TestHarness) -> void:
 		])
 
 
+	t.test("every key the game uses exists in the template")
+	# The suite above checks that the locales agree with each other. It
+	# cannot check that they agree with the GAME, and the playtest found
+	# the hole: the Venture's faces carried a title key that nobody had
+	# ever written down, and the panel printed "ui.face.venture.book.title"
+	# to the player instead of a title.
+	#
+	# So: every key the code and the data use has to be in the template.
+	var used := _keys_used_by_the_game()
+	t.expect_gt(float(used.size()), 10.0, "the scan should find the game's keys")
+	var unknown: Array[String] = []
+	for key: String in used:
+		# The parser keeps the quotes round the msgid, because that is
+		# what the other half of this suite compares.
+		if not template_keys.has('"%s"' % key) and not unknown.has(key):
+			unknown.append(key)
+	t.expect_eq(unknown.size(), 0, "%d key(s) the game uses are not in the template: %s" % [
+		unknown.size(), ", ".join(unknown.slice(0, 5))])
+
+
+## Every key the code and the data use.
+##
+## Two passes: the string literals in the scripts, and the `*_key`
+## properties in the data resources. The data is the one that matters
+## most — a resource can carry a key that no line of code ever names.
+func _keys_used_by_the_game() -> Array[String]:
+	var out: Array[String] = []
+
+	var literal := RegEx.new()
+	literal.compile("\"([a-z]{2,4}\\.[A-Za-z0-9_]+(\\.[A-Za-z0-9_]+)*)\"")
+	for path: String in _files_with_extension("res://src/", ".gd"):
+		# The tools are diagnostics: they quote keys as examples.
+		if path.contains("/tools/"):
+			continue
+		var text := FileAccess.get_file_as_string(path)
+		for match: RegExMatch in literal.search_all(text):
+			var key := match.get_string(1)
+			if key.begins_with("bk."):
+				# A fragment id, not a UI key: "bk.ch01.apertura".
+				continue
+			if not out.has(key):
+				out.append(key)
+
+	var property := RegEx.new()
+	property.compile("([a-z_]+_key)\\s*=\\s*&?\"([A-Za-z0-9_.]+)\"")
+	for path: String in _files_with_extension("res://src/data/", ".tres"):
+		var text := FileAccess.get_file_as_string(path)
+		for match: RegExMatch in property.search_all(text):
+			var key := match.get_string(2)
+			if not out.has(key):
+				out.append(key)
+
+	return out
+
+
+## Every file under a directory with a given extension, one level down
+## as well: the data lives in folders.
+func _files_with_extension(directory: String, extension: String) -> Array[String]:
+	var out: Array[String] = []
+	var dir := DirAccess.open(directory)
+	if dir == null:
+		return out
+	for file_name: String in dir.get_files():
+		if file_name.ends_with(extension):
+			out.append(directory + file_name)
+	for sub: String in dir.get_directories():
+		var sub_dir := DirAccess.open(directory + sub)
+		if sub_dir == null:
+			continue
+		for file_name: String in sub_dir.get_files():
+			if file_name.ends_with(extension):
+				out.append(directory + sub + "/" + file_name)
+	out.sort()
+	return out
+
+
 func _locale_files() -> Array[String]:
 	var out: Array[String] = []
 	var dir := DirAccess.open(LOCALE_DIR)

@@ -161,8 +161,12 @@ msgid "dia.quixote.reaction.rock.book"
 msgstr "¡Un libro! ¡Mirad, un libro! ¿Quién lo ha puesto aquí?"
 
 #. TRANSLATORS: Quixote sees the rock as a rock again.
+#. It must NOT name the other truth: the Book reaction is subtle
+#. ("¡Un libro! ¡Mirad, un libro! ¿Quién lo ha puesto aquí?"), and this
+#. one has to be as subtle as that one. The playtest called the old
+#. wording a dead giveaway.
 msgid "dia.quixote.reaction.rock.reality"
-msgstr "Una piedra. Una piedra donde antes había un libro. Perdonadme."
+msgstr "Una piedra. Solo una piedra. Perdonadme."
 
 #. TRANSLATORS: Sancho sees the windmill as a giant.
 msgid "dia.sancho.reaction.windmill.book"
@@ -179,6 +183,11 @@ msgstr "La piedra se ha puesto libro, señor."
 #. TRANSLATORS: Sancho sees the rock as a rock again.
 msgid "dia.sancho.reaction.rock.reality"
 msgstr "Una piedra. Solo una piedra."
+
+#. TRANSLATORS: The prompt under the examination, when it is open: E
+#. closes it again.
+msgid "ui.examine.close"
+msgstr "E - Cerrar"
 
 # --- LA CHARLA (B3) -----------------------------------------------------
 # Lo que dice el compañero de lo que tiene delante. La clave se compone:
@@ -632,6 +641,10 @@ msgstr "El molino de Montiel en pie. La piedra está pulida por el trigo, y la p
 msgid "ui.face.venture.reality.tell"
 msgstr "Las aspas giran hacia donde uno está, y no lo hacen despacio."
 
+#. TRANSLATORS: The Venture in the Reality truth: the name the manuscript gives it.
+msgid "ui.face.venture.reality.title"
+msgstr "El molino de Montiel"
+
 #. TRANSLATORS: The Venture in the Book truth: how it looks.
 msgid "ui.face.venture.book.desc"
 msgstr "El gigante de los molinos de Montiel, con los brazos largos como aspas y una cabeza pequeña hundida entre los hombros."
@@ -639,6 +652,14 @@ msgstr "El gigante de los molinos de Montiel, con los brazos largos como aspas y
 #. TRANSLATORS: The Venture in the Book truth: the one detail that does not add up.
 msgid "ui.face.venture.book.tell"
 msgstr "Lo que en él parece un brazo es un aspa de molino, y lo que parece una cabeza es la piedra del eje."
+
+#. TRANSLATORS: The Venture in the Book truth: the name the manuscript gives it.
+msgid "ui.face.venture.book.title"
+msgstr "El gigante de los molinos de Montiel"
+
+#. TRANSLATORS: The name of the guard.
+msgid "it.ability.block.name"
+msgstr "La guarda"
 
 #. TRANSLATORS: The name of a Venture's move, in the developer's readout.
 msgid "ui.move.mill_sails.name"

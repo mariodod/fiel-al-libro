@@ -256,8 +256,10 @@ msgid "dia.quixote.reaction.rock.book"
 msgstr "Un livre ! Regardez, un livre ! Qui l'a mis là ?"
 
 #. META: namespace=dia
+#. It must NOT name the other truth: the Book reaction is subtle, and
+#. this one has to be as subtle as that one.
 msgid "dia.quixote.reaction.rock.reality"
-msgstr "Une pierre. Une pierre là où il y avait un livre. Pardonnez-moi."
+msgstr "Une pierre. Juste une pierre. Pardonnez-moi."
 
 #. META: namespace=dia
 msgid "dia.sancho.reaction.windmill.book"
@@ -274,6 +276,11 @@ msgstr "La pierre est devenue un livre, seigneur."
 #. META: namespace=dia
 msgid "dia.sancho.reaction.rock.reality"
 msgstr "Une pierre. Juste une pierre."
+
+#. TRANSLATORS: The prompt under the examination, when it is open: E
+#. closes it again.
+msgid "ui.examine.close"
+msgstr "E - Fermer"
 
 # --- LA CHARLA (B3) -----------------------------------------------------
 # Ce que dit le compagnon de ce qu'il a devant lui. La clé se compose :
@@ -639,6 +646,10 @@ msgstr "Le moulin de Montiel, debout. La pierre est polie par le blé, et la bas
 msgid "ui.face.venture.reality.tell"
 msgstr "Les ailes tournent vers celui qui regarde, et elles ne tournent pas lentement."
 
+#. TRANSLATORS: The Venture in the Reality truth: the name the manuscript gives it.
+msgid "ui.face.venture.reality.title"
+msgstr "Le moulin de Montiel"
+
 #. TRANSLATORS: The Venture in the Book truth: how it looks.
 msgid "ui.face.venture.book.desc"
 msgstr "Le géant des moulins de Montiel, les bras longs comme des ailes et la petite tête enfoncée entre les épaules."
@@ -646,6 +657,14 @@ msgstr "Le géant des moulins de Montiel, les bras longs comme des ailes et la p
 #. TRANSLATORS: The Venture in the Book truth: the one detail that does not add up.
 msgid "ui.face.venture.book.tell"
 msgstr "Ce qui ressemble à un bras est une aile de moulin, et ce qui ressemble à une tête est la meule."
+
+#. TRANSLATORS: The Venture in the Book truth: the name the manuscript gives it.
+msgid "ui.face.venture.book.title"
+msgstr "Le géant des moulins de Montiel"
+
+#. TRANSLATORS: The name of the guard.
+msgid "it.ability.block.name"
+msgstr "La garde"
 
 #. TRANSLATORS: The name of a Venture's move, in the developer's readout.
 msgid "ui.move.mill_sails.name"

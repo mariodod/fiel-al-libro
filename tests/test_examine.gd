@@ -133,6 +133,7 @@ func suite(t: TestHarness) -> void:
 			t.test("a character who cannot see the Book still sees a stone")
 			# Sancho has no second sight, so in a Book world he reads the
 			# rock as a rock. The panel is his perception, not the world's.
+			_close_panel(panel)
 			EventBus.object_examined.emit(&"rock", &"sancho")
 			var sancho_sees: String = panel.call("examination_text")
 			t.expect_true(sancho_sees.contains("rock"), "Sancho sees a rock, got '%s'" % sancho_sees)
@@ -143,6 +144,7 @@ func suite(t: TestHarness) -> void:
 			TruthLayer.shift_to(TruthLayer.Layer.REALITY, true)
 			Locura.set_for(&"quixote", 60.0)
 			_settle(scene)
+			_close_panel(panel)
 			EventBus.object_examined.emit(&"rock", &"quixote")
 			var mad: String = panel.call("examination_text")
 			t.expect_true(mad.contains("book"), "the Book is all he has ever seen, got '%s'" % mad)
@@ -152,6 +154,7 @@ func suite(t: TestHarness) -> void:
 			# Swap, and the same object is described in the other reading.
 			TruthLayer.shift_to(TruthLayer.Layer.BOOK, true)
 			_settle(scene)
+			_close_panel(panel)
 			EventBus.object_examined.emit(&"rock", &"quixote")
 			t.expect_true(str(panel.call("examination_text")).contains("book"),
 				"Quixote is driving, so it is a book")
@@ -159,6 +162,28 @@ func suite(t: TestHarness) -> void:
 			var swapped: String = panel.call("examination_text")
 			t.expect_true(swapped.contains("rock"), "Sancho is driving, so the rock is a rock, got '%s'" % swapped)
 			t.expect_false(swapped.contains("Don Quixote of La Mancha"), "and the title is gone, got '%s'" % swapped)
+
+			t.test("the panel stays open until you close it")
+			# The playtest: "the information dialog should remain open
+			# until i close it with E again to read everything". A panel
+			# that closes itself while you are reading it is a panel you
+			# cannot read.
+			_close_panel(panel)
+			EventBus.object_examined.emit(&"rock", &"sancho")
+			var box: Control = panel.get_node_or_null("Panel")
+			t.expect_true(box != null, "the panel has a box")
+			if box != null:
+				t.expect_true(box.visible, "it opens")
+				# A hundred frames of nothing: it must still be there.
+				for i in 100:
+					panel.call("_process", 0.05)
+				t.expect_true(box.visible, "and it does not close itself")
+
+			t.test("and E again closes it")
+			EventBus.object_examined.emit(&"rock", &"sancho")
+			if box != null:
+				t.expect_false(box.visible, "the second press closes it")
+				t.expect_eq(str(panel.call("examination_text")), "", "and it is empty")
 
 			t.test("the prompt appears when there is something in front of you")
 			EventBus.examine_target_changed.emit(&"rock")
@@ -245,6 +270,12 @@ func _pack_form() -> PackedScene:
 	# pack() copies; it does not take the node. Free it or it leaks.
 	root.free()
 	return packed
+
+
+## Shut the panel, so the next examination opens it rather than closing it.
+func _close_panel(panel: Control) -> void:
+	if panel != null and panel.has_method("_close"):
+		panel.call("_close")
 
 
 ## Two frames' worth of settling: the view fades to the new reading, and

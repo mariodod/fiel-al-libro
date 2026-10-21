@@ -17,8 +17,9 @@
 - [x] **Six of the eight "but"s fixed and shipped:** camera-relative movement, the camera
       cuts on a swap instead of sliding, the truth fade 0.9s → 0.3s, the perception tags
       are a toggle (`F2`), the camera's yaw is smoothed so it stops whipping sideways, and
-      **T and L now do visibly different things** (the world's look follows the world;
-      only the objects follow the reader).
+      **T and L now do visibly different things** — the world's *state* is global and
+      global, and the picture follows the reader you are driving (B22 changed this
+      rule; the world's truth is what the Venture wears and what the HUD says).
 - [x] **The page turn.** Pressing `T` turns a page: a sheet of paper crosses the screen
       carrying a line of the 1605 original, while the world changes behind it. GDD.md
       §4.3 — *"Pages curl… the occasional line of the actual 1605 Spanish text, faint, as
@@ -104,6 +105,16 @@
       happened when both of them went down; T turned the world over for Sancho too; and
       the camera swung round at 180° a second, which read as a whip. All eight fixed.
       `tests/test_playtest_fixes.gd`.
+- [x] **B19–B22 — the third playtest's four faults.** The Examine panel closed itself
+      after six seconds (it now stays until `E` closes it); the Venture's title key had
+      never been written down, so the panel printed `ui.face.venture.book.title` at the
+      player (there is now a suite that checks **every key the code and the data use**
+      is in the template); Quixote's line when the rock came back to being a stone said
+      *"a stone where there used to be a book"*, which handed over the other truth; and
+      the picture was half-and-half — the grade followed the world's truth and the
+      geometry followed the reader's, so after `T` and a swap to Sancho you still saw
+      the book world. The picture follows the reader now, grade and geometry together;
+      the world's truth stays global as the *state* (D2). `docs/PLAYTEST_NOTES.md` §8.
 - [x] **2.11 — the Venture of Montiel, the first boss.** It stands in the era to the south:
       a round stone floor with a mill in the middle of it and a gap in the wall. **Two
       forms and two different fights**: the mill does not walk, its sails deny the ground
