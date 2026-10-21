@@ -96,13 +96,14 @@
       which staggers the attacker and leaves it open for you. That is the design's
       "one kills, one controls", and it was the last thing standing between a grey box
       and a fight. `src/characters/companion_ai.gd`.
-- [x] **B11–B17 — the second playtest's seven faults.** The lock-on's input signs were
+- [x] **B11–B18 — the second playtest's eight faults.** The lock-on's input signs were
       inverted (forward went backwards, left went right); the camera spun for ever when
       you walked backwards, because the character turned round and the camera followed it
       round; **the dodge literally flew** (the hips were keyed two and four metres up);
       a character on zero health kept sliding; nothing picked the player up; nothing
-      happened when both of them went down; and T turned the world over for Sancho too.
-      All seven fixed. `tests/test_playtest_fixes.gd`.
+      happened when both of them went down; T turned the world over for Sancho too; and
+      the camera swung round at 180° a second, which read as a whip. All eight fixed.
+      `tests/test_playtest_fixes.gd`.
 - [x] **The hit reactions.** A blow that lands flashes the body, pushes the character,
       stops the swing, and **shakes the camera**.
 - [x] **`H` hides the HUD.** It is the developer's readout — it spells out both readings.

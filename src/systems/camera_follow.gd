@@ -21,7 +21,13 @@ extends Node3D
 @export var follow_speed: float = 6.0
 ## How fast the camera swings round to follow the character's facing, in
 ## degrees per second. Low enough to arc, high enough to keep up.
-@export var turn_speed: float = 180.0
+##
+## It was 180, and the playtest said it was too fast: a half turn in
+## half a second reads as a whip, and the character spends the whole
+## swing off to one side of the screen. A hundred is a lazy arc, and the
+## character turns faster than the camera follows it — which is the
+## look the genre has.
+@export var turn_speed: float = 100.0
 ## The thing the camera is framing ALONGSIDE the character: a locked
 ## target.
 ##
@@ -56,7 +62,7 @@ var _yaw_placed: bool = false
 var _shake: float = 0.0
 
 ## How fast the camera closes on its target, per radian of error.
-const TURN_EASE := 4.0
+const TURN_EASE := 3.0
 
 
 ## Shake the camera.

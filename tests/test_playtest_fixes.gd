@@ -15,7 +15,8 @@ extends RefCounted
 ##      kept its last velocity and slid;
 ##   5. the companion should be able to pick you up;
 ##   6. when both of them are down, the game is over and it starts again;
-##   7. the truth is the knight's alone: T does nothing for Sancho.
+##   7. the truth is the knight's alone: T does nothing for Sancho;
+##   8. the camera swung round too fast to follow the character.
 
 const SCENE := "res://src/world/slice.tscn"
 
@@ -105,6 +106,29 @@ func suite(t: TestHarness) -> void:
 	t.expect_false(sancho.is_dead, "both of them")
 	t.expect_almost_eq(quixote.global_position.distance_to(Vector3(0.0, 0.0, 0.0)), 0.0, 0.5,
 		"and they are back at the start")
+
+	# ── 8. The camera must not whip round ───────────────────────────
+	t.test("the camera swings round slowly")
+	# "Also from the playtest: make the camera rotation slower its too
+	# fast." It was 180 degrees a second: a half turn in half a second,
+	# and the character spends the whole swing off to one side of the
+	# screen.
+	var rig: CameraFollow = scene.get_node_or_null("CameraRig")
+	if rig != null:
+		quixote.revive()
+		rig.call("_process", 0.05)
+		var start_yaw: float = rig.get("_yaw")
+		# A hard turn: the character faces ninety degrees away.
+		quixote.rotation.y = start_yaw + PI * 0.5
+		var fastest: float = 0.0
+		var last: float = start_yaw
+		for i in 60:
+			rig.call("_process", 0.05)
+			var now: float = rig.get("_yaw")
+			fastest = maxf(fastest, absf(rad_to_deg(wrapf(now - last, -PI, PI))) / 0.05)
+			last = now
+		t.expect_in_range(fastest, 0.0, 120.0,
+			"the camera swings at %.0f degrees a second" % fastest)
 
 	parent.remove_child(scene)
 	scene.free()

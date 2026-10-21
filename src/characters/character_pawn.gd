@@ -62,7 +62,11 @@ const FRICTION := 14.0
 const TURN_SPEED := 8.0
 ## How fast the turn closes on its target, per radian of error. The turn
 ## is proportional, so a small correction is a small correction.
-const TURN_EASE := 4.0
+##
+## The character keeps its own top speed — a knight turns at once — but
+## the ease is gentler than the camera's was, so the camera has a
+## chance to keep up instead of chasing a whip.
+const TURN_EASE := 3.0
 ## How fast a blow pushes a character that was not ready for it.
 const KNOCKBACK_SPEED := 4.0
 ## How quickly that push dies away.

@@ -579,10 +579,10 @@ playtest too, and it has never been judged.
 
 ---
 
-## 8. The second playtest — 21 October 2026, and the seven things it found
+## 8. The second playtest — 21 October 2026, and the eight things it found
 
 A second run of the build, with the yard, the rigs, the lock-on and the companion in it.
-Seven things, and every one of them was a real fault:
+Eight things, and every one of them was a real fault:
 
 | # | What they said | What it was | Where it went |
 |---|---|---|---|
@@ -593,6 +593,7 @@ Seven things, and every one of them was a real fault:
 | B15 | *"Your partner could help lift you."* | Nothing picked the player up. | **Built** — the companion goes over and stands there, and then you are up |
 | B16 | *"If both go to 0 you should get game over and respawn."* | Nothing. | **Built** — the page is blank, and the morning starts again |
 | B17 | *"Pressing T with sancho should do nothing. It's a quijote exclusive ability."* | T turned the world over for both of them. | **Fixed** — the truth is the knight's delusion, and his alone |
+| B18 | *"Also from the playtest: make the camera rotation slower its too fast."* | The camera swung round at **180° a second** — a half turn in half a second, which reads as a whip, and the character spends the whole swing off to one side of the screen. | **Fixed** — 100° a second, and a gentler ease. The character still turns faster than the camera follows it, which is the look the genre has |
 
 Two of them were the *same* bug wearing different clothes, and both are worth a line
 of their own:
@@ -615,6 +616,13 @@ circled for ever. Two changes, both of them better anyway:
 The numbers, measured in the build after the fix: **walking backwards for three seconds
 turns the camera 0.0°** (it was spinning), and strafing settles at 90° instead of
 circling.
+
+**The camera's speed (B18).** The same swing that used to spin was also *too quick* when
+it was doing the right thing: 180° a second is a half turn in half a second. It is now
+**100° a second**, with a gentler ease, and the character keeps its own quick turn — so
+the camera arcs after the character rather than lashing. Measured in the build: the
+camera's fastest swing while the character turns hard is **101° a second**, and it
+comes round to the character's new facing in one lazy arc.
 
 **The dodge (B13).** The roll was the one place where the art and the code disagreed
 about the truth: the timing was right, the distance was right, and the character was
