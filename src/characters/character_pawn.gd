@@ -38,6 +38,12 @@ var is_dead: bool = false
 ## The truth this pawn currently perceives. Quixote sees the Book; Sancho
 ## sees Reality. Set by the driver.
 var perceived_layer: int = 0
+## True once this character has been in a fight: they have dealt a blow
+## or taken one.
+##
+## The companion waits for this. The squire does not charge into a fight
+## the player has not started, and the player starts it with a blow.
+var has_engaged: bool = false
 ## How long each ability has left before it can be used again, by id.
 var _ability_cooldowns: Dictionary = {}
 
@@ -675,6 +681,9 @@ func _combo_damage(ability: AbilityData) -> float:
 func take_damage(amount: float, source: Node = null, poise_damage: float = 0.0) -> void:
 	if is_dead:
 		return
+	# The fight has started, whichever way round it went. The companion
+	# is waiting for this.
+	has_engaged = true
 	# The i-frames. This is the whole point of a dodge.
 	if _iframe_time > 0.0:
 		return

@@ -15,4 +15,4 @@ windup_seconds = 1.15
 strike_seconds = 0.25
 recover_seconds = 2.4
 cooldown = 7.0
-staggers_on_parry = true
+heavy = true

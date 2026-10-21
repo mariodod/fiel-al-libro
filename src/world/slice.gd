@@ -55,6 +55,9 @@ extends Node3D
 @onready var ai: CompanionAI = $CompanionAI
 @onready var camera_rig: CameraFollow = $CameraRig
 @onready var hud: Label = $HudLayer/Hud
+## The two characters' health, in the corner. Always on: the debug
+## readout below is the developer's, and it is hidden with `H`.
+@onready var vitals: VitalsPanel = $HudLayer/Vitals
 @onready var windmill: TruthObject = $Windmill
 @onready var rock: TruthObject = $Rock
 ## The Venture of Montiel, in the era to the south.
@@ -240,6 +243,23 @@ func _build_yard() -> void:
 	_straw_man.position = YARD_CENTER + Vector3(-6.0, 0.0, 5.0)
 	yard.add_child(_straw_man)
 
+	# The bars. How much of a thing is left has to be visible, or the
+	# fight is a guess.
+	_add_bar(_dummy, 2.5)
+	_add_bar(_straw_man, 2.5)
+
+
+## A bar over a thing's head.
+func _add_bar(thing: Node, height_above: float, width: float = 1.5) -> void:
+	if thing == null:
+		return
+	var bar := HealthBar.new()
+	bar.name = "HealthBar"
+	bar.target = thing
+	bar.lift = height_above
+	bar.width = width
+	add_child(bar)
+
 
 ## The era: the threshing floor of a mill, and the first boss of the
 ## game.
@@ -266,6 +286,10 @@ func _build_era() -> void:
 			ERA_CENTER + direction * ERA_RADIUS,
 			Vector3(chord, ERA_WALL_HEIGHT, WALL_THICKNESS),
 			angle)
+
+	# The Venture's bar. It is a big thing and it is a long way off, so
+	# its bar is high and wide.
+	_add_bar(venture, 11.0, 2.8)
 
 
 ## One wall: a box you cannot walk through.
@@ -556,6 +580,10 @@ func _update_hud() -> void:
 
 	var lines: Array[String] = []
 	lines.append(Loc.t(&"ui.slice.title"))
+	# The two characters' health, in the corner, for everybody. The
+	# numbers below are the developer's readout; these are the game's.
+	if vitals != null:
+		vitals.set_characters(driven, other)
 	lines.append(Loc.tf(&"ui.slice.line.world", [_layer_name(TruthLayer.layer())]))
 	lines.append(Loc.tf(&"ui.slice.line.you", [
 		_character_name(driven),

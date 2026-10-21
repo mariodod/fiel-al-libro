@@ -115,6 +115,15 @@
       geometry followed the reader's, so after `T` and a swap to Sancho you still saw
       the book world. The picture follows the reader now, grade and geometry together;
       the world's truth stays global as the *state* (D2). `docs/PLAYTEST_NOTES.md` §8.
+- [x] **B23–B25 — the fourth playtest's three faults.** The **boss had no tell**: one
+      pose for every move, so there was nothing to learn and nothing to time the
+      Desvelar against. It **poses itself** now — the mill leans and drops for the
+      topple and runs its sails up; the giant draws one arm back for the sweep and
+      raises both for the slam. There was **no health feedback** except the debug
+      numbers, which are hidden with `H`: there is now a **bar over every enemy's head**
+      and **two bars in the corner** for the two characters. And the **companion charged
+      into fights nobody started**: the squire now **waits for the first blow** — the
+      knight is the front line, the squire is control.
 - [x] **2.11 — the Venture of Montiel, the first boss.** It stands in the era to the south:
       a round stone floor with a mill in the middle of it and a gap in the wall. **Two
       forms and two different fights**: the mill does not walk, its sails deny the ground

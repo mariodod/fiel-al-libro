@@ -49,14 +49,15 @@ enum Shape {
 @export var cooldown: float = 1.5
 ## How far it comes forward while it strikes. Only a CHARGE moves.
 @export var step_distance: float = 0.0
-## Catching this move on the guard staggers it.
+## A blow that was meant to break a guard.
 ##
-## Not every blow is worth catching. A spinning blade is turned aside —
-## the guard holds and the thing keeps coming — but a blow that was
-## meant to break a guard is caught and turned back on the arm that
-## threw it. Without this rule a companion can stun-lock a Venture just
-## by standing next to it.
-@export var staggers_on_parry: bool = false
+## It is caught and turned back on the arm that threw it, and it is
+## telegraphed with the biggest tell the thing has. Not every blow is
+## worth catching: a spinning blade is turned aside — the guard holds
+## and the thing keeps coming — but a blow that was meant to break a
+## guard is caught and turned back. Without this rule a companion can
+## stun-lock a Venture just by standing next to it.
+@export var heavy: bool = false
 
 
 ## Is this a move that goes all the way round?

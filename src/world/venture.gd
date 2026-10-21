@@ -213,7 +213,7 @@ func _process(delta: float) -> void:
 	var layer := current_form_layer()
 	if layer != _form_layer:
 		_apply_form(layer, false, false)
-	_update_lean(delta)
+	_pose(delta)
 
 
 ## Stop what you are doing.
@@ -403,26 +403,104 @@ func _face_target(delta: float) -> void:
 	rotation.y += clampf(diff, -speed * delta, speed * delta)
 
 
-## The tell, in the body: it leans back before it comes down.
+## The pose, in code.
 ##
-## A wind-up nobody can see is not a wind-up. The mill leans before it
-## topples, and the giant leans before it swings, and the player learns
-## to read it.
-func _update_lean(delta: float) -> void:
-	if _body == null:
+## The Venture has no rig and no clips: it is a low-poly model with
+## named parts, and the parts move. The tell is the whole point — the
+## player has to be able to *learn* to dodge it and to time the
+## Desvelar against it — so the wind-up has to be a shape and not a
+## number.
+##
+## Each form tells its own way, and each move tells differently:
+##
+##   THE MILL — the topple leans the whole tower back and drops it
+##   forward (a heavy blow); the sails spin up (a light one).
+##
+##   THE GIANT — the sweep draws one arm back (a light blow); the slam
+##   raises both (a heavy one).
+func _pose(delta: float) -> void:
+	_pose_mill(delta)
+	_pose_giant(delta)
+
+
+## How far through its wind-up the move is, from 0 to 1.
+func _windup_progress() -> float:
+	if _move == null or state != State.WINDUP:
+		return 0.0
+	if _move.windup_seconds <= 0.0:
+		return 1.0
+	return 1.0 - clampf(_timer / _move.windup_seconds, 0.0, 1.0)
+
+
+## The mill: the tower leans, and the sails run up before they come round.
+func _pose_mill(delta: float) -> void:
+	if _reality_form == null:
 		return
-	var target := 0.0
-	var speed := 6.0
-	if state == State.WINDUP and _move != null:
-		var progress := 1.0
-		if _move.windup_seconds > 0.0:
-			progress = 1.0 - clampf(_timer / _move.windup_seconds, 0.0, 1.0)
-		target = -0.3 * progress
-		speed = 4.0
+	var heavy := _move != null and _move.heavy
+	var progress := _windup_progress()
+
+	# The tower.
+	var lean := 0.0
+	var speed := 3.0
+	if heavy:
+		if state == State.WINDUP:
+			lean = -0.42 * progress
+		elif state == State.STRIKE:
+			lean = 0.55
+			speed = 12.0
+		elif state == State.RECOVER:
+			lean = 0.35
+	else:
+		lean = -0.08 * progress
+	_reality_form.rotation.x = move_toward(_reality_form.rotation.x, lean, speed * delta)
+
+	# The sails. A run-up is the mill's way of saying "this one is
+	# coming": the blades speed up before they come round.
+	var sails := _reality_form.get_node_or_null("Sails")
+	if sails == null:
+		return
+	var spin := 9.0
+	if heavy:
+		spin = 26.0
+	elif state == State.WINDUP:
+		spin = 9.0 + 16.0 * progress
 	elif state == State.STRIKE:
-		target = 0.22
-		speed = 14.0
-	_body.rotation.x = move_toward(_body.rotation.x, target, speed * delta)
+		spin = 30.0
+	sails.set("degrees_per_second", spin)
+
+
+## The giant: the arms are the tell, and each blow has its own.
+func _pose_giant(delta: float) -> void:
+	if _book_form == null:
+		return
+	var heavy := _move != null and _move.heavy
+	var progress := _windup_progress()
+	var speed := 4.0
+
+	var back := 0.0
+	var both := 0.0
+	if state == State.WINDUP:
+		if heavy:
+			both = -1.55 * progress
+		else:
+			back = -1.15 * progress
+	elif state == State.STRIKE:
+		if heavy:
+			both = 1.15
+		else:
+			back = 0.85
+		speed = 13.0
+
+	_pose_arm(_book_form.get_node_or_null("ShoulderPivotLeft"), back, both, speed, delta)
+	_pose_arm(_book_form.get_node_or_null("ShoulderPivotRight"), back, both, speed, delta)
+
+
+## One arm: the right one draws back for a sweep, both go up for a slam.
+func _pose_arm(pivot: Node, back: float, both: float, speed: float, delta: float) -> void:
+	if pivot == null:
+		return
+	var angle := back + both
+	pivot.rotation.x = move_toward(pivot.rotation.x, angle, speed * delta)
 
 
 # ── Being hit ───────────────────────────────────────────────────────────
@@ -457,7 +535,7 @@ func stagger() -> void:
 	# Not every blow is worth catching. A spinning blade is turned aside
 	# and the thing keeps coming; a blow that was meant to break a guard
 	# is caught and turned back on the arm that threw it.
-	if _move != null and not _move.staggers_on_parry:
+	if _move != null and not _move.heavy:
 		return
 	_enter(State.STAGGER, stagger_seconds)
 	_move = null

@@ -198,6 +198,48 @@ func suite(t: TestHarness) -> void:
 	t.expect_true(venture.is_in_group(AttackHitbox.TARGET_GROUP), "and hittable")
 	t.expect_ne(venture.display_name(), "", "and it has a name")
 
+	t.test("and it has a bar over its head")
+	# The playtest: "there is no feedback to how much hp the enemies have
+	# left". The bar is that feedback, and it is in the world.
+	var bars := 0
+	var mine := 0
+	for child in scene.get_children():
+		if child is HealthBar:
+			bars += 1
+			if (child as HealthBar).target == venture:
+				mine += 1
+	t.expect_eq(bars, 3, "the dummy, the straw man and the Venture all have one")
+	t.expect_eq(mine, 1, "and one of them is the Venture's")
+
+	# ── The tell ───────────────────────────────────────────────────────
+	t.test("the giant telegraphs the blow")
+	# The playtest: "the boss is missing animations to be able to dodge
+	# and stop the attack with X". A wind-up nobody can see is not a
+	# wind-up: the player has to be able to learn it.
+	TruthLayer.shift_to(TruthLayer.Layer.BOOK, true)
+	venture.set("_reveal_time", 0.0)
+	venture._process(0.05)
+	venture.reset()
+	quixote.global_position = venture.global_position + Vector3(2.5, 0.0, 0.0)
+	quixote.rotation.y = PI * 0.5
+	var giant := venture.get("_book_form") as Node3D
+	t.expect_true(giant != null, "the giant is there")
+	if giant != null:
+		var arm := giant.get_node_or_null("ShoulderPivotRight") as Node3D
+		t.expect_true(arm != null, "and its arm hangs from a shoulder")
+		if arm != null:
+			var resting := arm.rotation.x
+			# Wind it up and let the pose run.
+			venture.state = Venture.State.WINDUP
+			venture.set("_move", venture.form_data_for(1).moveset[0])
+			venture.set("_timer", 0.5)
+			venture._process(0.05)
+			t.expect_ne(arm.rotation.x, resting, "the arm draws back for the tell")
+			t.expect_lt(arm.rotation.x, resting, "and it draws BACK, not forward")
+	venture.state = Venture.State.DORMANT
+	TruthLayer.shift_to(TruthLayer.Layer.REALITY, true)
+	venture._process(0.05)
+
 	# ── The companion's verb ───────────────────────────────────────────
 	t.test("and the companion strips the skin off it")
 	# Sancho's own verb, and the reason the squire is in the fight at

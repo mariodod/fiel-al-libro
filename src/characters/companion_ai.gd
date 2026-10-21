@@ -135,7 +135,21 @@ func _process(delta: float) -> void:
 ## The target the PLAYER is locked onto, first: the two of them are a
 ## team, and if you point, he hits it. With no lock, the nearest hostile
 ## it can reach.
+##
+## **Except the squire waits for the first blow.** The playtest: *"right
+## at the start sancho goes directly to an enemy i didn't start a combat
+## against yet — that behaviour would be okay for quijote, but sancho
+## should only fight after quixote delivers or receives the first
+## blow."*
+##
+## And it is right. The knight is the front line: he goes in, and the
+## squire covers him. The squire is control, not force, and a man who
+## charges into a fight you did not start is neither.
 func _pick_target() -> void:
+	if _waits_for_the_first_blow():
+		target = null
+		pawn.clear_lock_target()
+		return
 	var wanted: Node3D = null
 	if leader.is_locked():
 		wanted = leader.lock_target as Node3D
@@ -150,6 +164,18 @@ func _pick_target() -> void:
 		pawn.set_lock_target(target)
 	else:
 		pawn.clear_lock_target()
+
+
+## Should this companion hold back until the player has drawn blood?
+##
+## Only the squire. The knight is the one who goes in first, and the
+## player is the one who decides when the fight starts.
+func _waits_for_the_first_blow() -> bool:
+	if pawn == null or leader == null:
+		return false
+	if pawn.character_id != &"sancho":
+		return false
+	return not leader.has_engaged
 
 
 ## The fight.

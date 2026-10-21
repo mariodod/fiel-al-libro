@@ -43,6 +43,26 @@ func suite(t: TestHarness) -> void:
 	t.expect_eq(controller.active_pawn, quixote, "the player drives Quixote")
 	t.expect_eq(ai.pawn, sancho, "and Sancho follows")
 
+	# ── It waits for the first blow ────────────────────────────────────
+	t.test("the squire waits for the player to start the fight")
+	# The playtest: "right at the start sancho goes directly to an
+	# enemy i didn't start a combat against yet — that behaviour would
+	# be okay for quijote, but sancho should only fight after quixote
+	# delivers or receives the first blow."
+	#
+	# And it is right. The knight is the front line: he goes in, and the
+	# squire covers him. The squire is control, not force.
+	quixote.has_engaged = false
+	quixote.global_position = dummy.global_position + Vector3(3.0, 0.0, 0.0)
+	sancho.global_position = dummy.global_position + Vector3(2.0, 0.0, 0.0)
+	_step(ai)
+	t.expect_eq(ai.target, null, "he does not walk into a fight nobody started")
+
+	t.test("and he joins once the first blow lands")
+	quixote.has_engaged = true
+	_step(ai)
+	t.expect_eq(ai.target, dummy, "now he is in it")
+
 	# ── It fights what you point at ────────────────────────────────────
 	t.test("the companion fights the target the player is locked onto")
 	quixote.global_position = dummy.global_position + Vector3(3.0, 0.0, 0.0)
@@ -69,6 +89,9 @@ func suite(t: TestHarness) -> void:
 	quixote.set_lock_target(dummy)
 	sancho.global_position = dummy.global_position + Vector3(1.8, 0.0, 0.0)
 	sancho.stamina = sancho.max_stamina
+	# The character's own rhythm runs on its own clock, and the step
+	# before this one used it.
+	sancho._attack_cooldown = 0.0
 	var before := dummy.health
 	ai._attack_timer = 0.0
 	_step(ai)

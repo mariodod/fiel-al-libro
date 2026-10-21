@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3]
+[gd_scene load_steps=22 format=3]
 
 [ext_resource type="Script" path="res://src/world/slice.gd" id="1_slice"]
 [ext_resource type="Script" path="res://src/world/truth_object.gd" id="2_object"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" path="res://src/world/venture.gd" id="13_venture"]
 [ext_resource type="Resource" path="res://src/data/ventures/venture_montiel.tres" id="14_venture_data"]
 [ext_resource type="Resource" path="res://src/data/ventures/venture_montiel_reading.tres" id="15_venture_reading"]
+[ext_resource type="Script" path="res://src/ui/vitals_panel.gd" id="19_vitals"]
 
 [sub_resource type="PlaneMesh" id="Plane_ground"]
 size = Vector2(300, 300)
@@ -113,3 +114,18 @@ offset_right = 1180.0
 offset_bottom = 460.0
 theme_override_font_sizes/font_size = 16
 theme_override_colors/font_color = Color(0.94, 0.9, 0.8, 1)
+
+[node name="Vitals" type="Control" parent="HudLayer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -260.0
+offset_top = -92.0
+offset_right = -18.0
+offset_bottom = -18.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+script = ExtResource("19_vitals")

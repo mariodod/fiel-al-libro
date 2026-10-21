@@ -603,6 +603,9 @@ Eight things, and every one of them was a real fault:
 | B20 | *"In the examine text of the boss i see the text key instead of the text."* | The Venture's faces carried a title key that **nobody had ever written down**, so the panel printed `ui.face.venture.book.title` to the player. The locale suite could not catch it: it only checks that the locales agree with *each other*, never with the game. | **Fixed** — the keys are written, and there is now a suite that checks **every key the code and the data use** is in the template |
 | B21 | *"The last part of the text for quijote is too much of a dead giveaway, it should be more subtle like the book one."* | Quixote's line when the rock came back to being a stone said *"a stone where there used to be a book"* — it handed over the other truth. The Book reaction is subtle; this one was not. | **Fixed** — *"A stone. Only a stone. Forgive me."* The reaction may name the reading it is in, never the other one |
 | B22 | *"After pressing T with quijote and switching to sancho you still see the book world."* | The picture was **half-and-half**: the grade followed the world's truth and the geometry followed the reader's. So Sancho, who reads Reality in a Book world, was looking at a Book-graded world with Reality objects. | **Fixed** — the picture follows the reader, grade and geometry together. One world, two readings: the disagreement is the content, and you have to be able to *see* the reading you are driving |
+| B23 | *"The boss is missing animations to be able to dodge and stop the attack with X."* | The Venture had no tell. It leaned a little, the same way for every move, so there was nothing to learn and nothing to time the Desvelar against. | **Fixed** — the Venture poses itself: the mill leans back and drops for the **topple** and runs its sails up for the **sails**; the giant draws one arm back for the **sweep** and raises both for the **slam**. A heavy blow and a light one now look different |
+| B24 | *"There is no feedback to how much hp the enemies have left, nor the main characters other than the debug numbers."* | The only readout was the developer's, and it is hidden with `H` — so a stranger was playing with no idea how close anything was to the ground. | **Fixed** — a **bar over every enemy's head** in the world (the dummy, the straw man, the Venture) and **two bars in the corner** for the two characters: ochre for the one you drive, olive for the one behind you |
+| B25 | *"Right at the start sancho goes directly to an enemy i didn't start a combat against yet — that behaviour would be okay for quijote, but sancho should only fight after quixote delivers or receives the first blow."* | The companion walked to the nearest hostile on its own and started swinging. | **Fixed** — the squire **waits for the first blow**. The knight is the front line: he goes in, and the squire covers him. The squire is control, not force |
 
 Two of them were the *same* bug wearing different clothes, and both are worth a line
 of their own:
@@ -670,6 +673,35 @@ animation, his line, his meter). `T` is reversible and `L` is not.
 
 **The panel (B19, B20, B21).** The examination stays open until you close it, the keys
 it prints are real keys, and the line it ends with does not hand over the other truth.
+
+**The tell (B23).** The third playtest said the thing that a fight cannot do without:
+*"the boss is missing animations to be able to dodge and stop the attack with X."*
+And it is right — a wind-up nobody can see is not a wind-up. The Venture had one pose
+for every move, so there was nothing to learn and nothing to time the Desvelar against.
+
+It poses itself now, in code, because it has no rig and no clips: it is a low-poly
+model with named parts, and the parts move. The mill leans back and drops forward for
+the **topple** and runs its sails up before they come round. The giant draws one arm
+back for the **sweep** and raises both for the **slam**. A heavy blow and a light one
+now look different, which is the whole of what a tell is.
+
+**The feedback (B24).** There was one readout and it was the developer's, and the
+developer's readout is hidden with `H`. So a stranger was playing a fight with no idea
+how close anything was to the ground.
+
+There is a **bar over every enemy's head** now, in the world where you can see it, and
+**two bars in the corner** for the two of them: ochre for the one you are driving, olive
+for the one behind you. The debug numbers are still there for the developer, and still
+hidden.
+
+**The squire (B25).** *"Right at the start sancho goes directly to an enemy i didn't
+start a combat against yet."* He did, and it was wrong: the companion used to walk to
+the nearest hostile and start swinging on his own.
+
+The knight is the front line. He goes in, and the squire covers him. So the squire
+**waits for the first blow** — yours or his — and joins the fight after it. The
+companion is control, not force, and a man who charges into a fight you did not start
+is neither.
 
 ---
 

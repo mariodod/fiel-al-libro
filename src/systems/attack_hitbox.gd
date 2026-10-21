@@ -119,4 +119,10 @@ func _resolve() -> void:
 			if angle > half_arc:
 				continue
 		_hit[id] = true
+		# The blow landed, so the fight has started. The companion is
+		# waiting for this: the player starts the fight, and then the
+		# squire comes in.
+		var attacker := source as CharacterPawn
+		if attacker != null:
+			attacker.has_engaged = true
 		target.take_damage(damage, source, poise_damage)
