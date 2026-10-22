@@ -29,6 +29,11 @@ var anamorphoses_spotted: Dictionary = {}
 var anamorphoses_resolved: Dictionary = {}
 ## Evidence ids → count. "Gather the evidence that proves the world is flat."
 var evidence: Dictionary = {}
+## The regions the player has set foot in, and the ones whose case is
+## closed (their Venture resolved). GDD.md §11.2: five regions, one
+## chapter each.
+var regions_found: Dictionary = {}
+var regions_resolved: Dictionary = {}
 
 # ── Manuscript ──────────────────────────────────────────────────────────
 ## Ids of the 48 Manifiesto fragments the player has found (D7).
@@ -69,6 +74,44 @@ func total_evidence() -> int:
 	for key: Variant in evidence:
 		total += int(evidence[key])
 	return total
+
+
+# ── Regions ─────────────────────────────────────────────────────────────
+## Mark a region as found. The player has set foot in it, or at least
+## seen its name on the map.
+func find_region(id: StringName) -> void:
+	if id.is_empty():
+		return
+	if not regions_found.has(id):
+		regions_found[id] = true
+		EventBus.region_found.emit(id)
+
+## Mark a region as resolved — its Venture's case is closed.
+func resolve_region(id: StringName) -> void:
+	if id.is_empty():
+		return
+	regions_resolved[id] = true
+	EventBus.region_resolved.emit(id)
+
+
+## Is this region found?
+func region_found(id: StringName) -> bool:
+	return bool(regions_found.get(id, false))
+
+
+## Is this region resolved?
+func region_resolved(id: StringName) -> bool:
+	return bool(regions_resolved.get(id, false))
+
+
+## How many regions the player has found.
+func regions_found_count() -> int:
+	return regions_found.size()
+
+
+## How many regions are resolved.
+func regions_resolved_count() -> int:
+	return regions_resolved.size()
 
 
 # ── Humanity (D4) ───────────────────────────────────────────────────────

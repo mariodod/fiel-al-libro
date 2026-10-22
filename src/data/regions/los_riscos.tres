@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="RegionData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/data/region_data.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"los_riscos"
+name_key = &"ui.region.los_riscos.name"
+chapter = 4
+fantasy = "Sheer cliffs, a Gothic church, fog"
+key_venture_id = &""
+fragment_key = &""

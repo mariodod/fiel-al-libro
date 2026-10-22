@@ -79,6 +79,8 @@ signal chapter_started(id: StringName)
 signal chapter_completed(id: StringName)
 signal venture_started(id: StringName)
 signal venture_resolved(id: StringName, mode: int)
+signal region_found(id: StringName)
+signal region_resolved(id: StringName)
 signal region_loaded(id: StringName)
 signal posada_entered(id: StringName)
 

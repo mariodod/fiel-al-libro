@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://src/world/map_screen.gd" id="1_map"]
+[ext_resource type="Texture2D" path="res://docs/map/world_map.svg" id="2_map_tex"]
+
+[node name="MapScreen" type="CanvasLayer"]
+layer = 30
+script = ExtResource("1_map")
+map_texture = ExtResource("2_map_tex")

@@ -55,9 +55,10 @@ someone willing to pay for the lesson with their own mind.*
 | `src/world/training_dummy.gd` | The thing to fight: a telegraphed swing in a walled yard. |
 | `src/world/straw_man.gd` | The thing that must not be harmed: the innocent, for the second rule. |
 | `src/world/venture.gd` | The first boss: the Venture of Montiel, in two forms and two movesets, in the era to the south. |
-| `src/data/` | `Resource` subclasses and the `.tres` content: characters, primitives, moves, forms, ventures. |
+| `src/world/map_screen.gd` | The world map screen: `docs/map/world_map.svg` rendered as a TextureRect, region list with found-state dots, open with `G`. |
+| `src/data/` | `Resource` subclasses and the `.tres` content: characters, primitives, moves, forms, ventures, regions. |
 | `reference/` | **Local only, gitignored.** The reference texts: the 1605 first part, the 1615 second part, and the OCR of the 1605 printing. Fetch them with `tools\fetch_reference.ps1`. |
-| `tests/` | 24 suites, 536 assertions. |
+| `tests/` | 25 suites, 567 assertions. |
 | `locale/` | gettext PO files: es, en, fr + the template. |
 | `assets/` | Shaders, the Manifiesto content format. |
 | `tools/` | `godot.ps1` (locator), `blender.ps1` (locator), `setup.ps1` (one-command setup). |
@@ -175,6 +176,7 @@ a written page. The ending is a page you can read.
 | **The companion's voice** | `src/systems/chatter.gd` + `src/characters/companion_ai.gd` — a line about the thing it is looking at, or an idle line, never the same thing twice |
 | **Something to fight** | `src/world/training_dummy.gd` + the yard in `src/world/slice.gd` — a telegraphed swing, a health bar, and four walls. The dodge cannot be judged without an enemy and a space limit |
 | **The first boss** | `src/world/venture.gd` + `src/data/ventures/`, `src/data/forms/`, `src/data/moves/` — the Venture of Montiel: the mill and the giant, two movesets, and the two levers that change the shape of the fight (`T` for Quixote, `X` for Sancho) |
+| **The world map** | `src/world/map_screen.gd` + `src/world/map_screen.tscn` + `src/data/region_data.gd` + `src/data/regions/*.tres` — a 1605-style portolan map with five regions at true compass positions, open with `G` (`docs/map/world_map.svg`, `docs/map/WORLD_MAP.md`) |
 | Character abstraction | `src/characters/character_pawn.gd` (base), `player_controller.gd`, `companion_ai.gd` |
 | **The companion in the fight** | `src/characters/companion_ai.gd` — it fights the target you are locked onto, and it catches the wind-up on its guard to parry, which staggers the attacker. That is the design's "one kills, one controls" |
 | Data-driven content | `src/data/*.gd` — `Resource` subclasses; tune in the inspector, never in code |
@@ -462,7 +464,7 @@ Full memo: `docs/IP_CLEARANCE.md` (private).
 |---|---|
 | **Phase** | Phase 0 complete. **Phase 1, weeks 1–2: the grey box exists, the playtest has happened twice, and week 3–4 (combat) has started.** |
 | **Working code** | ~37 GDScript files: autoload spine, data resources, character abstraction, the truth-layer shader, the save system, the i18n pipeline, the reading rule, the Examine verb, the reactions, the dodge, the swing, the training dummy, and the week 1–2 grey box. |
-| **Tests** | 24 suites, 536 assertions, all green, enforced in CI. |
+| **Tests** | 25 suites, 567 assertions, all green, enforced in CI. |
 | **CI** | Green on every push. Produces Windows + Linux builds as artifacts. |
 | **Game content** | Two primitives (a windmill/giant, a rock/book) as low-poly placeholders, a training dummy and a walled yard, eight reaction lines in three languages, and one real Manifiesto fragment. No art, no levels, no enemies, no audio. |
 | **Money spent** | €0. Godot is free, assets are CC0, the only planned spend is the credits song (~$200–800) and later the EUIPO filing (~€1,150). |

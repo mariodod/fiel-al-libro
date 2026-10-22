@@ -802,3 +802,23 @@ msgstr ""
 #. TRANSLATORS: The character says so when the world shows them a giant.
 msgid "dia.sancho.reaction.venture.book"
 msgstr ""
+
+#. TRANSLATORS: The name of Region I: El Camino de la Mancha.
+msgid "ui.region.camino_la_mancha.name"
+msgstr ""
+
+#. TRANSLATORS: The name of Region II: Sierra Morena.
+msgid "ui.region.sierra_morena.name"
+msgstr ""
+
+#. TRANSLATORS: The name of Region III: El Toboso y los Montes de Toledo.
+msgid "ui.region.el_toboso.name"
+msgstr ""
+
+#. TRANSLATORS: The name of Region IV: Los Riscos de Medinaceli.
+msgid "ui.region.los_riscos.name"
+msgstr ""
+
+#. TRANSLATORS: The name of Region V: El Castillo del Duque.
+msgid "ui.region.el_castillo_del_duque.name"
+msgstr ""

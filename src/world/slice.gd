@@ -58,6 +58,10 @@ extends Node3D
 ## The two characters' health, in the corner. Always on: the debug
 ## readout below is the developer's, and it is hidden with `H`.
 @onready var vitals: VitalsPanel = $HudLayer/Vitals
+## The map screen scene, instantiated when the player presses G.
+@onready var _map_screen_scene: PackedScene = load("res://src/world/map_screen.tscn")
+## The map screen while it is open, null otherwise.
+var _map_screen: MapScreen = null
 @onready var windmill: TruthObject = $Windmill
 @onready var rock: TruthObject = $Rock
 ## The Venture of Montiel, in the era to the south.
@@ -439,6 +443,18 @@ func _unhandled_input(event: InputEvent) -> void:
 			hud.visible = _show_hud
 	elif event.is_action_pressed(&"reset_dummy"):
 		_reset_yard()
+	elif event.is_action_pressed(&"toggle_map"):
+		_toggle_map()
+
+
+## Open or close the world map.
+func _toggle_map() -> void:
+	if _map_screen != null:
+		_map_screen.queue_free()
+		_map_screen = null
+	else:
+		_map_screen = _map_screen_scene.instantiate()
+		add_child(_map_screen)
 
 
 ## Put the yard back: the dummy stands up, and anyone who fell gets up.
