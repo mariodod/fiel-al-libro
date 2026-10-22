@@ -163,6 +163,14 @@
       stops the swing, and **shakes the camera**.
 - [x] **`H` hides the HUD.** It is the developer's readout — it spells out both readings.
       A stranger must not have it.
+- [x] **The world map, first draft.** `docs/map/world_map.svg` — Spain-shaped, in the
+      manner of a 1605 portolan: the five regions at their true compass positions
+      (I · the open plains, II · Sierra Morena, III · El Toboso y los Montes de Toledo,
+      IV · Los Riscos de Medinaceli, V · El Castillo del Duque), one dashed road from
+      La Posada, and the places the game already has (the windmill Venture, Montesinos,
+      the church, the castle). `docs/map/WORLD_MAP.md` explains it. Two versions of
+      every region — Book and Reality — still to come, and the writing of the region
+      passages is the owner's.
 
 ### This week's three goals
 

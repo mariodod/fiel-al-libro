@@ -160,6 +160,7 @@ not. `src/systems/chatter.gd` is where the next hundred lines go.
 | 2.9 | Sancho's `Desvelar` — the verb ✅; the **VFX** are still plain |
 | 2.10 | The asymmetry rules: Quixote cannot harm innocents without a Humanity cost; Sancho cannot meaningfully damage — ✅ both, and the yard shows them |
 | 2.11 | **The windmill Venture** — ✅ the boss, its two forms and the two movesets; the truth resolution and the fragment reward are not in |
+| — | **The world map** — ✅ first draft: `docs/map/world_map.svg`, Spain-shaped as a 1605 portolan; the five regions at their true compass positions and the road from La Posada. The two Book/Reality reads and the region passages are still to come (`docs/map/WORLD_MAP.md`). |
 
 **2.7 and 2.8 are the two most under-rated tasks in the plan.** Distinct
 animation sets sell the asymmetry better than any mechanic. A reskinned
