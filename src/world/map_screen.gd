@@ -19,12 +19,24 @@ extends CanvasLayer
 var regions: Array[RegionData] = []
 ## Region rows, keyed by region id.
 var region_rows: Dictionary = {}
+## Fragment markers, keyed by region id — small dots on the map.
+var fragment_markers: Dictionary = {}
+
+## Full-screen tint overlay: Book truth gilds the map, Reality chalkes it.
+var truth_overlay: ColorRect = null
+
+## Map panel, so fragment markers can be positioned relative to the map.
+var map_container: Node2D = null
+
 
 func _ready() -> void:
 	_load_regions()
 	_build_ui()
 	EventBus.truth_layer_changed.connect(_on_truth_changed)
 	EventBus.region_found.connect(_on_region_found)
+	EventBus.codex_page_found.connect(_on_codex_page_found)
+	# Set the initial overlay from the current truth layer.
+	_update_truth_overlay()
 
 
 ## Load every region .tres in src/data/regions/.
@@ -62,29 +74,39 @@ func _build_ui() -> void:
 	add_child(container)
 
 	# ── Left: the map ──────────────────────────────────────────────
-	var map_panel := VBoxContainer.new()
-	map_panel.custom_minimum_size = Vector2(700.0, 0.0)
-	container.add_child(map_panel)
+	var map_panel_vb := VBoxContainer.new()
+	map_panel_vb.custom_minimum_size = Vector2(700.0, 0.0)
+	container.add_child(map_panel_vb)
 
 	var map_title := Label.new()
 	map_title.text = "The world"
 	map_title.add_theme_font_size_override("font_size", 20)
 	map_title.add_theme_color_override("font_color", Color(0.94, 0.9, 0.8, 1.0))
-	map_panel.add_child(map_title)
+	map_panel_vb.add_child(map_title)
+
+	var map_container := Node2D.new()
+	map_container.name = "MapContainer"
+	map_container.set_anchors_preset(Control.PRESET_CENTER)
+	map_panel_vb.add_child(map_container)
 
 	var map_rect := TextureRect.new()
+	map_rect.name = "MapRect"
 	if map_texture != null:
 		map_rect.texture = map_texture
 	map_rect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 	map_rect.custom_minimum_size = Vector2(600.0, 400.0)
 	map_rect.expand = true
-	map_panel.add_child(map_rect)
+	map_rect.set_position(Vector2(300.0, 200.0))  # centre of the 600x400 panel
+	map_container.add_child(map_rect)
 
 	var map_hint := Label.new()
 	map_hint.text = "B / T — turn the world over"
 	map_hint.add_theme_font_size_override("font_size", 14)
 	map_hint.add_theme_color_override("font_color", Color(0.75, 0.54, 0.24, 1.0))
-	map_panel.add_child(map_hint)
+	map_panel_vb.add_child(map_hint)
+
+	# Store the container for marker positioning.
+	self.map_container = map_container
 
 	# ── Right: the regions ─────────────────────────────────────────
 	var region_panel := VBoxContainer.new()
@@ -98,9 +120,15 @@ func _build_ui() -> void:
 	region_panel.add_child(regions_title)
 
 	for res in regions:
-		var row := _make_region_row(res)
+		var row: Control = _make_region_row(res)
 		region_panel.add_child(row)
 		region_rows[res.id] = row
+
+	# ── Truth overlay: full screen, changes with the truth layer ─────
+	truth_overlay = ColorRect.new()
+	truth_overlay.name = "TruthOverlay"
+	truth_overlay.set_anchors_preset(Control.PRESET_FULL_RECT)
+	add_child(truth_overlay)
 
 	# ── Bottom: close hint ─────────────────────────────────────────
 	var hint := Label.new()
@@ -111,6 +139,9 @@ func _build_ui() -> void:
 	hint.add_theme_font_size_override("font_size", 14)
 	hint.add_theme_color_override("font_color", Color(0.75, 0.54, 0.24, 1.0))
 	add_child(hint)
+
+	# ── Fragment markers on the map ──────────────────────────────────
+	_build_fragment_markers(map_container, map_rect)
 
 
 ## Make one row in the region list.
@@ -154,6 +185,33 @@ func _make_region_row(res: RegionData) -> Control:
 	return row
 
 
+## Build the fragment markers: small dots on the map at each region's
+## position, visible once the player has found that region's fragment.
+func _build_fragment_markers(container: Node2D, map_rect: TextureRect) -> void:
+	# Region centres on the 1200x800 SVG, normalised to the 600x400 map rect.
+	var positions: Dictionary = {
+		"camino_la_mancha": Vector2(310.0, 180.0),
+		"sierra_morena": Vector2(305.0, 216.0),
+		"el_toboso": Vector2(250.0, 199.0),
+		"los_riscos": Vector2(422.0, 126.0),
+		"el_castillo_del_duque": Vector2(436.0, 161.0),
+	}
+
+	for res in regions:
+		if res.fragment_id.is_empty():
+			continue
+		var dot := ColorRect.new()
+		dot.name = "Marker_" + str(res.fragment_id)
+		dot.custom_minimum_size = Vector2(8.0, 8.0)
+		# Hidden until the fragment is found.
+		dot.color = Color(0.75, 0.54, 0.24, 0.0)
+		dot.set_position(positions.get(res.fragment_id, Vector2(300.0, 200.0)))
+		container.add_child(dot)
+		fragment_markers[res.fragment_id] = dot
+
+		_show_fragment_marker(res.fragment_id, GameState.codex_pages.has(res.fragment_id))
+
+
 ## Refresh one row's found state.
 func _refresh_row(row: Control, res: RegionData) -> void:
 	var dot := row.get_child(0) as ColorRect
@@ -163,10 +221,22 @@ func _refresh_row(row: Control, res: RegionData) -> void:
 	label.modulate = Color(1.0, 1.0, 1.0, 1.0) if found else Color(0.4, 0.4, 0.35, 0.5)
 
 
-## Called when the world's truth turns over: nothing on the map changes
-## (the map is the map), but we keep the connection for the future.
+## Called when the world's truth turns over: the map overlay tints
+## differently in Book and Reality — gilded vs chalky.
 func _on_truth_changed(_old: int, _new: int) -> void:
-	pass
+	_update_truth_overlay()
+
+
+## Update the full-screen tint based on the current truth layer.
+func _update_truth_overlay() -> void:
+	if truth_overlay == null:
+		return
+	if TruthLayer.is_book():
+		# Book truth: gilded, warm ochre.
+		truth_overlay.color = Color(0.75, 0.54, 0.24, 0.22)
+	else:
+		# Reality truth: desaturated chalk, cool grey.
+		truth_overlay.color = Color(0.30, 0.29, 0.27, 0.18)
 
 
 ## Called when the player finds a region.
@@ -176,6 +246,20 @@ func _on_region_found(id: StringName) -> void:
 		var idx := regions.find(func(r: RegionData) -> bool: return r.id == id)
 		if idx >= 0:
 			_refresh_row(row, regions[idx])
+
+
+## Called when a Manifiesto fragment is found — show its marker on the map.
+func _on_codex_page_found(id: StringName) -> void:
+	var marker: ColorRect = fragment_markers.get(id, null) as ColorRect
+	if marker != null:
+		marker.color = Color(0.75, 0.54, 0.24, 1.0)
+
+
+## Show or hide a fragment marker based on whether it has been found.
+func _show_fragment_marker(fragment_id: StringName, found: bool) -> void:
+	var marker: ColorRect = fragment_markers.get(fragment_id, null) as ColorRect
+	if marker != null:
+		marker.color = Color(0.75, 0.54, 0.24, 1.0) if found else Color(0.75, 0.54, 0.24, 0.0)
 
 
 ## Close the map.

@@ -109,9 +109,10 @@
       five regions at their true compass positions and one dashed road from La Posada.
       `docs/map/WORLD_MAP.md` explains it. `src/data/region_data.gd` and the five
       `.tres` files hold region data; `src/world/map_screen.tscn` + `map_screen.gd` is
-      the playable map screen (open with `G`). `tests/test_map_screen.gd` pins region
-      loading and sorting. `src/autoload/game_state.gd` tracks `regions_found` and
-      `regions_resolved`.
+      the playable map screen (open with `G`): the map tint gilds in Book truth and chalks
+      in Reality truth, and fragment markers appear when their Manifiesto fragment is found.
+      `tests/test_map_screen.gd` pins region loading and sorting. `src/autoload/game_state.gd`
+      tracks `regions_found` and `regions_resolved`.
 - [x] **B19–B22 — the third playtest's four faults.** The Examine panel closed itself
       after six seconds (it now stays until `E` closes it); the Venture's title key had
       never been written down, so the panel printed `ui.face.venture.book.title` at the
