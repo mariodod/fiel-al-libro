@@ -290,6 +290,21 @@ func suite(t: TestHarness) -> void:
 	TruthLayer.shift_to(TruthLayer.Layer.REALITY, true)
 	venture._process(0.05)
 
+	t.test("a Lost Quixote cannot turn the world over")
+	# Push Quixote to Lost and press T: the world stops changing for him.
+	Locura.set_for(&"quixote", 60.0)
+	t.expect_eq(Locura.threshold_for(&"quixote"), Locura.Threshold.LOST,
+		"Quixote is Lost")
+	var layer_before := TruthLayer.layer()
+	var press := InputEventAction.new()
+	press.action = &"toggle_truth"
+	press.pressed = true
+	scene.call("_unhandled_input", press)
+	t.expect_eq(TruthLayer.layer(), layer_before,
+		"the world's truth did not change for a Lost Quixote")
+	# Clean up: restore Quixote to Lucid
+	Locura.set_for(&"quixote", 10.0)
+
 	parent.remove_child(scene)
 	scene.free()
 

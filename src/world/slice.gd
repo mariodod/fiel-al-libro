@@ -422,8 +422,13 @@ func _unhandled_input(event: InputEvent) -> void:
 		# T with sancho should do nothing. It's a quijote exclusive
 		# ability."* Sancho reads the world as it is, which is exactly why
 		# he cannot turn it over.
+		#
+		# But the madness is the other side of the same coin: when Quixote
+		# is Lost, the world stops changing for him. The toggle does
+		# nothing — his reading is fixed, and the page will not turn.
 		if player != null and player.active_pawn != null \
-				and player.active_pawn.character_id == &"quixote":
+				and player.active_pawn.character_id == &"quixote" \
+				and Locura.get_for(&"quixote") < Locura.MAX_VALUE / 2:
 			TruthLayer.toggle()
 	elif event.is_action_pressed(&"toggle_help"):
 		_show_help = not _show_help
