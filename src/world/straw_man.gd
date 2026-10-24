@@ -62,6 +62,10 @@ func _build() -> void:
 	straw.roughness = 0.95
 	_material = straw
 
+	var straw_dark := StandardMaterial3D.new()
+	straw_dark.albedo_color = Color(0.58, 0.48, 0.26, 1.0)
+	straw_dark.roughness = 0.97
+
 	# The post it is built on.
 	var post := MeshInstance3D.new()
 	post.name = "Post"
@@ -78,16 +82,41 @@ func _build() -> void:
 	var head := MeshInstance3D.new()
 	head.name = "Head"
 	var head_mesh := SphereMesh.new()
-	head_mesh.radius = 0.26
+	head_mesh.radius = 0.28
 	head_mesh.height = 0.52
 	head_mesh.radial_segments = 10
 	head_mesh.rings = 5
 	head.mesh = head_mesh
 	head.material_override = straw
-	head.position = Vector3(0.0, 2.0, 0.0)
+	head.position = Vector3(0.0, 2.05, 0.0)
 	_body.add_child(head)
 
-	# The arms: two sticks, out to the sides.
+	# A straw hat on top.
+	var hat := MeshInstance3D.new()
+	hat.name = "Hat"
+	var hat_mesh := CylinderMesh.new()
+	hat_mesh.top_radius = 0.34
+	hat_mesh.bottom_radius = 0.34
+	hat_mesh.height = 0.12
+	hat_mesh.radial_segments = 10
+	hat.mesh = hat_mesh
+	hat.material_override = straw_dark
+	hat.position = Vector3(0.0, 2.22, 0.0)
+	_body.add_child(hat)
+
+	var hat_top := MeshInstance3D.new()
+	hat_top.name = "HatTop"
+	var hat_top_mesh := CylinderMesh.new()
+	hat_top_mesh.top_radius = 0.3
+	hat_top_mesh.bottom_radius = 0.3
+	hat_top_mesh.height = 0.18
+	hat_top_mesh.radial_segments = 10
+	hat_top.mesh = hat_top_mesh
+	hat_top.material_override = straw_dark
+	hat_top.position = Vector3(0.0, 2.29, 0.0)
+	_body.add_child(hat_top)
+
+	# The arms: two sticks, out to the sides - ragged ends.
 	for side in [-1.0, 1.0]:
 		var arm := MeshInstance3D.new()
 		arm.name = "Arm"
@@ -98,6 +127,15 @@ func _build() -> void:
 		arm.position = Vector3(0.55 * side, 1.55, 0.0)
 		arm.rotation.y = PI * 0.5
 		_body.add_child(arm)
+
+		var arm_end := MeshInstance3D.new()
+		arm_end.name = "ArmEnd"
+		var arm_end_mesh := BoxMesh.new()
+		arm_end_mesh.size = Vector3(0.16, 0.16, 0.16)
+		arm_end_mesh.material_override = straw_dark
+		arm_end.position = Vector3(0.55 * side, 1.55, -0.72 * side)
+		arm_end.rotation.y = PI * 0.5
+		arm.add_child(arm_end)
 
 	# The body, so the character cannot walk through it.
 	var body := StaticBody3D.new()

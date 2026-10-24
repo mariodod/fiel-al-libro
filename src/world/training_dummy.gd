@@ -111,14 +111,18 @@ func _build() -> void:
 
 	var wood := StandardMaterial3D.new()
 	wood.albedo_color = WOOD
-	wood.roughness = 0.9
+	wood.roughness = 0.92
 	_material = wood
+
+	var wood_dark := StandardMaterial3D.new()
+	wood_dark.albedo_color = Color(0.42, 0.3, 0.18, 1.0)
+	wood_dark.roughness = 0.95
 
 	var post := MeshInstance3D.new()
 	post.name = "Post"
 	var post_mesh := CylinderMesh.new()
-	post_mesh.top_radius = 0.16
-	post_mesh.bottom_radius = 0.22
+	post_mesh.top_radius = 0.18
+	post_mesh.bottom_radius = 0.24
 	post_mesh.height = 1.7
 	post.mesh = post_mesh
 	post.material_override = wood
@@ -128,13 +132,13 @@ func _build() -> void:
 	var head := MeshInstance3D.new()
 	head.name = "Head"
 	var head_mesh := SphereMesh.new()
-	head_mesh.radius = 0.28
+	head_mesh.radius = 0.3
 	head_mesh.height = 0.56
-	head_mesh.radial_segments = 12
-	head_mesh.rings = 6
+	head_mesh.radial_segments = 10
+	head_mesh.rings = 5
 	head.mesh = head_mesh
 	head.material_override = wood
-	head.position = Vector3(0.0, 1.85, 0.0)
+	head.position = Vector3(0.0, 1.9, 0.0)
 	_body.add_child(head)
 
 	# The arm hangs off a shoulder, so it can swing.
@@ -146,15 +150,48 @@ func _build() -> void:
 	var arm := MeshInstance3D.new()
 	arm.name = "Arm"
 	var arm_mesh := BoxMesh.new()
-	arm_mesh.size = Vector3(0.22, 0.22, 1.5)
+	arm_mesh.size = Vector3(0.22, 0.22, 1.6)
 	arm.mesh = arm_mesh
 	arm.material_override = wood
-	arm.position = Vector3(0.0, 0.0, -0.75)
+	arm.position = Vector3(0.0, 0.0, -0.8)
 	_shoulder.add_child(arm)
 
-	# The body, so the character cannot walk through it.
-	var body := StaticBody3D.new()
+	var arm_end := MeshInstance3D.new()
+	arm_end.name = "ArmEnd"
+	var arm_end_mesh := BoxMesh.new()
+	arm_end_mesh.size = Vector3(0.26, 0.26, 0.22)
+	arm_end_mesh.material_override = wood_dark
+	arm_end.position = Vector3(0.0, 0.0, -0.82)
+	arm.add_child(arm_end)
+
+	# The body: a sack stuffed with straw, tied at waist and neck.
+	var body := MeshInstance3D.new()
 	body.name = "Body"
+	var body_mesh := CylinderMesh.new()
+	body_mesh.top_radius = 0.32
+	body_mesh.bottom_radius = 0.32
+	body_mesh.height = 1.3
+	body_mesh.radial_segments = 8
+	body.mesh = body_mesh
+	body.material_override = wood
+	body.position = Vector3(0.0, 0.65, 0.0)
+	_body.add_child(body)
+
+	var body_tie := MeshInstance3D.new()
+	body_tie.name = "BodyTie"
+	var body_tie_mesh := CylinderMesh.new()
+	body_tie_mesh.top_radius = 0.36
+	body_tie_mesh.bottom_radius = 0.36
+	body_tie_mesh.height = 0.08
+	body_tie_mesh.radial_segments = 8
+	body_tie.mesh = body_tie_mesh
+	body_tie.material_override = wood_dark
+	body_tie.position = Vector3(0.0, 0.35, 0.0)
+	body.add_child(body_tie)
+
+	# The body collider, so the character cannot walk through it.
+	var body_collider := StaticBody3D.new()
+	body_collider.name = "BodyCollider"
 	var collider := CollisionShape3D.new()
 	collider.name = "Shape"
 	var shape := CapsuleShape3D.new()
@@ -162,8 +199,8 @@ func _build() -> void:
 	shape.height = 1.9
 	collider.shape = shape
 	collider.position = Vector3(0.0, 0.95, 0.0)
-	body.add_child(collider)
-	add_child(body)
+	body_collider.add_child(collider)
+	add_child(body_collider)
 
 	# A ring on the ground: where the swing reaches.
 	var ring := MeshInstance3D.new()
