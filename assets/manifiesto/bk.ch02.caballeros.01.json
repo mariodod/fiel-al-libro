@@ -1,0 +1,47 @@
+{
+  "_comment": [
+    "Fragment: Quixote resolves to become a knight-errant. Part I, Chapter 2.",
+    "id format: bk.ch<chapter>.<slug>.<index>",
+    "The 1605 wording is verbatim content — never a translation key.",
+    "modern renderings are per-language; pd_translations are optional PD versions.",
+    "variants give the Reality and Book readings of the same passage.",
+    "unlocks say what the fragment grants: codex_page, recuerdos_bonus.",
+    "This fragment is NOT yet verified against the 1605 printing.",
+  ],
+
+  "id": "bk.ch02.caballeros.01",
+  "chapter": 2,
+  "part": 1,
+  "title_key": "bk.ch02.caballeros.title",
+  "characters": ["quixote"],
+
+  "source": {
+    "work": "Miguel de Cervantes, El ingenioso hidalgo Don Quijote de la Mancha, parte I, cap. II",
+    "edition": "1605 printing",
+    "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
+    "public_domain": true,
+    "verified": false,
+    "verified_on": "",
+    "verified_note": "Needs checking against the 1605 printing before shipping."
+  },
+
+  "original_1605": "Llegó, pues, a tanto su desatino que pasó las noches enteras leyendo de mañana a mañana y las tardes de tarde a tarde, y así, con lo poco de dormir y lo mucho de leer, se le secó el seso de modo que vino a perder el juicio.",
+
+  "modern": {
+    "es": "Llegó, pues, a tanto su desatino que pasó las noches enteras leyendo de mañana a mañana y las tardes de tarde a tarde, y así, con lo poco de dormir y lo mucho de leer, se le secó el seso de modo que vino a perder el juicio.",
+    "es_419": "Llegó, pues, a tanto su desatino que pasó las noches enteras leyendo de mañana a mañana y las tardes de tarde a tarde, y así, con lo poco de dormir y lo mucho de leer, se le secó el seso de modo que vino a perder el juicio.",
+    "en": "So he came to such a pass that he passed whole nights reading from morning to morning and afternoons from afternoon to afternoon, and thus, with little sleep and much reading, his brain dried up to the point that he lost his reason.",
+    "fr": "Ainsi il en vint à un tel point de folie qu'il passait les nuits entières à lire du matin au matin et les après-midi d'après-midi à après-midi, et ainsi, avec peu de sommeil et beaucoup de lecture, son cerveau s'assécha à tel point qu'il en vint à perdre la raison."
+  },
+
+  "variants": {
+    "reality": "La realidad: un hombre solitario lee demasiado en La Mancha. (No se muestra texto; la escena habla.)",
+    "book": "El libro: un caballero andante nace del sueño. (Se muestra el texto, con la tipografía de la capa Libro.)"
+  },
+
+  "unlocks": {
+    "give": ["codex_page", "recuerdos_bonus"],
+    "verdict": "",
+    "shortcut": ""
+  }
+}

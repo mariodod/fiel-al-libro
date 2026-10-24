@@ -1,0 +1,47 @@
+{
+  "_comment": [
+    "Fragment: Quixote chooses his name. Part I, Chapter 1.",
+    "id format: bk.ch<chapter>.<slug>.<index>",
+    "The 1605 wording is verbatim content — never a translation key.",
+    "modern renderings are per-language; pd_translations are optional PD versions.",
+    "variants give the Reality and Book readings of the same passage.",
+    "unlocks say what the fragment grants: codex_page, recuerdos_bonus.",
+    "This fragment is NOT yet verified against the 1605 printing.",
+  ],
+
+  "id": "bk.ch01.nombre.01",
+  "chapter": 1,
+  "part": 1,
+  "title_key": "bk.ch01.nombre.title",
+  "characters": ["quixote"],
+
+  "source": {
+    "work": "Miguel de Cervantes, El ingenioso hidalgo Don Quijote de la Mancha, parte I, cap. I",
+    "edition": "1605 printing",
+    "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
+    "public_domain": true,
+    "verified": false,
+    "verified_on": "",
+    "verified_note": "Needs checking against the 1605 printing before shipping."
+  },
+
+  "original_1605": "Se llamaba, como ya he dicho, Quijada o Quesada, aunque con alguna diferencia algunos dicen que se llamaba Quijana; pero esto importa poco a nuestro cuento: basta que en la narración dél no se salga un punto de la verdad.",
+
+  "modern": {
+    "es": "Se llamaba, como ya he dicho, Quijada o Quesada, aunque con alguna diferencia algunos dicen que se llamaba Quijana; pero esto importa poco a nuestro cuento: basta que en la narración dél no se salga un punto de la verdad.",
+    "es_419": "Se llamaba, como ya he dicho, Quijada o Quesada, aunque con alguna diferencia algunos dicen que se llamaba Quijana; pero esto importa poco a nuestro cuento: basta que en la narración no se salga un punto de la verdad.",
+    "en": "He was called, as I have already said, Quijada or Quesada, though with some difference some say he was called Quijana; but this matters little to our story: it is enough that in the narration of him we do not deviate a point from the truth.",
+    "fr": "Il s'appelait, comme je l'ai déjà dit, Quijada ou Quesada, bien que certains disent qu'il s'appelait Quijana ; mais cela importe peu à notre conte : il suffit que dans la narration de lui nous ne nous éloignions d'un point de la vérité."
+  },
+
+  "variants": {
+    "reality": "La realidad: Quijada o Quesada, un hidalgo pobre de La Mancha. (No se muestra texto; la escena habla.)",
+    "book": "El libro: el caballero de la triste figura. (Se muestra el texto, con la tipografía de la capa Libro.)"
+  },
+
+  "unlocks": {
+    "give": ["codex_page", "recuerdos_bonus"],
+    "verdict": "",
+    "shortcut": ""
+  }
+}

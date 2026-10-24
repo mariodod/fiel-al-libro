@@ -1,0 +1,47 @@
+{
+  "_comment": [
+    "Fragment: Quixote is beaten by Yanguesan carriers. Part I, Chapter 7.",
+    "id format: bk.ch<chapter>.<slug>.<index>",
+    "The 1605 wording is verbatim content — never a translation key.",
+    "modern renderings are per-language; pd_translations are optional PD versions.",
+    "variants give the Reality and Book readings of the same passage.",
+    "unlocks say what the fragment grants: codex_page, recuerdos_bonus.",
+    "This fragment is NOT yet verified against the 1605 printing.",
+  ],
+
+  "id": "bk.ch07.yanguesas.01",
+  "chapter": 7,
+  "part": 1,
+  "title_key": "bk.ch07.yanguesas.title",
+  "characters": ["quixote", "sancho"],
+
+  "source": {
+    "work": "Miguel de Cervantes, El ingenioso hidalgo Don Quijote de la Mancha, parte I, cap. VII",
+    "edition": "1605 printing",
+    "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
+    "public_domain": true,
+    "verified": false,
+    "verified_on": "",
+    "verified_note": "Needs checking against the 1605 printing before shipping."
+  },
+
+  "original_1605": "Cuando Quixote llegó a los Yangueses, los cuales ya habían comenzado a descargar, no se apartaron de sus mulas, y, así que le vieron venir, dijeron a sus compañeros: «Mirad, allá viene aquel loco que nos había de despeñar del alto del risco, que vino a querernos arrancar las barbas de la cara.»",
+
+  "modern": {
+    "es": "Cuando Quixote llegó a los Yangueses, los cuales ya habían comenzado a descargar, no se apartaron de sus mulas, y, así que le vieron venir, dijeron a sus compañeros: «Mirad, allá viene aquel loco que nos había de despeñar del alto del risco, que vino a querernos arrancar las barbas de la cara.»",
+    "es_419": "Cuando Quixote llegó a los Yangueses, los cuales ya habían comenzado a descargar, no se apartaron de sus mulas, y, así que le vieron venir, dijeron a sus compañeros: «Mirad, allá viene aquel loco que nos había de despeñar del alto del risco, que vino a querernos arrancar las barbas de la cara.»",
+    "en": "When Quixote arrived at the Yanguesans, who had already begun to unload, they did not stir from their mules, and, as soon as they saw him coming, they said to their companions: 'Look, there comes that madman who was going to hurl us down from the top of the cliff, who came to try to tear the beards from our faces.'",
+    "fr": "Lorsque Quixotte arriva chez les Yanguesans, qui avaient déjà commencé à décharger, ils ne s'écartèrent pas de leurs mules, et, dès qu'ils le virent venir, ils dirent à leurs compagnons : 'Regardez, voilà ce fou qui devait nous précipiter du haut de la falaise, qui venait pour nous arracher la barbe du visage.'"
+  },
+
+  "variants": {
+    "reality": "La realidad: Un hombre es golpeado por mozos de mulas en una venta. (No se muestra texto; la escena habla.)",
+    "book": "El libro: Un caballero andante es atacado por malvados sirvientes. (Se muestra el texto, con la tipografía de la capa Libro.)"
+  },
+
+  "unlocks": {
+    "give": ["codex_page", "recuerdos_bonus"],
+    "verdict": "",
+    "shortcut": ""
+  }
+}

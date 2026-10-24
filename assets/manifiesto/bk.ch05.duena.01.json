@@ -1,0 +1,47 @@
+{
+  "_comment": [
+    "Fragment: Dulcinea del Toboso is named. Part I, Chapter 5.",
+    "id format: bk.ch<chapter>.<slug>.<index>",
+    "The 1605 wording is verbatim content — never a translation key.",
+    "modern renderings are per-language; pd_translations are optional PD versions.",
+    "variants give the Reality and Book readings of the same passage.",
+    "unlocks say what the fragment grants: codex_page, recuerdos_bonus.",
+    "This fragment is NOT yet verified against the 1605 printing.",
+  ],
+
+  "id": "bk.ch05.duena.01",
+  "chapter": 5,
+  "part": 1,
+  "title_key": "bk.ch05.duena.title",
+  "characters": ["quixote", "sancho"],
+
+  "source": {
+    "work": "Miguel de Cervantes, El ingenioso hidalgo Don Quijote de la Mancha, parte I, cap. V",
+    "edition": "1605 printing",
+    "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
+    "public_domain": true,
+    "verified": false,
+    "verified_on": "",
+    "verified_note": "Needs checking against the 1605 printing before shipping."
+  },
+
+  "original_1605": "No tenía el buen Alonso Quixada parienta alguna, sino un sobrino y una sobrina suya; y aunque no tenía hacienda para heredarle, había cosas más que bastantes para darse de alta en el nombre de Dulcinea del Toboso, a quien para su dama escogió, después de haberla buscado en todas las aldeas y lugares de su comarca, por parecerle que de ninguna manera le faltaba el nombre de princesa a aquella señora.",
+
+  "modern": {
+    "es": "No tenía el buen Alonso Quixada parienta alguna, sino un sobrino y una sobrina suya; y aunque no tenía hacienda para heredarle, había cosas más que bastantes para darse de alta en el nombre de Dulcinea del Toboso, a quien para su dama escogió, después de haberla buscado en todas las aldeas y lugares de su comarca, por parecerle que de ninguna manera le faltaba el nombre de princesa a aquella señora.",
+    "es_419": "No tenía el buen Alonso Quixada parienta alguna, sino un sobrino y una sobrina suya; y aunque no tenía hacienda para heredarle, había cosas más que bastantes para darse de alta en el nombre de Dulcinea del Toboso, a quien para su dama escogió, después de haberla buscado en todas las aldeas y lugares de su comarca, por parecerle que de ninguna manera le faltaba el nombre de princesa a aquella señora.",
+    "en": "The good Alonso Quixada had no kin, except nephews and nieces. He had enough wealth to name Dulcinea, of Toboso, as his lady. He searched all villages nearby for her. She seemed to him like a princess in every way.",
+    "fr": "Le bon Alonso Quixada n'avait point de parenté, sinon un neveu et une nièce ; et bien qu'il n'eût pas de domaine à leur laisser, il avait plus qu'il n'en fallait pour prendre le nom de Dulcinée du Toboso, qu'il choisit pour dame, après l'avoir cherchée dans tous les villages et hameaux de sa région, parce qu'il lui semblait qu'en aucune manière le nom de princesse ne manquait à cette dame."
+  },
+
+  "variants": {
+    "reality": "La realidad: una mujer del pueblo de Toboso. (No se muestra texto; la escena habla.)",
+    "book": "El libro: Dulcinea del Toboso, la dama ideal. (Se muestra el texto, con la tipografía de la capa Libro.)"
+  },
+
+  "unlocks": {
+    "give": ["codex_page", "recuerdos_bonus"],
+    "verdict": "",
+    "shortcut": ""
+  }
+}

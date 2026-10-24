@@ -1,0 +1,47 @@
+{
+  "_comment": [
+    "Fragment: Rocinante is named. Part I, Chapter 4.",
+    "id format: bk.ch<chapter>.<slug>.<index>",
+    "The 1605 wording is verbatim content — never a translation key.",
+    "modern renderings are per-language; pd_translations are optional PD versions.",
+    "variants give the Reality and Book readings of the same passage.",
+    "unlocks say what the fragment grants: codex_page, recuerdos_bonus.",
+    "This fragment is NOT yet verified against the 1605 printing.",
+  ],
+
+  "id": "bk.ch04.rocinante.01",
+  "chapter": 4,
+  "part": 1,
+  "title_key": "bk.ch04.rocinante.title",
+  "characters": ["quixote"],
+
+  "source": {
+    "work": "Miguel de Cervantes, El ingenioso hidalgo Don Quijote de la Mancha, parte I, cap. IV",
+    "edition": "1605 printing",
+    "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
+    "public_domain": true,
+    "verified": false,
+    "verified_on": "",
+    "verified_note": "Needs checking against the 1605 printing before shipping."
+  },
+
+  "original_1605": "Cuatro días estuvo pensando el nombre que había de poner a su caballo, porque decía que era razón que el caballo que había de ser de un tan famoso caballero tuviese nombre sonoro y que significase lo que había sido antes de serlo y lo que entonces era; porque los caballos de los caballeros andantes también deben tener nombre, y de fama sonados, como fueron el Baiardo, el caballo del famoso Roldán, el Bavieca, el del Cid Ruy Díaz, no menos que otros muchos.",
+
+  "modern": {
+    "es": "Cuatro días estuvo pensando el nombre que había de poner a su caballo, porque decía que era razón que el caballo que había de ser de un tan famoso caballero tuviese nombre sonoro y que significase lo que había sido antes de serlo y lo que entonces era; porque los caballos de los caballeros andantes también deben tener nombre, y de fama sonados, como fueron el Baiardo, el caballo del famoso Roldán, el Bavieca, el del Cid Ruy Díaz, no menos que otros muchos.",
+    "es_419": "Cuatro días estuvo pensando el nombre que había de poner a su caballo, porque decía que era razón que el caballo que había de ser de un tan famoso caballero tuviese nombre sonoro y que significase lo que había sido antes de serlo y lo que entonces era; porque los caballos de los caballeros andantes también deben tener nombre, y de fama sonados, como fueron el Baiardo, el caballo del famoso Roldán, el Bavieca, el del Cid Ruy Díaz, no menos que otros muchos.",
+    "en": "Four days he spent thinking what name to give his horse, for he said it was only right that the horse of so famous a knight should have a sonorous name and signify what it had been before being what it now was; for the horses of knights-errant also must have names, and be renowned, as were the Baiardo, the horse of the famous Roland, and the Bavieca, the horse of the Cid Ruy Díaz, not to mention many others.",
+    "fr": "Pendant quatre jours, il réfléchit au nom qu'il donnerait à son cheval, car il disait qu'il était juste que le cheval d'un si fameux chevalier eût un nom sonore et signifiât ce qu'il avait été avant d'être ce qu'il était maintenant ; car les chevaux des chevaliers errants doivent aussi avoir nom, et être renommés, comme furent le Baiardo, le cheval du fameux Roland, le Bavieca, celui du Cid Ruy Díaz, sans parler de beaucoup d'autres."
+  },
+
+  "variants": {
+    "reality": "La realidad: un caballo flaco en un establo de La Mancha. (No se muestra texto; la escena habla.)",
+    "book": "El libro: Rocinante, el corcel del caballero andante. (Se muestra el texto, con la tipografía de la capa Libro.)"
+  },
+
+  "unlocks": {
+    "give": ["codex_page", "recuerdos_bonus"],
+    "verdict": "",
+    "shortcut": ""
+  }
+}

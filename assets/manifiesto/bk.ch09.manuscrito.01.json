@@ -1,0 +1,47 @@
+{
+  "_comment": [
+    "Fragment: The found manuscript. Part I, Chapter 9.",
+    "id format: bk.ch<chapter>.<slug>.<index>",
+    "The 1605 wording is verbatim content — never a translation key.",
+    "modern renderings are per-language; pd_translations are optional PD versions.",
+    "variants give the Reality and Book readings of the same passage.",
+    "unlocks say what the fragment grants: codex_page, recuerdos_bonus.",
+    "This fragment is NOT yet verified against the 1605 printing.",
+  ],
+
+  "id": "bk.ch09.manuscrito.01",
+  "chapter": 9,
+  "part": 1,
+  "title_key": "bk.ch09.manuscrito.title",
+  "characters": ["quixote"],
+
+  "source": {
+    "work": "Miguel de Cervantes, El ingenioso hidalgo Don Quijote de la Mancha, parte I, cap. IX",
+    "edition": "1605 printing",
+    "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
+    "public_domain": true,
+    "verified": false,
+    "verified_on": "",
+    "verified_note": "Needs checking against the 1605 printing before shipping."
+  },
+
+  "original_1605": "Halló, pues, dentro de un alcala de Toledo, un haz de papeles, algunos escritos en carta de Morisco, otros en árabe, y unos en letra castellana; de los cuales tomó uno y se lo mostró a un morisco de los que estaban allí, y le pidió que se lo tradujese al castellano, y que le dijese qué decían aquellos papeles.",
+
+  "modern": {
+    "es": "Halló, pues, dentro de un alcala de Toledo, un haz de papeles, algunos escritos en carta de Morisco, otros en árabe, y unos en letra castellana; de los cuales tomó uno y se lo mostró a un morisco de los que estaban allí, y le pidió que se lo tradujese al castellano, y que le dijese qué decían aquellos papeles.",
+    "es_419": "Halló, pues, dentro de un alcala de Toledo, un haz de papeles, algunos escritos en carta de morisco, otros en árabe, y unos en letra castellana; de los cuales tomó uno y se lo mostró a un morisco de los que estaban allí, y le pidió que se lo tradujese al castellano, y que le dijese qué decían aquellos papeles.",
+    "en": "He found, then, in an alcove of Toledo, a bundle of papers, some written in Morisco script, others in Arabic, and some in Castilian script; of which he took one and showed it to a Morisco who was there, and asked him to translate it into Castilian, and to tell him what those papers said.",
+    "fr": "Il trouva donc, dans un recoin de Tolède, un liasse de papiers, certains écrits en écriture morisque, d'autres en arabe, et d'autres en lettres castillanes ; dont il en prit un et le montra à un morisque qui était là, et lui demanda de le lui traduire en castillan, et de lui dire ce que ces papiers disaient."
+  },
+
+  "variants": {
+    "reality": "La realidad: Un haz de papeles viejos encontrados en Toledo. (No se muestra texto; la escena habla.)",
+    "book": "El libro: Un manuscrito antiguo que cuenta la historia del caballero andante. (Se muestra el texto, con la tipografía de la capa Libro.)"
+  },
+
+  "unlocks": {
+    "give": ["codex_page", "recuerdos_bonus"],
+    "verdict": "",
+    "shortcut": ""
+  }
+}

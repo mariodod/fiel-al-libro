@@ -479,6 +479,36 @@ msgstr "Capítulo primero"
 msgid "bk.ch01.molinos.title"
 msgstr "Los Molinos"
 
+#. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
+#. key is the fragment's own id plus ".title".
+msgid "bk.ch01.nombre.title"
+msgstr "El Nombre"
+
+#. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
+#. key is the fragment's own id plus ".title".
+msgid "bk.ch02.caballeros.title"
+msgstr "El Caballero Andante"
+
+#. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
+#. key is the fragment's own id plus ".title".
+msgid "bk.ch04.rocinante.title"
+msgstr "Rocinante"
+
+#. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
+#. key is the fragment's own id plus ".title".
+msgid "bk.ch05.duena.title"
+msgstr "Dulcinea"
+
+#. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
+#. key is the fragment's own id plus ".title".
+msgid "bk.ch07.yanguesas.title"
+msgstr "Los Yanguesanos"
+
+#. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
+#. key is the fragment's own id plus ".title".
+msgid "bk.ch09.manuscrito.title"
+msgstr "El Manuscrito"
+
 #. TRANSLATORS: Control hint, line 4.
 msgid "ui.slice.help.4"
 msgstr "E examinar lo que tienes delante"
