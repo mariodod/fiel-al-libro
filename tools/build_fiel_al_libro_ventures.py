@@ -99,7 +99,6 @@ def add_box_mesh(name, size, location, rotation=(0, 0, 0), material=None):
 
 def add_cyl_mesh(name, radius_top, radius_bottom, height, location,
                  rotation=(0, 0, 0), segments=8, material=None):
-    """Add a cylinder or cone using bpy.ops.mesh.primitive_cylinder_add."""
     import bpy
     bpy.ops.mesh.primitive_cylinder_add(
         vertices=segments,
@@ -118,7 +117,7 @@ def add_cyl_mesh(name, radius_top, radius_bottom, height, location,
         bm.from_mesh(m)
         bm.verts.ensure_lookup_table()
         for v in bm.verts:
-            if abs(v.co.z - height / 2.0) < 0.01:  # top cap
+            if abs(v.co.z - height / 2.0) < 0.01:
                 v.co.x *= radius_top / radius_bottom
                 v.co.y *= radius_top / radius_bottom
         bm.to_mesh(m)
@@ -156,12 +155,23 @@ def vertex_colour(mesh, colour):
 # 3. BUILD THE MILL (Reality form)
 # ---------------------------------------------------------------------------
 def build_mill():
+    objs = []
+
     # Tower: 8-sided cylinder, ochre limestone, wider at foot
-    o_tower, m_tower = add_cyl_mesh("Tower", radius_top=1.7, radius_bottom=1.9,
+    o_tower, m_tower = add_cyl_mesh("Tower", radius_top=1.55, radius_bottom=1.95,
                                     height=8.0, location=(0, 0, 4.0),
                                     segments=8, material=mat(OCHRE))
     vertex_colour(m_tower, OCHRE)
-    objs = [o_tower]
+    objs.append(o_tower)
+
+    # Stone course bands - horizontal stripes around tower for masonry look
+    for i in range(5):
+        y = 1.0 + i * 1.6  # band positions
+        o_course, m_course = add_cyl_mesh(f"Course{i}", radius_top=1.93, radius_bottom=1.91,
+                                          height=0.25, location=(0, 0, y),
+                                          segments=8, material=mat(DARK_OCHRE))
+        vertex_colour(m_course, DARK_OCHRE)
+        objs.append(o_course)
 
     # Cap: cone, dark tile
     o_cap, m_cap = add_cyl_mesh("Cap", radius_top=0.0, radius_bottom=2.4,
@@ -215,88 +225,96 @@ def build_mill():
 def build_giant():
     objs = []
 
-    # Legs
+    # Legs - very thin, emaciated
     for side in [-1, 1]:
-        o, m = add_box_mesh(f"Leg{side}", (0.62, 0.62, 2.2),
-                            (side * 0.55, 3.1, 0), material=mat(OCHRE))
+        o, m = add_box_mesh(f"Leg{side}", (0.5, 0.5, 2.2),
+                            (side * 0.55, 3.2, 0), material=mat(OCHRE))
         vertex_colour(m, OCHRE)
         objs.append(o)
-        o, m = add_box_mesh(f"Shin{side}", (0.5, 0.5, 2.1),
-                            (side * 0.55, 1.0, 0.06), material=mat(OCHRE))
+        o, m = add_box_mesh(f"Shin{side}", (0.42, 0.42, 2.1),
+                            (side * 0.52, 1.0, 0.06), material=mat(OCHRE))
         vertex_colour(m, OCHRE)
         objs.append(o)
-        o, m = add_box_mesh(f"Foot{side}", (0.6, 0.3, 1.15),
+        o, m = add_box_mesh(f"Foot{side}", (0.55, 0.25, 1.15),
                             (side * 0.55, 0.15, -0.35), material=mat(OCHRE))
         vertex_colour(m, OCHRE)
         objs.append(o)
 
     # Hips + belt
-    o, m = add_box_mesh("Hips", (1.6, 1.0, 1.1), (0, 4.3, 0), material=mat(OCHRE))
+    o, m = add_box_mesh("Hips", (1.4, 0.9, 1.05), (0, 4.4, 0), material=mat(OCHRE))
     vertex_colour(m, OCHRE)
     objs.append(o)
-    o, m = add_box_mesh("Belt", (1.75, 1.3, 0.5), (0, 4.12, 0), material=mat(OLIVE))
+    o, m = add_box_mesh("Belt", (1.7, 0.5, 1.2), (0, 4.15, 0), material=mat(OLIVE))
     vertex_colour(m, OLIVE)
     objs.append(o)
 
-    # Torso + chest
-    o, m = add_box_mesh("Torso", (1.72, 1.0, 2.3), (0, 5.9, 0), material=mat(OCHRE))
+    # Torso + chest - very gaunt
+    o, m = add_box_mesh("Torso", (1.5, 0.9, 2.1), (0, 5.9, 0), material=mat(OCHRE))
     vertex_colour(m, OCHRE)
     objs.append(o)
-    o, m = add_box_mesh("Chest", (2.05, 1.1, 1.1), (0, 6.9, -0.05), material=mat(OCHRE))
+    o, m = add_box_mesh("Chest", (1.8, 1.0, 1.1), (0, 6.9, -0.05), material=mat(OCHRE))
     vertex_colour(m, OCHRE)
     objs.append(o)
+
+    # Ribs - visible ribcage to show emaciation
+    for i in range(4):
+        rib_y = 6.3 + i * 0.35
+        o_rib, m_rib = add_box_mesh(f"Rib{side if False else i}", (0.5, 0.08, 0.4),
+                                    (0, rib_y, 0.15 + i * 0.2), material=mat(DARK_OLIVE))
+        vertex_colour(m_rib, DARK_OLIVE)
+        objs.append(o_rib)
 
     # Shoulders
     for side in [-1, 1]:
-        o, m = add_box_mesh(f"Shoulder{side}", (0.7, 0.65, 0.7),
-                            (side * 1.05, 7.15, 0), material=mat(OCHRE))
+        o, m = add_box_mesh(f"Shoulder{side}", (0.65, 0.6, 0.68),
+                            (side * 1.0, 7.15, 0), material=mat(OCHRE))
         vertex_colour(m, OCHRE)
         objs.append(o)
 
-        # Upper arm
-        o, m = add_box_mesh(f"UpperArm{side}", (0.42, 0.42, 2.8),
-                            (side * 1.38, 5.65, 0),
+        # Upper arm - very thin
+        o, m = add_box_mesh(f"UpperArm{side}", (0.35, 0.35, 2.6),
+                            (side * 1.25, 5.75, 0),
                             rotation=(0, 0, 90 if side > 0 else -90),
                             material=mat(OCHRE))
         vertex_colour(m, OCHRE)
         objs.append(o)
 
         # Forearm
-        o, m = add_box_mesh(f"Forearm{side}", (0.36, 0.36, 2.7),
-                            (side * 1.3, 4.1, 0.05),
+        o, m = add_box_mesh(f"Forearm{side}", (0.34, 0.34, 2.5),
+                            (side * 1.18, 4.2, 0.05),
                             rotation=(0, 0, 90 if side > 0 else -90),
                             material=mat(OCHRE))
         vertex_colour(m, OCHRE)
         objs.append(o)
 
-        # Sail-hand
-        o, m = add_box_mesh(f"SailHand{side}", (0.42, 2.5, 0.1),
-                            (side * 1.38, 1.5, 0.05),
+        # Sail-hand - a strip of canvas instead of a hand
+        o, m = add_box_mesh(f"SailHand{side}", (0.12, 2.2, 0.06),
+                            (side * 1.32, 1.5, 0.05),
                             rotation=(0, 0, 90 if side > 0 else -90),
                             material=mat(OCHRE))
         vertex_colour(m, OCHRE)
         objs.append(o)
 
-        # Sail strip (tattered end)
-        o, m = add_box_mesh(f"SailStrip{side}", (0.08, 0.85, 0.8),
-                            (side * 0.7, -6.3, 0.1),
+        # Sail strip hanging down
+        o, m = add_box_mesh(f"SailStrip{side}", (0.07, 0.7, 0.08),
+                            (side * 0.68, -5.9, 0.1),
                             rotation=(0, 0, 45 if side > 0 else -45),
                             material=mat(DARK_OCHRE))
         vertex_colour(m, DARK_OCHRE)
         objs.append(o)
 
     # Neck + millstone head
-    o, m = add_cyl_mesh("Neck", 0.28, 0.32, 0.5, (0, 7.72, 0),
+    o, m = add_cyl_mesh("Neck", 0.25, 0.3, 0.5, (0, 7.72, 0),
                         material=mat(OCHRE))
     vertex_colour(m, OCHRE)
     objs.append(o)
 
-    o, m = add_cyl_mesh("Millstone", 1.08, 1.08, 0.52, (0, 8.35, -0.05),
+    o, m = add_cyl_mesh("Millstone", 1.0, 1.0, 0.5, (0, 8.35, -0.05),
                         rotation=(90, 0, 0), material=mat(IRON_GREY))
     vertex_colour(m, IRON_GREY)
     objs.append(o)
 
-    o, m = add_cyl_mesh("MillstoneHole", 0.28, 0.28, 0.56, (0, 8.35, -0.05),
+    o, m = add_cyl_mesh("MillstoneHole", 0.24, 0.24, 0.56, (0, 8.35, -0.05),
                         rotation=(90, 0, 0), material=mat(BLACK_IRON))
     vertex_colour(m, BLACK_IRON)
     objs.append(o)
