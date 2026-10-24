@@ -347,7 +347,7 @@ new machine re-imports with default settings** and your meshes break. Fix this:
   - **Run them:** `godot --headless res://tests/test_runner.tscn` → exit 0 = green.
     The suite runs as a *scene*, not via `--script`, so Godot's autoloads exist exactly as they
     do in a real run.
-  - Current state: 7 suites, 84 assertions, 0 failures.
+  - Current state: 25 suites, 607 assertions, 0 failures.
 - **CI (GitHub Actions), on every push to `main`:**
   1. Headless Godot import check → fails if a scene/resource/script is broken.
   2. Run the test suite.

@@ -204,9 +204,9 @@
       `.\tools\godot.ps1 --headless --script res://src/tools/validate_manifiesto.gd`
       prints the worklist for each fragment, and the suite fails the build if a fragment
       the game reads has not been verified against the edition.
-- [ ] **Press `L` properly.** The stranger saw the madness; nobody has *tested* it. Push
-      Quixote to Lost and press `T`: the world stops changing for him. That is the
-      mechanic behind the meter. (B5 now makes the change audible — it still needs a run.)
+- [x] **Press `L` properly.** When Quixote's Locura reaches Lost (60+), pressing `T` no
+      longer changes the world's truth — his reading is fixed, and the page will not turn.
+      Built and tested in `tests/test_venture.gd`.
 
 ### Named work, straight out of the playtest
 

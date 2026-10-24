@@ -3,7 +3,7 @@
 > Pick the project up here. Everything below is written so that you do not
 > have to re-derive anything.
 >
-> Last updated: **2026-10-20** · after: *"Phase 1, weeks 1–2: the grey box, the
+> Last updated: **2026-10-24** · after: *"Phase 1, weeks 1–2: the grey box, the
 > reading rule, the first playtest, the Examine verb and the reactions"* +
 > *"the second playtest: the Examine panel gives the mechanic away, and the
 > dodge cannot be judged without an enemy and a wall"*
@@ -17,7 +17,7 @@
 | **Phase** | Phase 1. **Weeks 1–2 are done.** Week 3–4 (combat) is under way. |
 | **The premise** | **Proven.** The playtest says so. |
 | **The build** | `res://src/world/slice.tscn` — the main scene. Two primitives, one truth toggle, two characters reading the same world differently — and now the **verbs**: `E` to examine, `Space` to dodge, a light attack that chains, a heavy attack, `F` for the guard, `M` to lock on, `X` for Sancho's Desvelar, and a line of dialogue when the world moves under a character. The two characters are **rigged and animated** (14 clips each), the **companion is in the fight** (it fights what you are locked onto, and it parries), there is a **walled yard** with a training dummy and a straw man in it, and to the **south** there is the **era of Montiel** and the **Venture of Montiel** — the first boss, in two forms. Press **G** to open the **world map** — a Spain-shaped portolan showing the five regions and which ones you've found; the map tints gilded in Book truth, chalky in Reality truth, and fragment markers appear when their page is found.
-| **Tests** | 25 suites, 576 assertions, green, enforced in CI. |
+| **Tests** | 25 suites, 607 assertions, green, enforced in CI. |
 | **The fun** | Not fully proven. Seven data points is a sample, not a signal. |
 
 **The one thing that matters:** the mechanic is legible and liked. The *game*
@@ -161,7 +161,7 @@ not. `src/systems/chatter.gd` is where the next hundred lines go.
 | 2.9 | Sancho's `Desvelar` — the verb ✅; the **VFX** are still plain |
 | 2.10 | The asymmetry rules: Quixote cannot harm innocents without a Humanity cost; Sancho cannot meaningfully damage — ✅ both, and the yard shows them |
 | 2.11 | **The windmill Venture** — ✅ the boss, its two forms and the two movesets; the truth resolution and the fragment reward are not in |
-| — | **The world map** — ✅ first draft: `docs/map/world_map.svg`, Spain-shaped as a 1605 portolan; the five regions at their true compass positions and the road from La Posada. The two Book/Reality reads and the region passages are still to come (`docs/map/WORLD_MAP.md`). |
+| — | **The world map** — ✅ `docs/map/world_map.svg`, Spain-shaped as a 1605 portolan; the five regions at their true compass positions and the road from La Posada. Two versions of each region — Book (gilded, inked-out, brighter) and Reality (desaturated, chalky) — toggle with `T`. Fragment markers appear when their Manifiesto fragment is found. Region passages are still to come (`docs/map/WORLD_MAP.md`). |
 
 **2.7 and 2.8 are the two most under-rated tasks in the plan.** Distinct
 animation sets sell the asymmetry better than any mechanic. A reskinned

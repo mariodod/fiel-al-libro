@@ -136,6 +136,6 @@ Locura from Lucid to Lost. Ugly on purpose — it proves the two core systems wo
 | Design | v0.2 — first draft complete, **D1–D7 locked** |
 | Tech plan | v0.1 |
 | Roadmap | v0.1 |
-| Code | none yet |
+| Code | 25 suites, 607 assertions, all green |
 | Prototype | not started |
 | Next milestone | Week 1–2 tooling (see `ROADMAP.md` §5) |
