@@ -364,6 +364,14 @@ msgstr "C'est moi qui l'ai arrêté, seigneur ! L'avez-vous vu ?"
 msgid "dia.sancho.chatter.desvelar"
 msgstr "Voilà la vérité, seigneur ! Regardez-la. Regardez-la bien."
 
+#. TRANSLATORS: Quixote, quand le Venture de Montiel est tombé.
+msgid "dia.quixote.chatter.venture_down"
+msgstr "Le géant est tombé, Sancho ! Le moulin redevient un moulin."
+
+#. TRANSLATORS: Sancho, quand le Venture de Montiel est tombé.
+msgid "dia.sancho.chatter.venture_down"
+msgstr "Le moulin redevient un moulin, votre seigneurie. Le géant n'est plus."
+
 #. TRANSLATORS: Quixote, with nothing in front of him. Line 4 of 6.
 msgid "dia.quixote.chatter.idle.4"
 msgstr "Le vent se lève, Sancho. Quelque chose approche."

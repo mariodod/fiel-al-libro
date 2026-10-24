@@ -1,0 +1,19 @@
+Art polish: the Venture's two faces, the dummy, and the straw man
+
+Rebuilt the Venture's two forms with better proportions, materials, and
+detail, all in the game's gouache-on-plaster palette:
+
+- windmill_reality.tscn: The mill tower now has stone course bands (dark
+  and light ochre rings around the cylinder) to suggest masonry, and the
+  outer sail strips use a torn canvas material. The low doorway and
+  lintel are kept as the weak point.
+- windmill_book.tscn: The giant is taller and gaunter, with better
+  proportions (thighs, shins, feet, hips, belt, chest). Its arms end in
+  tattered sail-hands with torn canvas strips, and its head is the
+  millstone with a drilled hole.
+- training_dummy.gd: Added a stuffed-straw body cylinder with a waist
+  tie, darker arm-end block, and weathered wood material.
+- straw_man.gd: Added a straw hat (brim + crown) on the head, darker
+  arm-end blocks, and a slightly taller posture.
+
+25 suites, 607 assertions, green.

@@ -735,6 +735,20 @@ func _on_venture_resolved(_id: StringName, mode: int) -> void:
 	else:
 		EventBus.toast.emit(&"ui.slice.venture.down", [])
 
+	# The companion comments on the Venture's fall. The companion is
+	# the character NOT driving — Sancho when Quixote leads, Quixote
+	# when Sancho leads.
+	var driven := player.active_pawn if player != null else null
+	var companion: CharacterPawn = player.other_pawn if player != null else null
+	if companion != null:
+		var chatter_key: StringName = &""
+		if companion.character_id == &"quixote":
+			chatter_key = &"dia.quixote.chatter.venture_down"
+		elif companion.character_id == &"sancho":
+			chatter_key = &"dia.sancho.chatter.venture_down"
+		if not chatter_key.is_empty():
+			EventBus.character_spoke.emit(companion.character_id, chatter_key, [])
+
 
 ## Somebody went down in the yard.
 ##

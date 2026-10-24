@@ -582,6 +582,14 @@ msgstr ""
 msgid "dia.sancho.chatter.desvelar"
 msgstr ""
 
+#. TRANSLATORS: Quixote, when the Venture of Montiel has fallen.
+msgid "dia.quixote.chatter.venture_down"
+msgstr ""
+
+#. TRANSLATORS: Sancho, when the Venture of Montiel has fallen.
+msgid "dia.sancho.chatter.venture_down"
+msgstr ""
+
 #. TRANSLATORS: Quixote, with nothing in front of him. Line 4 of 6.
 msgid "dia.quixote.chatter.idle.4"
 msgstr ""

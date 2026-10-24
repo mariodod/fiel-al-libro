@@ -271,6 +271,14 @@ msgstr "¡Le he parado yo, señor! ¿Lo ha visto?"
 msgid "dia.sancho.chatter.desvelar"
 msgstr "¡Ahí está la verdad, señor! Mírela. Mírela bien."
 
+#. TRANSLATORS: Quixote, cuando el Venture de Montiel ha caído.
+msgid "dia.quixote.chatter.venture_down"
+msgstr "¡El gigante ha caído, Sancho! El molino vuelve a ser un molino."
+
+#. TRANSLATORS: Sancho, cuando el Venture de Montiel ha caído.
+msgid "dia.sancho.chatter.venture_down"
+msgstr "El molino vuelve a ser un molino, señor. El gigante ya no es más."
+
 #. TRANSLATORS: Quixote, with nothing in front of him. Line 4 of 6.
 msgid "dia.quixote.chatter.idle.4"
 msgstr "El viento se mueve, Sancho. Algo se aproxima."

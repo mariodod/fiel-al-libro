@@ -308,6 +308,14 @@ msgstr "I caught that one, your lordship! Did you see?"
 msgid "dia.sancho.chatter.desvelar"
 msgstr "There is the truth of it, your lordship! Look at it. Look well."
 
+#. TRANSLATORS: Quixote, when the Venture of Montiel has fallen.
+msgid "dia.quixote.chatter.venture_down"
+msgstr "The giant is down, Sancho! The mill stands as it was, a mill again."
+
+#. TRANSLATORS: Sancho, when the Venture of Montiel has fallen.
+msgid "dia.sancho.chatter.venture_down"
+msgstr "The mill stands again, your lordship. The giant is no more."
+
 #. TRANSLATORS: Quixote, with nothing in front of him. Line 4 of 6.
 msgid "dia.quixote.chatter.idle.4"
 msgstr "The wind stirs, Sancho. Something is coming."
