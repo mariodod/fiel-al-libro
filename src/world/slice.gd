@@ -721,8 +721,14 @@ func _on_character_switched(_from_id: StringName, _to_id: StringName) -> void:
 ## forms. The reward here is the memory it leaves behind — and the
 ## chapter's first Manifiesto fragment is the owner's to write, so the
 ## slice does not pretend to have one.
-func _on_venture_resolved(_id: StringName, _mode: int) -> void:
-	EventBus.toast.emit(&"ui.slice.venture.down", [])
+func _on_venture_resolved(_id: StringName, mode: int) -> void:
+	# FORCED: the knight killed the windmill — a battle won.
+	# TRUTH: the knight's delusion held — the world stayed Book,
+	# and the fragment of the original book is granted.
+	if mode == VentureData.Resolution.TRUTH:
+		EventBus.toast.emit(&"ui.slice.venture.truth", [])
+	else:
+		EventBus.toast.emit(&"ui.slice.venture.down", [])
 
 
 ## Somebody went down in the yard.

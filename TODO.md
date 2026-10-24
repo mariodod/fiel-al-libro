@@ -145,14 +145,13 @@
       `src/world/venture.gd`, `src/data/ventures/`, `src/data/moves/`,
       `tests/test_venture.gd`.
 - [x] **2.11, the rest of it.** The **truth resolution** (the Venture fought and solved
-      rather than killed) and the **fragment reward** — the text of a Manifiesto fragment
-      is the owner's, and the validator prints the worklist. And the companion should use
-      its own verb: the AI never casts the Desvelar, because the slice only applies it
-      for the character the player is driving. **Done**: the companion now strips the
-      Book skin off the thing it is fighting, which stops the blow it was in the middle
-      of — the squire does not kill, he controls — and the ability's **cooldown** (in
-      the data since the beginning, read by nothing until now) is enforced: eight
-      seconds of skin, then eight seconds to earn the next.
+      rather than killed) and the **fragment reward** — Killing the Venture in Book
+      truth resolves it via TRUTH instead of FORCED and grants a Manifiesto fragment
+      (`bk.ch01.molinos.01`, the windmill passage from chapter I.7-8). The fragment
+      is the owner's writing, and the validator prints the worklist.
+      `src/world/venture.gd`, `src/data/ventures/venture_montiel.tres`,
+      `assets/manifiesto/bk.ch01.molinos.01.json`,
+      `tests/test_venture.gd`.
 - [x] **The Venture's art, first pass.** A concept sheet was generated from the art
       prompt (`docs/reference/venture_of_montiel_concept_sheet.jpg`) and the two forms
       were rebuilt from it: the mill is now a **round tower** with a tile cap, a **low

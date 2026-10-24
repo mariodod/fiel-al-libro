@@ -588,6 +588,19 @@ func _die() -> void:
 	remove_from_group(LockOn.GROUP)
 	if _body != null:
 		_body.rotation.x = 0.0
+	# The truth resolution: if the Venture is defeated while the world is
+	# in Book truth, it resolves via TRUTH instead of FORCED — the knight's
+	# delusion wins, the giant is real, and the fragment reward is granted.
+	# Otherwise it resolves via FORCED — the knight killed a windmill.
+	var resolution: int = VentureData.Resolution.FORCED
+	if venture != null and venture.allows_truth_resolution and TruthLayer.is_book():
+		resolution = VentureData.Resolution.TRUTH
+		# Grant the fragment reward: the page of the original book.
+		if venture.manifesto_fragments.size() > 0:
+			for fragment_id in venture.manifesto_fragments:
+				if not GameState.codex_pages.has(fragment_id):
+					GameState.codex_pages.append(fragment_id)
+					EventBus.codex_page_found.emit(fragment_id)
 	# The reward goes to whoever finished it.
 	var amount := 0
 	if venture != null and venture.enemy != null:
@@ -597,7 +610,7 @@ func _die() -> void:
 		who = _last_attacker.character_id
 	if amount > 0:
 		Memoria.gain(who, amount)
-	EventBus.venture_resolved.emit(venture.id if venture != null else &"", VentureData.Resolution.FORCED)
+	EventBus.venture_resolved.emit(venture.id if venture != null else &"", resolution)
 
 
 ## Is the Venture down? The HUD says so.

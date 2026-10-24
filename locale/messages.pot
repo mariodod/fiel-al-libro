@@ -587,6 +587,11 @@ msgstr ""
 msgid "bk.ch01.apertura.title"
 msgstr ""
 
+#. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
+#. key is the fragment's own id plus ".title".
+msgid "bk.ch01.molinos.title"
+msgstr ""
+
 #. TRANSLATORS: Control hint, line 4.
 msgid "ui.slice.help.4"
 msgstr ""
@@ -764,6 +769,12 @@ msgstr ""
 
 #. TRANSLATORS: The Venture of Montiel is over.
 msgid "ui.slice.venture.down"
+msgstr ""
+
+#. TRANSLATORS: The Venture of Montiel is over — resolved by truth, not force.
+#. The knight's delusion held: the world stayed Book, the giant was real,
+#. and a fragment of the original book is granted.
+msgid "ui.slice.venture.truth"
 msgstr ""
 
 #. TRANSLATORS: The codex note on the Venture in its Reality form.

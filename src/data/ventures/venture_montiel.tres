@@ -12,3 +12,4 @@ novel_chapter = "I.7-8"
 enemy = ExtResource("2_enemy")
 is_non_combat = false
 allows_truth_resolution = true
+manifesto_fragments = ["bk.ch01.molinos.01"]

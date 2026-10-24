@@ -191,6 +191,27 @@ func suite(t: TestHarness) -> void:
 	t.expect_false(venture.is_down(), "it stands up")
 	t.expect_eq(venture.health, venture.max_health, "with its health")
 
+	t.test("the truth resolution: killing it in Book truth grants the fragment")
+	# The Venture resolved via TRUTH grants a Manifiesto fragment
+	# from chapter I.7-8 — the windmill passage.
+	venture.reset()
+	TruthLayer.shift_to(TruthLayer.Layer.BOOK, true)
+	venture.set("_reveal_time", 0.0)  # clear any leaked reveal from earlier tests
+	venture._process(0.05)
+	t.expect_eq(venture.current_form_layer(), 1, "the giant")
+	t.expect_false(GameState.codex_pages.has(&"bk.ch01.molinos.01"),
+		"not found yet")
+	# Deal lethal damage
+	venture.take_damage(1000.0, quixote)
+	t.expect_true(venture.is_down(), "it is over")
+	t.expect_true(GameState.codex_pages.has(&"bk.ch01.molinos.01"),
+		"the fragment is granted")
+	# Clean up for the next test/suite
+	GameState.codex_pages.erase(&"bk.ch01.molinos.01")
+	venture.reset()
+	TruthLayer.shift_to(TruthLayer.Layer.REALITY, true)
+	venture._process(0.05)
+
 	# ── It is a thing in the world ─────────────────────────────────────
 	t.test("it can be examined and locked onto")
 	t.expect_true(venture.is_in_group(Examine.GROUP), "it is examinable")

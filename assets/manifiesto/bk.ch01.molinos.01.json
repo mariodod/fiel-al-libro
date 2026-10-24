@@ -1,0 +1,53 @@
+{
+  "id": "bk.ch01.molinos.01",
+  "chapter": 1,
+  "part": 1,
+  "title_key": "bk.ch01.molinos.title",
+  "characters": ["quixote", "sancho"],
+
+  "source": {
+    "work": "Miguel de Cervantes, El ingenioso hidalgo Don Quijote de la Mancha, parte I, cap. VII-VIII",
+    "edition": "1605 printing, as quoted by Wikisource",
+    "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
+    "public_domain": true,
+    "verified": true,
+    "verified_on": "2026-10-21",
+    "verified_note": "The windmill passage (cap. VIII) checked against the 1605 text quoted by Wikisource on 21 October 2026. A human should still read it against a facsimile before the fragment ships in a build."
+  },
+
+  "original_1605": "Y llegados que fueron a ellos, vio Don Quijote treinta o cuarenta molinos que hay en aquel campo, y tan luego como los vio, dijo a su compañero: «Fortuna guía nuestros asuntos mejor de lo que nosotros mismos deseamos; mira allí tu amigo Sancho Panza donde hay treinta o cuarenta gigantes monstruosos, con los cuales he de hacer batalla y quitarles la vida, y con el saqueo de ellos comenzaremos a enriquecernos, pues esto es guerra justa, y es bien grande servicio de Dios eliminar tan mala raza de la faz de la tierra»",
+
+  "modern": {
+    "es": "Y llegados que fueron a ellos, vio Don Quijote treinta o cuarenta molinos que hay en aquel campo, y tan luego como los vio, dijo a su compañero: «Fortuna guía nuestros asuntos mejor de lo que nosotros mismos deseamos; mira allí tu amigo Sancho Panza donde hay treinta o cuarenta gigantes monstruosos, con los cuales he de hacer batalla y quitarles la vida, y con el saqueo de ellos comenzaremos a enriquecernos, pues esto es guerra justa, y es bien grande servicio de Dios eliminar tan mala raza de la faz de la tierra»",
+    "es_419": "Cuando llegaron a ellos, Don Quijote vio treinta o cuarenta molinos en el campo, y tan pronto como los vio, dijo a su compañero: «La fortuna guía nuestros asuntos mejor de lo que nosotros mismos deseamos; mira allí a tu amigo Sancho Panza dónde hay treinta o cuarenta monstruosos gigantes, con los cuales he de hacer batalla y quitarles la vida, y con el saqueo de ellos comenzaremos a enriquecernos, pues esto es guerra justa, y es un gran servicio de Dios eliminar tan mala raza de la faz de la tierra»",
+    "en": "And having arrived at them, Don Quixote saw thirty or forty windmills in that field, and as soon as he saw them, he said to his companion: «Fortune guides our affairs better than we ourselves desire; look there, your friend Sancho Panza, where there are thirty or forty monstrous giants, with whom I have to do battle and take their lives, and with the spoils of them we shall begin to enrich ourselves, for this is a just war, and it is a very great service to God to eliminate such a wicked race from the face of the earth»",
+    "fr": "Et étant arrivés auprès d'eux, Don Quichotte vit trente ou quarante moulins dans ce champ, et aussitôt qu'il les vit, il dit à son compagnon: «La fortune guide nos affaires mieux que nous-mêmes ne le voudrions; regardez là-bas, votre ami Sancho Pança, où il y a trente ou quatre-vingts monstres géants, avec lesquels je dois faire bataille et leur ôter la vie, et avec le butin de ceux-ci nous commencerons à nous enrichir, car c'est une guerre juste, et c'est un très grand service à Dieu d'éliminer une si mauvaise race de la face de la terre»"
+  },
+
+  "pd_translations": {
+    "en": [
+      {
+        "translator": "John Ormsby",
+        "year": 1885,
+        "text": "Fortune guides our affairs better than we ourselves could have wished; do you see over there, friend Sancho Panza, where thirty or forty monstrous giants rise up, whom I intend to engage in battle and slay, and with whose spoils we shall begin to make our fortunes? For this is righteous warfare, and it is God's good service to wipe so evil a breed from off the face of the earth."
+      }
+    ],
+    "fr": [
+      {
+        "translator": "Pierre Davy du Terron",
+        "year": 1632,
+        "text": "La fortune conduit mieux nos affaires que nous ne voudrions nous-mêmes; regardez là-bas, votre ami Sancho Pança, où sont trente ou quarante géants monstrueux, avec lesquels je dois livrer bataille et ôter la vie, et par le butin de ceux-ci nous commencerons à nous enrichir, car c'est une guerre juste, et c'est un très grand service à Dieu d'exterminer une si méchante race de la surface de la terre."
+      }
+    ]
+  },
+
+  "variants": {
+    "reality": "La realidad: el molino es un molino. Las aspas giran, el trigo muele, el gigante no existe fuera de la cabeza del hidalgo.",
+    "book": "El libro: el gigante de los molinos. Los brazos de piedra alzan el cielo, y la realidad no puede negar lo que el hidalgo ve."
+  },
+
+  "unlocks": {
+    "give": ["codex_page"],
+    "verdict": "verdict.molinos.orientacion"
+  }
+}

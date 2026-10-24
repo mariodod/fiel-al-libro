@@ -432,6 +432,11 @@ msgstr "V second sight · L Locura · F1 this help · F2 the tags"
 msgid "bk.ch01.apertura.title"
 msgstr "Chapter One"
 
+#. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
+#. key is the fragment's own id plus ".title".
+msgid "bk.ch01.molinos.title"
+msgstr "The Windmills"
+
 #. TRANSLATORS: Control hint, line 4.
 msgid "ui.slice.help.4"
 msgstr "E examine what is in front of you"
@@ -670,6 +675,12 @@ msgstr "preparing: %s"
 #. TRANSLATORS: The Venture of Montiel is over.
 msgid "ui.slice.venture.down"
 msgstr "The mill of Montiel has fallen."
+
+#. TRANSLATORS: The Venture of Montiel is over — resolved by truth, not force.
+#. The knight's delusion held: the world stayed Book, the giant was real,
+#. and a fragment of the original book is granted.
+msgid "ui.slice.venture.truth"
+msgstr "The mill of Montiel stands — as a giant."
 
 #. TRANSLATORS: The codex note on the Venture in its Reality form.
 msgid "ui.codex.venture.mill"
