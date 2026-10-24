@@ -22,7 +22,7 @@ extends RefCounted
 
 ## How many idle lines each character has. The companion cycles through
 ## them rather than repeating one.
-const IDLE_POOL_SIZE := 3
+const IDLE_POOL_SIZE := 6
 
 
 ## The key for what a character says about a thing.
@@ -49,3 +49,7 @@ static func idle_key(character_id: StringName, index: int) -> StringName:
 ## something, and the player on the ground.
 const LOCKED := &"locked"
 const DOWN := &"down"
+## The first boss, in the era to the south.
+const VENTURE := &"venture"
+## The innocent in the corner of the yard.
+const STRAW_MAN := &"straw_man"

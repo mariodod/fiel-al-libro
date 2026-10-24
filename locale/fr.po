@@ -364,7 +364,30 @@ msgstr "C'est moi qui l'ai arrêté, seigneur ! L'avez-vous vu ?"
 msgid "dia.sancho.chatter.desvelar"
 msgstr "Voilà la vérité, seigneur ! Regardez-la. Regardez-la bien."
 
-#. META: namespace=tip
+#. TRANSLATORS: Quixote, with nothing in front of him. Line 4 of 6.
+msgid "dia.quixote.chatter.idle.4"
+msgstr "Le vent se lève, Sancho. Quelque chose approche."
+
+#. TRANSLATORS: Quixote, with nothing in front of him. Line 5 of 6.
+msgid "dia.quixote.chatter.idle.5"
+msgstr "Je pourrais passer une vie entière à contempler ces plaines."
+
+#. TRANSLATORS: Quixote, with nothing in front of him. Line 6 of 6.
+msgid "dia.quixote.chatter.idle.6"
+msgstr "Même les pierres ont des histoires, Sancho. Il suffit de les écouter."
+
+#. TRANSLATORS: Sancho, with nothing in front of him. Line 4 of 6.
+msgid "dia.sancho.chatter.idle.4"
+msgstr "Le soleil monte, votre seigneurie. Il vaudrait mieux continuer."
+
+#. TRANSLATORS: Sancho, with nothing in front of him. Line 5 of 6.
+msgid "dia.sancho.chatter.idle.5"
+msgstr "J'aimerais un peu d'ombre, votre seigneurie. Et peut-être une collation."
+
+#. TRANSLATORS: Sancho, with nothing in front of him. Line 6 of 6.
+msgid "dia.sancho.chatter.idle.6"
+msgstr "Cette terre est vaste, votre seigneurie. Et surtout vide."
+
 msgid "tip.posada.intro"
 msgstr ""
 

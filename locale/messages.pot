@@ -582,8 +582,30 @@ msgstr ""
 msgid "dia.sancho.chatter.desvelar"
 msgstr ""
 
-#. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
-#. key is the fragment's own id plus ".title".
+#. TRANSLATORS: Quixote, with nothing in front of him. Line 4 of 6.
+msgid "dia.quixote.chatter.idle.4"
+msgstr ""
+
+#. TRANSLATORS: Quixote, with nothing in front of him. Line 5 of 6.
+msgid "dia.quixote.chatter.idle.5"
+msgstr ""
+
+#. TRANSLATORS: Quixote, with nothing in front of him. Line 6 of 6.
+msgid "dia.quixote.chatter.idle.6"
+msgstr ""
+
+#. TRANSLATORS: Sancho, with nothing in front of him. Line 4 of 6.
+msgid "dia.sancho.chatter.idle.4"
+msgstr ""
+
+#. TRANSLATORS: Sancho, with nothing in front of him. Line 5 of 6.
+msgid "dia.sancho.chatter.idle.5"
+msgstr ""
+
+#. TRANSLATORS: Sancho, with nothing in front of him. Line 6 of 6.
+msgid "dia.sancho.chatter.idle.6"
+msgstr ""
+
 msgid "bk.ch01.apertura.title"
 msgstr ""
 

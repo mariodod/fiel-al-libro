@@ -271,6 +271,30 @@ msgstr "¡Le he parado yo, señor! ¿Lo ha visto?"
 msgid "dia.sancho.chatter.desvelar"
 msgstr "¡Ahí está la verdad, señor! Mírela. Mírela bien."
 
+#. TRANSLATORS: Quixote, with nothing in front of him. Line 4 of 6.
+msgid "dia.quixote.chatter.idle.4"
+msgstr "El viento se mueve, Sancho. Algo se aproxima."
+
+#. TRANSLATORS: Quixote, with nothing in front of him. Line 5 of 6.
+msgid "dia.quixote.chatter.idle.5"
+msgstr "Podría pasar toda una vida observando estos llanos."
+
+#. TRANSLATORS: Quixote, with nothing in front of him. Line 6 of 6.
+msgid "dia.quixote.chatter.idle.6"
+msgstr "Incluso las piedras tienen historias, Sancho. Solo hay que preguntarles."
+
+#. TRANSLATORS: Sancho, with nothing in front of him. Line 4 of 6.
+msgid "dia.sancho.chatter.idle.4"
+msgstr "El sol sube, señor. Sería mejor que siguiéramos adelante."
+
+#. TRANSLATORS: Sancho, with nothing in front of him. Line 5 of 6.
+msgid "dia.sancho.chatter.idle.5"
+msgstr "Podría usar un poco de sombra, señor. Y quizás un bocado."
+
+#. TRANSLATORS: Sancho, with nothing in front of him. Line 6 of 6.
+msgid "dia.sancho.chatter.idle.6"
+msgstr "Esta tierra es vasta, señor. Y mayormente vacía."
+
 msgid "tip.lectura.intro"
 msgstr "Aguanta la página. Algunas cosas solo se muestran a quien mira con calma."
 

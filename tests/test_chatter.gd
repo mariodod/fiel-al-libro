@@ -29,8 +29,8 @@ func suite(t: TestHarness) -> void:
 	t.test("the idle lines cycle")
 	t.expect_eq(Chatter.idle_key(&"quixote", 0), &"dia.quixote.chatter.idle.1", "the first")
 	t.expect_eq(Chatter.idle_key(&"quixote", 1), &"dia.quixote.chatter.idle.2", "the second")
-	t.expect_eq(Chatter.idle_key(&"quixote", 4), &"dia.quixote.chatter.idle.2",
-		"and it wraps around")
+	t.expect_eq(Chatter.idle_key(&"quixote", 5), &"dia.quixote.chatter.idle.6", "the sixth")
+	t.expect_eq(Chatter.idle_key(&"quixote", 6), &"dia.quixote.chatter.idle.1", "and it wraps around")
 
 	t.test("a character with no id has no line")
 	t.expect_eq(Chatter.key_for(&"", &"rock"), &"", "no key")

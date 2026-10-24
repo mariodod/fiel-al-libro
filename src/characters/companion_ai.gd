@@ -435,6 +435,14 @@ func _thing_looking_at() -> StringName:
 		var dummy_distance := dummy.global_position.distance_to(pawn.global_position)
 		if dummy_distance < best_distance:
 			best = &"dummy"
+	# The straw man is not examinable, but it is very much worth a remark.
+	for node in get_tree().get_nodes_in_group(AttackHitbox.TARGET_GROUP):
+		var straw := node as StrawMan
+		if straw != null:
+			var straw_distance := straw.global_position.distance_to(pawn.global_position)
+			if straw_distance < best_distance:
+				best_distance = straw_distance
+				best = &"straw_man"
 	return best
 
 

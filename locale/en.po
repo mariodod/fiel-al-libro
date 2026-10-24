@@ -308,6 +308,30 @@ msgstr "I caught that one, your lordship! Did you see?"
 msgid "dia.sancho.chatter.desvelar"
 msgstr "There is the truth of it, your lordship! Look at it. Look well."
 
+#. TRANSLATORS: Quixote, with nothing in front of him. Line 4 of 6.
+msgid "dia.quixote.chatter.idle.4"
+msgstr "The wind stirs, Sancho. Something is coming."
+
+#. TRANSLATORS: Quixote, with nothing in front of him. Line 5 of 6.
+msgid "dia.quixote.chatter.idle.5"
+msgstr "I could spend a lifetime watching these plains."
+
+#. TRANSLATORS: Quixote, with nothing in front of him. Line 6 of 6.
+msgid "dia.quixote.chatter.idle.6"
+msgstr "Even the stones have stories, Sancho. You need only ask them."
+
+#. TRANSLATORS: Sancho, with nothing in front of him. Line 4 of 6.
+msgid "dia.sancho.chatter.idle.4"
+msgstr "The sun is climbing, your lordship. Best we keep moving."
+
+#. TRANSLATORS: Sancho, with nothing in front of him. Line 5 of 6.
+msgid "dia.sancho.chatter.idle.5"
+msgstr "I could do with some shade, your lordship. And perhaps a snack."
+
+#. TRANSLATORS: Sancho, with nothing in front of him. Line 6 of 6.
+msgid "dia.sancho.chatter.idle.6"
+msgstr "This land is vast, your lordship. And mostly empty."
+
 msgid "tip.lectura.intro"
 msgstr "Hold on to the page. Some things only show themselves to a patient eye."
 
