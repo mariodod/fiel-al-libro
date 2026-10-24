@@ -197,8 +197,8 @@
 ### Still owed, and it is not code
 
 - [ ] **The other fourteen runs.** Seven data points is a sample, not a signal.
-- [ ] **The 47 missing fragments.** The plan wants 48 (GDD.md §20.1, locked by D7);
-      there is one. **The writing is the owner's** — the GDD is right that a passage
+- [ ] **The 40 missing fragments.** The plan wants 48 (GDD.md §20.1, locked by D7);
+      there are eight. **The writing is the owner's** — the GDD is right that a passage
       selection cannot be delegated to a machine — but the tool is there now:
       `.\tools\godot.ps1 --headless --script res://src/tools/validate_manifiesto.gd`
       prints the worklist for each fragment, and the suite fails the build if a fragment
