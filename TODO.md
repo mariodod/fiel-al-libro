@@ -154,11 +154,12 @@
       `tests/test_venture.gd`.
 - [x] **The Venture's art, first pass.** A concept sheet was generated from the art
       prompt (`docs/reference/venture_of_montiel_concept_sheet.jpg`) and the two forms
-      were rebuilt from it: the mill is now a **round tower** with a tile cap, a **low
-      doorway** (the weak point) and **tattered sails**; the giant is no longer six
-      boxes but a gaunt nine-metre man with a **millstone for a head** and **sail-hands
-      at the end of arms too long for him**. Low-poly, flat, in the game's palette.
-      `src/world/forms/`, `docs/ART_BRIEF_VENTURE.md`.
+      were rebuilt as low-poly .glb models from `tools/build_fiel_al_libro_ventures.py`:
+      the mill is a **round tower** with stone courses, tile cap, low doorway, and
+      tattered sails; the giant is a gaunt nine-metre man with a **millstone head** and
+      **sail-hands**. Low-poly, flat, in the game's palette. `src/world/forms/`,
+      `docs/ART_BRIEF_VENTURE.md`, `tools/build_fiel_al_libro_ventures.py`,
+      `assets/models/venture_mill.glb`, `assets/models/venture_giant.glb`.
 - [x] **The rock's art.** The other primitive was a smooth grey blob and is now a
       faceted stone with dry lichen on top and its base sunk in the earth — and in the
       Book truth a small leather book on the stone the rock was, tied with a strap and
