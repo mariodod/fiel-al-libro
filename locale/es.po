@@ -517,6 +517,46 @@ msgstr "Los Yanguesanos"
 msgid "bk.ch09.manuscrito.title"
 msgstr "El Manuscrito"
 
+#. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
+#. key is the fragment's own id plus ".title".
+msgid "bk.ch10.balsamo.title"
+msgstr "El Bálsamo de Fierabrás"
+
+#. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
+#. key is the fragment's own id plus ".title".
+msgid "bk.ch12.armas_letras.title"
+msgstr "Las Armas y las Letras"
+
+#. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
+#. key is the fragment's own id plus ".title".
+msgid "bk.ch14.galeotes.title"
+msgstr "Los Galeotes"
+
+#. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
+#. key is the fragment's own id plus ".title".
+msgid "bk.ch17.hombre_muerto.title"
+msgstr "El Hombre Muerto en el Camino"
+
+#. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
+#. key is the fragment's own id plus ".title".
+msgid "bk.ch23.montesinos.title"
+msgstr "La Cueva de Montesinos"
+
+#. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
+#. key is the fragment's own id plus ".title".
+msgid "bk.ch27.molinos_llenadores.title"
+msgstr "Los Molinos de Llenar"
+
+#. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
+#. key is the fragment's own id plus ".title".
+msgid "bk.ch29.penitentes.title"
+msgstr "Los Penitentes de Blanco"
+
+#. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
+#. key is the fragment's own id plus ".title".
+msgid "bk.ch50.impertinente.title"
+msgstr "La Curiosidad Impertinente"
+
 #. TRANSLATORS: Control hint, line 4.
 msgid "ui.slice.help.4"
 msgstr "E examinar lo que tienes delante"

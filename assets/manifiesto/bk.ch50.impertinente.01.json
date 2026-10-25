@@ -1,0 +1,47 @@
+{
+  "_comment": [
+    "Fragment: the Impertinent Curiosity. Part I, Chapter 50.",
+    "id format: bk.ch<chapter>.<slug>.<index>",
+    "The 1605 wording is verbatim content — never a translation key.",
+    "modern renderings are per-language; pd_translations are optional PD versions.",
+    "variants give the Reality and Book readings of the same passage.",
+    "unlocks say what the fragment grants: codex_page, recuerdos_bonus.",
+    "This fragment is NOT yet verified against the 1605 printing.",
+  ],
+
+  "id": "bk.ch50.impertinente.01",
+  "chapter": 50,
+  "part": 1,
+  "title_key": "bk.ch50.impertinente.title",
+  "characters": ["quixote", "sancho"],
+
+  "source": {
+    "work": "Miguel de Cervantes, El ingenioso hidalgo Don Quijote de la Mancha, parte I, cap. L",
+    "edition": "1605 printing",
+    "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
+    "public_domain": true,
+    "verified": false,
+    "verified_on": "",
+    "verified_note": "Needs checking against the 1605 printing before shipping."
+  },
+
+  "original_1605": "Y contó un hombre una historia de un esposo que quería saber si su mujer era honrada, y dijo: «Amigo, la curiosidad impertinente es la que pierde a los hombres, y no han de saber más de lo que les conviene saber», y el esposo dijo que quería probar a su mujer, y que quería saber si era honrada, y que si no era honrada, la despediría.",
+
+  "modern": {
+    "es": "Y contó un hombre una historia de un esposo que quería saber si su mujer era honrada, y dijo: «Amigo, la curiosidad impertinente es la que pierde a los hombres, y no han de saber más de lo que les conviene saber», y el esposo dijo que quería probar a su mujer, y que quería saber si era honrada, y que si no era honrada, la despediría.",
+    "es_419": "Y contó un hombre una historia de un esposo que quería saber si su mujer era honrada, y dijo: «Amigo, la curiosidad impertinente es la que pierde a los hombres, y no deben saber más de lo que les conviene saber», y el esposo dijo que quería probar a su mujer, y que quería saber si era honrada, y que si no era honrada, la despediría.",
+    "en": "And a man told a story of a husband who wanted to know if his wife was honorable, and said: 'Friend, impertinent curiosity is what ruins men, and they must not know more than it suits them to know'; and the husband said he wanted to test his wife, and he wanted to know if she was honorable, and if she was not honorable, he would dismiss her.",
+    "fr": "Et un homme raconta une histoire d'un mari qui voulait savoir si sa femme était honorable, et dit : 'Ami, la curiosité impertinente est ce qui perd les hommes, et ils ne doivent pas savoir plus qu'il ne leur convient de savoir' ; et le mari dit qu'il voulait éprouver sa femme, et qu'il voulait savoir si elle était honorable, et si elle ne l'était pas, il la répudierait."
+  },
+
+  "variants": {
+    "reality": "La realidad: Un hombre cuenta una historia de celos y desconfianza. (No se muestra texto; la escena habla.)",
+    "book": "El libro: La curiosidad impertinente arruina al esposo que quiere saber demasiado. (Se muestra el texto, con la tipografía de la capa Libro.)"
+  },
+
+  "unlocks": {
+    "give": ["codex_page", "recuerdos_bonus"],
+    "verdict": "",
+    "shortcut": ""
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "_comment": [
+    "Fragment: freeing the galley slaves. Part I, Chapter 14.",
+    "id format: bk.ch<chapter>.<slug>.<index>",
+    "The 1605 wording is verbatim content — never a translation key.",
+    "modern renderings are per-language; pd_translations are optional PD versions.",
+    "variants give the Reality and Book readings of the same passage.",
+    "unlocks say what the fragment grants: codex_page, recuerdos_bonus.",
+    "This fragment is NOT yet verified against the 1605 printing.",
+  ],
+
+  "id": "bk.ch14.galeotes.01",
+  "chapter": 14,
+  "part": 1,
+  "title_key": "bk.ch14.galeotes.title",
+  "characters": ["quixote", "sancho"],
+
+  "source": {
+    "work": "Miguel de Cervantes, El ingenioso hidalgo Don Quijote de la Mancha, parte I, cap. XIV",
+    "edition": "1605 printing",
+    "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
+    "public_domain": true,
+    "verified": false,
+    "verified_on": "",
+    "verified_note": "Needs checking against the 1605 printing before shipping."
+  },
+
+  "original_1605": "Y llegó Don Quijote a los galeotes, y dijo a los alguaciles: «Dejad libres a estos cautivos, que yo os los ruego, y os lo ruego por vuestra merced», y los alguaciles le dijeron que se callase, y que no se metiese en lo que no le importaba, y que si no se apartaba, le harían maltratar.",
+
+  "modern": {
+    "es": "Y llegó Don Quijote a los galeotes, y dijo a los alguaciles: «Dejad libres a estos cautivos, que yo os los ruego, y os lo ruego por vuestra merced», y los alguaciles le dijeron que se callase, y que no se metiese en lo que no le importaba, y que si no se apartaba, le harían maltratar.",
+    "es_419": "Y llegó Don Quijote a los galeotes, y dijo a los alguaciles: «Dejen libres a estos cautivos, que yo se los ruego, y se los ruego por su merced», y los alguaciles le dijeron que se callara, y que no se metiera en lo que no le importaba, y que si no se apartaba, le harían maltratar.",
+    "en": "And Don Quixote came up to the galley slaves, and said to the bailiffs: 'Set these prisoners free, I beg you, and I beg you by your worship'; and the bailiffs told him to hold his tongue, and not to meddle in what did not concern him, and that if he did not stand aside, they would ill-treat him.",
+    "fr": "Et Don Quichotte s'approcha des galériens, et dit aux sergents : 'Libérez ces captifs, je vous en prie, et je vous en prie par votre worship' ; et les sergents lui dirent de se taire, et de ne pas se mêler de ce qui ne le regardait pas, et que s'il ne s'écartait, ils le maltraiteraient."
+  },
+
+  "variants": {
+    "reality": "La realidad: Un hombre intenta liberar presidiarios y recibe una paliza. (No se muestra texto; la escena habla.)",
+    "book": "El libro: El caballero andante libera a los galeotes de sus cadenas. (Se muestra el texto, con la tipografía de la capa Libro.)"
+  },
+
+  "unlocks": {
+    "give": ["codex_page", "recuerdos_bonus"],
+    "verdict": "",
+    "shortcut": ""
+  }
+}

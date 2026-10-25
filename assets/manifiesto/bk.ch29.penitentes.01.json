@@ -1,0 +1,47 @@
+{
+  "_comment": [
+    "Fragment: the penitents in white. Part I, Chapter 29.",
+    "id format: bk.ch<chapter>.<slug>.<index>",
+    "The 1605 wording is verbatim content — never a translation key.",
+    "modern renderings are per-language; pd_translations are optional PD versions.",
+    "variants give the Reality and Book readings of the same passage.",
+    "unlocks say what the fragment grants: codex_page, recuerdos_bonus.",
+    "This fragment is NOT yet verified against the 1605 printing.",
+  ],
+
+  "id": "bk.ch29.penitentes.01",
+  "chapter": 29,
+  "part": 1,
+  "title_key": "bk.ch29.penitentes.title",
+  "characters": ["quixote", "sancho"],
+
+  "source": {
+    "work": "Miguel de Cervantes, El ingenioso hidalgo Don Quijote de la Mancha, parte I, cap. XXIX",
+    "edition": "1605 printing",
+    "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
+    "public_domain": true,
+    "verified": false,
+    "verified_on": "",
+    "verified_note": "Needs checking against the 1605 printing before shipping."
+  },
+
+  "original_1605": "Y llegaron a un lugar donde iban unos penitentes de blanco, y dijo Don Quijote a Sancho: «Amigo Sancho, estos son penitentes, y yo he de hacerles justicia, y he de defender a aquellos que van con ellos», y Sancho le dijo que no se metiera, y que aquellos no eran más que penitentes, y que si se metía, le pasarían cosas malas.",
+
+  "modern": {
+    "es": "Y llegaron a un lugar donde iban unos penitentes de blanco, y dijo Don Quijote a Sancho: «Amigo Sancho, estos son penitentes, y yo he de hacerles justicia, y he de defender a aquellos que van con ellos», y Sancho le dijo que no se metiera, y que aquellos no eran más que penitentes, y que si se metía, le pasarían cosas malas.",
+    "es_419": "Y llegaron a un lugar donde iban unos penitentes vestidos de blanco, y Don Quijote le dijo a Sancho: «Amigo Sancho, estos son penitentes, y yo he de hacerles justicia, y he de defender a aquellos que van con ellos», y Sancho le dijo que no se metiera, y que aquellos no eran más que penitentes, y que si se metía, le pasarían cosas malas.",
+    "en": "And they came to a place where some penitents in white were going, and Don Quixote said to Sancho: 'Friend Sancho, these are penitents, and I must do them justice, and I must defend those who go with them'; and Sancho told him not to meddle, and that those were nothing but penitents, and that if he meddled, bad things would happen to him.",
+    "fr": "Et ils arrivèrent dans un endroit où des pénitents en blanc passaient, et Don Quichotte dit à Sancho : 'Ami Sancho, ce sont des pénitents, et je dois leur faire justice, et je dois défendre ceux qui vont avec eux' ; et Sancho lui dit de ne pas se mêler de cela, et que ceux-ci n'étaient rien d'autre que des pénitents, et que s'il se mêlait, de mauvaises choses lui arriveraient."
+  },
+
+  "variants": {
+    "reality": "La realidad: Una procesión de penitentes vestidos de blanco. (No se muestra texto; la escena habla.)",
+    "book": "El libro: El caballero andante defiende a los penitentes de sus enemigos. (Se muestra el texto, con la tipografía de la capa Libro.)"
+  },
+
+  "unlocks": {
+    "give": ["codex_page", "recuerdos_bonus"],
+    "verdict": "",
+    "shortcut": ""
+  }
+}

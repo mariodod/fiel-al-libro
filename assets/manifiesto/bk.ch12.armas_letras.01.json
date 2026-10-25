@@ -1,0 +1,47 @@
+{
+  "_comment": [
+    "Fragment: the speech on arms and letters. Part I, Chapter 12.",
+    "id format: bk.ch<chapter>.<slug>.<index>",
+    "The 1605 wording is verbatim content — never a translation key.",
+    "modern renderings are per-language; pd_translations are optional PD versions.",
+    "variants give the Reality and Book readings of the same passage.",
+    "unlocks say what the fragment grants: codex_page, recuerdos_bonus.",
+    "This fragment is NOT yet verified against the 1605 printing.",
+  ],
+
+  "id": "bk.ch12.armas_letras.01",
+  "chapter": 12,
+  "part": 1,
+  "title_key": "bk.ch12.armas_letras.title",
+  "characters": ["quixote"],
+
+  "source": {
+    "work": "Miguel de Cervantes, El ingenioso hidalgo Don Quijote de la Mancha, parte I, cap. XII",
+    "edition": "1605 printing",
+    "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
+    "public_domain": true,
+    "verified": false,
+    "verified_on": "",
+    "verified_note": "Needs checking against the 1605 printing before shipping."
+  },
+
+  "original_1605": "No hay two callings más provechosos a la república cristiana que las armas y las letras; y empero cada una de ellas tiene sus adversarios y detractores, que las desprecian y menosprecian; y las armas son del brazo fuerte y del ánimo valiente, y las letras del ingenio sutil y del juicio discreto.",
+
+  "modern": {
+    "es": "No hay dos oficios más provechosos a la república cristiana que las armas y las letras; y empero cada una de ellas tiene sus adversarios y detractores, que las desprecian y menosprecian; y las armas son del brazo fuerte y del ánimo valiente, y las letras del ingenio sutil y del juicio discreto.",
+    "es_419": "No hay dos ocupaciones más provechosas para la república cristiana que las armas y las letras; y sin embargo cada una de ellas tiene sus adversarios y detractores, que las desprecian y menosprecian; las armas son del brazo fuerte y del ánimo valiente, y las letras del ingenio sutil y del juicio discreto.",
+    "en": "There are no two callings more beneficial to the Christian republic than arms and letters; and yet each of them has its adversaries and detractors, who despise and undervalue them; arms belong to the strong arm and the valiant spirit, and letters to the subtle wit and the discreet judgment.",
+    "fr": "Il n'y a pas deux métiers plus profitables à la république chrétienne que les armes et les lettres ; et pourtant chacune d'elles a ses adversaires et détracteurs, qui les méprisent et les dédaignent ; les armes appartiennent au bras fort et à l'âme vaillante, et les lettres à l'esprit subtil et au jugement discret."
+  },
+
+  "variants": {
+    "reality": "La realidad: Un hombre habla de libros y de espadas en una posada. (No se muestra texto; la escena habla.)",
+    "book": "El libro: La gloria de las armas y las letras, los dos oficios del caballero andante. (Se muestra el texto, con la tipografía de la capa Libro.)"
+  },
+
+  "unlocks": {
+    "give": ["codex_page", "recuerdos_bonus"],
+    "verdict": "",
+    "shortcut": ""
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "_comment": [
+    "Fragment: the cave of Montesinos. Part I, Chapter 23.",
+    "id format: bk.ch<chapter>.<slug>.<index>",
+    "The 1605 wording is verbatim content — never a translation key.",
+    "modern renderings are per-language; pd_translations are optional PD versions.",
+    "variants give the Reality and Book readings of the same passage.",
+    "unlocks say what the fragment grants: codex_page, recuerdos_bonus.",
+    "This fragment is NOT yet verified against the 1605 printing.",
+  ],
+
+  "id": "bk.ch23.montesinos.01",
+  "chapter": 23,
+  "part": 1,
+  "title_key": "bk.ch23.montesinos.title",
+  "characters": ["quixote", "sancho"],
+
+  "source": {
+    "work": "Miguel de Cervantes, El ingenioso hidalgo Don Quijote de la Mancha, parte I, cap. XXIII",
+    "edition": "1605 printing",
+    "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
+    "public_domain": true,
+    "verified": false,
+    "verified_on": "",
+    "verified_note": "Needs checking against the 1605 printing before shipping."
+  },
+
+  "original_1605": "Y llegó Don Quijote a la cueva de Montesinos, y dijo a Sancho: «Amigo Sancho, esta es la famosa cueva de Montesinos, y yo he de entrar en ella, y he de ver lo que hay dentro, y he de volver a contarlo», y Sancho le dijo que no entrara, y que aquello era peligroso, y que si entraba, no saldría vivo.",
+
+  "modern": {
+    "es": "Y llegó Don Quijote a la cueva de Montesinos, y dijo a Sancho: «Amigo Sancho, esta es la famosa cueva de Montesinos, y yo he de entrar en ella, y he de ver lo que hay dentro, y he de volver a contarlo», y Sancho le dijo que no entrara, y que aquello era peligroso, y que si entraba, no saldría vivo.",
+    "es_419": "Y llegó Don Quijote a la cueva de Montesinos, y le dijo a Sancho: «Amigo Sancho, esta es la famosa cueva de Montesinos, y yo he de entrar en ella, y he de ver lo que hay dentro, y he de volver a contarlo», y Sancho le dijo que no entrara, y que aquello era peligroso, y que si entraba, no saldría vivo.",
+    "en": "And Don Quixote came to the cave of Montesinos, and said to Sancho: 'Friend Sancho, this is the famous cave of Montesinos, and I must enter it, and I must see what is inside, and I must return to tell it'; and Sancho told him not to enter, and that it was dangerous, and that if he entered, he would not come out alive.",
+    "fr": "Et Don Quichotte arriva à la grotte de Montesinos, et dit à Sancho : 'Ami Sancho, c'est la célèbre grotte de Montesinos, et je dois y entrer, et je dois voir ce qu'il y a dedans, et je dois revenir pour le raconter' ; et Sancho lui dit de n'y pas entrer, et que c'était dangereux, et que s'il entrait, il n'en sortirait pas vivant."
+  },
+
+  "variants": {
+    "reality": "La realidad: Una cueva oscura en la sierra y un hombre que quiere entrar en ella. (No se muestra texto; la escena habla.)",
+    "book": "El libro: El caballero andante desciende al infierno de la cueva de Montesinos. (Se muestra el texto, con la tipografía de la capa Libro.)"
+  },
+
+  "unlocks": {
+    "give": ["codex_page", "recuerdos_bonus"],
+    "verdict": "",
+    "shortcut": ""
+  }
+}

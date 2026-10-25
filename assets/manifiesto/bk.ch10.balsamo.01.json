@@ -1,0 +1,47 @@
+{
+  "_comment": [
+    "Fragment: the balsam of Fierabras. Part I, Chapter 10.",
+    "id format: bk.ch<chapter>.<slug>.<index>",
+    "The 1605 wording is verbatim content — never a translation key.",
+    "modern renderings are per-language; pd_translations are optional PD versions.",
+    "variants give the Reality and Book readings of the same passage.",
+    "unlocks say what the fragment grants: codex_page, recuerdos_bonus.",
+    "This fragment is NOT yet verified against the 1605 printing.",
+  ],
+
+  "id": "bk.ch10.balsamo.01",
+  "chapter": 10,
+  "part": 1,
+  "title_key": "bk.ch10.balsamo.title",
+  "characters": ["quixote", "sancho"],
+
+  "source": {
+    "work": "Miguel de Cervantes, El ingenioso hidalgo Don Quijote de la Mancha, parte I, cap. X",
+    "edition": "1605 printing",
+    "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
+    "public_domain": true,
+    "verified": false,
+    "verified_on": "",
+    "verified_note": "Needs checking against the 1605 printing before shipping."
+  },
+
+  "original_1605": "Dióle, pues, el boticario una escudilla dellas, y bebióla toda de un tirón; y luego se le ocurrió el pensamiento de que había de hacer el mismo efecto que la balsa de Fierabrás, que dicen que hacía milagros en aquel tiempo, y que él se la había de tomar para curarse de las heridas que recibiese en sus aventuras.",
+
+  "modern": {
+    "es": "Dióle, pues, el boticario una escudilla dellas, y bebióla toda de un tirón; y luego se le ocurrió el pensamiento de que había de hacer el mismo efecto que la balsa de Fierabrás, que dicen que hacía milagros en aquel tiempo, y que él se la había de tomar para curarse de las heridas que recibiese en sus aventuras.",
+    "es_419": "El boticario le dio un tazón de aquello, y se lo bebió de un trago; y luego pensó que haría el mismo efecto que el bálsamo de Fierabrás, del que dicen que hacía milagros en aquel tiempo, y que él lo tomaría para curarse de las heridas que recibiera en sus aventuras.",
+    "en": "The apothecary gave him a bowl of it, and he drank it all in one draught; and then it occurred to him that it would have the same effect as the balsam of Fierabras, which they say worked miracles in those days, and that he would take it to cure himself of the wounds he might receive in his adventures.",
+    "fr": "L'apothicaire lui donna un bol de cela, et il le but tout d'un trait ; et alors il lui vint à la pensée que cela ferait le même effet que le baume de Fierabras, dont on dit qu'il faisait des miracles en ce temps-là, et qu'il le prendrait pour se guérir des blessures qu'il recevrait dans ses aventures."
+  },
+
+  "variants": {
+    "reality": "La realidad: Un boticario le da una pócima a un hidalgo. (No se muestra texto; la escena habla.)",
+    "book": "El libro: El bálsamo de Fierabrás, el milagroso ungüento del caballero andante. (Se muestra el texto, con la tipografía de la capa Libro.)"
+  },
+
+  "unlocks": {
+    "give": ["codex_page", "recuerdos_bonus"],
+    "verdict": "",
+    "shortcut": ""
+  }
+}

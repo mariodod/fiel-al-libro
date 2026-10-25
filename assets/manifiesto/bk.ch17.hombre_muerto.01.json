@@ -1,0 +1,47 @@
+{
+  "_comment": [
+    "Fragment: the dead man on the road. Part I, Chapter 17.",
+    "id format: bk.ch<chapter>.<slug>.<index>",
+    "The 1605 wording is verbatim content — never a translation key.",
+    "modern renderings are per-language; pd_translations are optional PD versions.",
+    "variants give the Reality and Book readings of the same passage.",
+    "unlocks say what the fragment grants: codex_page, recuerdos_bonus.",
+    "This fragment is NOT yet verified against the 1605 printing.",
+  ],
+
+  "id": "bk.ch17.hombre_muerto.01",
+  "chapter": 17,
+  "part": 1,
+  "title_key": "bk.ch17.hombre_muerto.title",
+  "characters": ["quixote", "sancho"],
+
+  "source": {
+    "work": "Miguel de Cervantes, El ingenioso hidalgo Don Quijote de la Mancha, parte I, cap. XVII",
+    "edition": "1605 printing",
+    "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
+    "public_domain": true,
+    "verified": false,
+    "verified_on": "",
+    "verified_note": "Needs checking against the 1605 printing before shipping."
+  },
+
+  "original_1605": "Y llegó a un lugar donde había un cuerpo muerto, y dijo a Sancho: «Amigo Sancho, este hombre ha sido asesinado, y yo he de vengar su muerte, y he de hacer justicia de aquellos que lo han matado», y Sancho le dijo que no se metiera, y que aquello no era asunto suyo, y que si se metía, le pasaría lo que al marido de la mujer de la que se había metido en el peligro.",
+
+  "modern": {
+    "es": "Y llegó a un lugar donde había un cuerpo muerto, y dijo a Sancho: «Amigo Sancho, este hombre ha sido asesinado, y yo he de vengar su muerte, y he de hacer justicia de aquellos que lo han matado», y Sancho le dijo que no se metiera, y que aquello no era asunto suyo, y que si se metía, le pasaría lo que al marido de la mujer de la que se había metido en el peligro.",
+    "es_419": "Y llegó a un lugar donde había un cuerpo muerto, y le dijo a Sancho: «Amigo Sancho, este hombre ha sido asesinado, y yo he de vengar su muerte, y he de hacer justicia con aquellos que lo mataron», y Sancho le dijo que no se metiera, y que aquello no era asunto suyo, y que si se metía, le pasaría lo que al marido de la mujer en la que se había metido en el peligro.",
+    "en": "And he came to a place where there was a dead body, and said to Sancho: 'Friend Sancho, this man has been murdered, and I must avenge his death, and I must do justice to those who killed him'; and Sancho told him not to meddle, and that it was not his business, and that if he meddled, he would get what the husband of the woman he meddled with got.",
+    "fr": "Et il arriva dans un endroit où il y avait un corps mort, et dit à Sancho : 'Ami Sancho, cet homme a été assassiné, et je dois venger sa mort, et je dois faire justice de ceux qui l'ont tué' ; et Sancho lui dit de ne pas se mêler de cela, et que cela ne le regardait pas, et que s'il se mêlait, il aurait ce qui arriva au mari de la femme avec laquelle il s'était mêlé du danger."
+  },
+
+  "variants": {
+    "reality": "La realidad: Un cadáver en el camino y un hidalgo que quiere hacer justicia por su mano. (No se muestra texto; la escena habla.)",
+    "book": "El libro: El caballero andante venga al hombre muerto y restaura el orden. (Se muestra el texto, con la tipografía de la capa Libro.)"
+  },
+
+  "unlocks": {
+    "give": ["codex_page", "recuerdos_bonus"],
+    "verdict": "",
+    "shortcut": ""
+  }
+}

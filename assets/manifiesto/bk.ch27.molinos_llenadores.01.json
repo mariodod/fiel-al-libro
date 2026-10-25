@@ -1,0 +1,47 @@
+{
+  "_comment": [
+    "Fragment: the fulling mills. Part I, Chapter 27.",
+    "id format: bk.ch<chapter>.<slug>.<index>",
+    "The 1605 wording is verbatim content — never a translation key.",
+    "modern renderings are per-language; pd_translations are optional PD versions.",
+    "variants give the Reality and Book readings of the same passage.",
+    "unlocks say what the fragment grants: codex_page, recuerdos_bonus.",
+    "This fragment is NOT yet verified against the 1605 printing.",
+  ],
+
+  "id": "bk.ch27.molinos_llenadores.01",
+  "chapter": 27,
+  "part": 1,
+  "title_key": "bk.ch27.molinos_llenadores.title",
+  "characters": ["quixote", "sancho"],
+
+  "source": {
+    "work": "Miguel de Cervantes, El ingenioso hidalgo Don Quijote de la Mancha, parte I, cap. XXVII",
+    "edition": "1605 printing",
+    "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
+    "public_domain": true,
+    "verified": false,
+    "verified_on": "",
+    "verified_note": "Needs checking against the 1605 printing before shipping."
+  },
+
+  "original_1605": "Y llegaron a unos molinos de llenar, y dijo Don Quijote a Sancho: «Amigo Sancho, estos molinos son gigantes, y yo he de luchar contra ellos, y he de vencerlos, y he de tomar su tesoro», y Sancho le dijo que no eran gigantes, sino molinos de llenar, y que no luchara contra ellos, y que si luchaba, le pasaría lo que al que lucha contra los molinos.",
+
+  "modern": {
+    "es": "Y llegaron a unos molinos de llenar, y dijo Don Quijote a Sancho: «Amigo Sancho, estos molinos son gigantes, y yo he de luchar contra ellos, y he de vencerlos, y he de tomar su tesoro», y Sancho le dijo que no eran gigantes, sino molinos de llenar, y que no luchara contra ellos, y que si luchaba, le pasaría lo que al que lucha contra los molinos.",
+    "es_419": "Y llegaron a unos molinos de llenar, y Don Quijote le dijo a Sancho: «Amigo Sancho, estos molinos son gigantes, y yo he de luchar contra ellos, y he de vencerlos, y he de tomar su tesoro», y Sancho le dijo que no eran gigantes, sino molinos de llenar, y que no luchara contra ellos, y que si luchaba, le pasaría lo que al que lucha contra los molinos.",
+    "en": "And they came to some fulling mills, and Don Quixote said to Sancho: 'Friend Sancho, these mills are giants, and I must fight against them, and I must defeat them, and I must take their treasure'; and Sancho told him they were not giants, but fulling mills, and that he must not fight against them, and that if he fought, he would get what he who fights against mills gets.",
+    "fr": "Et ils arrivèrent à quelques moulins à foulon, et Don Quichotte dit à Sancho : 'Ami Sancho, ces moulins sont des géants, et je dois lutter contre eux, et je dois les vaincre, et je dois prendre leur trésor' ; et Sancho lui dit qu'ils n'étaient pas des géants, mais des moulins à foulon, et qu'il ne devait pas lutter contre eux, et que s'il luttait, il aurait ce qui arrive à celui qui lutte contre les moulins."
+  },
+
+  "variants": {
+    "reality": "La realidad: Molinos de llenar de tela junto al río. (No se muestra texto; la escena habla.)",
+    "book": "El libro: Los molinos son gigantes de piedra que el caballero ha de vencer. (Se muestra el texto, con la tipografía de la capa Libro.)"
+  },
+
+  "unlocks": {
+    "give": ["codex_page", "recuerdos_bonus"],
+    "verdict": "",
+    "shortcut": ""
+  }
+}
