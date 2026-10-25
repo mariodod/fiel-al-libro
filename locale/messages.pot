@@ -582,6 +582,14 @@ msgstr ""
 msgid "dia.sancho.chatter.desvelar"
 msgstr ""
 
+#. TRANSLATORS: Quixote, looking at the straw man in the yard. He will call it a giant.
+msgid "dia.quixote.chatter.straw_man"
+msgstr ""
+
+#. TRANSLATORS: Sancho, looking at the straw man in the yard. He knows what it is.
+msgid "dia.sancho.chatter.straw_man"
+msgstr ""
+
 #. TRANSLATORS: Quixote, when the Venture of Montiel has fallen.
 msgid "dia.quixote.chatter.venture_down"
 msgstr ""

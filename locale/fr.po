@@ -364,6 +364,14 @@ msgstr "C'est moi qui l'ai arrêté, seigneur ! L'avez-vous vu ?"
 msgid "dia.sancho.chatter.desvelar"
 msgstr "Voilà la vérité, seigneur ! Regardez-la. Regardez-la bien."
 
+#. TRANSLATORS: Quixote, regardant le mannequin de paille dans la cour. Il l'appellera un géant.
+msgid "dia.quixote.chatter.straw_man"
+msgstr "Un géant ! Sancho, regardez ! Un géant de paille et de toile !"
+
+#. TRANSLATORS: Sancho, regardant le mannequin de paille dans la cour. Il sait ce que c'est.
+msgid "dia.sancho.chatter.straw_man"
+msgstr "Seulement un mannequin de paille, votre seigneur. Rempli de paille, non de malice."
+
 #. TRANSLATORS: Quixote, quand le Venture de Montiel est tombé.
 msgid "dia.quixote.chatter.venture_down"
 msgstr "Le géant est tombé, Sancho ! Le moulin redevient un moulin."

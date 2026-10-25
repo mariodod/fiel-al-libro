@@ -308,6 +308,14 @@ msgstr "I caught that one, your lordship! Did you see?"
 msgid "dia.sancho.chatter.desvelar"
 msgstr "There is the truth of it, your lordship! Look at it. Look well."
 
+#. TRANSLATORS: Quixote, looking at the straw man in the yard. He will call it a giant.
+msgid "dia.quixote.chatter.straw_man"
+msgstr "A giant! Sancho, look! A giant of straw and cloth!"
+
+#. TRANSLATORS: Sancho, looking at the straw man in the yard. He knows what it is.
+msgid "dia.sancho.chatter.straw_man"
+msgstr "Only a straw man, your lordship. Stuffed with straw, not malice."
+
 #. TRANSLATORS: Quixote, when the Venture of Montiel has fallen.
 msgid "dia.quixote.chatter.venture_down"
 msgstr "The giant is down, Sancho! The mill stands as it was, a mill again."

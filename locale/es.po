@@ -271,6 +271,14 @@ msgstr "¡Le he parado yo, señor! ¿Lo ha visto?"
 msgid "dia.sancho.chatter.desvelar"
 msgstr "¡Ahí está la verdad, señor! Mírela. Mírela bien."
 
+#. TRANSLATORS: Quixote, mirando al maniquí de paja en el patio. Lo llamará un gigante.
+msgid "dia.quixote.chatter.straw_man"
+msgstr "¡Un gigante! Sancho, ¡mira! Un gigante de paja y lienzo."
+
+#. TRANSLATORS: Sancho, mirando al maniquí de paja en el patio. Sabe lo que es.
+msgid "dia.sancho.chatter.straw_man"
+msgstr "Solo un maniquí de paja, señor. Relleno de paja, no de maldad."
+
 #. TRANSLATORS: Quixote, cuando el Venture de Montiel ha caído.
 msgid "dia.quixote.chatter.venture_down"
 msgstr "¡El gigante ha caído, Sancho! El molino vuelve a ser un molino."

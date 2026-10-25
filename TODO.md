@@ -213,10 +213,9 @@
 - [x] **B9 — the Examine panel shows a perception, not the truth table.** Built. Untested.
 - [x] **B10 — the training dummy and the walled yard.** Built. Untested.
 - [x] **B3 — the companion's chatter.** Built. Untested.
-- [ ] **B3 — the shipped game owes the companion barks** *as content*: there are now lines
-      about the rock, the mill, the dummy, the lock-on and the player going down, but
-      the idle pool is three lines and the game has a hundred objects. The rule
-      survives; the content does not.
+- [x] **B3 - the shipped game owes the companion barks** *as content*: idle pool is
+      six lines per character (3→6), with `dia.*.chatter.venture` and
+      `dia.*.chatter.straw_man` keys all translated in en/es/fr.
 - [x] **The sample Manifiesto fragment carried the 1615 wording, not the 1605.** DLC 1 is
       the 1615 book, so this was load-bearing. **The sample is gone**: a format documented
       by a file no tool can read is a format that drifts, and the sample taught exactly
