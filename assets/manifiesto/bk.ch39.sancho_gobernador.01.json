@@ -1,0 +1,47 @@
+{
+  "_comment": [
+    "Fragment: Sancho made governor of an island. Part I, Chapter 39.",
+    "id format: bk.ch<chapter>.<slug>.<index>",
+    "The 1605 wording is verbatim content — never a translation key.",
+    "modern renderings are per-language; pd_translations are optional PD versions.",
+    "variants give the Reality and Book readings of the same passage.",
+    "unlocks say what the fragment grants: codex_page, recuerdos_bonus.",
+    "This fragment is NOT yet verified against the 1605 printing.",
+  ],
+
+  "id": "bk.ch39.sancho_gobernador.01",
+  "chapter": 39,
+  "part": 1,
+  "title_key": "bk.ch39.sancho_gobernador.title",
+  "characters": ["sancho", "quixote"],
+
+  "source": {
+    "work": "Miguel de Cervantes, El ingenioso hidalgo Don Quijote de la Mancha, parte I, cap. XXXIX",
+    "edition": "1605 printing",
+    "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
+    "public_domain": true,
+    "verified": false,
+    "verified_on": "",
+    "verified_note": "Needs checking against the 1605 printing before shipping."
+  },
+
+  "original_1605": "Y dijo el duque: «Sancho, yo te haré gobernador de una ínsula, y tú gobernarás con justicia», y Sancho dijo que aceptaba, y que él sabía gobernar mejor que muchos.",
+
+  "modern": {
+    "es": "Y dijo el duque: «Sancho, yo te haré gobernador de una ínsula, y tú gobernarás con justicia», y Sancho dijo que aceptaba, y que él sabía gobernar mejor que muchos.",
+    "es_419": "Y dijo el duque: «Sancho, yo lo haré gobernador de una ínsula, y usted gobernará con justicia», y Sancho dijo que aceptaba, y que él sabía gobernar mejor que muchos.",
+    "en": "And the duke said: 'Sancho, I will make you governor of an island, and you will govern with justice', and Sancho said that he accepted, and that he knew how to govern better than many.",
+    "fr": "Et le duc dit : 'Sancho, je ferai de vous le gouverneur d'une île, et vous gouvernez avec justice' ; et Sancho dit qu'il acceptait, et qu'il savait mieux gouverner que beaucoup d'autres."
+  },
+
+  "variants": {
+    "reality": "La realidad: El duque nombra a Sancho gobernador de una isla ficticia. (No se muestra texto; la escena habla.)",
+    "book": "El libro: Sancho Panza, el gobernador justo de su propia ínsula. (Se muestra el texto, con la tipografía de la capa Libro.)"
+  },
+
+  "unlocks": {
+    "give": ["codex_page", "recuerdos_bonus"],
+    "verdict": "",
+    "shortcut": ""
+  }
+}

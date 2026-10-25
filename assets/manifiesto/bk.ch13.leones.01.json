@@ -1,0 +1,47 @@
+{
+  "_comment": [
+    "Fragment: The lions and the cart. Part I, Chapter 13.",
+    "id format: bk.ch<chapter>.<slug>.<index>",
+    "The 1605 wording is verbatim content — never a translation key.",
+    "modern renderings are per-language; pd_translations are optional PD versions.",
+    "variants give the Reality and Book readings of the same passage.",
+    "unlocks say what the fragment grants: codex_page, recuerdos_bonus.",
+    "This fragment is NOT yet verified against the 1605 printing.",
+  ],
+
+  "id": "bk.ch13.leones.01",
+  "chapter": 13,
+  "part": 1,
+  "title_key": "bk.ch13.leones.title",
+  "characters": ["quixote", "sancho"],
+
+  "source": {
+    "work": "Miguel de Cervantes, El ingenioso hidalgo Don Quijote de la Mancha, parte I, cap. XIII",
+    "edition": "1605 printing",
+    "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
+    "public_domain": true,
+    "verified": false,
+    "verified_on": "",
+    "verified_note": "Needs checking against the 1605 printing before shipping."
+  },
+
+  "original_1605": "Y vieron venir un carro con dos leones en jaulas, y dijo Don Quijote: «Amigo Sancho, esos leones son mi presa, y yo he de luchar contra ellos», y el carretero le dijo que no los soltara, y que aquellos eran bestias del rey, y que si los soltaba, lo ahorcarían.",
+
+  "modern": {
+    "es": "Y vieron venir un carro con dos leones en jaulas, y dijo Don Quijote: «Amigo Sancho, esos leones son mi presa, y yo he de luchar contra ellos», y el carretero le dijo que no los soltara, y que aquellos eran bestias del rey, y que si los soltaba, lo ahorcarían.",
+    "es_419": "Y vieron venir un carro con dos leones en jaulas, y Don Quijote dijo: «Amigo Sancho, esos leones son mi presa, y yo he de luchar contra ellos», y el carretero le dijo que no los soltara, y que aquellos eran bestias del rey, y que si los soltaba, lo ahorcarían.",
+    "en": "And they saw coming a cart with two lions in cages, and Don Quixote said: 'Friend Sancho, those lions are my quarry, and I must fight against them', and the carter told him not to loose them, and that those were beasts of the king, and that if he loosed them, they would hang him.",
+    "fr": "Et ils virent venir une charrette avec deux lions en cages, et Don Quichotte dit : 'Ami Sancho, ces lions sont ma proie, et je dois me battre contre eux' ; et le charretier lui dit de ne pas les détacher, et que ceux-ci étaient des bêtes du roi, et que s'il les détachait, on le pendrait."
+  },
+
+  "variants": {
+    "reality": "La realidad: Un carro lleva leones enjaulados del rey. (No se muestra texto; la escena habla.)",
+    "book": "El libro: El caballero andante lucha contra los leones del rey. (Se muestra el texto, con la tipografía de la capa Libro.)"
+  },
+
+  "unlocks": {
+    "give": ["codex_page", "recuerdos_bonus"],
+    "verdict": "",
+    "shortcut": ""
+  }
+}

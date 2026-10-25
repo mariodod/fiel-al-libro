@@ -1,0 +1,47 @@
+{
+  "_comment": [
+    "Fragment: The criminal case. Part I, Chapter 43.",
+    "id format: bk.ch<chapter>.<slug>.<index>",
+    "The 1605 wording is verbatim content — never a translation key.",
+    "modern renderings are per-language; pd_translations are optional PD versions.",
+    "variants give the Reality and Book readings of the same passage.",
+    "unlocks say what the fragment grants: codex_page, recuerdos_bonus.",
+    "This fragment is NOT yet verified against the 1605 printing.",
+  ],
+
+  "id": "bk.ch43.caso_penal.01",
+  "chapter": 43,
+  "part": 1,
+  "title_key": "bk.ch43.caso_penal.title",
+  "characters": ["quixote", "sancho"],
+
+  "source": {
+    "work": "Miguel de Cervantes, El ingenioso hidalgo Don Quijote de la Mancha, parte I, cap. XLIII",
+    "edition": "1605 printing",
+    "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
+    "public_domain": true,
+    "verified": false,
+    "verified_on": "",
+    "verified_note": "Needs checking against the 1605 printing before shipping."
+  },
+
+  "original_1605": "Y dijo el oficial: «Señor, estáis acusado de un delito, y habéis de comparecer ante el juez», y Quixote dijo que no temía a ningún juez, y que él era un caballero andante.",
+
+  "modern": {
+    "es": "Y dijo el oficial: «Señor, estáis acusado de un delito, y habéis de comparecer ante el juez», y Quixote dijo que no temía a ningún juez, y que él era un caballero andante.",
+    "es_419": "Y dijo el oficial: «Señor, está acusado de un delito, y habrá de comparecer ante el juez», y Quijote dijo que no temía a ningún juez, y que él era un caballero andante.",
+    "en": "And the officer said: 'Sir, you are accused of a crime, and you must appear before the judge', and Quixote said that he feared no judge, and that he was a knight-errant.",
+    "fr": "Et l'officier dit : 'Sire, vous êtes accusé d'un délit, et vous devez comparaître devant le juge' ; et Quichotte dit qu'il ne craignait aucun juge, et qu'il était un chevalier errant."
+  },
+
+  "variants": {
+    "reality": "La realidad: Un oficial acusa a Quixote ante un juez del pueblo. (No se muestra texto; la escena habla.)",
+    "book": "El libro: El caballero andante no teme a ningún juez terrenal. (Se muestra el texto, con la tipografía de la capa Libro.)"
+  },
+
+  "unlocks": {
+    "give": ["codex_page", "recuerdos_bonus"],
+    "verdict": "",
+    "shortcut": ""
+  }
+}

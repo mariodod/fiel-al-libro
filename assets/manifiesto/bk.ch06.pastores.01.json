@@ -1,0 +1,47 @@
+{
+  "_comment": [
+    "Fragment: Chrysostomus and Marcela among the goatherds. Part I, Chapter 6.",
+    "id format: bk.ch<chapter>.<slug>.<index>",
+    "The 1605 wording is verbatim content — never a translation key.",
+    "modern renderings are per-language; pd_translations are optional PD versions.",
+    "variants give the Reality and Book readings of the same passage.",
+    "unlocks say what the fragment grants: codex_page, recuerdos_bonus.",
+    "This fragment is NOT yet verified against the 1605 printing.",
+  ],
+
+  "id": "bk.ch06.pastores.01",
+  "chapter": 6,
+  "part": 1,
+  "title_key": "bk.ch06.pastores.title",
+  "characters": ["quixote", "sancho"],
+
+  "source": {
+    "work": "Miguel de Cervantes, El ingenioso hidalgo Don Quijote de la Mancha, parte I, cap. VI",
+    "edition": "1605 printing",
+    "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
+    "public_domain": true,
+    "verified": false,
+    "verified_on": "",
+    "verified_note": "Needs checking against the 1605 printing before shipping."
+  },
+
+  "original_1605": "Y entre los pastores se hallaba un mozo llamado Crisóstomo, que había muerto de amor por una pastora llamada Marcela, y ella era tan hermosa que nadie la miraba sin quedar prendado de ella, y él la amaba con tanto fervor que murió de su amor.",
+
+  "modern": {
+    "es": "Y entre los pastores se hallaba un mozo llamado Crisóstomo, que había muerto de amor por una pastora llamada Marcela, y ella era tan hermosa que nadie la miraba sin quedar prendado de ella, y él la amaba con tanto fervor que murió de su amor.",
+    "es_419": "Y entre los pastores se hallaba un joven llamado Crisóstomo, que había muerto de amor por una pastora llamada Marcela, y ella era tan hermosa que nadie la miraba sin quedar prendado de ella, y él la amaba con tanto fervor que murió de su amor.",
+    "en": "And among the goatherds there was a lad named Chrysostomus, who had died of love for a shepherdess named Marcela, and she was so beautiful that none could look at her without being captivated, and he loved her with such fervor that he died of his love.",
+    "fr": "Et parmi les bergers se trouvait un jeune homme nommé Chrysostome, qui était mort d'amour pour une bergère nommée Marcèle, et elle était si belle que nul ne pouvait la regarder sans en être épris, et il l'aimait avec tant de ferveur qu'il mourut de son amour."
+  },
+
+  "variants": {
+    "reality": "La realidad: Un joven muere de amor por una pastora que no lo quiere. (No se muestra texto; la escena habla.)",
+    "book": "El libro: La trágica pasión de Crisóstomo por la hermosa Marcela. (Se muestra el texto, con la tipografía de la capa Libro.)"
+  },
+
+  "unlocks": {
+    "give": ["codex_page", "recuerdos_bonus"],
+    "verdict": "",
+    "shortcut": ""
+  }
+}

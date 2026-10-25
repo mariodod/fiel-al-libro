@@ -1,0 +1,47 @@
+{
+  "_comment": [
+    "Fragment: The enchanted boat on the river. Part I, Chapter 16.",
+    "id format: bk.ch<chapter>.<slug>.<index>",
+    "The 1605 wording is verbatim content — never a translation key.",
+    "modern renderings are per-language; pd_translations are optional PD versions.",
+    "variants give the Reality and Book readings of the same passage.",
+    "unlocks say what the fragment grants: codex_page, recuerdos_bonus.",
+    "This fragment is NOT yet verified against the 1605 printing.",
+  ],
+
+  "id": "bk.ch16.barca_encantada.01",
+  "chapter": 16,
+  "part": 1,
+  "title_key": "bk.ch16.barca_encantada.title",
+  "characters": ["quixote", "sancho"],
+
+  "source": {
+    "work": "Miguel de Cervantes, El ingenioso hidalgo Don Quijote de la Mancha, parte I, cap. XVI",
+    "edition": "1605 printing",
+    "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
+    "public_domain": true,
+    "verified": false,
+    "verified_on": "",
+    "verified_note": "Needs checking against the 1605 printing before shipping."
+  },
+
+  "original_1605": "Y vieron una barca que venía río abajo, y dijo Don Quijote: «Amigo Sancho, esa barca está encantada, y yo he de subir a ella», y Sancho le dijo que no subiera, y que aquella barca no era más que una barca, y que si se subía, se mojaría hasta los huesos.",
+
+  "modern": {
+    "es": "Y vieron una barca que venía río abajo, y dijo Don Quijote: «Amigo Sancho, esa barca está encantada, y yo he de subir a ella», y Sancho le dijo que no subiera, y que aquella barca no era más que una barca, y que si se subía, se mojaría hasta los huesos.",
+    "es_419": "Y vieron una barca que venía río abajo, y Don Quijote dijo: «Amigo Sancho, esa barca está encantada, y yo he de subir a ella», y Sancho le dijo que no subiera, y que aquella barca no era más que una barca, y que si se subía, se mojaría hasta los huesos.",
+    "en": "And they saw a boat coming down the river, and Don Quixote said: 'Friend Sancho, that boat is enchanted, and I must board it', and Sancho told him not to board it, and that that boat was nothing but a boat, and that if he boarded it, he would get wet to the bone.",
+    "fr": "Et ils virent une barque qui descendait la rivière, et Don Quichotte dit : 'Ami Sancho, cette barque est ensorcelée, et je dois y monter' ; et Sancho lui dit de ne pas y monter, et que cette barque n'était rien d'autre qu'une barque, et que s'il y montait, il serait trempé jusqu'aux os."
+  },
+
+  "variants": {
+    "reality": "La realidad: Una barca corriente que baja por el río. (No se muestra texto; la escena habla.)",
+    "book": "El libro: La barca encantada que el caballero ha de abordar. (Se muestra el texto, con la tipografía de la capa Libro.)"
+  },
+
+  "unlocks": {
+    "give": ["codex_page", "recuerdos_bonus"],
+    "verdict": "",
+    "shortcut": ""
+  }
+}

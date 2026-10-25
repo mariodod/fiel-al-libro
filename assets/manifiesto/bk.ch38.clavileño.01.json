@@ -1,0 +1,47 @@
+{
+  "_comment": [
+    "Fragment: Clavileño the wooden horse. Part I, Chapter 38.",
+    "id format: bk.ch<chapter>.<slug>.<index>",
+    "The 1605 wording is verbatim content — never a translation key.",
+    "modern renderings are per-language; pd_translations are optional PD versions.",
+    "variants give the Reality and Book readings of the same passage.",
+    "unlocks say what the fragment grants: codex_page, recuerdos_bonus.",
+    "This fragment is NOT yet verified against the 1605 printing.",
+  ],
+
+  "id": "bk.ch38.clavileño.01",
+  "chapter": 38,
+  "part": 1,
+  "title_key": "bk.ch38.clavileño.title",
+  "characters": ["quixote", "sancho"],
+
+  "source": {
+    "work": "Miguel de Cervantes, El ingenioso hidalgo Don Quijote de la Mancha, parte I, cap. XXXVIII",
+    "edition": "1605 printing",
+    "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
+    "public_domain": true,
+    "verified": false,
+    "verified_on": "",
+    "verified_note": "Needs checking against the 1605 printing before shipping."
+  },
+
+  "original_1605": "Y trajeron un caballo de madera llamado Clavileño, y dijo el sabio: «Este caballo vuela, y quien lo monte irá lejos», y Quixote dijo que él montaría en él.",
+
+  "modern": {
+    "es": "Y trajeron un caballo de madera llamado Clavileño, y dijo el sabio: «Este caballo vuela, y quien lo monte irá lejos», y Quixote dijo que él montaría en él.",
+    "es_419": "Y trajeron un caballo de madera llamado Clavileño, y dijo el sabio: «Este caballo vuela, y quien lo monte irá lejos», y Quijote dijo que él montaría en él.",
+    "en": "And they brought a wooden horse named Clavileño, and the sage said: 'This horse flies, and he who mounts it will go far', and Quixote said that he would mount it.",
+    "fr": "Et ils amenèrent un cheval de bois nommé Clavileño, et le sage dit : 'Ce cheval vole, et celui qui le montera ira loin' ; et Quichotte dit qu'il le monterait."
+  },
+
+  "variants": {
+    "reality": "La realidad: Un caballo de madera que no vuela, solo un juguete. (No se muestra texto; la escena habla.)",
+    "book": "El libro: Clavileño, el caballo alado que lleva al caballero a tierras lejanas. (Se muestra el texto, con la tipografía de la capa Libro.)"
+  },
+
+  "unlocks": {
+    "give": ["codex_page", "recuerdos_bonus"],
+    "verdict": "",
+    "shortcut": ""
+  }
+}

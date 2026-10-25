@@ -1,0 +1,47 @@
+{
+  "_comment": [
+    "Fragment: The farewell from the duke's court. Part I, Chapter 47.",
+    "id format: bk.ch<chapter>.<slug>.<index>",
+    "The 1605 wording is verbatim content — never a translation key.",
+    "modern renderings are per-language; pd_translations are optional PD versions.",
+    "variants give the Reality and Book readings of the same passage.",
+    "unlocks say what the fragment grants: codex_page, recuerdos_bonus.",
+    "This fragment is NOT yet verified against the 1605 printing.",
+  ],
+
+  "id": "bk.ch47.despedida.01",
+  "chapter": 47,
+  "part": 1,
+  "title_key": "bk.ch47.despedida.title",
+  "characters": ["quixote", "sancho"],
+
+  "source": {
+    "work": "Miguel de Cervantes, El ingenioso hidalgo Don Quijote de la Mancha, parte I, cap. XLVII",
+    "edition": "1605 printing",
+    "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
+    "public_domain": true,
+    "verified": false,
+    "verified_on": "",
+    "verified_note": "Needs checking against the 1605 printing before shipping."
+  },
+
+  "original_1605": "Y se despidieron del duque, y dijo Quixote: «Amigo Sancho, hemos estado en el castillo del duque, y ahora hemos de volver a buscar más aventuras», y Sancho dijo que sí, y que él ya quería volver a su isla.",
+
+  "modern": {
+    "es": "Y se despidieron del duque, y dijo Quixote: «Amigo Sancho, hemos estado en el castillo del duque, y ahora hemos de volver a buscar más aventuras», y Sancho dijo que sí, y que él ya quería volver a su isla.",
+    "es_419": "Y se despidieron del duque, y Quixote dijo: «Amigo Sancho, hemos estado en el castillo del duque, y ahora hemos de volver a buscar más aventuras», y Sancho dijo que sí, y que él ya quería volver a su isla.",
+    "en": "And they took leave of the duke, and Quixote said: 'Friend Sancho, we have been at the duke's castle, and now we must return to seek more adventures', and Sancho said yes, and that he already wanted to return to his island.",
+    "fr": "Et ils prirent congé du duc, et Quichotte dit : 'Ami Sancho, nous avons été au château du duc, et maintenant nous devons revenir chercher d'autres aventures' ; et Sancho dit oui, et qu'il voulait déjà retourner sur son île."
+  },
+
+  "variants": {
+    "reality": "La realidad: Quixote y Sancho se despiden del duque tras su estancia. (No se muestra texto; la escena habla.)",
+    "book": "El libro: El caballero deja el castillo para seguir buscando aventuras. (Se muestra el texto, con la tipografía de la capa Libro.)"
+  },
+
+  "unlocks": {
+    "give": ["codex_page", "recuerdos_bonus"],
+    "verdict": "",
+    "shortcut": ""
+  }
+}

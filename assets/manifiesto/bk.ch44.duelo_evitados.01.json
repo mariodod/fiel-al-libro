@@ -1,0 +1,47 @@
+{
+  "_comment": [
+    "Fragment: The duels that were avoided. Part I, Chapter 44.",
+    "id format: bk.ch<chapter>.<slug>.<index>",
+    "The 1605 wording is verbatim content — never a translation key.",
+    "modern renderings are per-language; pd_translations are optional PD versions.",
+    "variants give the Reality and Book readings of the same passage.",
+    "unlocks say what the fragment grants: codex_page, recuerdos_bonus.",
+    "This fragment is NOT yet verified against the 1605 printing.",
+  ],
+
+  "id": "bk.ch44.duelo_evitados.01",
+  "chapter": 44,
+  "part": 1,
+  "title_key": "bk.ch44.duelo_evitados.title",
+  "characters": ["quixote", "sancho"],
+
+  "source": {
+    "work": "Miguel de Cervantes, El ingenioso hidalgo Don Quijote de la Mancha, parte I, cap. XLIV",
+    "edition": "1605 printing",
+    "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
+    "public_domain": true,
+    "verified": false,
+    "verified_on": "",
+    "verified_note": "Needs checking against the 1605 printing before shipping."
+  },
+
+  "original_1605": "Y dijeron: «Caballero, no lucheis, que esas luchas no son de caballeros», y Quixote dijo que él lucharía cuando quisiera, y que nadie le impediría buscar aventuras.",
+
+  "modern": {
+    "es": "Y dijeron: «Caballero, no lucheis, que esas luchas no son de caballeros», y Quixote dijo que él lucharía cuando quisiera, y que nadie le impediría buscar aventuras.",
+    "es_419": "Y dijeron: «Caballero, no luche, que esas luchas no son de caballeros», y Quijote dijo que él lucharía cuando quisiera, y que nadie le impediría buscar aventuras.",
+    "en": "And they said: 'Knight, do not fight, for those fights are not for knights', and Quixote said that he would fight when he wished, and that no one would stop him from seeking adventures.",
+    "fr": "Et ils dirent : 'Chevalier, ne te bats pas, car ces combats ne sont pas pour les chevaliers' ; et Quichotte dit qu'il se battrait quand il voudrait, et que personne ne l'empêcherait de chercher des aventures."
+  },
+
+  "variants": {
+    "reality": "La realidad: Gente del pueblo le pide a Quixote que no se peleé. (No se muestra texto; la escena habla.)",
+    "book": "El libro: Nadie puede impedir al caballero andante buscar aventuras. (Se muestra el texto, con la tipografía de la capa Libro.)"
+  },
+
+  "unlocks": {
+    "give": ["codex_page", "recuerdos_bonus"],
+    "verdict": "",
+    "shortcut": ""
+  }
+}

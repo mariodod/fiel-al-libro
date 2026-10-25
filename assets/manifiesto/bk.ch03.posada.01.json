@@ -1,0 +1,47 @@
+{
+  "_comment": [
+    "Fragment: Quixote dubbed a knight at the inn. Part I, Chapter 3.",
+    "id format: bk.ch<chapter>.<slug>.<index>",
+    "The 1605 wording is verbatim content — never a translation key.",
+    "modern renderings are per-language; pd_translations are optional PD versions.",
+    "variants give the Reality and Book readings of the same passage.",
+    "unlocks say what the fragment grants: codex_page, recuerdos_bonus.",
+    "This fragment is NOT yet verified against the 1605 printing.",
+  ],
+
+  "id": "bk.ch03.posada.01",
+  "chapter": 3,
+  "part": 1,
+  "title_key": "bk.ch03.posada.title",
+  "characters": ["quixote", "sancho"],
+
+  "source": {
+    "work": "Miguel de Cervantes, El ingenioso hidalgo Don Quijote de la Mancha, parte I, cap. III",
+    "edition": "1605 printing",
+    "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
+    "public_domain": true,
+    "verified": false,
+    "verified_on": "",
+    "verified_note": "Needs checking against the 1605 printing before shipping."
+  },
+
+  "original_1605": "Y así, armado el cervantes, le dijo el posadero que se armase, y que se ciñese el espadón, y que se armase de valor, y que fuera a buscar aventuras, y que él le daría la orden de caballería que él deseaba.",
+
+  "modern": {
+    "es": "Y así, armado el hidalgo, le dijo el posadero que se armase, y que se ciñese el espadón, y que se armase de valor, y que fuera a buscar aventuras, y que él le daría la orden de caballería que él deseaba.",
+    "es_419": "Y así, armado el hidalgo, el posadero le dijo que se armara, que se ciñera el espadón, que se armara de valor, y que fuera a buscar aventuras, y que él le daría la orden de caballería que deseaba.",
+    "en": "And so, armed the gentleman, the innkeeper told him to arm himself, and to gird on his broadsword, and to arm himself with courage, and to go seek adventures, and that he would give him the order of chivalry he desired.",
+    "fr": "Et ainsi, armé le gentilhomme, l'aubergiste lui dit de s'armer, de ceindre son épée, de s'armer de courage, et d'aller chercher des aventures, et qu'il lui donnerait l'ordre de chevalerie qu'il désirait."
+  },
+
+  "variants": {
+    "reality": "La realidad: Un posadero se burla de un hidalgo que quiere ser caballero. (No se muestra texto; la escena habla.)",
+    "book": "El libro: El hidalgo recibe la orden de caballería de manos del posadero. (Se muestra el texto, con la tipografía de la capa Libro.)"
+  },
+
+  "unlocks": {
+    "give": ["codex_page", "recuerdos_bonus"],
+    "verdict": "",
+    "shortcut": ""
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "_comment": [
+    "Fragment: Melisendra and the puppet show. Part I, Chapter 26.",
+    "id format: bk.ch<chapter>.<slug>.<index>",
+    "The 1605 wording is verbatim content — never a translation key.",
+    "modern renderings are per-language; pd_translations are optional PD versions.",
+    "variants give the Reality and Book readings of the same passage.",
+    "unlocks say what the fragment grants: codex_page, recuerdos_bonus.",
+    "This fragment is NOT yet verified against the 1605 printing.",
+  ],
+
+  "id": "bk.ch26.melisendra.01",
+  "chapter": 26,
+  "part": 1,
+  "title_key": "bk.ch26.melisendra.title",
+  "characters": ["quixote", "sancho"],
+
+  "source": {
+    "work": "Miguel de Cervantes, El ingenioso hidalgo Don Quijote de la Mancha, parte I, cap. XXVI",
+    "edition": "1605 printing",
+    "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
+    "public_domain": true,
+    "verified": false,
+    "verified_on": "",
+    "verified_note": "Needs checking against the 1605 printing before shipping."
+  },
+
+  "original_1605": "Y vio Don Quijote el retablo de Melisendra, y dijo: «¡A mí, a mí!», y atacó el retablo con su espada, y derribó a los moros, y dijo que había ganado la batalla.",
+
+  "modern": {
+    "es": "Y vio Don Quijote el retablo de Melisendra, y dijo: «¡A mí, a mí!», y atacó el retablo con su espada, y derribó a los moros, y dijo que había ganado la batalla.",
+    "es_419": "Y vio Don Quijote el retablo de Melisendra, y dijo: «¡A mí, a mí!», y atacó el retablo con su espada, y derribó a los moros, y dijo que había ganado la batalla.",
+    "en": "And Don Quixote saw the puppet show of Melisendra, and said: 'To me, to me!', and he attacked the puppet show with his sword, and struck down the Moors, and said that he had won the battle.",
+    "fr": "Et Don Quichotte vit le théâtre de marionnettes de Mélisandre, et dit : 'À moi, à moi !', et il attaqua le théâtre de marionnettes avec son épée, et renversa les Maures, et dit qu'il avait gagné la bataille."
+  },
+
+  "variants": {
+    "reality": "La realidad: Quixote ataca un teatro de títeres creyendo que es real. (No se muestra texto; la escena habla.)",
+    "book": "El libro: El caballero ataca el retablo de Melisendra creyendo moros reales. (Se muestra el texto, con la tipografía de la capa Libro.)"
+  },
+
+  "unlocks": {
+    "give": ["codex_page", "recuerdos_bonus"],
+    "verdict": "",
+    "shortcut": ""
+  }
+}

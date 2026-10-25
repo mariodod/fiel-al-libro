@@ -1,0 +1,47 @@
+{
+  "_comment": [
+    "Fragment: The Knight of the Wood and the moonlight duel. Part I, Chapter 11.",
+    "id format: bk.ch<chapter>.<slug>.<index>",
+    "The 1605 wording is verbatim content — never a translation key.",
+    "modern renderings are per-language; pd_translations are optional PD versions.",
+    "variants give the Reality and Book readings of the same passage.",
+    "unlocks say what the fragment grants: codex_page, recuerdos_bonus.",
+    "This fragment is NOT yet verified against the 1605 printing.",
+  ],
+
+  "id": "bk.ch11.caballero_bosque.01",
+  "chapter": 11,
+  "part": 1,
+  "title_key": "bk.ch11.caballero_bosque.title",
+  "characters": ["quixote", "sancho"],
+
+  "source": {
+    "work": "Miguel de Cervantes, El ingenioso hidalgo Don Quijote de la Mancha, parte I, cap. XI",
+    "edition": "1605 printing",
+    "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
+    "public_domain": true,
+    "verified": false,
+    "verified_on": "",
+    "verified_note": "Needs checking against the 1605 printing before shipping."
+  },
+
+  "original_1605": "Y llegó Don Quijote a un caballero que andaba por el bosque, y le dijo: «Caballero, si sois andante, estad dispuesto, porque yo he de luchar con vos», y el caballero le dijo que no era andante, sino que iba a su casa, y que no quería pleitos, y que se fuera de allí.",
+
+  "modern": {
+    "es": "Y llegó Don Quijote a un caballero que andaba por el bosque, y le dijo: «Caballero, si sois andante, estad dispuesto, porque yo he de luchar con vos», y el caballero le dijo que no era andante, sino que iba a su casa, y que no quería pleitos, y que se fuera de allí.",
+    "es_419": "Y llegó Don Quijote a un caballero que andaba por el bosque, y le dijo: «Caballero, si sois andante, estad dispuesto, porque yo he de luchar con vos», y el caballero le dijo que no era andante, sino que iba a su casa, y que no quería pleitos, y que se fuera de allí.",
+    "en": "And Don Quixote came upon a knight walking in the forest, and said to him: 'Knight, if you are errant, be ready, because I must fight with you', and the knight told him he was not errant, but was going home, and that he wanted no lawsuits, and that he should go away from there.",
+    "fr": "Et Don Quichotte arriva auprès d'un chevalier qui marchait dans la forêt, et lui dit : 'Chevalier, si vous êtes errant, soyez prêt, car je dois me battre avec vous' ; et le chevalier lui dit qu'il n'était pas errant, mais qu'il rentrait chez lui, et qu'il ne voulait pas de procès, et qu'il s'en aille de là."
+  },
+
+  "variants": {
+    "reality": "La realidad: Un caballero común pasea por el bosque y Quixote lo desafía. (No se muestra texto; la escena habla.)",
+    "book": "El libro: El caballero andante desafía al Caballero del Bosque bajo la luna. (Se muestra el texto, con la tipografía de la capa Libro.)"
+  },
+
+  "unlocks": {
+    "give": ["codex_page", "recuerdos_bonus"],
+    "verdict": "",
+    "shortcut": ""
+  }
+}

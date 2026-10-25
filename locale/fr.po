@@ -621,6 +621,166 @@ msgstr "Les Pénitents en Blanc"
 msgid "bk.ch50.impertinente.title"
 msgstr "La Curiosité Impertinente"
 
+#. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
+#. key is the fragment's own id plus ".title".
+msgid "bk.ch03.posada.title"
+msgstr "L'Auberge"
+
+#. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
+#. key is the fragment's own id plus ".title".
+msgid "bk.ch06.pastores.title"
+msgstr "Les Bergers"
+
+#. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
+#. key is the fragment's own id plus ".title".
+msgid "bk.ch11.caballero_bosque.title"
+msgstr "Le Chevalier des Bois"
+
+#. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
+#. key is the fragment's own id plus ".title".
+msgid "bk.ch13.leones.title"
+msgstr "Les Lions"
+
+#. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
+#. key is the fragment's own id plus ".title".
+msgid "bk.ch15.muerto_camino.title"
+msgstr "L'Homme Mort sur la Route"
+
+#. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
+#. key is the fragment's own id plus ".title".
+msgid "bk.ch16.barca_encantada.title"
+msgstr "La Barque Ensorcelée"
+
+#. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
+#. key is the fragment's own id plus ".title".
+msgid "bk.ch18.libros_quemados.title"
+msgstr "Les Livres Brûlés"
+
+#. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
+#. key is the fragment's own id plus ".title".
+msgid "bk.ch20.dulcinea_encantada.title"
+msgstr "Dulcinée Ensorcelée"
+
+#. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
+#. key is the fragment's own id plus ".title".
+msgid "bk.ch22.duelo_luz_luna.title"
+msgstr "Le Duel au Clair de Lune"
+
+#. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
+#. key is the fragment's own id plus ".title".
+msgid "bk.ch24.altisidora.title"
+msgstr "Altisidore"
+
+#. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
+#. key is the fragment's own id plus ".title".
+msgid "bk.ch25.conde_altisidora.title"
+msgstr "La Comtesse Trifaldi"
+
+#. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
+#. key is the fragment's own id plus ".title".
+msgid "bk.ch26.melisendra.title"
+msgstr "Les Marionnettes de Mélisandre"
+
+#. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
+#. key is the fragment's own id plus ".title".
+msgid "bk.ch28.encantada.title"
+msgstr "Dulcinée Désensorcelée"
+
+#. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
+#. key is the fragment's own id plus ".title".
+msgid "bk.ch30.leones_carro.title"
+msgstr "Les Lions sur la Charrette"
+
+#. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
+#. key is the fragment's own id plus ".title".
+msgid "bk.ch31.cueva_hermoso.title"
+msgstr "La Grotte de l'Ermite"
+
+#. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
+#. key is the fragment's own id plus ".title".
+msgid "bk.ch32.ventura_duque.title"
+msgstr "Le Château du Duc"
+
+#. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
+#. key is the fragment's own id plus ".title".
+msgid "bk.ch33.leones_reales.title"
+msgstr "Les Lions Royaux"
+
+#. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
+#. key is the fragment's own id plus ".title".
+msgid "bk.ch34.encantamiento.title"
+msgstr "L'Envoûtement"
+
+#. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
+#. key is the fragment's own id plus ".title".
+msgid "bk.ch35.caballero_blanco.title"
+msgstr "Le Chevalier de la Blanche Lune"
+
+#. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
+#. key is the fragment's own id plus ".title".
+msgid "bk.ch36.cuidado_sancho.title"
+msgstr "Les Soins de Sancho"
+
+#. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
+#. key is the fragment's own id plus ".title".
+msgid "bk.ch37.encantamiento_duquesa.title"
+msgstr "L'Envoûtement de la Duchesse"
+
+#. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
+#. key is the fragment's own id plus ".title".
+msgid "bk.ch38.clavileño.title"
+msgstr "Clavileño"
+
+#. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
+#. key is the fragment's own id plus ".title".
+msgid "bk.ch39.sancho_gobernador.title"
+msgstr "Sanche Gouverneur"
+
+#. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
+#. key is the fragment's own id plus ".title".
+msgid "bk.ch40.entierro_rico.title"
+msgstr "L'Enterrement du Riche"
+
+#. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
+#. key is the fragment's own id plus ".title".
+msgid "bk.ch41.oviedo.title"
+msgstr "Le Faux Sequel"
+
+#. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
+#. key is the fragment's own id plus ".title".
+msgid "bk.ch42.maestro_pedro.title"
+msgstr "Les Marionnettes de Maître Pierre"
+
+#. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
+#. key is the fragment's own id plus ".title".
+msgid "bk.ch43.caso_penal.title"
+msgstr "L'Affaire Criminelle"
+
+#. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
+#. key is the fragment's own id plus ".title".
+msgid "bk.ch44.duelo_evitados.title"
+msgstr "Les Duels Évités"
+
+#. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
+#. key is the fragment's own id plus ".title".
+msgid "bk.ch45.encantamiento_sancho.title"
+msgstr "Sanche Ensorcelé"
+
+#. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
+#. key is the fragment's own id plus ".title".
+msgid "bk.ch46.leones_corte.title"
+msgstr "Les Lions à la Cour"
+
+#. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
+#. key is the fragment's own id plus ".title".
+msgid "bk.ch47.despedida.title"
+msgstr "Les Adieux"
+
+#. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
+#. key is the fragment's own id plus ".title".
+msgid "bk.ch48.regreso_pueblo.title"
+msgstr "Le Retour au Village"
+
 #. TRANSLATORS: Control hint, line 4.
 msgid "ui.slice.help.4"
 msgstr "E examiner ce que vous avez devant vous"

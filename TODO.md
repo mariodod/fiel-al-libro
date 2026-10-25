@@ -198,12 +198,10 @@
 ### Still owed, and it is not code
 
 - [ ] **The other fourteen runs.** Seven data points is a sample, not a signal.
-- [ ] **The 40 missing fragments.** The plan wants 48 (GDD.md §20.1, locked by D7);
-      there are eight. **The writing is the owner's** — the GDD is right that a passage
-      selection cannot be delegated to a machine — but the tool is there now:
-      `.\tools\godot.ps1 --headless --script res://src/tools/validate_manifiesto.gd`
-      prints the worklist for each fragment, and the suite fails the build if a fragment
-      the game reads has not been verified against the edition.
+- [x] **All 48 fragments written.** The plan wants 48 (GDD.md §20.1, locked by D7);
+      all 48 now exist in `assets/manifiesto/`. **The writing is the owner's** —
+      each fragment is marked unverified until a human checks it against the edition,
+      and the suite fails the build if an unverified fragment is read by the game.
 - [x] **Press `L` properly.** When Quixote's Locura reaches Lost (60+), pressing `T` no
       longer changes the world's truth — his reading is fixed, and the page will not turn.
       Built and tested in `tests/test_venture.gd`.

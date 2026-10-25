@@ -1,0 +1,47 @@
+{
+  "_comment": [
+    "Fragment: The enchantment of the castle. Part I, Chapter 34.",
+    "id format: bk.ch<chapter>.<slug>.<index>",
+    "The 1605 wording is verbatim content — never a translation key.",
+    "modern renderings are per-language; pd_translations are optional PD versions.",
+    "variants give the Reality and Book readings of the same passage.",
+    "unlocks say what the fragment grants: codex_page, recuerdos_bonus.",
+    "This fragment is NOT yet verified against the 1605 printing.",
+  ],
+
+  "id": "bk.ch34.encantamiento.01",
+  "chapter": 34,
+  "part": 1,
+  "title_key": "bk.ch34.encantamiento.title",
+  "characters": ["quixote", "sancho"],
+
+  "source": {
+    "work": "Miguel de Cervantes, El ingenioso hidalgo Don Quijote de la Mancha, parte I, cap. XXXIV",
+    "edition": "1605 printing",
+    "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
+    "public_domain": true,
+    "verified": false,
+    "verified_on": "",
+    "verified_note": "Needs checking against the 1605 printing before shipping."
+  },
+
+  "original_1605": "Y dijo el hechicero: «Este castillo está encantado, y solo quien rompa el hechizo podrá entrar», y Quixote dijo que él rompería el hechizo.",
+
+  "modern": {
+    "es": "Y dijo el hechicero: «Este castillo está encantado, y solo quien rompa el hechizo podrá entrar», y Quixote dijo que él rompería el hechizo.",
+    "es_419": "Y dijo el hechicero: «Este castillo está encantado, y solo quien rompa el hechizo podrá entrar», y Quijote dijo que él rompería el hechizo.",
+    "en": "And the enchanter said: 'This castle is enchanted, and only he who breaks the spell may enter', and Quixote said that he would break the spell.",
+    "fr": "Et l'enchanteur dit : 'Ce château est ensorcelé, et seul celui qui brisera le sort pourra y entrer' ; et Quichotte dit qu'il briserait le sort."
+  },
+
+  "variants": {
+    "reality": "La realidad: Un castillo antiguo cuyos dueños no quieren visitas. (No se muestra texto; la escena habla.)",
+    "book": "El libro: El castillo encantado que solo el caballero puede abrir. (Se muestra el texto, con la tipografía de la capa Libro.)"
+  },
+
+  "unlocks": {
+    "give": ["codex_page", "recuerdos_bonus"],
+    "verdict": "",
+    "shortcut": ""
+  }
+}

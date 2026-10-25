@@ -1,0 +1,47 @@
+{
+  "_comment": [
+    "Fragment: Sancho cares for his wounded master. Part I, Chapter 36.",
+    "id format: bk.ch<chapter>.<slug>.<index>",
+    "The 1605 wording is verbatim content — never a translation key.",
+    "modern renderings are per-language; pd_translations are optional PD versions.",
+    "variants give the Reality and Book readings of the same passage.",
+    "unlocks say what the fragment grants: codex_page, recuerdos_bonus.",
+    "This fragment is NOT yet verified against the 1605 printing.",
+  ],
+
+  "id": "bk.ch36.cuidado_sancho.01",
+  "chapter": 36,
+  "part": 1,
+  "title_key": "bk.ch36.cuidado_sancho.title",
+  "characters": ["quixote", "sancho"],
+
+  "source": {
+    "work": "Miguel de Cervantes, El ingenioso hidalgo Don Quijote de la Mancha, parte I, cap. XXXVI",
+    "edition": "1605 printing",
+    "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
+    "public_domain": true,
+    "verified": false,
+    "verified_on": "",
+    "verified_note": "Needs checking against the 1605 printing before shipping."
+  },
+
+  "original_1605": "Y dijo Sancho: «Señor, estáis herido, y yo he de curaros», y Quixote dijo que no, y que las heridas de un caballero se curan solas, y que él no necesitaba cura.",
+
+  "modern": {
+    "es": "Y dijo Sancho: «Señor, estáis herido, y yo he de curaros», y Quixote dijo que no, y que las heridas de un caballero se curan solas, y que él no necesitaba cura.",
+    "es_419": "Y dijo Sancho: «Señor, está herido, y yo lo curaré», y Quijote dijo que no, y que las heridas de un caballero se curan solas, y que no necesitaba cura.",
+    "en": "And Sancho said: 'Sir, you are wounded, and I must heal you', and Quixote said no, and that the wounds of a knight heal by themselves, and that he needed no cure.",
+    "fr": "Et Sancho dit : 'Sire, vous êtes blessé, et je dois vous soigner' ; et Quichotte dit non, et que les blessures d'un chevalier se guérissent d'elles-mêmes, et qu'il n'avait besoin d'aucun soin."
+  },
+
+  "variants": {
+    "reality": "La realidad: Sancho cuida las heridas de su amo herido. (No se muestra texto; la escena habla.)",
+    "book": "El libro: Las heridas de un caballero se curan solas, sin ayuda de nadie. (Se muestra el texto, con la tipografía de la capa Libro.)"
+  },
+
+  "unlocks": {
+    "give": ["codex_page", "recuerdos_bonus"],
+    "verdict": "",
+    "shortcut": ""
+  }
+}

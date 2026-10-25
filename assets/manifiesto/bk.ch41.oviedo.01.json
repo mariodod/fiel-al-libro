@@ -1,0 +1,47 @@
+{
+  "_comment": [
+    "Fragment: The false sequel from Oviedo. Part I, Chapter 41.",
+    "id format: bk.ch<chapter>.<slug>.<index>",
+    "The 1605 wording is verbatim content — never a translation key.",
+    "modern renderings are per-language; pd_translations are optional PD versions.",
+    "variants give the Reality and Book readings of the same passage.",
+    "unlocks say what the fragment grants: codex_page, recuerdos_bonus.",
+    "This fragment is NOT yet verified against the 1605 printing.",
+  ],
+
+  "id": "bk.ch41.oviedo.01",
+  "chapter": 41,
+  "part": 1,
+  "title_key": "bk.ch41.oviedo.title",
+  "characters": ["quixote", "sancho"],
+
+  "source": {
+    "work": "Miguel de Cervantes, El ingenioso hidalgo Don Quijote de la Mancha, parte I, cap. XLI",
+    "edition": "1605 printing",
+    "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
+    "public_domain": true,
+    "verified": false,
+    "verified_on": "",
+    "verified_note": "Needs checking against the 1605 printing before shipping."
+  },
+
+  "original_1605": "Y dijo el bachiller: «Hay un libro falso de vuestras aventuras, escrito por un tal Avellaneda», y Quixote dijo que no le importaba, y que él seguía siendo Don Quijote de la Mancha.",
+
+  "modern": {
+    "es": "Y dijo el bachiller: «Hay un libro falso de vuestras aventuras, escrito por un tal Avellaneda», y Quixote dijo que no le importaba, y que él seguía siendo Don Quijote de la Mancha.",
+    "es_419": "Y dijo el bachiller: «Hay un libro falso de sus aventuras, escrito por un tal Avellaneda», y Quijote dijo que no le importaba, y que él seguía siendo Don Quijote de la Mancha.",
+    "en": "And the bachelor said: 'There is a false book of your adventures, written by a certain Avellaneda', and Quixote said that it did not matter, and that he was still Don Quixote of La Mancha.",
+    "fr": "Et le bachelier dit : 'Il y a un faux livre de vos aventures, écrit par un certain Avellénède' ; et Quichotte dit que cela n'avait pas d'importance, et qu'il était toujours Don Quichotte de la Manche."
+  },
+
+  "variants": {
+    "reality": "La realidad: Un libro falso imita las aventuras de Quixote. (No se muestra texto; la escena habla.)",
+    "book": "El libro: El falso Quijote de Avellaneda no puede borrar al verdadero. (Se muestra el texto, con la tipografía de la capa Libro.)"
+  },
+
+  "unlocks": {
+    "give": ["codex_page", "recuerdos_bonus"],
+    "verdict": "",
+    "shortcut": ""
+  }
+}

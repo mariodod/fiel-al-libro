@@ -1,0 +1,47 @@
+{
+  "_comment": [
+    "Fragment: The rich man's burial. Part I, Chapter 40.",
+    "id format: bk.ch<chapter>.<slug>.<index>",
+    "The 1605 wording is verbatim content — never a translation key.",
+    "modern renderings are per-language; pd_translations are optional PD versions.",
+    "variants give the Reality and Book readings of the same passage.",
+    "unlocks say what the fragment grants: codex_page, recuerdos_bonus.",
+    "This fragment is NOT yet verified against the 1605 printing.",
+  ],
+
+  "id": "bk.ch40.entierro_rico.01",
+  "chapter": 40,
+  "part": 1,
+  "title_key": "bk.ch40.entierro_rico.title",
+  "characters": ["quixote", "sancho"],
+
+  "source": {
+    "work": "Miguel de Cervantes, El ingenioso hidalgo Don Quijote de la Mancha, parte I, cap. XL",
+    "edition": "1605 printing",
+    "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
+    "public_domain": true,
+    "verified": false,
+    "verified_on": "",
+    "verified_note": "Needs checking against the 1605 printing before shipping."
+  },
+
+  "original_1605": "Y vieron un entierro de un hombre rico, y dijo Don Quijote: «Amigo Sancho, este hombre fue rico en vida, y ahora yace muerto», y Sancho dijo que todos mueren, ricos y pobres por igual.",
+
+  "modern": {
+    "es": "Y vieron un entierro de un hombre rico, y dijo Don Quijote: «Amigo Sancho, este hombre fue rico en vida, y ahora yace muerto», y Sancho dijo que todos mueren, ricos y pobres por igual.",
+    "es_419": "Y vieron un entierro de un hombre rico, y Don Quijote dijo: «Amigo Sancho, este hombre fue rico en vida, y ahora yace muerto», y Sancho dijo que todos mueren, ricos y pobres por igual.",
+    "en": "And they saw the burial of a rich man, and Don Quixote said: 'Friend Sancho, this man was rich in life, and now lies dead', and Sancho said that all die, rich and poor alike.",
+    "fr": "Et ils virent l'enterrement d'un homme riche, et Don Quichotte dit : 'Ami Sancho, cet homme était riche de son vivant, et maintenant il gît mort' ; et Sancho dit que tous meurent, riches et pauvres pareillement."
+  },
+
+  "variants": {
+    "reality": "La realidad: Un entierro común de un hombre rico en un pueblo. (No se muestra texto; la escena habla.)",
+    "book": "El libro: La muerte iguala al rico y al pobre ante la tumba. (Se muestra el texto, con la tipografía de la capa Libro.)"
+  },
+
+  "unlocks": {
+    "give": ["codex_page", "recuerdos_bonus"],
+    "verdict": "",
+    "shortcut": ""
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "_comment": [
+    "Fragment: The duke's castle and the first venture. Part I, Chapter 32.",
+    "id format: bk.ch<chapter>.<slug>.<index>",
+    "The 1605 wording is verbatim content — never a translation key.",
+    "modern renderings are per-language; pd_translations are optional PD versions.",
+    "variants give the Reality and Book readings of the same passage.",
+    "unlocks say what the fragment grants: codex_page, recuerdos_bonus.",
+    "This fragment is NOT yet verified against the 1605 printing.",
+  ],
+
+  "id": "bk.ch32.ventura_duque.01",
+  "chapter": 32,
+  "part": 1,
+  "title_key": "bk.ch32.ventura_duque.title",
+  "characters": ["quixote", "sancho"],
+
+  "source": {
+    "work": "Miguel de Cervantes, El ingenioso hidalgo Don Quijote de la Mancha, parte I, cap. XXXII",
+    "edition": "1605 printing",
+    "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
+    "public_domain": true,
+    "verified": false,
+    "verified_on": "",
+    "verified_note": "Needs checking against the 1605 printing before shipping."
+  },
+
+  "original_1605": "Y llegaron al castillo del duque, y dijo el duque: «Caballero, bienvenido seáis, y yo os haré huésped», y Quixote dijo que aceptaba, y que él era un caballero andante que buscaba aventuras.",
+
+  "modern": {
+    "es": "Y llegaron al castillo del duque, y dijo el duque: «Caballero, bienvenido seáis, y yo os haré huésped», y Quixote dijo que aceptaba, y que él era un caballero andante que buscaba aventuras.",
+    "es_419": "Y llegaron al castillo del duque, y el duque dijo: «Caballero, bienvenido sea, y yo lo haré huésped», y Quijote dijo que aceptaba, y que era un caballero andante que buscaba aventuras.",
+    "en": "And they came to the duke's castle, and the duke said: 'Knight, welcome, and I will make you my guest', and Quixote said that he accepted, and that he was a knight-errant seeking adventures.",
+    "fr": "Et ils arrivèrent au château du duc, et le duc dit : 'Chevalier, soyez le bienvenu, et je ferai de vous mon hôte' ; et Quichotte dit qu'il acceptait, et qu'il était un chevalier errant cherchant des aventures."
+  },
+
+  "variants": {
+    "reality": "La realidad: Un duque recibe a un hidalgo en su castillo. (No se muestra texto; la escena habla.)",
+    "book": "El libro: El duque acoge al caballero andante en su castillo. (Se muestra el texto, con la tipografía de la capa Libro.)"
+  },
+
+  "unlocks": {
+    "give": ["codex_page", "recuerdos_bonus"],
+    "verdict": "",
+    "shortcut": ""
+  }
+}

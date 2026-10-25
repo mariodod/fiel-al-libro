@@ -1,0 +1,47 @@
+{
+  "_comment": [
+    "Fragment: Sancho enchanted. Part I, Chapter 45.",
+    "id format: bk.ch<chapter>.<slug>.<index>",
+    "The 1605 wording is verbatim content — never a translation key.",
+    "modern renderings are per-language; pd_translations are optional PD versions.",
+    "variants give the Reality and Book readings of the same passage.",
+    "unlocks say what the fragment grants: codex_page, recuerdos_bonus.",
+    "This fragment is NOT yet verified against the 1605 printing.",
+  ],
+
+  "id": "bk.ch45.encantamiento_sancho.01",
+  "chapter": 45,
+  "part": 1,
+  "title_key": "bk.ch45.encantamiento_sancho.title",
+  "characters": ["sancho", "quixote"],
+
+  "source": {
+    "work": "Miguel de Cervantes, El ingenioso hidalgo Don Quijote de la Mancha, parte I, cap. XLV",
+    "edition": "1605 printing",
+    "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
+    "public_domain": true,
+    "verified": false,
+    "verified_on": "",
+    "verified_note": "Needs checking against the 1605 printing before shipping."
+  },
+
+  "original_1605": "Y dijo el hechicero: «Sancho está encantado, y solo quien le dé tres latigazos lo desencantará», y Quixote dijo que él no le daría latigazos a su compañero.",
+
+  "modern": {
+    "es": "Y dijo el hechicero: «Sancho está encantado, y solo quien le dé tres latigazos lo desencantará», y Quixote dijo que él no le daría latigazos a su compañero.",
+    "es_419": "Y dijo el hechicero: «Sancho está encantado, y solo quien le dé tres latigazos lo desencantará», y Quijote dijo que él no le daría latigazos a su compañero.",
+    "en": "And the enchanter said: 'Sancho is enchanted, and only he who gives him three lashes will disenchant him', and Quixote said that he would not lash his companion.",
+    "fr": "Et l'enchanteur dit : 'Sancho est ensorcelé, et seul celui qui lui donnera trois coups de fouet le désensorcelera' ; et Quichotte dit qu'il ne fouetterait pas son compagnon."
+  },
+
+  "variants": {
+    "reality": "La realidad: Un hechicero dice que Sancho está encantado y necesita azotes. (No se muestra texto; la escena habla.)",
+    "book": "El libro: Quixote no azotará a su compañero por ningún hechizo. (Se muestra el texto, con la tipografía de la capa Libro.)"
+  },
+
+  "unlocks": {
+    "give": ["codex_page", "recuerdos_bonus"],
+    "verdict": "",
+    "shortcut": ""
+  }
+}

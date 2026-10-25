@@ -1,0 +1,47 @@
+{
+  "_comment": [
+    "Fragment: The return to the village. Part I, Chapter 48.",
+    "id format: bk.ch<chapter>.<slug>.<index>",
+    "The 1605 wording is verbatim content — never a translation key.",
+    "modern renderings are per-language; pd_translations are optional PD versions.",
+    "variants give the Reality and Book readings of the same passage.",
+    "unlocks say what the fragment grants: codex_page, recuerdos_bonus.",
+    "This fragment is NOT yet verified against the 1605 printing.",
+  ],
+
+  "id": "bk.ch48.regreso_pueblo.01",
+  "chapter": 48,
+  "part": 1,
+  "title_key": "bk.ch48.regreso_pueblo.title",
+  "characters": ["quixote", "sancho"],
+
+  "source": {
+    "work": "Miguel de Cervantes, El ingenioso hidalgo Don Quijote de la Mancha, parte I, cap. XLVIII",
+    "edition": "1605 printing",
+    "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
+    "public_domain": true,
+    "verified": false,
+    "verified_on": "",
+    "verified_note": "Needs checking against the 1605 printing before shipping."
+  },
+
+  "original_1605": "Y volvieron a su pueblo, y dijo Quixote: «Amigo Sancho, hemos vuelto a casa, y hemos visto muchas cosas», y Sancho dijo que sí, y que él ya estaba cansado de tantas aventuras.",
+
+  "modern": {
+    "es": "Y volvieron a su pueblo, y dijo Quixote: «Amigo Sancho, hemos vuelto a casa, y hemos visto muchas cosas», y Sancho dijo que sí, y que él ya estaba cansado de tantas aventuras.",
+    "es_419": "Y volvieron a su pueblo, y Quixote dijo: «Amigo Sancho, hemos vuelto a casa, y hemos visto muchas cosas», y Sancho dijo que sí, y que él ya estaba cansado de tantas aventuras.",
+    "en": "And they returned to their village, and Quixote said: 'Friend Sancho, we have returned home, and we have seen many things', and Sancho said yes, and that he was already tired of so many adventures.",
+    "fr": "Et ils revinrent à leur village, et Quichotte dit : 'Ami Sancho, nous sommes revenus chez nous, et nous avons vu beaucoup de choses' ; et Sancho dit oui, et qu'il était déjà fatigué de tant d'aventures."
+  },
+
+  "variants": {
+    "reality": "La realidad: Quixote y Sancho vuelven a su aldea después del viaje. (No se muestra texto; la escena habla.)",
+    "book": "El libro: El caballero vuelve a casa tras haber visto muchas cosas. (Se muestra el texto, con la tipografía de la capa Libro.)"
+  },
+
+  "unlocks": {
+    "give": ["codex_page", "recuerdos_bonus"],
+    "verdict": "",
+    "shortcut": ""
+  }
+}

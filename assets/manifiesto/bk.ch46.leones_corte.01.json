@@ -1,0 +1,47 @@
+{
+  "_comment": [
+    "Fragment: The lions at court. Part I, Chapter 46.",
+    "id format: bk.ch<chapter>.<slug>.<index>",
+    "The 1605 wording is verbatim content — never a translation key.",
+    "modern renderings are per-language; pd_translations are optional PD versions.",
+    "variants give the Reality and Book readings of the same passage.",
+    "unlocks say what the fragment grants: codex_page, recuerdos_bonus.",
+    "This fragment is NOT yet verified against the 1605 printing.",
+  ],
+
+  "id": "bk.ch46.leones_corte.01",
+  "chapter": 46,
+  "part": 1,
+  "title_key": "bk.ch46.leones_corte.title",
+  "characters": ["quixote", "sancho"],
+
+  "source": {
+    "work": "Miguel de Cervantes, El ingenioso hidalgo Don Quijote de la Mancha, parte I, cap. XLVI",
+    "edition": "1605 printing",
+    "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
+    "public_domain": true,
+    "verified": false,
+    "verified_on": "",
+    "verified_note": "Needs checking against the 1605 printing before shipping."
+  },
+
+  "original_1605": "Y vieron leones en la corte del duque, y dijo Don Quijote: «Amigo Sancho, esos leones son bestias reales, y yo he de luchar contra ellas», y el duque dijo que no los soltara, y que eran bestias domadas.",
+
+  "modern": {
+    "es": "Y vieron leones en la corte del duque, y dijo Don Quijote: «Amigo Sancho, esos leones son bestias reales, y yo he de luchar contra ellas», y el duque dijo que no los soltara, y que eran bestias domadas.",
+    "es_419": "Y vieron leones en la corte del duque, y Don Quijote dijo: «Amigo Sancho, esos leones son bestias reales, y yo he de luchar contra ellas», y el duque dijo que no los soltara, y que eran bestias domadas.",
+    "en": "And they saw lions at the duke's court, and Don Quixote said: 'Friend Sancho, those lions are royal beasts, and I must fight against them', and the duke said not to loose them, and that they were tame beasts.",
+    "fr": "Et ils virent des lions à la cour du duc, et Don Quichotte dit : 'Ami Sancho, ces lions sont des bêtes royales, et je dois me battre contre elles' ; et le duc dit de ne pas les détacher, et que c'étaient des bêtes domptées."
+  },
+
+  "variants": {
+    "reality": "La realidad: Leones domados exhibidos en la corte del duque. (No se muestra texto; la escena habla.)",
+    "book": "El libro: Bestias reales del duque que el caballero desafía en combate. (Se muestra el texto, con la tipografía de la capa Libro.)"
+  },
+
+  "unlocks": {
+    "give": ["codex_page", "recuerdos_bonus"],
+    "verdict": "",
+    "shortcut": ""
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "_comment": [
+    "Fragment: The Knight of the White Moon. Part I, Chapter 35.",
+    "id format: bk.ch<chapter>.<slug>.<index>",
+    "The 1605 wording is verbatim content — never a translation key.",
+    "modern renderings are per-language; pd_translations are optional PD versions.",
+    "variants give the Reality and Book readings of the same passage.",
+    "unlocks say what the fragment grants: codex_page, recuerdos_bonus.",
+    "This fragment is NOT yet verified against the 1605 printing.",
+  ],
+
+  "id": "bk.ch35.caballero_blanco.01",
+  "chapter": 35,
+  "part": 1,
+  "title_key": "bk.ch35.caballero_blanco.title",
+  "characters": ["quixote", "sancho"],
+
+  "source": {
+    "work": "Miguel de Cervantes, El ingenioso hidalgo Don Quijote de la Mancha, parte I, cap. XXXV",
+    "edition": "1605 printing",
+    "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
+    "public_domain": true,
+    "verified": false,
+    "verified_on": "",
+    "verified_note": "Needs checking against the 1605 printing before shipping."
+  },
+
+  "original_1605": "Y llegó el Caballero de la Blanca Luna, y dijo: «Yo soy el caballero que te ha vencido, y tú has de volver a tu casa», y Quixote dijo que no volvería, y que él seguiría buscando aventuras.",
+
+  "modern": {
+    "es": "Y llegó el Caballero de la Blanca Luna, y dijo: «Yo soy el caballero que te ha vencido, y tú has de volver a tu casa», y Quixote dijo que no volvería, y que él seguiría buscando aventuras.",
+    "es_419": "Y llegó el Caballero de la Blanca Luna, y dijo: «Yo soy el caballero que lo ha vencido, y usted ha de volver a su casa», y Quijote dijo que no volvería, y que él seguiría buscando aventuras.",
+    "en": "And the Knight of the White Moon arrived, and said: 'I am the knight who has defeated you, and you must return home', and Quixote said that he would not return, and that he would keep seeking adventures.",
+    "fr": "Et arriva le Chevalier de la Blanche Lune, et dit : 'Je suis le chevalier qui t'a vaincu, et tu dois retourner chez toi' ; et Quichotte dit qu'il ne retournerait pas, et qu'il continuerait à chercher des aventures."
+  },
+
+  "variants": {
+    "reality": "La realidad: Un caballero derrota a Quixote y le ordena volver a casa. (No se muestra texto; la escena habla.)",
+    "book": "El libro: El Caballero de la Blanca Luna vence al caballero andante. (Se muestra el texto, con la tipografía de la capa Libro.)"
+  },
+
+  "unlocks": {
+    "give": ["codex_page", "recuerdos_bonus"],
+    "verdict": "",
+    "shortcut": ""
+  }
+}

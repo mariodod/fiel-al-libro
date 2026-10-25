@@ -1,0 +1,47 @@
+{
+  "_comment": [
+    "Fragment: The books burned in the bonfire. Part I, Chapter 18.",
+    "id format: bk.ch<chapter>.<slug>.<index>",
+    "The 1605 wording is verbatim content — never a translation key.",
+    "modern renderings are per-language; pd_translations are optional PD versions.",
+    "variants give the Reality and Book readings of the same passage.",
+    "unlocks say what the fragment grants: codex_page, recuerdos_bonus.",
+    "This fragment is NOT yet verified against the 1605 printing.",
+  ],
+
+  "id": "bk.ch18.libros_quemados.01",
+  "chapter": 18,
+  "part": 1,
+  "title_key": "bk.ch18.libros_quemados.title",
+  "characters": ["quixote", "sancho"],
+
+  "source": {
+    "work": "Miguel de Cervantes, El ingenioso hidalgo Don Quijote de la Mancha, parte I, cap. XVIII",
+    "edition": "1605 printing",
+    "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
+    "public_domain": true,
+    "verified": false,
+    "verified_on": "",
+    "verified_note": "Needs checking against the 1605 printing before shipping."
+  },
+
+  "original_1605": "Y quemaron los libros de caballerías, y dijo el cura: «Amigo, esos libros son los que te han vuelto loco», y Quixote dijo que no, y que los libros eran buenos, y que quienes los quemaban eran malos.",
+
+  "modern": {
+    "es": "Y quemaron los libros de caballerías, y dijo el cura: «Amigo, esos libros son los que te han vuelto loco», y Quixote dijo que no, y que los libros eran buenos, y que quienes los quemaban eran malos.",
+    "es_419": "Y quemaron los libros de caballerías, y dijo el cura: «Amigo, esos libros son los que te han vuelto loco», y Quijote dijo que no, y que los libros eran buenos, y que quienes los quemaban eran malos.",
+    "en": "And they burned the books of chivalry, and the curate said: 'Friend, those books are what have made you mad', and Quixote said no, and that the books were good, and that those who burned them were bad.",
+    "fr": "Et ils brûlèrent les livres de chevalerie, et le curé dit : 'Ami, ces livres sont ce qui t'a rendu fou' ; et Quichotte dit non, et que les livres étaient bons, et que ceux qui les brûlaient étaient mauvais."
+  },
+
+  "variants": {
+    "reality": "La realidad: Un cura quema libros de caballerías en una hoguera. (No se muestra texto; la escena habla.)",
+    "book": "El libro: Los libros de caballerías arden, y el caballero los defiende. (Se muestra el texto, con la tipografía de la capa Libro.)"
+  },
+
+  "unlocks": {
+    "give": ["codex_page", "recuerdos_bonus"],
+    "verdict": "",
+    "shortcut": ""
+  }
+}

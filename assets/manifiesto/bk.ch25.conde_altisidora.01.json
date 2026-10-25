@@ -1,0 +1,47 @@
+{
+  "_comment": [
+    "Fragment: The Countess Trifaldi and Altisidora's revenge. Part I, Chapter 25.",
+    "id format: bk.ch<chapter>.<slug>.<index>",
+    "The 1605 wording is verbatim content — never a translation key.",
+    "modern renderings are per-language; pd_translations are optional PD versions.",
+    "variants give the Reality and Book readings of the same passage.",
+    "unlocks say what the fragment grants: codex_page, recuerdos_bonus.",
+    "This fragment is NOT yet verified against the 1605 printing.",
+  ],
+
+  "id": "bk.ch25.conde_altisidora.01",
+  "chapter": 25,
+  "part": 1,
+  "title_key": "bk.ch25.conde_altisidora.title",
+  "characters": ["quixote", "sancho"],
+
+  "source": {
+    "work": "Miguel de Cervantes, El ingenioso hidalgo Don Quijote de la Mancha, parte I, cap. XXV",
+    "edition": "1605 printing",
+    "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
+    "public_domain": true,
+    "verified": false,
+    "verified_on": "",
+    "verified_note": "Needs checking against the 1605 printing before shipping."
+  },
+
+  "original_1605": "Y entró la condesa Trifaldi, con el rostro cubierto de lágrimas, y dijo: «Señor, soy una condesa desdichada, y he venido a pedir vuestra ayuda», y Don Quijote dijo que la ayudaría en cuanto pudiera.",
+
+  "modern": {
+    "es": "Y entró la condesa Trifaldi, con el rostro cubierto de lágrimas, y dijo: «Señor, soy una condesa desdichada, y he venido a pedir vuestra ayuda», y Don Quijote dijo que la ayudaría en cuanto pudiera.",
+    "es_419": "Y entró la condesa Trifaldi, con el rostro cubierto de lágrimas, y dijo: «Señor, soy una condesa desdichada, y he venido a pedir su ayuda», y Don Quijote dijo que la ayudaría en cuanto pudiera.",
+    "en": "And the Countess Trifaldi entered, her face covered with tears, and said: 'Sir, I am a wretched countess, and I have come to ask for your help', and Don Quixote said he would help her as soon as he could.",
+    "fr": "Et entra la comtesse Trifaldi, le visage couvert de larmes, et dit : 'Sire, je suis une comtesse malheureuse, et je suis venue vous demander de l'aide' ; et Don Quichotte dit qu'il l'aiderait dès qu'il le pourrait."
+  },
+
+  "variants": {
+    "reality": "La realidad: Una condesa afligida pide ayuda al caballero. (No se muestra texto; la escena habla.)",
+    "book": "El libro: La condesa Trifaldi implora la ayuda del caballero andante. (Se muestra el texto, con la tipografía de la capa Libro.)"
+  },
+
+  "unlocks": {
+    "give": ["codex_page", "recuerdos_bonus"],
+    "verdict": "",
+    "shortcut": ""
+  }
+}

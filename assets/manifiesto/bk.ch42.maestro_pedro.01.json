@@ -1,0 +1,47 @@
+{
+  "_comment": [
+    "Fragment: Master Peter and his puppet show. Part I, Chapter 42.",
+    "id format: bk.ch<chapter>.<slug>.<index>",
+    "The 1605 wording is verbatim content — never a translation key.",
+    "modern renderings are per-language; pd_translations are optional PD versions.",
+    "variants give the Reality and Book readings of the same passage.",
+    "unlocks say what the fragment grants: codex_page, recuerdos_bonus.",
+    "This fragment is NOT yet verified against the 1605 printing.",
+  ],
+
+  "id": "bk.ch42.maestro_pedro.01",
+  "chapter": 42,
+  "part": 1,
+  "title_key": "bk.ch42.maestro_pedro.title",
+  "characters": ["quixote", "sancho"],
+
+  "source": {
+    "work": "Miguel de Cervantes, El ingenioso hidalgo Don Quijote de la Mancha, parte I, cap. XLII",
+    "edition": "1605 printing",
+    "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
+    "public_domain": true,
+    "verified": false,
+    "verified_on": "",
+    "verified_note": "Needs checking against the 1605 printing before shipping."
+  },
+
+  "original_1605": "Y llegó Maestro Pedro con su retablo, y dijo: «Caballero, mirad esta historia de Gayferos y Melisendra», y Quixote dijo que sí, y que él amaba las historias de caballeros.",
+
+  "modern": {
+    "es": "Y llegó Maestro Pedro con su retablo, y dijo: «Caballero, mirad esta historia de Gayferos y Melisendra», y Quixote dijo que sí, y que él amaba las historias de caballeros.",
+    "es_419": "Y llegó Maestro Pedro con su retablo, y dijo: «Caballero, miren esta historia de Gayferos y Melisendra», y Quijote dijo que sí, y que él amaba las historias de caballeros.",
+    "en": "And Master Peter arrived with his puppet show, and said: 'Knight, look at this story of Gayferos and Melisendra', and Quixote said yes, and that he loved stories of knights.",
+    "fr": "Et Maître Pierre arriva avec son théâtre de marionnettes, et dit : 'Chevalier, regardez cette histoire de Gayferos et Mélisandre' ; et Quichotte dit oui, et qu'il aimait les histoires de chevaliers."
+  },
+
+  "variants": {
+    "reality": "La realidad: Maestro Pedro muestra su retablo de títeres en la plaza. (No se muestra texto; la escena habla.)",
+    "book": "El libro: El caballero ama las historias de Gayferos y Melisendra. (Se muestra el texto, con la tipografía de la capa Libro.)"
+  },
+
+  "unlocks": {
+    "give": ["codex_page", "recuerdos_bonus"],
+    "verdict": "",
+    "shortcut": ""
+  }
+}

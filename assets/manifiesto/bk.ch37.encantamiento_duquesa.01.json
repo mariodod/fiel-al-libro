@@ -1,0 +1,47 @@
+{
+  "_comment": [
+    "Fragment: The duchess's enchantment. Part I, Chapter 37.",
+    "id format: bk.ch<chapter>.<slug>.<index>",
+    "The 1605 wording is verbatim content — never a translation key.",
+    "modern renderings are per-language; pd_translations are optional PD versions.",
+    "variants give the Reality and Book readings of the same passage.",
+    "unlocks say what the fragment grants: codex_page, recuerdos_bonus.",
+    "This fragment is NOT yet verified against the 1605 printing.",
+  ],
+
+  "id": "bk.ch37.encantamiento_duquesa.01",
+  "chapter": 37,
+  "part": 1,
+  "title_key": "bk.ch37.encantamiento_duquesa.title",
+  "characters": ["quixote", "sancho"],
+
+  "source": {
+    "work": "Miguel de Cervantes, El ingenioso hidalgo Don Quijote de la Mancha, parte I, cap. XXXVII",
+    "edition": "1605 printing",
+    "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
+    "public_domain": true,
+    "verified": false,
+    "verified_on": "",
+    "verified_note": "Needs checking against the 1605 printing before shipping."
+  },
+
+  "original_1605": "Y dijo la duquesa: «Señor, yo soy encantada, y solo vos podéis desencantarme», y Quixote dijo que él la desencantaría, y que él haría todo lo posible por liberarla.",
+
+  "modern": {
+    "es": "Y dijo la duquesa: «Señor, yo soy encantada, y solo vos podéis desencantarme», y Quixote dijo que él la desencantaría, y que él haría todo lo posible por liberarla.",
+    "es_419": "Y dijo la duquesa: «Señor, yo estoy encantada, y solo usted puede desencantarme», y Quijote dijo que él la desencantaría, y que él haría todo lo posible por liberarla.",
+    "en": "And the duchess said: 'Sir, I am enchanted, and only you can disenchant me', and Quixote said that he would disenchant her, and that he would do everything possible to free her.",
+    "fr": "Et la duchesse dit : 'Sire, je suis ensorcelée, et seul vous pouvez me désensorceler' ; et Quichotte dit qu'il la désensorcelerait, et qu'il ferait tout ce qu'il pourrait pour la libérer."
+  },
+
+  "variants": {
+    "reality": "La realidad: La duquesa finge estar encantada para engañar a Quixote. (No se muestra texto; la escena habla.)",
+    "book": "El libro: Solo el caballero andante puede desencantar a la duquesa. (Se muestra el texto, con la tipografía de la capa Libro.)"
+  },
+
+  "unlocks": {
+    "give": ["codex_page", "recuerdos_bonus"],
+    "verdict": "",
+    "shortcut": ""
+  }
+}

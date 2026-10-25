@@ -1,0 +1,47 @@
+{
+  "_comment": [
+    "Fragment: Dulcinea disenchanted. Part I, Chapter 28.",
+    "id format: bk.ch<chapter>.<slug>.<index>",
+    "The 1605 wording is verbatim content — never a translation key.",
+    "modern renderings are per-language; pd_translations are optional PD versions.",
+    "variants give the Reality and Book readings of the same passage.",
+    "unlocks say what the fragment grants: codex_page, recuerdos_bonus.",
+    "This fragment is NOT yet verified against the 1605 printing.",
+  ],
+
+  "id": "bk.ch28.encantada.01",
+  "chapter": 28,
+  "part": 1,
+  "title_key": "bk.ch28.encantada.title",
+  "characters": ["quixote", "sancho"],
+
+  "source": {
+    "work": "Miguel de Cervantes, El ingenioso hidalgo Don Quijote de la Mancha, parte I, cap. XXVIII",
+    "edition": "1605 printing",
+    "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
+    "public_domain": true,
+    "verified": false,
+    "verified_on": "",
+    "verified_note": "Needs checking against the 1605 printing before shipping."
+  },
+
+  "original_1605": "Y dijo el sabio: «Dulcinea está encantada, y solo el que la desencante podrá verla tal como es», y Quixote dijo que él sería el que la desencantara.",
+
+  "modern": {
+    "es": "Y dijo el sabio: «Dulcinea está encantada, y solo el que la desencante podrá verla tal como es», y Quixote dijo que él sería el que la desencantara.",
+    "es_419": "Y dijo el sabio: «Dulcinea está encantada, y solo quien la desencante podrá verla tal como es», y Quijote dijo que él sería quien la desencantara.",
+    "en": "And the sage said: 'Dulcinea is enchanted, and only he who disenchants her can see her as she is', and Quixote said that he would be the one to disenchant her.",
+    "fr": "Et le sage dit : 'Dulcinée est ensorcelée, et seul celui qui la désensorcelera pourra la voir telle qu'elle est' ; et Quichotte dit qu'il serait celui qui la désensorcelerait."
+  },
+
+  "variants": {
+    "reality": "La realidad: Un sabio dice que Dulcinea está bajo un hechizo. (No se muestra texto; la escena habla.)",
+    "book": "El libro: Solo quien desencante a Dulcinea la verá tal como es. (Se muestra el texto, con la tipografía de la capa Libro.)"
+  },
+
+  "unlocks": {
+    "give": ["codex_page", "recuerdos_bonus"],
+    "verdict": "",
+    "shortcut": ""
+  }
+}

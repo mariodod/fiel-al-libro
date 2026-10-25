@@ -1,0 +1,47 @@
+{
+  "_comment": [
+    "Fragment: Altisidora and the love-sick maiden. Part I, Chapter 24.",
+    "id format: bk.ch<chapter>.<slug>.<index>",
+    "The 1605 wording is verbatim content — never a translation key.",
+    "modern renderings are per-language; pd_translations are optional PD versions.",
+    "variants give the Reality and Book readings of the same passage.",
+    "unlocks say what the fragment grants: codex_page, recuerdos_bonus.",
+    "This fragment is NOT yet verified against the 1605 printing.",
+  ],
+
+  "id": "bk.ch24.altisidora.01",
+  "chapter": 24,
+  "part": 1,
+  "title_key": "bk.ch24.altisidora.title",
+  "characters": ["quixote", "sancho"],
+
+  "source": {
+    "work": "Miguel de Cervantes, El ingenioso hidalgo Don Quijote de la Mancha, parte I, cap. XXIV",
+    "edition": "1605 printing",
+    "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
+    "public_domain": true,
+    "verified": false,
+    "verified_on": "",
+    "verified_note": "Needs checking against the 1605 printing before shipping."
+  },
+
+  "original_1605": "Y entró una doncella llamada Altisidora, que estaba enamorada de Don Quijote, y le dijo: «Señor, yo os amo, y vos no me amáis», y Don Quijote le dijo que no podía amar a otra que no fuera Dulcinea.",
+
+  "modern": {
+    "es": "Y entró una doncella llamada Altisidora, que estaba enamorada de Don Quijote, y le dijo: «Señor, yo os amo, y vos no me amáis», y Don Quijote le dijo que no podía amar a otra que no fuera Dulcinea.",
+    "es_419": "Y entró una doncella llamada Altisidora, que estaba enamorada de Don Quijote, y le dijo: «Señor, yo lo amo, y él no me ama», y Don Quijote le dijo que no podía amar a otra que no fuera Dulcinea.",
+    "en": "And a maiden named Altisidora entered, who was in love with Don Quixote, and said to him: 'Sir, I love you, and you do not love me', and Don Quixote told her that he could love no one but Dulcinea.",
+    "fr": "Et entra une demoiselle nommée Altisidore, qui était amoureuse de Don Quichotte, et lui dit : 'Sire, je vous aime, et vous ne m'aimez pas' ; et Don Quichotte lui dit qu'il ne pouvait aimer personne d'autre que Dulcinée."
+  },
+
+  "variants": {
+    "reality": "La realidad: Una doncella se declara a Quixote, quien la rechaza por Dulcinea. (No se muestra texto; la escena habla.)",
+    "book": "El libro: Altisidora ama al caballero, pero él solo ama a Dulcinea. (Se muestra el texto, con la tipografía de la capa Libro.)"
+  },
+
+  "unlocks": {
+    "give": ["codex_page", "recuerdos_bonus"],
+    "verdict": "",
+    "shortcut": ""
+  }
+}
