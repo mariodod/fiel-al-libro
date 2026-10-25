@@ -428,7 +428,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		# nothing — his reading is fixed, and the page will not turn.
 		if player != null and player.active_pawn != null \
 				and player.active_pawn.character_id == &"quixote" \
-				and Locura.get_for(&"quixote") < Locura.MAX_VALUE / 2:
+				and Locura.threshold_for(&"quixote") < Locura.Threshold.LOST:
 			TruthLayer.toggle()
 	elif event.is_action_pressed(&"toggle_help"):
 		_show_help = not _show_help
