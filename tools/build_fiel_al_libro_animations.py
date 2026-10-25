@@ -709,183 +709,191 @@ def author_quixote_animations(arm_obj):
     """
     actions = {}
 
-    # 1. idle: 2.0s (60 frames) - breathing, weight shifting, lance resting
+    # 1. idle: 2.0s (60 frames) - nobleman at rest, hand on hip, lance at shoulder,
+    # slow dignified breathing, chin up, weight on back leg
     actions['idle'] = create_character_action(arm_obj, 'idle', 60, {
         0: {
-            'hips': ((0, 0, 0), (0, 0, 0)),
-            'spine': ((4, 0, 1), (0, 0, 0)),
-            'chest': ((3, 0, -2), (0, 0, 0)),
-            'head': ((-4, 0, 2), (0, 0, 0)),
-            'upperarm_r': ((-25, 10, -5), (0, 0, 0)),
-            'forearm_r': ((-40, 0, 0), (0, 0, 0)),
-            'weapon_r': ((-15, 0, 0), (0, 0, 0)),
-            'upperarm_l': ((15, -10, 0), (0, 0, 0)),
-            'forearm_l': ((-30, 0, 0), (0, 0, 0)),
-            'thigh_l': ((2, 0, 0), (0, 0, 0)),
-            'thigh_r': ((-2, 0, 0), (0, 0, 0)),
+            'hips': ((-3, 0, 0), (0, 0, 0)),
+            'spine': ((-2, 0, 3), (0, 0, 0)),  # chest proud, back slightly curved
+            'chest': ((-1, 0, 5), (0, 0, 0)),  # doublet pulled taut
+            'head': ((-5, 0, 1), (0, 0, 0)),   # chin up, noble bearing
+            'upperarm_r': ((-30, 5, 0), (0, 0, 0)),  # lance held ready at shoulder
+            'forearm_r': ((-35, 0, 0), (0, 0, 0)),
+            'weapon_r': ((-10, 0, 0), (0, 0, 0)),
+            'upperarm_l': ((5, -15, -5), (0, 0, 0)),  # left hand on hip
+            'forearm_l': ((-25, 0, 0), (0, 0, 0)),
+            'thigh_l': ((0, 0, 0), (0, 0, 0)),
+            'thigh_r': ((-5, 0, 0), (0, 0, 0)),  # weight on back leg
         },
         30: {
-            'hips': ((0, 0, 0), (0, 0, 0.02)), # subtle breath rise
-            'spine': ((2, 0, -1), (0, 0, 0)),
-            'chest': ((5, 0, 1), (0, 0, 0)),
-            'head': ((-2, 0, -1), (0, 0, 0)),
-            'upperarm_r': ((-23, 8, -4), (0, 0, 0)),
-            'forearm_r': ((-38, 0, 0), (0, 0, 0)),
-            'weapon_r': ((-13, 0, 0), (0, 0, 0)),
-            'upperarm_l': ((17, -8, 0), (0, 0, 0)),
-            'forearm_l': ((-28, 0, 0), (0, 0, 0)),
-            'thigh_l': ((-1, 0, 0), (0, 0, 0)),
-            'thigh_r': ((1, 0, 0), (0, 0, 0)),
+            'hips': ((-3, 0, 0), (0, 0, 0.015)),  # subtle breath rise
+            'spine': ((-3, 0, 4), (0, 0, 0)),
+            'chest': ((-2, 0, 6), (0, 0, 0)),
+            'head': ((-7, 0, 0), (0, 0, 0)),
+            'upperarm_r': ((-28, 4, 0), (0, 0, 0)),
+            'forearm_r': ((-33, 0, 0), (0, 0, 0)),
+            'weapon_r': ((-8, 0, 0), (0, 0, 0)),
+            'upperarm_l': ((6, -16, -5), (0, 0, 0)),
+            'forearm_l': ((-27, 0, 0), (0, 0, 0)),
+            'thigh_l': ((1, 0, 0), (0, 0, 0)),
+            'thigh_r': ((-4, 0, 0), (0, 0, 0)),
         },
         60: {
-            'hips': ((0, 0, 0), (0, 0, 0)),
-            'spine': ((4, 0, 1), (0, 0, 0)),
-            'chest': ((3, 0, -2), (0, 0, 0)),
-            'head': ((-4, 0, 2), (0, 0, 0)),
-            'upperarm_r': ((-25, 10, -5), (0, 0, 0)),
-            'forearm_r': ((-40, 0, 0), (0, 0, 0)),
-            'weapon_r': ((-15, 0, 0), (0, 0, 0)),
-            'upperarm_l': ((15, -10, 0), (0, 0, 0)),
-            'forearm_l': ((-30, 0, 0), (0, 0, 0)),
-            'thigh_l': ((2, 0, 0), (0, 0, 0)),
-            'thigh_r': ((-2, 0, 0), (0, 0, 0)),
+            'hips': ((-3, 0, 0), (0, 0, 0)),
+            'spine': ((-2, 0, 3), (0, 0, 0)),
+            'chest': ((-1, 0, 5), (0, 0, 0)),
+            'head': ((-5, 0, 1), (0, 0, 0)),
+            'upperarm_r': ((-30, 5, 0), (0, 0, 0)),
+            'forearm_r': ((-35, 0, 0), (0, 0, 0)),
+            'weapon_r': ((-10, 0, 0), (0, 0, 0)),
+            'upperarm_l': ((5, -15, -5), (0, 0, 0)),
+            'forearm_l': ((-25, 0, 0), (0, 0, 0)),
+            'thigh_l': ((0, 0, 0), (0, 0, 0)),
+            'thigh_r': ((-5, 0, 0), (0, 0, 0)),
         }
     })
 
-    # 2. idle_lost: 2.0s (60 frames) - Locura >= 50. Shoulders up, chin high, lance held upright like a banner
+    # 2. idle_lost: 2.0s (60 frames) - Locura >= 50 madness idle. Tense,
+    # unhinged certainty. Shoulders up, chin raised proud, lance held aloft
+    # like a banner. Body wound tight, ready to break.
     actions['idle_lost'] = create_character_action(arm_obj, 'idle_lost', 60, {
         0: {
-            'hips': ((-5, 0, 0), (0, 0, 0.03)),
-            'spine': ((-8, 0, 0), (0, 0, 0)),
-            'chest': ((-10, 0, 0), (0, 0, 0)),
-            'head': ((-15, 0, 0), (0, 0, 0)), # chin up proud
-            'upperarm_r': ((-75, 5, -10), (0, 0, 0)), # lance banner pose
-            'forearm_r': ((-85, 0, 0), (0, 0, 0)),
-            'weapon_r': ((15, 0, 0), (0, 0, 0)),
-            'upperarm_l': ((10, 15, -5), (0, 0, 0)),
-            'forearm_l': ((-45, 0, 0), (0, 0, 0)), # hand resting on sword hilt
-            'thigh_l': ((5, 0, 0), (0, 0, 0)),
-            'thigh_r': ((-8, 0, 0), (0, 0, 0)),
+            'hips': ((-8, 0, 0), (0, 0, 0.04)),
+            'spine': ((-12, 0, 0), (0, 0, 0)),
+            'chest': ((-15, 0, 0), (0, 0, 0)),  # chest thrust forward
+            'head': ((-20, 0, 0), (0, 0, 0)),    # chin high, staring past everything
+            'upperarm_r': ((-85, 5, -15), (0, 0, 0)),  # lance upright like a banner
+            'forearm_r': ((-90, 0, 0), (0, 0, 0)),
+            'weapon_r': ((20, 0, 0), (0, 0, 0)),
+            'upperarm_l': ((10, 20, -10), (0, 0, 0)),  # left hand gripping sword hilt
+            'forearm_l': ((-55, 0, 0), (0, 0, 0)),
+            'thigh_l': ((8, 0, 0), (0, 0, 0)),
+            'thigh_r': ((-12, 0, 0), (0, 0, 0)),  # weight shifted, coiled
         },
         30: {
-            'hips': ((-5, 0, 0), (0, 0, 0.05)),
-            'spine': ((-7, 0, 0), (0, 0, 0)),
-            'chest': ((-9, 0, 0), (0, 0, 0)),
-            'head': ((-17, 0, 0), (0, 0, 0)),
-            'upperarm_r': ((-73, 5, -10), (0, 0, 0)),
-            'forearm_r': ((-83, 0, 0), (0, 0, 0)),
-            'weapon_r': ((13, 0, 0), (0, 0, 0)),
-            'upperarm_l': ((11, 15, -5), (0, 0, 0)),
-            'forearm_l': ((-43, 0, 0), (0, 0, 0)),
-            'thigh_l': ((4, 0, 0), (0, 0, 0)),
-            'thigh_r': ((-7, 0, 0), (0, 0, 0)),
+            'hips': ((-8, 0, 0), (0, 0, 0.06)),  # tense breath held
+            'spine': ((-11, 0, 0), (0, 0, 0)),
+            'chest': ((-14, 0, 0), (0, 0, 0)),
+            'head': ((-22, 0, 0), (0, 0, 0)),
+            'upperarm_r': ((-83, 5, -15), (0, 0, 0)),
+            'forearm_r': ((-88, 0, 0), (0, 0, 0)),
+            'weapon_r': ((18, 0, 0), (0, 0, 0)),
+            'upperarm_l': ((11, 20, -10), (0, 0, 0)),
+            'forearm_l': ((-53, 0, 0), (0, 0, 0)),
+            'thigh_l': ((7, 0, 0), (0, 0, 0)),
+            'thigh_r': ((-11, 0, 0), (0, 0, 0)),
         },
         60: {
-            'hips': ((-5, 0, 0), (0, 0, 0.03)),
-            'spine': ((-8, 0, 0), (0, 0, 0)),
-            'chest': ((-10, 0, 0), (0, 0, 0)),
-            'head': ((-15, 0, 0), (0, 0, 0)),
-            'upperarm_r': ((-75, 5, -10), (0, 0, 0)),
-            'forearm_r': ((-85, 0, 0), (0, 0, 0)),
-            'weapon_r': ((15, 0, 0), (0, 0, 0)),
-            'upperarm_l': ((10, 15, -5), (0, 0, 0)),
-            'forearm_l': ((-45, 0, 0), (0, 0, 0)),
-            'thigh_l': ((5, 0, 0), (0, 0, 0)),
-            'thigh_r': ((-8, 0, 0), (0, 0, 0)),
+            'hips': ((-8, 0, 0), (0, 0, 0.04)),
+            'spine': ((-12, 0, 0), (0, 0, 0)),
+            'chest': ((-15, 0, 0), (0, 0, 0)),
+            'head': ((-20, 0, 0), (0, 0, 0)),
+            'upperarm_r': ((-85, 5, -15), (0, 0, 0)),
+            'forearm_r': ((-90, 0, 0), (0, 0, 0)),
+            'weapon_r': ((20, 0, 0), (0, 0, 0)),
+            'upperarm_l': ((10, 20, -10), (0, 0, 0)),
+            'forearm_l': ((-55, 0, 0), (0, 0, 0)),
+            'thigh_l': ((8, 0, 0), (0, 0, 0)),
+            'thigh_r': ((-12, 0, 0), (0, 0, 0)),
         }
     })
 
-    # 3. walk: 0.9s (27 frames) - 4.2 m/s long deliberate noble strides
+    # 3. walk: 0.9s (27 frames) - measured stately strides, heavy doublet,
+    # lance dragging slightly, nobleman not in a hurry
     actions['walk'] = create_character_action(arm_obj, 'walk', 27, {
         0: {
             'hips': ((0, 0, 0), (0, 0, 0)),
-            'thigh_l': ((-28, 0, 0), (0, 0, 0)),
-            'shin_l': ((15, 0, 0), (0, 0, 0)),
-            'thigh_r': ((25, 0, 0), (0, 0, 0)),
-            'shin_r': ((10, 0, 0), (0, 0, 0)),
-            'upperarm_r': ((-15, 0, 0), (0, 0, 0)),
-            'upperarm_l': ((20, 0, 0), (0, 0, 0)),
+            'thigh_l': ((-15, 0, 0), (0, 0, 0)),  # left foot forward, measured
+            'shin_l': ((10, 0, 0), (0, 0, 0)),
+            'thigh_r': ((12, 0, 0), (0, 0, 0)),
+            'shin_r': ((5, 0, 0), (0, 0, 0)),
+            'upperarm_r': ((-10, 0, 0), (0, 0, 0)),  # lance steady at shoulder
+            'upperarm_l': ((10, 0, 0), (0, 0, 0)),
+            'spine': ((0, 0, 2), (0, 0, 0)),
         },
         7: {
-            'hips': ((0, 0, 0), (0, 0, 0.04)),
+            'hips': ((0, 0, 0), (0, 0, 0.03)),  # weight shift down
             'thigh_l': ((0, 0, 0), (0, 0, 0)),
-            'shin_l': ((5, 0, 0), (0, 0, 0)),
-            'thigh_r': ((-10, 0, 0), (0, 0, 0)),
-            'shin_r': ((40, 0, 0), (0, 0, 0)),
-            'upperarm_r': ((-25, 0, 0), (0, 0, 0)),
-            'upperarm_l': ((5, 0, 0), (0, 0, 0)),
+            'shin_l': ((2, 0, 0), (0, 0, 0)),
+            'thigh_r': ((-5, 0, 0), (0, 0, 0)),
+            'shin_r': ((30, 0, 0), (0, 0, 0)),
+            'upperarm_r': ((-18, 0, 0), (0, 0, 0)),
+            'upperarm_l': ((0, 0, 0), (0, 0, 0)),
+            'spine': ((-1, 0, 1), (0, 0, 0)),
         },
         14: {
             'hips': ((0, 0, 0), (0, 0, 0)),
-            'thigh_l': ((25, 0, 0), (0, 0, 0)),
-            'shin_l': ((10, 0, 0), (0, 0, 0)),
-            'thigh_r': ((-28, 0, 0), (0, 0, 0)),
-            'shin_r': ((15, 0, 0), (0, 0, 0)),
-            'upperarm_r': ((-35, 0, 0), (0, 0, 0)),
-            'upperarm_l': ((-15, 0, 0), (0, 0, 0)),
+            'thigh_l': ((12, 0, 0), (0, 0, 0)),  # right foot forward
+            'shin_l': ((5, 0, 0), (0, 0, 0)),
+            'thigh_r': ((-15, 0, 0), (0, 0, 0)),
+            'shin_r': ((10, 0, 0), (0, 0, 0)),
+            'upperarm_r': ((-25, 0, 0), (0, 0, 0)),
+            'upperarm_l': ((-10, 0, 0), (0, 0, 0)),
+            'spine': ((0, 0, 3), (0, 0, 0)),
         },
         21: {
-            'hips': ((0, 0, 0), (0, 0, 0.04)),
-            'thigh_l': ((-10, 0, 0), (0, 0, 0)),
-            'shin_l': ((40, 0, 0), (0, 0, 0)),
+            'hips': ((0, 0, 0), (0, 0, 0.03)),  # weight shift down
+            'thigh_l': ((-5, 0, 0), (0, 0, 0)),
+            'shin_l': ((30, 0, 0), (0, 0, 0)),
             'thigh_r': ((0, 0, 0), (0, 0, 0)),
-            'shin_r': ((5, 0, 0), (0, 0, 0)),
-            'upperarm_r': ((-25, 0, 0), (0, 0, 0)),
-            'upperarm_l': ((5, 0, 0), (0, 0, 0)),
+            'shin_r': ((2, 0, 0), (0, 0, 0)),
+            'upperarm_r': ((-18, 0, 0), (0, 0, 0)),
+            'upperarm_l': ((0, 0, 0), (0, 0, 0)),
+            'spine': ((-1, 0, 1), (0, 0, 0)),
         },
         27: {
             'hips': ((0, 0, 0), (0, 0, 0)),
-            'thigh_l': ((-28, 0, 0), (0, 0, 0)),
-            'shin_l': ((15, 0, 0), (0, 0, 0)),
-            'thigh_r': ((25, 0, 0), (0, 0, 0)),
-            'shin_r': ((10, 0, 0), (0, 0, 0)),
-            'upperarm_r': ((-15, 0, 0), (0, 0, 0)),
-            'upperarm_l': ((20, 0, 0), (0, 0, 0)),
+            'thigh_l': ((-15, 0, 0), (0, 0, 0)),
+            'shin_l': ((10, 0, 0), (0, 0, 0)),
+            'thigh_r': ((12, 0, 0), (0, 0, 0)),
+            'shin_r': ((5, 0, 0), (0, 0, 0)),
+            'upperarm_r': ((-10, 0, 0), (0, 0, 0)),
+            'upperarm_l': ((10, 0, 0), (0, 0, 0)),
+            'spine': ((0, 0, 2), (0, 0, 0)),
         }
     })
 
-    # 4. run: 0.62s (19 frames) - 6.8 m/s gangly tall run
+    # 4. run: 0.62s (19 frames) - ungainly nobleman in heavy clothes,
+    # leaning back against the motion, doublet bobbing
     actions['run'] = create_character_action(arm_obj, 'run', 19, {
         0: {
-            'hips': ((12, 0, 0), (0, 0, -0.05)),
-            'spine': ((10, 0, 0), (0, 0, 0)),
-            'thigh_l': ((-45, 0, 0), (0, 0, 0)),
-            'shin_l': ((20, 0, 0), (0, 0, 0)),
-            'thigh_r': ((40, 0, 0), (0, 0, 0)),
-            'shin_r': ((50, 0, 0), (0, 0, 0)),
-            'upperarm_r': ((-40, 0, 0), (0, 0, 0)),
-            'upperarm_l': ((35, 0, 0), (0, 0, 0)),
+            'hips': ((-5, 0, 0), (0, 0, -0.08)),  # leaning back, not built for speed
+            'spine': ((-8, 0, 0), (0, 0, 0)),
+            'chest': ((-5, 0, 2), (0, 0, 0)),
+            'thigh_l': ((-40, 0, 0), (0, 0, 0)),
+            'shin_l': ((15, 0, 0), (0, 0, 0)),
+            'thigh_r': ((35, 0, 0), (0, 0, 0)),
+            'shin_r': ((45, 0, 0), (0, 0, 0)),
+            'upperarm_r': ((-30, 0, 0), (0, 0, 0)),
+            'upperarm_l': ((25, 0, 0), (0, 0, 0)),
         },
         9: {
-            'hips': ((12, 0, 0), (0, 0, 0.08)),
-            'spine': ((10, 0, 0), (0, 0, 0)),
-            'thigh_l': ((40, 0, 0), (0, 0, 0)),
-            'shin_l': ((50, 0, 0), (0, 0, 0)),
-            'thigh_r': ((-45, 0, 0), (0, 0, 0)),
-            'shin_r': ((20, 0, 0), (0, 0, 0)),
-            'upperarm_r': ((25, 0, 0), (0, 0, 0)),
-            'upperarm_l': ((-35, 0, 0), (0, 0, 0)),
+            'hips': ((-5, 0, 0), (0, 0, 0.10)),  # doublet bounce
+            'spine': ((-8, 0, 0), (0, 0, 0)),
+            'chest': ((-5, 0, 2), (0, 0, 0)),
+            'thigh_l': ((35, 0, 0), (0, 0, 0)),
+            'shin_l': ((45, 0, 0), (0, 0, 0)),
+            'thigh_r': ((-40, 0, 0), (0, 0, 0)),
+            'shin_r': ((15, 0, 0), (0, 0, 0)),
+            'upperarm_r': ((20, 0, 0), (0, 0, 0)),
+            'upperarm_l': ((-25, 0, 0), (0, 0, 0)),
         },
         19: {
-            'hips': ((12, 0, 0), (0, 0, -0.05)),
-            'spine': ((10, 0, 0), (0, 0, 0)),
-            'thigh_l': ((-45, 0, 0), (0, 0, 0)),
-            'shin_l': ((20, 0, 0), (0, 0, 0)),
-            'thigh_r': ((40, 0, 0), (0, 0, 0)),
-            'shin_r': ((50, 0, 0), (0, 0, 0)),
-            'upperarm_r': ((-40, 0, 0), (0, 0, 0)),
-            'upperarm_l': ((35, 0, 0), (0, 0, 0)),
+            'hips': ((-5, 0, 0), (0, 0, -0.08)),
+            'spine': ((-8, 0, 0), (0, 0, 0)),
+            'chest': ((-5, 0, 2), (0, 0, 0)),
+            'thigh_l': ((-40, 0, 0), (0, 0, 0)),
+            'shin_l': ((15, 0, 0), (0, 0, 0)),
+            'thigh_r': ((35, 0, 0), (0, 0, 0)),
+            'shin_r': ((45, 0, 0), (0, 0, 0)),
+            'upperarm_r': ((-30, 0, 0), (0, 0, 0)),
+            'upperarm_l': ((25, 0, 0), (0, 0, 0)),
         }
     })
 
-    # 5. roll: 0.25s (8 frames) - Fast panicked forward SLIDE covering 4m
-    #
-    # The hips go DOWN, never up. A dodge that leaves the floor is a
-    # jump, and a jump is not a dodge. The playtest said so, and it was
-    # right: "dodge animation should not be a jump in the air, it
-    # should roll or slide never leaving the ground". The slide is the
-    # character's whole move - the feet go out in front, the hips drop,
-    # and the body never leaves the ground.
+    # 5. roll: 0.25s (8 frames) - Desperate scramble, hips low, body
+    # falling forward, never leaving the ground. A knight who doesn't
+    # know how to fall properly.
     actions['roll'] = create_character_action(arm_obj, 'roll', 8, {
         0: {
             'hips': ((5, 0, 0), (0, 0, 0)),
@@ -893,264 +901,283 @@ def author_quixote_animations(arm_obj):
             'thigh_l': ((-15, 0, 0), (0, 0, 0)),
             'thigh_r': ((15, 0, 0), (0, 0, 0)),
         },
-        4: { # Midpoint: the slide. Hips low, legs out in front, on the floor
-            'hips': ((-8, 0, 0), (0, -0.35, -0.15)),
-            'spine': ((-5, 0, 0), (0, 0, 0)), # forward pitch
-            'chest': ((-4, 0, 0), (0, 0, 0)),
-            'thigh_l': ((-70, 0, 0), (0, 0, 0)), # far forward lunge
-            'shin_l': ((75, 0, 0), (0, 0, 0)),
-            'thigh_r': ((55, 0, 0), (0, 0, 0)),  # trailing far behind
-            'shin_r': ((15, 0, 0), (0, 0, 0)),
-            'upperarm_r': ((-60, 0, 10), (0, 0, 0)),
-            'forearm_r': ((-30, 0, 0), (0, 0, 0)),
-            'weapon_r': ((-20, 0, 0), (0, 0, 0)),
+        4: { # Midpoint: hips at their lowest, body horizontal, scramble
+            'hips': ((-12, 0, 0), (0, -0.40, -0.20)),  # hips well down
+            'spine': ((-10, 0, 0), (0, 0, 0)),  # forward pitch
+            'chest': ((-8, 0, 0), (0, 0, 0)),
+            'thigh_l': ((-80, 0, 0), (0, 0, 0)),  # legs thrown forward
+            'shin_l': ((85, 0, 0), (0, 0, 0)),
+            'thigh_r': ((60, 0, 0), (0, 0, 0)),  # trailing far behind
+            'shin_r': ((10, 0, 0), (0, 0, 0)),
+            'upperarm_r': ((-70, 0, 15), (0, 0, 0)),
+            'forearm_r': ((-40, 0, 0), (0, 0, 0)),
+            'weapon_r': ((-25, 0, 0), (0, 0, 0)),
         },
         8: { # Land upright, slightly overbalanced forward
-            'hips': ((12, 0, 0), (0, 0.0, 0.0)),
-            'spine': ((14, 0, 0), (0, 0, 0)),
-            'chest': ((10, 0, 0), (0, 0, 0)),
-            'thigh_l': ((-25, 0, 0), (0, 0, 0)),
-            'shin_l': ((30, 0, 0), (0, 0, 0)),
-            'thigh_r': ((20, 0, 0), (0, 0, 0)),
-            'shin_r': ((10, 0, 0), (0, 0, 0)),
-            'upperarm_r': ((-20, 0, 0), (0, 0, 0)),
-            'forearm_r': ((-40, 0, 0), (0, 0, 0)),
+            'hips': ((15, 0, 0), (0, 0.05, 0.0)),
+            'spine': ((18, 0, 0), (0, 0, 0)),
+            'chest': ((15, 0, 0), (0, 0, 0)),
+            'head': ((-10, 0, 0), (0, 0, 0)),
+            'thigh_l': ((-30, 0, 0), (0, 0, 0)),
+            'shin_l': ((35, 0, 0), (0, 0, 0)),
+            'thigh_r': ((25, 0, 0), (0, 0, 0)),
+            'shin_r': ((15, 0, 0), (0, 0, 0)),
+            'upperarm_r': ((-25, 0, 0), (0, 0, 0)),
+            'forearm_r': ((-45, 0, 0), (0, 0, 0)),
+            'weapon_r': ((-15, 0, 0), (0, 0, 0)),
         }
     })
 
-    # 6. light_1: 0.45s (14 frames) - Lance thrust forward. Contact @ 0.08s (frame 2)
-    # Recovery pose @ frame 14: lance pushed low-right, body rotated right
+    # 6. light_1: 0.45s (14 frames) - Committed lance thrust forward.
+    # Contact @ 0.08s (frame 2). The thrust HOLDS at contact - body
+    # committed forward, not snapping back. Recovery is slow and heavy.
     actions['light_1'] = create_character_action(arm_obj, 'light_1', 14, {
         0: {
-            'hips': ((0, 10, 0), (0, 0, 0)),
-            'spine': ((5, 12, 0), (0, 0, 0)),
-            'chest': ((8, 15, 0), (0, 0, 0)),
-            'upperarm_r': ((-35, 15, -10), (0, 0, 0)),
-            'forearm_r': ((-80, 0, 0), (0, 0, 0)),
+            'hips': ((0, 5, 0), (0, 0, 0)),
+            'spine': ((2, 8, 0), (0, 0, 0)),
+            'chest': ((3, 10, 0), (0, 0, 0)),
+            'upperarm_r': ((-30, 10, -5), (0, 0, 0)),
+            'forearm_r': ((-70, 0, 0), (0, 0, 0)),
             'weapon_r': ((0, 0, 0), (0, 0, 0)),
         },
-        2: { # Contact frame @ 0.08s (frame 2/30 = 0.067s)
-            'hips': ((5, -15, 0), (0, 0.1, 0)),
-            'spine': ((10, -20, 0), (0, 0, 0)),
-            'chest': ((12, -25, 0), (0, 0, 0)),
-            # The shoulder carries the lance FORWARD. A thrust is a
-            # rotation in the horizontal plane (Y), not a lift: with the
-            # arm merely raised, the lance points at the sky and the
-            # "contact" reads as a wind-up. The heavy's contact has the
-            # same shape, and it reads.
-            'upperarm_r': ((-80, -45, 25), (0, 0, 0)), # full thrust, out in front
-            'forearm_r': ((-10, 0, 0), (0, 0, 0)),
-            'weapon_r': ((-8, -22, 15), (0, 0, 0)),
+        2: { # Contact frame @ 0.08s (frame 2/30). Thrust holds at contact.
+            'hips': ((5, -20, 0), (0, 0.12, 0)),  # body thrown forward
+            'spine': ((12, -25, 0), (0, 0, 0)),
+            'chest': ((15, -30, 0), (0, 0, 0)),
+            # Full thrust out in front - horizontal, not lifting at sky
+            'upperarm_r': ((-85, -50, 30), (0, 0, 0)),
+            'forearm_r': ((-15, 0, 0), (0, 0, 0)),
+            'weapon_r': ((-10, -25, 18), (0, 0, 0)),
         },
-        7: {
-            'hips': ((5, -10, 0), (0, 0.12, 0)),
-            'spine': ((8, -12, 0), (0, 0, 0)),
-            'chest': ((10, -15, 0), (0, 0, 0)),
-            'upperarm_r': ((-72, -38, 20), (0, 0, 0)),
-            'forearm_r': ((-22, 0, 0), (0, 0, 0)),
-            'weapon_r': ((-10, -18, 12), (0, 0, 0)),
+        7: { # Slow pull back - heavy recovery, not snappy
+            'hips': ((5, -12, 0), (0, 0.10, 0)),
+            'spine': ((10, -15, 0), (0, 0, 0)),
+            'chest': ((12, -18, 0), (0, 0, 0)),
+            'upperarm_r': ((-75, -40, 22), (0, 0, 0)),
+            'forearm_r': ((-30, 0, 0), (0, 0, 0)),
+            'weapon_r': ((-12, -20, 14), (0, 0, 0)),
         },
-        14: { # Recovery pose: lance low-right, wound right
-            'hips': ((2, 18, 0), (0, 0.05, 0)),
-            'spine': ((4, 22, 0), (0, 0, 0)),
-            'chest': ((6, 25, 0), (0, 0, 0)),
-            'upperarm_r': ((-20, 25, -15), (0, 0, 0)),
-            'forearm_r': ((-55, 0, 0), (0, 0, 0)),
-            'weapon_r': ((-25, 10, -10), (0, 0, 0)),
+        14: { # Recovery pose: lance low-right, wound right, slow settling
+            'hips': ((3, 22, 0), (0, 0.06, 0)),
+            'spine': ((5, 28, 0), (0, 0, 0)),
+            'chest': ((8, 32, 0), (0, 0, 0)),
+            'upperarm_r': ((-25, 30, -20), (0, 0, 0)),
+            'forearm_r': ((-60, 0, 0), (0, 0, 0)),
+            'weapon_r': ((-30, 12, -12), (0, 0, 0)),
         }
     }, contact_frame=2)
 
     # 7. light_2: 0.45s (14 frames) - Chains from light_1 recovery!
-    # Frame 0 matches light_1 frame 14. Contact @ frame 2. Recovery holds lance high-left.
+    # Frame 0 matches light_1 frame 14. Contact @ frame 2. Diagonal
+    # rising sweep to upper-left. Body committed, slow unwinding.
     actions['light_2'] = create_character_action(arm_obj, 'light_2', 14, {
         0: { # Matches light_1 recovery
-            'hips': ((2, 18, 0), (0, 0.05, 0)),
-            'spine': ((4, 22, 0), (0, 0, 0)),
-            'chest': ((6, 25, 0), (0, 0, 0)),
-            'upperarm_r': ((-20, 25, -15), (0, 0, 0)),
-            'forearm_r': ((-55, 0, 0), (0, 0, 0)),
-            'weapon_r': ((-25, 10, -10), (0, 0, 0)),
+            'hips': ((3, 22, 0), (0, 0.06, 0)),
+            'spine': ((5, 28, 0), (0, 0, 0)),
+            'chest': ((8, 32, 0), (0, 0, 0)),
+            'upperarm_r': ((-25, 30, -20), (0, 0, 0)),
+            'forearm_r': ((-60, 0, 0), (0, 0, 0)),
+            'weapon_r': ((-30, 12, -12), (0, 0, 0)),
         },
         2: { # Contact frame @ 0.08s: diagonal rising sweep to upper-left
-            'hips': ((0, -22, 0), (0, 0.1, 0)),
-            'spine': ((6, -28, 0), (0, 0, 0)),
-            'chest': ((10, -32, 0), (0, 0, 0)),
-            'upperarm_r': ((-70, -35, 20), (0, 0, 0)),
-            'forearm_r': ((-45, 0, 0), (0, 0, 0)),
-            'weapon_r': ((15, -20, 15), (0, 0, 0)),
+            'hips': ((0, -28, 0), (0, 0.12, 0)),  # body rising into it
+            'spine': ((8, -35, 0), (0, 0, 0)),
+            'chest': ((12, -40, 0), (0, 0, 0)),
+            'upperarm_r': ((-75, -40, 25), (0, 0, 0)),
+            'forearm_r': ((-50, 0, 0), (0, 0, 0)),
+            'weapon_r': ((18, -25, 18), (0, 0, 0)),
         },
-        7: {
-            'hips': ((0, -15, 0), (0, 0.08, 0)),
-            'spine': ((5, -18, 0), (0, 0, 0)),
-            'chest': ((8, -20, 0), (0, 0, 0)),
-            'upperarm_r': ((-75, -25, 15), (0, 0, 0)),
-            'forearm_r': ((-55, 0, 0), (0, 0, 0)),
+        7: { # Slow unwinding after contact
+            'hips': ((0, -18, 0), (0, 0.10, 0)),
+            'spine': ((6, -22, 0), (0, 0, 0)),
+            'chest': ((10, -25, 0), (0, 0, 0)),
+            'upperarm_r': ((-80, -30, 18), (0, 0, 0)),
+            'forearm_r': ((-60, 0, 0), (0, 0, 0)),
         },
-        14: { # Recovery pose: lance held high above left shoulder
-            'hips': ((-4, -15, 0), (0, 0.04, 0)),
-            'spine': ((-2, -18, 0), (0, 0, 0)),
-            'chest': ((0, -22, 0), (0, 0, 0)),
-            'upperarm_r': ((-85, -15, 25), (0, 0, 0)),
-            'forearm_r': ((-70, 0, 0), (0, 0, 0)),
-            'weapon_r': ((30, 0, 20), (0, 0, 0)),
+        14: { # Recovery pose: lance held high above left shoulder, overcommitted
+            'hips': ((-5, -18, 0), (0, 0.05, 0)),
+            'spine': ((-3, -22, 0), (0, 0, 0)),
+            'chest': ((0, -28, 0), (0, 0, 0)),
+            'head': ((5, 0, 0), (0, 0, 0)),  # eyes following lance
+            'upperarm_r': ((-90, -20, 30), (0, 0, 0)),
+            'forearm_r': ((-75, 0, 0), (0, 0, 0)),
+            'weapon_r': ((35, 0, 25), (0, 0, 0)),
         }
     }, contact_frame=2)
 
     # 8. light_3: 0.45s (14 frames) - Chains from light_2 recovery!
-    # Frame 0 matches light_2 frame 14. Contact @ frame 2. Final heavy plunge.
+    # Frame 0 matches light_2 frame 14. Contact @ frame 2. Heavy downward
+    # plunge - like chopping wood, not a fencer's thrust.
     actions['light_3'] = create_character_action(arm_obj, 'light_3', 14, {
         0: { # Matches light_2 recovery
-            'hips': ((-4, -15, 0), (0, 0.04, 0)),
-            'spine': ((-2, -18, 0), (0, 0, 0)),
-            'chest': ((0, -22, 0), (0, 0, 0)),
-            'upperarm_r': ((-85, -15, 25), (0, 0, 0)),
-            'forearm_r': ((-70, 0, 0), (0, 0, 0)),
-            'weapon_r': ((30, 0, 20), (0, 0, 0)),
+            'hips': ((-5, -18, 0), (0, 0.05, 0)),
+            'spine': ((-3, -22, 0), (0, 0, 0)),
+            'chest': ((0, -28, 0), (0, 0, 0)),
+            'head': ((5, 0, 0), (0, 0, 0)),
+            'upperarm_r': ((-90, -20, 30), (0, 0, 0)),
+            'forearm_r': ((-75, 0, 0), (0, 0, 0)),
+            'weapon_r': ((35, 0, 25), (0, 0, 0)),
         },
         2: { # Contact frame @ 0.08s: vicious downward plunge
-            'hips': ((15, 0, 0), (0, 0.15, -0.08)),
-            'spine': ((22, 0, 0), (0, 0, 0)),
-            'chest': ((25, 0, 0), (0, 0, 0)),
-            'upperarm_r': ((-95, 0, 0), (0, 0, 0)),
-            'forearm_r': ((-15, 0, 0), (0, 0, 0)),
-            'weapon_r': ((-40, 0, 0), (0, 0, 0)),
+            'hips': ((18, 0, 0), (0, 0.18, -0.10)),  # weight thrown down
+            'spine': ((25, 0, 0), (0, 0, 0)),
+            'chest': ((30, 0, 0), (0, 0, 0)),
+            'head': ((-10, 0, 0), (0, 0, 0)),  # eyes on target
+            'upperarm_r': ((-100, 0, 0), (0, 0, 0)),  # both hands on lance
+            'forearm_r': ((-20, 0, 0), (0, 0, 0)),
+            'weapon_r': ((-45, 0, 0), (0, 0, 0)),
         },
-        8: {
-            'hips': ((12, 0, 0), (0, 0.12, -0.05)),
-            'spine': ((16, 0, 0), (0, 0, 0)),
-            'chest': ((18, 0, 0), (0, 0, 0)),
-            'upperarm_r': ((-75, 0, 0), (0, 0, 0)),
-            'forearm_r': ((-30, 0, 0), (0, 0, 0)),
+        8: { # Following through downward, heavy
+            'hips': ((15, 0, 0), (0, 0.14, -0.08)),
+            'spine': ((20, 0, 0), (0, 0, 0)),
+            'chest': ((22, 0, 0), (0, 0, 0)),
+            'head': ((-8, 0, 0), (0, 0, 0)),
+            'upperarm_r': ((-80, 0, 0), (0, 0, 0)),
+            'forearm_r': ((-35, 0, 0), (0, 0, 0)),
         },
-        14: { # Returns to ready guard
+        14: { # Returns to ready guard, slow settling
             'hips': ((0, 0, 0), (0, 0, 0)),
             'spine': ((4, 0, 0), (0, 0, 0)),
             'chest': ((3, 0, 0), (0, 0, 0)),
-            'upperarm_r': ((-25, 10, -5), (0, 0, 0)),
-            'forearm_r': ((-40, 0, 0), (0, 0, 0)),
-            'weapon_r': ((-15, 0, 0), (0, 0, 0)),
+            'head': ((0, 0, 0), (0, 0, 0)),
+            'upperarm_r': ((-30, 10, -5), (0, 0, 0)),
+            'forearm_r': ((-45, 0, 0), (0, 0, 0)),
+            'weapon_r': ((-18, 0, 0), (0, 0, 0)),
         }
     }, contact_frame=2)
 
-    # 9. heavy: 0.90s (27 frames) - Big two-handed sweeping cleave. Contact @ 0.12s (frame 4)
+    # 9. heavy: 0.90s (27 frames) - Big two-handed sweeping cleave.
+    # Contact @ 0.12s (frame 4). Like chopping wood - weight committed,
+    # overcommitted follow-through, slow recovery struggling for balance.
     actions['heavy'] = create_character_action(arm_obj, 'heavy', 27, {
         0: {
-            'hips': ((-5, 25, 0), (0, 0, 0)),
-            'spine': ((-5, 30, 0), (0, 0, 0)),
-            'chest': ((-5, 35, 0), (0, 0, 0)),
-            'upperarm_r': ((-60, 40, -25), (0, 0, 0)),
-            'forearm_r': ((-75, 0, 0), (0, 0, 0)),
+            'hips': ((-8, 30, 0), (0, 0, 0)),  # wind-up: lance going back
+            'spine': ((-8, 35, 0), (0, 0, 0)),
+            'chest': ((-8, 40, 0), (0, 0, 0)),
+            'upperarm_r': ((-70, 45, -30), (0, 0, 0)),  # lance drawn back
+            'forearm_r': ((-80, 0, 0), (0, 0, 0)),
         },
         4: { # Contact frame @ 0.12s (frame 4/30 = 0.133s)
-            'hips': ((12, -35, 0), (0, 0.15, 0)),
-            'spine': ((18, -42, 0), (0, 0, 0)),
-            'chest': ((20, -45, 0), (0, 0, 0)),
-            'upperarm_r': ((-80, -45, 30), (0, 0, 0)), # massive horizontal cleave
-            'forearm_r': ((-10, 0, 0), (0, 0, 0)),
-            'weapon_r': ((-10, -25, 20), (0, 0, 0)),
+            'hips': ((15, -40, 0), (0, 0.18, 0)),  # body thrown forward
+            'spine': ((22, -50, 0), (0, 0, 0)),
+            'chest': ((25, -55, 0), (0, 0, 0)),
+            'head': ((-12, 0, 0), (0, 0, 0)),  # eyes locked on target
+            'upperarm_r': ((-85, -50, 35), (0, 0, 0)),  # massive horizontal cleave
+            'forearm_r': ((-12, 0, 0), (0, 0, 0)),
+            'weapon_r': ((-12, -30, 25), (0, 0, 0)),
         },
-        12: { # Overcommitted follow-through
-            'hips': ((15, -45, 0), (0, 0.18, 0)),
-            'spine': ((20, -50, 0), (0, 0, 0)),
-            'chest': ((22, -55, 0), (0, 0, 0)),
-            'upperarm_r': ((-70, -55, 35), (0, 0, 0)),
-            'forearm_r': ((-25, 0, 0), (0, 0, 0)),
+        12: { # Overcommitted follow-through - body past the blow
+            'hips': ((18, -50, 0), (0, 0.22, 0)),
+            'spine': ((25, -60, 0), (0, 0, 0)),
+            'chest': ((28, -65, 0), (0, 0, 0)),
+            'head': ((-15, 0, 0), (0, 0, 0)),
+            'upperarm_r': ((-75, -60, 40), (0, 0, 0)),
+            'forearm_r': ((-30, 0, 0), (0, 0, 0)),
         },
-        20: { # Slow recovery
-            'hips': ((8, -20, 0), (0, 0.08, 0)),
-            'spine': ((10, -20, 0), (0, 0, 0)),
-            'chest': ((10, -20, 0), (0, 0, 0)),
-            'upperarm_r': ((-45, -20, 10), (0, 0, 0)),
-            'forearm_r': ((-40, 0, 0), (0, 0, 0)),
+        20: { # Slow recovery - struggling to regain balance
+            'hips': ((10, -25, 0), (0, 0.10, 0)),
+            'spine': ((12, -25, 0), (0, 0, 0)),
+            'chest': ((12, -25, 0), (0, 0, 0)),
+            'head': ((-8, 0, 0), (0, 0, 0)),
+            'upperarm_r': ((-50, -25, 12), (0, 0, 0)),
+            'forearm_r': ((-45, 0, 0), (0, 0, 0)),
         },
-        27: { # Back to rest
+        27: { # Back to rest, dignity reclaimed
             'hips': ((0, 0, 0), (0, 0, 0)),
             'spine': ((4, 0, 0), (0, 0, 0)),
             'chest': ((3, 0, 0), (0, 0, 0)),
-            'upperarm_r': ((-25, 10, -5), (0, 0, 0)),
-            'forearm_r': ((-40, 0, 0), (0, 0, 0)),
+            'head': ((0, 0, 0), (0, 0, 0)),
+            'upperarm_r': ((-30, 10, -5), (0, 0, 0)),
+            'forearm_r': ((-45, 0, 0), (0, 0, 0)),
+            'weapon_r': ((-15, 0, 0), (0, 0, 0)),
         }
     }, contact_frame=4)
 
-    # 10. block: 0.20s (6 frames) into hold. Lance brought across chest diagonally
+    # 10. block: 0.20s (6 frames) into hold. Lance brought across chest
+    # awkwardly - Quixote is not practiced at guarding.
     actions['block'] = create_character_action(arm_obj, 'block', 6, {
         0: {
             'hips': ((0, 0, 0), (0, 0, 0)),
             'spine': ((2, 0, 0), (0, 0, 0)),
-            'upperarm_r': ((-25, 10, -5), (0, 0, 0)),
-            'forearm_r': ((-40, 0, 0), (0, 0, 0)),
+            'upperarm_r': ((-30, 10, -5), (0, 0, 0)),
+            'forearm_r': ((-45, 0, 0), (0, 0, 0)),
         },
-        6: { # Guard hold pose
-            'hips': ((10, -15, 0), (0, 0, -0.05)),
-            'spine': ((12, -18, 0), (0, 0, 0)),
-            'chest': ((15, -20, 0), (0, 0, 0)),
-            'upperarm_r': ((-65, -15, 15), (0, 0, 0)), # lance across chest
-            'forearm_r': ((-75, 0, 0), (0, 0, 0)),
-            'weapon_r': ((35, -20, 20), (0, 0, 0)),
-            'upperarm_l': ((-55, 15, -15), (0, 0, 0)), # left hand bracing shaft
-            'forearm_l': ((-70, 0, 0), (0, 0, 0)),
+        6: { # Guard hold pose - awkward, not practiced
+            'hips': ((12, -18, 0), (0, 0, -0.06)),
+            'spine': ((15, -22, 0), (0, 0, 0)),
+            'chest': ((18, -25, 0), (0, 0, 0)),
+            'head': ((-5, 0, 0), (0, 0, 0)),  # watching past the lance
+            'upperarm_r': ((-70, -20, 20), (0, 0, 0)),  # lance across chest diagonally
+            'forearm_r': ((-80, 0, 0), (0, 0, 0)),
+            'weapon_r': ((40, -25, 25), (0, 0, 0)),
+            'upperarm_l': ((-60, 18, -20), (0, 0, 0)),  # left hand bracing shaft awkwardly
+            'forearm_l': ((-75, 0, 0), (0, 0, 0)),
         }
     })
 
-    # 11. hit: 0.35s (11 frames) - Flinch, knockback at frame 0
+    # 11. hit: 0.35s (11 frames) - Flinch, knockback at frame 0.
+    # Dignity under duress: chin stays up even while the body is struck,
+    # slow recovery trying to maintain noble composure.
     actions['hit'] = create_character_action(arm_obj, 'hit', 11, {
         0: { # Knockback hit frame 0
-            'hips': ((-18, 0, 0), (0, -0.25, 0.02)), # sharp jerk back
-            'spine': ((-22, 0, 0), (0, 0, 0)),
-            'chest': ((-25, 0, 0), (0, 0, 0)),
-            'head': ((20, 0, 0), (0, 0, 0)), # head snapped back
-            'upperarm_r': ((25, 15, 0), (0, 0, 0)),
-            'forearm_r': ((-25, 0, 0), (0, 0, 0)),
-        },
-        4: { # Maximum recoil
-            'hips': ((-22, 0, 0), (0, -0.32, 0.0)),
+            'hips': ((-20, 0, 0), (0, -0.30, 0.05)),  # sharp jerk back
             'spine': ((-25, 0, 0), (0, 0, 0)),
             'chest': ((-28, 0, 0), (0, 0, 0)),
-            'head': ((25, 0, 0), (0, 0, 0)),
+            'head': ((15, 0, 0), (0, 0, 0)),  # chin stays UP - dignity
+            'upperarm_r': ((30, 18, 0), (0, 0, 0)),
+            'forearm_r': ((-30, 0, 0), (0, 0, 0)),
+        },
+        4: { # Maximum recoil
+            'hips': ((-25, 0, 0), (0, -0.38, 0.0)),
+            'spine': ((-28, 0, 0), (0, 0, 0)),
+            'chest': ((-32, 0, 0), (0, 0, 0)),
+            'head': ((20, 0, 0), (0, 0, 0)),  # still chin up
         },
         8: { # Staggering to regain noble composure
-            'hips': ((-8, 0, 0), (0, -0.15, 0.0)),
-            'spine': ((-5, 0, 0), (0, 0, 0)),
+            'hips': ((-10, 0, 0), (0, -0.18, 0.0)),
+            'spine': ((-8, 0, 0), (0, 0, 0)),
             'head': ((-5, 0, 0), (0, 0, 0)),
         },
-        11: { # Recovered
+        11: { # Recovered, dignity intact
             'hips': ((0, 0, 0), (0, 0, 0)),
             'spine': ((4, 0, 0), (0, 0, 0)),
-            'head': ((-4, 0, 0), (0, 0, 0)),
+            'head': ((0, 0, 0), (0, 0, 0)),
         }
     })
 
-    # 12. stagger: 1.3s (39 frames) - Poise break. Goes to knees, lance drops, slow recovery
+    # 12. stagger: 1.3s (39 frames) - Poise break. Painful, slow to knees,
+    # lance scraping the ground, slow agonizing recovery like a painting
+    # of a fallen knight.
     actions['stagger'] = create_character_action(arm_obj, 'stagger', 39, {
         0: {
             'hips': ((-15, 0, 0), (0, 0, 0)),
             'spine': ((-15, 0, 0), (0, 0, 0)),
         },
-        8: { # Falls forward onto knees
-            'hips': ((35, 0, 0), (0, 0.1, -0.45)),
-            'spine': ((30, 0, 0), (0, 0, 0)),
-            'chest': ((25, 0, 0), (0, 0, 0)),
-            'head': ((30, 0, 0), (0, 0, 0)),
-            'thigh_l': ((80, 0, 0), (0, 0, 0)),
-            'shin_l': ((85, 0, 0), (0, 0, 0)),
-            'thigh_r': ((80, 0, 0), (0, 0, 0)),
-            'shin_r': ((85, 0, 0), (0, 0, 0)),
-            'upperarm_r': ((15, 0, 0), (0, 0, 0)),
-            'weapon_r': ((-75, 0, 0), (0, 0, 0)), # lance tip hits ground
+        8: { # Falls forward onto knees - slow, not sudden
+            'hips': ((40, 0, 0), (0, 0.12, -0.50)),
+            'spine': ((35, 0, 0), (0, 0, 0)),
+            'chest': ((30, 0, 0), (0, 0, 0)),
+            'head': ((35, 0, 0), (0, 0, 0)),
+            'thigh_l': ((85, 0, 0), (0, 0, 0)),
+            'shin_l': ((90, 0, 0), (0, 0, 0)),
+            'thigh_r': ((85, 0, 0), (0, 0, 0)),
+            'shin_r': ((90, 0, 0), (0, 0, 0)),
+            'upperarm_r': ((20, 0, 0), (0, 0, 0)),
+            'weapon_r': ((-80, 0, 0), (0, 0, 0)),  # lance tip scrapes dirt
         },
         22: { # Weak groggy state on knees
-            'hips': ((32, 0, 0), (0, 0.1, -0.45)),
-            'spine': ((28, 0, 0), (0, 0, 0)),
-            'head': ((20, 0, 0), (0, 0, 0)),
+            'hips': ((38, 0, 0), (0, 0.12, -0.50)),
+            'spine': ((32, 0, 0), (0, 0, 0)),
+            'head': ((25, 0, 0), (0, 0, 0)),
         },
-        32: { # Pushing himself up with lance
-            'hips': ((15, 0, 0), (0, 0.05, -0.20)),
-            'thigh_l': ((40, 0, 0), (0, 0, 0)),
-            'shin_l': ((45, 0, 0), (0, 0, 0)),
-            'upperarm_r': ((-45, 0, 0), (0, 0, 0)),
-            'weapon_r': ((-30, 0, 0), (0, 0, 0)),
+        32: { # Pushing himself up with lance, slow
+            'hips': ((20, 0, 0), (0, 0.08, -0.25)),
+            'thigh_l': ((45, 0, 0), (0, 0, 0)),
+            'shin_l': ((50, 0, 0), (0, 0, 0)),
+            'upperarm_r': ((-50, 0, 0), (0, 0, 0)),
+            'weapon_r': ((-35, 0, 0), (0, 0, 0)),
         },
-        39: { # Back upright
+        39: { # Back upright, slow and stiff
             'hips': ((0, 0, 0), (0, 0, 0)),
             'spine': ((4, 0, 0), (0, 0, 0)),
             'thigh_l': ((0, 0, 0), (0, 0, 0)),
@@ -1160,56 +1187,60 @@ def author_quixote_animations(arm_obj):
         }
     })
 
-    # 13. death: 1.2s (36 frames) - A fall, not a collapse. Falls like a knight, one hand on lance
+    # 13. death: 1.2s (36 frames) - A fall like a painting. Drops straight
+    # back, one hand on lance, motionless on ground. Static, dignified.
     actions['death'] = create_character_action(arm_obj, 'death', 36, {
         0: {
             'hips': ((0, 0, 0), (0, 0, 0)),
             'spine': ((-5, 0, 0), (0, 0, 0)),
         },
-        12: { # Body tilting back rigid
-            'hips': ((-45, 0, 0), (0, -0.3, -0.25)),
-            'spine': ((-20, 0, 0), (0, 0, 0)),
-            'head': ((15, 0, 0), (0, 0, 0)),
-            'upperarm_r': ((-50, 0, 0), (0, 0, 0)),
-            'weapon_r': ((-30, 0, 0), (0, 0, 0)),
+        12: { # Body tilting back rigid, like a figure in a painting
+            'hips': ((-50, 0, 0), (0, -0.35, -0.30)),
+            'spine': ((-25, 0, 0), (0, 0, 0)),
+            'head': ((18, 0, 0), (0, 0, 0)),
+            'upperarm_r': ((-55, 0, 0), (0, 0, 0)),
+            'weapon_r': ((-35, 0, 0), (0, 0, 0)),
         },
         24: { # Hitting ground
-            'hips': ((-85, 0, 0), (0, -0.7, -0.95)),
-            'spine': ((-5, 0, 0), (0, 0, 0)),
-            'head': ((10, 0, 0), (0, 0, 0)),
-            'thigh_l': ((15, 0, 0), (0, 0, 0)),
-            'thigh_r': ((20, 0, 0), (0, 0, 0)),
-            'upperarm_r': ((-35, 10, 0), (0, 0, 0)),
-            'weapon_r': ((-15, 0, 0), (0, 0, 0)),
+            'hips': ((-90, 0, 0), (0, -0.75, -1.00)),
+            'spine': ((-8, 0, 0), (0, 0, 0)),
+            'head': ((12, 0, 0), (0, 0, 0)),
+            'thigh_l': ((18, 0, 0), (0, 0, 0)),
+            'thigh_r': ((22, 0, 0), (0, 0, 0)),
+            'upperarm_r': ((-40, 12, 0), (0, 0, 0)),
+            'weapon_r': ((-18, 0, 0), (0, 0, 0)),
         },
         36: { # Resting still, lance laid across chest
-            'hips': ((-90, 0, 0), (0, -0.75, -0.98)),
+            'hips': ((-90, 0, 0), (0, -0.80, -1.05)),
             'spine': ((0, 0, 0), (0, 0, 0)),
             'head': ((0, 0, 0), (0, 0, 0)),
-            'upperarm_r': ((-30, 15, 0), (0, 0, 0)),
-            'forearm_r': ((-60, 0, 0), (0, 0, 0)),
+            'upperarm_r': ((-35, 18, 0), (0, 0, 0)),
+            'forearm_r': ((-65, 0, 0), (0, 0, 0)),
         }
     })
 
-    # 14. interact: 1.2s (36 frames) - Examine gesture: tall frame leaning in, reading scholarly
+    # 14. interact: 1.2s (36 frames) - Examine gesture: tall frame bending
+    # forward slowly, peering down with scholarly intensity, like a man
+    # reading a page held too close.
     actions['interact'] = create_character_action(arm_obj, 'interact', 36, {
         0: {
             'hips': ((0, 0, 0), (0, 0, 0)),
             'spine': ((0, 0, 0), (0, 0, 0)),
             'head': ((0, 0, 0), (0, 0, 0)),
         },
-        12: { # Leaning deep forward, examining with scholarly intensity
-            'hips': ((25, 0, 0), (0, 0.15, -0.10)),
-            'spine': ((30, 0, 0), (0, 0, 0)),
-            'chest': ((35, 0, 0), (0, 0, 0)),
-            'head': ((-25, 0, 0), (0, 0, 0)), # chin up to peer down
-            'upperarm_l': ((-45, 10, -10), (0, 0, 0)), # hand to chin/basin
-            'forearm_l': ((-80, 0, 0), (0, 0, 0)),
+        12: { # Leaning deep forward slowly, examining
+            'hips': ((30, 0, 0), (0, 0.18, -0.12)),
+            'spine': ((35, 0, 0), (0, 0, 0)),
+            'chest': ((40, 0, 0), (0, 0, 0)),
+            'head': ((-30, 0, 0), (0, 0, 0)),  # chin up to peer down
+            'upperarm_l': ((-50, 12, -12), (0, 0, 0)),  # hand to chin/basin
+            'forearm_l': ((-85, 0, 0), (0, 0, 0)),
         },
-        24: { # Slight tilt of head, squinting
-            'hips': ((25, 0, 0), (0, 0.15, -0.10)),
-            'spine': ((30, 0, 0), (0, 0, 0)),
-            'head': ((-22, 10, 5), (0, 0, 0)),
+        24: { # Slight tilt of head, squinting, slow
+            'hips': ((30, 0, 0), (0, 0.18, -0.12)),
+            'spine': ((35, 0, 0), (0, 0, 0)),
+            'chest': ((40, 0, 0), (0, 0, 0)),
+            'head': ((-28, 12, 6), (0, 0, 0)),
         },
         36: { # Return upright
             'hips': ((0, 0, 0), (0, 0, 0)),
@@ -1239,139 +1270,143 @@ def author_sancho_animations(arm_obj):
     """
     actions = {}
 
-    # 1. idle: 2.0s (60 frames) - low wide stance, belly breathing, flail hanging loose
+    # 1. idle: 2.0s (60 frames) - tired practical man, hand on belly,
+    # flail hanging loose, slow belly breathing, looking around suspiciously
     actions['idle'] = create_character_action(arm_obj, 'idle', 60, {
         0: {
-            'hips': ((6, 0, 0), (0, 0, -0.04)),
-            'spine': ((8, 0, 0), (0, 0, 0)),
-            'chest': ((4, 0, 0), (0, 0, 0)),
-            'head': ((-6, 0, 0), (0, 0, 0)),
-            'thigh_l': ((8, -8, 0), (0, 0, 0)), # wide stance
-            'thigh_r': ((8, 8, 0), (0, 0, 0)),
-            'upperarm_r': ((12, 12, 0), (0, 0, 0)),
-            'forearm_r': ((-30, 0, 0), (0, 0, 0)),
-            'upperarm_l': ((-10, -15, 0), (0, 0, 0)),
-            'forearm_l': ((-55, 0, 0), (0, 0, 0)), # buckler at ready
+            'hips': ((8, 0, 0), (0, 0, -0.06)),  # tired weight shift
+            'spine': ((10, 0, -2), (0, 0, 0)),   # slight slouch
+            'chest': ((6, 0, -3), (0, 0, 0)),
+            'head': ((-8, 0, 0), (0, 0, 0)),     # head tilted, watching
+            'thigh_l': ((10, -10, 0), (0, 0, 0)), # wide stance
+            'thigh_r': ((10, 10, 0), (0, 0, 0)),
+            'upperarm_r': ((15, 15, 0), (0, 0, 0)),  # flail hanging loose
+            'forearm_r': ((-35, 0, 0), (0, 0, 0)),
+            'upperarm_l': ((-5, -20, 0), (0, 0, 0)),  # hand on belly
+            'forearm_l': ((-50, 0, 0), (0, 0, 0)),   # buckler at ready
         },
         30: {
-            'hips': ((6, 0, 0), (0, 0, -0.02)), # breath bob
-            'spine': ((6, 0, 0), (0, 0, 0)),
-            'chest': ((6, 0, 0), (0, 0, 0)),
-            'head': ((-4, 0, 0), (0, 0, 0)),
-            'thigh_l': ((6, -8, 0), (0, 0, 0)),
-            'thigh_r': ((6, 8, 0), (0, 0, 0)),
-            'upperarm_r': ((10, 10, 0), (0, 0, 0)),
-            'forearm_r': ((-28, 0, 0), (0, 0, 0)),
-            'upperarm_l': ((-12, -15, 0), (0, 0, 0)),
-            'forearm_l': ((-52, 0, 0), (0, 0, 0)),
+            'hips': ((8, 0, 0), (0, 0, -0.03)),  # belly breathing
+            'spine': ((8, 0, -3), (0, 0, 0)),
+            'chest': ((7, 0, -4), (0, 0, 0)),
+            'head': ((-6, 0, 0), (0, 0, 0)),
+            'thigh_l': ((8, -10, 0), (0, 0, 0)),
+            'thigh_r': ((8, 10, 0), (0, 0, 0)),
+            'upperarm_r': ((13, 13, 0), (0, 0, 0)),
+            'forearm_r': ((-33, 0, 0), (0, 0, 0)),
+            'upperarm_l': ((-4, -21, 0), (0, 0, 0)),
+            'forearm_l': ((-48, 0, 0), (0, 0, 0)),
         },
         60: {
-            'hips': ((6, 0, 0), (0, 0, -0.04)),
-            'spine': ((8, 0, 0), (0, 0, 0)),
-            'chest': ((4, 0, 0), (0, 0, 0)),
-            'head': ((-6, 0, 0), (0, 0, 0)),
-            'thigh_l': ((8, -8, 0), (0, 0, 0)),
-            'thigh_r': ((8, 8, 0), (0, 0, 0)),
-            'upperarm_r': ((12, 12, 0), (0, 0, 0)),
-            'forearm_r': ((-30, 0, 0), (0, 0, 0)),
-            'upperarm_l': ((-10, -15, 0), (0, 0, 0)),
-            'forearm_l': ((-55, 0, 0), (0, 0, 0)),
+            'hips': ((8, 0, 0), (0, 0, -0.06)),
+            'spine': ((10, 0, -2), (0, 0, 0)),
+            'chest': ((6, 0, -3), (0, 0, 0)),
+            'head': ((-8, 0, 0), (0, 0, 0)),
+            'thigh_l': ((10, -10, 0), (0, 0, 0)),
+            'thigh_r': ((10, 10, 0), (0, 0, 0)),
+            'upperarm_r': ((15, 15, 0), (0, 0, 0)),
+            'forearm_r': ((-35, 0, 0), (0, 0, 0)),
+            'upperarm_l': ((-5, -20, 0), (0, 0, 0)),
+            'forearm_l': ((-50, 0, 0), (0, 0, 0)),
         }
     })
 
-    # 2. walk: 0.9s (27 frames) - 4.2 m/s short quick waddling peasant steps
+    # 2. walk: 0.9s (27 frames) - practical peasant steps, not waddling,
+    # sack on back weighing him down, short deliberate steps
     actions['walk'] = create_character_action(arm_obj, 'walk', 27, {
         0: {
-            'hips': ((5, 0, 6), (0, 0, -0.04)),
-            'thigh_l': ((-20, -5, 0), (0, 0, 0)),
-            'shin_l': ((15, 0, 0), (0, 0, 0)),
-            'thigh_r': ((18, 5, 0), (0, 0, 0)),
-            'shin_r': ((10, 0, 0), (0, 0, 0)),
-            'upperarm_r': ((15, 0, 0), (0, 0, 0)),
-            'upperarm_l': ((-15, 0, 0), (0, 0, 0)),
+            'hips': ((5, 0, 4), (0, 0, -0.06)),
+            'thigh_l': ((-18, -5, 0), (0, 0, 0)),  # left foot forward
+            'shin_l': ((12, 0, 0), (0, 0, 0)),
+            'thigh_r': ((16, 5, 0), (0, 0, 0)),
+            'shin_r': ((8, 0, 0), (0, 0, 0)),
+            'upperarm_r': ((12, 0, 0), (0, 0, 0)),  # flail bouncing gently
+            'upperarm_l': ((-12, 0, 0), (0, 0, 0)),
+            'spine': ((5, 0, -1), (0, 0, 0)),
         },
         7: {
-            'hips': ((5, 0, -6), (0, 0, -0.01)),
+            'hips': ((5, 0, -4), (0, 0, -0.02)),
             'thigh_l': ((0, -5, 0), (0, 0, 0)),
-            'shin_l': ((5, 0, 0), (0, 0, 0)),
-            'thigh_r': ((-8, 5, 0), (0, 0, 0)),
-            'shin_r': ((30, 0, 0), (0, 0, 0)),
-            'upperarm_r': ((-5, 0, 0), (0, 0, 0)),
-            'upperarm_l': ((5, 0, 0), (0, 0, 0)),
+            'shin_l': ((3, 0, 0), (0, 0, 0)),
+            'thigh_r': ((-7, 5, 0), (0, 0, 0)),
+            'shin_r': ((25, 0, 0), (0, 0, 0)),
+            'upperarm_r': ((-3, 0, 0), (0, 0, 0)),
+            'upperarm_l': ((3, 0, 0), (0, 0, 0)),
+            'spine': ((4, 0, -2), (0, 0, 0)),
         },
         14: {
-            'hips': ((5, 0, -6), (0, 0, -0.04)),
-            'thigh_l': ((18, -5, 0), (0, 0, 0)),
-            'shin_l': ((10, 0, 0), (0, 0, 0)),
-            'thigh_r': ((-20, 5, 0), (0, 0, 0)),
-            'shin_r': ((15, 0, 0), (0, 0, 0)),
-            'upperarm_r': ((-20, 0, 0), (0, 0, 0)),
-            'upperarm_l': ((15, 0, 0), (0, 0, 0)),
+            'hips': ((5, 0, -4), (0, 0, -0.06)),
+            'thigh_l': ((16, -5, 0), (0, 0, 0)),  # right foot forward
+            'shin_l': ((8, 0, 0), (0, 0, 0)),
+            'thigh_r': ((-18, 5, 0), (0, 0, 0)),
+            'shin_r': ((12, 0, 0), (0, 0, 0)),
+            'upperarm_r': ((-15, 0, 0), (0, 0, 0)),
+            'upperarm_l': ((12, 0, 0), (0, 0, 0)),
+            'spine': ((5, 0, -2), (0, 0, 0)),
         },
         21: {
-            'hips': ((5, 0, 6), (0, 0, -0.01)),
-            'thigh_l': ((-8, -5, 0), (0, 0, 0)),
-            'shin_l': ((30, 0, 0), (0, 0, 0)),
+            'hips': ((5, 0, 4), (0, 0, -0.02)),
+            'thigh_l': ((-7, -5, 0), (0, 0, 0)),
+            'shin_l': ((25, 0, 0), (0, 0, 0)),
             'thigh_r': ((0, 5, 0), (0, 0, 0)),
-            'shin_r': ((5, 0, 0), (0, 0, 0)),
-            'upperarm_r': ((5, 0, 0), (0, 0, 0)),
-            'upperarm_l': ((-5, 0, 0), (0, 0, 0)),
+            'shin_r': ((3, 0, 0), (0, 0, 0)),
+            'upperarm_r': ((3, 0, 0), (0, 0, 0)),
+            'upperarm_l': ((-3, 0, 0), (0, 0, 0)),
+            'spine': ((4, 0, -1), (0, 0, 0)),
         },
         27: {
-            'hips': ((5, 0, 6), (0, 0, -0.04)),
-            'thigh_l': ((-20, -5, 0), (0, 0, 0)),
-            'shin_l': ((15, 0, 0), (0, 0, 0)),
-            'thigh_r': ((18, 5, 0), (0, 0, 0)),
-            'shin_r': ((10, 0, 0), (0, 0, 0)),
-            'upperarm_r': ((15, 0, 0), (0, 0, 0)),
-            'upperarm_l': ((-15, 0, 0), (0, 0, 0)),
+            'hips': ((5, 0, 4), (0, 0, -0.06)),
+            'thigh_l': ((-18, -5, 0), (0, 0, 0)),
+            'shin_l': ((12, 0, 0), (0, 0, 0)),
+            'thigh_r': ((16, 5, 0), (0, 0, 0)),
+            'shin_r': ((8, 0, 0), (0, 0, 0)),
+            'upperarm_r': ((12, 0, 0), (0, 0, 0)),
+            'upperarm_l': ((-12, 0, 0), (0, 0, 0)),
+            'spine': ((5, 0, -1), (0, 0, 0)),
         }
     })
 
-    # 3. run: 0.62s (19 frames) - 6.8 m/s heavy determined trot, leaning forward against sack
+    # 3. run: 0.62s (19 frames) - heavy determined trot leaning forward
+    # against the sack on his back, awkward, not built for speed
     actions['run'] = create_character_action(arm_obj, 'run', 19, {
         0: {
-            'hips': ((18, 0, 0), (0, 0, -0.08)), # forward lean
-            'spine': ((15, 0, 0), (0, 0, 0)),
-            'chest': ((12, 0, 0), (0, 0, 0)),
-            'thigh_l': ((-38, 0, 0), (0, 0, 0)),
-            'shin_l': ((25, 0, 0), (0, 0, 0)),
-            'thigh_r': ((35, 0, 0), (0, 0, 0)),
-            'shin_r': ((40, 0, 0), (0, 0, 0)),
-            'upperarm_r': ((25, 0, 0), (0, 0, 0)),
-            'upperarm_l': ((-20, 0, 0), (0, 0, 0)),
+            'hips': ((20, 0, 0), (0, 0, -0.10)),  # leaning forward hard
+            'spine': ((18, 0, 0), (0, 0, 0)),
+            'chest': ((15, 0, 0), (0, 0, 0)),
+            'thigh_l': ((-40, 0, 0), (0, 0, 0)),
+            'shin_l': ((22, 0, 0), (0, 0, 0)),
+            'thigh_r': ((38, 0, 0), (0, 0, 0)),
+            'shin_r': ((45, 0, 0), (0, 0, 0)),
+            'upperarm_r': ((28, 0, 0), (0, 0, 0)),  # arms pumping awkwardly
+            'upperarm_l': ((-22, 0, 0), (0, 0, 0)),
         },
         9: {
-            'hips': ((18, 0, 0), (0, 0, 0.02)),
-            'spine': ((15, 0, 0), (0, 0, 0)),
-            'chest': ((12, 0, 0), (0, 0, 0)),
-            'thigh_l': ((35, 0, 0), (0, 0, 0)),
-            'shin_l': ((40, 0, 0), (0, 0, 0)),
-            'thigh_r': ((-38, 0, 0), (0, 0, 0)),
-            'shin_r': ((25, 0, 0), (0, 0, 0)),
-            'upperarm_r': ((-20, 0, 0), (0, 0, 0)),
-            'upperarm_l': ((25, 0, 0), (0, 0, 0)),
+            'hips': ((20, 0, 0), (0, 0, 0.05)),  # sack bounce
+            'spine': ((18, 0, 0), (0, 0, 0)),
+            'chest': ((15, 0, 0), (0, 0, 0)),
+            'thigh_l': ((38, 0, 0), (0, 0, 0)),
+            'shin_l': ((45, 0, 0), (0, 0, 0)),
+            'thigh_r': ((-40, 0, 0), (0, 0, 0)),
+            'shin_r': ((22, 0, 0), (0, 0, 0)),
+            'upperarm_r': ((-22, 0, 0), (0, 0, 0)),
+            'upperarm_l': ((28, 0, 0), (0, 0, 0)),
         },
         19: {
-            'hips': ((18, 0, 0), (0, 0, -0.08)),
-            'spine': ((15, 0, 0), (0, 0, 0)),
-            'chest': ((12, 0, 0), (0, 0, 0)),
-            'thigh_l': ((-38, 0, 0), (0, 0, 0)),
-            'shin_l': ((25, 0, 0), (0, 0, 0)),
-            'thigh_r': ((35, 0, 0), (0, 0, 0)),
-            'shin_r': ((40, 0, 0), (0, 0, 0)),
-            'upperarm_r': ((25, 0, 0), (0, 0, 0)),
-            'upperarm_l': ((-20, 0, 0), (0, 0, 0)),
+            'hips': ((20, 0, 0), (0, 0, -0.10)),
+            'spine': ((18, 0, 0), (0, 0, 0)),
+            'chest': ((15, 0, 0), (0, 0, 0)),
+            'thigh_l': ((-40, 0, 0), (0, 0, 0)),
+            'shin_l': ((22, 0, 0), (0, 0, 0)),
+            'thigh_r': ((38, 0, 0), (0, 0, 0)),
+            'shin_r': ((45, 0, 0), (0, 0, 0)),
+            'upperarm_r': ((28, 0, 0), (0, 0, 0)),
+            'upperarm_l': ((-22, 0, 0), (0, 0, 0)),
         }
     })
 
-    # 4. roll: 0.40s (12 frames) - Slow heavy tumble covering 2m, ends on one knee
-    #
-    # The tumble is the best move in the set - and it was leaving the
-    # floor, because the hips were keyed UP. The playtest: "Sancho dodge
-    # looks better but should also stay in the ground". So the hips drop
-    # instead, and the body rolls over the shoulder with the head
-    # clearing the floor.
+    # 4. roll: 0.40s (12 frames) - Heavy man tumbling, tucking into a ball
+    # and landing on one knee. The sack on his back makes him roll like a
+    # cask - slow, committed, never leaving the ground.
     actions['roll'] = create_character_action(arm_obj, 'roll', 12, {
         0: {
             'hips': ((10, 0, 0), (0, 0, 0)),
@@ -1379,49 +1414,49 @@ def author_sancho_animations(arm_obj):
             'thigh_l': ((10, 0, 0), (0, 0, 0)),
             'thigh_r': ((10, 0, 0), (0, 0, 0)),
         },
-        3: { # Tuck into ball
-            'hips': ((75, 0, 0), (0, -0.25, -0.30)),
-            'spine': ((45, 0, 0), (0, 0, 0)), # tight curl
-            'chest': ((40, 0, 0), (0, 0, 0)),
-            'thigh_l': ((85, 0, 0), (0, 0, 0)),
-            'shin_l': ((90, 0, 0), (0, 0, 0)),
-            'thigh_r': ((85, 0, 0), (0, 0, 0)),
-            'shin_r': ((90, 0, 0), (0, 0, 0)),
+        3: { # Tuck into ball - sack pulls him forward
+            'hips': ((80, 0, 0), (0, -0.30, -0.35)),  # hips down
+            'spine': ((50, 0, 0), (0, 0, 0)),  # tight curl
+            'chest': ((45, 0, 0), (0, 0, 0)),
+            'thigh_l': ((90, 0, 0), (0, 0, 0)),
+            'shin_l': ((95, 0, 0), (0, 0, 0)),
+            'thigh_r': ((90, 0, 0), (0, 0, 0)),
+            'shin_r': ((95, 0, 0), (0, 0, 0)),
         },
         6: { # Midpoint: over the shoulder, on the ground
-            'hips': ((100, 0, 0), (0, -0.35, -0.45)), # the roll
-            'spine': ((40, 0, 0), (0, 0, 0)), # tightly curled
-            'chest': ((35, 0, 0), (0, 0, 0)),
-            'head': ((30, 0, 0), (0, 0, 0)),
-            'thigh_l': ((110, 0, 0), (0, 0, 0)), # tucked tight to chest
-            'shin_l': ((120, 0, 0), (0, 0, 0)),
-            'thigh_r': ((110, 0, 0), (0, 0, 0)),
-            'shin_r': ((120, 0, 0), (0, 0, 0)),
-            'upperarm_r': ((-45, 0, 0), (0, 0, 0)),
-            'upperarm_l': ((-45, 0, 0), (0, 0, 0)),
+            'hips': ((105, 0, 0), (0, -0.40, -0.50)),  # the roll
+            'spine': ((45, 0, 0), (0, 0, 0)),  # tightly curled
+            'chest': ((40, 0, 0), (0, 0, 0)),
+            'head': ((35, 0, 0), (0, 0, 0)),
+            'thigh_l': ((115, 0, 0), (0, 0, 0)),  # tucked tight to chest
+            'shin_l': ((125, 0, 0), (0, 0, 0)),
+            'thigh_r': ((115, 0, 0), (0, 0, 0)),
+            'shin_r': ((125, 0, 0), (0, 0, 0)),
+            'upperarm_r': ((-50, 0, 0), (0, 0, 0)),
+            'upperarm_l': ((-50, 0, 0), (0, 0, 0)),
         },
         9: { # Rolling onto knees
-            'hips': ((45, 0, 0), (0, -0.30, -0.35)),
-            'thigh_l': ((60, 0, 0), (0, 0, 0)),
-            'shin_l': ((75, 0, 0), (0, 0, 0)),
-            'thigh_r': ((85, 0, 0), (0, 0, 0)),
-            'shin_r': ((85, 0, 0), (0, 0, 0)),
+            'hips': ((50, 0, 0), (0, -0.35, -0.40)),
+            'thigh_l': ((65, 0, 0), (0, 0, 0)),
+            'shin_l': ((80, 0, 0), (0, 0, 0)),
+            'thigh_r': ((90, 0, 0), (0, 0, 0)),
+            'shin_r': ((90, 0, 0), (0, 0, 0)),
         },
         12: { # Ends on one knee panting (2m displacement)
-            'hips': ((15, 0, 0), (0, -0.20, -0.28)),
-            'spine': ((20, 0, 0), (0, 0, 0)),
-            'chest': ((15, 0, 0), (0, 0, 0)),
-            'thigh_l': ((-10, 0, 0), (0, 0, 0)), # left foot planted
-            'shin_l': ((65, 0, 0), (0, 0, 0)),
-            'thigh_r': ((65, 0, 0), (0, 0, 0)),  # right knee on ground
-            'shin_r': ((85, 0, 0), (0, 0, 0)),
-            'upperarm_r': ((20, 0, 0), (0, 0, 0)),
-            'forearm_r': ((-45, 0, 0), (0, 0, 0)),
+            'hips': ((20, 0, 0), (0, -0.25, -0.35)),
+            'spine': ((25, 0, 0), (0, 0, 0)),
+            'chest': ((20, 0, 0), (0, 0, 0)),
+            'thigh_l': ((-12, 0, 0), (0, 0, 0)),  # left foot planted
+            'shin_l': ((70, 0, 0), (0, 0, 0)),
+            'thigh_r': ((70, 0, 0), (0, 0, 0)),  # right knee on ground
+            'shin_r': ((90, 0, 0), (0, 0, 0)),
+            'upperarm_r': ((25, 0, 0), (0, 0, 0)),
+            'forearm_r': ((-50, 0, 0), (0, 0, 0)),
         }
     })
 
-    # 5. light_1: 0.45s (14 frames) - Flail horizontal sweep. Contact @ 0.08s (frame 2)
-    # Recovery pose @ frame 14: flail wrapped across to left side
+    # 5. light_1: 0.45s (14 frames) - Practical horizontal flail sweep.
+    # Contact @ 0.08s (frame 2). Unglamorous, the flail wrapping around.
     actions['light_1'] = create_character_action(arm_obj, 'light_1', 14, {
         0: {
             'hips': ((0, 15, 0), (0, 0, 0)),
@@ -1431,308 +1466,322 @@ def author_sancho_animations(arm_obj):
             'weapon_r': ((30, 20, 0), (0, 0, 0)),
         },
         2: { # Contact frame @ 0.08s (frame 2): violent horizontal swipe
-            'hips': ((8, -18, 0), (0, 0.08, 0)),
-            'spine': ((12, -25, 0), (0, 0, 0)),
-            'chest': ((15, -30, 0), (0, 0, 0)),
-            'upperarm_r': ((-65, -30, 15), (0, 0, 0)),
-            'forearm_r': ((-15, 0, 0), (0, 0, 0)),
-            'weapon_r': ((-25, -15, 10), (0, 0, 0)),
-        },
-        7: {
-            'hips': ((8, -25, 0), (0, 0.1, 0)),
-            'spine': ((10, -30, 0), (0, 0, 0)),
+            'hips': ((10, -22, 0), (0, 0.10, 0)),  # body into the blow
+            'spine': ((15, -30, 0), (0, 0, 0)),
+            'chest': ((18, -35, 0), (0, 0, 0)),
             'upperarm_r': ((-70, -35, 20), (0, 0, 0)),
-            'forearm_r': ((-35, 0, 0), (0, 0, 0)),
-        },
-        14: { # Recovery pose: arm and flail wrapped to the left
-            'hips': ((4, -20, 0), (0, 0.04, 0)),
-            'spine': ((6, -22, 0), (0, 0, 0)),
-            'chest': ((8, -25, 0), (0, 0, 0)),
-            'upperarm_r': ((-45, -30, 25), (0, 0, 0)),
-            'forearm_r': ((-75, 0, 0), (0, 0, 0)),
-            'weapon_r': ((15, -25, 10), (0, 0, 0)),
-        }
-    }, contact_frame=2)
-
-    # 6. light_2: 0.45s (14 frames) - Chains from light_1 recovery! Backhand flail sweep
-    actions['light_2'] = create_character_action(arm_obj, 'light_2', 14, {
-        0: { # Matches light_1 recovery
-            'hips': ((4, -20, 0), (0, 0.04, 0)),
-            'spine': ((6, -22, 0), (0, 0, 0)),
-            'chest': ((8, -25, 0), (0, 0, 0)),
-            'upperarm_r': ((-45, -30, 25), (0, 0, 0)),
-            'forearm_r': ((-75, 0, 0), (0, 0, 0)),
-            'weapon_r': ((15, -25, 10), (0, 0, 0)),
-        },
-        2: { # Contact frame @ 0.08s (frame 2): backhand whip to right
-            'hips': ((6, 20, 0), (0, 0.08, 0)),
-            'spine': ((8, 25, 0), (0, 0, 0)),
-            'chest': ((10, 30, 0), (0, 0, 0)),
-            'upperarm_r': ((-55, 35, -25), (0, 0, 0)),
             'forearm_r': ((-20, 0, 0), (0, 0, 0)),
-            'weapon_r': ((-20, 25, -15), (0, 0, 0)),
+            'weapon_r': ((-30, -18, 12), (0, 0, 0)),
         },
-        7: {
-            'hips': ((6, 28, 0), (0, 0.1, 0)),
-            'spine': ((8, 32, 0), (0, 0, 0)),
-            'upperarm_r': ((-60, 40, -30), (0, 0, 0)),
-            'forearm_r': ((-35, 0, 0), (0, 0, 0)),
-        },
-        14: { # Recovery pose: flail wound up high right
-            'hips': ((2, 15, 0), (0, 0.05, 0)),
-            'spine': ((4, 18, 0), (0, 0, 0)),
-            'chest': ((6, 20, 0), (0, 0, 0)),
-            'upperarm_r': ((-75, 20, -15), (0, 0, 0)),
-            'forearm_r': ((-70, 0, 0), (0, 0, 0)),
-            'weapon_r': ((35, 15, 0), (0, 0, 0)),
-        }
-    }, contact_frame=2)
-
-    # 7. light_3: 0.45s (14 frames) - Chains from light_2 recovery! Downward smash
-    actions['light_3'] = create_character_action(arm_obj, 'light_3', 14, {
-        0: { # Matches light_2 recovery
-            'hips': ((2, 15, 0), (0, 0.05, 0)),
-            'spine': ((4, 18, 0), (0, 0, 0)),
-            'chest': ((6, 20, 0), (0, 0, 0)),
-            'upperarm_r': ((-75, 20, -15), (0, 0, 0)),
-            'forearm_r': ((-70, 0, 0), (0, 0, 0)),
-            'weapon_r': ((35, 15, 0), (0, 0, 0)),
-        },
-        2: { # Contact frame @ 0.08s (frame 2): heavy overhead downward smash
-            'hips': ((18, 0, 0), (0, 0.12, -0.10)),
-            'spine': ((25, 0, 0), (0, 0, 0)),
-            'chest': ((30, 0, 0), (0, 0, 0)),
-            'upperarm_r': ((-85, 0, 0), (0, 0, 0)),
-            'forearm_r': ((-15, 0, 0), (0, 0, 0)),
-            'weapon_r': ((-45, 0, 0), (0, 0, 0)),
-        },
-        8: {
-            'hips': ((15, 0, 0), (0, 0.10, -0.08)),
-            'spine': ((20, 0, 0), (0, 0, 0)),
-            'upperarm_r': ((-65, 0, 0), (0, 0, 0)),
-            'forearm_r': ((-30, 0, 0), (0, 0, 0)),
-        },
-        14: { # Returns to low crouched ready stance
-            'hips': ((6, 0, 0), (0, 0, -0.04)),
-            'spine': ((8, 0, 0), (0, 0, 0)),
-            'chest': ((4, 0, 0), (0, 0, 0)),
-            'upperarm_r': ((12, 12, 0), (0, 0, 0)),
-            'forearm_r': ((-30, 0, 0), (0, 0, 0)),
-        }
-    }, contact_frame=2)
-
-    # 8. heavy: 0.90s (27 frames) - Massive wind-up overhead slam. Contact @ 0.12s (frame 4)
-    actions['heavy'] = create_character_action(arm_obj, 'heavy', 27, {
-        0: {
-            'hips': ((-8, 10, 0), (0, 0, 0)),
-            'spine': ((-10, 15, 0), (0, 0, 0)),
-            'chest': ((-15, 20, 0), (0, 0, 0)),
-            'upperarm_r': ((-85, 25, -20), (0, 0, 0)),
-            'forearm_r': ((-85, 0, 0), (0, 0, 0)),
-        },
-        4: { # Contact frame @ 0.12s (frame 4): body weight thrown downward
-            'hips': ((24, -5, 0), (0, 0.15, -0.15)),
-            'spine': ((32, -5, 0), (0, 0, 0)),
-            'chest': ((38, -5, 0), (0, 0, 0)),
-            'upperarm_r': ((-95, -5, 5), (0, 0, 0)),
-            'forearm_r': ((-10, 0, 0), (0, 0, 0)),
-            'weapon_r': ((-55, 0, 0), (0, 0, 0)),
-        },
-        12: { # Heavy impact follow-through
-            'hips': ((26, -5, 0), (0, 0.16, -0.16)),
-            'spine': ((34, -5, 0), (0, 0, 0)),
-            'upperarm_r': ((-80, 0, 0), (0, 0, 0)),
-            'forearm_r': ((-25, 0, 0), (0, 0, 0)),
-        },
-        20: { # Straining back up
-            'hips': ((14, 0, 0), (0, 0.08, -0.08)),
-            'spine': ((16, 0, 0), (0, 0, 0)),
-            'upperarm_r': ((-35, 5, 0), (0, 0, 0)),
+        7: { # Follow-through wrapping around
+            'hips': ((10, -30, 0), (0, 0.12, 0)),
+            'spine': ((12, -35, 0), (0, 0, 0)),
+            'upperarm_r': ((-75, -40, 25), (0, 0, 0)),
             'forearm_r': ((-40, 0, 0), (0, 0, 0)),
         },
-        27: { # Back to rest
-            'hips': ((6, 0, 0), (0, 0, -0.04)),
-            'spine': ((8, 0, 0), (0, 0, 0)),
-            'chest': ((4, 0, 0), (0, 0, 0)),
-            'upperarm_r': ((12, 12, 0), (0, 0, 0)),
+        14: { # Recovery pose: arm and flail wrapped to the left
+            'hips': ((5, -25, 0), (0, 0.05, 0)),
+            'spine': ((7, -27, 0), (0, 0, 0)),
+            'chest': ((10, -30, 0), (0, 0, 0)),
+            'upperarm_r': ((-50, -35, 30), (0, 0, 0)),
+            'forearm_r': ((-80, 0, 0), (0, 0, 0)),
+            'weapon_r': ((18, -30, 12), (0, 0, 0)),
+        }
+    }, contact_frame=2)
+
+    # 6. light_2: 0.45s (14 frames) - Chains from light_1 recovery!
+    # Backhand flail whip back from left to right.
+    actions['light_2'] = create_character_action(arm_obj, 'light_2', 14, {
+        0: { # Matches light_1 recovery
+            'hips': ((5, -25, 0), (0, 0.05, 0)),
+            'spine': ((7, -27, 0), (0, 0, 0)),
+            'chest': ((10, -30, 0), (0, 0, 0)),
+            'upperarm_r': ((-50, -35, 30), (0, 0, 0)),
+            'forearm_r': ((-80, 0, 0), (0, 0, 0)),
+            'weapon_r': ((18, -30, 12), (0, 0, 0)),
+        },
+        2: { # Contact frame @ 0.08s (frame 2): backhand whip to right
+            'hips': ((8, 25, 0), (0, 0.10, 0)),  # weight into backhand
+            'spine': ((10, 30, 0), (0, 0, 0)),
+            'chest': ((12, 35, 0), (0, 0, 0)),
+            'upperarm_r': ((-60, 40, -30), (0, 0, 0)),
+            'forearm_r': ((-25, 0, 0), (0, 0, 0)),
+            'weapon_r': ((-25, 30, -18), (0, 0, 0)),
+        },
+        7: { # Follow-through
+            'hips': ((8, 33, 0), (0, 0.12, 0)),
+            'spine': ((10, 37, 0), (0, 0, 0)),
+            'upperarm_r': ((-65, 45, -35), (0, 0, 0)),
+            'forearm_r': ((-40, 0, 0), (0, 0, 0)),
+        },
+        14: { # Recovery pose: flail wound up high right
+            'hips': ((2, 20, 0), (0, 0.06, 0)),
+            'spine': ((5, 22, 0), (0, 0, 0)),
+            'chest': ((7, 25, 0), (0, 0, 0)),
+            'upperarm_r': ((-80, 25, -20), (0, 0, 0)),
+            'forearm_r': ((-75, 0, 0), (0, 0, 0)),
+            'weapon_r': ((40, 18, 0), (0, 0, 0)),
+        }
+    }, contact_frame=2)
+
+    # 7. light_3: 0.45s (14 frames) - Chains from light_2 recovery!
+    # Heavy overhead downward smash into dirt.
+    actions['light_3'] = create_character_action(arm_obj, 'light_3', 14, {
+        0: { # Matches light_2 recovery
+            'hips': ((2, 20, 0), (0, 0.06, 0)),
+            'spine': ((5, 22, 0), (0, 0, 0)),
+            'chest': ((7, 25, 0), (0, 0, 0)),
+            'upperarm_r': ((-80, 25, -20), (0, 0, 0)),
+            'forearm_r': ((-75, 0, 0), (0, 0, 0)),
+            'weapon_r': ((40, 18, 0), (0, 0, 0)),
+        },
+        2: { # Contact frame @ 0.08s (frame 2): heavy overhead downward smash
+            'hips': ((20, 0, 0), (0, 0.15, -0.12)),  # weight thrown down
+            'spine': ((28, 0, 0), (0, 0, 0)),
+            'chest': ((33, 0, 0), (0, 0, 0)),
+            'upperarm_r': ((-90, 0, 0), (0, 0, 0)),
+            'forearm_r': ((-20, 0, 0), (0, 0, 0)),
+            'weapon_r': ((-50, 0, 0), (0, 0, 0)),
+        },
+        8: { # Following through into dirt
+            'hips': ((17, 0, 0), (0, 0.12, -0.10)),
+            'spine': ((22, 0, 0), (0, 0, 0)),
+            'upperarm_r': ((-70, 0, 0), (0, 0, 0)),
+            'forearm_r': ((-35, 0, 0), (0, 0, 0)),
+        },
+        14: { # Returns to low crouched ready stance
+            'hips': ((8, 0, 0), (0, 0, -0.06)),
+            'spine': ((10, 0, 0), (0, 0, 0)),
+            'chest': ((6, 0, 0), (0, 0, 0)),
+            'upperarm_r': ((15, 15, 0), (0, 0, 0)),
+            'forearm_r': ((-35, 0, 0), (0, 0, 0)),
+        }
+    }, contact_frame=2)
+
+    # 8. heavy: 0.90s (27 frames) - Heavy overhead wind-up slamming entire
+    # body weight into flail impact. Contact @ 0.12s (frame 4).
+    # Overcommitted, like swinging an axe.
+    actions['heavy'] = create_character_action(arm_obj, 'heavy', 27, {
+        0: {
+            'hips': ((-10, 12, 0), (0, 0, 0)),  # wind-up
+            'spine': ((-12, 18, 0), (0, 0, 0)),
+            'chest': ((-18, 25, 0), (0, 0, 0)),
+            'upperarm_r': ((-90, 30, -25), (0, 0, 0)),  # flail drawn high
+            'forearm_r': ((-90, 0, 0), (0, 0, 0)),
+        },
+        4: { # Contact frame @ 0.12s (frame 4): body weight thrown downward
+            'hips': ((26, -8, 0), (0, 0.18, -0.18)),  # weight into blow
+            'spine': ((35, -8, 0), (0, 0, 0)),
+            'chest': ((42, -8, 0), (0, 0, 0)),
+            'head': ((-10, 0, 0), (0, 0, 0)),  # eyes on impact
+            'upperarm_r': ((-100, -10, 8), (0, 0, 0)),
+            'forearm_r': ((-15, 0, 0), (0, 0, 0)),
+            'weapon_r': ((-60, 0, 0), (0, 0, 0)),
+        },
+        12: { # Heavy impact follow-through
+            'hips': ((28, -8, 0), (0, 0.20, -0.20)),
+            'spine': ((38, -8, 0), (0, 0, 0)),
+            'head': ((-12, 0, 0), (0, 0, 0)),
+            'upperarm_r': ((-85, 0, 0), (0, 0, 0)),
             'forearm_r': ((-30, 0, 0), (0, 0, 0)),
+        },
+        20: { # Straining back up
+            'hips': ((16, 0, 0), (0, 0.10, -0.10)),
+            'spine': ((18, 0, 0), (0, 0, 0)),
+            'upperarm_r': ((-40, 8, 0), (0, 0, 0)),
+            'forearm_r': ((-45, 0, 0), (0, 0, 0)),
+        },
+        27: { # Back to rest
+            'hips': ((8, 0, 0), (0, 0, -0.06)),
+            'spine': ((10, 0, 0), (0, 0, 0)),
+            'chest': ((6, 0, 0), (0, 0, 0)),
+            'upperarm_r': ((15, 15, 0), (0, 0, 0)),
+            'forearm_r': ((-35, 0, 0), (0, 0, 0)),
         }
     }, contact_frame=4)
 
-    # 9. block: 0.20s (6 frames) into hold. Sharp buckler raised to guard
+    # 9. block: 0.20s (6 frames) into hold. Buckler raised to guard,
+    # crisp but not flashy.
     actions['block'] = create_character_action(arm_obj, 'block', 6, {
         0: {
-            'hips': ((6, 0, 0), (0, 0, -0.04)),
-            'upperarm_l': ((-10, -15, 0), (0, 0, 0)),
-            'forearm_l': ((-55, 0, 0), (0, 0, 0)),
+            'hips': ((8, 0, 0), (0, 0, -0.06)),
+            'upperarm_l': ((-5, -20, 0), (0, 0, 0)),
+            'forearm_l': ((-50, 0, 0), (0, 0, 0)),
         },
         6: { # Guard pose: buckler high protecting face and chest
-            'hips': ((12, -15, 0), (0, 0, -0.08)),
-            'spine': ((14, -18, 0), (0, 0, 0)),
-            'chest': ((16, -20, 0), (0, 0, 0)),
-            'upperarm_l': ((-45, -25, 20), (0, 0, 0)),
+            'hips': ((14, -18, 0), (0, 0, -0.10)),
+            'spine': ((16, -22, 0), (0, 0, 0)),
+            'chest': ((18, -25, 0), (0, 0, 0)),
+            'head': ((-5, 0, 0), (0, 0, 0)),  # peering over buckler
+            'upperarm_l': ((-50, -30, 25), (0, 0, 0)),  # buckler snaps up
+            'forearm_l': ((-100, 0, 0), (0, 0, 0)),
+        }
+    })
+
+    # 10. parry: 0.20s (6 frames) - Crisp forward punch snap of buckler
+    # to deflect incoming blow. A DECISION, not a flourish. Six frames
+    # outlasts the 0.18s window.
+    actions['parry'] = create_character_action(arm_obj, 'parry', 6, {
+        0: {
+            'hips': ((10, -12, 0), (0, 0, -0.08)),
+            'upperarm_l': ((-35, -25, 12), (0, 0, 0)),
+            'forearm_l': ((-85, 0, 0), (0, 0, 0)),
+        },
+        2: { # Maximum snap forward and up (parry catch @ frame 2)
+            'hips': ((6, -30, 0), (0, 0.12, -0.05)),  # body into the catch
+            'spine': ((10, -35, 0), (0, 0, 0)),
+            'chest': ((12, -40, 0), (0, 0, 0)),
+            'upperarm_l': ((-80, -40, 35), (0, 0, 0)),  # punch buckler forward
+            'forearm_l': ((-75, 0, 0), (0, 0, 0)),
+        },
+        6: { # Re-centering into guard, clip outlasts window
+            'hips': ((12, -18, 0), (0, 0, -0.08)),
+            'upperarm_l': ((-50, -30, 25), (0, 0, 0)),
             'forearm_l': ((-95, 0, 0), (0, 0, 0)),
         }
     })
 
-    # 10. parry: 0.20s (6 frames) - Tight snap of the buckler up. A DECISION, not a flourish
-    #
-    # Six frames, not five: the parry WINDOW is 0.18 s, and an animation
-    # that ends before the window does leaves a blow landing on a buckler
-    # that is no longer there. The rule everywhere else is the same — the
-    # clip CONTAINS the window it has to cover.
-    actions['parry'] = create_character_action(arm_obj, 'parry', 6, {
-        0: {
-            'hips': ((8, -10, 0), (0, 0, -0.06)),
-            'upperarm_l': ((-30, -20, 10), (0, 0, 0)),
-            'forearm_l': ((-80, 0, 0), (0, 0, 0)),
-        },
-        2: { # Maximum snap forward and up (parry catch @ frame 2)
-            'hips': ((5, -25, 0), (0, 0.1, -0.04)),
-            'spine': ((8, -30, 0), (0, 0, 0)),
-            'chest': ((10, -35, 0), (0, 0, 0)),
-            'upperarm_l': ((-75, -35, 30), (0, 0, 0)), # punch buckler forward
-            'forearm_l': ((-70, 0, 0), (0, 0, 0)),
-        },
-        6: { # Re-centering into guard, and the clip outlasts the window
-            'hips': ((10, -15, 0), (0, 0, -0.06)),
-            'upperarm_l': ((-45, -25, 20), (0, 0, 0)),
-            'forearm_l': ((-90, 0, 0), (0, 0, 0)),
-        }
-    })
-
-    # 11. hit: 0.25s (8 frames) - Flinch, knockback @ frame 0, faster recovery than Quixote
+    # 11. hit: 0.25s (8 frames) - Flinch, knockback @ frame 0. Absorbs
+    # impact into shoulders and sack, fast recovery - practical, not dramatic.
     actions['hit'] = create_character_action(arm_obj, 'hit', 8, {
         0: { # Knockback frame 0
-            'hips': ((-15, 0, 0), (0, -0.22, 0.0)),
-            'spine': ((-18, 0, 0), (0, 0, 0)),
-            'chest': ((-20, 0, 0), (0, 0, 0)),
-            'head': ((15, 0, 0), (0, 0, 0)),
-        },
-        3: { # Recoil into sack
-            'hips': ((-18, 0, 0), (0, -0.26, -0.02)),
+            'hips': ((-18, 0, 0), (0, -0.28, 0.0)),
             'spine': ((-22, 0, 0), (0, 0, 0)),
+            'chest': ((-25, 0, 0), (0, 0, 0)),
             'head': ((18, 0, 0), (0, 0, 0)),
         },
+        3: { # Recoil into sack
+            'hips': ((-22, 0, 0), (0, -0.32, -0.04)),
+            'spine': ((-26, 0, 0), (0, 0, 0)),
+            'head': ((22, 0, 0), (0, 0, 0)),
+        },
         8: { # Snaps right back to low stance
-            'hips': ((6, 0, 0), (0, 0, -0.04)),
-            'spine': ((8, 0, 0), (0, 0, 0)),
-            'head': ((-6, 0, 0), (0, 0, 0)),
+            'hips': ((8, 0, 0), (0, 0, -0.06)),
+            'spine': ((10, 0, 0), (0, 0, 0)),
+            'head': ((-8, 0, 0), (0, 0, 0)),
         }
     })
 
-    # 12. stagger: 1.5s (45 frames) - Poise break: knocked backward onto backside, sack weighs him down
+    # 12. stagger: 1.5s (45 frames) - Poise break: knocked onto backside,
+    # weighed down by sack, scrambling up like a man who has fallen off
+    # his horse.
     actions['stagger'] = create_character_action(arm_obj, 'stagger', 45, {
         0: {
             'hips': ((-15, 0, 0), (0, 0, 0)),
             'spine': ((-18, 0, 0), (0, 0, 0)),
         },
         8: { # Knocked onto backside
-            'hips': ((-45, 0, 0), (0, -0.35, -0.42)),
-            'spine': ((-25, 0, 0), (0, 0, 0)),
-            'chest': ((-20, 0, 0), (0, 0, 0)),
-            'thigh_l': ((-25, 0, 0), (0, 0, 0)),
-            'thigh_r': ((-25, 0, 0), (0, 0, 0)),
+            'hips': ((-48, 0, 0), (0, -0.40, -0.48)),
+            'spine': ((-28, 0, 0), (0, 0, 0)),
+            'chest': ((-22, 0, 0), (0, 0, 0)),
+            'head': ((-10, 0, 0), (0, 0, 0)),
+            'thigh_l': ((-28, 0, 0), (0, 0, 0)),
+            'thigh_r': ((-28, 0, 0), (0, 0, 0)),
         },
-        22: { # Heavy groaning on ground, rolling forward
-            'hips': ((20, 0, 0), (0, -0.20, -0.38)),
-            'spine': ((30, 0, 0), (0, 0, 0)),
-            'head': ((20, 0, 0), (0, 0, 0)),
+        22: { # Heavy groaning on ground, sack pinning him
+            'hips': ((22, 0, 0), (0, -0.25, -0.42)),
+            'spine': ((32, 0, 0), (0, 0, 0)),
+            'head': ((22, 0, 0), (0, 0, 0)),
         },
         35: { # Scrambling onto knees
-            'hips': ((25, 0, 0), (0, -0.08, -0.20)),
-            'thigh_l': ((55, 0, 0), (0, 0, 0)),
-            'shin_l': ((65, 0, 0), (0, 0, 0)),
+            'hips': ((28, 0, 0), (0, -0.12, -0.25)),
+            'thigh_l': ((60, 0, 0), (0, 0, 0)),
+            'shin_l': ((70, 0, 0), (0, 0, 0)),
         },
         45: { # Recovered
-            'hips': ((6, 0, 0), (0, 0, -0.04)),
-            'spine': ((8, 0, 0), (0, 0, 0)),
-            'thigh_l': ((8, -8, 0), (0, 0, 0)),
+            'hips': ((8, 0, 0), (0, 0, -0.06)),
+            'spine': ((10, 0, 0), (0, 0, 0)),
+            'thigh_l': ((10, -10, 0), (0, 0, 0)),
             'shin_l': ((0, 0, 0), (0, 0, 0)),
-            'thigh_r': ((8, 8, 0), (0, 0, 0)),
+            'thigh_r': ((10, 10, 0), (0, 0, 0)),
             'shin_r': ((0, 0, 0), (0, 0, 0)),
         }
     })
 
-    # 13. death: 1.2s (36 frames) - Heavy fall under sack's weight
+    # 13. death: 1.2s (36 frames) - Collapses heavily sideways under sack
+    # weight, limp. Not a noble fall, just down.
     actions['death'] = create_character_action(arm_obj, 'death', 36, {
         0: {
             'hips': ((0, 0, 0), (0, 0, 0)),
         },
         12: {
-            'hips': ((-35, 10, 0), (0, -0.2, -0.25)),
-            'spine': ((-20, 10, 0), (0, 0, 0)),
+            'hips': ((-38, 12, 0), (0, -0.25, -0.30)),
+            'spine': ((-22, 12, 0), (0, 0, 0)),
         },
         24: {
-            'hips': ((-85, 20, 0), (0, -0.4, -0.70)),
-            'spine': ((-10, 10, 0), (0, 0, 0)),
-            'thigh_l': ((30, 0, 0), (0, 0, 0)),
-            'thigh_r': ((40, 0, 0), (0, 0, 0)),
+            'hips': ((-88, 22, 0), (0, -0.45, -0.75)),
+            'spine': ((-12, 12, 0), (0, 0, 0)),
+            'thigh_l': ((32, 0, 0), (0, 0, 0)),
+            'thigh_r': ((42, 0, 0), (0, 0, 0)),
         },
         36: {
-            'hips': ((-90, 20, 0), (0, -0.42, -0.72)),
+            'hips': ((-90, 22, 0), (0, -0.48, -0.78)),
             'spine': ((0, 0, 0), (0, 0, 0)),
         }
     })
 
-    # 14. interact: 1.2s (36 frames) - Practical crouch examination
+    # 14. interact: 1.2s (36 frames) - Practical examination: squints,
+    # squats low, inspects by poking forward. Hands-on, not scholarly.
     actions['interact'] = create_character_action(arm_obj, 'interact', 36, {
         0: {
-            'hips': ((6, 0, 0), (0, 0, -0.04)),
+            'hips': ((8, 0, 0), (0, 0, -0.06)),
         },
         12: { # Squatting down low, inspecting with hands
-            'hips': ((35, 0, 0), (0, 0.1, -0.32)),
-            'spine': ((25, 0, 0), (0, 0, 0)),
-            'chest': ((20, 0, 0), (0, 0, 0)),
-            'head': ((-15, 0, 0), (0, 0, 0)),
-            'thigh_l': ((65, 0, 0), (0, 0, 0)),
-            'shin_l': ((75, 0, 0), (0, 0, 0)),
-            'thigh_r': ((65, 0, 0), (0, 0, 0)),
-            'shin_r': ((75, 0, 0), (0, 0, 0)),
-            'upperarm_r': ((-35, 0, 0), (0, 0, 0)),
-            'forearm_r': ((-30, 0, 0), (0, 0, 0)),
+            'hips': ((38, 0, 0), (0, 0.12, -0.38)),
+            'spine': ((28, 0, 0), (0, 0, 0)),
+            'chest': ((22, 0, 0), (0, 0, 0)),
+            'head': ((-18, 0, 0), (0, 0, 0)),
+            'thigh_l': ((70, 0, 0), (0, 0, 0)),
+            'shin_l': ((80, 0, 0), (0, 0, 0)),
+            'thigh_r': ((70, 0, 0), (0, 0, 0)),
+            'shin_r': ((80, 0, 0), (0, 0, 0)),
+            'upperarm_r': ((-40, 0, 0), (0, 0, 0)),
+            'forearm_r': ((-35, 0, 0), (0, 0, 0)),
         },
         24: { # Poking forward curiously
-            'hips': ((35, 0, 0), (0, 0.1, -0.32)),
-            'upperarm_r': ((-45, 0, 0), (0, 0, 0)),
-            'forearm_r': ((-15, 0, 0), (0, 0, 0)),
+            'hips': ((38, 0, 0), (0, 0.12, -0.38)),
+            'upperarm_r': ((-50, 0, 0), (0, 0, 0)),
+            'forearm_r': ((-20, 0, 0), (0, 0, 0)),
         },
         36: { # Back upright
-            'hips': ((6, 0, 0), (0, 0, -0.04)),
-            'spine': ((8, 0, 0), (0, 0, 0)),
-            'thigh_l': ((8, -8, 0), (0, 0, 0)),
+            'hips': ((8, 0, 0), (0, 0, -0.06)),
+            'spine': ((10, 0, 0), (0, 0, 0)),
+            'thigh_l': ((10, -10, 0), (0, 0, 0)),
             'shin_l': ((0, 0, 0), (0, 0, 0)),
-            'thigh_r': ((8, 8, 0), (0, 0, 0)),
+            'thigh_r': ((10, 10, 0), (0, 0, 0)),
             'shin_r': ((0, 0, 0), (0, 0, 0)),
         }
     })
 
-    # 15. desvelar: 0.6s (18 frames) - Forward gesture with sack, strips Book skin for 8s
+    # 15. desvelar: 0.6s (18 frames) - Reaches back to sack strap and
+    # flings arm forward in unveiling gesture. Strips Book skin for 8s.
+    # Practical, like a man throwing something at a target.
     actions['desvelar'] = create_character_action(arm_obj, 'desvelar', 18, {
         0: {
-            'hips': ((6, 0, 0), (0, 0, -0.04)),
-            'spine': ((8, 0, 0), (0, 0, 0)),
+            'hips': ((8, 0, 0), (0, 0, -0.06)),
+            'spine': ((10, 0, 0), (0, 0, 0)),
         },
         5: { # Reaching back to grab sack strap
-            'hips': ((-5, 15, 0), (0, 0, -0.02)),
-            'spine': ((-5, 20, 0), (0, 0, 0)),
-            'chest': ((-5, 25, 0), (0, 0, 0)),
-            'upperarm_l': ((35, -25, -25), (0, 0, 0)),
-            'forearm_l': ((-85, 0, 0), (0, 0, 0)),
+            'hips': ((-8, 18, 0), (0, 0, -0.04)),
+            'spine': ((-8, 22, 0), (0, 0, 0)),
+            'chest': ((-8, 28, 0), (0, 0, 0)),
+            'upperarm_l': ((40, -30, -30), (0, 0, 0)),  # reaching back to sack
+            'forearm_l': ((-90, 0, 0), (0, 0, 0)),
         },
         9: { # Forward throwing / unveiling motion
-            'hips': ((15, -20, 0), (0, 0.15, -0.06)),
-            'spine': ((22, -25, 0), (0, 0, 0)),
-            'chest': ((25, -30, 0), (0, 0, 0)),
-            'upperarm_l': ((-75, -25, 30), (0, 0, 0)), # fling arm forward
-            'forearm_l': ((-15, 0, 0), (0, 0, 0)),
+            'hips': ((18, -24, 0), (0, 0.18, -0.08)),  # weight into throw
+            'spine': ((25, -28, 0), (0, 0, 0)),
+            'chest': ((28, -32, 0), (0, 0, 0)),
+            'head': ((-5, 0, 0), (0, 0, 0)),  # watching the throw
+            'upperarm_l': ((-80, -30, 35), (0, 0, 0)),  # fling arm forward
+            'forearm_l': ((-20, 0, 0), (0, 0, 0)),
         },
         18: { # Return to stance
-            'hips': ((6, 0, 0), (0, 0, -0.04)),
-            'spine': ((8, 0, 0), (0, 0, 0)),
-            'chest': ((4, 0, 0), (0, 0, 0)),
-            'upperarm_l': ((-10, -15, 0), (0, 0, 0)),
-            'forearm_l': ((-55, 0, 0), (0, 0, 0)),
+            'hips': ((8, 0, 0), (0, 0, -0.06)),
+            'spine': ((10, 0, 0), (0, 0, 0)),
+            'chest': ((6, 0, 0), (0, 0, 0)),
+            'upperarm_l': ((-12, -20, 0), (0, 0, 0)),
+            'forearm_l': ((-60, 0, 0), (0, 0, 0)),
         }
     })
 
