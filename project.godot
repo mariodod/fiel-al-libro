@@ -233,3 +233,11 @@ layer_blend_speed={
 "type": "float",
 "value": 1.0
 }
+
+[export]
+presets=PackedStringArray("Windows Desktop")
+
+[export/presets/Windows Desktop]
+name="Windows Desktop"
+platform="Windows Desktop"
+features=PackedStringArray()
