@@ -117,7 +117,7 @@ static func spotted_count() -> int:
 
 ## Save / load ─────────────────────────────────────────────────────────
 
-func save_state() -> Dictionary:
+static func save_state() -> Dictionary:
 	return {
 		"spotted": _spotted,
 		"resolved": _resolved,
@@ -126,7 +126,7 @@ func save_state() -> Dictionary:
 	}
 
 
-func load_state(data: Dictionary) -> void:
+static func load_state(data: Dictionary) -> void:
 	_spotted = data.get("spotted", {})
 	_resolved = data.get("resolved", {})
 	_evidence = data.get("evidence", {})
