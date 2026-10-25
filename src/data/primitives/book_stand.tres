@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="TruthObjectData" load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://src/data/truth_object_data.gd" id="1_data"]
+[ext_resource type="Script" path="res://src/data/truth_face.gd" id="2_face"]
+
+[sub_resource type="Resource" id="RealityFace"]
+script = ExtResource("2_face")
+name_key = &"ui.object.book_stand"
+description_key = &"ui.face.book_stand.reality.desc"
+
+[sub_resource type="Resource" id="BookFace"]
+script = ExtResource("2_face")
+name_key = &"ui.object.book_stand"
+description_key = &"ui.face.book_stand.book.desc"
+
+[resource]
+script = ExtResource("1_data")
+id = &"book_stand"
+display_name_key = &"ui.object.book_stand"
+reality_face = SubResource("RealityFace")
+book_face = SubResource("BookFace")
+tag_height = 1.2
+anamorphosis_id = &"book_stand_pages"
+anamorphosis_tell_key = &"ui.anamorphosis.book_stand_pages.tell"
+anamorphosis_evidence = 1

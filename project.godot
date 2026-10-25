@@ -31,6 +31,7 @@ Memoria="*res://src/autoload/memoria.gd"
 Biblioteca="*res://src/autoload/biblioteca.gd"
 Manuscrito="*res://src/autoload/manuscrito.gd"
 AudioDirector="*res://src/autoload/audio_director.gd"
+Lectura="*res://src/autoload/lectura.gd"
 
 [debug]
 

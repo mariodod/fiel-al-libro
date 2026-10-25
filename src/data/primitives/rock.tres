@@ -29,3 +29,6 @@ reality_face = SubResource("RealityFace")
 book_face = SubResource("BookFace")
 book_form_hovers = true
 tag_height = 3.4
+anamorphosis_id = &"rock_weight"
+anamorphosis_tell_key = &"ui.anamorphosis.rock_weight.tell"
+anamorphosis_evidence = 1

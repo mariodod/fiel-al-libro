@@ -1025,3 +1025,27 @@ msgstr "Les Falaises de Medinaceli"
 #. TRANSLATORS: The name of Region V: El Castillo del Duque.
 msgid "ui.region.el_castillo_del_duque.name"
 msgstr "Le Château du Duc"
+
+#. TRANSLATORS: The book stand in the yard: how it is called.
+msgid "ui.object.book_stand"
+msgstr "Le pupitre"
+
+#. TRANSLATORS: The book stand in the Reality truth: how it looks.
+msgid "ui.face.book_stand.reality.desc"
+msgstr "Un simple pupitre en bois, tenant quelques pages libres."
+
+#. TRANSLATORS: The book stand in the Book truth: how it looks.
+msgid "ui.face.book_stand.book.desc"
+msgstr "Un pupitre tenant un livre ouvert, dont les pages voltigent sans vent."
+
+#. TRANSLATORS: The rock's anamorphosis tell: the detail that does not add up.
+msgid "ui.anamorphosis.rock_weight.tell"
+msgstr "La pierre est bien plus lourde qu'une pierre de sa taille ne devrait l'être."
+
+#. TRANSLATORS: The windmill's anamorphosis tell: the detail that does not add up.
+msgid "ui.anamorphosis.windmill_sails.tell"
+msgstr "Les ailes bougent avec intention, comme si elles étaient des bras."
+
+#. TRANSLATORS: The book stand's anamorphosis tell: the detail that does not add up.
+msgid "ui.anamorphosis.book_stand_pages.tell"
+msgstr "Les pages se tournent toutes seules, bien qu'il n'y ait pas de brise."

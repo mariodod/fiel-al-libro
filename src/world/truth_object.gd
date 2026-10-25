@@ -147,6 +147,27 @@ func current_layer() -> int:
 	return 1 if _blend >= 0.5 else 0
 
 
+## Whether this object has an anamorphosis: a hidden detail visible only
+## in Lectura mode.
+func has_anamorphosis() -> bool:
+	return data != null and not data.anamorphosis_id.is_empty()
+
+
+## The id of this object's anamorphosis, or empty if none.
+func anamorphosis_id() -> StringName:
+	return data.anamorphosis_id if data != null else &""
+
+
+## Resolve this object's anamorphosis, if it has one.
+##
+## Returns the evidence gained, or 0 if there is no anamorphosis or it
+## was already resolved.
+func resolve_anamorphosis() -> int:
+	if data == null or data.anamorphosis_id.is_empty():
+		return 0
+	return Lectura.resolve(data.anamorphosis_id, data.anamorphosis_evidence)
+
+
 ## The text of the floating tag.
 func tag_text() -> String:
 	if _tag == null:

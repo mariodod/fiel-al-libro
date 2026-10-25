@@ -26,3 +26,6 @@ book_form = ExtResource("4_book")
 reality_face = SubResource("RealityFace")
 book_face = SubResource("BookFace")
 tag_height = 11.5
+anamorphosis_id = &"windmill_sails"
+anamorphosis_tell_key = &"ui.anamorphosis.windmill_sails.tell"
+anamorphosis_evidence = 1

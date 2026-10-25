@@ -35,6 +35,19 @@ extends Resource
 ## lives: the Book face of the rock is a book, heavier than a book.
 @export var book_face: TruthFace
 
+@export_group("Anamorphosis")
+## The id of the anamorphosis hidden in this object, if any.
+##
+## An anamorphosis is a detail that does not add up — visible only in
+## Lectura mode. The rock weighs more than it should; the windmill's
+## sails move like arms. Spotting it is the first step of Lectura.
+@export var anamorphosis_id: StringName = &""
+## The locale key for the tell of this anamorphosis: the detail that
+## does not add up, shown when the player spots it in Lectura mode.
+@export var anamorphosis_tell_key: StringName = &""
+## How much evidence resolving this anamorphosis grants.
+@export var anamorphosis_evidence: int = 1
+
 
 ## The face for a truth layer: what it is called, and what it looks like.
 func face_for(layer: int) -> TruthFace:

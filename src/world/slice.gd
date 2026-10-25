@@ -139,10 +139,9 @@ const LOCURA_LOST := 60.0
 
 
 func _ready() -> void:
-	_objects = [windmill, rock]
-
 	_build_environment()
 	_build_yard()
+	_objects = [windmill, rock]
 	_build_era()
 	_build_characters()
 	_build_post_process()

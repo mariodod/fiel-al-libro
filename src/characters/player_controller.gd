@@ -62,7 +62,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif event.is_action_pressed(&"lock_on"):
 		_toggle_lock()
 	elif event.is_action_pressed(&"lectura"):
-		EventBus.lectura_entered.emit()
+		Lectura.toggle()
 	elif event.is_action_pressed(&"interact"):
 		_examine()
 

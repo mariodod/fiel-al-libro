@@ -1021,3 +1021,27 @@ msgstr "Los Riscos de Medinaceli"
 #. TRANSLATORS: The name of Region V: El Castillo del Duque.
 msgid "ui.region.el_castillo_del_duque.name"
 msgstr "El Castillo del Duque"
+
+#. TRANSLATORS: The book stand in the yard: how it is called.
+msgid "ui.object.book_stand"
+msgstr "El atril del libro"
+
+#. TRANSLATORS: The book stand in the Reality truth: how it looks.
+msgid "ui.face.book_stand.reality.desc"
+msgstr "Un simple atril de madera, con algunas hojas sueltas."
+
+#. TRANSLATORS: The book stand in the Book truth: how it looks.
+msgid "ui.face.book_stand.book.desc"
+msgstr "Un atril que sostiene un libro abierto, cuyas páginas revolotean sin viento."
+
+#. TRANSLATORS: The rock's anamorphosis tell: the detail that does not add up.
+msgid "ui.anamorphosis.rock_weight.tell"
+msgstr "La roca es mucho más pesada de lo que debería ser una piedra de su tamaño."
+
+#. TRANSLATORS: The windmill's anamorphosis tell: the detail that does not add up.
+msgid "ui.anamorphosis.windmill_sails.tell"
+msgstr "Las aspas se mueven con intención, como si fueran brazos."
+
+#. TRANSLATORS: The book stand's anamorphosis tell: the detail that does not add up.
+msgid "ui.anamorphosis.book_stand_pages.tell"
+msgstr "Las páginas se solas, aunque no hay brisa."
