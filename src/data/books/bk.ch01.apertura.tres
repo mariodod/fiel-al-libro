@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="BookData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/data/book_data.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"bk.ch01.apertura"
+display_name_key = &"ui.book.bk.ch01.apertura.name"
+description_key = &"ui.book.bk.ch01.apertura.desc"
+author = &"Miguel de Cervantes"
+year = &"1605"
+passive_id = &"passive.opening_keen"
+passive_name_key = &"ui.book.bk.ch01.apertura.passive.name"
+passive_description_key = &"ui.book.bk.ch01.apertura.passive.desc"
+manifesto_fragment = &"bk.ch01.apertura"
+codex_note_key = &"ui.book.bk.ch01.apertura.codex"

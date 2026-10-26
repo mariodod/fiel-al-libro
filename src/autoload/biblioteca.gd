@@ -19,6 +19,18 @@ var equipped: Array[StringName] = []
 var _registry: Dictionary = {}
 
 
+func _ready() -> void:
+    var dir = DirAccess.open("res://src/data/books/")
+    if dir == null:
+        push_warning("[Biblioteca] Could not open res://src/data/books/")
+        return
+    for file_name in dir.get_files():
+        if file_name.ends_with(".tres"):
+            var res = load("res://src/data/books/" + file_name)
+            if res is BookData:
+                register(res)
+
+
 func register(book: Resource) -> void:
 	if book == null:
 		return
