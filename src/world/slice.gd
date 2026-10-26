@@ -1,5 +1,4 @@
 extends Node3D
-const HealthBar := preload("res://src/ui/health_bar.gd")
 ## THE GREY BOX — the cheapest possible test of the core idea, and then
 ## the cheapest possible test of the dodge.
 ##

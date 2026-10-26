@@ -1,7 +1,7 @@
 class_name HealthBar
 extends Node2D
 
-var target: Node3D = null
+@export var target: Node3D = null
 @export var lift: float = 3.0
 @export var width: float = 1.5
 
