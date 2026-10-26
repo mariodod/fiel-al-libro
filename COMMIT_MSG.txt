@@ -1,9 +1,0 @@
-Add Biblioteca auto-discovery and book resources
-
-Add Biblioteca auto-discovery for book .tres resources:
-- 5 book resources based on Manifiesto fragments
-- Biblioteca auto-discovers and registers .tres files on startup
-- Add book title keys to messages.pot and locale files
-- Add Verdict key binding (V key) to project.godot and setup_input_map.gd
-
-24 suites, 756 assertions pass (test_venture.gd has pre-existing HealthBar load issue)

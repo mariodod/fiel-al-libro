@@ -49,7 +49,7 @@ func suite(t: TestHarness) -> void:
 	t.expect_eq(Lectura.total_evidence(), 2, "total evidence is 2")
 
 	t.test("resolve is idempotent")
-	gained := Lectura.resolve(&"rock_weight", 2)
+	gained = Lectura.resolve(&"rock_weight", 2)
 	t.expect_eq(gained, 0, "already resolved, grants nothing")
 	t.expect_eq(Lectura.total_evidence(), 2, "total evidence unchanged")
 
@@ -60,11 +60,9 @@ func suite(t: TestHarness) -> void:
 	t.expect_eq(Lectura.resolved_count(), 3, "three resolved")
 
 	t.test("has_enough_for_verdict tracks the threshold")
-	# total_evidence is 4 here, threshold is 3
 	t.expect_true(Lectura.has_enough_for_verdict(), "4 >= 3, enough for verdict")
 
 	t.test("default evidence per anamorphosis is 1")
-	# Spot and resolve a fresh one with default evidence
 	Lectura.spot(&"fresh_anamorphosis")
 	var default_gained := Lectura.resolve(&"fresh_anamorphosis")
 	t.expect_eq(default_gained, 1, "default evidence is 1")

@@ -65,7 +65,7 @@ var _map_screen: MapScreen = null
 @onready var windmill: TruthObject = $Windmill
 @onready var rock: TruthObject = $Rock
 ## The Venture of Montiel, in the era to the south.
-@onready var venture: Venture = $Venture
+var venture: Venture = null
 
 ## The practice yard: a bounded space with something in it to fight.
 ##
@@ -144,6 +144,10 @@ func _ready() -> void:
 	_objects = [windmill, rock]
 	_build_era()
 	_build_characters()
+	venture = $Venture
+	# The Venture's bar. It is a big thing and it is a long way off, so
+	# its bar is high and wide.
+	_add_bar(venture, 11.0, 2.8)
 	_build_post_process()
 	_build_examine_panel()
 	_build_bark_line()
@@ -290,11 +294,6 @@ func _build_era() -> void:
 			ERA_CENTER + direction * ERA_RADIUS,
 			Vector3(chord, ERA_WALL_HEIGHT, WALL_THICKNESS),
 			angle)
-
-	# The Venture's bar. It is a big thing and it is a long way off, so
-	# its bar is high and wide.
-	_add_bar(venture, 11.0, 2.8)
-
 
 ## One wall: a box you cannot walk through.
 func _add_wall(parent: Node3D, position: Vector3, size: Vector3, yaw: float = 0.0) -> void:
