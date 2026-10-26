@@ -780,6 +780,19 @@ func _on_ability_used(character_id: StringName, ability_id: StringName) -> void:
 	var ability := caster.ability_data(ability_id)
 	var duration := ability.duration if ability != null else 8.0
 	target.reveal(duration)
+	# VFX: flash the target when Desvelar strips its Book skin
+	var flash := ColorRect.new()
+	flash.color = Color(1.0, 1.0, 1.0, 0.6)
+	flash.custom_minimum_size = Vector2(300, 300)
+	flash.position = get_viewport().get_rect().size / 2 - Vector2(150, 150)
+	add_child(flash)
+	var t := Timer.new()
+	t.wait_time = 0.4
+	t.one_shot = true
+	t.timeout.connect(func():
+		flash.queue_free())
+	add_child(t)
+	t.start()
 	EventBus.character_spoke.emit(character_id, Chatter.key_for(character_id, &"desvelar"), [])
 
 
