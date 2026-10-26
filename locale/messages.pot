@@ -1125,3 +1125,103 @@ msgstr ""
 #. TRANSLATORS: The book stand's anamorphosis tell: the detail that does not add up.
 msgid "ui.anamorphosis.book_stand_pages.tell"
 msgstr ""
+
+#. TRANSLATORS: Book title: bk.ch01.apertura
+msgid "ui.book.bk.ch01.apertura.name"
+msgstr ""
+
+#. TRANSLATORS: Book description: bk.ch01.apertura
+msgid "ui.book.bk.ch01.apertura.desc"
+msgstr ""
+
+#. TRANSLATORS: Book passive title: bk.ch01.apertura
+msgid "ui.book.bk.ch01.apertura.passive.name"
+msgstr ""
+
+#. TRANSLATORS: Book passive description: bk.ch01.apertura
+msgid "ui.book.bk.ch01.apertura.passive.desc"
+msgstr ""
+
+#. TRANSLATORS: Book codex note: bk.ch01.apertura
+msgid "ui.book.bk.ch01.apertura.codex"
+msgstr ""
+
+#. TRANSLATORS: Book title: bk.ch01.molinos.01
+msgid "ui.book.bk.ch01.molinos.01.name"
+msgstr ""
+
+#. TRANSLATORS: Book description: bk.ch01.molinos.01
+msgid "ui.book.bk.ch01.molinos.01.desc"
+msgstr ""
+
+#. TRANSLATORS: Book passive title: bk.ch01.molinos.01
+msgid "ui.book.bk.ch01.molinos.01.passive.name"
+msgstr ""
+
+#. TRANSLATORS: Book passive description: bk.ch01.molinos.01
+msgid "ui.book.bk.ch01.molinos.01.passive.desc"
+msgstr ""
+
+#. TRANSLATORS: Book codex note: bk.ch01.molinos.01
+msgid "ui.book.bk.ch01.molinos.01.codex"
+msgstr ""
+
+#. TRANSLATORS: Book title: bk.ch01.nombre.01
+msgid "ui.book.bk.ch01.nombre.01.name"
+msgstr ""
+
+#. TRANSLATORS: Book description: bk.ch01.nombre.01
+msgid "ui.book.bk.ch01.nombre.01.desc"
+msgstr ""
+
+#. TRANSLATORS: Book passive title: bk.ch01.nombre.01
+msgid "ui.book.bk.ch01.nombre.01.passive.name"
+msgstr ""
+
+#. TRANSLATORS: Book passive description: bk.ch01.nombre.01
+msgid "ui.book.bk.ch01.nombre.01.passive.desc"
+msgstr ""
+
+#. TRANSLATORS: Book codex note: bk.ch01.nombre.01
+msgid "ui.book.bk.ch01.nombre.01.codex"
+msgstr ""
+
+#. TRANSLATORS: Book title: bk.ch02.caballeros.01
+msgid "ui.book.bk.ch02.caballeros.01.name"
+msgstr ""
+
+#. TRANSLATORS: Book description: bk.ch02.caballeros.01
+msgid "ui.book.bk.ch02.caballeros.01.desc"
+msgstr ""
+
+#. TRANSLATORS: Book passive title: bk.ch02.caballeros.01
+msgid "ui.book.bk.ch02.caballeros.01.passive.name"
+msgstr ""
+
+#. TRANSLATORS: Book passive description: bk.ch02.caballeros.01
+msgid "ui.book.bk.ch02.caballeros.01.passive.desc"
+msgstr ""
+
+#. TRANSLATORS: Book codex note: bk.ch02.caballeros.01
+msgid "ui.book.bk.ch02.caballeros.01.codex"
+msgstr ""
+
+#. TRANSLATORS: Book title: bk.ch04.rocinante.01
+msgid "ui.book.bk.ch04.rocinante.01.name"
+msgstr ""
+
+#. TRANSLATORS: Book description: bk.ch04.rocinante.01
+msgid "ui.book.bk.ch04.rocinante.01.desc"
+msgstr ""
+
+#. TRANSLATORS: Book passive title: bk.ch04.rocinante.01
+msgid "ui.book.bk.ch04.rocinante.01.passive.name"
+msgstr ""
+
+#. TRANSLATORS: Book passive description: bk.ch04.rocinante.01
+msgid "ui.book.bk.ch04.rocinante.01.passive.desc"
+msgstr ""
+
+#. TRANSLATORS: Book codex note: bk.ch04.rocinante.01
+msgid "ui.book.bk.ch04.rocinante.01.codex"
+msgstr ""

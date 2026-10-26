@@ -26,7 +26,7 @@ const KEY_BINDINGS := {
 	"toggle_truth": [KEY_T],
 	"toggle_second_sight": [KEY_B],
 	"toggle_madness": [KEY_L],
-	"toggle_verdict": [KEY_V],
+	"toggle_verdict": [KEY_N],
 	"toggle_help": [KEY_F1],
 	"toggle_tags": [KEY_F2],
 	"toggle_hud": [KEY_H],

@@ -148,6 +148,7 @@ func _ready() -> void:
 	_build_examine_panel()
 	_build_bark_line()
 	_build_lock_marker()
+	_build_shelf()
 
 	EventBus.character_switched.connect(_on_character_switched)
 	EventBus.character_died.connect(_on_character_died)
@@ -369,6 +370,22 @@ func _build_bark_line() -> void:
 	layer.add_child(bark)
 
 
+## The Biblioteca shelf UI: shows collected and equipped books.
+##
+## Opens with the Shelf key (I). Lists all collected books and lets the
+## player equip up to five. Equipped books grant passive abilities.
+func _build_shelf() -> void:
+	var layer := CanvasLayer.new()
+	layer.name = "ShelfLayer"
+	layer.layer = 25
+	add_child(layer)
+
+	var shelf := Control.new()
+	shelf.name = "ShelfUI"
+	shelf.set_script(load("res://src/ui/biblioteca_shelf.gd"))
+	layer.add_child(shelf)
+
+
 ## The marker over the locked target.
 ##
 ## A soft lock you cannot see is not a lock. The marker says what you
@@ -450,6 +467,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		_show_hud = not _show_hud
 		if hud != null:
 			hud.visible = _show_hud
+	elif event.is_action_pressed(&"shelf"):
+		_toggle_shelf()
 	elif event.is_action_pressed(&"reset_dummy"):
 		_reset_yard()
 	elif event.is_action_pressed(&"toggle_map"):
@@ -464,6 +483,23 @@ func _toggle_map() -> void:
 	else:
 		_map_screen = _map_screen_scene.instantiate()
 		add_child(_map_screen)
+
+
+## Open or close the Biblioteca shelf: shows collected and equipped books.
+func _toggle_shelf() -> void:
+	# Find the existing shelf UI
+	var shelf := get_node_or_null("ShelfLayer")
+	if shelf != null:
+		shelf.queue_free()
+	else:
+		var layer := CanvasLayer.new()
+		layer.name = "ShelfLayer"
+		layer.layer = 25
+		var ui := Control.new()
+		ui.name = "ShelfUI"
+		ui.set_script(load("res://src/ui/biblioteca_shelf.gd"))
+		layer.add_child(ui)
+		add_child(layer)
 
 
 ## Put the yard back: the dummy stands up, and anyone who fell gets up.

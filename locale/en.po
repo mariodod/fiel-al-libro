@@ -1027,3 +1027,103 @@ msgstr "The sails move with purpose, as if they were arms."
 #. TRANSLATORS: The book stand's anamorphosis tell: the detail that does not add up.
 msgid "ui.anamorphosis.book_stand_pages.tell"
 msgstr "The pages turn themselves, though there is no breeze."
+
+#. TRANSLATORS: Book title: bk.ch01.apertura
+msgid "ui.book.bk.ch01.apertura.name"
+msgstr "The Opening"
+
+#. TRANSLATORS: Book description: bk.ch01.apertura
+msgid "ui.book.bk.ch01.apertura.desc"
+msgstr "In a place in La Mancha..."
+
+#. TRANSLATORS: Book passive title: bk.ch01.apertura
+msgid "ui.book.bk.ch01.apertura.passive.name"
+msgstr "Opening Keen"
+
+#. TRANSLATORS: Book passive description: bk.ch01.apertura
+msgid "ui.book.bk.ch01.apertura.passive.desc"
+msgstr "Keen eyes read more."
+
+#. TRANSLATORS: Book codex note: bk.ch01.apertura
+msgid "ui.book.bk.ch01.apertura.codex"
+msgstr "The famous opening of Don Quixote."
+
+#. TRANSLATORS: Book title: bk.ch01.molinos.01
+msgid "ui.book.bk.ch01.molinos.01.name"
+msgstr "The Windmills"
+
+#. TRANSLATORS: Book description: bk.ch01.molinos.01
+msgid "ui.book.bk.ch01.molinos.01.desc"
+msgstr "Fortune guides our affairs..."
+
+#. TRANSLATORS: Book passive title: bk.ch01.molinos.01
+msgid "ui.book.bk.ch01.molinos.01.passive.name"
+msgstr "Windmill Sight"
+
+#. TRANSLATORS: Book passive description: bk.ch01.molinos.01
+msgid "ui.book.bk.ch01.molinos.01.passive.desc"
+msgstr "See giants in the mills."
+
+#. TRANSLATORS: Book codex note: bk.ch01.molinos.01
+msgid "ui.book.bk.ch01.molinos.01.codex"
+msgstr "The windmill episode of chapter VIII."
+
+#. TRANSLATORS: Book title: bk.ch01.nombre.01
+msgid "ui.book.bk.ch01.nombre.01.name"
+msgstr "Quixote's Name"
+
+#. TRANSLATORS: Book description: bk.ch01.nombre.01
+msgid "ui.book.bk.ch01.nombre.01.desc"
+msgstr "He was called Quijada or Quesada..."
+
+#. TRANSLATORS: Book passive title: bk.ch01.nombre.01
+msgid "ui.book.bk.ch01.nombre.01.passive.name"
+msgstr "True Name"
+
+#. TRANSLATORS: Book passive description: bk.ch01.nombre.01
+msgid "ui.book.bk.ch01.nombre.01.passive.desc"
+msgstr "Your true name has power."
+
+#. TRANSLATORS: Book codex note: bk.ch01.nombre.01
+msgid "ui.book.bk.ch01.nombre.01.codex"
+msgstr "The naming of Don Quixote."
+
+#. TRANSLATORS: Book title: bk.ch02.caballeros.01
+msgid "ui.book.bk.ch02.caballeros.01.name"
+msgstr "The Knights"
+
+#. TRANSLATORS: Book description: bk.ch02.caballeros.01
+msgid "ui.book.bk.ch02.caballeros.01.desc"
+msgstr "His brains dried up..."
+
+#. TRANSLATORS: Book passive title: bk.ch02.caballeros.01
+msgid "ui.book.bk.ch02.caballeros.01.passive.name"
+msgstr "Knightly Presence"
+
+#. TRANSLATORS: Book passive description: bk.ch02.caballeros.01
+msgid "ui.book.bk.ch02.caballeros.01.passive.desc"
+msgstr "Knightly bearing commands respect."
+
+#. TRANSLATORS: Book codex note: bk.ch02.caballeros.01
+msgid "ui.book.bk.ch02.caballeros.01.codex"
+msgstr "Quixote's descent into madness."
+
+#. TRANSLATORS: Book title: bk.ch04.rocinante.01
+msgid "ui.book.bk.ch04.rocinante.01.name"
+msgstr "Rocinante"
+
+#. TRANSLATORS: Book description: bk.ch04.rocinante.01
+msgid "ui.book.bk.ch04.rocinante.01.desc"
+msgstr "Four days he spent thinking..."
+
+#. TRANSLATORS: Book passive title: bk.ch04.rocinante.01
+msgid "ui.book.bk.ch04.rocinante.01.passive.name"
+msgstr "Rocinante's Spirit"
+
+#. TRANSLATORS: Book passive description: bk.ch04.rocinante.01
+msgid "ui.book.bk.ch04.rocinante.01.passive.desc"
+msgstr "A worthy steed carries you far."
+
+#. TRANSLATORS: Book codex note: bk.ch04.rocinante.01
+msgid "ui.book.bk.ch04.rocinante.01.codex"
+msgstr "The naming of Rocinante."

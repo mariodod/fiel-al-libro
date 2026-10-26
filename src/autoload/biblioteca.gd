@@ -100,6 +100,29 @@ func collected_count() -> int:
 func total_available() -> int:
 	return _registry.size()
 
+func collected() -> Array[StringName]:
+	return collected.duplicate()
+
+func equipped_books() -> Array[StringName]:
+	return equipped.duplicate()
+
+func book_name(id: StringName) -> String:
+	var book := _registry.get(id)
+	if book != null:
+		var key := str(book.get("display_name_key"))
+		if key != "":
+			return key
+	return String(id)
+
+func passive_name(id: StringName) -> String:
+	var book := _registry.get(id)
+	if book != null:
+		var key := str(book.get("passive_name_key"))
+		if key != "":
+			return key
+	return ""
+
+
 
 # ── Save / load ─────────────────────────────────────────────────────────
 

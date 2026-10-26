@@ -14,7 +14,7 @@ func suite(t: TestHarness) -> void:
 	t.expect_has(Biblioteca.equipped, &"tio_andalus", "book should be auto-equipped")
 
 	t.test("collecting the same book twice does nothing")
-	var count := Biblioteca.collected_count()
+	var count: int := Biblioteca.collected_count()
 	Biblioteca.collect(&"tio_andalus")
 	t.expect_eq(Biblioteca.collected_count(), count, "no duplicates")
 
@@ -25,7 +25,7 @@ func suite(t: TestHarness) -> void:
 	t.expect_eq(Biblioteca.equipped.size(), 5, "shelf size is five")
 
 	t.test("equipping past the shelf evicts the oldest")
-	var evicted: StringName = Biblioteca.equipped[0]
+	var evicted: StringName := Biblioteca.equipped[0]
 	Biblioteca.collect(&"tirant")
 	Biblioteca.equip(&"tirant")
 	t.expect_not_has(Biblioteca.equipped, evicted, "oldest book should be evicted")
@@ -41,8 +41,8 @@ func suite(t: TestHarness) -> void:
 
 	t.test("save/load round-trips the shelf")
 	var saved: Dictionary = Biblioteca.save_state()
-	var collected_before := Biblioteca.collected_count()
-	var equipped_before := Biblioteca.equipped.duplicate()
+	var collected_before: int := Biblioteca.collected_count()
+	var equipped_before: Array[StringName] := Biblioteca.equipped.duplicate()
 	Biblioteca.collected.clear()
 	Biblioteca.equipped.clear()
 	Biblioteca.load_state(saved)

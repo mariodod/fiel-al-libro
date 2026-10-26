@@ -1,0 +1,99 @@
+#. TRANSLATORS: Book title: bk.ch01.apertura
+msgid "ui.book.bk.ch01.apertura.name"
+msgstr "La Apertura"
+
+#. TRANSLATORS: Book description: bk.ch01.apertura
+msgid "ui.book.bk.ch01.apertura.desc"
+msgstr "En un lugar de la Mancha..."
+
+#. TRANSLATORS: Book passive title: bk.ch01.apertura
+msgid "ui.book.bk.ch01.apertura.passive.name"
+msgstr "Apertura Aguda"
+
+#. TRANSLATORS: Book passive description: bk.ch01.apertura
+msgid "ui.book.bk.ch01.apertura.passive.desc"
+msgstr "Ojos agudos leen más."
+
+#. TRANSLATORS: Book codex note: bk.ch01.apertura
+msgid "ui.book.bk.ch01.apertura.codex"
+msgstr "El famoso comienzo del Quijote."
+
+#. TRANSLATORS: Book title: bk.ch01.molinos.01
+msgid "ui.book.bk.ch01.molinos.01.name"
+msgstr "Los Molinos"
+
+#. TRANSLATORS: Book description: bk.ch01.molinos.01
+msgid "ui.book.bk.ch01.molinos.01.desc"
+msgstr "La fortuna guía nuestros asuntos..."
+
+#. TRANSLATORS: Book passive title: bk.ch01.molinos.01
+msgid "ui.book.bk.ch01.molinos.01.passive.name"
+msgstr "Vista de Molinos"
+
+#. TRANSLATORS: Book passive description: bk.ch01.molinos.01
+msgid "ui.book.bk.ch01.molinos.01.passive.desc"
+msgstr "Ve gigantes en los molinos."
+
+#. TRANSLATORS: Book codex note: bk.ch01.molinos.01
+msgid "ui.book.bk.ch01.molinos.01.codex"
+msgstr "El capítulo de los molinos de cap. VIII."
+
+#. TRANSLATORS: Book title: bk.ch01.nombre.01
+msgid "ui.book.bk.ch01.nombre.01.name"
+msgstr "El Nombre"
+
+#. TRANSLATORS: Book description: bk.ch01.nombre.01
+msgid "ui.book.bk.ch01.nombre.01.desc"
+msgstr "Se llamaba Quijada o Quesada..."
+
+#. TRANSLATORS: Book passive title: bk.ch01.nombre.01
+msgid "ui.book.bk.ch01.nombre.01.passive.name"
+msgstr "Nombre Verdadero"
+
+#. TRANSLATORS: Book passive description: bk.ch01.nombre.01
+msgid "ui.book.bk.ch01.nombre.01.passive.desc"
+msgstr "Tu nombre verdadero tiene poder."
+
+#. TRANSLATORS: Book codex note: bk.ch01.nombre.01
+msgid "ui.book.bk.ch01.nombre.01.codex"
+msgstr "El nombre de Don Quijote."
+
+#. TRANSLATORS: Book title: bk.ch02.caballeros.01
+msgid "ui.book.bk.ch02.caballeros.01.name"
+msgstr "Los Caballeros"
+
+#. TRANSLATORS: Book description: bk.ch02.caballeros.01
+msgid "ui.book.bk.ch02.caballeros.01.desc"
+msgstr "Su desatino pasó las noches enteras..."
+
+#. TRANSLATORS: Book passive title: bk.ch02.caballeros.01
+msgid "ui.book.bk.ch02.caballeros.01.passive.name"
+msgstr "Presencia Caballero"
+
+#. TRANSLATORS: Book passive description: bk.ch02.caballeros.01
+msgid "ui.book.bk.ch02.caballeros.01.passive.desc"
+msgstr "La presencia caballeresca impone respeto."
+
+#. TRANSLATORS: Book codex note: bk.ch02.caballeros.01
+msgid "ui.book.bk.ch02.caballeros.01.codex"
+msgstr "La locura de Quijote."
+
+#. TRANSLATORS: Book title: bk.ch04.rocinante.01
+msgid "ui.book.bk.ch04.rocinante.01.name"
+msgstr "Rocinante"
+
+#. TRANSLATORS: Book description: bk.ch04.rocinante.01
+msgid "ui.book.bk.ch04.rocinante.01.desc"
+msgstr "Cuatro días estuvo pensando..."
+
+#. TRANSLATORS: Book passive title: bk.ch04.rocinante.01
+msgid "ui.book.bk.ch04.rocinante.01.passive.name"
+msgstr "Espíritu de Rocinante"
+
+#. TRANSLATORS: Book passive description: bk.ch04.rocinante.01
+msgid "ui.book.bk.ch04.rocinante.01.passive.desc"
+msgstr "Un corcel digno te lleva lejos."
+
+#. TRANSLATORS: Book codex note: bk.ch04.rocinante.01
+msgid "ui.book.bk.ch04.rocinante.01.codex"
+msgstr "El nombramiento de Rocinante."
