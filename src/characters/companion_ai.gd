@@ -84,6 +84,9 @@ var _idle_index: int = 0
 var _leader_was_locked: bool = false
 ## How long the companion has been standing over the downed player.
 var _revive_timer: float = 0.0
+## How long the companion waits after using Desvelar before fighting again.
+## Gives the player time to switch characters and take over.
+var _desvelar_cooldown: float = 0.0
 
 const BARK_KEYS: Array[StringName] = [
 	&"dia.sancho.bark.001",
@@ -103,6 +106,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if _bark_cooldown > 0.0:
 		_bark_cooldown -= delta
+	if _desvelar_cooldown > 0.0:
+		_desvelar_cooldown = maxf(0.0, _desvelar_cooldown - delta)
 	if pawn == null or leader == null or pawn.is_dead:
 		return
 
@@ -146,6 +151,10 @@ func _process(delta: float) -> void:
 ## squire covers him. The squire is control, not force, and a man who
 ## charges into a fight you did not start is neither.
 func _pick_target() -> void:
+	if _desvelar_cooldown > 0.0:
+		target = null
+		pawn.clear_lock_target()
+		return
 	if _waits_for_the_first_blow():
 		target = null
 		pawn.clear_lock_target()
@@ -272,6 +281,7 @@ func _try_desvelar() -> void:
 	if not pawn.ability(&"desvelar"):
 		return
 	pawn.play_action(&"desvelar")
+	_desvelar_cooldown = 3.0  # Give the player time to switch and take over
 
 
 ## The guard, up or down.

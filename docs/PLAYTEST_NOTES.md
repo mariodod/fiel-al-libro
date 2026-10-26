@@ -146,6 +146,20 @@ has done its job — better now than in month 24.
 | 4 | less interesting when both see the same thing | yes | yes | change of view should be fater when pressing T, it takes too much time |
 | 5 | when quijote goes back to seeing reality some reaction from his side should happen |  |  |  |
 | 6 | Seeing the rock i wanted to interact with it, even more the book i expected to be able to interact with it and read it |  |  |  |
+| 7 | The rock is not solid i can just walk through it |  |  |  |
+| 8 | The health bar of enemies is difficult to distinguish with the background colors, the contrast of the red and the black should be higher |  |  |  |
+| 9 | The stamina bar never shows any change unlike the health bar |  |  |  |
+| 10 | You should be able to help get up your partner if they are down |  |  |  |
+| 11 | The boss can just walk pass walls, like they don't exist for it |  |  |  |
+| 12 | The partner AI should just reveal the truth of a boss once, than it should be the player switching characters |  |  |  |
+| 13 | Pressing multiple keys at the same time crashed the game |  |  |  |
+| 14 |  |  |  |  |
+| 15 |  |  |  |  |
+| 16 |  |  |  |  |
+| 17 |  |  |  |  |
+| 18 |  |  |  |  |
+| 19 |  |  |  |  |
+| 20 |  |  |  |  |
 
 **The stranger's run** (run 18–19), 19 October 2026. Somebody who had never seen the
 game, with the tags off, and nothing explained:

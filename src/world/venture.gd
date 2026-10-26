@@ -125,8 +125,8 @@ func _build_forms() -> void:
 func _build_collider() -> void:
 	var body := StaticBody3D.new()
 	body.name = "Body"
-	body.collision_layer = 5
-	body.collision_mask = 5
+	body.collision_layer = 1  # same layer as walls
+	body.collision_mask = 1   # collides with layer-1 objects (walls, etc.)
 	var collider := CollisionShape3D.new()
 	collider.name = "Shape"
 	var shape := CapsuleShape3D.new()

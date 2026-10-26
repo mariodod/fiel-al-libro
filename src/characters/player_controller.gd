@@ -26,6 +26,12 @@ var _candidate_timer: float = 0.0
 ## The things that can be locked onto, refreshed a few times a second.
 var _lock_candidates: Array[Node] = []
 var _lock_timer: float = 0.0
+## Reviving the downed companion: seconds left before they are up.
+var _revive_timer: float = 0.0
+## How close the player must be to revive the companion.
+const LIFT_DISTANCE := 1.6
+## How long the player must stand still to revive the companion.
+const REVIVE_SECONDS := 1.2
 
 
 ## The group the controller belongs to. A Venture needs to know which
@@ -64,6 +70,13 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif event.is_action_pressed(&"lectura"):
 		Lectura.toggle()
 	elif event.is_action_pressed(&"interact"):
+		# Revive the downed companion if close enough; otherwise examine.
+		if other_pawn != null and other_pawn.is_dead:
+			var to_companion := other_pawn.global_position - active_pawn.global_position
+			to_companion.y = 0.0
+			if to_companion.length() <= LIFT_DISTANCE:
+				_revive_timer = 0.0
+				return
 		_examine()
 
 
@@ -72,6 +85,23 @@ func _process(delta: float) -> void:
 		_swap_cooldown -= delta
 	if active_pawn == null:
 		_set_examine_target(null)
+		return
+
+	# Reviving the downed companion.
+	if _revive_timer > 0.0:
+		if other_pawn == null or not other_pawn.is_dead:
+			_revive_timer = 0.0
+			return
+		var to_companion := other_pawn.global_position - active_pawn.global_position
+		to_companion.y = 0.0
+		if to_companion.length() > LIFT_DISTANCE:
+			_revive_timer = 0.0
+			return
+		_revive_timer += delta
+		if _revive_timer >= REVIVE_SECONDS:
+			_revive_timer = 0.0
+			other_pawn.revive()
+			EventBus.character_spoke.emit(active_pawn.character_id, Chatter.key_for(active_pawn.character_id, &"revive"), [])
 		return
 
 	var direction := Input.get_vector(&"move_left", &"move_right", &"move_forward", &"move_back")

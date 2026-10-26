@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://src/data/truth_object_data.gd" id="1_data"]
 [ext_resource type="Script" path="res://src/data/truth_face.gd" id="2_face"]
-[ext_resource type="PackedScene" path="res://src/world/forms/rock_reality.tscn" id="3_reality"]
-[ext_resource type="PackedScene" path="res://src/world/forms/rock_book.tscn" id="4_book"]
+[ext_resource type="PackedScene" path="res://src/world/forms/rock_reality.tscn" id="rock_reality"]
+[ext_resource type="PackedScene" path="res://src/world/forms/rock_book.tscn" id="rock_book"]
 
 [sub_resource type="Resource" id="RealityFace"]
 script = ExtResource("2_face")
@@ -23,8 +23,8 @@ fragment_id = &"bk.ch01.apertura"
 script = ExtResource("1_data")
 id = &"rock"
 display_name_key = &"ui.object.roca"
-reality_form = ExtResource("3_reality")
-book_form = ExtResource("4_book")
+reality_form = ExtResource("rock_reality")
+book_form = ExtResource("rock_book")
 reality_face = SubResource("RealityFace")
 book_face = SubResource("BookFace")
 book_form_hovers = true

@@ -256,7 +256,7 @@ func _build_yard() -> void:
 func _add_bar(thing: Node, height_above: float, width: float = 1.5) -> void:
 	if thing == null:
 		return
-	var bar := HealthBar.new()
+	var bar = load("res://src/ui/health_bar.gd").new()
 	bar.name = "HealthBar"
 	bar.target = thing
 	bar.lift = height_above
