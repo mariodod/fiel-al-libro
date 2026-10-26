@@ -227,7 +227,8 @@ func suite(t: TestHarness) -> void:
 	for child in scene.get_children():
 		if child.get_class() == "HealthBar":
 			bars += 1
-			if child.get("target") == venture:
+			var hb := child as HealthBar
+			if hb.target == venture:
 				mine += 1
 	t.expect_eq(bars, 3, "the dummy, the straw man and the Venture all have one")
 	t.expect_eq(mine, 1, "and one of them is the Venture's")

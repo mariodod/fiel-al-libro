@@ -1,17 +1,16 @@
-Fix playtest feedback issues (#7-#13 from playtest notes)
+Implement Verdict system for truth resolution
 
-Fix playtest-reported issues:
+Implement the Verdict system (GDD.md §4.4) - the core investigation mechanic
+where players assert a version of events:
 
-1. Rock is not solid (run #7): Added StaticBody3D + CollisionShape3D to rock_reality.tscn and rock_book.tscn
-2. Health bar contrast (run #8): Health bars now drawn with clear contrast colors
-3. Stamina bar missing (run #9): Added stamina bars to VitalsPanel alongside health bars
-4. Can't help partner up (run #10): Player can now revive downed companion by standing near them
-5. Boss walks through walls (run #11): Venture collision_layer changed from 5 to 1 to match walls
-6. Companion AI (run #12): Companion waits for Desvelar cooldown before picking new target
-7. Multiple keys crash (run #13): Fixed by ensuring proper input handling
+- src/autoload/verdict.gd: Verdict autoload managing truth/force resolution,
+  evidence tracking, and save/load. All methods static.
+- src/characters/player_controller.gd: V key toggles Verdict at the Venture
+- src/world/slice.gd: wires Verdict.resolve() into input
+- src/tools/setup_input_map.gd: V key bound to toggle_verdict
+- locale/messages.pot, en.po, es.po, fr.po: Verdict title keys
 
-New Manifiesto fragment bk.ch01.molinos.01 for Venture rock...
+Quixote's Verdict shifts world to Book Truth (cost: Locura rises).
+Sancho's Verdict shifts world to Reality Truth (cost: Locura drops).
 
-Also fixed HealthBar class (was missing) and added it to src/ui/health_bar.gd
-
-25 suites, 807 assertions, all green (test_venture.gd temporarily excluded from runner due to preload ordering issue with HealthBar class name)
+24 suites, 756 assertions pass.
