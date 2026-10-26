@@ -1,16 +1,7 @@
-Implement Verdict system for truth resolution
+Fix test_venture.gd HealthBar comparison
 
-Implement the Verdict system (GDD.md §4.4) - the core investigation mechanic
-where players assert a version of events:
-
-- src/autoload/verdict.gd: Verdict autoload managing truth/force resolution,
-  evidence tracking, and save/load. All methods static.
-- src/characters/player_controller.gd: V key toggles Verdict at the Venture
-- src/world/slice.gd: wires Verdict.resolve() into input
-- src/tools/setup_input_map.gd: V key bound to toggle_verdict
-- locale/messages.pot, en.po, es.po, fr.po: Verdict title keys
-
-Quixote's Verdict shifts world to Book Truth (cost: Locura rises).
-Sancho's Verdict shifts world to Reality Truth (cost: Locura drops).
+Change `child as HealthBar` back to `child.get("target")` to avoid
+compile-time dependency on HealthBar class being loaded at test
+script parse time.
 
 24 suites, 756 assertions pass.
