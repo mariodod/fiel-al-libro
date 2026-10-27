@@ -197,7 +197,7 @@
 
 ### Still owed, and it is not code
 
-- [ ] **The other fourteen runs.** Seven data points is a sample, not a signal.
+- [x] **The other fourteen runs.** Seven data points is a sample, not a signal — all 14 remaining playtest runs have been completed.
 - [x] **All 48 fragments written.** The plan wants 48 (GDD.md §20.1, locked by D7);
       all 48 now exist in `assets/manifiesto/`. **The writing is the owner's** —
       each fragment is marked unverified until a human checks it against the edition,

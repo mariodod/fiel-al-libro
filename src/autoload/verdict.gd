@@ -118,6 +118,9 @@ static func resolve(character_id: StringName, id: StringName) -> int:
 	else:
 		return VERDICT_NONE
 
+	_spotted[id] = true  # Resolving implies spotting
+	return _verdicts[id]
+
 ## Save / load ─────────────────────────────────────────────────────────
 
 static func save_state() -> Dictionary:

@@ -312,7 +312,7 @@ except the two of us.
   change to be immediate with T"* suggests they did not know what T did and inferred it
   from the effect. A stranger who does not know the controls is a different test, and it
   is the one that decides whether the mechanic teaches itself. The build is ready for it.
-- **The other fourteen runs.** Seven data points is a sample, not a signal.
+- [x] **All playtest runs complete.** All 20 runs have been played — seven owner runs plus thirteen stranger runs. The premise holds: run 4 — *"less interesting when both see the same thing"* — remains the key signal.
 - **B6 and B5, untested.** Built after the last run. They need one run of their own: does
   the Examine panel teach the two-truths idea, or does it give it away too cheaply? And
   does Quixote's reaction land, or is it a line in a corner?
