@@ -449,7 +449,10 @@ func _unhandled_input(event: InputEvent) -> void:
 		# The Verdict — Quixote insists (world shifts to Book), Sancho refutes
 		# (world shifts to Reality). Only works at the Venture.
 		if player != null and player.active_pawn != null:
-			Verdict.resolve(player.active_pawn.character_id, &"venture")
+			if player.active_pawn.character_id == &"quixote":
+				Verdict.verdict_by_truth(&"venture")
+			elif player.active_pawn.character_id == &"sancho":
+				Verdict.verdict_by_force(&"venture")
 	elif event.is_action_pressed(&"toggle_help"):
 		_show_help = not _show_help
 	elif event.is_action_pressed(&"toggle_second_sight"):

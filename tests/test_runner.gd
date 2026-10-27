@@ -10,6 +10,8 @@ extends Node
 ##
 ## Exit code 0 = all green, 1 = at least one failure.
 
+const TestHarness = preload("res://tests/test_harness.gd")
+
 const SUITES: Array[String] = [
 	"res://tests/test_truth_layer.gd",
 	"res://tests/test_perception.gd",

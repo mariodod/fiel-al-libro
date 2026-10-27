@@ -1,4 +1,9 @@
 extends RefCounted
+const TestHarness = preload("res://tests/test_harness.gd")
+const AttackHitbox = preload("res://src/systems/attack_hitbox.gd")
+const CompanionAI = preload("res://src/characters/companion_ai.gd")
+const CharacterPawn = preload("res://src/characters/character_pawn.gd")
+var TrainingDummy = preload("res://src/world/training_dummy.gd")
 ## The companion in the fight.
 ##
 ## The whole combat design of this game is that the player swaps
@@ -10,28 +15,28 @@ extends RefCounted
 ## its guard, and — because Sancho's buckler parries — it can leave the
 ## attacker staggered and open.
 
-const SCENE := "res://src/world/slice.tscn"
+const SCENE = "res://src/world/slice.tscn"
 
 
-func suite(t: TestHarness) -> void:
+func suite(t):
 	t.suite("Companion")
 
-	var tree := Engine.get_main_loop() as SceneTree
-	var parent: Node = tree.current_scene if tree != null and tree.current_scene != null else null
-	var packed: PackedScene = load(SCENE)
+	var tree = Engine.get_main_loop() as SceneTree
+	var parent = tree.current_scene if tree != null and tree.current_scene != null else null
+	var packed = load(SCENE)
 	t.expect_true(packed != null, "slice.tscn should load")
 	if packed == null or parent == null:
 		return
 
-	var scene: Node = packed.instantiate()
+	var scene = packed.instantiate()
 	parent.add_child(scene)
 
-	var controller: PlayerController = scene.get_node_or_null("PlayerController")
-	var quixote: CharacterPawn = scene.get_node_or_null("Characters/Quixote")
-	var sancho: CharacterPawn = scene.get_node_or_null("Characters/Sancho")
-	var ai: CompanionAI = scene.get_node_or_null("CompanionAI")
-	var dummy: TrainingDummy = scene.get_node_or_null("Yard/TrainingDummy")
-	var straw: StrawMan = scene.get_node_or_null("Yard/StrawMan")
+	var controller = scene.get_node_or_null("PlayerController")
+	var quixote = scene.get_node_or_null("Characters/Quixote")
+	var sancho = scene.get_node_or_null("Characters/Sancho")
+	var ai = scene.get_node_or_null("CompanionAI")
+	var dummy = scene.get_node_or_null("Yard/TrainingDummy")
+	var straw = scene.get_node_or_null("Yard/StrawMan")
 	t.expect_true(controller != null and ai != null, "the slice has a player and a companion")
 	t.expect_true(dummy != null and straw != null, "the yard has its two targets")
 	if controller == null or ai == null or dummy == null or straw == null:
@@ -92,7 +97,7 @@ func suite(t: TestHarness) -> void:
 	# The character's own rhythm runs on its own clock, and the step
 	# before this one used it.
 	sancho._attack_cooldown = 0.0
-	var before := dummy.health
+	var before = dummy.health
 	ai._attack_timer = 0.0
 	_step(ai)
 	t.expect_true(sancho.stamina < sancho.max_stamina, "it spent stamina on a swing")
@@ -106,8 +111,8 @@ func suite(t: TestHarness) -> void:
 	t.test("but Sancho's damage is the control, not the killing")
 	# §7.2: he cannot meaningfully damage an enemy. He staggers it.
 	dummy.reset()
-	var sancho_damage := 0.0
-	var before2 := dummy.health
+	var sancho_damage = 0.0
+	var before2 = dummy.health
 	ai._attack_timer = 0.0
 	sancho.stamina = sancho.max_stamina
 	# The swing before it left the character's own rhythm running, and
@@ -170,7 +175,7 @@ func suite(t: TestHarness) -> void:
 
 
 ## Let the companion run its own logic for a moment.
-func _step(ai: CompanionAI) -> void:
+func _step(ai: CompanionAI):
 	ai._process(0.05)
 
 
@@ -179,7 +184,7 @@ func _step(ai: CompanionAI) -> void:
 ## A hitbox is a node with its own clock: it lives for a few frames
 ## after the swing, and it is the only thing that decides whether a
 ## blow connects.
-func _step_hitboxes(pawn: CharacterPawn) -> void:
+func _step_hitboxes(pawn: CharacterPawn):
 	for child in pawn.get_children():
 		if child is AttackHitbox:
 			child._physics_process(0.05)

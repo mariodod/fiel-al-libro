@@ -1,18 +1,22 @@
 extends RefCounted
+var TestHarness = preload("res://tests/test_harness.gd")
+var TruthObject = preload("res://src/world/truth_object.gd")
+var TruthObjectData = preload("res://src/data/truth_object_data.gd")
+var TruthFace = preload("res://src/data/truth_face.gd")
 ## The two-faced object: one object in the world, two states.
 ##
 ## A windmill is a windmill in Reality and a giant in the Book. A rock is a
 ## rock in Reality and a book in the Book. Same object, two states — the
 ## whole game in one data shape.
 
-func suite(t: TestHarness) -> void:
+func suite(t):
 	t.suite("TruthObject")
 
-	var object := _make_object()
-	var tree := Engine.get_main_loop() as SceneTree
+	var object = _make_object()
+	var tree = Engine.get_main_loop() as SceneTree
 	# The scene tree root is busy setting up its children while the runner
 	# is starting, so it refuses new children. The current scene is not.
-	var parent: Node = tree.current_scene if tree != null and tree.current_scene != null else null
+	var parent = tree.current_scene if tree != null and tree.current_scene != null else null
 	if parent != null:
 		parent.add_child(object)
 
@@ -34,8 +38,8 @@ func suite(t: TestHarness) -> void:
 	t.test("each truth has its own face")
 	# A face is one truth's worth of a thing: what it is called, how it
 	# looks, and the one detail that does not add up.
-	var reality := object.face_for(0)
-	var book := object.face_for(1)
+	var reality = object.face_for(0)
+	var book = object.face_for(1)
 	t.expect_true(reality != null and book != null, "both faces exist")
 	if reality != null and book != null:
 		t.expect_eq(reality.name_key, &"ui.form.molino", "the Reality face")
@@ -63,7 +67,7 @@ func suite(t: TestHarness) -> void:
 	t.expect_almost_eq(object.form_for(1).scale.x, 1.0, 0.001, "the Book form is full size")
 
 	t.test("the data carries both forms")
-	var data := TruthObjectData.new()
+	var data = TruthObjectData.new_instance()
 	data.id = &"windmill"
 	data.reality_face = _face(&"ui.form.molino", &"ui.face.windmill.reality.desc")
 	data.book_face = _face(&"ui.form.gigante", &"ui.face.windmill.book.desc")
@@ -72,7 +76,7 @@ func suite(t: TestHarness) -> void:
 	t.expect_true(data.reality_form == null or data.reality_form != null, "reality form slot exists")
 
 	t.test("a data resource with no face has no name")
-	var bare := TruthObjectData.new()
+	var bare = TruthObjectData.new_instance()
 	t.expect_eq(bare.name_key_for(0), &"", "no face, no name")
 	t.expect_eq(bare.face_for(1), null, "no face, no face")
 
@@ -82,8 +86,8 @@ func suite(t: TestHarness) -> void:
 
 
 ## A TruthObject with two empty forms, so the test does not need the art.
-func _make_object() -> TruthObject:
-	var data := TruthObjectData.new()
+func _make_object():
+	var data = TruthObjectData.new_instance()
 	data.id = &"test"
 	data.display_name_key = &"ui.object.molino"
 	data.reality_face = _face(&"ui.form.molino", &"ui.face.windmill.reality.desc")
@@ -91,24 +95,24 @@ func _make_object() -> TruthObject:
 	data.reality_form = _pack_form()
 	data.book_form = _pack_form()
 
-	var object := TruthObject.new()
+	var object = TruthObject.new_instance()
 	object.data = data
 	object.setup(data)
 	return object
 
 
 ## A face: a name, a description, and the one detail that does not add up.
-func _face(name_key: StringName, description_key: StringName) -> TruthFace:
-	var face := TruthFace.new()
+func _face(name_key, description_key):
+	var face = TruthFace.new_instance()
 	face.name_key = name_key
 	face.description_key = description_key
 	face.tell_key = &"ui.face.windmill.reality.tell"
 	return face
 
 
-func _pack_form() -> PackedScene:
-	var packed := PackedScene.new()
-	var root := Node3D.new()
+func _pack_form():
+	var packed = PackedScene.new()
+	var root = Node3D.new()
 	root.name = "Form"
 	packed.pack(root)
 	# pack() copies; it does not take the node. Free it or it leaks.

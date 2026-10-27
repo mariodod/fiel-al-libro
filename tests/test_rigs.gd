@@ -1,4 +1,6 @@
 extends RefCounted
+const TestHarness = preload("res://tests/test_harness.gd")
+const CharacterData = preload("res://src/data/character_data.gd")
 ## The hero rigs: two skeletons, and the clips that have to cover the
 ## windows the combat code opens.
 ##
@@ -10,8 +12,8 @@ extends RefCounted
 ## already landed on them, and a hit reaction that ends early lets them
 ## swing back while the game still thinks they are reeling.
 
-const QUIXOTE_GLB := "res://assets/models/quixote.glb"
-const SANCHO_GLB := "res://assets/models/sancho.glb"
+const QUIXOTE_GLB = "res://assets/models/quixote.glb"
+const SANCHO_GLB = "res://assets/models/sancho.glb"
 
 ## The clips each character must have.
 const QUIXOTE_CLIPS: Array[String] = [
@@ -38,14 +40,14 @@ const SANCHO_LENGTH_OVERRIDES: Dictionary = {
 }
 
 ## One frame of slack, at 30 fps.
-const SLACK := 0.05
+const SLACK = 0.05
 
 
-func suite(t: TestHarness) -> void:
+func suite(t):
 	t.suite("Rigs")
 
-	var quixote := _load_rig(QUIXOTE_GLB)
-	var sancho := _load_rig(SANCHO_GLB)
+	var quixote = _load_rig(QUIXOTE_GLB)
+	var sancho = _load_rig(SANCHO_GLB)
 
 	t.test("both rigs load")
 	t.expect_true(quixote != null, "Quixote's rig should load")
@@ -60,18 +62,18 @@ func suite(t: TestHarness) -> void:
 	t.test("the two characters do not share a clip")
 	# Quixote cannot parry and Sancho cannot lose his mind. If they had
 	# the same clip, one of those would be a lie.
-	var quixote_player := _animation_player(quixote)
-	var sancho_player := _animation_player(sancho)
+	var quixote_player = _animation_player(quixote)
+	var sancho_player = _animation_player(sancho)
 	t.expect_false(quixote_player.has_animation("parry"), "Quixote has no parry")
 	t.expect_false(sancho_player.has_animation("idle_lost"), "Sancho has no madness idle")
 	t.expect_true(sancho_player.has_animation("desvelar"), "Sancho has the Desvelar")
 
 	t.test("and the bone names are the same in both")
 	# Same names, so the game code can drive them the same way.
-	var quixote_bones := _bone_names(quixote)
-	var sancho_bones := _bone_names(sancho)
+	var quixote_bones = _bone_names(quixote)
+	var sancho_bones = _bone_names(sancho)
 	t.expect_eq(quixote_bones.size(), sancho_bones.size(), "the same number of bones")
-	var same := true
+	var same = true
 	for bone in quixote_bones:
 		if not sancho_bones.has(bone):
 			same = false
@@ -86,8 +88,8 @@ func suite(t: TestHarness) -> void:
 	t.test("every clip covers the window the game opens")
 	# The roll has to outlast the invulnerability, the hit reaction the
 	# reel, the stagger the punishment, and the parry the window.
-	var quixote_data: CharacterData = _character_data(&"quixote")
-	var sancho_data: CharacterData = _character_data(&"sancho")
+	var quixote_data = _character_data(&"quixote")
+	var sancho_data = _character_data(&"sancho")
 	if quixote_data == null or sancho_data == null:
 		t.expect_true(false, "the character data should load")
 		return
@@ -104,8 +106,8 @@ func suite(t: TestHarness) -> void:
 
 
 ## Every clip of a character, with the right length.
-func _check_clips(t: TestHarness, rig: Node, clips: Array[String], label: String) -> void:
-	var player := _animation_player(rig)
+func _check_clips(t: TestHarness, rig: Node, clips: Array[String], label: String):
+	var player = _animation_player(rig)
 	if player == null:
 		t.expect_true(false, "%s should have an AnimationPlayer" % label)
 		return
@@ -113,42 +115,42 @@ func _check_clips(t: TestHarness, rig: Node, clips: Array[String], label: String
 		if not player.has_animation(clip):
 			t.expect_true(false, "%s should have a '%s' clip" % [label, clip])
 			continue
-		var expected: float = EXPECTED_LENGTH.get(clip, 0.0)
+		var expected = EXPECTED_LENGTH.get(clip, 0.0)
 		if label == "Sancho" and SANCHO_LENGTH_OVERRIDES.has(clip):
 			expected = SANCHO_LENGTH_OVERRIDES[clip]
-		var actual: float = player.get_animation(clip).length
+		var actual = player.get_animation(clip).length
 		t.expect_true(absf(actual - expected) <= SLACK,
 			"%s's '%s' should be %.3f s, got %.3f s" % [label, clip, expected, actual])
 
 
 ## A clip has to be at least as long as the window it covers.
-func _expect_covers(t: TestHarness, rig: Node, clip: String, window: float, message: String) -> void:
-	var player := _animation_player(rig)
+func _expect_covers(t: TestHarness, rig: Node, clip: String, window: float, message: String):
+	var player = _animation_player(rig)
 	if player == null or not player.has_animation(clip):
 		t.expect_true(false, message)
 		return
-	var length: float = player.get_animation(clip).length
+	var length = player.get_animation(clip).length
 	t.expect_true(length >= window - SLACK, "%s (clip %.3f s, window %.3f s)" % [message, length, window])
 
 
 ## Load a rig from its glb.
-func _load_rig(path: String) -> Node:
+func _load_rig(path: String):
 	if not ResourceLoader.exists(path):
 		return null
-	var packed: PackedScene = load(path)
+	var packed = load(path)
 	if packed == null:
 		return null
-	var scene: Node = packed.instantiate()
+	var scene = packed.instantiate()
 	# It needs a tree to be usable, but the test runner's scene is
 	# already up: add it, read it, and take it out again.
-	var tree := Engine.get_main_loop() as SceneTree
+	var tree = Engine.get_main_loop() as SceneTree
 	if tree == null or tree.current_scene == null:
 		return scene
 	tree.current_scene.add_child(scene)
 	return scene
 
 
-func _animation_player(rig: Node) -> AnimationPlayer:
+func _animation_player(rig: Node):
 	if rig == null:
 		return null
 	for node in _descendants(rig):
@@ -166,26 +168,26 @@ func _bone_names(rig: Node) -> Array[String]:
 	return out
 
 
-func _triangle_count(rig: Node) -> int:
-	var total := 0
+func _triangle_count(rig: Node):
+	var total = 0
 	for node in _descendants(rig):
 		if node is MeshInstance3D:
-			var mesh: Mesh = (node as MeshInstance3D).mesh
+			var mesh = (node as MeshInstance3D).mesh
 			if mesh != null:
 				total += mesh.get_faces().size() / 3
 	return total
 
 
-func _descendants(node: Node) -> Array:
-	var out: Array = [node]
+func _descendants(node: Node):
+	var out = [node]
 	for child in node.get_children():
 		out.append_array(_descendants(child))
 	return out
 
 
 ## The character's data, for the numbers the clips have to cover.
-func _character_data(character_id: StringName) -> CharacterData:
-	var path := "res://src/data/characters/%s.tres" % character_id
+func _character_data(character_id: StringName):
+	var path = "res://src/data/characters/%s.tres" % character_id
 	if not ResourceLoader.exists(path):
 		return null
 	return load(path) as CharacterData

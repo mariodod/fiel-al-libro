@@ -1,4 +1,3 @@
-class_name Verdict
 extends Node
 ## Verdict system - the investigation mechanic's resolution.
 ##
@@ -43,6 +42,14 @@ const VERDICT_FORCE = 2    ## Sancho refuted, world became Reality
 
 ## Per-verdict resolution state. Maps fragment_id -> verdict mode.
 static var _verdicts: Dictionary = {}
+## Whether an anamorphosis has been resolved. Maps id -> bool.
+static var _resolved: Dictionary = {}
+## Whether an anamorphosis has been spotted. Maps id -> bool.
+static var _spotted: Dictionary = {}
+## Evidence collected per anamorphosis. Maps id -> int.
+static var _evidence: Dictionary = {}
+## Total evidence collected across all anamorphoses.
+static var _total_evidence: int = 0
 
 ## Whether a verdict has been resolved for this id.
 static func is_resolved(id: StringName) -> bool:
@@ -107,19 +114,16 @@ static func verdict_by_force(id: StringName) -> int:
 ##
 ## Returns the verdict mode that was applied, or VERDICT_NONE if already
 ## resolved.
-static func resolve(character_id: StringName, id: StringName) -> int:
-	if is_resolved(id):
-		return _verdicts[id]
+static func resolve(id: StringName, evidence: int = 1) -> int:
+		if _resolved.get(id, false):
+			return 0
 
-	if character_id == &"quixote":
-		return verdict_by_truth(id)
-	elif character_id == &"sancho":
-		return verdict_by_force(id)
-	else:
-		return VERDICT_NONE
-
-	_spotted[id] = true  # Resolving implies spotting
-	return _verdicts[id]
+		_verdicts[id] = VERDICT_TRUTH
+		_spotted[id] = true  # Resolving implies spotting
+		_evidence[id] = evidence
+		_total_evidence += evidence
+		EventBus.verdict_resolved.emit(id, VERDICT_TRUTH)
+		return evidence
 
 ## Save / load ─────────────────────────────────────────────────────────
 

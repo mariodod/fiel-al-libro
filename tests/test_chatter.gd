@@ -1,4 +1,6 @@
 extends RefCounted
+const TestHarness = preload("res://tests/test_harness.gd")
+var Chatter = preload("res://src/systems/chatter.gd")
 ## The companion's chatter: a line about the thing it is looking at.
 ##
 ## B3, from the first playtest: the barks were the right answer to the
@@ -10,45 +12,46 @@ extends RefCounted
 ## the dummy — and about what the player is doing: locked onto
 ## something, or on the ground.
 
-const SCENE := "res://src/world/slice.tscn"
+const SCENE = "res://src/world/slice.tscn"
 
 ## Everything the companion said while the test was running.
 var _spoken: Array[StringName] = []
 
 
-func suite(t: TestHarness) -> void:
+func suite(t):
 	t.suite("Chatter")
 
 	# ── The keys ───────────────────────────────────────────────────────
+	var chatter = Chatter.new_instance()
 	t.test("the key is composed")
-	t.expect_eq(Chatter.key_for(&"sancho", &"rock"), &"dia.sancho.chatter.rock",
+	t.expect_eq(chatter.call("key_for", &"sancho", &"rock"), &"dia.sancho.chatter.rock",
 		"the character and the thing")
-	t.expect_eq(Chatter.key_for(&"quixote", &"dummy"), &"dia.quixote.chatter.dummy",
+	t.expect_eq(chatter.call("key_for", &"quixote", &"dummy"), &"dia.quixote.chatter.dummy",
 		"and another one")
 
 	t.test("the idle lines cycle")
-	t.expect_eq(Chatter.idle_key(&"quixote", 0), &"dia.quixote.chatter.idle.1", "the first")
-	t.expect_eq(Chatter.idle_key(&"quixote", 1), &"dia.quixote.chatter.idle.2", "the second")
-	t.expect_eq(Chatter.idle_key(&"quixote", 5), &"dia.quixote.chatter.idle.6", "the sixth")
-	t.expect_eq(Chatter.idle_key(&"quixote", 6), &"dia.quixote.chatter.idle.1", "and it wraps around")
+	t.expect_eq(chatter.call("idle_key", &"quixote", 0), &"dia.quixote.chatter.idle.1", "the first")
+	t.expect_eq(chatter.call("idle_key", &"quixote", 1), &"dia.quixote.chatter.idle.2", "the second")
+	t.expect_eq(chatter.call("idle_key", &"quixote", 5), &"dia.quixote.chatter.idle.6", "the sixth")
+	t.expect_eq(chatter.call("idle_key", &"quixote", 6), &"dia.quixote.chatter.idle.1", "and it wraps around")
 
 	t.test("a character with no id has no line")
-	t.expect_eq(Chatter.key_for(&"", &"rock"), &"", "no key")
+	t.expect_eq(chatter.call("key_for", &"", &"rock"), &"", "no key")
 
 	# ── In the world ───────────────────────────────────────────────────
-	var tree := Engine.get_main_loop() as SceneTree
-	var parent: Node = tree.current_scene if tree != null and tree.current_scene != null else null
-	var packed: PackedScene = load(SCENE)
+	var tree = Engine.get_main_loop() as SceneTree
+	var parent = tree.current_scene if tree != null and tree.current_scene != null else null
+	var packed = load(SCENE)
 	t.expect_true(packed != null, "slice.tscn should load")
 	if packed == null or parent == null:
 		return
 
-	var scene: Node = packed.instantiate()
+	var scene = packed.instantiate()
 	parent.add_child(scene)
 
-	var ai: CompanionAI = scene.get_node_or_null("CompanionAI")
-	var sancho: CharacterPawn = scene.get_node_or_null("Characters/Sancho")
-	var quixote: CharacterPawn = scene.get_node_or_null("Characters/Quixote")
+	var ai = scene.get_node_or_null("CompanionAI")
+	var sancho = scene.get_node_or_null("Characters/Sancho")
+	var quixote = scene.get_node_or_null("Characters/Quixote")
 	t.expect_true(ai != null and sancho != null and quixote != null, "the slice has a companion")
 	if ai == null or sancho == null or quixote == null:
 		parent.remove_child(scene)
@@ -96,5 +99,5 @@ func suite(t: TestHarness) -> void:
 
 
 ## Something was said.
-func _on_spoke(character_id: StringName, text_key: StringName, _args: Array) -> void:
+func _on_spoke(character_id: StringName, text_key: StringName, _args: Array):
 	_spoken.append(text_key)

@@ -1,7 +1,8 @@
 extends RefCounted
+const TestHarness = preload("res://tests/test_harness.gd")
 ## Madness thresholds (GDD.md §4.5) and the transfer mechanic DLC 3 is built on.
 
-func suite(t: TestHarness) -> void:
+func suite(t):
 	t.suite("Locura")
 
 	t.test("thresholds map to the documented bands")
@@ -50,7 +51,7 @@ func suite(t: TestHarness) -> void:
 	t.expect_almost_eq(Locura.get_for(&"sancho"), 35.0, 0.001, "Sancho gained 25")
 
 	t.test("save/load round-trips madness")
-	var saved: Dictionary = Locura.save_state()
+	var saved = Locura.save_state()
 	Locura.set_for(&"quixote", 5.0)
 	Locura.load_state(saved)
 	t.expect_almost_eq(Locura.get_for(&"quixote"), 35.0, 0.001, "quixote restored")

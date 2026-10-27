@@ -1,4 +1,5 @@
 extends RefCounted
+const TestHarness = preload("res://tests/test_harness.gd")
 ## The second playtest, 21 October 2026, and what it found.
 ##
 ## Seven things the playtest named, and the rule behind each one:
@@ -18,26 +19,26 @@ extends RefCounted
 ##   7. the truth is the knight's alone: T does nothing for Sancho;
 ##   8. the camera swung round too fast to follow the character.
 
-const SCENE := "res://src/world/slice.tscn"
+const SCENE = "res://src/world/slice.tscn"
 
 
-func suite(t: TestHarness) -> void:
+func suite(t):
 	t.suite("PlaytestFixes")
 
-	var tree := Engine.get_main_loop() as SceneTree
-	var parent: Node = tree.current_scene if tree != null and tree.current_scene != null else null
-	var packed: PackedScene = load(SCENE)
+	var tree = Engine.get_main_loop() as SceneTree
+	var parent = tree.current_scene if tree != null and tree.current_scene != null else null
+	var packed = load(SCENE)
 	t.expect_true(packed != null, "slice.tscn should load")
 	if packed == null or parent == null:
 		return
 
-	var scene: Node = packed.instantiate()
+	var scene = packed.instantiate()
 	parent.add_child(scene)
 
-	var controller: PlayerController = scene.get_node_or_null("PlayerController")
-	var quixote: CharacterPawn = scene.get_node_or_null("Characters/Quixote")
-	var sancho: CharacterPawn = scene.get_node_or_null("Characters/Sancho")
-	var ai: CompanionAI = scene.get_node_or_null("CompanionAI")
+	var controller = scene.get_node_or_null("PlayerController")
+	var quixote = scene.get_node_or_null("Characters/Quixote")
+	var sancho = scene.get_node_or_null("Characters/Sancho")
+	var ai = scene.get_node_or_null("CompanionAI")
 	t.expect_true(controller != null and quixote != null and sancho != null, "the slice has the two of them")
 	if controller == null or quixote == null or sancho == null or ai == null:
 		parent.remove_child(scene)
@@ -51,7 +52,7 @@ func suite(t: TestHarness) -> void:
 	TruthLayer.shift_to(TruthLayer.Layer.REALITY, true)
 	controller.active_pawn = sancho
 	controller.other_pawn = quixote
-	var press := InputEventAction.new()
+	var press = InputEventAction.new()
 	press.action = &"toggle_truth"
 	press.pressed = true
 	scene.call("_unhandled_input", press)
@@ -72,7 +73,7 @@ func suite(t: TestHarness) -> void:
 	quixote.take_damage(1.0)
 	t.expect_true(quixote.is_dead, "they are down")
 	quixote.velocity = Vector3(0.0, 0.0, 6.0)
-	var before := quixote.global_position
+	var before = quixote.global_position
 	for i in 10:
 		quixote._physics_process(0.05)
 	t.expect_almost_eq(Vector2(quixote.velocity.x, quixote.velocity.z).length(), 0.0, 0.01,
@@ -113,18 +114,18 @@ func suite(t: TestHarness) -> void:
 	# fast." It was 180 degrees a second: a half turn in half a second,
 	# and the character spends the whole swing off to one side of the
 	# screen.
-	var rig: CameraFollow = scene.get_node_or_null("CameraRig")
+	var rig = scene.get_node_or_null("CameraRig")
 	if rig != null:
 		quixote.revive()
 		rig.call("_process", 0.05)
-		var start_yaw: float = rig.get("_yaw")
+		var start_yaw = rig.get("_yaw")
 		# A hard turn: the character faces ninety degrees away.
 		quixote.rotation.y = start_yaw + PI * 0.5
-		var fastest: float = 0.0
-		var last: float = start_yaw
+		var fastest = 0.0
+		var last = start_yaw
 		for i in 60:
 			rig.call("_process", 0.05)
-			var now: float = rig.get("_yaw")
+			var now = rig.get("_yaw")
 			fastest = maxf(fastest, absf(rad_to_deg(wrapf(now - last, -PI, PI))) / 0.05)
 			last = now
 		t.expect_in_range(fastest, 0.0, 120.0,

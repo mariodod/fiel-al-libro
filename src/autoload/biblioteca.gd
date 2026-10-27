@@ -9,6 +9,8 @@ extends Node
 ##
 ## See GDD.md §8.2 and §9.
 
+const BookData = preload("res://src/data/book_data.gd")
+
 const SHELF_SIZE := 5
 
 ## Every book the player has found, in discovery order.
@@ -20,15 +22,15 @@ var _registry: Dictionary = {}
 
 
 func _ready() -> void:
-    var dir = DirAccess.open("res://src/data/books/")
-    if dir == null:
-        push_warning("[Biblioteca] Could not open res://src/data/books/")
-        return
-    for file_name in dir.get_files():
-        if file_name.ends_with(".tres"):
-            var res = load("res://src/data/books/" + file_name)
-            if res is BookData:
-                register(res)
+	var dir = DirAccess.open("res://src/data/books/")
+	if dir == null:
+		push_warning("[Biblioteca] Could not open res://src/data/books/")
+		return
+	for file_name in dir.get_files():
+		if file_name.ends_with(".tres"):
+			var res = load("res://src/data/books/" + file_name)
+			if res is BookData:
+				register(res)
 
 
 func register(book: Resource) -> void:
@@ -100,28 +102,31 @@ func collected_count() -> int:
 func total_available() -> int:
 	return _registry.size()
 
-func collected() -> Array[StringName]:
+
+func get_collected() -> Array[StringName]:
 	return collected.duplicate()
+
 
 func equipped_books() -> Array[StringName]:
 	return equipped.duplicate()
 
+
 func book_name(id: StringName) -> String:
-	var book := _registry.get(id)
+	var book: Resource = _registry.get(id)
 	if book != null:
 		var key := str(book.get("display_name_key"))
 		if key != "":
 			return key
 	return String(id)
 
+
 func passive_name(id: StringName) -> String:
-	var book := _registry.get(id)
+	var book: Resource = _registry.get(id)
 	if book != null:
 		var key := str(book.get("passive_name_key"))
 		if key != "":
 			return key
 	return ""
-
 
 
 # ── Save / load ─────────────────────────────────────────────────────────

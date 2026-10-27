@@ -1,4 +1,5 @@
 extends RefCounted
+const TestHarness = preload("res://tests/test_harness.gd")
 ## The Lectura investigation mode.
 ##
 ## Q toggles Lectura mode. In this mode anamorphoses (hidden details on
@@ -8,7 +9,7 @@ extends RefCounted
 ## This suite pins the Lectura autoload: mode toggle, anamorphosis
 ## spotting/resolution, evidence counting, and the Verdict threshold.
 
-func suite(t: TestHarness) -> void:
+func suite(t):
 	t.suite("Lectura")
 
 	t.test("Lectura starts inactive")
@@ -42,7 +43,7 @@ func suite(t: TestHarness) -> void:
 
 	t.test("resolve marks an anamorphosis as resolved and grants evidence")
 	t.expect_false(Lectura.is_resolved(&"rock_weight"), "not resolved yet")
-	var gained := Lectura.resolve(&"rock_weight", 2)
+	var gained = Lectura.resolve(&"rock_weight", 2)
 	t.expect_eq(gained, 2, "granted 2 evidence")
 	t.expect_true(Lectura.is_resolved(&"rock_weight"), "now resolved")
 	t.expect_eq(Lectura.resolved_count(), 1, "one resolved")
@@ -64,7 +65,7 @@ func suite(t: TestHarness) -> void:
 
 	t.test("default evidence per anamorphosis is 1")
 	Lectura.spot(&"fresh_anamorphosis")
-	var default_gained := Lectura.resolve(&"fresh_anamorphosis")
+	var default_gained = Lectura.resolve(&"fresh_anamorphosis")
 	t.expect_eq(default_gained, 1, "default evidence is 1")
 	t.expect_eq(Lectura.total_evidence(), 5, "4 + 1 = 5")
 

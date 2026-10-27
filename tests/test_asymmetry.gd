@@ -1,4 +1,6 @@
 extends RefCounted
+const TestHarness = preload("res://tests/test_harness.gd")
+const Perception = preload("res://src/systems/perception.gd")
 ## The asymmetry rules, and the verb that came with them.
 ##
 ## GDD.md §7.2 and D4. These are the rules that make the two characters
@@ -12,27 +14,27 @@ extends RefCounted
 ## And **Desvelar** (GDD.md §5.2), Sancho's verb: a line that strips the
 ## "Book skin" off a thing, for eight seconds, for both characters.
 
-const SCENE := "res://src/world/slice.tscn"
+const SCENE = "res://src/world/slice.tscn"
 
 
-func suite(t: TestHarness) -> void:
+func suite(t):
 	t.suite("Asymmetry")
 
-	var tree := Engine.get_main_loop() as SceneTree
-	var parent: Node = tree.current_scene if tree != null and tree.current_scene != null else null
-	var packed: PackedScene = load(SCENE)
+	var tree = Engine.get_main_loop() as SceneTree
+	var parent = tree.current_scene if tree != null and tree.current_scene != null else null
+	var packed = load(SCENE)
 	t.expect_true(packed != null, "slice.tscn should load")
 	if packed == null or parent == null:
 		return
 
-	var scene: Node = packed.instantiate()
+	var scene = packed.instantiate()
 	parent.add_child(scene)
 
-	var controller: PlayerController = scene.get_node_or_null("PlayerController")
-	var quixote: CharacterPawn = scene.get_node_or_null("Characters/Quixote")
-	var sancho: CharacterPawn = scene.get_node_or_null("Characters/Sancho")
-	var dummy: TrainingDummy = scene.get_node_or_null("Yard/TrainingDummy")
-	var straw: StrawMan = scene.get_node_or_null("Yard/StrawMan")
+	var controller = scene.get_node_or_null("PlayerController")
+	var quixote = scene.get_node_or_null("Characters/Quixote")
+	var sancho = scene.get_node_or_null("Characters/Sancho")
+	var dummy = scene.get_node_or_null("Yard/TrainingDummy")
+	var straw = scene.get_node_or_null("Yard/StrawMan")
 	t.expect_true(controller != null and quixote != null and sancho != null,
 		"the slice has the two of them")
 	t.expect_true(dummy != null, "the yard has a dummy")
@@ -42,14 +44,14 @@ func suite(t: TestHarness) -> void:
 		scene.free()
 		return
 
-	var humanity := GameState.humanity
+	var humanity = GameState.humanity
 
 	# ── The innocent ───────────────────────────────────────────────────
 	t.test("Quixote cannot harm the innocent")
 	# The straw man stands there. Quixote's blow does not land, and it
 	# costs him twenty of his Humanity.
 	GameState.humanity = 100
-	var straw_health := straw.health
+	var straw_health = straw.health
 	quixote.take_damage(0.0)  # keep the harness honest about the order
 	straw.take_damage(20.0, quixote)
 	t.expect_eq(straw.health, straw_health, "the blow did not land")
@@ -75,10 +77,10 @@ func suite(t: TestHarness) -> void:
 	# His kit is control. The same blow leaves it reeling, not dead.
 	dummy.reset()
 	dummy.take_damage(20.0, quixote)
-	var quixote_damage := dummy.max_health - dummy.health
+	var quixote_damage = dummy.max_health - dummy.health
 	dummy.reset()
 	dummy.take_damage(20.0, sancho)
-	var sancho_damage := dummy.max_health - dummy.health
+	var sancho_damage = dummy.max_health - dummy.health
 	t.expect_true(quixote_damage > sancho_damage, "the knight kills it, the squire does not")
 	t.expect_almost_eq(float(quixote_damage), 20.0, 0.01, "Quixote's blow is whole")
 	t.expect_true(sancho_damage > 0.0, "but Sancho's is not nothing")
@@ -97,7 +99,7 @@ func suite(t: TestHarness) -> void:
 	# eight seconds it is a stone — for both of them.
 	TruthLayer.shift_to(TruthLayer.Layer.BOOK, true)
 	Locura.set_for(&"quixote", 10.0)
-	var rock: TruthObject = scene.get_node_or_null("Rock")
+	var rock = scene.get_node_or_null("Rock")
 	t.expect_true(rock != null, "the slice has a rock")
 	if rock != null:
 		controller.request_swap()  # Sancho is driving
@@ -109,7 +111,7 @@ func suite(t: TestHarness) -> void:
 		controller.call("_update_examine_target", 1.0)
 		sancho.stamina = sancho.max_stamina
 
-		var press := InputEventAction.new()
+		var press = InputEventAction.new()
 		press.action = &"desvelar"
 		press.pressed = true
 		controller._unhandled_input(press)

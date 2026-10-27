@@ -86,7 +86,7 @@ func _refresh() -> void:
     _equipped.clear_children()
     _books_container.clear_children()
 
-    _collected = Biblioteca.collected()
+    _collected = Biblioteca.get_collected()
     _equipped = Biblioteca.equipped_books()
 
     if _equipped.is_empty():

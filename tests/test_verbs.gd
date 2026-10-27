@@ -1,4 +1,8 @@
 extends RefCounted
+const TestHarness = preload("res://tests/test_harness.gd")
+var CharacterPawn = preload("res://src/characters/character_pawn.gd")
+var TrainingDummy = preload("res://src/world/training_dummy.gd")
+const AttackHitbox = preload("res://src/systems/attack_hitbox.gd")
 ## The verbs: the dodge, and the stamina it spends.
 ##
 ## GDD.md §7.1: "Dodge — 0.4s i-frames, stamina cost, directional" and
@@ -7,30 +11,30 @@ extends RefCounted
 ## Task 2.5 of the plan. The dodge was a key in the input map and nothing
 ## behind it; the stamina was a number that only ever went down.
 
-const SCENE := "res://src/world/slice.tscn"
+const SCENE = "res://src/world/slice.tscn"
 
 
-func suite(t: TestHarness) -> void:
+func suite(t):
 	t.suite("Verbs")
 
-	var tree := Engine.get_main_loop() as SceneTree
-	var parent: Node = tree.current_scene if tree != null and tree.current_scene != null else null
-	var packed: PackedScene = load(SCENE)
+	var tree = Engine.get_main_loop() as SceneTree
+	var parent = tree.current_scene if tree != null and tree.current_scene != null else null
+	var packed = load(SCENE)
 	t.expect_true(packed != null, "slice.tscn should load")
 	if packed == null or parent == null:
 		return
 
-	var scene: Node = packed.instantiate()
+	var scene = packed.instantiate()
 	parent.add_child(scene)
 
-	var quixote: CharacterPawn = scene.get_node_or_null("Characters/Quixote")
+	var quixote = scene.get_node_or_null("Characters/Quixote")
 	t.expect_true(quixote != null, "Quixote should be in the scene")
 	if quixote == null:
 		parent.remove_child(scene)
 		scene.free()
 		return
-	var sancho: CharacterPawn = scene.get_node_or_null("Characters/Sancho")
-	var dummy: TrainingDummy = scene.get_node_or_null("Yard/TrainingDummy")
+	var sancho = scene.get_node_or_null("Characters/Sancho")
+	var dummy = scene.get_node_or_null("Yard/TrainingDummy")
 	t.expect_true(sancho != null and dummy != null, "the yard should have Sancho and a dummy in it")
 
 	t.test("both characters can dodge")
@@ -64,8 +68,8 @@ func suite(t: TestHarness) -> void:
 		quixote._physics_process(0.05)
 	quixote.stamina = quixote.max_stamina
 	quixote.dodge()
-	var quixote_speed: float = quixote.get("_dodge_speed")
-	var quixote_window: float = quixote.get("_dodge_time")
+	var quixote_speed = quixote.get("_dodge_speed")
+	var quixote_window = quixote.get("_dodge_time")
 	t.expect_almost_eq(quixote_speed * quixote_window, 4.0, 0.01,
 		"four metres over the window")
 	# Let the cooldown run out, so the next dodge is allowed.
@@ -76,20 +80,20 @@ func suite(t: TestHarness) -> void:
 		sancho._physics_process(0.05)
 	sancho.stamina = sancho.max_stamina
 	sancho.dodge()
-	var sancho_speed: float = sancho.get("_dodge_speed")
-	var sancho_window: float = sancho.get("_dodge_time")
+	var sancho_speed = sancho.get("_dodge_speed")
+	var sancho_window = sancho.get("_dodge_time")
 	t.expect_almost_eq(sancho_speed * sancho_window, 2.0, 0.01,
 		"two metres over the window")
 
 	t.test("a dodge costs stamina")
-	var before: float = quixote.stamina
+	var before = quixote.stamina
 	quixote.dodge()
 	t.expect_true(quixote.stamina < before, "the dodge cost stamina (%f -> %f)" % [before, quixote.stamina])
 
 	t.test("the i-frames make you untouchable")
 	# This is the whole point of a dodge, and it is invisible without it.
 	quixote.dodge()
-	var health: float = quixote.health
+	var health = quixote.health
 	quixote.take_damage(25.0)
 	t.expect_eq(quixote.health, health, "the blow went past")
 
@@ -114,12 +118,12 @@ func suite(t: TestHarness) -> void:
 		quixote._physics_process(0.05)
 	quixote.stamina = quixote.max_stamina
 	quixote.dodge()
-	var spent: float = quixote.stamina
+	var spent = quixote.stamina
 	t.expect_true(spent < quixote.max_stamina, "the dodge spent something")
 	# A second of idling, and then it starts coming back.
 	for i in 15:
 		quixote._physics_process(0.05)
-	var midway: float = quixote.stamina
+	var midway = quixote.stamina
 	t.expect_eq(midway, spent, "the stamina waits a second before it comes back")
 	for i in 60:
 		quixote._physics_process(0.05)
@@ -147,7 +151,7 @@ func suite(t: TestHarness) -> void:
 		quixote._attack_cooldown = 0.0
 		_clear_hitboxes(quixote)
 		quixote.light_attack()
-		var box: AttackHitbox = quixote.get_node_or_null("Hitbox")
+		var box = quixote.get_node_or_null("Hitbox")
 		if box != null:
 			damages.append(box.damage)
 			box.free()
@@ -163,7 +167,7 @@ func suite(t: TestHarness) -> void:
 	quixote._attack_cooldown = 0.0
 	_clear_hitboxes(quixote)
 	quixote.light_attack()
-	var reopened: AttackHitbox = quixote.get_node_or_null("Hitbox")
+	var reopened = quixote.get_node_or_null("Hitbox")
 	t.expect_true(reopened != null, "the swing came out")
 	if reopened != null:
 		t.expect_eq(reopened.damage, 14.0, "and it starts the chain again")
@@ -181,7 +185,7 @@ func suite(t: TestHarness) -> void:
 	t.expect_true(quixote.health > 90.0, "most of it did not get through, got %f" % quixote.health)
 
 	t.test("and the guard costs stamina")
-	var guard_stamina := quixote.stamina
+	var guard_stamina = quixote.stamina
 	quixote.take_damage(20.0)
 	t.expect_true(quixote.stamina < guard_stamina, "catching a blow costs stamina")
 
@@ -209,7 +213,7 @@ func suite(t: TestHarness) -> void:
 	t.expect_true(sancho.can_parry_now(), "the window is open")
 	sancho.take_damage(20.0, dummy)
 	t.expect_eq(sancho.health, 100.0, "the blow did not touch him")
-	t.expect_eq(dummy.state, TrainingDummy.State.STAGGER, "and the attacker is open")
+	t.expect_eq(dummy.state, 5, "and the attacker is open")
 	sancho.block(false)
 
 	# ── The poise ──────────────────────────────────────────────────────
@@ -237,7 +241,7 @@ func suite(t: TestHarness) -> void:
 
 ## The hitboxes of a swing. They free themselves in the game; in a test
 ## they have to be cleared by hand, or the last one is still there.
-func _clear_hitboxes(pawn: CharacterPawn) -> void:
+func _clear_hitboxes(pawn):
 	for child in pawn.get_children():
 		if child is AttackHitbox:
 			child.free()

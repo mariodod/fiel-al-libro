@@ -1,8 +1,9 @@
 extends RefCounted
+const TestHarness = preload("res://tests/test_harness.gd")
 ## The ending aggregation (GDD.md §12.2, D1, D4). Kept pure so it can be
 ## tested without playing 10 hours of game.
 
-func suite(t: TestHarness) -> void:
+func suite(t):
 	t.suite("Ending")
 
 	# Reset the campaign state to a known baseline.
@@ -42,7 +43,7 @@ func suite(t: TestHarness) -> void:
 
 	t.test("humanity is tracked as a variable")
 	GameState.humanity = 0
-	var vars: Dictionary = GameState.ending_variables()
+	var vars = GameState.ending_variables()
 	t.expect_eq(int(vars.get("humanity", -1)), 0, "humanity is exposed to the ending logic")
 
 	# Restore a sane baseline for other suites.

@@ -1,4 +1,6 @@
 extends RefCounted
+const TestHarness = preload("res://tests/test_harness.gd")
+const Perception = preload("res://src/systems/perception.gd")
 ## The reading rule: the world has one truth, the characters make two things
 ## of it. GDD.md §4.2.
 ##

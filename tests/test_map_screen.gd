@@ -1,24 +1,25 @@
 extends RefCounted
+const TestHarness = preload("res://tests/test_harness.gd")
 ## The world map: regions, the road, and the Book/Reality reads.
 ##
 ## GDD.md §11.4: "The 'libro' map screen. A hand-drawn map in the style of
 ## a 1605 map, with the 'Book' version and the 'Reality' version of each
 ## region side by side. Filling it in is a collectible."
 
-const SCENE := "res://src/world/map_screen.tscn"
+const SCENE = "res://src/world/map_screen.tscn"
 
 
-func suite(t: TestHarness) -> void:
+func suite(t):
 	t.suite("MapScreen")
 
 	# ── Region data ──────────────────────────────────────────────────
 	t.test("region data loads from .tres files")
-	var dir := DirAccess.open("res://src/data/regions/")
+	var dir = DirAccess.open("res://src/data/regions/")
 	t.expect_true(dir != null, "the regions directory should exist")
 	if dir == null:
 		return
 
-	var regions: Array = []
+	var regions = []
 	for name in dir.get_files():
 		if name.ends_with(".tres"):
 			var res = load("res://src/data/regions/" + name)
@@ -31,7 +32,7 @@ func suite(t: TestHarness) -> void:
 	# sort_custom isn't reliable in this Godot build).
 	for i in range(1, regions.size()):
 		var key = regions[i]
-		var j := i - 1
+		var j = i - 1
 		while j >= 0 and regions[j].chapter > key.chapter:
 			regions[j + 1] = regions[j]
 			j -= 1

@@ -1,4 +1,5 @@
 extends RefCounted
+const TestHarness = preload("res://tests/test_harness.gd")
 ## The translations must actually resolve at runtime.
 ##
 ## This suite exists because of a real bug: Godot imports locale/*.po into
@@ -11,12 +12,12 @@ extends RefCounted
 ## See src/tools/setup_translations.gd.
 
 
-func suite(t: TestHarness) -> void:
+func suite(t):
 	t.suite("Translations")
 
 	t.test("translations are registered with the engine")
-	var registered: Array = []
-	var setting: Variant = ProjectSettings.get_setting("internationalization/locale/translations", [])
+	var registered = []
+	var setting = ProjectSettings.get_setting("internationalization/locale/translations", [])
 	if setting is Array:
 		registered = setting
 	elif setting is PackedStringArray:
@@ -30,7 +31,7 @@ func suite(t: TestHarness) -> void:
 	t.expect_eq(ProjectSettings.get_setting("internationalization/locale/fallback", ""), "es", "fallback is Spanish")
 
 	t.test("each locale returns its own text")
-	var original := TranslationServer.get_locale()
+	var original = TranslationServer.get_locale()
 
 	TranslationServer.set_locale("es")
 	t.expect_eq(tr(&"ui.menu.new_game"), "Empezar el manuscrito", "Spanish")
@@ -62,9 +63,9 @@ func suite(t: TestHarness) -> void:
 	t.expect_eq(Loc.tp(&"ui.shelf.count", 0), "0 books on the shelf", "zero is plural in English")
 
 	t.test("every shipped locale has the same key count")
-	var counts := {}
+	var counts = {}
 	for locale: String in ["es", "en", "fr"]:
-		var res: Resource = ResourceLoader.load("res://locale/%s.po" % locale, "Translation", ResourceLoader.CACHE_MODE_IGNORE)
+		var res = ResourceLoader.load("res://locale/%s.po" % locale, "Translation", ResourceLoader.CACHE_MODE_IGNORE)
 		t.expect_true(res != null, "%s.po should load as a Translation" % locale)
 		if res != null:
 			counts[locale] = (res as Translation).get_message_count()

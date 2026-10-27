@@ -1,11 +1,12 @@
 extends RefCounted
+const TestHarness = preload("res://tests/test_harness.gd")
 ## "El Manuscrito" — the save system. A corrupt save is the worst bug you
 ## can ship, so this is the suite that matters most.
 
-func suite(t: TestHarness) -> void:
+func suite(t):
 	t.suite("Manuscrito")
 
-	const SLOT := 2  # a scratch slot, away from the autosave slot
+	const SLOT = 2  # a scratch slot, away from the autosave slot
 
 	t.test("a save round-trips the whole campaign state")
 	GameState.current_chapter = &"ch_01"
@@ -47,18 +48,18 @@ func suite(t: TestHarness) -> void:
 	t.expect_true(TruthLayer.is_book(), "truth layer restored")
 
 	t.test("the save file is valid JSON")
-	var file := FileAccess.open(Manuscrito.slot_path(SLOT), FileAccess.READ)
+	var file = FileAccess.open(Manuscrito.slot_path(SLOT), FileAccess.READ)
 	t.expect_true(file != null, "save file should be openable")
 	if file != null:
-		var text := file.get_as_text()
+		var text = file.get_as_text()
 		file.close()
-		var parsed: Variant = JSON.parse_string(text)
+		var parsed = JSON.parse_string(text)
 		t.expect_eq(typeof(parsed), TYPE_DICTIONARY, "save file should parse as JSON")
 		if typeof(parsed) == TYPE_DICTIONARY:
 			t.expect_true((parsed as Dictionary).has("version"), "save file should carry a version")
 
 	t.test("a slot summary can be read back")
-	var summary: Dictionary = Manuscrito.slot_summary(SLOT)
+	var summary = Manuscrito.slot_summary(SLOT)
 	t.expect_eq(summary.get("chapter", ""), "ch_01", "summary reports the chapter")
 
 	t.test("loading an empty slot fails cleanly")

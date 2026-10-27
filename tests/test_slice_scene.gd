@@ -1,4 +1,15 @@
 extends RefCounted
+const TestHarness = preload("res://tests/test_harness.gd")
+var CharacterPawn = preload("res://src/characters/character_pawn.gd")
+var PlayerController = preload("res://src/characters/player_controller.gd")
+var CompanionAI = preload("res://src/characters/companion_ai.gd")
+var TruthObject = preload("res://src/world/truth_object.gd")
+var TruthObjectData = preload("res://src/data/truth_object_data.gd")
+var TruthFace = preload("res://src/data/truth_face.gd")
+var TrainingDummy = preload("res://src/world/training_dummy.gd")
+var StrawMan = preload("res://src/world/straw_man.gd")
+var CameraFollow = preload("res://src/systems/camera_follow.gd")
+var LockOn = preload("res://src/systems/lock_on.gd")
 ## The Week 1–2 grey box must boot, and the mechanic must work.
 ##
 ## Nothing else in the suite loads the playable scene, so without this the
@@ -8,25 +19,25 @@ extends RefCounted
 ## This is a smoke test, not a description of the design. The design is
 ## pinned down in test_perception.gd and test_truth_object.gd.
 
-const SCENE := "res://src/world/slice.tscn"
+const SCENE = "res://src/world/slice.tscn"
 
 
-func suite(t: TestHarness) -> void:
+func suite(t):
 	t.suite("SliceScene")
 
-	var madness := Locura.get_for(&"quixote")
+	var madness = Locura.get_for(&"quixote")
 	# The tag text is translated, so the assertions have to know the locale.
-	var locale := TranslationServer.get_locale()
+	var locale = TranslationServer.get_locale()
 	TranslationServer.set_locale("en")
 
 	t.test("the slice scene loads and instantiates")
-	var packed: PackedScene = load(SCENE)
+	var packed = load(SCENE)
 	t.expect_true(packed != null, "slice.tscn should load")
 	if packed == null:
 		return
 
-	var scene: Node = packed.instantiate()
-	var tree := Engine.get_main_loop() as SceneTree
+	var scene = packed.instantiate()
+	var tree = Engine.get_main_loop() as SceneTree
 	t.expect_true(tree != null, "there should be a scene tree")
 	if tree == null:
 		return
@@ -34,12 +45,12 @@ func suite(t: TestHarness) -> void:
 	# _ready() and none of its children are built. The current scene (this
 	# runner) is ready; the tree root is not, while the runner's own _ready
 	# is still running.
-	var parent: Node = tree.current_scene if tree.current_scene != null else tree.root
+	var parent = tree.current_scene if tree.current_scene != null else tree.root
 	parent.add_child(scene)
 
 	t.test("both characters are in the scene with their data")
-	var quixote: CharacterPawn = scene.get_node_or_null("Characters/Quixote")
-	var sancho: CharacterPawn = scene.get_node_or_null("Characters/Sancho")
+	var quixote = scene.get_node_or_null("Characters/Quixote")
+	var sancho = scene.get_node_or_null("Characters/Sancho")
 	t.expect_true(quixote != null, "Quixote should be in the scene")
 	t.expect_true(sancho != null, "Sancho should be in the scene")
 	if quixote == null or sancho == null:
@@ -52,8 +63,8 @@ func suite(t: TestHarness) -> void:
 	t.expect_eq(sancho.data.truth_layer_affinity, 0, "Sancho is Reality-affine")
 
 	t.test("both primitives carry both forms")
-	var windmill: TruthObject = scene.get_node_or_null("Windmill")
-	var rock: TruthObject = scene.get_node_or_null("Rock")
+	var windmill = scene.get_node_or_null("Windmill")
+	var rock = scene.get_node_or_null("Rock")
 	t.expect_true(windmill != null and rock != null, "the two primitives should be in the scene")
 	if windmill == null or rock == null:
 		return
@@ -64,7 +75,7 @@ func suite(t: TestHarness) -> void:
 	t.expect_true(rock.data.book_form != null, "the rock has a Book form")
 
 	t.test("the player drives Quixote and the AI drives Sancho")
-	var controller: PlayerController = scene.get_node_or_null("PlayerController")
+	var controller = scene.get_node_or_null("PlayerController")
 	t.expect_true(controller != null, "the player controller should be in the scene")
 	if controller == null:
 		return
@@ -73,8 +84,8 @@ func suite(t: TestHarness) -> void:
 
 	t.test("the practice yard is there, with a dummy in it")
 	# The dodge cannot be judged without an enemy and a space limit.
-	var yard: Node = scene.get_node_or_null("Yard")
-	var dummy: TrainingDummy = scene.get_node_or_null("Yard/TrainingDummy")
+	var yard = scene.get_node_or_null("Yard")
+	var dummy = scene.get_node_or_null("Yard/TrainingDummy")
 	t.expect_true(yard != null, "the yard should be in the scene")
 	t.expect_true(dummy != null, "the dummy should be in the yard")
 	if dummy != null:
@@ -84,11 +95,11 @@ func suite(t: TestHarness) -> void:
 	t.test("the HUD can be turned off")
 	# The HUD is the developer's readout: it spells out both readings. A
 	# stranger must not have it.
-	var hud: Label = scene.get_node_or_null("HudLayer/Hud")
+	var hud = scene.get_node_or_null("HudLayer/Hud")
 	t.expect_true(hud != null, "the slice has a HUD")
 	if hud != null:
 		t.expect_true(hud.visible, "the HUD starts on")
-		var press := InputEventAction.new()
+		var press = InputEventAction.new()
 		press.action = &"toggle_hud"
 		press.pressed = true
 		scene.call("_unhandled_input", press)
@@ -97,7 +108,7 @@ func suite(t: TestHarness) -> void:
 		t.expect_true(hud.visible, "and H turns it back on")
 
 	t.test("the camera follows the character you are driving")
-	var rig: CameraFollow = scene.get_node_or_null("CameraRig")
+	var rig = scene.get_node_or_null("CameraRig")
 	t.expect_true(rig != null, "the camera rig should be in the scene")
 	if rig != null:
 		t.expect_eq(rig.target, quixote, "the camera starts on Quixote")
@@ -114,7 +125,7 @@ func suite(t: TestHarness) -> void:
 	t.test("the tag says what the companion is looking at")
 	# While you drive Quixote, the tag over the windmill says what Sancho
 	# makes of it. In a Reality world he sees a windmill, like you.
-	var tag: String = windmill.tag_text()
+	var tag = windmill.tag_text()
 	t.expect_true(tag.contains("Sancho"), "the tag should name the companion, got '%s'" % tag)
 	t.expect_true(tag.contains("windmill"), "the tag should say Sancho sees a windmill, got '%s'" % tag)
 
@@ -139,7 +150,7 @@ func suite(t: TestHarness) -> void:
 	t.test("the tag says what the other one is looking at")
 	# You are driving Sancho now, so the tag is about Quixote — and Quixote
 	# still sees the giant, because the world is in the Book.
-	var swapped_tag: String = windmill.tag_text()
+	var swapped_tag = windmill.tag_text()
 	t.expect_true(swapped_tag.contains("Don Quixote"), "the tag should name Quixote, got '%s'" % swapped_tag)
 	t.expect_true(swapped_tag.contains("giant"), "the tag should say Quixote sees a giant, got '%s'" % swapped_tag)
 
@@ -152,7 +163,7 @@ func suite(t: TestHarness) -> void:
 
 	t.test("the camera and the AI follow the swap")
 	t.expect_eq(rig.target, sancho, "the camera moved to Sancho")
-	var ai: CompanionAI = scene.get_node_or_null("CompanionAI")
+	var ai = scene.get_node_or_null("CompanionAI")
 	if ai != null:
 		t.expect_eq(ai.pawn, quixote, "the AI drives Quixote now")
 
@@ -170,7 +181,7 @@ func suite(t: TestHarness) -> void:
 
 ## Two frames' worth of settling: the view fades to the new reading, and
 ## then the objects follow it. The real game gets this from _process.
-func _settle(scene: Node) -> void:
+func _settle(scene: Node):
 	scene.call("_update_readings")
 	TruthLayer.advance_blend(2.0)
 	scene.call("_update_readings")

@@ -1,7 +1,8 @@
 extends RefCounted
+const TestHarness = preload("res://tests/test_harness.gd")
 ## Progression: milestones are verbs, and reading is worth double.
 
-func suite(t: TestHarness) -> void:
+func suite(t):
 	t.suite("Memoria")
 
 	t.test("milestones unlock in order")
@@ -10,7 +11,7 @@ func suite(t: TestHarness) -> void:
 
 	t.test("reading is worth double")
 	Memoria.gain(&"quixote", 10, false)
-	var before := Memoria.get_for(&"quixote")
+	var before = Memoria.get_for(&"quixote")
 	Memoria.gain(&"quixote", 10, true)
 	t.expect_eq(Memoria.get_for(&"quixote") - before, 20, "reading doubles the reward")
 
@@ -25,8 +26,8 @@ func suite(t: TestHarness) -> void:
 	t.expect_eq(Memoria.milestone_for(&"sancho"), 1, "Sancho has his own track")
 
 	t.test("save/load round-trips")
-	var saved: Dictionary = Memoria.save_state()
-	var q_before := Memoria.get_for(&"quixote")
+	var saved = Memoria.save_state()
+	var q_before = Memoria.get_for(&"quixote")
 	Memoria.gain(&"quixote", 5, false)
 	Memoria.load_state(saved)
 	t.expect_eq(Memoria.get_for(&"quixote"), q_before, "memories restored")

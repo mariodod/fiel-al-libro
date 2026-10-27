@@ -1,4 +1,8 @@
 extends RefCounted
+const TestHarness = preload("res://tests/test_harness.gd")
+var LockOn = preload("res://src/systems/lock_on.gd")
+const Examine = preload("res://src/systems/examine.gd")
+const AttackHitbox = preload("res://src/systems/attack_hitbox.gd")
 ## The Venture of Montiel — the first boss (NEXT_STEPS.md §2, task 2.11).
 ##
 ## "Done when: fighting it in each form is a different fight." These
@@ -13,26 +17,26 @@ extends RefCounted
 ##   3. the asymmetry rules apply to it like they apply to anything
 ##      else: Sancho staggers it and cannot kill it.
 
-const SCENE := "res://src/world/slice.tscn"
+const SCENE = "res://src/world/slice.tscn"
 
 
-func suite(t: TestHarness) -> void:
+func suite(t):
 	t.suite("Venture")
 
-	var tree := Engine.get_main_loop() as SceneTree
-	var parent: Node = tree.current_scene if tree != null and tree.current_scene != null else null
-	var packed: PackedScene = load(SCENE)
+	var tree = Engine.get_main_loop() as SceneTree
+	var parent = tree.current_scene if tree != null and tree.current_scene != null else null
+	var packed = load(SCENE)
 	t.expect_true(packed != null, "slice.tscn should load")
 	if packed == null or parent == null:
 		return
 
-	var scene: Node = packed.instantiate()
+	var scene = packed.instantiate()
 	parent.add_child(scene)
 
-	var venture: Venture = scene.get_node_or_null("Venture")
-	var quixote: CharacterPawn = scene.get_node_or_null("Characters/Quixote")
-	var sancho: CharacterPawn = scene.get_node_or_null("Characters/Sancho")
-	var ai: CompanionAI = scene.get_node_or_null("CompanionAI")
+	var venture = scene.get_node_or_null("Venture")
+	var quixote = scene.get_node_or_null("Characters/Quixote")
+	var sancho = scene.get_node_or_null("Characters/Sancho")
+	var ai = scene.get_node_or_null("CompanionAI")
 	t.expect_true(venture != null and quixote != null and sancho != null,
 		"the slice should have a Venture and the two of them")
 	if venture == null or quixote == null or sancho == null:
@@ -42,8 +46,8 @@ func suite(t: TestHarness) -> void:
 
 	# ── The arena ──────────────────────────────────────────────────────
 	t.test("the era is a round floor with a way in")
-	var era: Node = scene.get_node_or_null("Era")
-	var stones := 0
+	var era = scene.get_node_or_null("Era")
+	var stones = 0
 	if era != null:
 		for child in era.get_children():
 			if child is StaticBody3D:
@@ -58,8 +62,8 @@ func suite(t: TestHarness) -> void:
 
 	# ── Two forms, two fights ──────────────────────────────────────────
 	t.test("it has two forms and they are different")
-	var reality := venture.form_data_for(0)
-	var book := venture.form_data_for(1)
+	var reality = venture.form_data_for(0)
+	var book = venture.form_data_for(1)
 	t.expect_true(reality != null and book != null, "both forms exist")
 	if reality == null or book == null:
 		parent.remove_child(scene)
@@ -124,10 +128,10 @@ func suite(t: TestHarness) -> void:
 	quixote.health = 100.0
 	_step(venture, 0.05)
 	_step(venture, 0.05)
-	t.expect_eq(venture.state, Venture.State.WINDUP, "it is winding up")
+	t.expect_eq(venture.state, 2, "it is winding up")
 	venture.reveal(8.0)
 	venture._process(0.05)
-	t.expect_ne(venture.state, Venture.State.WINDUP, "the tell is over")
+	t.expect_ne(venture.state, 2, "the tell is over")
 	t.expect_eq(venture.current_move(), null, "and there is no blow coming")
 
 	# ── The tell ───────────────────────────────────────────────────────
@@ -150,16 +154,16 @@ func suite(t: TestHarness) -> void:
 
 	t.test("and it is the mill's sails that did it")
 	# The mill denies the ground: the sails go all the way round it.
-	var reach := reality.moveset[0].reach
+	var reach = reality.moveset[0].reach
 	t.expect_gt(reach, 3.0, "the sails reach a long way round")
 
 	# ── The asymmetry ──────────────────────────────────────────────────
 	t.test("Sancho cannot meaningfully damage it")
 	# GDD.md §7.2: he staggers it, he does not kill it.
 	venture.reset()
-	var before := venture.health
+	var before = venture.health
 	venture.take_damage(20.0, sancho)
-	var sancho_damage := before - venture.health
+	var sancho_damage = before - venture.health
 	t.expect_almost_eq(sancho_damage, 20.0 * 0.4, 0.01,
 		"his blow is scaled down")
 	venture.reset()
@@ -171,13 +175,13 @@ func suite(t: TestHarness) -> void:
 	t.test("the poise breaks and it staggers")
 	venture.reset()
 	venture.take_damage(1.0, quixote, venture.max_poise + 1.0)
-	t.expect_eq(venture.state, Venture.State.STAGGER, "it reels")
+	t.expect_eq(venture.state, 5, "it reels")
 	t.expect_eq(venture.poise, 0.0, "and its poise is spent")
 
 	# ── The end of it ──────────────────────────────────────────────────
 	t.test("it can be killed, and the reward goes to whoever did it")
 	venture.reset()
-	var memories := Memoria.get_for(&"quixote")
+	var memories = Memoria.get_for(&"quixote")
 	venture.take_damage(1000.0, quixote)
 	t.expect_true(venture.is_down(), "it is over")
 	t.expect_gt(Memoria.get_for(&"quixote"), memories, "the knight is paid")
@@ -235,21 +239,21 @@ func suite(t: TestHarness) -> void:
 	venture.reset()
 	quixote.global_position = venture.global_position + Vector3(2.5, 0.0, 0.0)
 	quixote.rotation.y = PI * 0.5
-	var giant := venture.get("_book_form") as Node3D
+	var giant = venture.get("_book_form") as Node3D
 	t.expect_true(giant != null, "the giant is there")
 	if giant != null:
-		var arm := giant.get_node_or_null("ShoulderPivotRight") as Node3D
+		var arm = giant.get_node_or_null("ShoulderPivotRight") as Node3D
 		t.expect_true(arm != null, "and its arm hangs from a shoulder")
 		if arm != null:
-			var resting := arm.rotation.x
+			var resting = arm.rotation.x
 			# Wind it up and let the pose run.
-			venture.state = Venture.State.WINDUP
+			venture.state = 2
 			venture.set("_move", venture.form_data_for(1).moveset[0])
 			venture.set("_timer", 0.5)
 			venture._process(0.05)
 			t.expect_ne(arm.rotation.x, resting, "the arm draws back for the tell")
 			t.expect_lt(arm.rotation.x, resting, "and it draws BACK, not forward")
-	venture.state = Venture.State.DORMANT
+	venture.state = 0
 	TruthLayer.shift_to(TruthLayer.Layer.REALITY, true)
 	venture._process(0.05)
 
@@ -271,14 +275,14 @@ func suite(t: TestHarness) -> void:
 	quixote.global_position = venture.global_position + Vector3(2.0, 0.0, 0.0)
 	sancho.global_position = venture.global_position + Vector3(3.0, 0.0, 0.0)
 	ai._pick_target()
-	venture.state = Venture.State.WINDUP
+	venture.state = 2
 	venture.set("_timer", 0.3)
 	sancho.stamina = sancho.max_stamina
 	ai._process(0.05)
 	t.expect_true(venture.is_revealed(), "the skin came off")
 	venture._process(0.05)
 	t.expect_eq(venture.current_form_layer(), 0, "and the Venture is back in its Reality form")
-	t.expect_ne(venture.state, Venture.State.WINDUP, "and the swing it was winding up never came")
+	t.expect_ne(venture.state, 2, "and the swing it was winding up never came")
 	TruthLayer.shift_to(TruthLayer.Layer.REALITY, true)
 	venture._process(0.05)
 
@@ -287,8 +291,8 @@ func suite(t: TestHarness) -> void:
 	Locura.set_for(&"quixote", 60.0)
 	t.expect_eq(Locura.threshold_for(&"quixote"), Locura.Threshold.LOST,
 		"Quixote is Lost")
-	var layer_before := TruthLayer.layer()
-	var press := InputEventAction.new()
+	var layer_before = TruthLayer.layer()
+	var press = InputEventAction.new()
 	press.action = &"toggle_truth"
 	press.pressed = true
 	scene.call("_unhandled_input", press)
@@ -302,5 +306,5 @@ func suite(t: TestHarness) -> void:
 
 
 ## Let a node run its own logic for a moment.
-func _step(node: Node, seconds: float) -> void:
+func _step(node: Node, seconds: float):
 	node.call("_physics_process", seconds)

@@ -1,7 +1,8 @@
 extends RefCounted
+const TestHarness = preload("res://tests/test_harness.gd")
 ## D2: the truth layer is global, and it round-trips through the save file.
 
-func suite(t: TestHarness) -> void:
+func suite(t):
 	t.suite("TruthLayer")
 
 	t.test("starts in Reality")
@@ -30,7 +31,7 @@ func suite(t: TestHarness) -> void:
 
 	t.test("save/load round-trips the layer")
 	TruthLayer.shift_to(TruthLayer.Layer.BOOK, true)
-	var saved: Dictionary = TruthLayer.save_state()
+	var saved = TruthLayer.save_state()
 	TruthLayer.shift_to(TruthLayer.Layer.REALITY, true)
 	t.expect_eq(TruthLayer.layer(), TruthLayer.Layer.REALITY, "moved away before loading")
 	TruthLayer.load_state(saved)
@@ -41,8 +42,8 @@ func suite(t: TestHarness) -> void:
 	# The instant path used to skip truth_blend_started, so the same change
 	# behaved differently depending on how it was made — and the page turn
 	# did not fire for it.
-	var started := [0]
-	var handler := func(_layer: int) -> void: started[0] += 1
+	var started = [0]
+	var handler = func(_layer: int): started[0] += 1
 	EventBus.truth_blend_started.connect(handler)
 	TruthLayer.shift_to(TruthLayer.Layer.BOOK, true)
 	TruthLayer.shift_to(TruthLayer.Layer.REALITY, false)
@@ -83,7 +84,7 @@ func suite(t: TestHarness) -> void:
 	t.expect_almost_eq(TruthLayer.world_blend(), 0.0, 0.0001, "but the world's truth has not moved")
 	t.expect_eq(TruthLayer.layer(), TruthLayer.Layer.REALITY, "the world is still Reality")
 	# And the picture on the screen is the reader's, not the world's.
-	var shader_truth: Variant = RenderingServer.global_shader_parameter_get(TruthLayer.GLOBAL_TRUTH)
+	var shader_truth = RenderingServer.global_shader_parameter_get(TruthLayer.GLOBAL_TRUTH)
 	t.expect_almost_eq(shader_truth, 1.0, 0.0001,
 		"the grade on the screen is the reader's reading")
 

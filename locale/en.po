@@ -30,7 +30,7 @@ msgstr ""
 
 #. META: namespace=ui
 msgid "ui.menu.new_game"
-msgstr ""
+msgstr "Begin the manuscript"
 
 #. META: namespace=ui
 msgid "ui.menu.continue"
@@ -329,10 +329,10 @@ msgstr ""
 # ────────────────────────────────────────────────────────────────────────
 
 msgid "ui.shelf.count"
-msgstr ""
+msgstr "%d book on the shelf"
 
 msgid "ui.shelf.count.plural"
-msgstr ""
+msgstr "%d books on the shelf"
 
 msgid "ui.library.total"
 msgstr ""
@@ -346,19 +346,19 @@ msgstr ""
 # ------------------------------------------------------------------
 #. TRANSLATORS: "page" of a book (leaf). Context: the manuscript.
 msgid "ui.word.page.book"
-msgstr ""
+msgstr "page"
 
 #. TRANSLATORS: "page" of a location. Context: navigation.
 msgid "ui.word.page.nav"
-msgstr ""
+msgstr "page"
 
 #. TRANSLATORS: The player character Quixote, formal register.
 msgid "character.quixote"
-msgstr ""
+msgstr "Don Quixote"
 
 #. TRANSLATORS: The player character Sancho, informal register.
 msgid "character.sancho"
-msgstr ""
+msgstr "Sancho"
 
 # --- WEEK 1-2 GREY BOX (the vertical slice sandbox) -------------------------
 
@@ -444,11 +444,11 @@ msgstr ""
 
 #. TRANSLATORS: What the rock is called in the Reality layer.
 msgid "ui.form.roca"
-msgstr ""
+msgstr "rock"
 
 #. TRANSLATORS: What the rock is called in the Book layer.
 msgid "ui.form.libro"
-msgstr ""
+msgstr "book"
 
 #. TRANSLATORS: The windmill itself.
 msgid "ui.object.molino"
@@ -456,7 +456,7 @@ msgstr ""
 
 #. TRANSLATORS: The rock itself.
 msgid "ui.object.roca"
-msgstr ""
+msgstr "The rock"
 
 #. TRANSLATORS: Floating tag over an object: who is looking, and what they see. Format: %s, %s.
 msgid "ui.perception.tag"
@@ -927,7 +927,7 @@ msgstr ""
 
 #. TRANSLATORS: The Examine prompt: what to press to look at a thing.
 msgid "ui.examine.prompt"
-msgstr ""
+msgstr "E — Examine"
 
 #. TRANSLATORS: The Examine panel: the text written on the thing, in
 #. quotation marks. Format: %s.
@@ -945,23 +945,23 @@ msgstr ""
 
 #. TRANSLATORS: The rock in the Reality truth: how it looks.
 msgid "ui.face.rock.reality.desc"
-msgstr ""
+msgstr "A grey stone the size of a fist, with dry lichen on top and its base sunk into the earth."
 
 #. TRANSLATORS: The rock in the Reality truth: the one detail that does not add up.
 msgid "ui.face.rock.reality.tell"
-msgstr ""
+msgstr "Weighs more than a stone of that size should."
 
 #. TRANSLATORS: The rock in the Book truth: how it looks.
 msgid "ui.face.rock.book.desc"
-msgstr ""
+msgstr "A small book, bound in brown leather and tied with a strap. The page edges are gilded and stain the fingers."
 
 #. TRANSLATORS: The rock in the Book truth: the one detail that does not add up.
 msgid "ui.face.rock.book.tell"
-msgstr ""
+msgstr "Weighs more than a book of that size should."
 
 #. TRANSLATORS: The title written on the cover of the book the rock is.
 msgid "ui.face.rock.book.title"
-msgstr ""
+msgstr "The ingenious hidalgo Don Quixote de la Mancha"
 
 #. TRANSLATORS: The windmill in the Reality truth: how it looks.
 msgid "ui.face.windmill.reality.desc"

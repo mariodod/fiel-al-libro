@@ -1,4 +1,8 @@
 extends RefCounted
+const TestHarness = preload("res://tests/test_harness.gd")
+const Perception = preload("res://src/systems/perception.gd")
+var TruthObject = preload("res://src/world/truth_object.gd")
+var Reaction = preload("res://src/systems/reaction.gd")
 ## B5: the reaction. When the world moves under a character, they say so.
 ##
 ## "When quixote goes back to seeing reality some reaction from his side
@@ -6,10 +10,10 @@ extends RefCounted
 ## is a character, and it is the only way the player finds out that the
 ## world they are in is not the world they were in.
 
-const SLICE := "res://src/world/slice.tscn"
+const SLICE = "res://src/world/slice.tscn"
 
 
-func suite(t: TestHarness) -> void:
+func suite(t):
 	t.suite("Reaction")
 
 	t.test("the key is composed from the character and the thing")
@@ -27,31 +31,31 @@ func suite(t: TestHarness) -> void:
 	t.expect_eq(Reaction.bark_key(&"quixote", &"", 0), &"", "a reaction needs a thing")
 
 	# ── The live thing ─────────────────────────────────────────────────
-	var locale := TranslationServer.get_locale()
+	var locale = TranslationServer.get_locale()
 	TranslationServer.set_locale("en")
 
-	var tree := Engine.get_main_loop() as SceneTree
-	var parent: Node = tree.current_scene if tree != null and tree.current_scene != null else null
-	var packed: PackedScene = load(SLICE)
+	var tree = Engine.get_main_loop() as SceneTree
+	var parent = tree.current_scene if tree != null and tree.current_scene != null else null
+	var packed = load(SLICE)
 	t.expect_true(packed != null, "slice.tscn should load")
 	if packed == null or parent == null:
 		TranslationServer.set_locale(locale)
 		return
 
-	var scene: Node = packed.instantiate()
+	var scene = packed.instantiate()
 	parent.add_child(scene)
 	_settle(scene)
 
 	var spoken: Array[StringName] = []
 	var speaker: Array[StringName] = []
-	var on_spoke := func(character_id: StringName, text_key: StringName, _args: Array) -> void:
+	var on_spoke = func(character_id: StringName, text_key: StringName, _args: Array):
 		spoken.append(text_key)
 		speaker.append(character_id)
 	EventBus.character_spoke.connect(on_spoke)
 
-	var quixote: CharacterPawn = scene.get_node("Characters/Quixote")
-	var sancho: CharacterPawn = scene.get_node("Characters/Sancho")
-	var controller: PlayerController = scene.get_node("PlayerController")
+	var quixote = scene.get_node("Characters/Quixote")
+	var sancho = scene.get_node("Characters/Sancho")
+	var controller = scene.get_node("PlayerController")
 
 	# Stand next to the rock, looking at it, so there is something to
 	# react to.
@@ -113,7 +117,7 @@ func suite(t: TestHarness) -> void:
 
 ## Two frames' worth of settling: the view fades to the new reading, and
 ## then the objects follow it.
-func _settle(scene: Node) -> void:
+func _settle(scene: Node):
 	scene.call("_update_readings")
 	TruthLayer.advance_blend(2.0)
 	scene.call("_update_readings")

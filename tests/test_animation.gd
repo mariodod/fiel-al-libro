@@ -1,4 +1,6 @@
 extends RefCounted
+const TestHarness = preload("res://tests/test_harness.gd")
+const CharacterPawn = preload("res://src/characters/character_pawn.gd")
 ## The rigs, in the game: the pawn drives the clips, and the clips are
 ## the right ones.
 ##
@@ -7,24 +9,24 @@ extends RefCounted
 ## not roll, a hit that does not flinch, and a chain that stays on
 ## light_1 forever, are all the same bug.
 
-const SCENE := "res://src/world/slice.tscn"
+const SCENE = "res://src/world/slice.tscn"
 
 
-func suite(t: TestHarness) -> void:
+func suite(t):
 	t.suite("Animation")
 
-	var tree := Engine.get_main_loop() as SceneTree
-	var parent: Node = tree.current_scene if tree != null and tree.current_scene != null else null
-	var packed: PackedScene = load(SCENE)
+	var tree = Engine.get_main_loop() as SceneTree
+	var parent = tree.current_scene if tree != null and tree.current_scene != null else null
+	var packed = load(SCENE)
 	t.expect_true(packed != null, "slice.tscn should load")
 	if packed == null or parent == null:
 		return
 
-	var scene: Node = packed.instantiate()
+	var scene = packed.instantiate()
 	parent.add_child(scene)
 
-	var quixote: CharacterPawn = scene.get_node_or_null("Characters/Quixote")
-	var sancho: CharacterPawn = scene.get_node_or_null("Characters/Sancho")
+	var quixote = scene.get_node_or_null("Characters/Quixote")
+	var sancho = scene.get_node_or_null("Characters/Sancho")
 	t.expect_true(quixote != null and sancho != null, "the slice has the two of them")
 	if quixote == null or sancho == null:
 		parent.remove_child(scene)
@@ -147,7 +149,7 @@ func suite(t: TestHarness) -> void:
 ## It is a grandchild: the rig is an imported .glb, and its
 ## AnimationPlayer is a child of the glb's root, which is a child of the
 ## character.
-func _player(pawn: CharacterPawn) -> AnimationPlayer:
+func _player(pawn: CharacterPawn):
 	if pawn == null:
 		return null
 	for node in _descendants(pawn):
@@ -156,21 +158,21 @@ func _player(pawn: CharacterPawn) -> AnimationPlayer:
 	return null
 
 
-func _descendants(node: Node) -> Array:
-	var out: Array = [node]
+func _descendants(node: Node):
+	var out = [node]
 	for child in node.get_children():
 		out.append_array(_descendants(child))
 	return out
 
 
 ## The clip playing right now.
-func _current(pawn: CharacterPawn) -> StringName:
-	var player := _player(pawn)
+func _current(pawn: CharacterPawn):
+	var player = _player(pawn)
 	if player == null:
 		return &""
 	return player.current_animation
 
 
 ## Let the character run its own logic for a moment.
-func _step(pawn: CharacterPawn) -> void:
+func _step(pawn: CharacterPawn):
 	pawn._physics_process(0.05)

@@ -1,4 +1,6 @@
 extends RefCounted
+const TestHarness = preload("res://tests/test_harness.gd")
+const ManifiestoFragment = preload("res://src/data/manifiesto_fragment.gd")
 ## The Manifiesto fragments, checked.
 ##
 ## The fragments are the game's literal source material, and they have
@@ -17,18 +19,18 @@ extends RefCounted
 ## headless tool (src/tools/validate_manifiesto.gd) and this suite
 ## agree on what a fragment owes.
 
-func suite(t: TestHarness) -> void:
+func suite(t):
 	t.suite("ManifiestoContent")
 
-	var files := ManifiestoFragment.fragment_files()
+	var files = ManifiestoFragment.fragment_files()
 
 	t.test("there is a fragment to read")
 	t.expect_gt(float(files.size()), 0.0, "the Manifiesto should not be empty")
 
 	t.test("every fragment in the repository is valid")
 	for file_name: String in files:
-		var base := file_name.get_basename()
-		var data := ManifiestoFragment.load_data(StringName(base))
+		var base = file_name.get_basename()
+		var data = ManifiestoFragment.load_data(StringName(base))
 		t.expect_false(data.is_empty(), "%s should be readable" % file_name)
 		if data.is_empty():
 			continue
@@ -39,10 +41,10 @@ func suite(t: TestHarness) -> void:
 		t.expect_eq(errors.size(), 0, "%s: %s" % [base, ", ".join(errors)])
 
 	t.test("and no two fragments share an id")
-	var ids := {}
+	var ids = {}
 	for file_name: String in files:
-		var data := ManifiestoFragment.load_data(StringName(file_name.get_basename()))
-		var id := str(data.get("id", ""))
+		var data = ManifiestoFragment.load_data(StringName(file_name.get_basename()))
+		var id = str(data.get("id", ""))
 		if id.is_empty():
 			continue
 		t.expect_false(ids.has(id), "%s is used twice" % id)
@@ -51,20 +53,20 @@ func suite(t: TestHarness) -> void:
 	t.test("every fragment the build reads has been checked")
 	# "Ships" means "is read". The page turn prints a line of the
 	# original, and an unverified fragment must not ship.
-	var referenced := ManifiestoFragment.referenced_files()
+	var referenced = ManifiestoFragment.referenced_files()
 	t.expect_gt(float(referenced.size()), 0.0, "the build should read at least one fragment")
 	for file_name: String in referenced:
-		var data := ManifiestoFragment.load_data(StringName(file_name.get_basename()))
+		var data = ManifiestoFragment.load_data(StringName(file_name.get_basename()))
 		if data.is_empty():
 			t.expect_true(false, "%s is read by the build and cannot be read" % file_name)
 			continue
-		var source: Dictionary = data.get("source", {})
+		var source = data.get("source", {})
 		t.expect_true(bool(source.get("verified", false)),
 			"%s is read by the build and nobody has checked it against the edition" % file_name)
 
 	t.test("the original is content, and never a key")
 	for file_name: String in files:
-		var data := ManifiestoFragment.load_data(StringName(file_name.get_basename()))
-		var original := str(data.get(ManifiestoFragment.ORIGINAL_FIELD, ""))
+		var data = ManifiestoFragment.load_data(StringName(file_name.get_basename()))
+		var original = str(data.get(ManifiestoFragment.ORIGINAL_FIELD, ""))
 		t.expect_false(original.begins_with("bk."), "%s: the original is a key" % file_name)
 		t.expect_gt(float(original.length()), 0.0, "%s: the original is empty" % file_name)
