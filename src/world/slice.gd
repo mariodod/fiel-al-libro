@@ -64,6 +64,7 @@ extends Node3D
 var _map_screen: MapScreen = null
 @onready var windmill: TruthObject = $Windmill
 @onready var rock: TruthObject = $Rock
+@onready var book_stand: TruthObject = $BookStand
 ## The Venture of Montiel, in the era to the south.
 var venture: Venture = null
 
@@ -141,7 +142,7 @@ const LOCURA_LOST := 60.0
 func _ready() -> void:
 	_build_environment()
 	_build_yard()
-	_objects = [windmill, rock]
+	_objects = [windmill, rock, book_stand]
 	_build_era()
 	_build_characters()
 	venture = $Venture
