@@ -159,10 +159,7 @@ very good reason.
 - [ ] Set up the folder structure from `TECH_STACK.md` §3.1
 - [ ] GitHub Actions: headless import + export to Windows
 - [ ] Write the Blender → Godot import preset guide; verify on a clean clone
-- [ ] Set up monthly cloud backup
-- [ ] **Start the Steam Direct $100 fee application** (takes weeks to be approved)
-- [ ] **Trademark check on "Fiel al Libro"** (EU + US, classes 9 & 41) and check for existing games
-      with the same name — *D6, `GDD.md` §21*. Blocking for the store page.
+- [ ] Set up automated cloud backup
 - [ ] Write the game's one-page pitch and put it in the repo root
 
 ### Weeks 3–4: The engine's spine

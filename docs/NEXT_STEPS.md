@@ -27,17 +27,8 @@ everything below.
 
 | # | Task | Why it is urgent | Est. |
 |---|---|---|---|
-| 1.1 | **Set up the monthly cloud backup** | 3-2-1: GitHub + local external drive + a monthly archive to cloud (Blobs / Backblaze B2 / Google Drive). The GDD and the clearance memo are **not** in git — they are irreplaceable. | 20 min |
-| 1.2 | **Apply for Steam Direct** ($100) | Approval takes weeks. You cannot create the store page without it. | 30 min |
-| 1.3 | **Manual trademark searches** | Checklist in `docs/IP_CLEARANCE.md` §4: TMview (EUIPO + Spain), OEPM, USPTO, WIPO, plus common-law (LinkedIn, Instagram, YouTube), the company register, and domain availability. | 1–2 h |
-| 1.4 | **Register `fielallibro.es` / `.com`** | Before anything else claims it. | 10 min |
-| 1.5 | **File the EUIPO composite mark** | `FIEL AL LIBRO: LA LOCURA Y LA VERDAD`, classes 9 + 41, ~€1,150. Intent-to-use is fine. The 3-month opposition period starts the day you file. | 45 min |
-| 1.6 | **Read the novel end to end and pick 16 Manifiesto fragments** | This is the highest-value writing task in the project and it cannot be delegated to a machine. See `GDD.md` §20.1. | 4 h |
-| 1.7 | **Play "Hidalgo" and "Dark Bound"** | The closest thematic neighbours. Play them before you lock the slice's positioning. | 2 h |
-| 1.8 | **Read the whole novel's Part I** | You are writing a game about it. Reading summaries is not enough. | 8 h |
-
-> **1.1 is not optional and not a nice-to-have.** Two of the project's most important documents
-> exist on exactly one machine.
+| 1.1 | **Set up automated cloud backup** | The GDD and the clearance memo are **not** in git — they are irreplaceable. A single disk failure loses them. | 20 min |
+| 1.2 | **Read the novel end to end and pick 16 Manifiesto fragments** | This is the highest-value writing task in the project and it cannot be delegated to a machine. See `GDD.md` §20.1. | 4 h |
 
 ---
 

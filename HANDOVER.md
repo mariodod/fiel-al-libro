@@ -78,9 +78,7 @@ cd fiel-al-libro
 powershell -ExecutionPolicy Bypass -File tools\setup.ps1
 ```
 
-That checks git/LFS/Godot, imports the project, and runs the test suite. It prints the four
-things that still need a human (Steam Direct, the trademark searches, the EUIPO filing, and the
-cloud backup).
+That checks git/LFS/Godot, imports the project, and runs the test suite.
 
 **If the build step fails** with "No export template found", install the export templates
 (~1.2 GB): Godot editor → **Editor → Manage Export Templates…** → 4.7.2-stable → Download and
@@ -442,11 +440,6 @@ fragment the game reads has not been verified against the edition.
 **"Fiel al Libro" is clear** — no game by that name on Steam or itch.io, no pre-existing use in
 any media category. But it is a **common Spanish phrase**, so it is a weak, descriptive mark.
 
-**The fix, which costs nothing:** file the **composite**
-`FIEL AL LIBRO: LA LOCURA Y LA VERDAD` (classes 9 + 41). The subtitle is already designed; a
-longer mark is materially more distinctive. EUIPO first (~€1,150, covers all 27 EU states), then
-USPTO (~$700). Both accept intent-to-use — **file before launch, not at launch.**
-
 Referencing "Don Quijote" *descriptively* in the store copy is fine (nominative fair use). Keep
 it descriptive; in the English build "Fiel al Libro" must be what the player sees.
 
@@ -454,7 +447,8 @@ it descriptive; in the English build "Fiel al Libro" must be what the player see
 Spanish) is an investigation game about a descent into madness with eroding sanity: very close
 to this project's pillars.
 
-Full memo: `docs/IP_CLEARANCE.md` (private).
+**Money spent:** €0. Godot is free, assets are CC0, the only planned spend is the credits song (~$200–800).
+There are no trademark filings, domain purchases, or other paid legal steps in the project plan.
 
 ---
 
@@ -467,7 +461,7 @@ Full memo: `docs/IP_CLEARANCE.md` (private).
 | **Tests** | 25 suites, 607 assertions, all green, enforced in CI. |
 | **CI** | Green on every push. Produces Windows + Linux builds as artifacts. |
 | **Game content** | Two primitives (a windmill/giant, a rock/book) as low-poly placeholders, a training dummy and a walled yard, eight reaction lines in three languages, and one real Manifiesto fragment. No art, no levels, no enemies, no audio. |
-| **Money spent** | €0. Godot is free, assets are CC0, the only planned spend is the credits song (~$200–800) and later the EUIPO filing (~€1,150). |
+| **Money spent** | €0. Godot is free, assets are CC0, the only planned spend is the credits song (~$200–800). |
 
 **What exists is the skeleton, the tooling, the plan — and now a box that answers the
 question.** The mechanic is built and legible: press `T` and the windmill becomes a giant;

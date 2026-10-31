@@ -261,19 +261,7 @@
 
 ## Still open (admin, not game work — these have long lead times)
 
-- [ ] **Set up the monthly cloud backup** (Blobs / Backblaze B2 / Google Drive) — *you are one disk failure from losing two years*
-- [ ] Apply the Steam Direct $100 application
-- [ ] **Trademark: manual register searches** (TMview, OEPM, USPTO, WIPO) — 1–2 hours, checklist in `docs/IP_CLEARANCE.md` §4
-- [ ] **Trademark: file the COMPOSITE mark** `FIEL AL LIBRO: LA LOCURA Y LA VERDAD` (EUIPO classes 9+41, ~€1,150, then USPTO ~$700). The bare phrase is descriptive and weak. Register `fielallibro.es`/`.com` first.
-- [ ] **Play "Hidalgo" and "Dark Bound"** before locking the vertical slice — the closest thematic neighbours in the market
-- [ ] Read the novel end to end and pick the first 16 Manifiesto fragments (D7).
-      **The text is now on disk:** run `powershell -ExecutionPolicy Bypass -File
-      tools\fetch_reference.ps1`. `reference\quijote_1605_parte1.txt` is the 1605 first
-      part (all 52 chapters, *Curioso Impertinente* included, unwrapped for reading);
-      `reference\quijote_1615_parte2.txt` is the 1615 volume; and
-      `reference\quijote_1605_facsimil_ocr.txt` is the 1605 printing itself, for checking
-      a wording. **Check every fragment against the printing** — the 1605 and 1615
-      editions differ, and DLC 1 is the 1615 book.
+- [ ] **Set up automated cloud backup** (Blobs / Backblaze B2 / Google Drive) — *you are one disk failure from losing two years*
 
 ## Parked (decide later, don't forget)
 
