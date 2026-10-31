@@ -17,6 +17,7 @@
 [ext_resource type="Resource" path="res://src/data/ventures/venture_montiel_reading.tres" id="15_venture_reading"]
 [ext_resource type="Script" path="res://src/ui/vitals_panel.gd" id="19_vitals"]
 [ext_resource type="Resource" path="res://src/data/primitives/book_stand.tres" id="20_book_stand"]
+[ext_resource type="Resource" path="res://src/data/books/bk.ch01.apertura.tres" id="21_book_apertura"]
 
 [sub_resource type="PlaneMesh" id="Plane_ground"]
 size = Vector2(300, 300)
@@ -63,6 +64,11 @@ data = ExtResource("8_rock")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -6)
 script = ExtResource("2_object")
 data = ExtResource("20_book_stand")
+
+[node name="Tome" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -10)
+script = ExtResource("2_object")
+data = ExtResource("21_book_apertura")
 
 [node name="Venture" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 36)
