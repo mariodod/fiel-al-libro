@@ -151,6 +151,7 @@ func _ready() -> void:
 	_build_post_process()
 	_build_examine_panel()
 	_build_bark_line()
+	_build_lectura_hud()
 	_build_lock_marker()
 	_build_shelf()
 
@@ -367,6 +368,21 @@ func _build_bark_line() -> void:
 	bark.name = "BarkLine"
 	bark.set_script(load("res://src/ui/bark_line.gd"))
 	layer.add_child(bark)
+
+
+## The Lectura HUD: shows evidence and anamorphosis progress.
+##
+## Appears when Lectura mode is active (Q key).
+func _build_lectura_hud() -> void:
+	var layer := CanvasLayer.new()
+	layer.name = "LecturaLayer"
+	layer.layer = 30
+	add_child(layer)
+
+	var hud := Control.new()
+	hud.name = "LecturaHUD"
+	hud.set_script(load("res://src/ui/lectura_hud.gd"))
+	layer.add_child(hud)
 
 
 ## The Biblioteca shelf UI: shows collected and equipped books.

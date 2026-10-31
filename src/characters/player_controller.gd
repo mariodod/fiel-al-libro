@@ -70,6 +70,11 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif event.is_action_pressed(&"lectura"):
 		Lectura.toggle()
 	elif event.is_action_pressed(&"interact"):
+		# Lectura mode: spot anamorphoses when looking at them.
+		if Lectura.is_active():
+			var target := _examine_target
+			if target != null and target.data != null and target.data.anamorphosis_id != "":
+				Lectura.spot(target.data.anamorphosis_id)
 		# Revive the downed companion if close enough; otherwise examine.
 		if other_pawn != null and other_pawn.is_dead:
 			var to_companion := other_pawn.global_position - active_pawn.global_position
@@ -192,6 +197,12 @@ func _set_examine_target(target: TruthObject) -> void:
 	_examine_target = target
 	var id := &"" if target == null or target.data == null else target.data.id
 	EventBus.examine_target_changed.emit(id)
+
+
+## The current examine target, or null.
+## Used by Lectura mode to spot anamorphoses.
+func get_examine_target() -> TruthObject:
+	return _examine_target
 
 
 ## The direction the pawn is looking. The node faces -Z.

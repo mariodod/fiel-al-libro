@@ -44,6 +44,12 @@ uniform float book_contrast : hint_range(0.5, 2.0) = 1.24;
 uniform float book_bloom : hint_range(0.0, 1.0) = 0.22;
 group_uniforms;
 
+group_uniforms lectura;
+uniform float lectura_amount : hint_range(0.0, 1.0) = 0.0;
+uniform float lectura_saturation : hint_range(0.0, 1.0) = 0.15;
+uniform float lectura_vignette : hint_range(0.0, 1.0) = 0.5;
+group_uniforms;
+
 group_uniforms line_art;
 // Screen-space edge detect → pen-and-ink contour. This is what makes
 // low-poly read as illustration instead of as a blockout.
@@ -167,6 +173,14 @@ void fragment() {
 	vec3 book = grade(col, book_saturation, book_contrast, book_tint);
 	col = mix(reality, book, t);
 
+	// ── Lectura grade ─────────────────────────────────────────────────
+	// Investigative mode: desaturated, everything looks flat and grey.
+	float l = clamp(lectura_amount, 0.0, 1.0);
+	if (l > 0.001) {
+		vec3 lect = grade(col, lectura_saturation, 1.0, vec4(0.60, 0.58, 0.50, 1.0));
+		col = mix(col, lect, l);
+	}
+
 	// Book layer gets a soft glow, like light through old paper.
 	if (t > 0.001) {
 		vec2 bpx = 2.0 * pixel_step();
@@ -200,7 +214,8 @@ void fragment() {
 
 	// ── Vignette ──────────────────────────────────────────────────────
 	vec2 d = SCREEN_UV - vec2(0.5);
-	float vig = 1.0 - dot(d, d) * vignette_strength * 2.4;
+	float vig_strength = mix(vignette_strength, lectura_vignette, clamp(lectura_amount, 0.0, 1.0));
+	float vig = 1.0 - dot(d, d) * vig_strength * 2.4;
 	col *= clamp(vig, 0.0, 1.0);
 
 	// ── The page turn ─────────────────────────────────────────────────

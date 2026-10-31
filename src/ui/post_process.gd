@@ -86,12 +86,14 @@ func _process(delta: float) -> void:
 	if _text_pending:
 		_text_pending = false
 		_build_page_texture()
+	if _material != null:
+		# Lectura mode: desaturate the world when investigating.
+		_material.set_shader_parameter(&"lectura_amount", float(Lectura.is_active()))
 	if not _turning:
 		return
 	_page_turn = minf(1.0, _page_turn + delta / maxf(page_seconds, 0.05))
 	if _page_turn >= 1.0:
 		_turning = false
-	if _material != null:
 		_material.set_shader_parameter(&"page_turn", _page_turn)
 
 
