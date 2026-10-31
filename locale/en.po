@@ -22,7 +22,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Fiel al Libro 0.1.0\n"
-"Language: \n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -436,11 +436,11 @@ msgstr "Absorbed"
 
 #. TRANSLATORS: What the windmill is called in the Reality layer.
 msgid "ui.form.molino"
-msgstr "Mill"
+msgstr "windmill"
 
 #. TRANSLATORS: What the windmill is called in the Book layer.
 msgid "ui.form.gigante"
-msgstr "Giant"
+msgstr "giant"
 
 #. TRANSLATORS: What the rock is called in the Reality layer.
 msgid "ui.form.roca"
@@ -460,7 +460,7 @@ msgstr "Rock"
 
 #. TRANSLATORS: Floating tag over an object: who is looking, and what they see. Format: %s, %s.
 msgid "ui.perception.tag"
-msgstr "Perception"
+msgstr "%s: %s"
 
 # --- B5: THE REACTIONS -----------------------------------------------------
 # The line a character says when the world moves under them. The key is

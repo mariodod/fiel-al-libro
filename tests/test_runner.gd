@@ -64,9 +64,11 @@ func _load_translations():
 		var res: Resource = ResourceLoader.load(path, "Translation", ResourceLoader.CACHE_MODE_IGNORE)
 		var translation := res as Translation
 		if translation != null:
-			# Loading the .po as a Translation resource registers it
-			# with TranslationServer under the given locale.
-			print("Loaded translation for locale '%s' from %s" % [locale, path])
+			# Register the translation with TranslationServer under the given locale.
+			TranslationServer.add_translation(translation)
+			print("Registered translation for locale '%s' from %s: %d messages" % [locale, path, translation.get_message_count()])
+		else:
+			print("Failed to load translation for locale '%s' from %s" % [locale, path])
 
 
 func _ready() -> void:
