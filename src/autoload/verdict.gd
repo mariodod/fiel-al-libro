@@ -91,6 +91,7 @@ static func verdict_by_truth(id: StringName) -> int:
 
 	_verdicts[id] = VERDICT_TRUTH
 	Locura.add_for(&"quixote", LOCURA_COST_QUIXOTE)
+	TruthLayer.shift_to(TruthLayer.Layer.BOOK, true)
 	EventBus.verdict_resolved.emit(id, VERDICT_TRUTH)
 	return VERDICT_TRUTH
 
@@ -106,6 +107,7 @@ static func verdict_by_force(id: StringName) -> int:
 
 	_verdicts[id] = VERDICT_FORCE
 	Locura.add_for(&"sancho", LOCURA_GAIN_SANCHO)
+	TruthLayer.shift_to(TruthLayer.Layer.REALITY, true)
 	EventBus.verdict_resolved.emit(id, VERDICT_FORCE)
 	return VERDICT_FORCE
 
