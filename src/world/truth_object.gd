@@ -35,6 +35,8 @@ var _hover_time: float = 0.0
 ## How long the Book skin is off this object. GDD.md §5.2: Desvelar
 ## strips it for eight seconds.
 var _reveal_time: float = 0.0
+## The pulsing glow material applied to the revealed Reality form.
+var _reveal_material: ShaderMaterial = null
 
 
 func _ready() -> void:
@@ -52,6 +54,12 @@ func _process(delta: float) -> void:
 	_hover_time += delta
 	if _reveal_time > 0.0:
 		_reveal_time = maxf(0.0, _reveal_time - delta)
+		# Pulse the reveal material while the skin is off.
+		if _reveal_material != null:
+			_reveal_material.set_shader_parameter("time", Time.get_ticks_msec() / 1000.0)
+		# Skin came back on: drop the reveal material.
+		if _reveal_time <= 0.0:
+			_clear_reveal_material()
 	if _driven_externally:
 		_refresh()
 		return
@@ -135,11 +143,59 @@ func face_for(layer: int) -> TruthFace:
 ## becomes a stone for as long as the skin is off.
 func reveal(duration: float) -> void:
 	_reveal_time = maxf(_reveal_time, duration)
+	if _reality_form != null and _reveal_material == null:
+		_build_reveal_material()
+		_apply_reveal_material(_reveal_material)
 
 
 ## Is the Book skin off this object?
 func is_revealed() -> bool:
 	return _reveal_time > 0.0
+
+
+## Build a pulsing glow material for the revealed Reality form.
+## The skin comes off: the object glows, hot and visible, until the
+## reveal time runs out and the Book skin settles back on.
+func _build_reveal_material() -> void:
+	var shader := Shader.new()
+	shader.code = """
+		shader_type spatial;
+		render_mode unshaded;
+
+		uniform float time : hint_range(0, 10);
+		uniform float intensity : hint_range(0, 1);
+
+		void fragment() {
+			float pulse = sin(time * 6.0) * 0.5 + 0.5;
+			ALBEDO = vec3(1.0, 0.85, 0.45);
+			EMISSION = ALBEDO * pulse * intensity * 0.6;
+		}
+	"""
+	_reveal_material = ShaderMaterial.new()
+	_reveal_material.shader = shader
+	_reveal_material.set_shader_parameter("intensity", 1.0)
+
+
+## Apply the reveal material to every mesh in the given form.
+func _apply_reveal_material(material: ShaderMaterial) -> void:
+	if _reality_form == null:
+		return
+	_apply_material_to_meshes(_reality_form, material)
+
+
+## Remove the reveal material from every mesh in the given form.
+func _clear_reveal_material() -> void:
+	if _reality_form == null:
+		return
+	_apply_material_to_meshes(_reality_form, null)
+
+
+## Apply (or clear) a material override on every MeshInstance3D under a node.
+func _apply_material_to_meshes(node: Node, material: Material) -> void:
+	if node is MeshInstance3D:
+		node.material_override = material
+	for child in node.get_children():
+		_apply_material_to_meshes(child, material)
 
 
 ## The truth layer this object is currently showing, at full strength.
@@ -193,6 +249,7 @@ func form_for(layer: int) -> Node3D:
 
 func _clear_forms() -> void:
 	if _reality_form != null:
+		_clear_reveal_material()
 		_reality_form.queue_free()
 		_reality_form = null
 	if _book_form != null:
