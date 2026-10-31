@@ -1237,3 +1237,123 @@ msgstr "A worthy steed carries you far."
 #. TRANSLATORS: Book codex note: bk.ch04.rocinante.01
 msgid "ui.book.bk.ch04.rocinante.01.codex"
 msgstr "The naming of Rocinante."
+
+#. TRANSLATORS: Chapter titles
+msgid "ui.chapter.01.title"
+msgstr "The Windmills"
+
+msgid "ui.chapter.02.title"
+msgstr "The Basque"
+
+msgid "ui.chapter.03.title"
+msgstr "The Canting Sea"
+
+msgid "ui.chapter.04.title"
+msgstr "The Encinados"
+
+msgid "ui.chapter.05.title"
+msgstr "Montesinos"
+
+msgid "ui.chapter.06.title"
+msgstr "The Bridge"
+
+msgid "ui.chapter.07.title"
+msgstr "Dulcinea"
+
+msgid "ui.chapter.08.title"
+msgstr "Celestina"
+
+msgid "ui.chapter.09.title"
+msgstr "The Ensayo — Setup"
+
+msgid "ui.chapter.10.title"
+msgstr "The Ensayo — Resolution"
+
+msgid "ui.chapter.11.title"
+msgstr "Knight of the Mirrors"
+
+msgid "ui.chapter.12.title"
+msgstr "The Magician"
+
+msgid "ui.chapter.13.title"
+msgstr "The Duke"
+
+#. TRANSLATORS: Venture names
+msgid "ui.venture.basque"
+msgstr "The Basque"
+
+msgid "ui.venture.canting_sea"
+msgstr "The Canting Sea"
+
+msgid "ui.venture.encinados"
+msgstr "The Encinados"
+
+msgid "ui.venture.montesinos"
+msgstr "Montesinos"
+
+msgid "ui.venture.bridge"
+msgstr "The Bridge"
+
+msgid "ui.venture.dulcinea"
+msgstr "Dulcinea"
+
+msgid "ui.venture.mirrors"
+msgstr "Knight of the Mirrors"
+
+msgid "ui.venture.magician"
+msgstr "The Magician"
+
+msgid "ui.venture.duke"
+msgstr "The Duke"
+
+#. TRANSLATORS: Ensayo UI keys
+msgid "ensayo.setup.title"
+msgstr "The Test"
+
+msgid "ensayo.setup.tested.quixote"
+msgstr "Quixote"
+
+msgid "ensayo.setup.tested.sancho"
+msgstr "Sancho"
+
+msgid "ensayo.setup.examiner.quixote"
+msgstr "Quixote"
+
+msgid "ensayo.setup.examiner.sancho"
+msgstr "Sancho"
+
+msgid "ensayo.setup.secret.wife"
+msgstr "the wife's name"
+
+msgid "ensayo.setup.secret.treasure"
+msgstr "the treasure"
+
+msgid "ensayo.setup.secret.truth"
+msgstr "the truth"
+
+msgid "ensayo.setup.told.tested"
+msgstr "the tested"
+
+msgid "ensayo.setup.told.examiner"
+msgstr "the examiner"
+
+msgid "ensayo.setup.told.neither"
+msgstr "neither"
+
+msgid "ensayo.outcome.holds"
+msgstr "The test holds"
+
+msgid "ensayo.outcome.breaks"
+msgstr "The test breaks"
+
+msgid "ensayo.outcome.examiner_breaks"
+msgstr "The examiner breaks"
+
+msgid "ensayo.outcome.nothing"
+msgstr "Nobody breaks; nothing happens"
+
+msgid "ensayo.outcome.caught"
+msgstr "The player is caught"
+
+msgid "ensayo.outcome.refuses"
+msgstr "The player refuses to stage it"

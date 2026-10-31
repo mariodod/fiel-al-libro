@@ -1237,3 +1237,123 @@ msgstr ""
 #. TRANSLATORS: Book codex note: bk.ch04.rocinante.01
 msgid "ui.book.bk.ch04.rocinante.01.codex"
 msgstr ""
+
+#. TRANSLATORS: Chapter titles
+msgid "ui.chapter.01.title"
+msgstr ""
+
+msgid "ui.chapter.02.title"
+msgstr ""
+
+msgid "ui.chapter.03.title"
+msgstr ""
+
+msgid "ui.chapter.04.title"
+msgstr ""
+
+msgid "ui.chapter.05.title"
+msgstr ""
+
+msgid "ui.chapter.06.title"
+msgstr ""
+
+msgid "ui.chapter.07.title"
+msgstr ""
+
+msgid "ui.chapter.08.title"
+msgstr ""
+
+msgid "ui.chapter.09.title"
+msgstr ""
+
+msgid "ui.chapter.10.title"
+msgstr ""
+
+msgid "ui.chapter.11.title"
+msgstr ""
+
+msgid "ui.chapter.12.title"
+msgstr ""
+
+msgid "ui.chapter.13.title"
+msgstr ""
+
+#. TRANSLATORS: Venture names
+msgid "ui.venture.basque"
+msgstr ""
+
+msgid "ui.venture.canting_sea"
+msgstr ""
+
+msgid "ui.venture.encinados"
+msgstr ""
+
+msgid "ui.venture.montesinos"
+msgstr ""
+
+msgid "ui.venture.bridge"
+msgstr ""
+
+msgid "ui.venture.dulcinea"
+msgstr ""
+
+msgid "ui.venture.mirrors"
+msgstr ""
+
+msgid "ui.venture.magician"
+msgstr ""
+
+msgid "ui.venture.duke"
+msgstr ""
+
+#. TRANSLATORS: Ensayo UI keys
+msgid "ensayo.setup.title"
+msgstr ""
+
+msgid "ensayo.setup.tested.quixote"
+msgstr ""
+
+msgid "ensayo.setup.tested.sancho"
+msgstr ""
+
+msgid "ensayo.setup.examiner.quixote"
+msgstr ""
+
+msgid "ensayo.setup.examiner.sancho"
+msgstr ""
+
+msgid "ensayo.setup.secret.wife"
+msgstr ""
+
+msgid "ensayo.setup.secret.treasure"
+msgstr ""
+
+msgid "ensayo.setup.secret.truth"
+msgstr ""
+
+msgid "ensayo.setup.told.tested"
+msgstr ""
+
+msgid "ensayo.setup.told.examiner"
+msgstr ""
+
+msgid "ensayo.setup.told.neither"
+msgstr ""
+
+msgid "ensayo.outcome.holds"
+msgstr ""
+
+msgid "ensayo.outcome.breaks"
+msgstr ""
+
+msgid "ensayo.outcome.examiner_breaks"
+msgstr ""
+
+msgid "ensayo.outcome.nothing"
+msgstr ""
+
+msgid "ensayo.outcome.caught"
+msgstr ""
+
+msgid "ensayo.outcome.refuses"
+msgstr ""

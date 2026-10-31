@@ -1206,3 +1206,123 @@ msgstr "Un corcel digno te lleva lejos."
 #. TRANSLATORS: Book codex note: bk.ch04.rocinante.01
 msgid "ui.book.bk.ch04.rocinante.01.codex"
 msgstr "El nombramiento de Rocinante."
+
+#. TRANSLATORS: Chapter titles
+msgid "ui.chapter.01.title"
+msgstr "Los Molinos"
+
+msgid "ui.chapter.02.title"
+msgstr "El Vasco"
+
+msgid "ui.chapter.03.title"
+msgstr "El Mar Cantábrico"
+
+msgid "ui.chapter.04.title"
+msgstr "Los Encinados"
+
+msgid "ui.chapter.05.title"
+msgstr "Montesinos"
+
+msgid "ui.chapter.06.title"
+msgstr "El Puente"
+
+msgid "ui.chapter.07.title"
+msgstr "Dulcinea"
+
+msgid "ui.chapter.08.title"
+msgstr "Celestina"
+
+msgid "ui.chapter.09.title"
+msgstr "El Ensayo — Preparación"
+
+msgid "ui.chapter.10.title"
+msgstr "El Ensayo — Resolución"
+
+msgid "ui.chapter.11.title"
+msgstr "El Caballero de los Espejos"
+
+msgid "ui.chapter.12.title"
+msgstr "El Mago"
+
+msgid "ui.chapter.13.title"
+msgstr "El Duque"
+
+#. TRANSLATORS: Venture names
+msgid "ui.venture.basque"
+msgstr "El Vasco"
+
+msgid "ui.venture.canting_sea"
+msgstr "El Mar Cantábrico"
+
+msgid "ui.venture.encinados"
+msgstr "Los Encinados"
+
+msgid "ui.venture.montesinos"
+msgstr "Montesinos"
+
+msgid "ui.venture.bridge"
+msgstr "El Puente"
+
+msgid "ui.venture.dulcinea"
+msgstr "Dulcinea"
+
+msgid "ui.venture.mirrors"
+msgstr "El Caballero de los Espejos"
+
+msgid "ui.venture.magician"
+msgstr "El Mago"
+
+msgid "ui.venture.duke"
+msgstr "El Duque"
+
+#. TRANSLATORS: Ensayo UI keys
+msgid "ensayo.setup.title"
+msgstr "La Prueba"
+
+msgid "ensayo.setup.tested.quixote"
+msgstr "Quijote"
+
+msgid "ensayo.setup.tested.sancho"
+msgstr "Sancho"
+
+msgid "ensayo.setup.examiner.quixote"
+msgstr "Quijote"
+
+msgid "ensayo.setup.examiner.sancho"
+msgstr "Sancho"
+
+msgid "ensayo.setup.secret.wife"
+msgstr "el nombre de la esposa"
+
+msgid "ensayo.setup.secret.treasure"
+msgstr "el tesoro"
+
+msgid "ensayo.setup.secret.truth"
+msgstr "la verdad"
+
+msgid "ensayo.setup.told.tested"
+msgstr "el probado"
+
+msgid "ensayo.setup.told.examiner"
+msgstr "el examinador"
+
+msgid "ensayo.setup.told.neither"
+msgstr "ninguno"
+
+msgid "ensayo.outcome.holds"
+msgstr "La prueba resiste"
+
+msgid "ensayo.outcome.breaks"
+msgstr "La prueba se rompe"
+
+msgid "ensayo.outcome.examiner_breaks"
+msgstr "El examinador se rompe"
+
+msgid "ensayo.outcome.nothing"
+msgstr "Nadie se rompe; nada ocurre"
+
+msgid "ensayo.outcome.caught"
+msgstr "El jugador es descubierto"
+
+msgid "ensayo.outcome.refuses"
+msgstr "El jugador se niega a escenificarla"

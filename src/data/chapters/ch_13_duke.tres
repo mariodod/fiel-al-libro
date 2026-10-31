@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ChapterData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://src/data/chapter_data.gd" id="1_data"]
+[ext_resource type="Resource" path="res://src/data/ventures/venture_duke.tres" id="2_venture"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"ch_13_duke"
+display_name_key = &"ui.chapter.13.title"
+region_id = &"el_castillo_del_duque"
+chapter_number = 13
+posada_id = &"duque_posada"
+venture = ExtResource("2_venture")
+scene_path = "res://src/world/chapters/ch_13_duke.tscn"
+case_id = &""
+anamorphosis_ids = []
+manifesto_fragments = ["bk.ch13.leones.01"]
+colophon_fragment = &"bk.ch13.leones.01"

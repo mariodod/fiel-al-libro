@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ChapterData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://src/data/chapter_data.gd" id="1_data"]
+[ext_resource type="Resource" path="res://src/data/ventures/venture_dulcinea.tres" id="2_venture"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"ch_07_dulcinea"
+display_name_key = &"ui.chapter.07.title"
+region_id = &"el_toboso"
+chapter_number = 7
+posada_id = &"toboso_posada"
+venture = ExtResource("2_venture")
+scene_path = "res://src/world/chapters/ch_07_dulcinea.tscn"
+case_id = &""
+anamorphosis_ids = []
+manifesto_fragments = ["bk.ch07.yanguesas.01"]
+colophon_fragment = &"bk.ch07.yanguesas.01"

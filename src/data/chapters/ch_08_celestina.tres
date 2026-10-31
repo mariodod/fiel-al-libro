@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ChapterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/data/chapter_data.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"ch_08_celestina"
+display_name_key = &"ui.chapter.08.title"
+region_id = &"el_toboso"
+chapter_number = 8
+posada_id = &"toboso_posada"
+venture = null
+scene_path = "res://src/world/chapters/ch_08_celestina.tscn"
+case_id = &"galimatias"
+anamorphosis_ids = []
+manifesto_fragments = ["bk.ch09.manuscrito.01"]
+colophon_fragment = &"bk.ch09.manuscrito.01"

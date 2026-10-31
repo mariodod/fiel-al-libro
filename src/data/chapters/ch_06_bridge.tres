@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ChapterData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://src/data/chapter_data.gd" id="1_data"]
+[ext_resource type="Resource" path="res://src/data/ventures/venture_bridge.tres" id="2_venture"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"ch_06_bridge"
+display_name_key = &"ui.chapter.06.title"
+region_id = &"sierra_morena"
+chapter_number = 6
+posada_id = &"sierra_morena_posada"
+venture = ExtResource("2_venture")
+scene_path = "res://src/world/chapters/ch_06_bridge.tscn"
+case_id = &""
+anamorphosis_ids = []
+manifesto_fragments = ["bk.ch06.pastores.01"]
+colophon_fragment = &"bk.ch06.pastores.01"

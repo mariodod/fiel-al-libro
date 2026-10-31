@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="VentureData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/data/venture_data.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"venture_montesinos"
+display_name_key = &"ui.venture.montesinos"
+source_reference = "Don Quijote, parte I, capítulo 23"
+novel_chapter = "I.23"
+enemy = null
+is_non_combat = true
+allows_truth_resolution = false
+allows_staged_resolution = false
+case_id = &""
+manifesto_fragments = ["bk.ch05.duena.01"]
+rewards = []

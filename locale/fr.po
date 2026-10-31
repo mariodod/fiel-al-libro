@@ -1159,4 +1159,124 @@ msgstr "Un corcel digno te lleva lejos."
 
 #. TRANSLATORS: Book codex note: bk.ch04.rocinante.01
 msgid "ui.book.bk.ch04.rocinante.01.codex"
-msgstr "El nombramiento de Rocinante."
+msgstr "Le baptême de Rocinante."
+
+#. TRANSLATORS: Chapter titles
+msgid "ui.chapter.01.title"
+msgstr "Les Moulins"
+
+msgid "ui.chapter.02.title"
+msgstr "Le Basque"
+
+msgid "ui.chapter.03.title"
+msgstr "La Mer Cantabrique"
+
+msgid "ui.chapter.04.title"
+msgstr "Les Encinados"
+
+msgid "ui.chapter.05.title"
+msgstr "Montesinos"
+
+msgid "ui.chapter.06.title"
+msgstr "Le Pont"
+
+msgid "ui.chapter.07.title"
+msgstr "Dulcinée"
+
+msgid "ui.chapter.08.title"
+msgstr "Celestina"
+
+msgid "ui.chapter.09.title"
+msgstr "L'Essai — Préparation"
+
+msgid "ui.chapter.10.title"
+msgstr "L'Essai — Résolution"
+
+msgid "ui.chapter.11.title"
+msgstr "Le Chevalier aux Miroirs"
+
+msgid "ui.chapter.12.title"
+msgstr "Le Magicien"
+
+msgid "ui.chapter.13.title"
+msgstr "Le Duc"
+
+#. TRANSLATORS: Venture names
+msgid "ui.venture.basque"
+msgstr "Le Basque"
+
+msgid "ui.venture.canting_sea"
+msgstr "La Mer Cantabrique"
+
+msgid "ui.venture.encinados"
+msgstr "Les Encinados"
+
+msgid "ui.venture.montesinos"
+msgstr "Montesinos"
+
+msgid "ui.venture.bridge"
+msgstr "Le Pont"
+
+msgid "ui.venture.dulcinea"
+msgstr "Dulcinée"
+
+msgid "ui.venture.mirrors"
+msgstr "Le Chevalier aux Miroirs"
+
+msgid "ui.venture.magician"
+msgstr "Le Magicien"
+
+msgid "ui.venture.duke"
+msgstr "Le Duc"
+
+#. TRANSLATORS: Ensayo UI keys
+msgid "ensayo.setup.title"
+msgstr "L'Épreuve"
+
+msgid "ensayo.setup.tested.quixote"
+msgstr "Quichotte"
+
+msgid "ensayo.setup.tested.sancho"
+msgstr "Sancho"
+
+msgid "ensayo.setup.examiner.quixote"
+msgstr "Quichotte"
+
+msgid "ensayo.setup.examiner.sancho"
+msgstr "Sancho"
+
+msgid "ensayo.setup.secret.wife"
+msgstr "le nom de la femme"
+
+msgid "ensayo.setup.secret.treasure"
+msgstr "le trésor"
+
+msgid "ensayo.setup.secret.truth"
+msgstr "la vérité"
+
+msgid "ensayo.setup.told.tested"
+msgstr "le testé"
+
+msgid "ensayo.setup.told.examiner"
+msgstr "l'examinateur"
+
+msgid "ensayo.setup.told.neither"
+msgstr "personne"
+
+msgid "ensayo.outcome.holds"
+msgstr "L'épreuve tient"
+
+msgid "ensayo.outcome.breaks"
+msgstr "L'épreuve se brise"
+
+msgid "ensayo.outcome.examiner_breaks"
+msgstr "L'examinateur se brise"
+
+msgid "ensayo.outcome.nothing"
+msgstr "Personne ne se brise ; rien n'arrive"
+
+msgid "ensayo.outcome.caught"
+msgstr "Le joueur est pris"
+
+msgid "ensayo.outcome.refuses"
+msgstr "Le joueur refuse d'en jouer la scène"

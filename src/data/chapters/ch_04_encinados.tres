@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ChapterData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://src/data/chapter_data.gd" id="1_data"]
+[ext_resource type="Resource" path="res://src/data/ventures/venture_encinados.tres" id="2_venture"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"ch_04_encinados"
+display_name_key = &"ui.chapter.04.title"
+region_id = &"sierra_morena"
+chapter_number = 4
+posada_id = &"sierra_morena_posada"
+venture = ExtResource("2_venture")
+scene_path = "res://src/world/chapters/ch_04_encinados.tscn"
+case_id = &""
+anamorphosis_ids = []
+manifesto_fragments = ["bk.ch04.rocinante.01"]
+colophon_fragment = &"bk.ch04.rocinante.01"

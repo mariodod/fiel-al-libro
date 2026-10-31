@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ChapterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/data/chapter_data.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"ch_09_ensayo_setup"
+display_name_key = &"ui.chapter.09.title"
+region_id = &"los_riscos"
+chapter_number = 9
+posada_id = &"los_riscos_posada"
+venture = null
+scene_path = "res://src/world/chapters/ch_09_ensayo_setup.tscn"
+case_id = &"ensayo_setup"
+anamorphosis_ids = []
+manifesto_fragments = []
+colophon_fragment = &"bk.ch10.balsamo.01"

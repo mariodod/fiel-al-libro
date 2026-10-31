@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ChapterData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://src/data/chapter_data.gd" id="1_data"]
+[ext_resource type="Resource" path="res://src/data/ventures/venture_canting_sea.tres" id="2_venture"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"ch_03_canting_sea"
+display_name_key = &"ui.chapter.03.title"
+region_id = &"camino_la_mancha"
+chapter_number = 3
+posada_id = &"villanueva"
+venture = ExtResource("2_venture")
+scene_path = "res://src/world/chapters/ch_03_canting_sea.tscn"
+case_id = &""
+anamorphosis_ids = []
+manifesto_fragments = ["bk.ch03.posada.01"]
+colophon_fragment = &"bk.ch03.posada.01"
