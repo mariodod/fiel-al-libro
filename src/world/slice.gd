@@ -60,7 +60,6 @@ extends Node3D
 @onready var vitals: VitalsPanel = $HudLayer/Vitals
 @onready var _pause_menu: CanvasLayer = $PauseMenu
 @onready var _codex: CanvasLayer = $CodexLayer
-@onready var _codex: CanvasLayer = $CodexLayer
 ## The map screen scene, instantiated when the player presses G.
 @onready var _map_screen_scene: PackedScene = load("res://src/world/map_screen.tscn")
 ## The map screen while it is open, null otherwise.
