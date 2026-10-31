@@ -458,6 +458,78 @@ msgstr "Rock"
 msgid "ui.form.libro"
 msgstr "Book"
 
+#. TRANSLATORS: What the Basque is called in the Reality layer.
+msgid "ui.form.basque_reality"
+msgstr "The Basque"
+
+#. TRANSLATORS: What the Basque is called in the Book layer.
+msgid "ui.form.basque_book"
+msgstr "The Knight"
+
+#. TRANSLATORS: What the Canting Sea is called in the Reality layer.
+msgid "ui.form.sea_reality"
+msgstr "Bad Weather"
+
+#. TRANSLATORS: What the Canting Sea is called in the Book layer.
+msgid "ui.form.sea_book"
+msgstr "The Sea Monster"
+
+#. TRANSLATORS: What the Encinados are called in the Reality layer.
+msgid "ui.form.encinado_reality"
+msgstr "Bandits"
+
+#. TRANSLATORS: What the Encinados are called in the Book layer.
+msgid "ui.form.encinado_book"
+msgstr "Knights"
+
+#. TRANSLATORS: What Montesinos is called in the Reality layer.
+msgid "ui.form.montesinos_reality"
+msgstr "The Cave"
+
+#. TRANSLATORS: What Montesinos is called in the Book layer.
+msgid "ui.form.montesinos_book"
+msgstr "The Dream"
+
+#. TRANSLATORS: What the Bridge is called in the Reality layer.
+msgid "ui.form.bridge_reality"
+msgstr "Rotting Planks"
+
+#. TRANSLATORS: What the Bridge is called in the Book layer.
+msgid "ui.form.bridge_book"
+msgstr "Solid Stone"
+
+#. TRANSLATORS: What Dulcinea is called in the Reality layer.
+msgid "ui.form.dulcinea_reality"
+msgstr "Aldonza"
+
+#. TRANSLATORS: What Dulcinea is called in the Book layer.
+msgid "ui.form.dulcinea_book"
+msgstr "Dulcinea"
+
+#. TRANSLATORS: What the Knight of Mirrors is called in the Reality layer.
+msgid "ui.form.mirrors_reality"
+msgstr "Sansón Carrasco"
+
+#. TRANSLATORS: What the Knight of Mirrors is called in the Book layer.
+msgid "ui.form.mirrors_book"
+msgstr "The Mirror Knight"
+
+#. TRANSLATORS: What the Magician is called in the Reality layer.
+msgid "ui.form.magician_reality"
+msgstr "The Magician"
+
+#. TRANSLATORS: What the Magician is called in the Book layer.
+msgid "ui.form.magician_book"
+msgstr "The Illusionist"
+
+#. TRANSLATORS: What the Duke is called in the Reality layer.
+msgid "ui.form.duke_reality"
+msgstr "The Duke"
+
+#. TRANSLATORS: What the Duke is called in the Book layer.
+msgid "ui.form.duke_book"
+msgstr "The False Chivalry"
+
 #. TRANSLATORS: The windmill itself.
 msgid "ui.object.molino"
 msgstr "Mill"
@@ -1035,6 +1107,70 @@ msgstr "Giant Sweep"
 msgid "ui.move.giant_slam.name"
 msgstr "Giant Slam"
 
+#. TRANSLATORS: The name of the Basque's lance move.
+msgid "ui.move.basque_lance.name"
+msgstr "Lance Swing"
+
+#. TRANSLATORS: The name of the Basque's thrust move.
+msgid "ui.move.basque_thrust.name"
+msgstr "Lance Thrust"
+
+#. TRANSLATORS: The name of the Canting Sea's wave move.
+msgid "ui.move.sea_wave.name"
+msgstr "Sea Wave"
+
+#. TRANSLATORS: The name of the Canting Sea's crash move.
+msgid "ui.move.sea_crash.name"
+msgstr "Sea Crash"
+
+#. TRANSLATORS: The name of the Encinados' swing move.
+msgid "ui.move.encinado_swing.name"
+msgstr "Sword Swing"
+
+#. TRANSLATORS: The name of the Encinados' charge move.
+msgid "ui.move.encinado_charge.name"
+msgstr "Horse Charge"
+
+#. TRANSLATORS: The name of the Bridge's step move.
+msgid "ui.move.bridge_step.name"
+msgstr "Careful Step"
+
+#. TRANSLATORS: The name of the Bridge's gap move.
+msgid "ui.move.bridge_gap.name"
+msgstr "Planks Give Way"
+
+#. TRANSLATORS: The name of Dulcinea's gaze move.
+msgid "ui.move.dulcinea_gaze.name"
+msgstr "Enchanted Gaze"
+
+#. TRANSLATORS: The name of Dulcinea's sigh move.
+msgid "ui.move.dulcinea_sigh.name"
+msgstr "Enchanted Sigh"
+
+#. TRANSLATORS: The name of the Knight of Mirrors' copy move.
+msgid "ui.move.mirror_copy.name"
+msgstr "Mirror Copy"
+
+#. TRANSLATORS: The name of the Knight of Mirrors' shatter move.
+msgid "ui.move.mirror_shatter.name"
+msgstr "Mirror Shatter"
+
+#. TRANSLATORS: The name of the Magician's flip move.
+msgid "ui.move.magician_flip.name"
+msgstr "Truth Flip"
+
+#. TRANSLATORS: The name of the Magician's strike move.
+msgid "ui.move.magician_strike.name"
+msgstr "Illusion Strike"
+
+#. TRANSLATORS: The name of the Duke's decree move.
+msgid "ui.move.duke_decree.name"
+msgstr "Duke's Decree"
+
+#. TRANSLATORS: The name of the Duke's court move.
+msgid "ui.move.duke_court.name"
+msgstr "Court Strike"
+
 #. TRANSLATORS: The Venture's health, in the developer's readout. Format: %s, %d, %d.
 msgid "ui.slice.line.venture"
 msgstr "Venture:"
@@ -1064,6 +1200,78 @@ msgstr "The Mill"
 #. TRANSLATORS: The codex note on the Venture in its Book form.
 msgid "ui.codex.venture.giant"
 msgstr "The Giant"
+
+#. TRANSLATORS: The codex note on the Venture Basque in its Reality form.
+msgid "ui.codex.venture.basque.reality"
+msgstr "A clash of perspectives at the inn."
+
+#. TRANSLATORS: The codex note on the Venture Basque in its Book form.
+msgid "ui.codex.venture.basque.book"
+msgstr "A knightly challenge."
+
+#. TRANSLATORS: The codex note on the Venture Canting Sea in its Reality form.
+msgid "ui.codex.venture.sea.reality"
+msgstr "Bad weather on the plain."
+
+#. TRANSLATORS: The codex note on the Venture Canting Sea in its Book form.
+msgid "ui.codex.venture.sea.book"
+msgstr "The sea as a raging monster."
+
+#. TRANSLATORS: The codex note on the Venture Encinados in its Reality form.
+msgid "ui.codex.venture.encinado.reality"
+msgstr "Mounted bandits in the mountains."
+
+#. TRANSLATORS: The codex note on the Venture Encinados in its Book form.
+msgid "ui.codex.venture.encinado.book"
+msgstr "Highway knights of the sierra."
+
+#. TRANSLATORS: The codex note on the Venture Montesinos in its Reality form.
+msgid "ui.codex.venture.montesinos.reality"
+msgstr "A damp cave with bats."
+
+#. TRANSLATORS: The codex note on the Venture Montesinos in its Book form.
+msgid "ui.codex.venture.montesinos.book"
+msgstr "A dream cave with a waiting girl."
+
+#. TRANSLATORS: The codex note on the Venture Bridge in its Reality form.
+msgid "ui.codex.venture.bridge.reality"
+msgstr "Rotting wood over a ravine."
+
+#. TRANSLATORS: The codex note on the Venture Bridge in its Book form.
+msgid "ui.codex.venture.bridge.book"
+msgstr "Solid stone across the chasm."
+
+#. TRANSLATORS: The codex note on the Venture Dulcinea in its Reality form.
+msgid "ui.codex.venture.dulcinea.reality"
+msgstr "A farm girl named Aldonza."
+
+#. TRANSLATORS: The codex note on the Venture Dulcinea in its Book form.
+msgid "ui.codex.venture.dulcinea.book"
+msgstr "A noble lady radiant and graceful."
+
+#. TRANSLATORS: The codex note on the Venture Knight of Mirrors in its Reality form.
+msgid "ui.codex.venture.mirrors.reality"
+msgstr "Sansón Carrasco, mirror knight."
+
+#. TRANSLATORS: The codex note on the Venture Knight of Mirrors in its Book form.
+msgid "ui.codex.venture.mirrors.book"
+msgstr "The knight who fights by the book."
+
+#. TRANSLATORS: The codex note on the Venture Magician in its Reality form.
+msgid "ui.codex.venture.magician.reality"
+msgstr "A court magician."
+
+#. TRANSLATORS: The codex note on the Venture Magician in its Book form.
+msgid "ui.codex.venture.magician.book"
+msgstr "An illusionist of the truth layer."
+
+#. TRANSLATORS: The codex note on the Venture Duke in its Reality form.
+msgid "ui.codex.venture.duke.reality"
+msgstr "The Duke of the castle."
+
+#. TRANSLATORS: The codex note on the Venture Duke in its Book form.
+msgid "ui.codex.venture.duke.book"
+msgstr "False chivalry and theatre."
 
 #. TRANSLATORS: The companion, remarking on the Venture.
 msgid "dia.quixote.chatter.venture"
@@ -1237,6 +1445,206 @@ msgstr "A worthy steed carries you far."
 #. TRANSLATORS: Book codex note: bk.ch04.rocinante.01
 msgid "ui.book.bk.ch04.rocinante.01.codex"
 msgstr "The naming of Rocinante."
+
+#. TRANSLATORS: Book title: bk.ch03.posada.01
+msgid "ui.book.bk.ch03.posada.name"
+msgstr "The Inn"
+
+#. TRANSLATORS: Book description: bk.ch03.posada.01
+msgid "ui.book.bk.ch03.posada.desc"
+msgstr "The inn where Quixote is first dubbed a knight."
+
+#. TRANSLATORS: Book passive title: bk.ch03.posada.01
+msgid "ui.book.bk.ch03.posada.passive.name"
+msgstr "Innkeeper's Ear"
+
+#. TRANSLATORS: Book passive description: bk.ch03.posada.01
+msgid "ui.book.bk.ch03.posada.passive.desc"
+msgstr "Hear rumors at the Posada."
+
+#. TRANSLATORS: Book codex note: bk.ch03.posada.01
+msgid "ui.book.bk.ch03.posada.codex"
+msgstr "The inn scene."
+
+#. TRANSLATORS: Book title: bk.ch05.duena.01
+msgid "ui.book.bk.ch05.duena.name"
+msgstr "The Lady"
+
+#. TRANSLATORS: Book description: bk.ch05.duena.01
+msgid "ui.book.bk.ch05.duena.desc"
+msgstr "The duenna who guards the lady."
+
+#. TRANSLATORS: Book passive title: bk.ch05.duena.01
+msgid "ui.book.bk.ch05.duena.passive.name"
+msgstr "Duenna's Ear"
+
+#. TRANSLATORS: Book passive description: bk.ch05.duena.01
+msgid "ui.book.bk.ch05.duena.passive.desc"
+msgstr "Hear what ladies say."
+
+#. TRANSLATORS: Book codex note: bk.ch05.duena.01
+msgid "ui.book.bk.ch05.duena.codex"
+msgstr "The duenna passage."
+
+#. TRANSLATORS: Book title: bk.ch06.pastores.01
+msgid "ui.book.bk.ch06.pastores.name"
+msgstr "The Shepherds"
+
+#. TRANSLATORS: Book description: bk.ch06.pastores.01
+msgid "ui.book.bk.ch06.pastores.desc"
+msgstr "The shepherds of the Ebro."
+
+#. TRANSLATORS: Book passive title: bk.ch06.pastores.01
+msgid "ui.book.bk.ch06.pastores.passive.name"
+msgstr "Shepherd's Sight"
+
+#. TRANSLATORS: Book passive description: bk.ch06.pastores.01
+msgid "ui.book.bk.ch06.pastores.passive.desc"
+msgstr "See further across the plain."
+
+#. TRANSLATORS: Book codex note: bk.ch06.pastores.01
+msgid "ui.book.bk.ch06.pastores.codex"
+msgstr "The shepherd story."
+
+#. TRANSLATORS: Book title: bk.ch07.yanguesas.01
+msgid "ui.book.bk.ch07.yanguesas.name"
+msgstr "The Ladies"
+
+#. TRANSLATORS: Book description: bk.ch07.yanguesas.01
+msgid "ui.book.bk.ch07.yanguesas.desc"
+msgstr "The ladies of the inn."
+
+#. TRANSLATORS: Book passive title: bk.ch07.yanguesas.01
+msgid "ui.book.bk.ch07.yanguesas.passive.name"
+msgstr "Lady's Presence"
+
+#. TRANSLATORS: Book passive description: bk.ch07.yanguesas.01
+msgid "ui.book.bk.ch07.yanguesas.passive.desc"
+msgstr "Nobles notice you more."
+
+#. TRANSLATORS: Book codex note: bk.ch07.yanguesas.01
+msgid "ui.book.bk.ch07.yanguesas.codex"
+msgstr "The ladies passage."
+
+#. TRANSLATORS: Book title: bk.ch09.manuscrito.01
+msgid "ui.book.bk.ch09.manuscrito.name"
+msgstr "The Manuscript"
+
+#. TRANSLATORS: Book description: bk.ch09.manuscrito.01
+msgid "ui.book.bk.ch09.manuscrito.desc"
+msgstr "The manuscript found in the inn."
+
+#. TRANSLATORS: Book passive title: bk.ch09.manuscrito.01
+msgid "ui.book.bk.ch09.manuscrito.passive.name"
+msgstr "Page Reader"
+
+#. TRANSLATORS: Book passive description: bk.ch09.manuscrito.01
+msgid "ui.book.bk.ch09.manuscrito.passive.desc"
+msgstr "Read fragments faster."
+
+#. TRANSLATORS: Book codex note: bk.ch09.manuscrito.01
+msgid "ui.book.bk.ch09.manuscrito.codex"
+msgstr "The manuscript fragment."
+
+#. TRANSLATORS: Book title: bk.ch10.balsamo.01
+msgid "ui.book.bk.ch10.balsamo.name"
+msgstr "The Balsam"
+
+#. TRANSLATORS: Book description: bk.ch10.balsamo.01
+msgid "ui.book.bk.ch10.balsamo.desc"
+msgstr "Quixote's healing balsam."
+
+#. TRANSLATORS: Book passive title: bk.ch10.balsamo.01
+msgid "ui.book.bk.ch10.balsamo.passive.name"
+msgstr "Balsam Cure"
+
+#. TRANSLATORS: Book passive description: bk.ch10.balsamo.01
+msgid "ui.book.bk.ch10.balsamo.passive.desc"
+msgstr "Recover health between fights."
+
+#. TRANSLATORS: Book codex note: bk.ch10.balsamo.01
+msgid "ui.book.bk.ch10.balsamo.codex"
+msgstr "The balsam recipe."
+
+#. TRANSLATORS: Book title: bk.ch11.caballero_bosque.01
+msgid "ui.book.bk.ch11.caballero_bosque.name"
+msgstr "Knight of the Forest"
+
+#. TRANSLATORS: Book description: bk.ch11.caballero_bosque.01
+msgid "ui.book.bk.ch11.caballero_bosque.desc"
+msgstr "The knight Quixote meets in the woods."
+
+#. TRANSLATORS: Book passive title: bk.ch11.caballero_bosque.01
+msgid "ui.book.bk.ch11.caballero_bosque.passive.name"
+msgstr "Mirror Knight"
+
+#. TRANSLATORS: Book passive description: bk.ch11.caballero_bosque.01
+msgid "ui.book.bk.ch11.caballero_bosque.passive.desc"
+msgstr "Parry windows feel wider."
+
+#. TRANSLATORS: Book codex note: bk.ch11.caballero_bosque.01
+msgid "ui.book.bk.ch11.caballero_bosque.codex"
+msgstr "The forest knight passage."
+
+#. TRANSLATORS: Book title: bk.ch12.armas_letras.01
+msgid "ui.book.bk.ch12.armas_letras.name"
+msgstr "Arms and Letters"
+
+#. TRANSLATORS: Book description: bk.ch12.armas_letras.01
+msgid "ui.book.bk.ch12.armas_letras.desc"
+msgstr "On arms and letters in chivalry."
+
+#. TRANSLATORS: Book passive title: bk.ch12.armas_letras.01
+msgid "ui.book.bk.ch12.armas_letras.passive.name"
+msgstr "Book Arms"
+
+#. TRANSLATORS: Book passive description: bk.ch12.armas_letras.01
+msgid "ui.book.bk.ch12.armas_letras.passive.desc"
+msgstr "Book truth strengthens attacks."
+
+#. TRANSLATORS: Book codex note: bk.ch12.armas_letras.01
+msgid "ui.book.bk.ch12.armas_letras.codex"
+msgstr "On arms and letters."
+
+#. TRANSLATORS: Book title: bk.ch13.leones.01
+msgid "ui.book.bk.ch13.leones.name"
+msgstr "The Lions"
+
+#. TRANSLATORS: Book description: bk.ch13.leones.01
+msgid "ui.book.bk.ch13.leones.desc"
+msgstr "The lions in the cage."
+
+#. TRANSLATORS: Book passive title: bk.ch13.leones.01
+msgid "ui.book.bk.ch13.leones.passive.name"
+msgstr "Lion Heart"
+
+#. TRANSLATORS: Book passive description: bk.ch13.leones.01
+msgid "ui.book.bk.ch13.leones.passive.desc"
+msgstr "Resolve more poise damage."
+
+#. TRANSLATORS: Book codex note: bk.ch13.leones.01
+msgid "ui.book.bk.ch13.leones.codex"
+msgstr "The lion passage."
+
+#. TRANSLATORS: Book title: bk.ch14.galeotes.01
+msgid "ui.book.bk.ch14.galeotes.name"
+msgstr "The Galley Slaves"
+
+#. TRANSLATORS: Book description: bk.ch14.galeotes.01
+msgid "ui.book.bk.ch14.galeotes.desc"
+msgstr "The galley slaves freed by Quixote."
+
+#. TRANSLATORS: Book passive title: bk.ch14.galeotes.01
+msgid "ui.book.bk.ch14.galeotes.passive.name"
+msgstr "Galley Row"
+
+#. TRANSLATORS: Book passive description: bk.ch14.galeotes.01
+msgid "ui.book.bk.ch14.galeotes.passive.desc"
+msgstr "Move faster when wounded."
+
+#. TRANSLATORS: Book codex note: bk.ch14.galeotes.01
+msgid "ui.book.bk.ch14.galeotes.codex"
+msgstr "The galley slave passage."
 
 #. TRANSLATORS: Chapter titles
 msgid "ui.chapter.01.title"

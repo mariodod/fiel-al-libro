@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="BookData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/data/book_data.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"bk.ch13.leones"
+display_name_key = &"ui.book.bk.ch13.leones.name"
+description_key = &"ui.book.bk.ch13.leones.desc"
+author = &"Miguel de Cervantes"
+year = &"1605"
+passive_id = &"passive.lion_heart"
+passive_name_key = &"ui.book.bk.ch13.leones.passive.name"
+passive_description_key = &"ui.book.bk.ch13.leones.passive.desc"
+manifesto_fragment = &"bk.ch13.leones.01"
+codex_note_key = &"ui.book.bk.ch13.leones.codex"

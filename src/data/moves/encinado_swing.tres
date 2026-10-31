@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="EnemyMoveData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/data/enemy_move_data.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"encinado_swing"
+display_name_key = &"ui.move.encinado_swing.name"
+shape = 0
+damage = 16.0
+poise_damage = 12.0
+reach = 2.8
+arc_degrees = 80.0
+windup_seconds = 0.55
+strike_seconds = 0.14
+recover_seconds = 0.8
+cooldown = 1.2

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://src/data/enemy_data.gd" id="1_data"]
+[ext_resource type="Resource" path="res://src/data/forms/bridge_reality.tres" id="2_reality"]
+[ext_resource type="Resource" path="res://src/data/forms/bridge_book.tres" id="3_book"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"venture_bridge"
+display_name_key = &"ui.venture.bridge"
+max_health = 60.0
+poise = 15.0
+reality_form = ExtResource("2_reality")
+book_form = ExtResource("3_book")
+is_boss = false
+aggro_radius = 10.0
+attack_range = 2.8
+recuerdos = 70
+humanity_cost = 0

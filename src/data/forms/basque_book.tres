@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="FormData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://src/data/form_data.gd" id="1_data"]
+[ext_resource type="Resource" path="res://src/data/moves/basque_lance.tres" id="2_move1"]
+[ext_resource type="Resource" path="res://src/data/moves/basque_thrust.tres" id="3_move2"]
+
+[resource]
+script = ExtResource("1_data")
+display_name_key = &"ui.form.basque_book"
+model_scene = null
+max_health = 70.0
+poise = 15.0
+damage_multiplier = 1.1
+moveset = Array[Resource]([ExtResource("2_move1"), ExtResource("3_move2")])
+move_speed = 3.5
+turn_speed = 2.0
+engage_distance = 3.8
+truth_layer = 1
+codex_note_key = &"ui.codex.venture.basque.book"

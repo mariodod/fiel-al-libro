@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="FormData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://src/data/form_data.gd" id="1_data"]
+[ext_resource type="Resource" path="res://src/data/moves/duke_decree.tres" id="2_move1"]
+[ext_resource type="Resource" path="res://src/data/moves/duke_court.tres" id="3_move2"]
+
+[resource]
+script = ExtResource("1_data")
+display_name_key = &"ui.form.duke_book"
+model_scene = null
+max_health = 130.0
+poise = 32.0
+damage_multiplier = 1.25
+moveset = Array[Resource]([ExtResource("2_move1"), ExtResource("3_move2")])
+move_speed = 3.4
+turn_speed = 1.8
+engage_distance = 4.4
+truth_layer = 1
+codex_note_key = &"ui.codex.venture.duke.book"

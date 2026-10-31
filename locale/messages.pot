@@ -458,6 +458,78 @@ msgstr ""
 msgid "ui.form.libro"
 msgstr ""
 
+#. TRANSLATORS: What the Basque is called in the Reality layer.
+msgid "ui.form.basque_reality"
+msgstr ""
+
+#. TRANSLATORS: What the Basque is called in the Book layer.
+msgid "ui.form.basque_book"
+msgstr ""
+
+#. TRANSLATORS: What the Canting Sea is called in the Reality layer.
+msgid "ui.form.sea_reality"
+msgstr ""
+
+#. TRANSLATORS: What the Canting Sea is called in the Book layer.
+msgid "ui.form.sea_book"
+msgstr ""
+
+#. TRANSLATORS: What the Encinados are called in the Reality layer.
+msgid "ui.form.encinado_reality"
+msgstr ""
+
+#. TRANSLATORS: What the Encinados are called in the Book layer.
+msgid "ui.form.encinado_book"
+msgstr ""
+
+#. TRANSLATORS: What Montesinos is called in the Reality layer.
+msgid "ui.form.montesinos_reality"
+msgstr ""
+
+#. TRANSLATORS: What Montesinos is called in the Book layer.
+msgid "ui.form.montesinos_book"
+msgstr ""
+
+#. TRANSLATORS: What the Bridge is called in the Reality layer.
+msgid "ui.form.bridge_reality"
+msgstr ""
+
+#. TRANSLATORS: What the Bridge is called in the Book layer.
+msgid "ui.form.bridge_book"
+msgstr ""
+
+#. TRANSLATORS: What Dulcinea is called in the Reality layer.
+msgid "ui.form.dulcinea_reality"
+msgstr ""
+
+#. TRANSLATORS: What Dulcinea is called in the Book layer.
+msgid "ui.form.dulcinea_book"
+msgstr ""
+
+#. TRANSLATORS: What the Knight of Mirrors is called in the Reality layer.
+msgid "ui.form.mirrors_reality"
+msgstr ""
+
+#. TRANSLATORS: What the Knight of Mirrors is called in the Book layer.
+msgid "ui.form.mirrors_book"
+msgstr ""
+
+#. TRANSLATORS: What the Magician is called in the Reality layer.
+msgid "ui.form.magician_reality"
+msgstr ""
+
+#. TRANSLATORS: What the Magician is called in the Book layer.
+msgid "ui.form.magician_book"
+msgstr ""
+
+#. TRANSLATORS: What the Duke is called in the Reality layer.
+msgid "ui.form.duke_reality"
+msgstr ""
+
+#. TRANSLATORS: What the Duke is called in the Book layer.
+msgid "ui.form.duke_book"
+msgstr ""
+
 #. TRANSLATORS: The windmill itself.
 msgid "ui.object.molino"
 msgstr ""
@@ -1035,6 +1107,70 @@ msgstr ""
 msgid "ui.move.giant_slam.name"
 msgstr ""
 
+#. TRANSLATORS: The name of the Basque's lance move.
+msgid "ui.move.basque_lance.name"
+msgstr ""
+
+#. TRANSLATORS: The name of the Basque's thrust move.
+msgid "ui.move.basque_thrust.name"
+msgstr ""
+
+#. TRANSLATORS: The name of the Canting Sea's wave move.
+msgid "ui.move.sea_wave.name"
+msgstr ""
+
+#. TRANSLATORS: The name of the Canting Sea's crash move.
+msgid "ui.move.sea_crash.name"
+msgstr ""
+
+#. TRANSLATORS: The name of the Encinados' swing move.
+msgid "ui.move.encinado_swing.name"
+msgstr ""
+
+#. TRANSLATORS: The name of the Encinados' charge move.
+msgid "ui.move.encinado_charge.name"
+msgstr ""
+
+#. TRANSLATORS: The name of the Bridge's step move.
+msgid "ui.move.bridge_step.name"
+msgstr ""
+
+#. TRANSLATORS: The name of the Bridge's gap move.
+msgid "ui.move.bridge_gap.name"
+msgstr ""
+
+#. TRANSLATORS: The name of Dulcinea's gaze move.
+msgid "ui.move.dulcinea_gaze.name"
+msgstr ""
+
+#. TRANSLATORS: The name of Dulcinea's sigh move.
+msgid "ui.move.dulcinea_sigh.name"
+msgstr ""
+
+#. TRANSLATORS: The name of the Knight of Mirrors' copy move.
+msgid "ui.move.mirror_copy.name"
+msgstr ""
+
+#. TRANSLATORS: The name of the Knight of Mirrors' shatter move.
+msgid "ui.move.mirror_shatter.name"
+msgstr ""
+
+#. TRANSLATORS: The name of the Magician's flip move.
+msgid "ui.move.magician_flip.name"
+msgstr ""
+
+#. TRANSLATORS: The name of the Magician's strike move.
+msgid "ui.move.magician_strike.name"
+msgstr ""
+
+#. TRANSLATORS: The name of the Duke's decree move.
+msgid "ui.move.duke_decree.name"
+msgstr ""
+
+#. TRANSLATORS: The name of the Duke's court move.
+msgid "ui.move.duke_court.name"
+msgstr ""
+
 #. TRANSLATORS: The Venture's health, in the developer's readout. Format: %s, %d, %d.
 msgid "ui.slice.line.venture"
 msgstr ""
@@ -1063,6 +1199,78 @@ msgstr ""
 
 #. TRANSLATORS: The codex note on the Venture in its Book form.
 msgid "ui.codex.venture.giant"
+msgstr ""
+
+#. TRANSLATORS: The codex note on the Venture Basque in its Reality form.
+msgid "ui.codex.venture.basque.reality"
+msgstr ""
+
+#. TRANSLATORS: The codex note on the Venture Basque in its Book form.
+msgid "ui.codex.venture.basque.book"
+msgstr ""
+
+#. TRANSLATORS: The codex note on the Venture Canting Sea in its Reality form.
+msgid "ui.codex.venture.sea.reality"
+msgstr ""
+
+#. TRANSLATORS: The codex note on the Venture Canting Sea in its Book form.
+msgid "ui.codex.venture.sea.book"
+msgstr ""
+
+#. TRANSLATORS: The codex note on the Venture Encinados in its Reality form.
+msgid "ui.codex.venture.encinado.reality"
+msgstr ""
+
+#. TRANSLATORS: The codex note on the Venture Encinados in its Book form.
+msgid "ui.codex.venture.encinado.book"
+msgstr ""
+
+#. TRANSLATORS: The codex note on the Venture Montesinos in its Reality form.
+msgid "ui.codex.venture.montesinos.reality"
+msgstr ""
+
+#. TRANSLATORS: The codex note on the Venture Montesinos in its Book form.
+msgid "ui.codex.venture.montesinos.book"
+msgstr ""
+
+#. TRANSLATORS: The codex note on the Venture Bridge in its Reality form.
+msgid "ui.codex.venture.bridge.reality"
+msgstr ""
+
+#. TRANSLATORS: The codex note on the Venture Bridge in its Book form.
+msgid "ui.codex.venture.bridge.book"
+msgstr ""
+
+#. TRANSLATORS: The codex note on the Venture Dulcinea in its Reality form.
+msgid "ui.codex.venture.dulcinea.reality"
+msgstr ""
+
+#. TRANSLATORS: The codex note on the Venture Dulcinea in its Book form.
+msgid "ui.codex.venture.dulcinea.book"
+msgstr ""
+
+#. TRANSLATORS: The codex note on the Venture Knight of Mirrors in its Reality form.
+msgid "ui.codex.venture.mirrors.reality"
+msgstr ""
+
+#. TRANSLATORS: The codex note on the Venture Knight of Mirrors in its Book form.
+msgid "ui.codex.venture.mirrors.book"
+msgstr ""
+
+#. TRANSLATORS: The codex note on the Venture Magician in its Reality form.
+msgid "ui.codex.venture.magician.reality"
+msgstr ""
+
+#. TRANSLATORS: The codex note on the Venture Magician in its Book form.
+msgid "ui.codex.venture.magician.book"
+msgstr ""
+
+#. TRANSLATORS: The codex note on the Venture Duke in its Reality form.
+msgid "ui.codex.venture.duke.reality"
+msgstr ""
+
+#. TRANSLATORS: The codex note on the Venture Duke in its Book form.
+msgid "ui.codex.venture.duke.book"
 msgstr ""
 
 #. TRANSLATORS: The companion, remarking on the Venture.
@@ -1236,6 +1444,206 @@ msgstr ""
 
 #. TRANSLATORS: Book codex note: bk.ch04.rocinante.01
 msgid "ui.book.bk.ch04.rocinante.01.codex"
+msgstr ""
+
+#. TRANSLATORS: Book title: bk.ch03.posada.01
+msgid "ui.book.bk.ch03.posada.name"
+msgstr ""
+
+#. TRANSLATORS: Book description: bk.ch03.posada.01
+msgid "ui.book.bk.ch03.posada.desc"
+msgstr ""
+
+#. TRANSLATORS: Book passive title: bk.ch03.posada.01
+msgid "ui.book.bk.ch03.posada.passive.name"
+msgstr ""
+
+#. TRANSLATORS: Book passive description: bk.ch03.posada.01
+msgid "ui.book.bk.ch03.posada.passive.desc"
+msgstr ""
+
+#. TRANSLATORS: Book codex note: bk.ch03.posada.01
+msgid "ui.book.bk.ch03.posada.codex"
+msgstr ""
+
+#. TRANSLATORS: Book title: bk.ch05.duena.01
+msgid "ui.book.bk.ch05.duena.name"
+msgstr ""
+
+#. TRANSLATORS: Book description: bk.ch05.duena.01
+msgid "ui.book.bk.ch05.duena.desc"
+msgstr ""
+
+#. TRANSLATORS: Book passive title: bk.ch05.duena.01
+msgid "ui.book.bk.ch05.duena.passive.name"
+msgstr ""
+
+#. TRANSLATORS: Book passive description: bk.ch05.duena.01
+msgid "ui.book.bk.ch05.duena.passive.desc"
+msgstr ""
+
+#. TRANSLATORS: Book codex note: bk.ch05.duena.01
+msgid "ui.book.bk.ch05.duena.codex"
+msgstr ""
+
+#. TRANSLATORS: Book title: bk.ch06.pastores.01
+msgid "ui.book.bk.ch06.pastores.name"
+msgstr ""
+
+#. TRANSLATORS: Book description: bk.ch06.pastores.01
+msgid "ui.book.bk.ch06.pastores.desc"
+msgstr ""
+
+#. TRANSLATORS: Book passive title: bk.ch06.pastores.01
+msgid "ui.book.bk.ch06.pastores.passive.name"
+msgstr ""
+
+#. TRANSLATORS: Book passive description: bk.ch06.pastores.01
+msgid "ui.book.bk.ch06.pastores.passive.desc"
+msgstr ""
+
+#. TRANSLATORS: Book codex note: bk.ch06.pastores.01
+msgid "ui.book.bk.ch06.pastores.codex"
+msgstr ""
+
+#. TRANSLATORS: Book title: bk.ch07.yanguesas.01
+msgid "ui.book.bk.ch07.yanguesas.name"
+msgstr ""
+
+#. TRANSLATORS: Book description: bk.ch07.yanguesas.01
+msgid "ui.book.bk.ch07.yanguesas.desc"
+msgstr ""
+
+#. TRANSLATORS: Book passive title: bk.ch07.yanguesas.01
+msgid "ui.book.bk.ch07.yanguesas.passive.name"
+msgstr ""
+
+#. TRANSLATORS: Book passive description: bk.ch07.yanguesas.01
+msgid "ui.book.bk.ch07.yanguesas.passive.desc"
+msgstr ""
+
+#. TRANSLATORS: Book codex note: bk.ch07.yanguesas.01
+msgid "ui.book.bk.ch07.yanguesas.codex"
+msgstr ""
+
+#. TRANSLATORS: Book title: bk.ch09.manuscrito.01
+msgid "ui.book.bk.ch09.manuscrito.name"
+msgstr ""
+
+#. TRANSLATORS: Book description: bk.ch09.manuscrito.01
+msgid "ui.book.bk.ch09.manuscrito.desc"
+msgstr ""
+
+#. TRANSLATORS: Book passive title: bk.ch09.manuscrito.01
+msgid "ui.book.bk.ch09.manuscrito.passive.name"
+msgstr ""
+
+#. TRANSLATORS: Book passive description: bk.ch09.manuscrito.01
+msgid "ui.book.bk.ch09.manuscrito.passive.desc"
+msgstr ""
+
+#. TRANSLATORS: Book codex note: bk.ch09.manuscrito.01
+msgid "ui.book.bk.ch09.manuscrito.codex"
+msgstr ""
+
+#. TRANSLATORS: Book title: bk.ch10.balsamo.01
+msgid "ui.book.bk.ch10.balsamo.name"
+msgstr ""
+
+#. TRANSLATORS: Book description: bk.ch10.balsamo.01
+msgid "ui.book.bk.ch10.balsamo.desc"
+msgstr ""
+
+#. TRANSLATORS: Book passive title: bk.ch10.balsamo.01
+msgid "ui.book.bk.ch10.balsamo.passive.name"
+msgstr ""
+
+#. TRANSLATORS: Book passive description: bk.ch10.balsamo.01
+msgid "ui.book.bk.ch10.balsamo.passive.desc"
+msgstr ""
+
+#. TRANSLATORS: Book codex note: bk.ch10.balsamo.01
+msgid "ui.book.bk.ch10.balsamo.codex"
+msgstr ""
+
+#. TRANSLATORS: Book title: bk.ch11.caballero_bosque.01
+msgid "ui.book.bk.ch11.caballero_bosque.name"
+msgstr ""
+
+#. TRANSLATORS: Book description: bk.ch11.caballero_bosque.01
+msgid "ui.book.bk.ch11.caballero_bosque.desc"
+msgstr ""
+
+#. TRANSLATORS: Book passive title: bk.ch11.caballero_bosque.01
+msgid "ui.book.bk.ch11.caballero_bosque.passive.name"
+msgstr ""
+
+#. TRANSLATORS: Book passive description: bk.ch11.caballero_bosque.01
+msgid "ui.book.bk.ch11.caballero_bosque.passive.desc"
+msgstr ""
+
+#. TRANSLATORS: Book codex note: bk.ch11.caballero_bosque.01
+msgid "ui.book.bk.ch11.caballero_bosque.codex"
+msgstr ""
+
+#. TRANSLATORS: Book title: bk.ch12.armas_letras.01
+msgid "ui.book.bk.ch12.armas_letras.name"
+msgstr ""
+
+#. TRANSLATORS: Book description: bk.ch12.armas_letras.01
+msgid "ui.book.bk.ch12.armas_letras.desc"
+msgstr ""
+
+#. TRANSLATORS: Book passive title: bk.ch12.armas_letras.01
+msgid "ui.book.bk.ch12.armas_letras.passive.name"
+msgstr ""
+
+#. TRANSLATORS: Book passive description: bk.ch12.armas_letras.01
+msgid "ui.book.bk.ch12.armas_letras.passive.desc"
+msgstr ""
+
+#. TRANSLATORS: Book codex note: bk.ch12.armas_letras.01
+msgid "ui.book.bk.ch12.armas_letras.codex"
+msgstr ""
+
+#. TRANSLATORS: Book title: bk.ch13.leones.01
+msgid "ui.book.bk.ch13.leones.name"
+msgstr ""
+
+#. TRANSLATORS: Book description: bk.ch13.leones.01
+msgid "ui.book.bk.ch13.leones.desc"
+msgstr ""
+
+#. TRANSLATORS: Book passive title: bk.ch13.leones.01
+msgid "ui.book.bk.ch13.leones.passive.name"
+msgstr ""
+
+#. TRANSLATORS: Book passive description: bk.ch13.leones.01
+msgid "ui.book.bk.ch13.leones.passive.desc"
+msgstr ""
+
+#. TRANSLATORS: Book codex note: bk.ch13.leones.01
+msgid "ui.book.bk.ch13.leones.codex"
+msgstr ""
+
+#. TRANSLATORS: Book title: bk.ch14.galeotes.01
+msgid "ui.book.bk.ch14.galeotes.name"
+msgstr ""
+
+#. TRANSLATORS: Book description: bk.ch14.galeotes.01
+msgid "ui.book.bk.ch14.galeotes.desc"
+msgstr ""
+
+#. TRANSLATORS: Book passive title: bk.ch14.galeotes.01
+msgid "ui.book.bk.ch14.galeotes.passive.name"
+msgstr ""
+
+#. TRANSLATORS: Book passive description: bk.ch14.galeotes.01
+msgid "ui.book.bk.ch14.galeotes.passive.desc"
+msgstr ""
+
+#. TRANSLATORS: Book codex note: bk.ch14.galeotes.01
+msgid "ui.book.bk.ch14.galeotes.codex"
 msgstr ""
 
 #. TRANSLATORS: Chapter titles

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="FormData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://src/data/form_data.gd" id="1_data"]
+[ext_resource type="Resource" path="res://src/data/moves/bridge_step.tres" id="2_move1"]
+[ext_resource type="Resource" path="res://src/data/moves/bridge_gap.tres" id="3_move2"]
+
+[resource]
+script = ExtResource("1_data")
+display_name_key = &"ui.form.bridge_reality"
+model_scene = null
+max_health = 60.0
+poise = 15.0
+damage_multiplier = 1.0
+moveset = Array[Resource]([ExtResource("2_move1"), ExtResource("3_move2")])
+move_speed = 2.5
+turn_speed = 1.5
+engage_distance = 2.8
+truth_layer = 0
+codex_note_key = &"ui.codex.venture.bridge.reality"

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EnemyMoveData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/data/enemy_move_data.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"duke_court"
+display_name_key = &"ui.move.duke_court.name"
+shape = 1
+damage = 32.0
+poise_damage = 30.0
+reach = 6.0
+arc_degrees = 360.0
+windup_seconds = 1.1
+strike_seconds = 0.3
+recover_seconds = 2.2
+cooldown = 5.0
+heavy = true

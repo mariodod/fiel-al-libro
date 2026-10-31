@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="EnemyMoveData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/data/enemy_move_data.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"basque_lance"
+display_name_key = &"ui.move.basque_lance.name"
+shape = 0
+damage = 14.0
+poise_damage = 10.0
+reach = 3.2
+arc_degrees = 70.0
+windup_seconds = 0.5
+strike_seconds = 0.12
+recover_seconds = 0.9
+cooldown = 1.4

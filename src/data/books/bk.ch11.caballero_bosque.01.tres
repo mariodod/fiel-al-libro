@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="BookData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/data/book_data.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"bk.ch11.caballero_bosque"
+display_name_key = &"ui.book.bk.ch11.caballero_bosque.name"
+description_key = &"ui.book.bk.ch11.caballero_bosque.desc"
+author = &"Miguel de Cervantes"
+year = &"1605"
+passive_id = &"passive.mirror_knight"
+passive_name_key = &"ui.book.bk.ch11.caballero_bosque.passive.name"
+passive_description_key = &"ui.book.bk.ch11.caballero_bosque.passive.desc"
+manifesto_fragment = &"bk.ch11.caballero_bosque.01"
+codex_note_key = &"ui.book.bk.ch11.caballero_bosque.codex"

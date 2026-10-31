@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="EnemyMoveData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/data/enemy_move_data.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"magician_flip"
+display_name_key = &"ui.move.magician_flip.name"
+shape = 1
+damage = 0.0
+poise_damage = 0.0
+reach = 8.0
+arc_degrees = 360.0
+windup_seconds = 0.8
+strike_seconds = 0.4
+recover_seconds = 1.2
+cooldown = 2.0

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EnemyMoveData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/data/enemy_move_data.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"magician_strike"
+display_name_key = &"ui.move.magician_strike.name"
+shape = 2
+damage = 24.0
+poise_damage = 20.0
+reach = 3.5
+arc_degrees = 50.0
+windup_seconds = 0.65
+strike_seconds = 0.15
+recover_seconds = 1.1
+cooldown = 1.9
+step_distance = 2.5

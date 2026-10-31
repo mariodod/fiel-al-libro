@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://src/data/enemy_data.gd" id="1_data"]
+[ext_resource type="Resource" path="res://src/data/forms/encinado_reality.tres" id="2_reality"]
+[ext_resource type="Resource" path="res://src/data/forms/encinado_book.tres" id="3_book"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"venture_encinados"
+display_name_key = &"ui.venture.encinados"
+max_health = 85.0
+poise = 22.0
+reality_form = ExtResource("2_reality")
+book_form = ExtResource("3_book")
+is_boss = false
+aggro_radius = 14.0
+attack_range = 3.6
+recuerdos = 60
+humanity_cost = 10

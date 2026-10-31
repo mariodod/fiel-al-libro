@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://src/data/enemy_data.gd" id="1_data"]
+[ext_resource type="Resource" path="res://src/data/forms/montesinos_reality.tres" id="2_reality"]
+[ext_resource type="Resource" path="res://src/data/forms/montesinos_book.tres" id="3_book"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"venture_montesinos"
+display_name_key = &"ui.venture.montesinos"
+max_health = 1.0
+poise = 1.0
+reality_form = ExtResource("2_reality")
+book_form = ExtResource("3_book")
+is_boss = false
+is_non_combat = true
+aggro_radius = 0.0
+attack_range = 0.0
+recuerdos = 80
+humanity_cost = 0

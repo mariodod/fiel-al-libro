@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="FormData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://src/data/form_data.gd" id="1_data"]
+[ext_resource type="Resource" path="res://src/data/moves/encinado_swing.tres" id="2_move1"]
+[ext_resource type="Resource" path="res://src/data/moves/encinado_charge.tres" id="3_move2"]
+
+[resource]
+script = ExtResource("1_data")
+display_name_key = &"ui.form.encinado_reality"
+model_scene = null
+max_health = 85.0
+poise = 22.0
+damage_multiplier = 1.0
+moveset = Array[Resource]([ExtResource("2_move1"), ExtResource("3_move2")])
+move_speed = 3.2
+turn_speed = 1.9
+engage_distance = 3.6
+truth_layer = 0
+codex_note_key = &"ui.codex.venture.encinado.reality"

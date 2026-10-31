@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://src/data/enemy_data.gd" id="1_data"]
+[ext_resource type="Resource" path="res://src/data/forms/duke_reality.tres" id="2_reality"]
+[ext_resource type="Resource" path="res://src/data/forms/duke_book.tres" id="3_book"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"venture_duke"
+display_name_key = &"ui.venture.duke"
+max_health = 150.0
+poise = 40.0
+reality_form = ExtResource("2_reality")
+book_form = ExtResource("3_book")
+is_boss = true
+aggro_radius = 16.0
+attack_range = 4.0
+recuerdos = 200
+humanity_cost = 0

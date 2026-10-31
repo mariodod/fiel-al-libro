@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://src/data/enemy_data.gd" id="1_data"]
+[ext_resource type="Resource" path="res://src/data/forms/mirrors_reality.tres" id="2_reality"]
+[ext_resource type="Resource" path="res://src/data/forms/mirrors_book.tres" id="3_book"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"venture_mirrors"
+display_name_key = &"ui.venture.mirrors"
+max_health = 90.0
+poise = 28.0
+reality_form = ExtResource("2_reality")
+book_form = ExtResource("3_book")
+is_boss = true
+aggro_radius = 13.0
+attack_range = 3.7
+recuerdos = 110
+humanity_cost = 0

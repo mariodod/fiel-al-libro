@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EnemyMoveData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/data/enemy_move_data.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"sea_crash"
+display_name_key = &"ui.move.sea_crash.name"
+shape = 0
+damage = 28.0
+poise_damage = 24.0
+reach = 5.0
+arc_degrees = 120.0
+windup_seconds = 1.2
+strike_seconds = 0.2
+recover_seconds = 2.0
+cooldown = 4.0
+heavy = true

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="EnemyMoveData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/data/enemy_move_data.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"bridge_step"
+display_name_key = &"ui.move.bridge_step.name"
+shape = 0
+damage = 8.0
+poise_damage = 4.0
+reach = 2.0
+arc_degrees = 60.0
+windup_seconds = 0.4
+strike_seconds = 0.1
+recover_seconds = 0.6
+cooldown = 1.0

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://src/data/enemy_data.gd" id="1_data"]
+[ext_resource type="Resource" path="res://src/data/forms/basque_reality.tres" id="2_reality"]
+[ext_resource type="Resource" path="res://src/data/forms/basque_book.tres" id="3_book"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"venture_basque"
+display_name_key = &"ui.venture.basque"
+max_health = 80.0
+poise = 20.0
+reality_form = ExtResource("2_reality")
+book_form = ExtResource("3_book")
+is_boss = false
+aggro_radius = 12.0
+attack_range = 3.5
+recuerdos = 40
+humanity_cost = 5

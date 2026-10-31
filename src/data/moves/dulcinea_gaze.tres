@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="EnemyMoveData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/data/enemy_move_data.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"dulcinea_gaze"
+display_name_key = &"ui.move.dulcinea_gaze.name"
+shape = 0
+damage = 6.0
+poise_damage = 10.0
+reach = 3.0
+arc_degrees = 45.0
+windup_seconds = 0.4
+strike_seconds = 0.08
+recover_seconds = 0.5
+cooldown = 0.8

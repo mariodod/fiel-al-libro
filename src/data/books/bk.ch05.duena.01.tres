@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="BookData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/data/book_data.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"bk.ch05.duena"
+display_name_key = &"ui.book.bk.ch05.duena.name"
+description_key = &"ui.book.bk.ch05.duena.desc"
+author = &"Miguel de Cervantes"
+year = &"1605"
+passive_id = &"passive.innkeeper_ear"
+passive_name_key = &"ui.book.bk.ch05.duena.passive.name"
+passive_description_key = &"ui.book.bk.ch05.duena.passive.desc"
+manifesto_fragment = &"bk.ch05.duena.01"
+codex_note_key = &"ui.book.bk.ch05.duena.codex"
