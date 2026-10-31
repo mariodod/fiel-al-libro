@@ -1,0 +1,215 @@
+[gd_scene load_steps=25 format=3]
+
+[ext_resource type="Script" path="res://src/world/slice.gd" id="1_slice"]
+[ext_resource type="Script" path="res://src/world/truth_object.gd" id="2_object"]
+[ext_resource type="Script" path="res://src/characters/character_pawn.gd" id="3_pawn"]
+[ext_resource type="Script" path="res://src/characters/player_controller.gd" id="4_player"]
+[ext_resource type="Script" path="res://src/characters/companion_ai.gd" id="5_ai"]
+[ext_resource type="Script" path="res://src/systems/camera_follow.gd" id="6_camera"]
+[ext_resource type="Resource" path="res://src/data/primitives/windmill.tres" id="7_windmill"]
+[ext_resource type="Resource" path="res://src/data/primitives/rock.tres" id="8_rock"]
+[ext_resource type="Resource" path="res://src/data/primitives/book_stand.tres" id="9_book_stand"]
+[ext_resource type="Resource" path="res://src/data/characters/quixote.tres" id="10_quixote"]
+[ext_resource type="Resource" path="res://src/data/characters/sancho.tres" id="11_sancho"]
+[ext_resource type="PackedScene" path="res://assets/models/quixote.glb" id="12_quixote_rig"]
+[ext_resource type="PackedScene" path="res://assets/models/sancho.glb" id="13_sancho_rig"]
+[ext_resource type="Script" path="res://src/world/venture.gd" id="14_venture"]
+[ext_resource type="Resource" path="res://src/data/ventures/venture_basque.tres" id="15_venture_data"]
+[ext_resource type="Resource" path="res://src/data/ventures/venture_montiel_reading.tres" id="16_venture_reading"]
+[ext_resource type="Script" path="res://src/ui/vitals_panel.gd" id="17_vitals"]
+[ext_resource type="Script" path="res://src/ui/manifiesto_reader.gd" id="18_manifiesto_reader"]
+
+[sub_resource type="PlaneMesh" id="Plane_ground"]
+size = Vector2(300, 300)
+
+[sub_resource type="StandardMaterial3D" id="Mat_ground"]
+albedo_color = Color(0.55, 0.47, 0.31, 1)
+roughness = 0.95
+
+[sub_resource type="BoxShape3D" id="Shape_ground"]
+size = Vector3(300, 1, 300)
+
+[sub_resource type="CapsuleShape3D" id="Shape_body"]
+radius = 0.42
+height = 1.75
+
+[sub_resource type="CapsuleShape3D" id="Shape_sancho"]
+radius = 0.5
+height = 1.6
+
+[node name="Chapter2_Basque" type="Node3D"]
+script = ExtResource("1_slice")
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+mesh = SubResource("Plane_ground")
+material_override = SubResource("Mat_ground")
+
+[node name="GroundBody" type="StaticBody3D" parent="."]
+
+[node name="GroundShape" type="CollisionShape3D" parent="GroundBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("Shape_ground")
+
+[node name="Rock" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -11)
+script = ExtResource("2_object")
+data = ExtResource("8_rock")
+
+[node name="BookStand" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -6)
+script = ExtResource("2_object")
+data = ExtResource("9_book_stand")
+
+[node name="Innkeeper" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -14)
+script = ExtResource("2_object")
+data = ExtResource("15_venture_data")
+
+[node name="Checkpoint" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -12)
+
+[node name="CheckpointShape" type="CollisionShape3D" parent="Checkpoint"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("Shape_ground")
+
+[node name="Venture" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 36)
+script = ExtResource("14_venture")
+venture = ExtResource("15_venture_data")
+data = ExtResource("16_venture_reading")
+
+[node name="Characters" type="Node3D" parent="."]
+
+[node name="Quixote" type="CharacterBody3D" parent="Characters"]
+script = ExtResource("3_pawn")
+data = ExtResource("10_quixote")
+
+[node name="Rig" parent="Characters/Quixote" instance=ExtResource("12_quixote_rig")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, 0)
+
+[node name="Collider" type="CollisionShape3D" parent="Characters/Quixote"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.88, 0)
+shape = SubResource("Shape_body")
+
+[node name="Sancho" type="CharacterBody3D" parent="Characters"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+script = ExtResource("3_pawn")
+data = ExtResource("11_sancho")
+
+[node name="Rig" parent="Characters/Sancho" instance=ExtResource("13_sancho_rig")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, 0)
+
+[node name="Collider" type="CollisionShape3D" parent="Characters/Sancho"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("Shape_sancho")
+
+[node name="PlayerController" type="Node" parent="."]
+script = ExtResource("4_player")
+
+[node name="CompanionAI" type="Node" parent="."]
+script = ExtResource("5_ai")
+
+[node name="CameraRig" type="Node3D" parent="."]
+script = ExtResource("6_camera")
+distance = 12.0
+height = 5.5
+
+[node name="Camera3D" type="Camera3D" parent="CameraRig"]
+fov = 62.0
+current = true
+
+[node name="HudLayer" type="CanvasLayer" parent="."]
+layer = 20
+
+[node name="Hud" type="Label" parent="HudLayer"]
+offset_left = 16.0
+offset_top = 12.0
+offset_right = 1180.0
+offset_bottom = 460.0
+theme_override_font_sizes/font_size = 16
+theme_override_colors/font_color = Color(0.94, 0.9, 0.8, 1)
+
+[node name="Vitals" type="Control" parent="HudLayer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -260.0
+offset_top = -92.0
+offset_right = -18.0
+offset_bottom = -18.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+script = ExtResource("17_vitals")
+
+[node name="PauseMenu" type="CanvasLayer" parent="."]
+layer = 30
+visible = false
+
+[node name="PauseMenuOverlay" type="ColorRect" parent="PauseMenu"]
+anchors_preset = 3
+color = Color(0.086, 0.078, 0.063, 0.85)
+
+[node name="PauseMenuPanel" type="Control" parent="PauseMenu"]
+anchors_preset = 3
+size = Vector2(400, 300)
+
+[node name="PauseMenuTitle" type="Label" parent="PauseMenuPanel"]
+anchors_preset = 1
+position = Vector2(200, 40)
+text = "PAUSED"
+theme_override_font_sizes/font_size = 32
+theme_override_colors/font_color = Color(0.97, 0.93, 0.83, 1.0)
+theme_override_alignment/horizontal_alignment = 1
+
+[node name="PauseMenuResume" type="Button" parent="PauseMenuPanel"]
+anchors_preset = 3
+position = Vector2(100, 120)
+size = Vector2(200, 40)
+text = "Resume (P)"
+
+[node name="PauseMenuQuit" type="Button" parent="PauseMenuPanel"]
+anchors_preset = 3
+position = Vector2(100, 180)
+size = Vector2(200, 40)
+text = "Quit to Yard"
+
+[node name="CodexLayer" type="CanvasLayer" parent="."]
+layer = 31
+visible = false
+
+[node name="CodexPanel" type="Control" parent="CodexLayer"]
+anchors_preset = 3
+size = Vector2(500, 500)
+
+[node name="CodexTitle" type="Label" parent="CodexPanel"]
+anchors_preset = 1
+position = Vector2(250, 40)
+text = "Manuscript"
+theme_override_font_sizes/font_size = 32
+theme_override_colors/font_color = Color(0.97, 0.93, 0.83, 1.0)
+theme_override_alignment/horizontal_alignment = 1
+
+[node name="CodexClose" type="Button" parent="CodexPanel"]
+anchors_preset = 3
+position = Vector2(200, 440)
+size = Vector2(100, 40)
+text = "Back"
+
+[node name="CodexList" type="ScrollContainer" parent="CodexPanel"]
+anchors_preset = 7
+margin_left = 40
+margin_top = 100
+margin_right = 40
+margin_bottom = 40
+
+[node name="CodexListContainer" type="VBoxContainer" parent="CodexList"]
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="ManifiestoReader" type="Control" parent="."]
+anchors_preset = 3
+visible = false
+script = ExtResource("18_manifiesto_reader")
