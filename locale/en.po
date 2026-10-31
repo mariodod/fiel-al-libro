@@ -360,6 +360,14 @@ msgstr "Don Quixote"
 msgid "character.sancho"
 msgstr "Sancho"
 
+#. TRANSLATORS: The innkeeper at the Posada, a friendly local.
+msgid "character.innkeeper"
+msgstr "Innkeeper"
+
+#. TRANSLATORS: The minstrel at the Posada, who plays music.
+msgid "character.musician"
+msgstr "Musician"
+
 # --- WEEK 1-2 GREY BOX (the vertical slice sandbox) -------------------------
 
 #. TRANSLATORS: The title of the Week 1-2 grey box HUD.
@@ -1044,6 +1052,10 @@ msgstr "The Venture is down."
 #. and a fragment of the original book is granted.
 msgid "ui.slice.venture.truth"
 msgstr "Truth revealed."
+
+#. TRANSLATORS: Toast message shown when the player saves at a checkpoint.
+msgid "ui.slice.saved"
+msgstr "Game saved."
 
 #. TRANSLATORS: The codex note on the Venture in its Reality form.
 msgid "ui.codex.venture.mill"

@@ -138,6 +138,14 @@ msgstr "Don Quichotte"
 msgid "character.sancho"
 msgstr "Sancho"
 
+#. TRANSLATORS: L'aubergiste de la Posada, un type amical.
+msgid "character.innkeeper"
+msgstr "Aubergiste"
+
+#. TRANSLATORS: Le ménestrel de la Posada, qui joue de la musique.
+msgid "character.musician"
+msgstr "Musicien"
+
 #. META: namespace=ui
 msgid "ui.codex.source"
 msgstr ""
@@ -973,6 +981,10 @@ msgstr "Le moulin de Montiel est tombé."
 #. and a fragment of the original book is granted.
 msgid "ui.slice.venture.truth"
 msgstr "Le moulin de Montiel se dresse — comme géant."
+
+#. TRANSLATORS: Toast message shown when the player saves at a checkpoint.
+msgid "ui.slice.saved"
+msgstr "Partie sauvegardée."
 
 #. TRANSLATORS: The codex note on the Venture in its Reality form.
 msgid "ui.codex.venture.mill"

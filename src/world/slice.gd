@@ -66,6 +66,9 @@ var _map_screen: MapScreen = null
 @onready var rock: TruthObject = $Rock
 @onready var book_stand: TruthObject = $BookStand
 @onready var tome: TruthObject = $Tome
+@onready var innkeeper: TruthObject = $Innkeeper
+@onready var musician: TruthObject = $Musician
+@onready var _checkpoint: Area3D = $Checkpoint
 ## The Venture of Montiel, in the era to the south.
 var venture: Venture = null
 
@@ -143,7 +146,7 @@ const LOCURA_LOST := 60.0
 func _ready() -> void:
 	_build_environment()
 	_build_yard()
-	_objects = [windmill, rock, book_stand, tome]
+	_objects = [windmill, rock, book_stand, tome, innkeeper, musician]
 	_build_era()
 	_build_characters()
 	venture = $Venture
@@ -493,6 +496,13 @@ func _unhandled_input(event: InputEvent) -> void:
 		_reset_yard()
 	elif event.is_action_pressed(&"toggle_map"):
 		_toggle_map()
+	elif event.is_action_pressed(&"interact"):
+		# Checkpoint: save the game when standing near the checkpoint.
+		if player != null and player.active_pawn != null \
+				and _checkpoint != null \
+				and _checkpoint.global_position.distance_to(player.active_pawn.global_position) < 3.0:
+			Manuscrito.save_game(0)
+			EventBus.toast.emit(&"ui.slice.saved", [])
 
 
 ## Open or close the world map.

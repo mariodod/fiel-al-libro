@@ -18,6 +18,8 @@
 [ext_resource type="Script" path="res://src/ui/vitals_panel.gd" id="19_vitals"]
 [ext_resource type="Resource" path="res://src/data/primitives/book_stand.tres" id="20_book_stand"]
 [ext_resource type="Resource" path="res://src/data/books/bk.ch01.apertura.tres" id="21_book_apertura"]
+[ext_resource type="Resource" path="res://src/data/characters/innkeeper.tres" id="22_innkeeper"]
+[ext_resource type="Resource" path="res://src/data/characters/musician.tres" id="23_musician"]
 
 [sub_resource type="PlaneMesh" id="Plane_ground"]
 size = Vector2(300, 300)
@@ -69,6 +71,25 @@ data = ExtResource("20_book_stand")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -10)
 script = ExtResource("2_object")
 data = ExtResource("21_book_apertura")
+
+[node name="Innkeeper" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -14)
+script = ExtResource("2_object")
+data = ExtResource("22_innkeeper")
+
+[node name="Musician" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -14)
+script = ExtResource("2_object")
+data = ExtResource("23_musician")
+
+[node name="Checkpoint" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -12)
+
+[node name="CheckpointShape" type="CollisionShape3D" parent="Checkpoint"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("Shape_ground")
+
+[node name="MusicianAudio" type="AudioStreamPlayer" parent="."]
 
 [node name="Venture" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 36)

@@ -375,6 +375,14 @@ msgstr "Don Quijote"
 msgid "character.sancho"
 msgstr "Sancho"
 
+#. TRANSLATORS: El posadero de la Posada, un local amable.
+msgid "character.innkeeper"
+msgstr "Tabernero"
+
+#. TRANSLATORS: El músico de la Posada, que toca música.
+msgid "character.musician"
+msgstr "Músico"
+
 #. META: namespace=ui
 msgid "ui.language.name.es"
 msgstr ""
@@ -969,6 +977,10 @@ msgstr "El molino de Montiel ha caído."
 #. and a fragment of the original book is granted.
 msgid "ui.slice.venture.truth"
 msgstr "El molino de Montiel se yergue — como gigante."
+
+#. TRANSLATORS: Toast message shown when the player saves at a checkpoint.
+msgid "ui.slice.saved"
+msgstr "Partida guardada."
 
 #. TRANSLATORS: The codex note on the Venture in its Reality form.
 msgid "ui.codex.venture.mill"
