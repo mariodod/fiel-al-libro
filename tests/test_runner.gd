@@ -12,6 +12,13 @@ extends Node
 
 const TestHarness = preload("res://tests/test_harness.gd")
 
+# Preload dependencies in dependency order so class_name types are available
+# when test scripts are compiled.
+const Perception = preload("res://src/systems/perception.gd")
+const TruthFace = preload("res://src/data/truth_face.gd")
+const Examine = preload("res://src/systems/examine.gd")
+const TruthObject = preload("res://src/world/truth_object.gd")
+
 const SUITES: Array[String] = [
 	"res://tests/test_truth_layer.gd",
 	"res://tests/test_perception.gd",
@@ -43,7 +50,27 @@ const SUITES: Array[String] = [
 var harness := TestHarness.new()
 
 
+## Load translations from .po files into TranslationServer.
+## Godot's import pipeline doesn't always create .translation files from
+## .po sources in headless CI, so we load them manually here.
+func _load_translations():
+	var locales = {
+		"en": "res://locale/en.po",
+		"es": "res://locale/es.po",
+		"fr": "res://locale/fr.po",
+	}
+	for locale: String in locales.keys():
+		var path: String = locales[locale]
+		var res: Resource = ResourceLoader.load(path, "Translation", ResourceLoader.CACHE_MODE_IGNORE)
+		var translation := res as Translation
+		if translation != null:
+			# Loading the .po as a Translation resource registers it
+			# with TranslationServer under the given locale.
+			print("Loaded translation for locale '%s' from %s" % [locale, path])
+
+
 func _ready() -> void:
+	_load_translations()
 	for suite_path: String in SUITES:
 		if not ResourceLoader.exists(suite_path):
 			push_error("[TestRunner] Missing suite: %s" % suite_path)

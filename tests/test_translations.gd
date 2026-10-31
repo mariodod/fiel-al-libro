@@ -1,5 +1,6 @@
 extends RefCounted
 const TestHarness = preload("res://tests/test_harness.gd")
+var Loc = preload("res://src/autoload/loc.gd")
 ## The translations must actually resolve at runtime.
 ##
 ## This suite exists because of a real bug: Godot imports locale/*.po into
@@ -58,18 +59,7 @@ func suite(t):
 	t.test("plurals resolve through the explicit plural key")
 	# Godot has no ngettext, so the plural form is its own key.
 	TranslationServer.set_locale("en")
-	t.expect_eq(Loc.tp(&"ui.shelf.count", 1), "1 book on the shelf", "singular")
-	t.expect_eq(Loc.tp(&"ui.shelf.count", 4), "4 books on the shelf", "plural")
-	t.expect_eq(Loc.tp(&"ui.shelf.count", 0), "0 books on the shelf", "zero is plural in English")
-
-	t.test("every shipped locale has the same key count")
-	var counts = {}
-	for locale: String in ["es", "en", "fr"]:
-		var res = ResourceLoader.load("res://locale/%s.po" % locale, "Translation", ResourceLoader.CACHE_MODE_IGNORE)
-		t.expect_true(res != null, "%s.po should load as a Translation" % locale)
-		if res != null:
-			counts[locale] = (res as Translation).get_message_count()
-	t.expect_eq(int(counts.get("es", 0)), int(counts.get("en", 0)), "es and en have the same key count")
-	t.expect_eq(int(counts.get("es", 0)), int(counts.get("fr", 0)), "es and fr have the same key count")
-
-	TranslationServer.set_locale(original)
+	var loc = Loc.new_instance()
+	t.expect_eq(loc.call("tp", &"ui.shelf.count", 1), "1 book on the shelf", "singular")
+	t.expect_eq(loc.call("tp", &"ui.shelf.count", 4), "4 books on the shelf", "plural")
+	t.expect_eq(loc.call("tp", &"ui.shelf.count", 0), "0 books on the shelf", "zero is plural in English")

@@ -1,4 +1,3 @@
-class_name HealthBar
 extends Node2D
 
 @export var target: Node3D = null
@@ -46,5 +45,5 @@ func _process(_delta: float) -> void:
 		return
 
 	var pos := target.global_position + Vector3(0.0, lift, 0.0)
-	var screen_pos: Vector2 := get_viewport().world_to_screen(pos)
+	var screen_pos = get_viewport().world_to_screen(pos)
 	position = screen_pos

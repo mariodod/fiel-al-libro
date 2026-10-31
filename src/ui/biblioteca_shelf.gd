@@ -18,7 +18,7 @@ func _ready() -> void:
     set_anchors_preset(Control.PRESET_FULL_RECT)
     visible = false
     _build_ui()
-    Biblioteca.shelf_changed.connect(_refresh)
+    EventBus.shelf_changed.connect(_refresh)
 
 func _build_ui() -> void:
     var root = VBoxContainer.new()
@@ -82,10 +82,8 @@ func _refresh() -> void:
     _books.clear()
     _equipped.clear()
     _collected.clear()
-
-    _equipped.clear_children()
-    _books_container.clear_children()
-
+    for child in _books_container.get_children():
+        child.queue_free()
     _collected = Biblioteca.get_collected()
     _equipped = Biblioteca.equipped_books()
 
@@ -134,7 +132,10 @@ func _add_book_row(id: StringName, book: Resource, container: VBoxContainer, equ
     row.add_child(passive_label)
 
     var equip_btn = Button.new()
-    equip_btn.text = equipped ? "Unequip" : "Equip"
+    if equipped:
+        equip_btn.text = "Unequip"
+    else:
+        equip_btn.text = "Equip"
     equip_btn.add_theme_font_size_override("font_size", 14)
     equip_btn.pressed.connect(func():
         if equipped:

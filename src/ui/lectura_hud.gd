@@ -16,7 +16,7 @@ var _evidence_label: Label = null
 var _is_visible: bool = false
 
 func _ready() -> void:
-	set_visible(false)
+	set_hud_visible(false)
 
 	EventBus.lectura_entered.connect(_on_entered)
 	EventBus.lectura_exited.connect(_on_exited)
@@ -29,15 +29,15 @@ func _ready() -> void:
 
 
 func _on_entered() -> void:
-	set_visible(true)
+	set_hud_visible(true)
 	_refresh()
 
 
 func _on_exited() -> void:
-	set_visible(false)
+	set_hud_visible(false)
 
 
-func set_visible(visible: bool) -> void:
+func set_hud_visible(visible: bool) -> void:
 	_is_visible = visible
 	if _label != null:
 		_label.visible = visible

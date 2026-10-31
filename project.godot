@@ -51,6 +51,13 @@ window/stretch/aspect="expand"
 
 enabled=PackedStringArray()
 
+[export]
+
+presets=PackedStringArray("Windows Desktop")
+"presets/Windows Desktop/name"="Windows Desktop"
+"presets/Windows Desktop/platform"="Windows Desktop"
+"presets/Windows Desktop/features"=PackedStringArray()
+
 [file_customization]
 
 folder_colors={
@@ -122,7 +129,8 @@ toggle_truth={
 }
 toggle_verdict={
 "deadzone": 0.2,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":16,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":78,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)]
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":16,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":78,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
 }
 toggle_help={
 "deadzone": 0.2,
@@ -239,11 +247,3 @@ layer_blend_speed={
 "type": "float",
 "value": 1.0
 }
-
-[export]
-presets=PackedStringArray("Windows Desktop")
-
-[export/presets/Windows Desktop]
-name="Windows Desktop"
-platform="Windows Desktop"
-features=PackedStringArray()

@@ -1,4 +1,4 @@
-# FIEL AL LIBRO — sample translation template
+﻿# FIEL AL LIBRO — sample translation template
 # This is a WORKING EXAMPLE of the key convention and file format.
 # Regenerate with:
 #   godot --headless --script res://src/tools/extract_strings.gd
@@ -34,106 +34,106 @@ msgstr "Begin the manuscript"
 
 #. META: namespace=ui
 msgid "ui.menu.continue"
-msgstr ""
+msgstr "Continue"
 
 #. META: namespace=ui
 msgid "ui.menu.load"
-msgstr ""
+msgstr "Load"
 
 #. META: namespace=ui
 msgid "ui.menu.settings"
-msgstr ""
+msgstr "Settings"
 
 #. META: namespace=ui
 msgid "ui.menu.quit"
-msgstr ""
+msgstr "Quit"
 
 #. META: namespace=ui
 msgid "ui.menu.codes"
-msgstr ""
+msgstr "Codes"
 
 #. TRANSLATORS: "Codes" refers to the in-game translation screen where the player
 #. can read or import translations. Not "passwords". Keep it short.
 msgid "ui.menu.codes.hint"
-msgstr ""
+msgstr "Enter translation codes"
 
 #. META: namespace=ui
 msgid "ui.prompt.interact"
-msgstr ""
+msgstr "Interact"
 
 #. META: namespace=ui
 msgid "ui.prompt.read"
-msgstr ""
+msgstr "Read"
 
 #. META: namespace=ui
 msgid "ui.prompt.switch_character"
-msgstr ""
+msgstr "Switch Character"
 
 #. META: namespace=ui
 msgid "ui.prompt.rest"
-msgstr ""
+msgstr "Rest"
 
 #. META: namespace=ui
 msgid "ui.prompt.leave"
-msgstr ""
+msgstr "Leave"
 
 #. META: namespace=ui
 msgid "ui.hud.madness"
-msgstr ""
+msgstr "Madness"
 
 #. META: namespace=ui
 msgid "ui.hud.recuerdos"
-msgstr ""
+msgstr "Recuerdos"
 
 #. META: namespace=ui
 msgid "ui.hud.humanity"
-msgstr ""
+msgstr "Humanity"
 
 #. TRANSLATORS: This is the name of the save system / the file the player writes.
 msgid "ui.manuscript.title"
-msgstr ""
+msgstr "Manuscript"
 
 #. TRANSLATORS: "Unwritten page" - the page of the manuscript that has not been
 #. written yet. A metaphor for a death. Keep the metaphor intact if possible.
 msgid "ui.manuscript.unwritten_page"
-msgstr ""
+msgstr "Unwritten Page"
 
 #. META: namespace=ui
 msgid "ui.shelf.title"
-msgstr ""
+msgstr "Shelf"
 
 #. META: namespace=ui
 msgid "ui.shelf.empty"
-msgstr ""
+msgstr "Empty"
 
 #. META: namespace=ui
 msgid "ui.shelf.equip"
-msgstr ""
+msgstr "Equip"
 
 #. META: namespace=ui
 msgid "ui.codex.title"
-msgstr ""
+msgstr "Codex"
 
 #. META: namespace=ui
 msgid "ui.codex.source"
-msgstr ""
+msgstr "Source"
 
 #. TRANSLATORS: "The original reads:" - introduces the 1605 Spanish text shown
 #. alongside the modern rendering. Do NOT translate the Spanish that follows.
 msgid "bk.note.original_reads"
-msgstr ""
+msgstr "Original reads:"
 
 #. META: namespace=ui
 msgid "bk.note.translation"
-msgstr ""
+msgstr "Translation:"
 
 #. META: namespace=ui
 msgid "bk.note.translator"
-msgstr ""
+msgstr "Translator:"
 
 #. META: namespace=ui
 msgid "bk.chapter"
-msgstr ""
+msgstr "Chapter"
 
 #. META: namespace=ui
 msgid "ui.language.name.es"
@@ -189,119 +189,119 @@ msgstr "Turkish"
 
 #. META: namespace=it
 msgid "it.book.cid.name"
-msgstr ""
+msgstr "Cid"
 
 #. META: namespace=it
 msgid "it.book.cid.desc"
-msgstr ""
+msgstr "The Cid"
 
 #. META: namespace=it
 msgid "it.book.tio_andalus.name"
-msgstr ""
+msgstr "Tío Andaluz"
 
 #. META: namespace=it
 msgid "it.book.tio_andalus.desc"
-msgstr ""
+msgstr "Uncle Andalusian"
 
 #. META: namespace=it
 msgid "it.book.celestina.name"
-msgstr ""
+msgstr "Celestina"
 
 #. META: namespace=it
 msgid "it.book.celestina.desc"
-msgstr ""
+msgstr "Celestina"
 
 #. META: namespace=it
 msgid "it.ability.desvelar.name"
-msgstr ""
+msgstr "Desvelar"
 
 #. META: namespace=it
 msgid "it.ability.desvelar.desc"
-msgstr ""
+msgstr "Strip the Book skin"
 
 #. META: namespace=it
 msgid "it.ability.refutar.name"
-msgstr ""
+msgstr "Refutar"
 
 #. META: namespace=it
 msgid "it.ability.refutar.desc"
-msgstr ""
+msgstr "Refute"
 
 #. META: namespace=it
 msgid "it.ability.juramento.name"
-msgstr ""
+msgstr "Juramento"
 
 #. META: namespace=it
 msgid "it.ability.juramento.desc"
-msgstr ""
+msgstr "Oath"
 
 #. META: namespace=it
 msgid "it.ability.dodge.name"
-msgstr ""
+msgstr "Dodge"
 
 #. META: namespace=it
 msgid "it.ability.dodge.desc"
-msgstr ""
+msgstr "Dodge roll"
 
 #. META: namespace=dia
 msgid "dia.sancho.bark.001"
-msgstr ""
+msgstr "..."
 
 #. META: namespace=dia
 msgid "dia.sancho.bark.002"
-msgstr ""
+msgstr "..."
 
 #. META: namespace=dia
 msgid "dia.quixote.bark.001"
-msgstr ""
+msgstr "..."
 
 #. META: namespace=dia
 msgid "dia.quixote.bark.002"
-msgstr ""
+msgstr "..."
 
 #. META: namespace=tip
 msgid "tip.lectura.intro"
-msgstr ""
+msgstr "Reading tip"
 
 #. META: namespace=tip
 msgid "tip.switch.intro"
-msgstr ""
+msgstr "Switch tip"
 
 #. META: namespace=tip
 msgid "tip.posada.intro"
-msgstr ""
+msgstr "Inn tip"
 
 #. META: namespace=bk
 msgid "bk.ch08.molinos.01"
-msgstr ""
+msgstr "The windmills"
 
 #. META: namespace=bk
 msgid "bk.ch08.molinos.01.modern"
-msgstr ""
+msgstr "The windmills (modern)"
 
 #. META: namespace=bk
 msgid "bk.ch23.montesinos.01"
-msgstr ""
+msgstr "Montesinos"
 
 #. META: namespace=bk
 msgid "bk.ch23.montesinos.01.modern"
-msgstr ""
+msgstr "Montesinos (modern)"
 
 #. META: namespace=bk
 msgid "bk.ch26.galimatias.01"
-msgstr ""
+msgstr "Galimatias"
 
 #. META: namespace=bk
 msgid "bk.ch26.galimatias.01.modern"
-msgstr ""
+msgstr "Galimatias (modern)"
 
 #. META: namespace=bk
 msgid "bk.ch50.impertinente.01"
-msgstr ""
+msgstr "Impertinent"
 
 #. META: namespace=bk
 msgid "bk.ch50.impertinente.01.modern"
-msgstr ""
+msgstr "Impertinent (modern)"
 
 # ------------------------------------------------------------------
 # PLURAL CONVENTION
@@ -329,16 +329,16 @@ msgstr ""
 # ────────────────────────────────────────────────────────────────────────
 
 msgid "ui.shelf.count"
-msgstr "%d book on the shelf"
+msgstr "{count} book on the shelf"
 
 msgid "ui.shelf.count.plural"
-msgstr "%d books on the shelf"
+msgstr "{count} books on the shelf"
 
 msgid "ui.library.total"
-msgstr ""
+msgstr "{total} total"
 
 msgid "ui.library.total.plural"
-msgstr ""
+msgstr "{total} total"
 
 # ------------------------------------------------------------------
 # CONTEXT CONVENTION
@@ -364,103 +364,103 @@ msgstr "Sancho"
 
 #. TRANSLATORS: The title of the Week 1-2 grey box HUD.
 msgid "ui.slice.title"
-msgstr ""
+msgstr "The Yard"
 
 #. TRANSLATORS: HUD line: the truth the world is in. Format: %s.
 msgid "ui.slice.line.world"
-msgstr ""
+msgstr "The world says:"
 
 #. TRANSLATORS: HUD line: the character you are driving and what they read. Format: %s, %s.
 msgid "ui.slice.line.you"
-msgstr ""
+msgstr "You say:"
 
 #. TRANSLATORS: HUD line: the companion and what they read. Format: %s, %s.
 msgid "ui.slice.line.companion"
-msgstr ""
+msgstr "Companion says:"
 
 #. TRANSLATORS: HUD line: whether Sancho has the second sight. Format: %s.
 msgid "ui.slice.line.second_sight"
-msgstr ""
+msgstr "Second sight"
 
 #. TRANSLATORS: HUD line: Quixote's madness. Format: %d, %s.
 msgid "ui.slice.line.locura"
-msgstr ""
+msgstr "Madness"
 
 #. TRANSLATORS: HUD line: one object and what each character calls it. Format: %s, %s, %s, %s, %s.
 msgid "ui.slice.line.object"
-msgstr ""
+msgstr "Object:"
 
 #. TRANSLATORS: Control hint, line 1.
 msgid "ui.slice.help.1"
-msgstr ""
+msgstr "Help 1"
 
 #. TRANSLATORS: Control hint, line 2.
 msgid "ui.slice.help.2"
-msgstr ""
+msgstr "Help 2"
 
 #. TRANSLATORS: Control hint, line 3.
 msgid "ui.slice.help.3"
-msgstr ""
+msgstr "Help 3"
 
 #. TRANSLATORS: The Reality layer: what actually happened.
 msgid "ui.layer.reality"
-msgstr ""
+msgstr "Reality"
 
 #. TRANSLATORS: The Book layer: what the novel says.
 msgid "ui.layer.book"
-msgstr ""
+msgstr "Book"
 
 #. TRANSLATORS: The word "on", for a switch.
 msgid "ui.on"
-msgstr ""
+msgstr "On"
 
 #. TRANSLATORS: The word "off", for a switch.
 msgid "ui.off"
-msgstr ""
+msgstr "Off"
 
 #. TRANSLATORS: The lowest madness band: Lucid.
 msgid "ui.locura.lucid"
-msgstr ""
+msgstr "Lucid"
 
 #. TRANSLATORS: Madness band 2: Displaced.
 msgid "ui.locura.displaced"
-msgstr ""
+msgstr "Displaced"
 
 #. TRANSLATORS: Madness band 3: Lost.
 msgid "ui.locura.lost"
-msgstr ""
+msgstr "Lost"
 
 #. TRANSLATORS: Madness band 4: Absorbed.
 msgid "ui.locura.absorbed"
-msgstr ""
+msgstr "Absorbed"
 
 #. TRANSLATORS: What the windmill is called in the Reality layer.
 msgid "ui.form.molino"
-msgstr ""
+msgstr "Mill"
 
 #. TRANSLATORS: What the windmill is called in the Book layer.
 msgid "ui.form.gigante"
-msgstr ""
+msgstr "Giant"
 
 #. TRANSLATORS: What the rock is called in the Reality layer.
 msgid "ui.form.roca"
-msgstr "rock"
+msgstr "Rock"
 
 #. TRANSLATORS: What the rock is called in the Book layer.
 msgid "ui.form.libro"
-msgstr "book"
+msgstr "Book"
 
 #. TRANSLATORS: The windmill itself.
 msgid "ui.object.molino"
-msgstr ""
+msgstr "Mill"
 
 #. TRANSLATORS: The rock itself.
 msgid "ui.object.roca"
-msgstr "The rock"
+msgstr "Rock"
 
 #. TRANSLATORS: Floating tag over an object: who is looking, and what they see. Format: %s, %s.
 msgid "ui.perception.tag"
-msgstr ""
+msgstr "Perception"
 
 # --- B5: THE REACTIONS -----------------------------------------------------
 # The line a character says when the world moves under them. The key is
@@ -469,35 +469,35 @@ msgstr ""
 
 #. TRANSLATORS: Quixote sees the windmill as a giant.
 msgid "dia.quixote.reaction.windmill.book"
-msgstr ""
+msgstr "A giant!"
 
 #. TRANSLATORS: Quixote sees the windmill as a windmill again.
 msgid "dia.quixote.reaction.windmill.reality"
-msgstr ""
+msgstr "A mill."
 
 #. TRANSLATORS: Quixote sees the rock as a book.
 msgid "dia.quixote.reaction.rock.book"
-msgstr ""
+msgstr "A book!"
 
 #. TRANSLATORS: Quixote sees the rock as a rock again.
 msgid "dia.quixote.reaction.rock.reality"
-msgstr ""
+msgstr "A rock."
 
 #. TRANSLATORS: Sancho sees the windmill as a giant.
 msgid "dia.sancho.reaction.windmill.book"
-msgstr ""
+msgstr "It's a mill."
 
 #. TRANSLATORS: Sancho sees the windmill as a windmill again.
 msgid "dia.sancho.reaction.windmill.reality"
-msgstr ""
+msgstr "It's a mill."
 
 #. TRANSLATORS: Sancho sees the rock as a book.
 msgid "dia.sancho.reaction.rock.book"
-msgstr ""
+msgstr "It's a rock."
 
 #. TRANSLATORS: Sancho sees the rock as a rock again.
 msgid "dia.sancho.reaction.rock.reality"
-msgstr ""
+msgstr "It's a rock."
 
 # --- THE CHATTER (B3) ----------------------------------------------------
 # What the companion says about the thing it is looking at. The key is
@@ -506,433 +506,433 @@ msgstr ""
 
 #. TRANSLATORS: Quixote, looking at the rock. He is formal, and a little mad.
 msgid "dia.quixote.chatter.rock"
-msgstr ""
+msgstr "A rock."
 
 #. TRANSLATORS: Quixote, looking at the windmill.
 msgid "dia.quixote.chatter.windmill"
-msgstr ""
+msgstr "A windmill."
 
 #. TRANSLATORS: Quixote, looking at the training dummy. He will call it a giant.
 msgid "dia.quixote.chatter.dummy"
-msgstr ""
+msgstr "A dummy."
 
 #. TRANSLATORS: Quixote, when the player locks onto something.
 msgid "dia.quixote.chatter.locked"
-msgstr ""
+msgstr "Locked."
 
 #. TRANSLATORS: Quixote, when the player goes down.
 msgid "dia.quixote.chatter.down"
-msgstr ""
+msgstr "Down."
 
 #. TRANSLATORS: Quixote, with nothing in front of him. Line 1 of 3.
 msgid "dia.quixote.chatter.idle.1"
-msgstr ""
+msgstr "Idle 1."
 
 #. TRANSLATORS: Quixote, with nothing in front of him. Line 2 of 3.
 msgid "dia.quixote.chatter.idle.2"
-msgstr ""
+msgstr "Idle 2."
 
 #. TRANSLATORS: Quixote, with nothing in front of him. Line 3 of 3.
 msgid "dia.quixote.chatter.idle.3"
-msgstr ""
+msgstr "Idle 3."
 
 #. TRANSLATORS: Sancho, looking at the rock. Plain, practical, not impressed.
 msgid "dia.sancho.chatter.rock"
-msgstr ""
+msgstr "A rock."
 
 #. TRANSLATORS: Sancho, looking at the windmill.
 msgid "dia.sancho.chatter.windmill"
-msgstr ""
+msgstr "A windmill."
 
 #. TRANSLATORS: Sancho, looking at the training dummy. He knows what it is.
 msgid "dia.sancho.chatter.dummy"
-msgstr ""
+msgstr "A dummy."
 
 #. TRANSLATORS: Sancho, when the player locks onto something.
 msgid "dia.sancho.chatter.locked"
-msgstr ""
+msgstr "Locked."
 
 #. TRANSLATORS: Sancho, when the player goes down.
 msgid "dia.sancho.chatter.down"
-msgstr ""
+msgstr "Down."
 
 #. TRANSLATORS: Sancho, with nothing in front of him. Line 1 of 3.
 msgid "dia.sancho.chatter.idle.1"
-msgstr ""
+msgstr "Idle 1."
 
 #. TRANSLATORS: Sancho, with nothing in front of him. Line 2 of 3.
 msgid "dia.sancho.chatter.idle.2"
-msgstr ""
+msgstr "Idle 2."
 
 #. TRANSLATORS: Sancho, with nothing in front of him. Line 3 of 3.
 msgid "dia.sancho.chatter.idle.3"
-msgstr ""
+msgstr "Idle 3."
 
 #. TRANSLATORS: Quixote, after a parry. He cannot parry, so this line is
 #. only ever heard if the character who is driving is Sancho.
 msgid "dia.quixote.chatter.parry"
-msgstr ""
+msgstr "Parry!"
 
 #. TRANSLATORS: Sancho, after a parry.
 msgid "dia.sancho.chatter.parry"
-msgstr ""
+msgstr "Parry!"
 
 #. TRANSLATORS: Sancho, after a Desvelar: he has stripped the Book skin
 #. off a thing and both of them can see what is under it.
 msgid "dia.sancho.chatter.desvelar"
-msgstr ""
+msgstr "Desvelar!"
 
 #. TRANSLATORS: Quixote, looking at the straw man in the yard. He will call it a giant.
 msgid "dia.quixote.chatter.straw_man"
-msgstr ""
+msgstr "Straw man!"
 
 #. TRANSLATORS: Sancho, looking at the straw man in the yard. He knows what it is.
 msgid "dia.sancho.chatter.straw_man"
-msgstr ""
+msgstr "Straw man!"
 
 #. TRANSLATORS: Quixote, when the Venture of Montiel has fallen.
 msgid "dia.quixote.chatter.venture_down"
-msgstr ""
+msgstr "The Venture is down!"
 
 #. TRANSLATORS: Sancho, when the Venture of Montiel has fallen.
 msgid "dia.sancho.chatter.venture_down"
-msgstr ""
+msgstr "The Venture is down!"
 
 #. TRANSLATORS: Quixote, with nothing in front of him. Line 4 of 6.
 msgid "dia.quixote.chatter.idle.4"
-msgstr ""
+msgstr "Idle 4."
 
 #. TRANSLATORS: Quixote, with nothing in front of him. Line 5 of 6.
 msgid "dia.quixote.chatter.idle.5"
-msgstr ""
+msgstr "Idle 5."
 
 #. TRANSLATORS: Quixote, with nothing in front of him. Line 6 of 6.
 msgid "dia.quixote.chatter.idle.6"
-msgstr ""
+msgstr "Idle 6."
 
 #. TRANSLATORS: Sancho, with nothing in front of him. Line 4 of 6.
 msgid "dia.sancho.chatter.idle.4"
-msgstr ""
+msgstr "Idle 4."
 
 #. TRANSLATORS: Sancho, with nothing in front of him. Line 5 of 6.
 msgid "dia.sancho.chatter.idle.5"
-msgstr ""
+msgstr "Idle 5."
 
 #. TRANSLATORS: Sancho, with nothing in front of him. Line 6 of 6.
 msgid "dia.sancho.chatter.idle.6"
-msgstr ""
+msgstr "Idle 6."
 
 msgid "bk.ch01.apertura.title"
-msgstr ""
+msgstr "Apertura"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
 msgid "bk.ch01.molinos.title"
-msgstr ""
+msgstr "Molinos"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
 msgid "bk.ch01.nombre.title"
-msgstr ""
+msgstr "Nombre"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
 msgid "bk.ch02.caballeros.title"
-msgstr ""
+msgstr "Caballeros"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
 msgid "bk.ch04.rocinante.title"
-msgstr ""
+msgstr "Rocinante"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
 msgid "bk.ch05.duena.title"
-msgstr ""
+msgstr "Dueña"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
 msgid "bk.ch07.yanguesas.title"
-msgstr ""
+msgstr "Yanguesas"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
 msgid "bk.ch09.manuscrito.title"
-msgstr ""
+msgstr "Manuscrito"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
 msgid "bk.ch10.balsamo.title"
-msgstr ""
+msgstr "Balsamo"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
 msgid "bk.ch12.armas_letras.title"
-msgstr ""
+msgstr "Armas y Letras"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
 msgid "bk.ch14.galeotes.title"
-msgstr ""
+msgstr "Galeotes"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
 msgid "bk.ch17.hombre_muerto.title"
-msgstr ""
+msgstr "Hombre Muerto"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
 msgid "bk.ch23.montesinos.title"
-msgstr ""
+msgstr "Montesinos"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
 msgid "bk.ch27.molinos_llenadores.title"
-msgstr ""
+msgstr "Molinos Llenadores"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
 msgid "bk.ch29.penitentes.title"
-msgstr ""
+msgstr "Penitentes"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
 msgid "bk.ch50.impertinente.title"
-msgstr ""
+msgstr "Impertinente"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
 msgid "bk.ch03.posada.title"
-msgstr ""
+msgstr "Posada"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
 msgid "bk.ch06.pastores.title"
-msgstr ""
+msgstr "Pastores"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
 msgid "bk.ch11.caballero_bosque.title"
-msgstr ""
+msgstr "Caballero del Bosque"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
 msgid "bk.ch13.leones.title"
-msgstr ""
+msgstr "Leones"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
 msgid "bk.ch15.muerto_camino.title"
-msgstr ""
+msgstr "Muerto en el Camino"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
 msgid "bk.ch16.barca_encantada.title"
-msgstr ""
+msgstr "Barca Encantada"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
 msgid "bk.ch18.libros_quemados.title"
-msgstr ""
+msgstr "Libros Quemados"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
 msgid "bk.ch20.dulcinea_encantada.title"
-msgstr ""
+msgstr "Dulcinea Encantada"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
 msgid "bk.ch22.duelo_luz_luna.title"
-msgstr ""
+msgstr "Duelo de Luz y Luna"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
 msgid "bk.ch24.altisidora.title"
-msgstr ""
+msgstr "Altisidora"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
 msgid "bk.ch25.conde_altisidora.title"
-msgstr ""
+msgstr "Conde de Altisidora"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
 msgid "bk.ch26.melisendra.title"
-msgstr ""
+msgstr "Melisendra"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
 msgid "bk.ch28.encantada.title"
-msgstr ""
+msgstr "Encantada"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
 msgid "bk.ch30.leones_carro.title"
-msgstr ""
+msgstr "Leones en Carro"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
 msgid "bk.ch31.cueva_hermoso.title"
-msgstr ""
+msgstr "Cueva de Hermoso"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
 msgid "bk.ch32.ventura_duque.title"
-msgstr ""
+msgstr "Venture del Duque"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
 msgid "bk.ch33.leones_reales.title"
-msgstr ""
+msgstr "Leones Reales"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
 msgid "bk.ch34.encantamiento.title"
-msgstr ""
+msgstr "Encantamiento"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
 msgid "bk.ch35.caballero_blanco.title"
-msgstr ""
+msgstr "Caballero Blanco"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
 msgid "bk.ch36.cuidado_sancho.title"
-msgstr ""
+msgstr "Cuidado Sancho"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
 msgid "bk.ch37.encantamiento_duquesa.title"
-msgstr ""
+msgstr "Encantamiento Duquesa"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
 msgid "bk.ch38.clavileño.title"
-msgstr ""
+msgstr "Clavileño"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
 msgid "bk.ch39.sancho_gobernador.title"
-msgstr ""
+msgstr "Sancho Gobernador"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
 msgid "bk.ch40.entierro_rico.title"
-msgstr ""
+msgstr "Entierro Rico"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
 msgid "bk.ch41.oviedo.title"
-msgstr ""
+msgstr "Oviedo"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
 msgid "bk.ch42.maestro_pedro.title"
-msgstr ""
+msgstr "Maestro Pedro"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
 msgid "bk.ch43.caso_penal.title"
-msgstr ""
+msgstr "Caso Penal"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
 msgid "bk.ch44.duelo_evitados.title"
-msgstr ""
+msgstr "Duelos Evitados"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
 msgid "bk.ch45.encantamiento_sancho.title"
-msgstr ""
+msgstr "Encantamiento Sancho"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
 msgid "bk.ch46.leones_corte.title"
-msgstr ""
+msgstr "Leones en Corte"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
 msgid "bk.ch47.despedida.title"
-msgstr ""
+msgstr "Despedida"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
 msgid "bk.ch48.regreso_pueblo.title"
-msgstr ""
+msgstr "Regreso al Pueblo"
 
 #. TRANSLATORS: Control hint, line 4.
 msgid "ui.slice.help.4"
-msgstr ""
+msgstr "Help 4"
 
 #. TRANSLATORS: Control hint, line 5: where the practice yard is.
 msgid "ui.slice.help.5"
-msgstr ""
+msgstr "Help 5"
 
 #. TRANSLATORS: Control hint, line 6: the guard, the Desvelar and the reset.
 msgid "ui.slice.help.6"
-msgstr ""
+msgstr "Help 6"
 
 #. TRANSLATORS: HUD line: the training dummy and how much of it is left. Format: %d, %d.
 msgid "ui.slice.line.dummy"
-msgstr ""
+msgstr "Dummy:"
 
 #. TRANSLATORS: HUD line: Humanity, and how much is left of it. Format: %d, %d.
 msgid "ui.slice.line.humanity"
-msgstr ""
+msgstr "Humanity:"
 
 #. TRANSLATORS: The straw man, as the HUD and the lock-on call it.
 msgid "ui.target.strawman"
-msgstr ""
+msgstr "Straw Man Target"
 
 #. TRANSLATORS: HUD line: the character you are driving and how they are. Format: %s, %d, %d, %d, %d.
 msgid "ui.slice.line.vitals"
-msgstr ""
+msgstr "Vitals:"
 
 #. TRANSLATORS: Shown when a character goes down in the practice yard.
 msgid "ui.slice.down"
-msgstr ""
+msgstr "Down"
 
 #. TRANSLATORS: HUD line: what the player is locked onto. Format: %s.
 msgid "ui.slice.line.locked"
-msgstr ""
+msgstr "Locked"
 
 #. TRANSLATORS: The marker over a locked target.
 msgid "ui.lockon.marker"
-msgstr ""
+msgstr "Lock-on Marker"
 
 #. TRANSLATORS: The training dummy, as the HUD and the lock-on call it.
 msgid "ui.target.dummy"
-msgstr ""
+msgstr "Training Dummy"
 
 #. TRANSLATORS: Shown when both characters are down: the game is over and
 #. the morning starts again.
 msgid "ui.slice.gameover"
-msgstr ""
+msgstr "Game Over"
 
 #. TRANSLATORS: The companion, after picking the player up.
 msgid "dia.quixote.chatter.revive"
-msgstr ""
+msgstr "Revive!"
 
 #. TRANSLATORS: The companion, after picking the player up.
 msgid "dia.sancho.chatter.revive"
-msgstr ""
+msgstr "Revive!"
 
 #. TRANSLATORS: The name of the light attack.
 msgid "it.ability.attack_light.name"
-msgstr ""
+msgstr "Light Attack"
 
 #. TRANSLATORS: The name of the heavy attack.
 msgid "it.ability.attack_heavy.name"
-msgstr ""
+msgstr "Heavy Attack"
 
 #. TRANSLATORS: The Examine prompt: what to press to look at a thing.
 msgid "ui.examine.prompt"
-msgstr "E — Examine"
+msgstr "Examine"
 
 #. TRANSLATORS: The Examine panel: the text written on the thing, in
 #. quotation marks. Format: %s.
 msgid "ui.examine.quote"
-msgstr ""
+msgstr ""%s""
 
 # --- THE FACES: what a character perceives -------------------------------
 # One face per truth, per object. The Examine panel shows ONE of them —
@@ -945,283 +945,283 @@ msgstr ""
 
 #. TRANSLATORS: The rock in the Reality truth: how it looks.
 msgid "ui.face.rock.reality.desc"
-msgstr "A grey stone the size of a fist, with dry lichen on top and its base sunk into the earth."
+msgstr "A grey stone the size of a fist."
 
 #. TRANSLATORS: The rock in the Reality truth: the one detail that does not add up.
 msgid "ui.face.rock.reality.tell"
-msgstr "Weighs more than a stone of that size should."
+msgstr "Weighs more than it should."
 
 #. TRANSLATORS: The rock in the Book truth: how it looks.
 msgid "ui.face.rock.book.desc"
-msgstr "A small book, bound in brown leather and tied with a strap. The page edges are gilded and stain the fingers."
+msgstr "A small leather-bound book."
 
 #. TRANSLATORS: The rock in the Book truth: the one detail that does not add up.
 msgid "ui.face.rock.book.tell"
-msgstr "Weighs more than a book of that size should."
+msgstr "Weighs more than it should."
 
 #. TRANSLATORS: The title written on the cover of the book the rock is.
 msgid "ui.face.rock.book.title"
-msgstr "The ingenious hidalgo Don Quixote de la Mancha"
+msgstr "The Book"
 
 #. TRANSLATORS: The windmill in the Reality truth: how it looks.
 msgid "ui.face.windmill.reality.desc"
-msgstr ""
+msgstr "A stone tower with wooden sails."
 
 #. TRANSLATORS: The windmill in the Reality truth: the one detail that does not add up.
 msgid "ui.face.windmill.reality.tell"
-msgstr ""
+msgstr "Ancient stones."
 
 #. TRANSLATORS: The windmill in the Book truth: how it looks.
 msgid "ui.face.windmill.book.desc"
-msgstr ""
+msgstr "A stone giant with tattered sails."
 
 #. TRANSLATORS: The windmill in the Book truth: the one detail that does not add up.
 msgid "ui.face.windmill.book.tell"
-msgstr ""
+msgstr "Shadow across the plain."
 
 #. TRANSLATORS: The Venture of Montiel, the first boss.
 msgid "ui.venture.montiel"
-msgstr ""
+msgstr "The Venture of Montiel"
 
 #. TRANSLATORS: The Venture in the Reality truth: how it looks.
 msgid "ui.face.venture.reality.desc"
-msgstr ""
+msgstr "A stone windmill tower."
 
 #. TRANSLATORS: The Venture in the Reality truth: the one detail that does not add up.
 msgid "ui.face.venture.reality.tell"
-msgstr ""
+msgstr "Ancient and still."
 
 #. TRANSLATORS: The Venture in the Reality truth: the name the manuscript gives it.
 msgid "ui.face.venture.reality.title"
-msgstr ""
+msgstr "The Mill"
 
 #. TRANSLATORS: The Venture in the Book truth: how it looks.
 msgid "ui.face.venture.book.desc"
-msgstr ""
+msgstr "A stone giant."
 
 #. TRANSLATORS: The Venture in the Book truth: the one detail that does not add up.
 msgid "ui.face.venture.book.tell"
-msgstr ""
+msgstr "Moves with intent."
 
 #. TRANSLATORS: The Venture in the Book truth: the name the manuscript gives it.
 msgid "ui.face.venture.book.title"
-msgstr ""
+msgstr "The Giant"
 
 #. TRANSLATORS: The name of the guard.
 msgid "it.ability.block.name"
-msgstr ""
+msgstr "Block"
 
 #. TRANSLATORS: The name of a Venture's move, in the developer's readout.
 msgid "ui.move.mill_sails.name"
-msgstr ""
+msgstr "Mill Sails"
 
 #. TRANSLATORS: The name of a Venture's move, in the developer's readout.
 msgid "ui.move.mill_topple.name"
-msgstr ""
+msgstr "Mill Topple"
 
 #. TRANSLATORS: The name of a Venture's move, in the developer's readout.
 msgid "ui.move.giant_sweep.name"
-msgstr ""
+msgstr "Giant Sweep"
 
 #. TRANSLATORS: The name of a Venture's move, in the developer's readout.
 msgid "ui.move.giant_slam.name"
-msgstr ""
+msgstr "Giant Slam"
 
 #. TRANSLATORS: The Venture's health, in the developer's readout. Format: %s, %d, %d.
 msgid "ui.slice.line.venture"
-msgstr ""
+msgstr "Venture:"
 
 #. TRANSLATORS: The move the Venture is winding up. Format: %s.
 msgid "ui.slice.line.venture.move"
-msgstr ""
+msgstr "Move:"
 
 #. TRANSLATORS: The Venture of Montiel is over.
 msgid "ui.slice.venture.down"
-msgstr ""
+msgstr "The Venture is down."
 
 #. TRANSLATORS: The Venture of Montiel is over — resolved by truth, not force.
 #. The knight's delusion held: the world stayed Book, the giant was real,
 #. and a fragment of the original book is granted.
 msgid "ui.slice.venture.truth"
-msgstr ""
+msgstr "Truth revealed."
 
 #. TRANSLATORS: The codex note on the Venture in its Reality form.
 msgid "ui.codex.venture.mill"
-msgstr ""
+msgstr "The Mill"
 
 #. TRANSLATORS: The codex note on the Venture in its Book form.
 msgid "ui.codex.venture.giant"
-msgstr ""
+msgstr "The Giant"
 
 #. TRANSLATORS: The companion, remarking on the Venture.
 msgid "dia.quixote.chatter.venture"
-msgstr ""
+msgstr "The Venture!"
 
 #. TRANSLATORS: The prompt under the examination, when it is open: E
 #. closes it again.
 msgid "ui.examine.close"
-msgstr ""
+msgstr "Close"
 
 #. TRANSLATORS: The companion, remarking on the Venture.
 msgid "dia.sancho.chatter.venture"
-msgstr ""
+msgstr "The Venture."
 
 #. TRANSLATORS: The character says so when the world shows them a mill.
 msgid "dia.quixote.reaction.venture.reality"
-msgstr ""
+msgstr "A mill."
 
 #. TRANSLATORS: The character says so when the world shows them a giant.
 msgid "dia.quixote.reaction.venture.book"
-msgstr ""
+msgstr "A giant!"
 
 #. TRANSLATORS: The character says so when the world shows them a mill.
 msgid "dia.sancho.reaction.venture.reality"
-msgstr ""
+msgstr "It's a mill."
 
 #. TRANSLATORS: The character says so when the world shows them a giant.
 msgid "dia.sancho.reaction.venture.book"
-msgstr ""
+msgstr "It's a giant."
 
 #. TRANSLATORS: The name of Region I: El Camino de la Mancha.
 msgid "ui.region.camino_la_mancha.name"
-msgstr ""
+msgstr "Camino de La Mancha"
 
 #. TRANSLATORS: The name of Region II: Sierra Morena.
 msgid "ui.region.sierra_morena.name"
-msgstr ""
+msgstr "Sierra Morena"
 
 #. TRANSLATORS: The name of Region III: El Toboso y los Montes de Toledo.
 msgid "ui.region.el_toboso.name"
-msgstr ""
+msgstr "El Toboso"
 
 #. TRANSLATORS: The name of Region IV: Los Riscos de Medinaceli.
 msgid "ui.region.los_riscos.name"
-msgstr ""
+msgstr "Los Riscos"
 
 #. TRANSLATORS: The name of Region V: El Castillo del Duque.
 msgid "ui.region.el_castillo_del_duque.name"
-msgstr ""
+msgstr "Castillo del Duque"
 
 #. TRANSLATORS: The book stand in the yard: how it is called.
 msgid "ui.object.book_stand"
-msgstr ""
+msgstr "Book Stand"
 
 #. TRANSLATORS: The book stand in the Reality truth: how it looks.
 msgid "ui.face.book_stand.reality.desc"
-msgstr ""
+msgstr "A book stand."
 
 #. TRANSLATORS: The book stand in the Book truth: how it looks.
 msgid "ui.face.book_stand.book.desc"
-msgstr ""
+msgstr "A book stand."
 
 #. TRANSLATORS: The rock's anamorphosis tell: the detail that does not add up.
 msgid "ui.anamorphosis.rock_weight.tell"
-msgstr ""
+msgstr "Heavy weight."
 
 #. TRANSLATORS: The windmill's anamorphosis tell: the detail that does not add up.
 msgid "ui.anamorphosis.windmill_sails.tell"
-msgstr ""
+msgstr "Turning sails."
 
 #. TRANSLATORS: The book stand's anamorphosis tell: the detail that does not add up.
 msgid "ui.anamorphosis.book_stand_pages.tell"
-msgstr ""
+msgstr "Turning pages."
 
 #. TRANSLATORS: Book title: bk.ch01.apertura
 msgid "ui.book.bk.ch01.apertura.name"
-msgstr ""
+msgstr "Apertura"
 
 #. TRANSLATORS: Book description: bk.ch01.apertura
 msgid "ui.book.bk.ch01.apertura.desc"
-msgstr ""
+msgstr "In a place in La Mancha..."
 
 #. TRANSLATORS: Book passive title: bk.ch01.apertura
 msgid "ui.book.bk.ch01.apertura.passive.name"
-msgstr ""
+msgstr "Opening Keen"
 
 #. TRANSLATORS: Book passive description: bk.ch01.apertura
 msgid "ui.book.bk.ch01.apertura.passive.desc"
-msgstr ""
+msgstr "Keen eyes read more."
 
 #. TRANSLATORS: Book codex note: bk.ch01.apertura
 msgid "ui.book.bk.ch01.apertura.codex"
-msgstr ""
+msgstr "The famous opening."
 
 #. TRANSLATORS: Book title: bk.ch01.molinos.01
 msgid "ui.book.bk.ch01.molinos.01.name"
-msgstr ""
+msgstr "The Windmills"
 
 #. TRANSLATORS: Book description: bk.ch01.molinos.01
 msgid "ui.book.bk.ch01.molinos.01.desc"
-msgstr ""
+msgstr "Fortune guides our affairs..."
 
 #. TRANSLATORS: Book passive title: bk.ch01.molinos.01
 msgid "ui.book.bk.ch01.molinos.01.passive.name"
-msgstr ""
+msgstr "Windmill Sight"
 
 #. TRANSLATORS: Book passive description: bk.ch01.molinos.01
 msgid "ui.book.bk.ch01.molinos.01.passive.desc"
-msgstr ""
+msgstr "See giants in the mills."
 
 #. TRANSLATORS: Book codex note: bk.ch01.molinos.01
 msgid "ui.book.bk.ch01.molinos.01.codex"
-msgstr ""
+msgstr "The windmill episode."
 
 #. TRANSLATORS: Book title: bk.ch01.nombre.01
 msgid "ui.book.bk.ch01.nombre.01.name"
-msgstr ""
+msgstr "Quixote's Name"
 
 #. TRANSLATORS: Book description: bk.ch01.nombre.01
 msgid "ui.book.bk.ch01.nombre.01.desc"
-msgstr ""
+msgstr "He was called Quijada..."
 
 #. TRANSLATORS: Book passive title: bk.ch01.nombre.01
 msgid "ui.book.bk.ch01.nombre.01.passive.name"
-msgstr ""
+msgstr "True Name"
 
 #. TRANSLATORS: Book passive description: bk.ch01.nombre.01
 msgid "ui.book.bk.ch01.nombre.01.passive.desc"
-msgstr ""
+msgstr "Your true name has power."
 
 #. TRANSLATORS: Book codex note: bk.ch01.nombre.01
 msgid "ui.book.bk.ch01.nombre.01.codex"
-msgstr ""
+msgstr "The naming of Don Quixote."
 
 #. TRANSLATORS: Book title: bk.ch02.caballeros.01
 msgid "ui.book.bk.ch02.caballeros.01.name"
-msgstr ""
+msgstr "The Knights"
 
 #. TRANSLATORS: Book description: bk.ch02.caballeros.01
 msgid "ui.book.bk.ch02.caballeros.01.desc"
-msgstr ""
+msgstr "His brains dried up..."
 
 #. TRANSLATORS: Book passive title: bk.ch02.caballeros.01
 msgid "ui.book.bk.ch02.caballeros.01.passive.name"
-msgstr ""
+msgstr "Knightly Presence"
 
 #. TRANSLATORS: Book passive description: bk.ch02.caballeros.01
 msgid "ui.book.bk.ch02.caballeros.01.passive.desc"
-msgstr ""
+msgstr "Knightly bearing commands respect."
 
 #. TRANSLATORS: Book codex note: bk.ch02.caballeros.01
 msgid "ui.book.bk.ch02.caballeros.01.codex"
-msgstr ""
+msgstr "Quixote's descent into madness."
 
 #. TRANSLATORS: Book title: bk.ch04.rocinante.01
 msgid "ui.book.bk.ch04.rocinante.01.name"
-msgstr ""
+msgstr "Rocinante"
 
 #. TRANSLATORS: Book description: bk.ch04.rocinante.01
 msgid "ui.book.bk.ch04.rocinante.01.desc"
-msgstr ""
+msgstr "Four days he spent thinking..."
 
 #. TRANSLATORS: Book passive title: bk.ch04.rocinante.01
 msgid "ui.book.bk.ch04.rocinante.01.passive.name"
-msgstr ""
+msgstr "Spirit of Rocinante"
 
 #. TRANSLATORS: Book passive description: bk.ch04.rocinante.01
 msgid "ui.book.bk.ch04.rocinante.01.passive.desc"
-msgstr ""
+msgstr "A worthy steed carries you far."
 
 #. TRANSLATORS: Book codex note: bk.ch04.rocinante.01
 msgid "ui.book.bk.ch04.rocinante.01.codex"
-msgstr ""
+msgstr "The naming of Rocinante."

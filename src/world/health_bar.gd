@@ -1,4 +1,3 @@
-class_name HealthBar
 extends Node3D
 ## A bar over a thing's head: how much of it is left.
 ##
