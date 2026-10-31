@@ -1765,3 +1765,32 @@ msgstr "The player is caught"
 
 msgid "ensayo.outcome.refuses"
 msgstr "The player refuses to stage it"
+
+#. TRANSLATORS: Ending titles
+msgid "ui.ending.el_manuscrito.name"
+msgstr "The Manuscript"
+
+msgid "ui.ending.el_manuscrito.desc"
+msgstr "You are the reader. The game is the book."
+
+msgid "ui.ending.la_locura_compartida.name"
+msgstr "Shared Madness"
+
+msgid "ui.ending.la_locura_compartida.desc"
+msgstr "Both minds are gone. The world is the book."
+
+msgid "ui.ending.el_mundo_real.name"
+msgstr "The Real World"
+
+msgid "ui.ending.el_mundo_real.desc"
+msgstr "Both cured, the book shelved."
+
+msgid "ui.ending.el_libro_gana.name"
+msgstr "The Book Wins"
+
+msgid "ui.ending.el_libro_gana.desc"
+msgstr "Middle ground: the book prevails, partly."
+
+#. TRANSLATORS: Shown when the Manifiesto reader has no collected fragments.
+msgid "ui.manifiesto.empty"
+msgstr "The shelf is empty."

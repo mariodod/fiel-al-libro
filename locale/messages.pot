@@ -1765,3 +1765,32 @@ msgstr ""
 
 msgid "ensayo.outcome.refuses"
 msgstr ""
+
+#. TRANSLATORS: Ending titles
+msgid "ui.ending.el_manuscrito.name"
+msgstr ""
+
+msgid "ui.ending.el_manuscrito.desc"
+msgstr ""
+
+msgid "ui.ending.la_locura_compartida.name"
+msgstr ""
+
+msgid "ui.ending.la_locura_compartida.desc"
+msgstr ""
+
+msgid "ui.ending.el_mundo_real.name"
+msgstr ""
+
+msgid "ui.ending.el_mundo_real.desc"
+msgstr ""
+
+msgid "ui.ending.el_libro_gana.name"
+msgstr ""
+
+msgid "ui.ending.el_libro_gana.desc"
+msgstr ""
+
+#. TRANSLATORS: Shown when the Manifiesto reader has no collected fragments.
+msgid "ui.manifiesto.empty"
+msgstr ""

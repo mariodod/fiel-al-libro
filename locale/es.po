@@ -1734,3 +1734,32 @@ msgstr "El jugador es descubierto"
 
 msgid "ensayo.outcome.refuses"
 msgstr "El jugador se niega a escenificarla"
+
+#. TRANSLATORS: Ending titles
+msgid "ui.ending.el_manuscrito.name"
+msgstr "El Manuscrito"
+
+msgid "ui.ending.el_manuscrito.desc"
+msgstr "Eres el lector. El juego es el libro."
+
+msgid "ui.ending.la_locura_compartida.name"
+msgstr "La Locura Compartida"
+
+msgid "ui.ending.la_locura_compartida.desc"
+msgstr "Ambas mentes se han ido. El mundo es el libro."
+
+msgid "ui.ending.el_mundo_real.name"
+msgstr "El Mundo Real"
+
+msgid "ui.ending.el_mundo_real.desc"
+msgstr "Ambos curados, el libro archivado."
+
+msgid "ui.ending.el_libro_gana.name"
+msgstr "El Libro Gana"
+
+msgid "ui.ending.el_libro_gana.desc"
+msgstr "Punto medio: el libro prevalece, en parte."
+
+#. TRANSLATORS: Shown when the Manifiesto reader has no collected fragments.
+msgid "ui.manifiesto.empty"
+msgstr "La estantería está vacía."

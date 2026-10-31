@@ -1688,3 +1688,32 @@ msgstr "Le joueur est pris"
 
 msgid "ensayo.outcome.refuses"
 msgstr "Le joueur refuse d'en jouer la scène"
+
+#. TRANSLATORS: Ending titles
+msgid "ui.ending.el_manuscrito.name"
+msgstr "Le Manuscrit"
+
+msgid "ui.ending.el_manuscrito.desc"
+msgstr "Vous êtes le lecteur. Le jeu est le livre."
+
+msgid "ui.ending.la_locura_compartida.name"
+msgstr "La Folie Partagée"
+
+msgid "ui.ending.la_locura_compartida.desc"
+msgstr "Les deux esprits sont partis. Le monde est le livre."
+
+msgid "ui.ending.el_mundo_real.name"
+msgstr "Le Monde Réel"
+
+msgid "ui.ending.el_mundo_real.desc"
+msgstr "Tous deux guéris, le livre rangé."
+
+msgid "ui.ending.el_libro_gana.name"
+msgstr "Le Livre Gagne"
+
+msgid "ui.ending.el_libro_gana.desc"
+msgstr "Terrain d'entente : le livre l'emporte, en partie."
+
+#. TRANSLATORS: Shown when the Manifiesto reader has no collected fragments.
+msgid "ui.manifiesto.empty"
+msgstr "L'étagère est vide."

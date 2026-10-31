@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3]
+[gd_scene load_steps=23 format=3]
 
 [ext_resource type="Script" path="res://src/world/slice.gd" id="1_slice"]
 [ext_resource type="Script" path="res://src/world/truth_object.gd" id="2_object"]
@@ -20,6 +20,7 @@
 [ext_resource type="Resource" path="res://src/data/books/bk.ch01.apertura.tres" id="21_book_apertura"]
 [ext_resource type="Resource" path="res://src/data/characters/innkeeper.tres" id="22_innkeeper"]
 [ext_resource type="Resource" path="res://src/data/characters/musician.tres" id="23_musician"]
+[ext_resource type="Script" path="res://src/ui/manifiesto_reader.gd" id="24_manifiesto_reader"]
 
 [sub_resource type="PlaneMesh" id="Plane_ground"]
 size = Vector2(300, 300)
@@ -227,3 +228,63 @@ margin_bottom = 40
 [node name="CodexListContainer" type="VBoxContainer" parent="CodexList"]
 size_flags_horizontal = 1
 size_flags_vertical = 1
+
+[node name="ManifiestoReader" type="Control" parent="."]
+anchors_preset = 3
+visible = false
+script = ExtResource("24_manifiesto_reader")
+
+[node name="Container" type="HSplitContainer" parent="ManifiestoReader"]
+anchors_preset = 3
+
+[node name="List" type="ItemList" parent="Container"]
+size_flags_horizontal = 0
+
+[node name="Detail" type="Control" parent="Container"]
+anchors_preset = 3
+
+[node name="Title" type="Label" parent="Detail"]
+anchors_preset = 1
+position = Vector2(200, 40)
+theme_override_font_sizes/font_size = 28
+theme_override_colors/font_color = Color(0.97, 0.93, 0.83, 1.0)
+
+[node name="Modern" type="Label" parent="Detail"]
+anchors_preset = 7
+margin_left = 40
+margin_top = 100
+margin_right = 40
+margin_bottom = 40
+autowrap_mode = 2
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(0.90, 0.86, 0.75, 1.0)
+
+[node name="Original" type="Label" parent="Detail"]
+anchors_preset = 7
+margin_left = 40
+margin_top = 200
+margin_right = 40
+margin_bottom = 40
+autowrap_mode = 2
+theme_override_font_sizes/font_size = 16
+theme_override_colors/font_color = Color(0.75, 0.54, 0.24, 1.0)
+
+[node name="Reality" type="Label" parent="Detail"]
+anchors_preset = 7
+margin_left = 40
+margin_top = 300
+margin_right = 40
+margin_bottom = 40
+autowrap_mode = 2
+theme_override_font_sizes/font_size = 16
+theme_override_colors/font_color = Color(0.85, 0.78, 0.60, 1.0)
+
+[node name="Book" type="Label" parent="Detail"]
+anchors_preset = 7
+margin_left = 40
+margin_top = 400
+margin_right = 40
+margin_bottom = 40
+autowrap_mode = 2
+theme_override_font_sizes/font_size = 16
+theme_override_colors/font_color = Color(0.82, 0.80, 0.72, 1.0)
