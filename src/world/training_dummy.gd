@@ -160,7 +160,8 @@ func _build() -> void:
 	arm_end.name = "ArmEnd"
 	var arm_end_mesh := BoxMesh.new()
 	arm_end_mesh.size = Vector3(0.26, 0.26, 0.22)
-	arm_end_mesh.material_override = wood_dark
+	arm_end.mesh = arm_end_mesh
+	arm_end.material_override = wood_dark
 	arm_end.position = Vector3(0.0, 0.0, -0.82)
 	arm.add_child(arm_end)
 

@@ -54,6 +54,8 @@ func suite(t):
 	t.expect_true(quixote != null, "Quixote should be in the scene")
 	t.expect_true(sancho != null, "Sancho should be in the scene")
 	if quixote == null or sancho == null:
+		parent.remove_child(scene)
+		scene.free()
 		return
 	t.expect_true(quixote.data != null, "Quixote should have his CharacterData")
 	t.expect_true(sancho.data != null, "Sancho should have his CharacterData")
@@ -67,6 +69,8 @@ func suite(t):
 	var rock = scene.get_node_or_null("Rock")
 	t.expect_true(windmill != null and rock != null, "the two primitives should be in the scene")
 	if windmill == null or rock == null:
+		parent.remove_child(scene)
+		scene.free()
 		return
 	t.expect_true(windmill.data != null and rock.data != null, "the primitives should carry their data")
 	t.expect_true(windmill.data.reality_form != null, "the windmill has a Reality form")
@@ -78,6 +82,8 @@ func suite(t):
 	var controller = scene.get_node_or_null("PlayerController")
 	t.expect_true(controller != null, "the player controller should be in the scene")
 	if controller == null:
+		parent.remove_child(scene)
+		scene.free()
 		return
 	t.expect_eq(controller.active_pawn, quixote, "the player starts with Quixote")
 	t.expect_eq(controller.other_pawn, sancho, "Sancho is the companion")

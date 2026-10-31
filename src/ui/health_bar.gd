@@ -9,7 +9,6 @@ var _fill: ColorRect = null
 
 
 func _ready() -> void:
-	set_as_top_level(true)
 	var container := Control.new()
 	container.custom_minimum_size = Vector2(width, 6.0)
 
