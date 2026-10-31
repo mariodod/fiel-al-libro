@@ -58,6 +58,9 @@ extends Node3D
 ## The two characters' health, in the corner. Always on: the debug
 ## readout below is the developer's, and it is hidden with `H`.
 @onready var vitals: VitalsPanel = $HudLayer/Vitals
+@onready var _pause_menu: CanvasLayer = $PauseMenu
+@onready var _codex: CanvasLayer = $CodexLayer
+@onready var _codex: CanvasLayer = $CodexLayer
 ## The map screen scene, instantiated when the player presses G.
 @onready var _map_screen_scene: PackedScene = load("res://src/world/map_screen.tscn")
 ## The map screen while it is open, null otherwise.
@@ -69,8 +72,8 @@ var _map_screen: MapScreen = null
 @onready var innkeeper: TruthObject = $Innkeeper
 @onready var musician: TruthObject = $Musician
 @onready var _checkpoint: Area3D = $Checkpoint
+@onready var venture: Venture = $Venture
 ## The Venture of Montiel, in the era to the south.
-var venture: Venture = null
 
 ## The practice yard: a bounded space with something in it to fight.
 ##
@@ -167,6 +170,16 @@ func _ready() -> void:
 	EventBus.ability_used.connect(_on_ability_used)
 	EventBus.venture_resolved.connect(_on_venture_resolved)
 
+	# Wire up pause menu buttons
+	var resume_btn := _pause_menu.get_node("PauseMenuPanel/PauseMenuResume")
+	if resume_btn != null:
+		resume_btn.pressed.connect(_toggle_pause)
+	var quit_btn := _pause_menu.get_node("PauseMenuPanel/PauseMenuQuit")
+	if quit_btn != null:
+		quit_btn.pressed.connect(_quit_to_yard)
+	var codex_close_btn := _codex.get_node("CodexPanel/CodexClose")
+	if codex_close_btn != null:
+		codex_close_btn.pressed.connect(_toggle_codex)
 
 # ── World ───────────────────────────────────────────────────────────────
 
@@ -496,6 +509,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		_reset_yard()
 	elif event.is_action_pressed(&"toggle_map"):
 		_toggle_map()
+	elif event.is_action_pressed(&"pause"):
+		_toggle_pause()
+
 	elif event.is_action_pressed(&"interact"):
 		# Checkpoint: save the game when standing near the checkpoint.
 		if player != null and player.active_pawn != null \
@@ -513,6 +529,84 @@ func _toggle_map() -> void:
 	else:
 		_map_screen = _map_screen_scene.instantiate()
 		add_child(_map_screen)
+
+
+## Pause / unpause the game. When paused, game time stops and the pause
+## menu overlay is shown.
+func _toggle_pause() -> void:
+	var paused = Engine.time_scale == 0.0
+	Engine.time_scale = 1.0 if paused else 0.0
+	_pause_menu.visible = not paused
+
+
+## Open / close the codex overlay showing collected fragments.
+func _toggle_codex() -> void:
+	var showing = _codex.visible
+	_codex.visible = not showing
+	_pause_menu.visible = false
+	if _codex.visible:
+		_refresh_codex()
+
+
+## Populate the codex list with collected book fragments.
+func _refresh_codex() -> void:
+	var container := _codex.get_node("CodexPanel/CodexList/CodexListContainer")
+	if container == null:
+		return
+	for child in container.get_children():
+		child.queue_free()
+	var collected := Biblioteca.get_collected()
+	if collected.is_empty():
+		var empty := Label.new()
+		empty.text = "The shelf is empty."
+		empty.add_theme_font_size_override("font_size", 16)
+		empty.add_theme_color_override("font_color", Color(0.75, 0.54, 0.24, 1.0))
+		container.add_child(empty)
+		return
+	for id: StringName in collected:
+		var book := Biblioteca.get_book(id)
+		if book == null:
+			continue
+		var row := HBoxContainer.new()
+		row.add_theme_constant_override("separation", 8)
+		container.add_child(row)
+		var name_label := Label.new()
+		name_label.custom_minimum_size = Vector2(300, 0)
+		name_label.add_theme_font_size_override("font_size", 16)
+		name_label.add_theme_color_override("font_color", Color(0.97, 0.93, 0.83, 1.0))
+		name_label.text = Biblioteca.book_name(id)
+		row.add_child(name_label)
+		var passive_label := Label.new()
+		passive_label.add_theme_font_size_override("font_size", 14)
+		passive_label.add_theme_color_override("font_color", Color(0.75, 0.54, 0.24, 1.0))
+		var passive_name := Biblioteca.passive_name(id)
+		if passive_name != "":
+			passive_label.text = passive_name
+		else:
+			passive_label.text = "(no passive)"
+		row.add_child(passive_label)
+
+## Quit to yard: reset the scene state and return to the yard.
+func _quit_to_yard() -> void:
+	Engine.time_scale = 1.0
+	_pause_menu.visible = false
+	_reset_yard()
+	# Also restore the player's position and layer
+	if player != null:
+		player.active_pawn.global_position = START_POSITION
+		sancho.global_position = START_POSITION + Vector3(2.0, 0.0, 2.0)
+		player.active_pawn = quixote
+		sancho.active_pawn = quixote
+		player.other_pawn = sancho
+		ai.pawn = sancho
+		ai.leader = quixote
+		quixote.global_position = START_POSITION
+		camera_rig.target = quixote
+	# Clear the Manifiesto evidence/fragments? No — keep collected progress.
+	# Reset truth layer to Reality.
+	TruthLayer.shift_to(TruthLayer.Layer.REALITY, true)
+	Locura.set_for(&"quixote", LOCURA_LUCID)
+	TruthLayer.shift_to(TruthLayer.Layer.REALITY, true)
 
 
 ## Open or close the Biblioteca shelf: shows collected and equipped books.
