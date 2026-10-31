@@ -31,6 +31,13 @@ func _ready() -> void:
 			var res = load("res://src/data/books/" + file_name)
 			if res is BookData:
 				register(res)
+	EventBus.object_examined.connect(_on_object_examined)
+
+
+## Auto-collect a book when it is examined. Returns true if newly collected.
+func _on_object_examined(object_id: StringName, reader_id: StringName) -> void:
+	if _registry.has(object_id):
+		collect(object_id)
 
 
 func register(book: Resource) -> void:
