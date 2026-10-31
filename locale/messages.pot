@@ -1794,3 +1794,13 @@ msgstr ""
 #. TRANSLATORS: Shown when the Manifiesto reader has no collected fragments.
 msgid "ui.manifiesto.empty"
 msgstr ""
+
+#. TRANSLATORS: The manuscript prologue — opening page before chapter 1.
+msgid "prologue.opening.text"
+msgstr ""
+
+msgid "prologue.opening.reality"
+msgstr ""
+
+msgid "prologue.opening.book"
+msgstr ""

@@ -1794,3 +1794,13 @@ msgstr "Middle ground: the book prevails, partly."
 #. TRANSLATORS: Shown when the Manifiesto reader has no collected fragments.
 msgid "ui.manifiesto.empty"
 msgstr "The shelf is empty."
+
+#. TRANSLATORS: The manuscript prologue — opening page before chapter 1.
+msgid "prologue.opening.text"
+msgstr "You are holding a book. It was written in 1605, and it has been waiting for you. The page you are about to read is not the first page — it is the page the book opens to when you pick it up. Read it. Turn it. The world on the other side is not the world you left."
+
+msgid "prologue.opening.reality"
+msgstr "A man rides across the plain. The windmills are windmills. The inn is an inn."
+
+msgid "prologue.opening.book"
+msgstr "A knight rides across the plain. The windmills are giants. The inn is a castle."

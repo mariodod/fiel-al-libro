@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Resource" load_steps=1 format=3]
+
+[resource]
+
+id = &"prologue.opening"
+text_key = &"prologue.opening.text"
+variant_reality = &"prologue.opening.reality"
+variant_book = &"prologue.opening.book"

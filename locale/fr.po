@@ -1717,3 +1717,13 @@ msgstr "Terrain d'entente : le livre l'emporte, en partie."
 #. TRANSLATORS: Shown when the Manifiesto reader has no collected fragments.
 msgid "ui.manifiesto.empty"
 msgstr "L'étagère est vide."
+
+#. TRANSLATORS: The manuscript prologue — opening page before chapter 1.
+msgid "prologue.opening.text"
+msgstr "Vous tenez un livre entre les mains. Il a été écrit en 1605, et il vous attendait. La page que vous êtes sur le point de lire n'est pas la première page — c'est la page que le livre ouvre quand vous le prenez. Lisez-la. Tournez-la. Le monde de l'autre côté n'est pas le monde que vous avez quitté."
+
+msgid "prologue.opening.reality"
+msgstr "Un homme traverse la plaine à cheval. Les moulins sont des moulins. L'auberge est une auberge."
+
+msgid "prologue.opening.book"
+msgstr "Un chevalier traverse la plaine à cheval. Les moulins sont des géants. L'auberge est un château."

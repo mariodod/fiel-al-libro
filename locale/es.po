@@ -1763,3 +1763,13 @@ msgstr "Punto medio: el libro prevalece, en parte."
 #. TRANSLATORS: Shown when the Manifiesto reader has no collected fragments.
 msgid "ui.manifiesto.empty"
 msgstr "La estantería está vacía."
+
+#. TRANSLATORS: The manuscript prologue — opening page before chapter 1.
+msgid "prologue.opening.text"
+msgstr "Tienes entre las manos un libro. Fue escrito en 1605, y te ha estado esperando. La página que estás a punto de leer no es la primera página — es la página que el libro abre cuando lo recoges. Léela. Vuélvela. El mundo al otro lado no es el mundo que dejaste."
+
+msgid "prologue.opening.reality"
+msgstr "Un hombre cabalga por el llano. Los molinos son molinos. La posada es una posada."
+
+msgid "prologue.opening.book"
+msgstr "Un caballero cabalga por el llano. Los molinos son gigantes. La posada es un castillo."
