@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3]
+[gd_scene load_steps=27 format=3]
 
 [ext_resource type="Script" path="res://src/world/slice.gd" id="1_slice"]
 [ext_resource type="Script" path="res://src/world/truth_object.gd" id="2_object"]
@@ -18,6 +18,8 @@
 [ext_resource type="Resource" path="res://src/data/ventures/venture_montiel_reading.tres" id="16_venture_reading"]
 [ext_resource type="Script" path="res://src/ui/vitals_panel.gd" id="17_vitals"]
 [ext_resource type="Script" path="res://src/ui/manifiesto_reader.gd" id="18_manifiesto_reader"]
+[ext_resource type="Resource" path="res://src/data/characters/innkeeper.tres" id="21_innkeeper"]
+[ext_resource type="Resource" path="res://src/data/characters/musician.tres" id="22_musician"]
 
 [sub_resource type="PlaneMesh" id="Plane_ground"]
 size = Vector2(300, 300)
@@ -73,7 +75,15 @@ data = ExtResource("15_venture_data")
 [node name="Innkeeper" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -14)
 script = ExtResource("2_object")
-data = ExtResource("15_venture_data")
+data = ExtResource("21_innkeeper")
+
+[node name="Musician" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -14)
+script = ExtResource("2_object")
+data = ExtResource("22_musician")
+
+[node name="MusicianAudio" type="AudioStreamPlayer" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 36)
 
 [node name="Checkpoint" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -12)

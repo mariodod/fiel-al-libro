@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3]
+[gd_scene load_steps=26 format=3]
 
 [ext_resource type="Script" path="res://src/world/slice.gd" id="1_slice"]
 [ext_resource type="Script" path="res://src/world/truth_object.gd" id="2_object"]
@@ -15,6 +15,8 @@
 [ext_resource type="PackedScene" path="res://assets/models/sancho.glb" id="13_sancho_rig"]
 [ext_resource type="Script" path="res://src/ui/vitals_panel.gd" id="14_vitals"]
 [ext_resource type="Script" path="res://src/ui/manifiesto_reader.gd" id="15_manifiesto_reader"]
+[ext_resource type="Resource" path="res://src/data/characters/innkeeper.tres" id="16_innkeeper"]
+[ext_resource type="Resource" path="res://src/data/characters/musician.tres" id="17_musician"]
 
 [sub_resource type="PlaneMesh" id="Plane_ground"]
 size = Vector2(300, 300)
@@ -60,7 +62,15 @@ data = ExtResource("9_book_stand")
 [node name="Innkeeper" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -14)
 script = ExtResource("2_object")
-data = ExtResource("9_book_stand")
+data = ExtResource("16_innkeeper")
+
+[node name="Musician" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -14)
+script = ExtResource("2_object")
+data = ExtResource("17_musician")
+
+[node name="MusicianAudio" type="AudioStreamPlayer" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 36)
 
 [node name="Checkpoint" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -12)
