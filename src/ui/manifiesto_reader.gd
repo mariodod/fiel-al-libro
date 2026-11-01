@@ -7,7 +7,7 @@ extends Control
 ##
 ## See GDD.md §6 and §9.
 
-@onready var _container: VBoxContainer = $Container
+@onready var _container: HSplitContainer = $Container
 @onready var _list: ItemList = $Container/HSplit/List
 @onready var _detail: Control = $Container/HSplit/Detail
 @onready var _title: Label = $Container/HSplit/Detail/Title

@@ -948,7 +948,7 @@ func _on_ability_used(character_id: StringName, ability_id: StringName) -> void:
 	var flash := ColorRect.new()
 	flash.color = Color(1.0, 1.0, 1.0, 0.6)
 	flash.custom_minimum_size = Vector2(300, 300)
-	flash.position = get_viewport().get_rect().size / 2 - Vector2(150, 150)
+	flash.position = get_viewport().get_visible_rect().size / 2 - Vector2(150, 150)
 	add_child(flash)
 	var t := Timer.new()
 	t.wait_time = 0.4
