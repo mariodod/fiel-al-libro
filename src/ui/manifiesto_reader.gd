@@ -8,13 +8,13 @@ extends Control
 ## See GDD.md §6 and §9.
 
 @onready var _container: HSplitContainer = $Container
-@onready var _list: ItemList = $Container/HSplit/List
-@onready var _detail: Control = $Container/HSplit/Detail
-@onready var _title: Label = $Container/HSplit/Detail/Title
-@onready var _modern: Label = $Container/HSplit/Detail/Modern
-@onready var _original: Label = $Container/HSplit/Detail/Original
-@onready var _reality: Label = $Container/HSplit/Detail/Reality
-@onready var _book: Label = $Container/HSplit/Detail/Book
+@onready var _list: ItemList = $Container/List
+@onready var _detail: Control = $Container/Detail
+@onready var _title: Label = $Container/Detail/Title
+@onready var _modern: Label = $Container/Detail/Modern
+@onready var _original: Label = $Container/Detail/Original
+@onready var _reality: Label = $Container/Detail/Reality
+@onready var _book: Label = $Container/Detail/Book
 
 var _selected: StringName = &""
 
