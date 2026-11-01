@@ -10,9 +10,9 @@
     "edition": "1605 printing, as quoted by Wikisource",
     "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
     "public_domain": true,
-    "verified": true,
-    "verified_on": "2026-10-21",
-    "verified_note": "The windmill passage (cap. VIII) checked against the 1605 text quoted by Wikisource on 21 October 2026. A human should still read it against a facsimile before the fragment ships in a build."
+    "verified": false,
+    "verified_on": "",
+    "verified_note": "The windmill passage (cap. VIII) does NOT match the 1605 reference text verbatim. The fragment text is a modernization/adaptation, not a verbatim quotation. Must be re-verified against the 1605 edition before shipping."
   },
 
   "original_1605": "Y llegados que fueron a ellos, vio Don Quijote treinta o cuarenta molinos que hay en aquel campo, y tan luego como los vio, dijo a su compañero: «Fortuna guía nuestros asuntos mejor de lo que nosotros mismos deseamos; mira allí tu amigo Sancho Panza donde hay treinta o cuarenta gigantes monstruosos, con los cuales he de hacer batalla y quitarles la vida, y con el saqueo de ellos comenzaremos a enriquecernos, pues esto es guerra justa, y es bien grande servicio de Dios eliminar tan mala raza de la faz de la tierra»",
