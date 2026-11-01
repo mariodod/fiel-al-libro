@@ -34,6 +34,12 @@ var evidence: Dictionary = {}
 ## chapter each.
 var regions_found: Dictionary = {}
 var regions_resolved: Dictionary = {}
+## Chapter ids the player has found (entered the region for).
+var chapters_found: Array[StringName] = []
+## Chapter ids the player has resolved (completed the Venture/case).
+var chapters_resolved: Array[StringName] = []
+## The chapter currently active (in progress).
+var current_chapter_id: StringName = &""
 
 # ── Manuscript ──────────────────────────────────────────────────────────
 ## Ids of the 48 Manifiesto fragments the player has found (D7).
@@ -112,6 +118,46 @@ func regions_found_count() -> int:
 ## How many regions are resolved.
 func regions_resolved_count() -> int:
 	return regions_resolved.size()
+
+## Mark a chapter as started (entered).
+func chapter_started(id: StringName) -> void:
+	if id.is_empty():
+		return
+	if not chapters_found.has(id):
+		chapters_found.append(id)
+		EventBus.chapter_started.emit(id)
+
+## Mark a chapter as completed (Venture/case resolved).
+func chapter_completed(id: StringName) -> void:
+	if id.is_empty():
+		return
+	if not chapters_resolved.has(id):
+		chapters_resolved.append(id)
+		EventBus.chapter_completed.emit(id)
+
+## Is this chapter started/found?
+func chapter_started_flag(id: StringName) -> bool:
+	return chapters_found.has(id)
+
+## Is this chapter completed/resolved?
+func chapter_completed_flag(id: StringName) -> bool:
+	return chapters_resolved.has(id)
+
+## How many chapters the player has started.
+func chapters_started_count() -> int:
+	return chapters_found.size()
+
+## How many chapters are completed.
+func chapters_completed_count() -> int:
+	return chapters_resolved.size()
+
+## Set the current chapter.
+func set_current_chapter(id: StringName) -> void:
+	current_chapter_id = id
+
+## Get the current chapter id.
+func get_current_chapter() -> StringName:
+	return current_chapter_id
 
 
 # ── Humanity (D4) ───────────────────────────────────────────────────────

@@ -1,0 +1,1733 @@
+﻿# Fiel al Libro - pt_BR translation
+# 
+# Milestone 4 - Phase 4 Beta localization
+# 
+#. TRANSLATORS: Auto-added key
+msgid ""
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.menu.new_game"
+msgstr ""
+"Começar o manuscrito"
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.menu.continue"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.menu.load"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.menu.settings"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.menu.quit"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.menu.codes"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.menu.codes.hint"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.prompt.interact"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.prompt.read"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.prompt.switch_character"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.prompt.rest"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.prompt.leave"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.hud.madness"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.hud.recuerdos"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.hud.humanity"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.manuscript.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.manuscript.unwritten_page"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.shelf.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.shelf.empty"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.shelf.equip"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.codex.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.codex.source"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.note.original_reads"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.note.translation"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.note.translator"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.chapter"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.language.name.es"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.language.name.es_419"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.language.name.en"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.language.name.fr"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.language.name.de"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.language.name.pt_BR"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.language.name.ja"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.language.name.ko"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.language.name.zh_Hans"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.language.name.ru"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.language.name.pl"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.language.name.it"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.language.name.tr"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "it.book.cid.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "it.book.cid.desc"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "it.book.tio_andalus.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "it.book.tio_andalus.desc"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "it.book.celestina.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "it.book.celestina.desc"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "it.ability.desvelar.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "it.ability.desvelar.desc"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "it.ability.refutar.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "it.ability.refutar.desc"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "it.ability.juramento.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "it.ability.juramento.desc"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "it.ability.dodge.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "it.ability.dodge.desc"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "dia.sancho.bark.001"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "dia.sancho.bark.002"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "dia.quixote.bark.001"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "dia.quixote.bark.002"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "tip.lectura.intro"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "tip.switch.intro"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "tip.posada.intro"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch08.molinos.01"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch08.molinos.01.modern"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch23.montesinos.01"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch23.montesinos.01.modern"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch26.galimatias.01"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch26.galimatias.01.modern"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch50.impertinente.01"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch50.impertinente.01.modern"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.shelf.count"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.shelf.count.plural"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.library.total"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.library.total.plural"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.word.page.book"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.word.page.nav"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "character.quixote"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "character.sancho"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "character.innkeeper"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "character.musician"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.slice.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.slice.line.world"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.slice.line.you"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.slice.line.companion"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.slice.line.second_sight"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.slice.line.locura"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.slice.line.object"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.slice.help.1"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.slice.help.2"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.slice.help.3"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.layer.reality"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.layer.book"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.on"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.off"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.locura.lucid"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.locura.displaced"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.locura.lost"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.locura.absorbed"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.form.molino"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.form.gigante"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.form.roca"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.form.libro"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.form.basque_reality"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.form.basque_book"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.form.sea_reality"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.form.sea_book"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.form.encinado_reality"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.form.encinado_book"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.form.montesinos_reality"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.form.montesinos_book"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.form.bridge_reality"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.form.bridge_book"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.form.dulcinea_reality"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.form.dulcinea_book"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.form.mirrors_reality"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.form.mirrors_book"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.form.magician_reality"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.form.magician_book"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.form.duke_reality"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.form.duke_book"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.object.molino"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.object.roca"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.perception.tag"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "dia.quixote.reaction.windmill.book"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "dia.quixote.reaction.windmill.reality"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "dia.quixote.reaction.rock.book"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "dia.quixote.reaction.rock.reality"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "dia.sancho.reaction.windmill.book"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "dia.sancho.reaction.windmill.reality"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "dia.sancho.reaction.rock.book"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "dia.sancho.reaction.rock.reality"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "dia.quixote.chatter.rock"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "dia.quixote.chatter.windmill"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "dia.quixote.chatter.dummy"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "dia.quixote.chatter.locked"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "dia.quixote.chatter.down"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "dia.quixote.chatter.idle.1"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "dia.quixote.chatter.idle.2"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "dia.quixote.chatter.idle.3"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "dia.sancho.chatter.rock"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "dia.sancho.chatter.windmill"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "dia.sancho.chatter.dummy"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "dia.sancho.chatter.locked"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "dia.sancho.chatter.down"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "dia.sancho.chatter.idle.1"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "dia.sancho.chatter.idle.2"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "dia.sancho.chatter.idle.3"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "dia.quixote.chatter.parry"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "dia.sancho.chatter.parry"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "dia.sancho.chatter.desvelar"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "dia.quixote.chatter.straw_man"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "dia.sancho.chatter.straw_man"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "dia.quixote.chatter.venture_down"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "dia.sancho.chatter.venture_down"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "dia.quixote.chatter.idle.4"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "dia.quixote.chatter.idle.5"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "dia.quixote.chatter.idle.6"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "dia.sancho.chatter.idle.4"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "dia.sancho.chatter.idle.5"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "dia.sancho.chatter.idle.6"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch01.apertura.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch01.molinos.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch01.nombre.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch02.caballeros.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch04.rocinante.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch05.duena.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch07.yanguesas.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch09.manuscrito.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch10.balsamo.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch12.armas_letras.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch14.galeotes.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch17.hombre_muerto.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch23.montesinos.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch27.molinos_llenadores.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch29.penitentes.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch50.impertinente.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch03.posada.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch06.pastores.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch11.caballero_bosque.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch13.leones.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch15.muerto_camino.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch16.barca_encantada.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch18.libros_quemados.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch20.dulcinea_encantada.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch22.duelo_luz_luna.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch24.altisidora.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch25.conde_altisidora.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch26.melisendra.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch28.encantada.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch30.leones_carro.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch31.cueva_hermoso.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch32.ventura_duque.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch33.leones_reales.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch34.encantamiento.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch35.caballero_blanco.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch36.cuidado_sancho.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch37.encantamiento_duquesa.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch39.sancho_gobernador.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch40.entierro_rico.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch41.oviedo.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch42.maestro_pedro.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch43.caso_penal.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch44.duelo_evitados.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch45.encantamiento_sancho.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch46.leones_corte.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch47.despedida.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "bk.ch48.regreso_pueblo.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.slice.help.4"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.slice.help.5"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.slice.help.6"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.slice.line.dummy"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.slice.line.humanity"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.target.strawman"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.slice.line.vitals"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.slice.down"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.slice.line.locked"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.lockon.marker"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.target.dummy"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.slice.gameover"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "dia.quixote.chatter.revive"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "dia.sancho.chatter.revive"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "it.ability.attack_light.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "it.ability.attack_heavy.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.examine.prompt"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.examine.quote"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.face.rock.reality.desc"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.face.rock.reality.tell"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.face.rock.book.desc"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.face.rock.book.tell"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.face.rock.book.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.face.windmill.reality.desc"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.face.windmill.reality.tell"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.face.windmill.book.desc"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.face.windmill.book.tell"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.venture.montiel"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.face.venture.reality.desc"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.face.venture.reality.tell"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.face.venture.reality.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.face.venture.book.desc"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.face.venture.book.tell"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.face.venture.book.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "it.ability.block.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.move.mill_sails.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.move.mill_topple.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.move.giant_sweep.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.move.giant_slam.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.move.basque_lance.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.move.basque_thrust.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.move.sea_wave.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.move.sea_crash.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.move.encinado_swing.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.move.encinado_charge.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.move.bridge_step.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.move.bridge_gap.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.move.dulcinea_gaze.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.move.dulcinea_sigh.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.move.mirror_copy.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.move.mirror_shatter.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.move.magician_flip.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.move.magician_strike.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.move.duke_decree.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.move.duke_court.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.slice.line.venture"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.slice.line.venture.move"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.slice.venture.down"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.slice.venture.truth"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.slice.saved"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.codex.venture.mill"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.codex.venture.giant"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.codex.venture.basque.reality"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.codex.venture.basque.book"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.codex.venture.sea.reality"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.codex.venture.sea.book"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.codex.venture.encinado.reality"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.codex.venture.encinado.book"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.codex.venture.montesinos.reality"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.codex.venture.montesinos.book"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.codex.venture.bridge.reality"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.codex.venture.bridge.book"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.codex.venture.dulcinea.reality"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.codex.venture.dulcinea.book"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.codex.venture.mirrors.reality"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.codex.venture.mirrors.book"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.codex.venture.magician.reality"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.codex.venture.magician.book"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.codex.venture.duke.reality"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.codex.venture.duke.book"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "dia.quixote.chatter.venture"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.examine.close"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "dia.sancho.chatter.venture"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "dia.quixote.reaction.venture.reality"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "dia.quixote.reaction.venture.book"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "dia.sancho.reaction.venture.reality"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "dia.sancho.reaction.venture.book"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.region.camino_la_mancha.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.region.sierra_morena.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.region.el_toboso.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.region.los_riscos.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.region.el_castillo_del_duque.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.object.book_stand"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.face.book_stand.reality.desc"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.face.book_stand.book.desc"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.anamorphosis.rock_weight.tell"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.anamorphosis.windmill_sails.tell"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.anamorphosis.book_stand_pages.tell"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch01.apertura.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch01.apertura.desc"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch01.apertura.passive.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch01.apertura.passive.desc"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch01.apertura.codex"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch01.molinos.01.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch01.molinos.01.desc"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch01.molinos.01.passive.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch01.molinos.01.passive.desc"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch01.molinos.01.codex"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch01.nombre.01.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch01.nombre.01.desc"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch01.nombre.01.passive.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch01.nombre.01.passive.desc"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch01.nombre.01.codex"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch02.caballeros.01.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch02.caballeros.01.desc"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch02.caballeros.01.passive.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch02.caballeros.01.passive.desc"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch02.caballeros.01.codex"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch04.rocinante.01.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch04.rocinante.01.desc"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch04.rocinante.01.passive.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch04.rocinante.01.passive.desc"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch04.rocinante.01.codex"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch03.posada.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch03.posada.desc"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch03.posada.passive.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch03.posada.passive.desc"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch03.posada.codex"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch05.duena.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch05.duena.desc"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch05.duena.passive.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch05.duena.passive.desc"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch05.duena.codex"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch06.pastores.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch06.pastores.desc"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch06.pastores.passive.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch06.pastores.passive.desc"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch06.pastores.codex"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch07.yanguesas.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch07.yanguesas.desc"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch07.yanguesas.passive.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch07.yanguesas.passive.desc"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch07.yanguesas.codex"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch09.manuscrito.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch09.manuscrito.desc"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch09.manuscrito.passive.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch09.manuscrito.passive.desc"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch09.manuscrito.codex"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch10.balsamo.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch10.balsamo.desc"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch10.balsamo.passive.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch10.balsamo.passive.desc"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch10.balsamo.codex"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch11.caballero_bosque.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch11.caballero_bosque.desc"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch11.caballero_bosque.passive.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch11.caballero_bosque.passive.desc"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch11.caballero_bosque.codex"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch12.armas_letras.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch12.armas_letras.desc"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch12.armas_letras.passive.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch12.armas_letras.passive.desc"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch12.armas_letras.codex"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch13.leones.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch13.leones.desc"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch13.leones.passive.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch13.leones.passive.desc"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch13.leones.codex"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch14.galeotes.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch14.galeotes.desc"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch14.galeotes.passive.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch14.galeotes.passive.desc"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.book.bk.ch14.galeotes.codex"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.chapter.01.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.chapter.02.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.chapter.03.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.chapter.04.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.chapter.05.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.chapter.06.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.chapter.07.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.chapter.08.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.chapter.09.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.chapter.10.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.chapter.11.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.chapter.12.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.chapter.13.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.venture.basque"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.venture.canting_sea"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.venture.encinados"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.venture.montesinos"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.venture.bridge"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.venture.dulcinea"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.venture.mirrors"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.venture.magician"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.venture.duke"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ensayo.setup.title"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ensayo.setup.tested.quixote"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ensayo.setup.tested.sancho"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ensayo.setup.examiner.quixote"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ensayo.setup.examiner.sancho"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ensayo.setup.secret.wife"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ensayo.setup.secret.treasure"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ensayo.setup.secret.truth"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ensayo.setup.told.tested"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ensayo.setup.told.examiner"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ensayo.setup.told.neither"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ensayo.outcome.holds"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ensayo.outcome.breaks"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ensayo.outcome.examiner_breaks"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ensayo.outcome.nothing"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ensayo.outcome.caught"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ensayo.outcome.refuses"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.ending.el_manuscrito.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.ending.el_manuscrito.desc"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.ending.la_locura_compartida.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.ending.la_locura_compartida.desc"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.ending.el_mundo_real.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.ending.el_mundo_real.desc"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.ending.el_libro_gana.name"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.ending.el_libro_gana.desc"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "ui.manifiesto.empty"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "prologue.opening.text"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "prologue.opening.reality"
+msgstr "
+
+#. TRANSLATORS: Auto-added key
+msgid "prologue.opening.book"
+msgstr "
+
+#. TRANSLATORS: The clavilo (wooden horse) fragment title.
+msgid "bk.ch38.clavilo.title"
+msgstr "Clavilo"
+
+

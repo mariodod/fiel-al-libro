@@ -887,8 +887,6 @@ msgstr "Encantamiento Duquesa"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
-msgid "bk.ch38.clavileño.title"
-msgstr "Clavileño"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
@@ -1804,3 +1802,10 @@ msgstr "A man rides across the plain. The windmills are windmills. The inn is an
 
 msgid "prologue.opening.book"
 msgstr "A knight rides across the plain. The windmills are giants. The inn is a castle."
+
+#. TRANSLATORS: The clavilo (wooden horse) fragment title.
+msgid "bk.ch38.clavilo.title"
+msgstr "Clavilo"
+
+
+

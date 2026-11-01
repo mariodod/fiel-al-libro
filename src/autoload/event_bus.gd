@@ -84,6 +84,19 @@ signal region_resolved(id: StringName)
 signal region_loaded(id: StringName)
 signal posada_entered(id: StringName)
 
+# ── Ensayo (player-staged case) ─────────────────────────────────────────
+signal ensayo_setup_started(setup: Dictionary)
+signal ensayo_simulation_started(setup: Dictionary, round: int)
+signal ensayo_round_started(round: int)
+signal ensayo_intervention(intervention: Dictionary)
+signal ensayo_resolved(outcome: int, reasons: Array)
+signal ensayo_consequence(outcome: int)
+signal ensayo_outcome_holds()
+signal ensayo_outcome_broken()
+signal ensayo_outcome_examiner_broken()
+signal ensayo_outcome_nothing()
+signal ensayo_outcome_caught()
+signal ensayo_outcome_refused()
 
 # ── UI & system ─────────────────────────────────────────────────────────
 signal toast(text_key: StringName, args: Array)
