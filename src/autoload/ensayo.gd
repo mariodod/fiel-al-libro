@@ -91,6 +91,7 @@ func resolve_consequence() -> void:
 	current_outcome = _determine_outcome()
 	EventBus.ensayo_resolved.emit(current_outcome, _outcome_reasons())
 	EventBus.ensayo_consequence.emit(current_outcome)
+	apply_outcome(current_outcome)
 
 ## Internal: determine outcome from setup + interventions.
 func _determine_outcome() -> Outcome:
@@ -131,32 +132,35 @@ func _determine_outcome() -> Outcome:
 	## Locura weighting.
 	var quixote_locura: float = 0.0
 	var sancho_locura: float = 0.0
-	var TruthLayer = preload("res://src/autoload/truth_layer.gd")
 	# Note: we can't easily access Locura from here without circular deps;
 	# use GameState flags instead.
-	var locura_quixote: float = GameState.get_flag("quixote_locura", 0.0)
-	var locura_sancho: float = GameState.get_flag("sancho_locura", 0.0)
+	var locura_quixote: float = float(GameState.get_flag("quixote_locura", 0.0))
+	var locura_sancho: float = float(GameState.get_flag("sancho_locura", 0.0))
 	madness_weight += (quixote_locura + sancho_locura) * 0.001
 
-	## Normalize and pick.
-	var total: float = truth_weight + force_weight + madness_weight + 1.0
+	## Normalize and pick. All weights are raw (not divided by total),
+	## and roll is compared against each weight directly.
+	var total: float = truth_weight + force_weight + madness_weight + 1.0 + 0.15 + 0.10
 	var roll: float = randf() * total
 
-	if roll < truth_weight / total:
+	if roll < truth_weight:
 		return Outcome.TEST_HELD
-	roll -= truth_weight / total
-	if roll < force_weight / total:
+	roll -= truth_weight
+	if roll < force_weight:
 		return Outcome.TEST_BROKEN
-	roll -= force_weight / total
-	if roll < madness_weight / total:
+	roll -= force_weight
+	if roll < madness_weight:
 		return Outcome.EXAMINER_BROKEN
-	roll -= madness_weight / total
+	roll -= madness_weight
+	if roll < 1.0:  # base weight -> REFUSED
+		return Outcome.REFUSED
+	roll -= 1.0
 	if roll < 0.15:  # base anticlimax chance
 		return Outcome.NOTHING_HAPPENS
 	roll -= 0.15
 	if roll < 0.10:  # base caught chance
 		return Outcome.PLAYER_CAUGHT
-	return Outcome.REFUSED
+	return Outcome.REFUSED  # unreachable fallback
 
 ## Get human-readable outcome reasons.
 func _outcome_reasons() -> Array[String]:

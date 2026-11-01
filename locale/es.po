@@ -1733,6 +1733,30 @@ msgstr "El jugador es descubierto"
 msgid "ensayo.outcome.refuses"
 msgstr "El jugador se niega a escenificarla"
 
+#. TRANSLATORS: El jugador se mantuvo leal; se abre una línea de misiones en la Región V.
+msgid "ensayo.outcome.holds_desc"
+msgstr "El probado se mantuvo leal; se abre una línea de misiones en la Región V."
+
+#. TRANSLATORS: Traición; el probado se quita la vida.
+msgid "ensayo.outcome.breaks_desc"
+msgstr "Traición. El probado se quita la vida."
+
+#. TRANSLATORS: El examinador es consumido por la prueba.
+msgid "ensayo.outcome.examiner_breaks_desc"
+msgstr "El examinador es consumido por la prueba."
+
+#. TRANSLATORS: Nadie se rompe; anticlímax.
+msgid "ensayo.outcome.nothing_desc"
+msgstr "Nadie se rompe; no pasa nada."
+
+#. TRANSLATORS: El jugador es revelado como el autor.
+msgid "ensayo.outcome.caught_desc"
+msgstr "El jugador es revelado como el autor."
+
+#. TRANSLATORS: El jugador se niega a escenificarlo; hueco en el manuscrito.
+msgid "ensayo.outcome.refuses_desc"
+msgstr "El jugador se niega a escenificarlo."
+
 #. TRANSLATORS: Ending titles
 msgid "ui.ending.el_manuscrito.name"
 msgstr "El Manuscrito"

@@ -1764,6 +1764,30 @@ msgstr "The player is caught"
 msgid "ensayo.outcome.refuses"
 msgstr "The player refuses to stage it"
 
+#. TRANSLATORS: The player stayed loyal; quest line opens in Region V.
+msgid "ensayo.outcome.holds_desc"
+msgstr "The tested stays loyal; a quest line opens in Region V."
+
+#. TRANSLATORS: Betrayal; the tested kills themself.
+msgid "ensayo.outcome.breaks_desc"
+msgstr "Betrayal. The tested kills themself."
+
+#. TRANSLATORS: The examiner is consumed by the test.
+msgid "ensayo.outcome.examiner_breaks_desc"
+msgstr "The examiner is consumed by the test."
+
+#. TRANSLATORS: Nobody breaks; anticlimax.
+msgid "ensayo.outcome.nothing_desc"
+msgstr "Nobody breaks; nothing happens."
+
+#. TRANSLATORS: The player is revealed as the author.
+msgid "ensayo.outcome.caught_desc"
+msgstr "The player is revealed as the author."
+
+#. TRANSLATORS: The player walks away; gap in manuscript.
+msgid "ensayo.outcome.refuses_desc"
+msgstr "The player refuses to stage it."
+
 #. TRANSLATORS: Ending titles
 msgid "ui.ending.el_manuscrito.name"
 msgstr "The Manuscript"

@@ -117,15 +117,15 @@ static func verdict_by_force(id: StringName) -> int:
 ## Returns the verdict mode that was applied, or VERDICT_NONE if already
 ## resolved.
 static func resolve(id: StringName, evidence: int = 1) -> int:
-		if _resolved.get(id, false):
-			return 0
+	if _resolved.get(id, false):
+		return VERDICT_NONE
 
-		_verdicts[id] = VERDICT_TRUTH
-		_spotted[id] = true  # Resolving implies spotting
-		_evidence[id] = evidence
-		_total_evidence += evidence
-		EventBus.verdict_resolved.emit(id, VERDICT_TRUTH)
-		return evidence
+	_verdicts[id] = VERDICT_TRUTH
+	_spotted[id] = true  # Resolving implies spotting
+	_evidence[id] = evidence
+	_total_evidence += evidence
+	EventBus.verdict_resolved.emit(id, VERDICT_TRUTH)
+	return VERDICT_TRUTH
 
 ## Save / load ─────────────────────────────────────────────────────────
 

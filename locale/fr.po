@@ -1687,6 +1687,30 @@ msgstr "Le joueur est pris"
 msgid "ensayo.outcome.refuses"
 msgstr "Le joueur refuse d'en jouer la scÃ¨ne"
 
+#. TRANSLATORS: Le joueur est restÃ© loyal; une ligne de quÃªte s'ouvre en RÃ©gion V.
+msgid "ensayo.outcome.holds_desc"
+msgstr ""
+
+#. TRANSLATORS: Trahison; le testÃ© se donne la mort.
+msgid "ensayo.outcome.breaks_desc"
+msgstr ""
+
+#. TRANSLATORS: L'examinateur est consumÃ© par le test.
+msgid "ensayo.outcome.examiner_breaks_desc"
+msgstr ""
+
+#. TRANSLATORS: Personne ne craque; anti-climax.
+msgid "ensayo.outcome.nothing_desc"
+msgstr ""
+
+#. TRANSLATORS: Le joueur est rÃ©vÃ©lÃ© comme l'auteur.
+msgid "ensayo.outcome.caught_desc"
+msgstr ""
+
+#. TRANSLATORS: Le joueur refuse d'en jouer la scÃ¨ne; un manque dans le manuscrit.
+msgid "ensayo.outcome.refuses_desc"
+msgstr ""
+
 #. TRANSLATORS: Ending titles
 msgid "ui.ending.el_manuscrito.name"
 msgstr "Le Manuscrit"

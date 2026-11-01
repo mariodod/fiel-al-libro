@@ -1765,6 +1765,30 @@ msgstr ""
 msgid "ensayo.outcome.refuses"
 msgstr ""
 
+#. TRANSLATORS: The player stayed loyal; quest line opens in Region V.
+msgid "ensayo.outcome.holds_desc"
+msgstr ""
+
+#. TRANSLATORS: Betrayal; the tested kills themself.
+msgid "ensayo.outcome.breaks_desc"
+msgstr ""
+
+#. TRANSLATORS: The examiner is consumed by the test.
+msgid "ensayo.outcome.examiner_breaks_desc"
+msgstr ""
+
+#. TRANSLATORS: Nobody breaks; anticlimax.
+msgid "ensayo.outcome.nothing_desc"
+msgstr ""
+
+#. TRANSLATORS: The player is revealed as the author.
+msgid "ensayo.outcome.caught_desc"
+msgstr ""
+
+#. TRANSLATORS: The player walks away; gap in manuscript.
+msgid "ensayo.outcome.refuses_desc"
+msgstr ""
+
 #. TRANSLATORS: Ending titles
 msgid "ui.ending.el_manuscrito.name"
 msgstr ""
