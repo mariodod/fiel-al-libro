@@ -456,11 +456,11 @@ There are no trademark filings, domain purchases, or other paid legal steps in t
 
 | | |
 |---|---|
-| **Phase** | Phase 0 complete. **Phase 1, weeks 1–2: the grey box exists, the playtest has happened twice, and week 3–4 (combat) has started.** |
-| **Working code** | ~37 GDScript files: autoload spine, data resources, character abstraction, the truth-layer shader, the save system, the i18n pipeline, the reading rule, the Examine verb, the reactions, the dodge, the swing, the training dummy, and the week 1–2 grey box. |
-| **Tests** | 25 suites, 607 assertions, all green, enforced in CI. |
+| **Phase** | Phase 1 complete through week 3–4 (combat, world map, Venture of Montiel). **Phase 1, weeks 5–12 remaining:** Lectura mode, anamorphoses, Posada, shelf UI, first book, Manuscript UI shell, credits song, min-spec performance, itch.io demo. |
+| **Working code** | ~45+ GDScript files: autoload spine (EventBus, GameState, TruthLayer, Locura, Memoria, Biblioteca, Manuscrito, Ensayo, AudioDirector, Lectura, Verdict), data resources (characters, primitives, moves, forms, ventures, regions, books), character abstraction (PlayerController, CompanionAI, CharacterPawn), the truth-layer shader, the save system, the i18n pipeline (6 languages), the reading rule, the Examine verb, the reactions, the dodge, the swing, the training dummy, the walled yard, the companion AI in combat, Desvelar, hero rigs with animation clips, the week 1–2 grey box, the Venture of Montiel boss in two forms, the world map screen. |
+| **Tests** | 25 suites, 687 assertions, all green, enforced in CI. |
 | **CI** | Green on every push. Produces Windows + Linux builds as artifacts. |
-| **Game content** | Two primitives (a windmill/giant, a rock/book) as low-poly placeholders, a training dummy and a walled yard, eight reaction lines in three languages, and one real Manifiesto fragment. No art, no levels, no enemies, no audio. |
+| **Game content** | Two primitives (windmill/giant, rock/book) as low-poly placeholders, the Venture of Montiel boss (mill and giant forms), a training dummy and walled yard, era of Montiel, world map screen, eight reaction lines in three languages, one real Manifiesto fragment. Hero rigs built with Blender and wired to game states. No full levels, no full enemy roster, no audio, no credits song yet. |
 | **Money spent** | €0. Godot is free, assets are CC0, the only planned spend is the credits song (~$200–800). |
 
 **What exists is the skeleton, the tooling, the plan — and now a box that answers the
@@ -535,18 +535,10 @@ owner's.
    is installed: `.\tools\blender.ps1 -b -P <script.py>` runs Blender headless. The brief
    is in the conversation: two distinct skeletons, ~16 clips each, and every contact
    frame landing inside the window the combat code opens.
-6. Read `docs/PLAYTEST_NOTES.md` §6 and §7 — the playtest findings, the ten "but"s, and
-   the two that have just been built: **B9, the Examine panel that shows a perception
-   instead of the truth table**, and **B10, the training dummy in the walled yard**.
-   Both are untested.
-7. **The next task is week 3–4, and it is art.** The lock-on, the dodge, the chain, the
-   guard, the parry, the poise, the asymmetry rules and Desvelar are all in, and the
-   silhouettes are distinct (a lance and a basin for Quixote, a sack and a flail for
-   Sancho). What is left of 2.6–2.8 is the **animation sets**: eight clips each, and
-   hit reactions that are animations rather than a flash and a push.
-8. **The one thing that matters:** the vertical slice exists to answer a single question —
-   *is the two-truths mechanic fun?* The answer is yes. Everything from here is about
-   turning a proven mechanic into a game.
+6. Read `docs/PLAYTEST_NOTES.md` — the playtest findings. Six "but"s from round one (§6), fifteen more from rounds two–four (§7–§8), all fixed in code and tested. The playtest confirms the two-truths mechanic is legible and liked.
+7. **The rigs and animation sets** are built and wired (14 clips each for Quixote and Sancho), but the **poses are grey-box** — the next pass is art direction. `.\tools\blender.ps1 -b -P <script.py>` runs Blender headless; `docs/ANIMATION_BRIEF.md` has the full brief.
+8. **What remains of Phase 1:** Lectura mode and anamorphoses (weeks 5–7), the Posada with shelf UI and first book (weeks 8–9), Manuscript UI shell, credits song, min-spec performance pass, and the itch.io demo (weeks 10–12). See `docs/NEXT_STEPS.md` §2 and `docs/NEXT_SESSION.md` §3.
+9. **The one thing that matters:** the vertical slice exists to answer a single question — *is the two-truths mechanic fun?* The answer is yes. Everything from here is about turning a proven mechanic into a game.
 
 **Three rules for this project:**
 

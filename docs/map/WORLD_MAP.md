@@ -1,6 +1,6 @@
 # WORLD MAP — Fiel al Libro
 
-> **Draft.** A hand-drawn map of Spain in the manner of a 1605 portolan, for
+> **Draft / In progress.** A hand-drawn map of Spain in the manner of a 1605 portolan, for
 > the map screen the game will have between chapters. See GDD.md §11 (the
 > world structure) and §11.4 ("The 'libro' map screen" — hand-drawn, the Book
 > version and the Reality version side by side).

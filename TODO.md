@@ -222,23 +222,19 @@
       the error the validator now catches. The format lives in the `_comment` of the
       first real fragment, where the validator can see it.
 
-## Next (Phase 1 — weeks 3–4, combat)
+## Next (Phase 1 — weeks 3–4, combat) — DONE
 
-- [ ] `PlayerController`: walk, run, dodge, lock-on, a soft camera (2.5) — ✅ done
-- [ ] Combat: light combo, heavy, block/parry, poise, hit reactions (2.6) — ✅ the chain,
-      the guard, the parry, the poise and the push are in; the **animations** are not
-- [ ] **Quixote rig** — silhouette ✅ (lance and basin), **8 animations** to go (2.7)
-- [ ] **Sancho rig** — silhouette ✅ (sack and flail), **8 animations** to go (2.8)
-- [ ] Sancho's `Desvelar` — the form-swap VFX (2.9) — ✅ the verb works; the **VFX** is
-      still a plain reveal
-- [ ] The asymmetry rules: Humanity cost, and Sancho's control kit (2.10) — ✅ both are
-      in and visible in the yard
+- [x] `PlayerController`: walk, run, dodge, lock-on, a soft camera (2.5)
+- [x] Combat: light combo, heavy, block/parry, poise, hit reactions (2.6) — the chain, the guard, the parry, the poise and the push are in; the **animations** are grey-box (next pass is art direction)
+- [x] **Quixote rig** — silhouette ✅ (lance and basin), 14 clips built and wired (2.7)
+- [x] **Sancho rig** — silhouette ✅ (sack and flail), 15 clips built and wired (2.8)
+- [x] Sancho's `Desvelar` — the verb works (2.9); the VFX are still plain reveal
+- [x] The asymmetry rules: Humanity cost, and Sancho's control kit (2.10)
 
 ## Later (Phase 1, weeks 5–12)
 
-- [ ] The windmill Venture, in both forms (2.11)
-- [ ] `Lectura` mode, and three anamorphoses (2.12, 2.13) — *the basic Examine beat comes
-      first, see B6*
+- [x] The windmill Venture, in both forms (2.11) — built, untested with a player
+- [ ] `Lectura` mode, and three anamorphoses (2.12, 2.13)
 - [ ] One Verdict — the world changes layer (2.15)
 - [ ] The Posada: checkpoint, the shelf, 2 NPCs, the musician (2.16)
 - [ ] The shelf UI, `Biblioteca` wired to real data, and the first book (2.17–2.19)

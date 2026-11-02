@@ -674,7 +674,7 @@ before the 1.0 date for a realistic chance.
 - [x] `loc.gd` + the PO pipeline + 3 locales (es, en, fr) + `sync_locales.gd` + parity test
 - [x] Save system with atomic writes + version migration
 - [x] The grey-box scene: walk, swap, flip the world
-- [ ] Install export templates locally and produce a first Windows build
+- [x] Install export templates locally and produce a first Windows build
 - [ ] Set up the monthly cloud backup
 
 > **Note on the shader:** Godot 4's `canvas_item` shaders cannot read the depth buffer
@@ -684,13 +684,13 @@ before the 1.0 date for a realistic chance.
 > pass into a `CompositorEffect` with an `RDShaderFile` — a Phase 1 task.
 
 **Phase 1 — Vertical slice (weeks 5–12)**
-- [ ] Player controller: walk, run, dodge, lock-on
-- [ ] Quixote rig + 8 animations; Sancho rig + 8 animations
-- [ ] Combat: light/heavy/dodge/block, stamina, poise, hit reactions
-- [ ] One enemy with a Book form and a Reality form + Sancho's `Desvelar`
+- [x] Player controller: walk, run, dodge, lock-on
+- [x] Quixote rig + 14 clips; Sancho rig + 15 clips (built headless, wired to game states)
+- [x] Combat: light/heavy/dodge/block, stamina, poise, hit reactions
+- [x] One enemy with a Book form and a Reality form + Sancho's `Desvelar`
 - [ ] `Lectura` mode: the screen-space highlight + one anamorphosis you must view from a spot
 - [ ] One Posada (checkpoint, shelf, NPC)
-- [ ] One Venture (boss) with two resolutions
+- [x] One Venture (boss) with two resolutions (truth + forced)
 - [ ] The Manuscript UI shell
 - [ ] The credits song, commissioned, playing in the Posada
 
