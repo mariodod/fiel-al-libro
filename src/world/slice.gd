@@ -170,13 +170,13 @@ func _ready() -> void:
 	EventBus.venture_resolved.connect(_on_venture_resolved)
 
 	# Wire up pause menu buttons
-	var resume_btn := _pause_menu.get_node("PauseMenuPanel/PauseMenuResume")
+	var resume_btn := _pause_menu.get_node_or_null("PauseMenuPanel/PauseMenuResume")
 	if resume_btn != null:
 		resume_btn.pressed.connect(_toggle_pause)
-	var quit_btn := _pause_menu.get_node("PauseMenuPanel/PauseMenuQuit")
+	var quit_btn := _pause_menu.get_node_or_null("PauseMenuPanel/PauseMenuQuit")
 	if quit_btn != null:
 		quit_btn.pressed.connect(_quit_to_yard)
-	var codex_close_btn := _codex.get_node("CodexPanel/CodexClose")
+	var codex_close_btn := _codex.get_node_or_null("CodexPanel/CodexClose")
 	if codex_close_btn != null:
 		codex_close_btn.pressed.connect(_toggle_codex)
 
@@ -549,7 +549,7 @@ func _toggle_codex() -> void:
 
 ## Populate the codex list with collected book fragments.
 func _refresh_codex() -> void:
-	var container := _codex.get_node("CodexPanel/CodexList/CodexListContainer")
+	var container := _codex.get_node_or_null("CodexPanel/CodexList/CodexListContainer")
 	if container == null:
 		return
 	for child in container.get_children():
