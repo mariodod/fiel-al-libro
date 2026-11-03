@@ -669,6 +669,11 @@ func _process(_delta: float) -> void:
 	_update_lock()
 	_update_game_over()
 	_update_hud()
+	# Track which character the player is driving, for the credits song
+	# arrangement (GDD.md §14: "the credits song's arrangement depends on
+	# which character you played more").
+	if player != null and player.active_pawn != null:
+		GameState.add_playtime(player.active_pawn.character_id, _delta)
 
 
 ## The game is over when BOTH of them are down.

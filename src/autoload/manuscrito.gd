@@ -91,6 +91,8 @@ func _serialize_game_state() -> Dictionary:
 		"pages_written": GameState.pages_written.duplicate(),
 		"ending_id": String(GameState.ending_id),
 		"author_revealed": GameState.author_revealed,
+		"quixote_playtime": GameState.get_playtime(&"quixote"),
+		"sancho_playtime": GameState.get_playtime(&"sancho"),
 	}
 
 
@@ -162,6 +164,8 @@ func _apply(data: Dictionary) -> void:
 		GameState.pages_written.append(StringName(id))
 	GameState.ending_id = StringName(str(gs.get("ending_id", "")))
 	GameState.author_revealed = bool(gs.get("author_revealed", false))
+	GameState.quixote_playtime = float(gs.get("quixote_playtime", 0.0))
+	GameState.sancho_playtime = float(gs.get("sancho_playtime", 0.0))
 
 	TruthLayer.load_state(data.get("truth_layer", {}))
 	Locura.load_state(data.get("locura", {}))

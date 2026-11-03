@@ -52,6 +52,36 @@ var ending_id: StringName = &""
 ## True once the player has staged the Ensayo and been "caught" (D5).
 var author_revealed: bool = false
 
+# ── Credits song (GDD.md §14) ───────────────────────────────────────────
+## Seconds each character has been the active (driven) pawn. Used at the
+## credits to decide whose verse leads: Quixote → Book Truth arrangement,
+## Sancho → Reality Truth arrangement.
+var quixote_playtime: float = 0.0
+var sancho_playtime: float = 0.0
+
+## Add playtime for the character who was driven this frame.
+func add_playtime(character_id: StringName, delta: float) -> void:
+	if character_id == &"quixote":
+		quixote_playtime += delta
+	elif character_id == &"sancho":
+		sancho_playtime += delta
+
+
+## Which character was played more (returns &"quixote" or &"sancho").
+func character_played_most() -> StringName:
+	if quixote_playtime >= sancho_playtime:
+		return &"quixote"
+	return &"sancho"
+
+
+## Get playtime for a character.
+func get_playtime(character_id: StringName) -> float:
+	if character_id == &"quixote":
+		return quixote_playtime
+	if character_id == &"sancho":
+		return sancho_playtime
+	return 0.0
+
 
 func set_flag(key: String, value: Variant = true) -> void:
 	flags[key] = value

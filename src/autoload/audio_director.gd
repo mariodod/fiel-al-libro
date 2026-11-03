@@ -16,6 +16,14 @@ var _region_tracks: Dictionary = {}
 var _current_track: String = ""
 var _fade_time: float = 1.2
 
+## Credits song tracks (GDD.md §14): single player hears the arrangement of
+## whichever character they played more.
+const CREDITS_BOOK_TRUTH := "res://assets/audio/credits_book_truth.wav"
+const CREDITS_REALITY_TRUTH := "res://assets/audio/credits_reality_truth.wav"
+
+## The currently playing credits stream (null when not playing).
+var _credits_stream: AudioStreamPlayer = null
+
 
 func _ready() -> void:
 	_ensure_bus(MUSIC_BUS)
@@ -49,12 +57,35 @@ func play_region(region_id: StringName) -> void:
 
 func play_credits_song() -> void:
 	_current_track = "credits"
-	# TODO(Phase 1): load assets/audio/music/romance_del_caballero_y_el_escudero.ogg
-	# and play it with the "credits" arrangement variant.
+	_stop_credits()
+
+	# GDD.md §14: "In single player: the credits song's arrangement depends
+	# on which character you played more. You hear your character's verse
+	# lead."
+	var played_most := GameState.character_played_most()
+	var track_path: String = CREDITS_BOOK_TRUTH
+	if played_most == &"sancho":
+		track_path = CREDITS_REALITY_TRUTH
+
+	var stream := AudioStreamPlayer.new()
+	stream.stream = load(track_path)
+	stream.bus = MUSIC_BUS
+	stream.autoplay = true
+	add_child(stream)
+	_credits_stream = stream
 
 
 func stop_music(fade: bool = true) -> void:
 	_current_track = ""
+	_stop_credits()
+
+
+## Stop the credits song if it is playing.
+func _stop_credits() -> void:
+	if _credits_stream != null:
+		_credits_stream.stop()
+		_credits_stream.queue_free()
+		_credits_stream = null
 
 
 func _on_truth_changed(_old: int, new_layer: int) -> void:
