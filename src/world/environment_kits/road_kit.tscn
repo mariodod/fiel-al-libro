@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://src/world/truth_object.gd" id="1_object"]
+
+[sub_resource type="PlaneMesh" id="Plane_ground"]
+size = Vector2(30, 200)
+
+[sub_resource type="StandardMaterial3D" id="Mat_ground"]
+albedo_color = Color(0.55, 0.47, 0.38, 1)
+roughness = 1.0
+
+[sub_resource type="BoxMesh" id="Mesh_milestone"]
+size = Vector3(0.4, 1.5, 0.2)
+
+[sub_resource type="StandardMaterial3D" id="Mat_milestone"]
+albedo_color = Color(0.65, 0.55, 0.45, 1)
+roughness = 1.0
+
+[node name="RoadKit" type="Node3D"]
+
+[node name="Ground" type="MeshInstance3D" parent="RoadKit"]
+mesh = SubResource("Plane_ground")
+material_override = SubResource("Mat_ground")
+
+[node name="Milestone1" type="MeshInstance3D" parent="RoadKit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.8, -20)
+mesh = SubResource("Mesh_milestone")
+material_override = SubResource("Mat_milestone")
+
+[node name="Milestone2" type="MeshInstance3D" parent="RoadKit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.8, -40)
+mesh = SubResource("Mesh_milestone")
+material_override = SubResource("Mat_milestone")
+
+[node name="Milestone3" type="MeshInstance3D" parent="RoadKit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.8, -60)
+mesh = SubResource("Mesh_milestone")
+material_override = SubResource("Mat_milestone")
+
+[node name="Milestone4" type="MeshInstance3D" parent="RoadKit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.8, -80)
+mesh = SubResource("Mesh_milestone")
+material_override = SubResource("Mat_milestone")
+
+[node name="Milestone5" type="MeshInstance3D" parent="RoadKit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.8, -100)
+mesh = SubResource("Mesh_milestone")
+material_override = SubResource("Mat_milestone")
