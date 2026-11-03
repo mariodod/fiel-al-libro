@@ -504,6 +504,10 @@ func _unhandled_input(event: InputEvent) -> void:
 			hud.visible = _show_hud
 	elif event.is_action_pressed(&"shelf"):
 		_toggle_shelf()
+	elif event.is_action_pressed(&"lectura"):
+		# Lectura mode: slow time, desaturate, reveal anamorphoses.
+		# Only the reader can enter — it is their investigation.
+		Lectura.toggle()
 	elif event.is_action_pressed(&"reset_dummy"):
 		_reset_yard()
 	elif event.is_action_pressed(&"toggle_map"):
@@ -518,6 +522,28 @@ func _unhandled_input(event: InputEvent) -> void:
 				and _checkpoint.global_position.distance_to(player.active_pawn.global_position) < 3.0:
 			Manuscrito.save_game(0)
 			EventBus.toast.emit(&"ui.slice.saved", [])
+		else:
+			# Examine the thing in front of the reader.
+			var driven := player.active_pawn
+			if driven != null:
+				var candidates := Examine.find_candidates()
+				var target := Examine.find_target(candidates, driven.global_position, -driven.global_transform.basis.z)
+				if target != null and target.data != null:
+					var reader_id := driven.character_id
+					EventBus.object_examined.emit(target.data.id, reader_id)
+					# In Lectura mode, spotting/resolving anamorphoses grants evidence
+					# toward a Verdict.
+					if Lectura.is_active() and not target.data.anamorphosis_id.is_empty():
+						var anamorphosis_id := target.data.anamorphosis_id
+						if not Lectura.is_spotted(anamorphosis_id):
+							Lectura.spot(anamorphosis_id)
+							EventBus.toast.emit(&"ui.slice.anamorphosis_spotted", [Loc.t(target.data.anamorphosis_tell_key)])
+						elif not Lectura.is_resolved(anamorphosis_id):
+							var evidence := Lectura.resolve(anamorphosis_id, target.data.anamorphosis_evidence)
+							EventBus.toast.emit(&"ui.slice.anamorphosis_resolved", [Loc.t(target.data.anamorphosis_tell_key), evidence])
+							# Check if enough evidence for a Verdict
+							if Lectura.has_enough_for_verdict():
+								EventBus.toast.emit(&"ui.slice.verdict_ready", [])
 
 
 ## Open or close the world map.

@@ -1800,4 +1800,16 @@ msgstr "Un caballero cabalga por el llano. Los molinos son gigantes. La posada e
 msgid "bk.ch38.clavilo.title"
 msgstr "Clavilo"
 
+#. TRANSLATORS: Shown when the player spots an anamorphosis in Lectura mode.
+msgid "ui.slice.anamorphosis_spotted"
+msgstr ""
+
+#. TRANSLATORS: Shown when the player resolves an anamorphosis and gains evidence.
+msgid "ui.slice.anamorphosis_resolved"
+msgstr ""
+
+#. TRANSLATORS: Shown when the player has enough evidence to use the Verdict.
+msgid "ui.slice.verdict_ready"
+msgstr ""
+
 

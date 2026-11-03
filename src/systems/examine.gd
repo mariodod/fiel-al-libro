@@ -31,6 +31,22 @@ const MAX_DISTANCE := 5.0
 const MAX_ANGLE_DEGREES := 55.0
 
 
+## Every object that can be examined, found through the Examine group.
+##
+## Callers pass this array to find_target() to pick the one the reader
+## is looking at most directly.
+static func find_candidates() -> Array:
+	var out: Array = []
+	var tree := Engine.get_main_loop() as SceneTree
+	if tree == null:
+		return out
+	for node in tree.get_nodes_in_group(GROUP):
+		var object := node as TruthObject
+		if object != null and object.data != null:
+			out.append(node)
+	return out
+
+
 ## The object the reader is looking at, or null.
 ##
 ## The one you are looking at most DIRECTLY wins, and distance only breaks
