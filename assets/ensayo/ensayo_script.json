@@ -1,0 +1,221 @@
+{
+  "_comment": [
+    "El Ensayo script content — narrative content for chapters 9 (setup) and 10 (simulation/resolution).",
+    "",
+    "The Ensayo is a player-staged case of trust (GDD.md §6.5). The player",
+    "stages a test between two characters and lives with the outcome.",
+    "",
+    "Structure:",
+    "  setup         — Chapter 9 content: who is tested, who examines, the secret, who is told",
+    "  simulation    — Chapter 10 content: 5 rounds of interventions with NPC responses",
+    "  outcomes      — Narration for all 6 outcomes (TEST_HELD, TEST_BROKEN, EXAMINER_BROKEN, NOTHING_HAPPENS, PLAYER_CAUGHT, REFUSED)",
+    "",
+    "Intervention types: dialogue, warning, look, letter",
+  ],
+
+  "setup": {
+    "title_key": "ensayo.setup.title",
+    "intro": "The Ensayo begins. You stage a test of trust between two characters — but you cannot see the result until it is played out.",
+    "characters": {
+      "quixote": {
+        "name_key": "ensayo.setup.tested.quixote",
+        "description": "The knight-errant, already touched by madness. Testing him is dangerous; he believes too easily in giants and enchantments."
+      },
+      "sancho": {
+        "name_key": "ensayo.setup.tested.sancho",
+        "description": "The squire, grounded and loyal. Testing him is safer, but his loyalty has limits."
+      }
+    },
+    "secrets": {
+      "wife_name": {
+        "name_key": "ensayo.setup.secret.wife",
+        "description": "The name of the examiner's wife — a personal secret that should never be spoken aloud."
+      },
+      "treasure": {
+        "name_key": "ensayo.setup.secret.treasure",
+        "description": "The location of hidden treasure — gold that changes who a person is."
+      },
+      "truth": {
+        "name_key": "ensayo.setup.secret.truth",
+        "description": "The truth of who wrote the manuscript — dangerous knowledge that no one should possess."
+      }
+    },
+    "told_options": {
+      "tested": {
+        "name_key": "ensayo.setup.told.tested",
+        "description": "You tell the tested character what the secret is. Trust is offered openly."
+      },
+      "examiner": {
+        "name_key": "ensayo.setup.told.examiner",
+        "description": "You tell the examiner what the secret is. They know what they are testing for."
+      },
+      "neither": {
+        "name_key": "ensayo.setup.told.neither",
+        "description": "You tell no one. The secret remains hidden, and the test is blind."
+      }
+    },
+    "default_setup": {
+      "tested": "quixote",
+      "examiner": "sancho",
+      "secret": "wife_name",
+      "told": "tested"
+    }
+  },
+
+  "simulation": {
+    "title_key": "ensayo.setup.title",
+    "max_rounds": 5,
+    "intro": "The test begins. Each round, you may intervene — speak, warn, look, or send a letter. Choose wisely; the characters are watching.",
+    "rounds": [
+      {
+        "round": 1,
+        "context": "The tested and the examiner meet for the first time since the test was announced. The air is tense.",
+        "interventions": {
+          "dialogue": {
+            "text": "You speak plainly, reminding them both of the stakes.",
+            "npc_response": "They listen, but their eyes do not meet."
+          },
+          "warning": {
+            "text": "You warn the tested: this test could break them.",
+            "npc_response": "The tested nods, but their hand trembles."
+          },
+          "look": {
+            "text": "You watch silently, saying nothing.",
+            "npc_response": "Your silence speaks louder than words."
+          },
+          "letter": {
+            "text": "You send a letter to the examiner, urging caution.",
+            "npc_response": "The letter is read, then folded carefully and put away."
+          }
+        }
+      },
+      {
+        "round": 2,
+        "context": "The secret is hinted at, but never named. Both characters circle around it.",
+        "interventions": {
+          "dialogue": {
+            "text": "You name the secret directly, forcing it into the open.",
+            "npc_response": "A breath is held. The test has begun in earnest."
+          },
+          "warning": {
+            "text": "You warn that secrets, once spoken, cannot be unspoken.",
+            "npc_response": "The examiner exchanges a glance with the tested."
+          },
+          "look": {
+            "text": "You look at the tested, then at the examiner, letting them read your silence.",
+            "npc_response": "They both look away at once."
+          },
+          "letter": {
+            "text": "You write to the tested: remember who you are.",
+            "npc_response": "The letter is read aloud. The tested flushes."
+          }
+        }
+      },
+      {
+        "round": 3,
+        "context": "Midway through the test. Fatigue sets in. The characters are less careful with their words.",
+        "interventions": {
+          "dialogue": {
+            "text": "You remind them both of the oath they swore.",
+            "npc_response": "The oath is repeated, but without conviction."
+          },
+          "warning": {
+            "text": "You warn that breaking the test has consequences beyond this room.",
+            "npc_response": "A laugh, sharp and nervous. They do not believe you."
+          },
+          "look": {
+            "text": "You stare at the examiner until they look down.",
+            "npc_response": "The examiner blinks first. A small victory."
+          },
+          "letter": {
+            "text": "You send a letter to both: the test is not yet decided.",
+            "npc_response": "Two letters, two different readings. The test frays."
+          }
+        }
+      },
+      {
+        "round": 4,
+        "context": "The secret is close to being revealed. One wrong word and the test breaks.",
+        "interventions": {
+          "dialogue": {
+            "text": "You plead with the tested to stay loyal, whatever the cost.",
+            "npc_response": "The tested swallows hard. Their loyalty wavers."
+          },
+          "warning": {
+            "text": "You warn that betrayal here echoes forever.",
+            "npc_response": "The words hang in the air. No one answers."
+          },
+          "look": {
+            "text": "You look at the secret itself — wherever it is hidden.",
+            "npc_response": "The examiner follows your gaze. They know where it is."
+          },
+          "letter": {
+            "text": "You send one last letter: choose now, or the choice is made for you.",
+            "npc_response": "The letter burns at the edges. Someone has held it too long."
+          }
+        }
+      },
+      {
+        "round": 5,
+        "context": "The final round. The test will resolve after this. Everything comes down to this moment.",
+        "interventions": {
+          "dialogue": {
+            "text": "You speak the truth as you know it, plain and unadorned.",
+            "npc_response": "Silence. Then, a single nod."
+          },
+          "warning": {
+            "text": "You warn: once broken, trust cannot be mended.",
+            "npc_response": "They stand. The test is over."
+          },
+          "look": {
+            "text": "You look at each of them in turn, saying nothing.",
+            "npc_response": "They look back. The test resolves itself."
+          },
+          "letter": {
+            "text": "You send no letter this round. Your silence is your intervention.",
+            "npc_response": "The absence of your letter speaks volumes."
+          }
+        }
+      }
+    ]
+  },
+
+  "outcomes": {
+    "holds": {
+      "name_key": "ensayo.outcome.holds",
+      "desc_key": "ensayo.outcome.holds_desc",
+      "narration": "The tested stays loyal. The secret remains unspoken, the trust unbroken. A quest line opens in Region V — the castle remembers this test.",
+      "effect": "ensayo_quest_unlocked = true"
+    },
+    "breaks": {
+      "name_key": "ensayo.outcome.breaks",
+      "desc_key": "ensayo.outcome.breaks_desc",
+      "narration": "Betrayal. The tested kills themself rather than live with what they have done. Humanity is diminished.",
+      "effect": "Humanity −20"
+    },
+    "examiner_breaks": {
+      "name_key": "ensayo.outcome.examiner_breaks",
+      "desc_key": "ensayo.outcome.examiner_breaks_desc",
+      "narration": "The examiner is consumed by the test. They become the Impertinent — a recurring NPC who questions everything.",
+      "effect": "impertinent_active = true"
+    },
+    "nothing": {
+      "name_key": "ensayo.outcome.nothing",
+      "desc_key": "ensayo.outcome.nothing_desc",
+      "narration": "Nobody breaks. Nothing happens. An honest anticlimax; the manuscript gains a blank page.",
+      "effect": "codex page granted"
+    },
+    "caught": {
+      "name_key": "ensayo.outcome.caught",
+      "desc_key": "ensayo.outcome.caught_desc",
+      "narration": "The player is revealed as the author of the test. The world knows your hand. El Manuscrito ending is unlocked.",
+      "effect": "author_revealed = true"
+    },
+    "refuses": {
+      "name_key": "ensayo.outcome.refuses",
+      "desc_key": "ensayo.outcome.refuses_desc",
+      "narration": "The player refuses to stage the test. A gap in the manuscript — the one thing that cannot be filled.",
+      "effect": "ensayo_refused = true"
+    }
+  }
+}
