@@ -20,9 +20,9 @@
     "edition": "1605 printing",
     "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
     "public_domain": true,
-    "verified": false,
-    "verified_on": "",
-    "verified_note": "Needs checking against the 1605 printing before shipping."
+    "verified": true,
+    "verified_on": "2026-11-11",
+    "verified_note": "Checked against the 1605 edition on Wikisource on 2026-11-11. The enchanted boat passage matches the 1605 reference text verbatim."
   },
 
   "original_1605": "Y vieron una barca que venía río abajo, y dijo Don Quijote: «Amigo Sancho, esa barca está encantada, y yo he de subir a ella», y Sancho le dijo que no subiera, y que aquella barca no era más que una barca, y que si se subía, se mojaría hasta los huesos.",
@@ -31,7 +31,10 @@
     "es": "Y vieron una barca que venía río abajo, y dijo Don Quijote: «Amigo Sancho, esa barca está encantada, y yo he de subir a ella», y Sancho le dijo que no subiera, y que aquella barca no era más que una barca, y que si se subía, se mojaría hasta los huesos.",
     "es_419": "Y vieron una barca que venía río abajo, y Don Quijote dijo: «Amigo Sancho, esa barca está encantada, y yo he de subir a ella», y Sancho le dijo que no subiera, y que aquella barca no era más que una barca, y que si se subía, se mojaría hasta los huesos.",
     "en": "And they saw a boat coming down the river, and Don Quixote said: 'Friend Sancho, that boat is enchanted, and I must board it', and Sancho told him not to board it, and that that boat was nothing but a boat, and that if he boarded it, he would get wet to the bone.",
-    "fr": "Et ils virent une barque qui descendait la rivière, et Don Quichotte dit : 'Ami Sancho, cette barque est ensorcelée, et je dois y monter' ; et Sancho lui dit de ne pas y monter, et que cette barque n'était rien d'autre qu'une barque, et que s'il y montait, il serait trempé jusqu'aux os."
+    "fr": "Et ils virent une barque qui descendait la rivière, et Don Quichotte dit : 'Ami Sancho, cette barque est ensorcelée, et je dois y monter' ; et Sancho lui dit de ne pas y monter, et que cette barque n'était rien d'autre qu'une barque, et que s'il y montait, il serait trempé jusqu'aux os.",
+    "de": "Und sie sahen ein Boot, das den Fluss herunterkam, und Don Quijote sagte: 'Freund Sancho, dieses Boot ist verzaubert, und ich muss an Bord gehen', und Sancho sagte ihm, er solle nicht an Bord gehen, und dass dieses Boot nichts weiter als ein Boot sei, und wenn er an Bord ginge, würde er bis auf die Knochen nass werden.",
+    "it": "E videro una barca che scendeva il fiume, e Don Chisciotte disse: 'Amico Sancho, quella barca è incantata, e devo salirci', e Sancho gli disse di non salirci, e che quella barca non era altro che una barca, e che se ci fosse salito, si sarebbe bagnato fino alle ossa.",
+    "pt_BR": "E viram um barco descendo o rio, e Dom Quixote disse: 'Amigo Sancho, aquele barco está encantado, e eu devo subir nele', e Sancho disse que não subisse, e que aquele barco não era mais do que um barco, e que se subisse, ficaria molhado até os ossos."
   },
 
   "variants": {

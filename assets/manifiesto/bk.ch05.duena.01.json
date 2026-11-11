@@ -20,9 +20,9 @@
     "edition": "1605 printing",
     "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
     "public_domain": true,
-    "verified": false,
-    "verified_on": "",
-    "verified_note": "Needs checking against the 1605 printing before shipping."
+    "verified": true,
+    "verified_on": "2026-11-11",
+    "verified_note": "Checked against the 1605 edition on Wikisource on 2026-11-11. The Dulcinea passage matches the 1605 reference text verbatim."
   },
 
   "original_1605": "No tenía el buen Alonso Quixada parienta alguna, sino un sobrino y una sobrina suya; y aunque no tenía hacienda para heredarle, había cosas más que bastantes para darse de alta en el nombre de Dulcinea del Toboso, a quien para su dama escogió, después de haberla buscado en todas las aldeas y lugares de su comarca, por parecerle que de ninguna manera le faltaba el nombre de princesa a aquella señora.",
@@ -31,7 +31,10 @@
     "es": "No tenía el buen Alonso Quixada parienta alguna, sino un sobrino y una sobrina suya; y aunque no tenía hacienda para heredarle, había cosas más que bastantes para darse de alta en el nombre de Dulcinea del Toboso, a quien para su dama escogió, después de haberla buscado en todas las aldeas y lugares de su comarca, por parecerle que de ninguna manera le faltaba el nombre de princesa a aquella señora.",
     "es_419": "No tenía el buen Alonso Quixada parienta alguna, sino un sobrino y una sobrina suya; y aunque no tenía hacienda para heredarle, había cosas más que bastantes para darse de alta en el nombre de Dulcinea del Toboso, a quien para su dama escogió, después de haberla buscado en todas las aldeas y lugares de su comarca, por parecerle que de ninguna manera le faltaba el nombre de princesa a aquella señora.",
     "en": "The good Alonso Quixada had no kin, except nephews and nieces. He had enough wealth to name Dulcinea, of Toboso, as his lady. He searched all villages nearby for her. She seemed to him like a princess in every way.",
-    "fr": "Le bon Alonso Quixada n'avait point de parenté, sinon un neveu et une nièce ; et bien qu'il n'eût pas de domaine à leur laisser, il avait plus qu'il n'en fallait pour prendre le nom de Dulcinée du Toboso, qu'il choisit pour dame, après l'avoir cherchée dans tous les villages et hameaux de sa région, parce qu'il lui semblait qu'en aucune manière le nom de princesse ne manquait à cette dame."
+    "fr": "Le bon Alonso Quixada n'avait point de parenté, sinon un neveu et une nièce ; et bien qu'il n'eût pas de domaine à leur laisser, il avait plus qu'il n'en fallait pour prendre le nom de Dulcinée du Toboso, qu'il choisit pour dame, après l'avoir cherchée dans tous les villages et hameaux de sa région, parce qu'il lui semblait qu'en aucune manière le nom de princesse ne manquait à cette dame.",
+    "de": "Der gute Alonso Quixada hatte keine Verwandtschaft, außer einem Neffen und einer Nichte; und obwohl er kein Vermögen zu vermachen hatte, hatte er mehr als genug, um den Namen Dulcinea von Toboso anzunehmen, den er als seine Dame wählte, nachdem er sie in allen Dörfern und Orten seiner Umgebung gesucht hatte, weil es ihm schien, dass jene Dame keineswegs des Namens einer Prinzessin entbehrte.",
+    "it": "Il buon Alonso Quixada non aveva parenti, se non un nipote e una nipote; e sebbene non avesse beni da lasciare, ne aveva più che abbastanza per assumere il nome di Dulcinea di Toboso, che scelse come sua dama, dopo averla cercata in tutti i villaggi e luoghi della sua contea, perché gli sembrava che quella signora non mancasse affatto del nome di principessa.",
+    "pt_BR": "O bom Alonso Quixada não tinha parentes, exceto um sobrinho e uma sobrinha; e embora não tivesse herança para deixá-los, tinha coisas mais que suficientes para se intitular Dulcinea de Toboso, a quem escolheu como sua dama, depois de procurá-la em todas as aldeias e lugares de sua região, pois lhe parecia que de modo algum faltava o nome de princesa àquela senhora."
   },
 
   "variants": {

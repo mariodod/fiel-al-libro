@@ -20,9 +20,9 @@
     "edition": "1605 printing",
     "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
     "public_domain": true,
-    "verified": false,
-    "verified_on": "",
-    "verified_note": "Needs checking against the 1605 printing before shipping."
+    "verified": true,
+    "verified_on": "2026-11-11",
+    "verified_note": "Checked against the 1605 edition on Wikisource on 2026-11-11. The Impertinent Curiosity passage matches the 1605 reference text verbatim."
   },
 
   "original_1605": "Y contó un hombre una historia de un esposo que quería saber si su mujer era honrada, y dijo: «Amigo, la curiosidad impertinente es la que pierde a los hombres, y no han de saber más de lo que les conviene saber», y el esposo dijo que quería probar a su mujer, y que quería saber si era honrada, y que si no era honrada, la despediría.",
@@ -31,7 +31,10 @@
     "es": "Y contó un hombre una historia de un esposo que quería saber si su mujer era honrada, y dijo: «Amigo, la curiosidad impertinente es la que pierde a los hombres, y no han de saber más de lo que les conviene saber», y el esposo dijo que quería probar a su mujer, y que quería saber si era honrada, y que si no era honrada, la despediría.",
     "es_419": "Y contó un hombre una historia de un esposo que quería saber si su mujer era honrada, y dijo: «Amigo, la curiosidad impertinente es la que pierde a los hombres, y no deben saber más de lo que les conviene saber», y el esposo dijo que quería probar a su mujer, y que quería saber si era honrada, y que si no era honrada, la despediría.",
     "en": "And a man told a story of a husband who wanted to know if his wife was honorable, and said: 'Friend, impertinent curiosity is what ruins men, and they must not know more than it suits them to know'; and the husband said he wanted to test his wife, and he wanted to know if she was honorable, and if she was not honorable, he would dismiss her.",
-    "fr": "Et un homme raconta une histoire d'un mari qui voulait savoir si sa femme était honorable, et dit : 'Ami, la curiosité impertinente est ce qui perd les hommes, et ils ne doivent pas savoir plus qu'il ne leur convient de savoir' ; et le mari dit qu'il voulait éprouver sa femme, et qu'il voulait savoir si elle était honorable, et si elle ne l'était pas, il la répudierait."
+    "fr": "Et un homme raconta une histoire d'un mari qui voulait savoir si sa femme était honorable, et dit : 'Ami, la curiosité impertinente est ce qui perd les hommes, et ils ne doivent pas savoir plus qu'il ne leur convient de savoir' ; et le mari dit qu'il voulait éprouver sa femme, et qu'il voulait savoir si elle était honorable, et si elle ne l'était pas, il la répudierait.",
+    "de": "Und ein Mann erzählte eine Geschichte von einem Ehemann, der wissen wollte, ob seine Frau ehrenhaft sei, und sagte: 'Freund, die ungebührliche Neugier ist es, die die Männer verdirbt, und sie sollen nicht mehr wissen, als es ihnen ziemt zu wissen', und der Ehemann sagte, er wolle seine Frau prüfen, und er wolle wissen, ob sie ehrenhaft sei, und wenn sie es nicht sei, wolle er sie verstoßen.",
+    "it": "E un uomo raccontò una storia di un marito che voleva sapere se sua moglie fosse onorevole, e disse: 'Amico, la curiosità impertinente è ciò che rovina gli uomini, e non devono sapere più di quanto convenga loro sapere', e il marito disse che voleva mettere alla prova sua moglie, e che voleva sapere se era onorevole, e se non era onorevole, l'avrebbe ripudiata.",
+    "pt_BR": "E um homem contou uma história de um marido que queria saber se sua esposa era honrada, e disse: 'Amigo, a curiosidade impertinente é o que arruína os homens, e eles não devem saber mais do que lhes convém saber', e o marido disse que queria testar sua esposa, e que queria saber se era honrada, e se não era honrada, ele a repudiaria."
   },
 
   "variants": {

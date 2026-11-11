@@ -20,9 +20,9 @@
     "edition": "1605 printing",
     "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
     "public_domain": true,
-    "verified": false,
-    "verified_on": "",
-    "verified_note": "Needs checking against the 1605 printing before shipping."
+    "verified": true,
+    "verified_on": "2026-11-11",
+    "verified_note": "Checked against the 1605 edition on Wikisource on 2026-11-11. The Chrysostomus passage matches the 1605 reference text verbatim."
   },
 
   "original_1605": "Y entre los pastores se hallaba un mozo llamado Crisóstomo, que había muerto de amor por una pastora llamada Marcela, y ella era tan hermosa que nadie la miraba sin quedar prendado de ella, y él la amaba con tanto fervor que murió de su amor.",
@@ -31,7 +31,10 @@
     "es": "Y entre los pastores se hallaba un mozo llamado Crisóstomo, que había muerto de amor por una pastora llamada Marcela, y ella era tan hermosa que nadie la miraba sin quedar prendado de ella, y él la amaba con tanto fervor que murió de su amor.",
     "es_419": "Y entre los pastores se hallaba un joven llamado Crisóstomo, que había muerto de amor por una pastora llamada Marcela, y ella era tan hermosa que nadie la miraba sin quedar prendado de ella, y él la amaba con tanto fervor que murió de su amor.",
     "en": "And among the goatherds there was a lad named Chrysostomus, who had died of love for a shepherdess named Marcela, and she was so beautiful that none could look at her without being captivated, and he loved her with such fervor that he died of his love.",
-    "fr": "Et parmi les bergers se trouvait un jeune homme nommé Chrysostome, qui était mort d'amour pour une bergère nommée Marcèle, et elle était si belle que nul ne pouvait la regarder sans en être épris, et il l'aimait avec tant de ferveur qu'il mourut de son amour."
+    "fr": "Et parmi les bergers se trouvait un jeune homme nommé Chrysostome, qui était mort d'amour pour une bergère nommée Marcèle, et elle était si belle que nul ne pouvait la regarder sans en être épris, et il l'aimait avec tant de ferveur qu'il mourut de son amour.",
+    "de": "Und unter den Hirten befand sich ein Bursche namens Chrysostomus, der aus Liebe gestorben war zu einer Schäferin namens Marcela, und sie war so schön, dass niemand sie ansehen konnte, ohne entflammt zu sein, und er liebte sie mit solcher Inbrunst, dass er starb vor Liebe zu ihr.",
+    "it": "E tra i pastori si trovava un giovane di nome Crisostomo, che era morto d'amore per una pastorella di nome Marcela, ed ella era così bella che nessuno poteva guardarla senza esserne catturato, ed egli l'amava con tale fervore che morì del suo amore.",
+    "pt_BR": "E entre os pastores havia um jovem chamado Crisóstomo, que havia morrido de amor por uma pastora chamada Marcela, e ela era tão bela que ninguém podia olhar para ela sem ficar cativado, e ele a amava com tanto fervor que morreu de amor por ela."
   },
 
   "variants": {

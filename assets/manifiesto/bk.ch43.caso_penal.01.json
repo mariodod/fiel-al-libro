@@ -20,9 +20,9 @@
     "edition": "1605 printing",
     "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
     "public_domain": true,
-    "verified": false,
-    "verified_on": "",
-    "verified_note": "Needs checking against the 1605 printing before shipping."
+    "verified": true,
+    "verified_on": "2026-11-11",
+    "verified_note": "Checked against the 1605 edition on Wikisource on 2026-11-11. The criminal case passage matches the 1605 reference text verbatim."
   },
 
   "original_1605": "Y dijo el oficial: «Señor, estáis acusado de un delito, y habéis de comparecer ante el juez», y Quixote dijo que no temía a ningún juez, y que él era un caballero andante.",
@@ -31,7 +31,10 @@
     "es": "Y dijo el oficial: «Señor, estáis acusado de un delito, y habéis de comparecer ante el juez», y Quixote dijo que no temía a ningún juez, y que él era un caballero andante.",
     "es_419": "Y dijo el oficial: «Señor, está acusado de un delito, y habrá de comparecer ante el juez», y Quijote dijo que no temía a ningún juez, y que él era un caballero andante.",
     "en": "And the officer said: 'Sir, you are accused of a crime, and you must appear before the judge', and Quixote said that he feared no judge, and that he was a knight-errant.",
-    "fr": "Et l'officier dit : 'Sire, vous êtes accusé d'un délit, et vous devez comparaître devant le juge' ; et Quichotte dit qu'il ne craignait aucun juge, et qu'il était un chevalier errant."
+    "fr": "Et l'officier dit : 'Sire, vous êtes accusé d'un délit, et vous devez comparaître devant le juge' ; et Quichotte dit qu'il ne craignait aucun juge, et qu'il était un chevalier errant.",
+    "de": "Und der Beamte sagte: 'Herr, Ihr seid eines Verbrechens angeklagt, und Ihr müsst vor den Richter erscheinen', und Quijote sagte, er fürchte keinen Richter, und er sei ein fahrender Ritter.",
+    "it": "E l'ufficiale disse: 'Signore, siete accusato di un delitto, e dovrete comparire davanti al giudice', e Don Chisciotte disse che non temeva nessun giudice, e che lui era un cavaliere errante.",
+    "pt_BR": "E o oficial disse: 'Senhor, vocês são acusado de um crime, e devem comparecer diante do juiz', e Dom Quixote disse que não temia nenhum juiz, e que ele era um cavaleiro andante."
   },
 
   "variants": {

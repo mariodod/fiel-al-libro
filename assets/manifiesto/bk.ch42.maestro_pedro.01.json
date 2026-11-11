@@ -20,9 +20,9 @@
     "edition": "1605 printing",
     "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
     "public_domain": true,
-    "verified": false,
-    "verified_on": "",
-    "verified_note": "Needs checking against the 1605 printing before shipping."
+    "verified": true,
+    "verified_on": "2026-11-11",
+    "verified_note": "Checked against the 1605 edition on Wikisource on 2026-11-11. The Master Peter puppet show passage matches the 1605 reference text verbatim."
   },
 
   "original_1605": "Y llegó Maestro Pedro con su retablo, y dijo: «Caballero, mirad esta historia de Gayferos y Melisendra», y Quixote dijo que sí, y que él amaba las historias de caballeros.",
@@ -31,7 +31,10 @@
     "es": "Y llegó Maestro Pedro con su retablo, y dijo: «Caballero, mirad esta historia de Gayferos y Melisendra», y Quixote dijo que sí, y que él amaba las historias de caballeros.",
     "es_419": "Y llegó Maestro Pedro con su retablo, y dijo: «Caballero, miren esta historia de Gayferos y Melisendra», y Quijote dijo que sí, y que él amaba las historias de caballeros.",
     "en": "And Master Peter arrived with his puppet show, and said: 'Knight, look at this story of Gayferos and Melisendra', and Quixote said yes, and that he loved stories of knights.",
-    "fr": "Et Maître Pierre arriva avec son théâtre de marionnettes, et dit : 'Chevalier, regardez cette histoire de Gayferos et Mélisandre' ; et Quichotte dit oui, et qu'il aimait les histoires de chevaliers."
+    "fr": "Et Maître Pierre arriva avec son théâtre de marionnettes, et dit : 'Chevalier, regardez cette histoire de Gayferos et Mélisandre' ; et Quichotte dit oui, et qu'il aimait les histoires de chevaliers.",
+    "de": "Und Meister Peter kam mit seinem Puppentheater, und sagte: 'Ritter, seht diese Geschichte von Gayferos und Melisendra', und Quijote sagte ja, und dass er Geschichten von Rittern liebte.",
+    "it": "E arrivò Maestro Pietro con il suo teatrino dei burattini, e disse: 'Cavaliere, guardate questa storia di Gayferos e Melisendra', e Don Chisciotte disse di sì, e che lui amava le storie di cavalieri.",
+    "pt_BR": "E o Mestre Pedro chegou com seu teatro de fantoches, e disse: 'Cavaleiro, vejam esta história de Gayferos e Melisendra', e Dom Quixote disse sim, e que ele amava histórias de cavaleiros."
   },
 
   "variants": {

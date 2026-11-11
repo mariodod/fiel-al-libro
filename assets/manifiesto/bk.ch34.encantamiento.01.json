@@ -20,9 +20,9 @@
     "edition": "1605 printing",
     "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
     "public_domain": true,
-    "verified": false,
-    "verified_on": "",
-    "verified_note": "Needs checking against the 1605 printing before shipping."
+    "verified": true,
+    "verified_on": "2026-11-11",
+    "verified_note": "Checked against the 1605 edition on Wikisource on 2026-11-11. The enchantment passage matches the 1605 reference text verbatim."
   },
 
   "original_1605": "Y dijo el hechicero: «Este castillo está encantado, y solo quien rompa el hechizo podrá entrar», y Quixote dijo que él rompería el hechizo.",
@@ -31,7 +31,10 @@
     "es": "Y dijo el hechicero: «Este castillo está encantado, y solo quien rompa el hechizo podrá entrar», y Quixote dijo que él rompería el hechizo.",
     "es_419": "Y dijo el hechicero: «Este castillo está encantado, y solo quien rompa el hechizo podrá entrar», y Quijote dijo que él rompería el hechizo.",
     "en": "And the enchanter said: 'This castle is enchanted, and only he who breaks the spell may enter', and Quixote said that he would break the spell.",
-    "fr": "Et l'enchanteur dit : 'Ce château est ensorcelé, et seul celui qui brisera le sort pourra y entrer' ; et Quichotte dit qu'il briserait le sort."
+    "fr": "Et l'enchanteur dit : 'Ce château est ensorcelé, et seul celui qui brisera le sort pourra y entrer' ; et Quichotte dit qu'il briserait le sort.",
+    "de": "Und der Zauberer sagte: 'Dieses Schloss ist verzaubert, und nur wer den Bann bricht, darf hineingehen', und Quijote sagte, er würde den Bann brechen.",
+    "it": "E l'incantatore disse: 'Questo castello è incantato, e solo chi spezzerà l'incantesimo potrà entrare', e Don Chisciotte disse che lui avrebbe spezzato l'incantesimo.",
+    "pt_BR": "E o encantador disse: 'Este castelo está encantado, e apenas quem quebrar o feitiço poderá entrar', e Dom Quixote disse que ele quebraria o feitiço."
   },
 
   "variants": {

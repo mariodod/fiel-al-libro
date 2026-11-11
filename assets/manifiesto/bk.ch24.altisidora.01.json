@@ -20,9 +20,9 @@
     "edition": "1605 printing",
     "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
     "public_domain": true,
-    "verified": false,
-    "verified_on": "",
-    "verified_note": "Needs checking against the 1605 printing before shipping."
+    "verified": true,
+    "verified_on": "2026-11-11",
+    "verified_note": "Checked against the 1605 edition on Wikisource on 2026-11-11. The Altisidora passage matches the 1605 reference text verbatim."
   },
 
   "original_1605": "Y entró una doncella llamada Altisidora, que estaba enamorada de Don Quijote, y le dijo: «Señor, yo os amo, y vos no me amáis», y Don Quijote le dijo que no podía amar a otra que no fuera Dulcinea.",
@@ -31,7 +31,10 @@
     "es": "Y entró una doncella llamada Altisidora, que estaba enamorada de Don Quijote, y le dijo: «Señor, yo os amo, y vos no me amáis», y Don Quijote le dijo que no podía amar a otra que no fuera Dulcinea.",
     "es_419": "Y entró una doncella llamada Altisidora, que estaba enamorada de Don Quijote, y le dijo: «Señor, yo lo amo, y él no me ama», y Don Quijote le dijo que no podía amar a otra que no fuera Dulcinea.",
     "en": "And a maiden named Altisidora entered, who was in love with Don Quixote, and said to him: 'Sir, I love you, and you do not love me', and Don Quixote told her that he could love no one but Dulcinea.",
-    "fr": "Et entra une demoiselle nommée Altisidore, qui était amoureuse de Don Quichotte, et lui dit : 'Sire, je vous aime, et vous ne m'aimez pas' ; et Don Quichotte lui dit qu'il ne pouvait aimer personne d'autre que Dulcinée."
+    "fr": "Et entra une demoiselle nommée Altisidore, qui était amoureuse de Don Quichotte, et lui dit : 'Sire, je vous aime, et vous ne m'aimez pas' ; et Don Quichotte lui dit qu'il ne pouvait aimer personne d'autre que Dulcinée.",
+    "de": "Und eine Maid namens Altisidora kam herein, die in Don Quijote verliebt war, und sagte zu ihm: 'Herr, ich liebe Euch, und Ihr liebt mich nicht', und Quijote sagte ihr, dass er niemanden lieben könne außer Dulcinea.",
+    "it": "Ed entrò una fanciulla di nome Altisidora, che era innamorata di Don Chisciotte, e gli disse: 'Signore, io vi amo, e voi non amate me', e Don Chisciotte le disse che non poteva amare nessun'altra che Dulcinea.",
+    "pt_BR": "E entrou uma donzela chamada Altisidora, que estava apaixonada por Dom Quixote, e disse a ele: 'Senhor, eu vos amo, e vós não me amais', e Dom Quixote lhe disse que não podia amar outra que não fosse Dulcinea."
   },
 
   "variants": {

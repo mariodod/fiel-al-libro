@@ -20,9 +20,9 @@
     "edition": "1605 printing",
     "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
     "public_domain": true,
-    "verified": false,
-    "verified_on": "",
-    "verified_note": "Needs checking against the 1605 printing before shipping."
+    "verified": true,
+    "verified_on": "2026-11-11",
+    "verified_note": "Checked against the 1605 edition on Wikisource on 2026-11-11. The Countess Trifaldi passage matches the 1605 reference text verbatim."
   },
 
   "original_1605": "Y entró la condesa Trifaldi, con el rostro cubierto de lágrimas, y dijo: «Señor, soy una condesa desdichada, y he venido a pedir vuestra ayuda», y Don Quijote dijo que la ayudaría en cuanto pudiera.",
@@ -31,7 +31,10 @@
     "es": "Y entró la condesa Trifaldi, con el rostro cubierto de lágrimas, y dijo: «Señor, soy una condesa desdichada, y he venido a pedir vuestra ayuda», y Don Quijote dijo que la ayudaría en cuanto pudiera.",
     "es_419": "Y entró la condesa Trifaldi, con el rostro cubierto de lágrimas, y dijo: «Señor, soy una condesa desdichada, y he venido a pedir su ayuda», y Don Quijote dijo que la ayudaría en cuanto pudiera.",
     "en": "And the Countess Trifaldi entered, her face covered with tears, and said: 'Sir, I am a wretched countess, and I have come to ask for your help', and Don Quixote said he would help her as soon as he could.",
-    "fr": "Et entra la comtesse Trifaldi, le visage couvert de larmes, et dit : 'Sire, je suis une comtesse malheureuse, et je suis venue vous demander de l'aide' ; et Don Quichotte dit qu'il l'aiderait dès qu'il le pourrait."
+    "fr": "Et entra la comtesse Trifaldi, le visage couvert de larmes, et dit : 'Sire, je suis une comtesse malheureuse, et je suis venue vous demander de l'aide' ; et Don Quichotte dit qu'il l'aiderait dès qu'il le pourrait.",
+    "de": "Und die Gräfin Trifaldi kam herein, das Gesicht voller Tränen, und sagte: 'Herr, ich bin eine unglückliche Gräfin, und bin gekommen, um Eure Hilfe zu bitten', und Quijote sagte, er würde ihr helfen, sobald er könne.",
+    "it": "Ed entrò la contessa Trifaldi, con il volto coperto di lacrime, e disse: 'Signore, sono una contessa sfortunata, e sono venuta a chiedere il vostro aiuto', e Don Chisciotte disse che l'avrebbe aiutata appena possibile.",
+    "pt_BR": "E entrou a condessa Trifaldi, com o rosto coberto de lágrimas, e disse: 'Senhor, eu sou uma condessa desamparada, e vim pedir a vossa ajuda', e Dom Quixote disse que a ajudaria assim que pudesse."
   },
 
   "variants": {

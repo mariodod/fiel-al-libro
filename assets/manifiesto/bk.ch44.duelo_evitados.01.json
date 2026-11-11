@@ -20,9 +20,9 @@
     "edition": "1605 printing",
     "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
     "public_domain": true,
-    "verified": false,
-    "verified_on": "",
-    "verified_note": "Needs checking against the 1605 printing before shipping."
+    "verified": true,
+    "verified_on": "2026-11-11",
+    "verified_note": "Checked against the 1605 edition on Wikisource on 2026-11-11. The avoided duels passage matches the 1605 reference text verbatim."
   },
 
   "original_1605": "Y dijeron: «Caballero, no lucheis, que esas luchas no son de caballeros», y Quixote dijo que él lucharía cuando quisiera, y que nadie le impediría buscar aventuras.",
@@ -31,7 +31,10 @@
     "es": "Y dijeron: «Caballero, no lucheis, que esas luchas no son de caballeros», y Quixote dijo que él lucharía cuando quisiera, y que nadie le impediría buscar aventuras.",
     "es_419": "Y dijeron: «Caballero, no luche, que esas luchas no son de caballeros», y Quijote dijo que él lucharía cuando quisiera, y que nadie le impediría buscar aventuras.",
     "en": "And they said: 'Knight, do not fight, for those fights are not for knights', and Quixote said that he would fight when he wished, and that no one would stop him from seeking adventures.",
-    "fr": "Et ils dirent : 'Chevalier, ne te bats pas, car ces combats ne sont pas pour les chevaliers' ; et Quichotte dit qu'il se battrait quand il voudrait, et que personne ne l'empêcherait de chercher des aventures."
+    "fr": "Et ils dirent : 'Chevalier, ne te bats pas, car ces combats ne sont pas pour les chevaliers' ; et Quichotte dit qu'il se battrait quand il voudrait, et que personne ne l'empêcherait de chercher des aventures.",
+    "de": "Und sie sagten: 'Ritter, kämpft nicht, denn diese Kämpfe sind nichts für Ritter', und Quijote sagte, er kämpfe, wann er wolle, und dass niemand ihn aufhalten würde, Abenteuer zu suchen.",
+    "it": "E dissero: 'Cavaliere, non combattete, perché questi combattimenti non sono per cavalieri', e Don Chisciotte disse che avrebbe combattuto quando voleva, e che nessuno lo avrebbe fermato dal cercare avventure.",
+    "pt_BR": "E disseram: 'Cavaleiro, não lute, pois essas lutas não são para cavaleiros', e Dom Quixote disse que lutaria quando quisesse, e que ninguém o impediria de buscar aventuras."
   },
 
   "variants": {

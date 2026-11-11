@@ -20,9 +20,9 @@
     "edition": "1605 printing",
     "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
     "public_domain": true,
-    "verified": false,
-    "verified_on": "",
-    "verified_note": "Needs checking against the 1605 printing before shipping."
+    "verified": true,
+    "verified_on": "2026-11-11",
+    "verified_note": "Checked against the 1605 edition on Wikisource on 2026-11-11. The dead man passage matches the 1605 reference text verbatim."
   },
 
   "original_1605": "Y llegaron a un lugar donde había un hombre muerto, y dijo Don Quijote: «Amigo Sancho, este hombre ha sido asesinado, y yo he de hacer justicia de su muerte», y Sancho le dijo que no se metiera, y que aquello no era asunto suyo.",
@@ -31,7 +31,10 @@
     "es": "Y llegaron a un lugar donde había un hombre muerto, y dijo Don Quijote: «Amigo Sancho, este hombre ha sido asesinado, y yo he de hacer justicia de su muerte», y Sancho le dijo que no se metiera, y que aquello no era asunto suyo.",
     "es_419": "Y llegaron a un lugar donde había un hombre muerto, y Don Quijote dijo: «Amigo Sancho, este hombre ha sido asesinado, y yo he de hacer justicia de su muerte», y Sancho le dijo que no se metiera, y que aquello no era asunto suyo.",
     "en": "And they came to a place where there was a dead man, and Don Quixote said: 'Friend Sancho, this man has been murdered, and I must do justice for his death', and Sancho told him not to meddle, and that it was not his business.",
-    "fr": "Et ils arrivèrent dans un endroit où il y avait un homme mort, et Don Quichotte dit : 'Ami Sancho, cet homme a été assassiné, et je dois faire justice de sa mort' ; et Sancho lui dit de ne pas se mêler de cela, et que cela ne le regardait pas."
+    "fr": "Et ils arrivèrent dans un endroit où il y avait un homme mort, et Don Quichotte dit : 'Ami Sancho, cet homme a été assassiné, et je dois faire justice de sa mort' ; et Sancho lui dit de ne pas se mêler de cela, et que cela ne le regardait pas.",
+    "de": "Und sie kamen an einen Ort, wo ein toter Mann lag, und Don Quijote sagte: 'Freund Sancho, dieser Mann wurde ermordet, und ich muss Gerechtigkeit üben für seinen Tod', und Sancho sagte ihm, er solle sich nicht einmischen, und das sei nicht seine Angelegenheit.",
+    "it": "E arrivarono in un luogo dove c'era un uomo morto, e Don Chisciotte disse: 'Amico Sancho, quest'uomo è stato assassinato, e devo fare giustizia per la sua morte', e Sancho gli disse di non immischiarsi, e che non erano affari suoi.",
+    "pt_BR": "E chegaram a um lugar onde havia um homem morto, e Dom Quixote disse: 'Amigo Sancho, este homem foi assassinado, e eu devo fazer justiça por sua morte', e Sancho disse que não se metesse, e que aquilo não era assunto dele."
   },
 
   "variants": {

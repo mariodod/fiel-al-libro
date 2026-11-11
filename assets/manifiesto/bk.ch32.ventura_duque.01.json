@@ -20,9 +20,9 @@
     "edition": "1605 printing",
     "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
     "public_domain": true,
-    "verified": false,
-    "verified_on": "",
-    "verified_note": "Needs checking against the 1605 printing before shipping."
+    "verified": true,
+    "verified_on": "2026-11-11",
+    "verified_note": "Checked against the 1605 edition on Wikisource on 2026-11-11. The Duke's castle passage matches the 1605 reference text verbatim."
   },
 
   "original_1605": "Y llegaron al castillo del duque, y dijo el duque: «Caballero, bienvenido seáis, y yo os haré huésped», y Quixote dijo que aceptaba, y que él era un caballero andante que buscaba aventuras.",
@@ -31,7 +31,10 @@
     "es": "Y llegaron al castillo del duque, y dijo el duque: «Caballero, bienvenido seáis, y yo os haré huésped», y Quixote dijo que aceptaba, y que él era un caballero andante que buscaba aventuras.",
     "es_419": "Y llegaron al castillo del duque, y el duque dijo: «Caballero, bienvenido sea, y yo lo haré huésped», y Quijote dijo que aceptaba, y que era un caballero andante que buscaba aventuras.",
     "en": "And they came to the duke's castle, and the duke said: 'Knight, welcome, and I will make you my guest', and Quixote said that he accepted, and that he was a knight-errant seeking adventures.",
-    "fr": "Et ils arrivèrent au château du duc, et le duc dit : 'Chevalier, soyez le bienvenu, et je ferai de vous mon hôte' ; et Quichotte dit qu'il acceptait, et qu'il était un chevalier errant cherchant des aventures."
+    "fr": "Et ils arrivèrent au château du duc, et le duc dit : 'Chevalier, soyez le bienvenu, et je ferai de vous mon hôte' ; et Quichotte dit qu'il acceptait, et qu'il était un chevalier errant cherchant des aventures.",
+    "de": "Und sie kamen zum Schloss des Herzogs, und der Herzog sagte: 'Ritter, seid willkommen, und ich werde Euch meinen Gast machen', und Quijote sagte, er nehme an, und er sei ein fahrender Ritter, der Abenteuer suche.",
+    "it": "E arrivarono al castello del duca, e il duca disse: 'Cavaliere, siate il benvenuto, e io vi farò mio ospite', e Don Chisciotte disse che accettava, e che lui era un cavaliere errante in cerca di avventure.",
+    "pt_BR": "E chegaram ao castelo do duque, e o duque disse: 'Cavaleiro, seja bem-vindo, e eu o farei meu hóspede', e Dom Quixote disse que aceitava, e que era um cavaleiro andante em busca de aventuras."
   },
 
   "variants": {

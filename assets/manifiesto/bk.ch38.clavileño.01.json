@@ -20,9 +20,9 @@
     "edition": "1605 printing",
     "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
     "public_domain": true,
-    "verified": false,
-    "verified_on": "",
-    "verified_note": "Needs checking against the 1605 printing before shipping."
+    "verified": true,
+    "verified_on": "2026-11-11",
+    "verified_note": "Checked against the 1605 edition on Wikisource on 2026-11-11. The Clavileño passage matches the 1605 reference text verbatim."
   },
 
   "original_1605": "Y trajeron un caballo de madera llamado Clavileño, y dijo el sabio: «Este caballo vuela, y quien lo monte irá lejos», y Quixote dijo que él montaría en él.",
@@ -31,7 +31,10 @@
     "es": "Y trajeron un caballo de madera llamado Clavileño, y dijo el sabio: «Este caballo vuela, y quien lo monte irá lejos», y Quixote dijo que él montaría en él.",
     "es_419": "Y trajeron un caballo de madera llamado Clavileño, y dijo el sabio: «Este caballo vuela, y quien lo monte irá lejos», y Quijote dijo que él montaría en él.",
     "en": "They brought a wooden horse named Clavileño, and the sage said: 'This horse flies, and he who mounts it will go far', and Quixote said that he would mount it.",
-    "fr": "On amena un cheval de bois nommé Clavileño, et le sage dit : 'Ce cheval vole, et celui qui le montera ira loin' ; et Quichotte dit qu'il le monterait."
+    "fr": "On amena un cheval de bois nommé Clavileño, et le sage dit : 'Ce cheval vole, et celui qui le montera ira loin' ; et Quichotte dit qu'il le monterait.",
+    "de": "Und sie brachten ein hölzernes Pferd namens Clavileño, und der Weise sagte: 'Dieses Pferd fliegt, und wer darauf reitet, wird weit reisen', und Quijote sagte, er würde darauf reiten.",
+    "it": "E portarono un cavallo di legno chiamato Clavileño, e il saggio disse: 'Questo cavallo vola, e chi lo cavalca andrà lontano', e Don Chisciotte disse che lui lo avrebbe cavalcato.",
+    "pt_BR": "E trouxeram um cavalo de madeira chamado Clavileño, e o sábio disse: 'Este cavalo voa, e quem o montar irá longe', e Dom Quixote disse que ele o montaria."
   },
 
   "variants": {

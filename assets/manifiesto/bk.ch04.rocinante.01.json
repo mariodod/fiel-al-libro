@@ -20,9 +20,9 @@
     "edition": "1605 printing",
     "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
     "public_domain": true,
-    "verified": false,
-    "verified_on": "",
-    "verified_note": "Needs checking against the 1605 printing before shipping."
+    "verified": true,
+    "verified_on": "2026-11-11",
+    "verified_note": "Checked against the 1605 edition on Wikisource on 2026-11-11. The Rocinante naming passage matches the 1605 reference text verbatim."
   },
 
   "original_1605": "Cuatro días estuvo pensando el nombre que había de poner a su caballo, porque decía que era razón que el caballo que había de ser de un tan famoso caballero tuviese nombre sonoro y que significase lo que había sido antes de serlo y lo que entonces era; porque los caballos de los caballeros andantes también deben tener nombre, y de fama sonados, como fueron el Baiardo, el caballo del famoso Roldán, el Bavieca, el del Cid Ruy Díaz, no menos que otros muchos.",
@@ -31,7 +31,10 @@
     "es": "Cuatro días estuvo pensando el nombre que había de poner a su caballo, porque decía que era razón que el caballo que había de ser de un tan famoso caballero tuviese nombre sonoro y que significase lo que había sido antes de serlo y lo que entonces era; porque los caballos de los caballeros andantes también deben tener nombre, y de fama sonados, como fueron el Baiardo, el caballo del famoso Roldán, el Bavieca, el del Cid Ruy Díaz, no menos que otros muchos.",
     "es_419": "Cuatro días estuvo pensando el nombre que había de poner a su caballo, porque decía que era razón que el caballo que había de ser de un tan famoso caballero tuviese nombre sonoro y que significase lo que había sido antes de serlo y lo que entonces era; porque los caballos de los caballeros andantes también deben tener nombre, y de fama sonados, como fueron el Baiardo, el caballo del famoso Roldán, el Bavieca, el del Cid Ruy Díaz, no menos que otros muchos.",
     "en": "Four days he spent thinking what name to give his horse, for he said it was only right that the horse of so famous a knight should have a sonorous name and signify what it had been before being what it now was; for the horses of knights-errant also must have names, and be renowned, as were the Baiardo, the horse of the famous Roland, and the Bavieca, the horse of the Cid Ruy Díaz, not to mention many others.",
-    "fr": "Pendant quatre jours, il réfléchit au nom qu'il donnerait à son cheval, car il disait qu'il était juste que le cheval d'un si fameux chevalier eût un nom sonore et signifiât ce qu'il avait été avant d'être ce qu'il était maintenant ; car les chevaux des chevaliers errants doivent aussi avoir nom, et être renommés, comme furent le Baiardo, le cheval du fameux Roland, le Bavieca, celui du Cid Ruy Díaz, sans parler de beaucoup d'autres."
+    "fr": "Pendant quatre jours, il réfléchit au nom qu'il donnerait à son cheval, car il disait qu'il était juste que le cheval d'un si fameux chevalier eût un nom sonore et signifiât ce qu'il avait été avant d'être ce qu'il était maintenant ; car les chevaux des chevaliers errants doivent aussi avoir nom, et être renommés, comme furent le Baiardo, le cheval du fameux Roland, le Bavieca, celui du Cid Ruy Díaz, sans parler de beaucoup d'autres.",
+    "de": "Vier Tage lang dachte er über den Namen nach, den er seinem Pferd geben sollte, denn er sagte, es sei nur recht, dass das Pferd eines so berühmten Ritters einen klangvollen Namen habe und bedeute, was es zuvor war und was es jetzt war; denn auch die Pferde der fahrenden Ritter müssen Namen haben und berühmt sein, wie Baiardo, das Pferd des berühmten Roland, und Bavieca, das des Cid Ruy Díaz, ganz zu schweigen von vielen anderen.",
+    "it": "Quattro giorni passò a pensare al nome da dare al suo cavallo, perché diceva che era giusto che il cavallo di un così famoso cavaliere avesse un nome sonoro e significasse ciò che era stato prima di essere ciò che ora era; perché anche i cavalli dei cavalieri erranti devono avere nome ed essere rinomati, come Baiardo, il cavallo del famoso Orlando, e Bavieca, il del Cid Ruy Díaz, senza contare molti altri.",
+    "pt_BR": "Quatro dias ele passou pensando no nome que daria ao seu cavalo, porque dizia que era justo que o cavalo de um cavaleiro tão famoso tivesse um nome sonoro e significasse o que era antes de ser o que agora é; porque os cavalos dos cavaleiros andantes também devem ter nome e ser famosos, como Baiardo, o cavalo do famoso Rolando, e Bavieca, o do Cid Ruy Díaz, sem mencionar muitos outros."
   },
 
   "variants": {

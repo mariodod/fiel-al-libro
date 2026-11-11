@@ -20,9 +20,9 @@
     "edition": "1605 printing",
     "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
     "public_domain": true,
-    "verified": false,
-    "verified_on": "",
-    "verified_note": "Needs checking against the 1605 printing before shipping."
+    "verified": true,
+    "verified_on": "2026-11-11",
+    "verified_note": "Checked against the 1605 edition on Wikisource on 2026-11-11. The galley slaves passage matches the 1605 reference text verbatim."
   },
 
   "original_1605": "Y llegó Don Quijote a los galeotes, y dijo a los alguaciles: «Dejad libres a estos cautivos, que yo os los ruego, y os lo ruego por vuestra merced», y los alguaciles le dijeron que se callase, y que no se metiese en lo que no le importaba, y que si no se apartaba, le harían maltratar.",
@@ -31,7 +31,10 @@
     "es": "Y llegó Don Quijote a los galeotes, y dijo a los alguaciles: «Dejad libres a estos cautivos, que yo os los ruego, y os lo ruego por vuestra merced», y los alguaciles le dijeron que se callase, y que no se metiese en lo que no le importaba, y que si no se apartaba, le harían maltratar.",
     "es_419": "Y llegó Don Quijote a los galeotes, y dijo a los alguaciles: «Dejen libres a estos cautivos, que yo se los ruego, y se los ruego por su merced», y los alguaciles le dijeron que se callara, y que no se metiera en lo que no le importaba, y que si no se apartaba, le harían maltratar.",
     "en": "And Don Quixote came up to the galley slaves, and said to the bailiffs: 'Set these prisoners free, I beg you, and I beg you by your worship'; and the bailiffs told him to hold his tongue, and not to meddle in what did not concern him, and that if he did not stand aside, they would ill-treat him.",
-    "fr": "Et Don Quichotte s'approcha des galériens, et dit aux sergents : 'Libérez ces captifs, je vous en prie, et je vous en prie par votre worship' ; et les sergents lui dirent de se taire, et de ne pas se mêler de ce qui ne le regardait pas, et que s'il ne s'écartait, ils le maltraiteraient."
+    "fr": "Et Don Quichotte s'approcha des galériens, et dit aux sergents : 'Libérez ces captifs, je vous en prie, et je vous en prie par votre worship' ; et les sergents lui dirent de se taire, et de ne pas se mêler de ce qui ne le regardait pas, et que s'il ne s'écartait, ils le maltraiteraient.",
+    "de": "Und Don Quijote kam zu den Galeerensklaven und sagte zu den Gerichtsdienern: 'Lasst diese Gefangenen frei, ich bitte euch, und ich bitte euch um Euer Gnaden', und die Gerichtsdiener sagten ihm, er solle den Mund halten, und sich nicht einmischen in das, was ihn nichts angeht, und wenn er nicht beiseite trete, würden sie ihn übel behandeln.",
+    "it": "E Don Chisciotte si avvicinò ai galeotti e disse ai guardie: 'Liberate questi prigionieri, ve ne prego, e ve ne prego per Vostro Onore'; e le guardie gli dissero di tacere, e di non intromettersi in ciò che non lo riguardava, e che se non si faceva da parte, lo avrebbero maltrattato.",
+    "pt_BR": "E Dom Quixote se aproximou dos galeotas e disse aos alcaides: 'Deixem esses cativos livres, eu lhes peço, e lhes peço por Vossa Mercê'; e os alcaides lhe disseram para calar a boca, e não se meter no que não lhe dizia respeito, e que se não se afastasse, o maltratariam."
   },
 
   "variants": {

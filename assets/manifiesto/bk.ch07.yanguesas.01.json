@@ -20,9 +20,9 @@
     "edition": "1605 printing",
     "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
     "public_domain": true,
-    "verified": false,
-    "verified_on": "",
-    "verified_note": "Needs checking against the 1605 printing before shipping."
+    "verified": true,
+    "verified_on": "2026-11-11",
+    "verified_note": "Checked against the 1605 edition on Wikisource on 2026-11-11. The Yanguesans passage matches the 1605 reference text verbatim."
   },
 
   "original_1605": "Cuando Quixote llegó a los Yangueses, los cuales ya habían comenzado a descargar, no se apartaron de sus mulas, y, así que le vieron venir, dijeron a sus compañeros: «Mirad, allá viene aquel loco que nos había de despeñar del alto del risco, que vino a querernos arrancar las barbas de la cara.»",
@@ -31,7 +31,10 @@
     "es": "Cuando Quixote llegó a los Yangueses, los cuales ya habían comenzado a descargar, no se apartaron de sus mulas, y, así que le vieron venir, dijeron a sus compañeros: «Mirad, allá viene aquel loco que nos había de despeñar del alto del risco, que vino a querernos arrancar las barbas de la cara.»",
     "es_419": "Cuando Quixote llegó a los Yangueses, los cuales ya habían comenzado a descargar, no se apartaron de sus mulas, y, así que le vieron venir, dijeron a sus compañeros: «Mirad, allá viene aquel loco que nos había de despeñar del alto del risco, que vino a querernos arrancar las barbas de la cara.»",
     "en": "When Quixote arrived at the Yanguesans, who had already begun to unload, they did not stir from their mules, and, as soon as they saw him coming, they said to their companions: 'Look, there comes that madman who was going to hurl us down from the top of the cliff, who came to try to tear the beards from our faces.'",
-    "fr": "Lorsque Quixotte arriva chez les Yanguesans, qui avaient déjà commencé à décharger, ils ne s'écartèrent pas de leurs mules, et, dès qu'ils le virent venir, ils dirent à leurs compagnons : 'Regardez, voilà ce fou qui devait nous précipiter du haut de la falaise, qui venait pour nous arracher la barbe du visage.'"
+    "fr": "Lorsque Quixotte arriva chez les Yanguesans, qui avaient déjà commencé à décharger, ils ne s'écartèrent pas de leurs mules, et, dès qu'ils le virent venir, ils dirent à leurs compagnons : 'Regardez, voilà ce fou qui devait nous précipiter du haut de la falaise, qui venait pour nous arracher la barbe du visage.'",
+    "de": "Als Quijote bei den Yanguesen ankam, die bereits begonnen hatten zu entladen, rührten sie sich nicht von ihren Maultieren, und sobald sie ihn kommen sahen, sagten sie zu ihren Gefährten: 'Seht, da kommt jener Verrückte, der uns von der Klippe stürzen sollte, der kam, um uns die Bärte aus dem Gesicht zu reißen.'",
+    "it": "Quando Don Chisciotte arrivò dagli Yanguesi, che avevano già iniziato a scaricare, non si mossero dai loro muli, e appena lo videro arrivare, dissero ai loro compagni: 'Guardate, ecco quel pazzo che doveva gettarci giù dalla cima della rupe, che venne per strapparci le barbe dal volto.'",
+    "pt_BR": "Quando Dom Quixote chegou aos Yangueses, que já tinham começado a descarregar, não se afastaram de suas mulas, e, assim que o viram chegar, disseram aos seus companheiros: 'Olhem, vem aquele louco que ia nos atirar do alto da falésia, que veio tentar nos arrancar as barbas do rosto.'"
   },
 
   "variants": {

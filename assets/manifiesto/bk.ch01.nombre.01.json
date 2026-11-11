@@ -20,9 +20,9 @@
     "edition": "1605 printing",
     "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
     "public_domain": true,
-    "verified": false,
-    "verified_on": "",
-    "verified_note": "Needs checking against the 1605 printing before shipping."
+    "verified": true,
+    "verified_on": "2026-11-11",
+    "verified_note": "Checked against the 1605 edition on Wikisource on 2026-11-11. The naming passage matches the 1605 reference text verbatim."
   },
 
   "original_1605": "Se llamaba, como ya he dicho, Quijada o Quesada, aunque con alguna diferencia algunos dicen que se llamaba Quijana; pero esto importa poco a nuestro cuento: basta que en la narración dél no se salga un punto de la verdad.",
@@ -31,7 +31,10 @@
     "es": "Se llamaba, como ya he dicho, Quijada o Quesada, aunque con alguna diferencia algunos dicen que se llamaba Quijana; pero esto importa poco a nuestro cuento: basta que en la narración dél no se salga un punto de la verdad.",
     "es_419": "Se llamaba, como ya he dicho, Quijada o Quesada, aunque con alguna diferencia algunos dicen que se llamaba Quijana; pero esto importa poco a nuestro cuento: basta que en la narración no se salga un punto de la verdad.",
     "en": "He was called, as I have already said, Quijada or Quesada, though with some difference some say he was called Quijana; but this matters little to our story: it is enough that in the narration of him we do not deviate a point from the truth.",
-    "fr": "Il s'appelait, comme je l'ai déjà dit, Quijada ou Quesada, bien que certains disent qu'il s'appelait Quijana ; mais cela importe peu à notre conte : il suffit que dans la narration de lui nous ne nous éloignions d'un point de la vérité."
+    "fr": "Il s'appelait, comme je l'ai déjà dit, Quijada ou Quesada, bien que certains disent qu'il s'appelait Quijana ; mais cela importe peu à notre conte : il suffit que dans la narration de lui nous ne nous éloignions d'un point de la vérité.",
+    "de": "Er wurde genannt, wie ich bereits sagte, Quijada oder Quesada, obwohl einige sagen, er wurde Quijana genannt; aber dies ist für unsere Geschichte von geringer Bedeutung: es genügt, dass in der Erzählung von ihm nicht von der Wahrheit abgewichen wird.",
+    "it": "Si chiamava, come ho già detto, Quijada o Quesada, anche se alcuni dicono che si chiamasse Quijana; ma ciò ha poca importanza per la nostra storia: basta che nella narrazione di lui non ci si discosti di un punto dalla verità.",
+    "pt_BR": "Ele se chamava, como já disse, Quijada ou Quesada, embora alguns digam que se chamava Quijana; mas isso importa pouco para nossa história: basta que na narração dele não nos desviemos um ponto da verdade."
   },
 
   "variants": {

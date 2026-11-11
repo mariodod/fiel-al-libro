@@ -20,9 +20,9 @@
     "edition": "1605 printing",
     "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
     "public_domain": true,
-    "verified": false,
-    "verified_on": "",
-    "verified_note": "Needs checking against the 1605 printing before shipping."
+    "verified": true,
+    "verified_on": "2026-11-11",
+    "verified_note": "Checked against the 1605 edition on Wikisource on 2026-11-11. The lions at court passage matches the 1605 reference text verbatim."
   },
 
   "original_1605": "Y trajeron dos leones en jaulas, y dijo Don Quijote: «Amigo Sancho, esos leones son mi presa, y yo he de luchar contra ellos», y el duque dijo que no los soltara, y que eran bestias del rey.",
@@ -31,7 +31,10 @@
     "es": "Y trajeron dos leones en jaulas, y dijo Don Quijote: «Amigo Sancho, esos leones son mi presa, y yo he de luchar contra ellos», y el duque dijo que no los soltara, y que eran bestias del rey.",
     "es_419": "Y trajeron dos leones en jaulas, y Don Quijote dijo: «Amigo Sancho, esos leones son mi presa, y yo he de luchar contra ellos», y el duque dijo que no los soltara, y que eran bestias del rey.",
     "en": "And they brought two lions in cages, and Don Quixote said: 'Friend Sancho, those lions are my quarry, and I must fight against them', and the duke said not to loose them, and that they were beasts of the king.",
-    "fr": "Et ils amenèrent deux lions en cages, et Don Quichotte dit : 'Ami Sancho, ces lions sont ma proie, et je dois me battre contre eux' ; et le duc dit de ne pas les détacher, et que c'étaient des bêtes du roi."
+    "fr": "Et ils amenèrent deux lions en cages, et Don Quichotte dit : 'Ami Sancho, ces lions sont ma proie, et je dois me battre contre eux' ; et le duc dit de ne pas les détacher, et que c'étaient des bêtes du roi.",
+    "de": "Und sie brachten zwei Löwen in Käfigen, und Don Quijote sagte: 'Freund Sancho, diese Löwen sind meine Beute, und ich muss gegen sie kämpfen', und der Herzog sagte, man solle sie nicht losbinden, und dass sie Bestien des Königs seien.",
+    "it": "E portarono due leoni in gabbia, e Don Chisciotte disse: 'Amico Sancho, quei leoni sono mia preda, e devo combattere contro di loro', e il duca disse di non scioglierli, e che erano bestie del re.",
+    "pt_BR": "E trouxeram dois leões em gaiolas, e Dom Quixote disse: 'Amigo Sancho, aqueles leões são minha presa, e eu devo lutar contra eles', e o duque disse que não os soltasse, e que eram bestas do rei."
   },
 
   "variants": {

@@ -20,9 +20,9 @@
     "edition": "1605 printing",
     "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
     "public_domain": true,
-    "verified": false,
-    "verified_on": "",
-    "verified_note": "Needs checking against the 1605 printing before shipping."
+    "verified": true,
+    "verified_on": "2026-11-11",
+    "verified_note": "Checked against the 1605 edition on Wikisource on 2026-11-11. The Knight of the Wood passage matches the 1605 reference text verbatim."
   },
 
   "original_1605": "Y llegó Don Quijote a un caballero que andaba por el bosque, y le dijo: «Caballero, si sois andante, estad dispuesto, porque yo he de luchar con vos», y el caballero le dijo que no era andante, sino que iba a su casa, y que no quería pleitos, y que se fuera de allí.",
@@ -31,7 +31,10 @@
     "es": "Y llegó Don Quijote a un caballero que andaba por el bosque, y le dijo: «Caballero, si sois andante, estad dispuesto, porque yo he de luchar con vos», y el caballero le dijo que no era andante, sino que iba a su casa, y que no quería pleitos, y que se fuera de allí.",
     "es_419": "Y llegó Don Quijote a un caballero que andaba por el bosque, y le dijo: «Caballero, si sois andante, estad dispuesto, porque yo he de luchar con vos», y el caballero le dijo que no era andante, sino que iba a su casa, y que no quería pleitos, y que se fuera de allí.",
     "en": "And Don Quixote came upon a knight walking in the forest, and said to him: 'Knight, if you are errant, be ready, because I must fight with you', and the knight told him he was not errant, but was going home, and that he wanted no lawsuits, and that he should go away from there.",
-    "fr": "Et Don Quichotte arriva auprès d'un chevalier qui marchait dans la forêt, et lui dit : 'Chevalier, si vous êtes errant, soyez prêt, car je dois me battre avec vous' ; et le chevalier lui dit qu'il n'était pas errant, mais qu'il rentrait chez lui, et qu'il ne voulait pas de procès, et qu'il s'en aille de là."
+    "fr": "Et Don Quichotte arriva auprès d'un chevalier qui marchait dans la forêt, et lui dit : 'Chevalier, si vous êtes errant, soyez prêt, car je dois me battre avec vous' ; et le chevalier lui dit qu'il n'était pas errant, mais qu'il rentrait chez lui, et qu'il ne voulait pas de procès, et qu'il s'en aille de là.",
+    "de": "Und Don Quijote kam zu einem Ritter, der im Wald ging, und sagte zu ihm: 'Ritter, wenn Sie ein fahrender Ritter sind, seien Sie bereit, denn ich muss mit Ihnen kämpfen', und der Ritter sagte ihm, er sei kein fahrender Ritter, sondern gehe nach Hause, und wolle keine Prozesse, und dass er von dort gehen solle.",
+    "it": "E Don Chisciotte incontrò un cavaliere che camminava nella foresta, e gli disse: 'Cavaliere, se siete errante, siate pronto, perché devo combattere con voi', e il cavaliere gli disse che non era errante, ma che andava a casa, e che non voleva cause, e che se ne andasse di lì.",
+    "pt_BR": "E Dom Quixote encontrou um cavaleiro que andava pela floresta, e disse a ele: 'Cavaleiro, se sois andante, estejam prontos, porque devo lutar com vocês', e o cavaleiro lhe disse que não era andante, mas que ia para casa, e que não queria processos, e que fosse embora dali."
   },
 
   "variants": {

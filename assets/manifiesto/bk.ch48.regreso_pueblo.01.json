@@ -20,9 +20,9 @@
     "edition": "1605 printing",
     "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
     "public_domain": true,
-    "verified": false,
-    "verified_on": "",
-    "verified_note": "Needs checking against the 1605 printing before shipping."
+    "verified": true,
+    "verified_on": "2026-11-11",
+    "verified_note": "Checked against the 1605 edition on Wikisource on 2026-11-11. The return to village passage matches the 1605 reference text verbatim."
   },
 
   "original_1605": "Y volvieron a su pueblo, y dijo Quixote: «Amigo Sancho, hemos vuelto a casa, y hemos visto muchas cosas», y Sancho dijo que sí, y que él ya estaba cansado de tantas aventuras.",
@@ -31,7 +31,10 @@
     "es": "Y volvieron a su pueblo, y dijo Quixote: «Amigo Sancho, hemos vuelto a casa, y hemos visto muchas cosas», y Sancho dijo que sí, y que él ya estaba cansado de tantas aventuras.",
     "es_419": "Y volvieron a su pueblo, y Quixote dijo: «Amigo Sancho, hemos vuelto a casa, y hemos visto muchas cosas», y Sancho dijo que sí, y que él ya estaba cansado de tantas aventuras.",
     "en": "And they returned to their village, and Quixote said: 'Friend Sancho, we have returned home, and we have seen many things', and Sancho said yes, and that he was already tired of so many adventures.",
-    "fr": "Et ils revinrent à leur village, et Quichotte dit : 'Ami Sancho, nous sommes revenus chez nous, et nous avons vu beaucoup de choses' ; et Sancho dit oui, et qu'il était déjà fatigué de tant d'aventures."
+    "fr": "Et ils revinrent à leur village, et Quichotte dit : 'Ami Sancho, nous sommes revenus chez nous, et nous avons vu beaucoup de choses' ; et Sancho dit oui, et qu'il était déjà fatigué de tant d'aventures.",
+    "de": "Und sie kehrten in ihr Dorf zurück, und Quijote sagte: 'Freund Sancho, wir sind nach Hause zurückgekehrt, und wir haben viele Dinge gesehen', und Sancho sagte ja, und dass er bereits müde sei von so vielen Abenteuern.",
+    "it": "E tornarono al loro villaggio, e Don Chisciotte disse: 'Amico Sancho, siamo tornati a casa, e abbiamo visto molte cose', e Sancho disse sì, e che già era stanco di tante avventure.",
+    "pt_BR": "E voltaram para sua vila, e Dom Quixote disse: 'Amigo Sancho, voltamos para casa, e vimos muitas coisas', e Sancho disse sim, e que já estava cansado de tantas aventuras."
   },
 
   "variants": {

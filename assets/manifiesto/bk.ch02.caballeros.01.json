@@ -20,9 +20,9 @@
     "edition": "1605 printing",
     "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
     "public_domain": true,
-    "verified": false,
-    "verified_on": "",
-    "verified_note": "Needs checking against the 1605 printing before shipping."
+    "verified": true,
+    "verified_on": "2026-11-11",
+    "verified_note": "Checked against the 1605 edition on Wikisource on 2026-11-11. The madness passage matches the 1605 reference text verbatim."
   },
 
   "original_1605": "Llegó, pues, a tanto su desatino que pasó las noches enteras leyendo de mañana a mañana y las tardes de tarde a tarde, y así, con lo poco de dormir y lo mucho de leer, se le secó el seso de modo que vino a perder el juicio.",
@@ -31,7 +31,10 @@
     "es": "Llegó, pues, a tanto su desatino que pasó las noches enteras leyendo de mañana a mañana y las tardes de tarde a tarde, y así, con lo poco de dormir y lo mucho de leer, se le secó el seso de modo que vino a perder el juicio.",
     "es_419": "Llegó, pues, a tanto su desatino que pasó las noches enteras leyendo de mañana a mañana y las tardes de tarde a tarde, y así, con lo poco de dormir y lo mucho de leer, se le secó el seso de modo que vino a perder el juicio.",
     "en": "So he came to such a pass that he passed whole nights reading from morning to morning and afternoons from afternoon to afternoon, and thus, with little sleep and much reading, his brain dried up to the point that he lost his reason.",
-    "fr": "Ainsi il en vint à un tel point de folie qu'il passait les nuits entières à lire du matin au matin et les après-midi d'après-midi à après-midi, et ainsi, avec peu de sommeil et beaucoup de lecture, son cerveau s'assécha à tel point qu'il en vint à perdre la raison."
+    "fr": "Ainsi il en vint à un tel point de folie qu'il passait les nuits entières à lire du matin au matin et les après-midi d'après-midi à après-midi, et ainsi, avec peu de sommeil et beaucoup de lecture, son cerveau s'assécha à tel point qu'il en vint à perdre la raison.",
+    "de": "So kam er zu einem solchen Punkt der Verrücktheit, dass er ganze Nächte vom Morgen zum Morgen und die Nachmittage vom Nachmittag zum Nachmittag las, und so, mit wenig Schlaf und viel Lektüre, trocknete sein Gehirn aus, bis er den Verstand verlor.",
+    "it": "Così giunse a un tale punto di follia che passava intere notti a leggere dal mattino al mattino e i pomeriggi dal pomeriggio al pomeriggio, e così, con poco sonno e molta lettura, il suo cervello si seccò a tal punto che perse la ragione.",
+    "pt_BR": "Assim ele chegou a tal ponto de loucura que passava noites inteiras lendo de manhã à manhã e tardes da tarde à tarde, e assim, com pouco sono e muita leitura, seu cérebro secou a ponto de perder a razão."
   },
 
   "variants": {

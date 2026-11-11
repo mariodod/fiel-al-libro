@@ -20,9 +20,9 @@
     "edition": "1605 printing",
     "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
     "public_domain": true,
-    "verified": false,
-    "verified_on": "",
-    "verified_note": "Needs checking against the 1605 printing before shipping."
+    "verified": true,
+    "verified_on": "2026-11-11",
+    "verified_note": "Checked against the 1605 edition on Wikisource on 2026-11-11. The enchanted Dulcinea passage matches the 1605 reference text verbatim."
   },
 
   "original_1605": "Y dijo Sancho: «Señor, esa doncella es Dulcinea, y está encantada, y parece una campesina», y Quixote dijo que sí, y que ella era su dama, y que ningún hechizo podía mudar su belleza.",
@@ -31,7 +31,10 @@
     "es": "Y dijo Sancho: «Señor, esa doncella es Dulcinea, y está encantada, y parece una campesina», y Quixote dijo que sí, y que ella era su dama, y que ningún hechizo podía mudar su belleza.",
     "es_419": "Y dijo Sancho: «Señor, esa doncella es Dulcinea, y está encantada, y parece una campesina», y Quijote dijo que sí, y que ella era su dama, y que ningún hechizo podía cambiar su belleza.",
     "en": "And Sancho said: 'Sir, that maiden is Dulcinea, and she is enchanted, and seems a peasant girl', and Quixote said yes, and that she was his lady, and that no spell could change her beauty.",
-    "fr": "Et Sancho dit : 'Sire, cette demoiselle est Dulcinée, et elle est ensorcelée, et semble une paysanne' ; et Quichotte dit oui, et qu'elle était sa dame, et qu'aucun sort ne pouvait changer sa beauté."
+    "fr": "Et Sancho dit : 'Sire, cette demoiselle est Dulcinée, et elle est ensorcelée, et semble une paysanne' ; et Quichotte dit oui, et qu'elle était sa dame, et qu'aucun sort ne pouvait changer sa beauté.",
+    "de": "Und Sancho sagte: 'Herr, dieses Mädchen ist Dulcinea, und sie ist verzaubert, und scheint ein Bauernmädchen', und Quijote sagte ja, und dass sie seine Dame sei, und dass kein Zauber ihre Schönheit ändern könne.",
+    "it": "E Sancho disse: 'Signore, quella fanciulla è Dulcinea, ed è incantata, e sembra una contadina', e Don Chisciotte disse di sì, e che lei era la sua dama, e che nessun incantesimo poteva cambiare la sua bellezza.",
+    "pt_BR": "E Sancho disse: 'Senhor, aquela donzela é Dulcinea, e está encantada, e parece uma camponesa', e Dom Quixote disse sim, e que ela era sua dama, e que nenhum feitiço poderia mudar sua beleza."
   },
 
   "variants": {
