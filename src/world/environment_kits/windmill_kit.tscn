@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://src/world/truth_object.gd" id="1_object"]
+
+[sub_resource type="PlaneMesh" id="Plane_ground"]
+size = Vector2(60, 60)
+
+[sub_resource type="StandardMaterial3D" id="Mat_ground"]
+albedo_color = Color(0.62, 0.56, 0.44, 1)
+roughness = 1.0
+
+[sub_resource type="BoxMesh" id="Mesh_tower"]
+size = Vector3(2, 6, 2)
+
+[sub_resource type="StandardMaterial3D" id="Mat_tower"]
+albedo_color = Color(0.65, 0.55, 0.45, 1)
+roughness = 1.0
+
+[sub_resource type="BoxMesh" id="Mesh_sail"]
+size = Vector3(0.5, 6, 0.2)
+
+[sub_resource type="StandardMaterial3D" id="Mat_sail"]
+albedo_color = Color(0.70, 0.62, 0.52, 1)
+roughness = 1.0
+
+[node name="WindmillKit" type="Node3D"]
+
+[node name="Ground" type="MeshInstance3D" parent="WindmillKit"]
+mesh = SubResource("Plane_ground")
+material_override = SubResource("Mat_ground")
+
+[node name="Tower" type="MeshInstance3D" parent="WindmillKit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+mesh = SubResource("Mesh_tower")
+material_override = SubResource("Mat_tower")
+
+[node name="Sail1" type="MeshInstance3D" parent="WindmillKit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+mesh = SubResource("Mesh_sail")
+material_override = SubResource("Mat_sail")
+
+[node name="Sail2" type="MeshInstance3D" parent="WindmillKit"]
+transform = Transform3D(0, 0, 1, -1, 0, 0, 0, -1, 0, 0, 6, 0)
+mesh = SubResource("Mesh_sail")
+material_override = SubResource("Mat_sail")

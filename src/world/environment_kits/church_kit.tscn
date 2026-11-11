@@ -1,0 +1,69 @@
+[gd_scene load_steps=10 format=3]
+
+[ext_resource type="Script" path="res://src/world/truth_object.gd" id="1_object"]
+
+[sub_resource type="PlaneMesh" id="Plane_ground"]
+size = Vector2(120, 120)
+
+[sub_resource type="StandardMaterial3D" id="Mat_ground"]
+albedo_color = Color(0.55, 0.47, 0.38, 1)
+roughness = 1.0
+
+[sub_resource type="BoxMesh" id="Mesh_wall"]
+size = Vector3(6, 5, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="Mat_wall"]
+albedo_color = Color(0.70, 0.62, 0.52, 1)
+roughness = 1.0
+
+[sub_resource type="BoxMesh" id="Mesh_tower"]
+size = Vector3(2, 6, 2)
+
+[sub_resource type="StandardMaterial3D" id="Mat_tower"]
+albedo_color = Color(0.65, 0.55, 0.45, 1)
+roughness = 1.0
+
+[sub_resource type="BoxMesh" id="Mesh_roof"]
+size = Vector3(7, 1, 7)
+
+[sub_resource type="StandardMaterial3D" id="Mat_roof"]
+albedo_color = Color(0.45, 0.38, 0.30, 1)
+roughness = 1.0
+
+[sub_resource type="PlaneMesh" id="Mesh_window"]
+size = Vector3(1, 2, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="Mat_window"]
+albedo_color = Color(0.20, 0.15, 0.10, 1)
+roughness = 1.0
+
+[node name="ChurchKit" type="Node3D"]
+
+[node name="Ground" type="MeshInstance3D" parent="ChurchKit"]
+mesh = SubResource("Plane_ground")
+material_override = SubResource("Mat_ground")
+
+[node name="WallFront" type="MeshInstance3D" parent="ChurchKit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -6)
+mesh = SubResource("Mesh_wall")
+material_override = SubResource("Mat_wall")
+
+[node name="Tower" type="MeshInstance3D" parent="ChurchKit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 3, -6)
+mesh = SubResource("Mesh_tower")
+material_override = SubResource("Mat_tower")
+
+[node name="Roof" type="MeshInstance3D" parent="ChurchKit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -6)
+mesh = SubResource("Mesh_roof")
+material_override = SubResource("Mat_roof")
+
+[node name="Window1" type="MeshInstance3D" parent="ChurchKit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1.5, -6)
+mesh = SubResource("Mesh_window")
+material_override = SubResource("Mat_window")
+
+[node name="Window2" type="MeshInstance3D" parent="ChurchKit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.5, -6)
+mesh = SubResource("Mesh_window")
+material_override = SubResource("Mat_window")

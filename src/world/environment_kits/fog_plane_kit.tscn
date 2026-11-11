@@ -1,0 +1,17 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://src/world/truth_object.gd" id="1_object"]
+
+[sub_resource type="PlaneMesh" id="Plane_fog"]
+size = Vector2(200, 200)
+
+[sub_resource type="StandardMaterial3D" id="Mat_fog"]
+albedo_color = Color(0.85, 0.82, 0.78, 1)
+roughness = 1.0
+
+[node name="FogPlaneKit" type="Node3D"]
+
+[node name="Fog" type="MeshInstance3D" parent="FogPlaneKit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("Plane_fog")
+material_override = SubResource("Mat_fog")

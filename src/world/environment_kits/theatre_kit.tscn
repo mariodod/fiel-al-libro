@@ -1,0 +1,57 @@
+[gd_scene load_steps=10 format=3]
+
+[ext_resource type="Script" path="res://src/world/truth_object.gd" id="1_object"]
+
+[sub_resource type="PlaneMesh" id="Plane_ground"]
+size = Vector2(120, 100)
+
+[sub_resource type="StandardMaterial3D" id="Mat_ground"]
+albedo_color = Color(0.62, 0.56, 0.44, 1)
+roughness = 1.0
+
+[sub_resource type="BoxMesh" id="Mesh_stage"]
+size = Vector3(20, 0.5, 10)
+
+[sub_resource type="StandardMaterial3D" id="Mat_stage"]
+albedo_color = Color(0.55, 0.45, 0.35, 1)
+roughness = 1.0
+
+[sub_resource type="BoxMesh" id="Mesh_curtain"]
+size = Vector3(15, 4, 0.2)
+
+[sub_resource type="StandardMaterial3D" id="Mat_curtain"]
+albedo_color = Color(0.60, 0.20, 0.20, 1)
+roughness = 1.0
+
+[sub_resource type="BoxMesh" id="Mesh_stand"]
+size = Vector3(6, 2, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="Mat_stand"]
+albedo_color = Color(0.45, 0.38, 0.30, 1)
+roughness = 1.0
+
+[node name="TheatreKit" type="Node3D"]
+
+[node name="Ground" type="MeshInstance3D" parent="TheatreKit"]
+mesh = SubResource("Plane_ground")
+material_override = SubResource("Mat_ground")
+
+[node name="Stage" type="MeshInstance3D" parent="TheatreKit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.26, 0)
+mesh = SubResource("Mesh_stage")
+material_override = SubResource("Mat_stage")
+
+[node name="Curtain" type="MeshInstance3D" parent="TheatreKit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.26, -5)
+mesh = SubResource("Mesh_curtain")
+material_override = SubResource("Mat_curtain")
+
+[node name="StandLeft" type="MeshInstance3D" parent="TheatreKit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1, -12)
+mesh = SubResource("Mesh_stand")
+material_override = SubResource("Mat_stand")
+
+[node name="StandRight" type="MeshInstance3D" parent="TheatreKit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 1, -12)
+mesh = SubResource("Mesh_stand")
+material_override = SubResource("Mat_stand")
