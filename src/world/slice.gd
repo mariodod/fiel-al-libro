@@ -929,6 +929,14 @@ func _on_venture_resolved(_id: StringName, mode: int) -> void:
 	else:
 		EventBus.toast.emit(&"ui.slice.venture.down", [])
 
+	# Mark the chapter and its region as completed.
+	var chapter_id := GameState.chapter_for_venture(_id)
+	if not chapter_id.is_empty():
+		GameState.chapter_completed(chapter_id)
+		var region_id := GameState.region_for_chapter(chapter_id)
+		if not region_id.is_empty():
+			GameState.resolve_region(region_id)
+
 	# The companion comments on the Venture's fall. The companion is
 	# the character NOT driving — Sancho when Quixote leads, Quixote
 	# when Sancho leads.

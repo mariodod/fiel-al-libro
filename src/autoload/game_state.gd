@@ -190,6 +190,49 @@ func get_current_chapter() -> StringName:
 	return current_chapter_id
 
 
+## Get the chapter id for a given venture id.
+##
+## Maps each Venture to its chapter. Used when a Venture is resolved to
+## mark the chapter and its region as completed.
+func chapter_for_venture(venture_id: StringName) -> StringName:
+	var venture_to_chapter: Dictionary = {
+		&"venture_montiel": &"ch_01_windmills",
+		&"venture_basque": &"ch_02_basque",
+		&"venture_canting_sea": &"ch_03_canting_sea",
+		&"venture_encinados": &"ch_04_encinados",
+		&"venture_montesinos": &"ch_05_montesinos",
+		&"venture_bridge": &"ch_06_bridge",
+		&"venture_dulcinea": &"ch_07_dulcinea",
+		&"venture_mirrors": &"ch_11_mirrors",
+		&"venture_magician": &"ch_12_magician",
+		&"venture_duke": &"ch_13_duke",
+	}
+	return venture_to_chapter.get(venture_id, &"")
+
+
+## Get the region id for a chapter id.
+##
+## Used when marking a chapter's region as resolved.
+func region_for_chapter(chapter_id: StringName) -> StringName:
+	var chapter_to_region: Dictionary = {
+		&"ch_01_windmills": &"camino_la_mancha",
+		&"ch_02_basque": &"camino_la_mancha",
+		&"ch_03_canting_sea": &"camino_la_mancha",
+		&"ch_04_encinados": &"sierra_morena",
+		&"ch_05_montesinos": &"sierra_morena",
+		&"ch_06_bridge": &"sierra_morena",
+		&"ch_07_dulcinea": &"el_toboso",
+		&"ch_08_celestina": &"el_toboso",
+		&"ch_09_ensayo_setup": &"los_riscos",
+		&"ch_10_ensayo_resolution": &"los_riscos",
+		&"ch_11_mirrors": &"el_castillo_del_duque",
+		&"ch_12_magician": &"el_castillo_del_duque",
+		&"ch_13_duke": &"el_castillo_del_duque",
+	}
+	return chapter_to_region.get(chapter_id, &"")
+
+
+
 # ── Humanity (D4) ───────────────────────────────────────────────────────
 
 ## Reduce Humanity. Never goes below 0. Emits the change so the manuscript
