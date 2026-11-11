@@ -1,6 +1,7 @@
 [gd_scene load_steps=27 format=3]
 
 [ext_resource type="Script" path="res://src/world/slice.gd" id="1_slice"]
+[ext_resource type="Script" path="res://src/world/chapters/ch_11_mirrors.gd" id="1_chapter"]
 [ext_resource type="Script" path="res://src/world/truth_object.gd" id="2_object"]
 [ext_resource type="Script" path="res://src/characters/character_pawn.gd" id="3_pawn"]
 [ext_resource type="Script" path="res://src/characters/player_controller.gd" id="4_player"]
@@ -40,7 +41,7 @@ radius = 0.5
 height = 1.6
 
 [node name="Chapter11_Mirrors" type="Node3D"]
-script = ExtResource("1_slice")
+script = ExtResource("1_chapter")
 
 [node name="Ground" type="MeshInstance3D" parent="."]
 mesh = SubResource("Plane_ground")
