@@ -161,6 +161,9 @@ func _ready() -> void:
 	_build_lectura_hud()
 	_build_lock_marker()
 	_build_shelf()
+	# Mark chapter 1 as found and its region as found
+	GameState.chapter_started(&"ch_01_windmills")
+	GameState.find_region(&"camino_la_mancha")
 
 	EventBus.character_switched.connect(_on_character_switched)
 	EventBus.character_died.connect(_on_character_died)

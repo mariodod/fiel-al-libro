@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3]
+[gd_scene load_steps=38 format=3]
 
 [ext_resource type="Script" path="res://src/world/slice.gd" id="1_slice"]
 [ext_resource type="Script" path="res://src/world/truth_object.gd" id="2_object"]
@@ -21,6 +21,20 @@
 [ext_resource type="Resource" path="res://src/data/characters/innkeeper.tres" id="22_innkeeper"]
 [ext_resource type="Resource" path="res://src/data/characters/musician.tres" id="23_musician"]
 [ext_resource type="Script" path="res://src/ui/manifiesto_reader.gd" id="24_manifiesto_reader"]
+[ext_resource type="Resource" path="res://src/data/books/bk.ch01.molinos.01.tres" id="25_book_molinos"]
+[ext_resource type="Resource" path="res://src/data/books/bk.ch01.nombre.01.tres" id="26_book_nombre"]
+[ext_resource type="Resource" path="res://src/data/books/bk.ch02.caballeros.01.tres" id="27_book_caballeros"]
+[ext_resource type="Resource" path="res://src/data/books/bk.ch03.posada.01.tres" id="28_book_posada"]
+[ext_resource type="Resource" path="res://src/data/books/bk.ch04.rocinante.01.tres" id="29_book_rocinante"]
+[ext_resource type="Resource" path="res://src/data/books/bk.ch05.duena.01.tres" id="30_book_duena"]
+[ext_resource type="Resource" path="res://src/data/books/bk.ch06.pastores.01.tres" id="31_book_pastores"]
+[ext_resource type="Resource" path="res://src/data/books/bk.ch07.yanguesas.01.tres" id="32_book_yanguesas"]
+[ext_resource type="Resource" path="res://src/data/books/bk.ch09.manuscrito.01.tres" id="33_book_manuscrito"]
+[ext_resource type="Resource" path="res://src/data/books/bk.ch10.balsamo.01.tres" id="34_book_balsamo"]
+[ext_resource type="Resource" path="res://src/data/books/bk.ch11.caballero_bosque.01.tres" id="35_book_caballero_bosque"]
+[ext_resource type="Resource" path="res://src/data/books/bk.ch12.armas_letras.01.tres" id="36_book_armas_letras"]
+[ext_resource type="Resource" path="res://src/data/books/bk.ch13.leones.01.tres" id="37_book_leones"]
+[ext_resource type="Resource" path="res://src/data/books/bk.ch14.galeotes.01.tres" id="38_book_galeotes"]
 
 [sub_resource type="PlaneMesh" id="Plane_ground"]
 size = Vector2(300, 300)
@@ -72,6 +86,76 @@ data = ExtResource("20_book_stand")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -10)
 script = ExtResource("2_object")
 data = ExtResource("21_book_apertura")
+
+[node name="Molinos" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -10)
+script = ExtResource("2_object")
+data = ExtResource("25_book_molinos")
+
+[node name="Nombre" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -10)
+script = ExtResource("2_object")
+data = ExtResource("26_book_nombre")
+
+[node name="Caballeros" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -10)
+script = ExtResource("2_object")
+data = ExtResource("27_book_caballeros")
+
+[node name="Posada" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -10)
+script = ExtResource("2_object")
+data = ExtResource("28_book_posada")
+
+[node name="Rocinante" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -10)
+script = ExtResource("2_object")
+data = ExtResource("29_book_rocinante")
+
+[node name="Duena" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -10)
+script = ExtResource("2_object")
+data = ExtResource("30_book_duena")
+
+[node name="Pastores" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -10)
+script = ExtResource("2_object")
+data = ExtResource("31_book_pastores")
+
+[node name="Yanguesas" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -10)
+script = ExtResource("2_object")
+data = ExtResource("32_book_yanguesas")
+
+[node name="Manuscrito" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, -10)
+script = ExtResource("2_object")
+data = ExtResource("33_book_manuscrito")
+
+[node name="Balsamo" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -10)
+script = ExtResource("2_object")
+data = ExtResource("34_book_balsamo")
+
+[node name="Caballero_Bosque" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, -10)
+script = ExtResource("2_object")
+data = ExtResource("35_book_caballero_bosque")
+
+[node name="Armas_Letras" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0, -10)
+script = ExtResource("2_object")
+data = ExtResource("36_book_armas_letras")
+
+[node name="Leones" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -10)
+script = ExtResource("2_object")
+data = ExtResource("37_book_leones")
+
+[node name="Galeotes" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, -10)
+script = ExtResource("2_object")
+data = ExtResource("38_book_galeotes")
 
 [node name="Innkeeper" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -14)

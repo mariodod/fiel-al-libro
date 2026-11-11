@@ -12,6 +12,13 @@ const SCENE = "res://src/world/map_screen.tscn"
 func suite(t):
 	t.suite("MapScreen")
 
+	# ── Reset ────────────────────────────────────────────────────────
+	# GameState is an autoload singleton; earlier tests may have loaded
+	# slice.tscn whose _ready() calls find_region(). Clear so this suite
+	# starts from a clean slate.
+	GameState.regions_found.clear()
+	GameState.regions_resolved.clear()
+
 	# ── Region data ──────────────────────────────────────────────────
 	t.test("region data loads from .tres files")
 	var dir = DirAccess.open("res://src/data/regions/")
