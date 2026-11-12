@@ -79,7 +79,7 @@ func _ensure_detail() -> void:
 	# Chapter label: created dynamically if missing from the scene.
 	if _chapter_label == null:
 		var chapter_label := Label.new()
-		chapter_label.name = "Chapter"
+		chapter_label.set_name("Chapter")
 		chapter_label.anchors_preset = Control.PRESET_TOP_LEFT
 		chapter_label.position = Vector2(200, 70)
 		chapter_label.theme_override_font_sizes/font_size = 14
@@ -91,7 +91,7 @@ func _ensure_detail() -> void:
 	# Source label: created dynamically if missing from the scene.
 	if _source_label == null:
 		var source_label := Label.new()
-		source_label.name = "Source"
+		source_label.set_name("Source")
 		source_label.anchors_preset = Control.PRESET_TOP_LEFT
 		source_label.position = Vector2(200, 95)
 		source_label.theme_override_font_sizes/font_size = 12
