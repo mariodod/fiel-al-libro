@@ -34,6 +34,7 @@ AudioDirector="*res://src/autoload/audio_director.gd"
 Lectura="*res://src/autoload/lectura.gd"
 Verdict="*res://src/autoload/verdict.gd"
 Ensayo="*res://src/autoload/ensayo.gd"
+RegionGraph="*res://src/autoload/region_graph.gd"
 
 [debug]
 

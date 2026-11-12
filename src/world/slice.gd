@@ -933,6 +933,7 @@ func _on_venture_resolved(_id: StringName, mode: int) -> void:
 	var chapter_id := GameState.chapter_for_venture(_id)
 	if not chapter_id.is_empty():
 		GameState.chapter_completed(chapter_id)
+		RegionGraph.complete_chapter(chapter_id)
 		var region_id := GameState.region_for_chapter(chapter_id)
 		if not region_id.is_empty():
 			GameState.resolve_region(region_id)
