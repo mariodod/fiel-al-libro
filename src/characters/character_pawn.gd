@@ -187,8 +187,9 @@ func _ready() -> void:
 	perceived_layer = Perception.reading_for(character_id, TruthLayer.layer(), second_sight)
 	add_to_group(&"pawns")
 	EventBus.player_spawned.emit(self)
-	PassiveManager.modifiers_changed.connect(_on_passive_modifiers_changed)
-	_apply_passive_modifiers(PassiveManager.modifiers)
+	if PassiveManager != null:
+		PassiveManager.modifiers_changed.connect(_on_passive_modifiers_changed)
+		_apply_passive_modifiers(PassiveManager.modifiers)
 
 
 ## The body mesh, so a hit can be seen.

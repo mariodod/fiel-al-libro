@@ -15,6 +15,8 @@ var _modern: Label = null
 var _original: Label = null
 var _reality: Label = null
 var _book: Label = null
+var _chapter_label: Label = null
+var _source_label: Label = null
 
 var _selected: StringName = &""
 
@@ -58,15 +60,45 @@ func _ensure_container() -> void:
 
 
 ## Ensure the detail panel labels are found (lazily).
+##
+## Chapter and Source labels are created dynamically if they are not
+## present in the scene, so the reader works with any chapter scene
+## without needing scene edits.
 func _ensure_detail() -> void:
 	if _detail != null:
 		return
 	_detail = _find_child_by_name("Detail") as Control
+	if _detail == null:
+		return
 	_title = _find_child_by_name("Title", _detail) as Label
 	_modern = _find_child_by_name("Modern", _detail) as Label
 	_original = _find_child_by_name("Original", _detail) as Label
 	_reality = _find_child_by_name("Reality", _detail) as Label
 	_book = _find_child_by_name("Book", _detail) as Label
+
+	# Chapter label: created dynamically if missing from the scene.
+	if _chapter_label == null:
+		var chapter_label := Label.new()
+		chapter_label.name = "Chapter"
+		chapter_label.anchors_preset = Control.PRESET_TOP_LEFT
+		chapter_label.position = Vector2(200, 70)
+		chapter_label.theme_override_font_sizes/font_size = 14
+		chapter_label.theme_override_colors/font_color = Color(0.82, 0.80, 0.72, 1.0)
+		chapter_label.autowrap_mode = 2
+		_detail.add_child(chapter_label)
+		_chapter_label = chapter_label
+
+	# Source label: created dynamically if missing from the scene.
+	if _source_label == null:
+		var source_label := Label.new()
+		source_label.name = "Source"
+		source_label.anchors_preset = Control.PRESET_TOP_LEFT
+		source_label.position = Vector2(200, 95)
+		source_label.theme_override_font_sizes/font_size = 12
+		source_label.theme_override_colors/font_color = Color(0.75, 0.54, 0.24, 1.0)
+		source_label.autowrap_mode = 2
+		_detail.add_child(source_label)
+		_source_label = source_label
 
 
 ## Open / close the reader.
@@ -120,12 +152,29 @@ func _on_item_selected(index: int) -> void:
 	if _title != null:
 		_title.text = Loc.t(title_key) if not title_key.is_empty() else str(id)
 
-	# Modern rendering (localised).
-	var modern: Dictionary = data.get("modern", {})
+	# Chapter and part.
+	var chapter := int(data.get("chapter", 0))
+	var part := int(data.get("part", 0))
+	if _chapter_label != null and chapter > 0:
+		_chapter_label.text = "%s %d — Part %d" % [Loc.t(&"bk.chapter"), chapter, part]
+	else if _chapter_label != null:
+		_chapter_label.text = ""
+
+	# Source / provenance.
+	var source := data.get("source", {})
+	if _source_label != null and source is Dictionary:
+		var work := str(source.get("work", ""))
+		var edition := str(source.get("edition", ""))
+		var provenance := work
+		if not edition.is_empty():
+			provenance += " — " + edition
+		_source_label.text = "%s %s" % [Loc.t(&"ui.codex.source"), provenance]
+	else if _source_label != null:
+		_source_label.text = ""
+
+	# Modern rendering (localised), falling back to the 1605 original.
 	var language := TranslationServer.get_locale()
-	var rendered := str(modern.get(language, ""))
-	if rendered.is_empty():
-		rendered = str(modern.get("es", ""))  # fallback to Spanish original
+	var rendered := ManifiestoFragment.text_for(id, language)
 	if _modern != null:
 		_modern.text = rendered
 
