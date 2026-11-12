@@ -1802,14 +1802,14 @@ msgstr "Clavilo"
 
 #. TRANSLATORS: Shown when the player spots an anamorphosis in Lectura mode.
 msgid "ui.slice.anamorphosis_spotted"
-msgstr ""
+msgstr "Anamorfosis detectada"
 
 #. TRANSLATORS: Shown when the player resolves an anamorphosis and gains evidence.
 msgid "ui.slice.anamorphosis_resolved"
-msgstr ""
+msgstr "Anamorfosis resuelta — +%d evidencia"
 
 #. TRANSLATORS: Shown when the player has enough evidence to use the Verdict.
 msgid "ui.slice.verdict_ready"
-msgstr ""
+msgstr "Suficiente evidencia para un Veredicto"
 
 

@@ -222,7 +222,7 @@ pointing/emulate_touch_from_mouse=true
 
 [internationalization]
 
-locale/translations=Array[String](["res://locale/en.po", "res://locale/es.po", "res://locale/fr.po"])
+locale/translations=Array[String](["res://locale/en.po", "res://locale/es.po", "res://locale/fr.po", "res://locale/de.po", "res://locale/it.po", "res://locale/pt_BR.po"])
 locale/fallback="es"
 
 [layer_names]

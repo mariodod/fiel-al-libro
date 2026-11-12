@@ -1740,15 +1740,15 @@ msgstr "
 
 #. TRANSLATORS: Auto-added key
 msgid "prologue.opening.text"
-msgstr "
+msgstr "Tieni tra le mani un libro. È stato scritto nel 1605 e ha aspettato te. La pagina che stai per leggere non è la prima pagina — è la pagina che il libro apre quando lo prendi. Leggila. Girala. Il mondo dall'altra parte non è il mondo che hai lasciato."
 
 #. TRANSLATORS: Auto-added key
 msgid "prologue.opening.reality"
-msgstr "
+msgstr "Un uomo cavalca attraverso la pianura. I mulini sono mulini. La locanda è una locanda."
 
 #. TRANSLATORS: Auto-added key
 msgid "prologue.opening.book"
-msgstr "
+msgstr "Un cavaliere cavalca attraverso la pianura. I mulini sono giganti. La locanda è un castello."
 
 #. TRANSLATORS: The clavilo (wooden horse) fragment title.
 msgid "bk.ch38.clavilo.title"
@@ -1756,14 +1756,14 @@ msgstr "Clavilo"
 
 #. TRANSLATORS: Shown when the player spots an anamorphosis in Lectura mode.
 msgid "ui.slice.anamorphosis_spotted"
-msgstr ""
+msgstr "Anamorfosi rilevata"
 
 #. TRANSLATORS: Shown when the player resolves an anamorphosis and gains evidence.
 msgid "ui.slice.anamorphosis_resolved"
-msgstr ""
+msgstr "Anamorfosi risolta — +%d prova"
 
 #. TRANSLATORS: Shown when the player has enough evidence to use the Verdict.
 msgid "ui.slice.verdict_ready"
-msgstr ""
+msgstr "Abbastanza prove per un Verdetto"
 
 
