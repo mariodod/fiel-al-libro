@@ -58,6 +58,13 @@ export_credentials.cfg
 logs/
 *.log
 
+# The console output of the headless validation and test runs. These are
+# regenerable dumps, not sources: run the scripts again instead of committing
+# them. (src/tools/validate_manifiesto.gd, src/tools/validate_kits.gd,
+# tests/test_runner.tscn)
+manifiesto_validate*.txt
+test_run.txt
+
 # OS noise
 .DS_Store
 Thumbs.db
