@@ -40,14 +40,14 @@ func _ready() -> void:
 		return
 	for file_name in dir.get_files():
 		if file_name.ends_with(".tres"):
-			var res = load("res://src/data/passives/" + file_name)
-			if res is PassiveData:
+			var res: Resource = load("res://src/data/passives/" + file_name)
+			if res.get_class() == "PassiveData":
 				register(res)
 	EventBus.shelf_changed.connect(_on_shelf_changed)
 	# Apply the current shelf immediately.
 	_on_shelf_changed(Biblioteca.equipped_books())
 
-func register(passive: PassiveData) -> void:
+func register(passive: Resource) -> void:
 	if passive == null:
 		return
 	var id: StringName = passive.get("id")
@@ -56,7 +56,7 @@ func register(passive: PassiveData) -> void:
 		return
 	_registry[id] = passive
 
-func get_passive(id: StringName) -> PassiveData:
+func get_passive(id: StringName) -> Resource:
 	return _registry.get(id, null)
 
 ## Recompute the combined modifier stack from Biblioteca's equipped books,
@@ -107,7 +107,7 @@ func _apply_to_pawns() -> void:
 			pawn.apply_passive_modifiers(modifiers)
 
 ## Return the combined modifier for a given key, or the default if not present.
-func get(key: String, default: Variant = null) -> Variant:
+func get_modifier(key: String, default: Variant = null) -> Variant:
 	return modifiers.get(key, default)
 
 ## The list of currently active passive IDs.

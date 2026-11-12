@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://src/world/prologue.gd" id="1_prologue"]
+[ext_resource type="Resource" path="res://src/data/prologue.tres" id="2_prologue_data"]
+
+[node name="Prologue" type="CanvasLayer"]
+script = ExtResource("1_prologue")
+anchors_preset = 7
+layer = 40
+
+[node name="Background" type="ColorRect" parent="Prologue"]
+anchors_preset = 7
+color = Color(0.05, 0.04, 0.03, 0.92)
+
+[node name="Panel" type="Control" parent="Prologue"]
+anchors_preset = 7
+size = Vector2(800, 500)
+
+[node name="Title" type="Label" parent="Panel"]
+anchors_preset = 1
+position = Vector2(400, 80)
+text = "Prologue"
+theme_override_font_sizes/font_size = 32
+theme_override_colors/font_color = Color(0.94, 0.90, 0.82, 1.0)
+theme_override_alignment/horizontal_alignment = 1
+
+[node name="Text" type="Label" parent="Panel"]
+anchors_preset = 7
+margin_left = 100
+margin_top = 140
+margin_right = 100
+margin_bottom = 200
+autowrap_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_colors/font_color = Color(0.90, 0.86, 0.78, 1.0)
+
+[node name="VariantReality" type="Label" parent="Panel"]
+anchors_preset = 7
+margin_left = 100
+margin_top = 300
+margin_right = 100
+margin_bottom = 240
+autowrap_mode = 2
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(0.75, 0.80, 0.85, 1.0)
+visible = false
+
+[node name="VariantBook" type="Label" parent="Panel"]
+anchors_preset = 7
+margin_left = 100
+margin_top = 300
+margin_right = 100
+margin_bottom = 240
+autowrap_mode = 2
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(0.85, 0.75, 0.65, 1.0)
+visible = false
+
+[node name="Hint" type="Label" parent="Panel"]
+anchors_preset = 7
+margin_left = 100
+margin_top = 420
+margin_right = 100
+margin_bottom = 450
+text = "Press any key to turn the page."
+theme_override_font_sizes/font_size = 16
+theme_override_colors/font_color = Color(0.65, 0.60, 0.52, 1.0)
+theme_override_alignment/horizontal_alignment = 1
