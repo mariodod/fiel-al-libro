@@ -96,6 +96,17 @@ See above.
   the end). The 288 Manifiesto modernizations are the long pole — spread them across months 12–18.
 - **Milestone:** "alpha" — all content reachable, all systems in, ugly but complete.
 
+**Already done ahead of schedule (Phase 3 systems):**
+- RegionGraph chapter streaming autoload (`src/autoload/region_graph.gd`)
+- Book passives system (`src/autoload/passive_manager.gd`, `src/data/passive_data.gd`, 14 passive .tres)
+- Manifiesto facsimile reader (`src/ui/manifiesto_reader.gd`, 48 fragments in `assets/manifiesto/`)
+- Prologue scene (`src/world/prologue.tscn`, `src/world/prologue.gd`)
+- All 13 chapter scripts (`src/world/chapters/ch_*.gd`)
+- Ensayo script (ch_09, ch_10)
+- 15 environment kits (`src/world/environment_kits/`)
+- Credits song audio (2 audio files in `assets/audio/`)
+- 6-language locale registration (all 6 .po files in `locale/`)
+
 ### Phase 4 — Beta · months 19–24
 - Polish, performance, balancing, bug fixing, localization QA, the "signed copy" of the Manifiesto.
 - Steam page live, demo out, wishlist campaign.

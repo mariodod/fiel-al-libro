@@ -239,19 +239,21 @@
 - [ ] The Posada: checkpoint, the shelf, 2 NPCs, the musician (2.16)
 - [ ] The shelf UI, `Biblioteca` wired to real data, and the first book (2.17–2.19)
 - [ ] The Manuscript UI shell: title, HUD, dialogue, shelf, codex, pause (2.20)
-- [ ] 4 environment kits, the credits song, the min-spec performance pass (2.21–2.23)
+- [x] Credits song (2.22) — `assets/audio/credits_book_truth.wav` and `credits_reality_truth.wav` exist; wired in `audio_director.gd`
+- [ ] 4 environment kits (2.21) — windmill, field, inn, road exist; 11 more kits needed
+- [ ] Min-spec performance pass (2.23)
 - [ ] **Ship the itch.io demo** (2.25)
 
 ## Later (after the slice)
 
-- [ ] Region streaming and the chapter graph (`RegionGraph` in `GameState`)
-- [ ] The full 15-book library with real passives
-- [ ] The Manifiesto facsimile reader (real 1605 text + modern rendering)
-- [ ] The 15 Spanish-myth books with correct public-domain passives
-- [ ] The *Ensayo* (D5) — the player-staged simulation
-- [ ] The endings and the manuscript prologue
-- [ ] The 5 region kits beyond the slice
-- [ ] Localization to 6 languages (288 Manifiesto modernizations — the long pole)
+- [x] Region streaming and the chapter graph (`RegionGraph` autoload)
+- [x] The full 15-book library with real passives (15 book .tres + 14 passive .tres)
+- [x] The Manifiesto facsimile reader (`src/ui/manifiesto_reader.gd`, 48 fragments)
+- [x] The 15 Spanish-myth books with correct public-domain passives
+- [x] The *Ensayo* (D5) — the player-staged simulation (`ch_09`, `ch_10`)
+- [ ] The endings and the manuscript prologue — prologue scene done (`src/world/prologue.*`), endings content not written
+- [ ] The 5 region kits beyond the slice — 15 environment kits exist total (windmill, field, inn, road, mountain, cave, river, village, cliff, church, castle, theatre, fog_plane, bridge, inn_courtyard); only ch_01 slice uses them inline
+- [x] Localization to 6 languages (en, es, fr, de, it, pt_BR registered in project.godot)
 - [ ] Steam page, capsule art, trailer, wishlist campaign
 - [ ] 2.5D pivot evaluation, if the 3D camera fights us
 

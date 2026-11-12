@@ -122,7 +122,7 @@ The cheapest possible test of the core idea, before any rig exists.
 | # | Task | Done when |
 |---|---|---|
 | 2.21 | 4 environment kits minimum (field, inn, road, mill) — low-poly, hand-painted, one shader family | It looks like Goya, not like a blockout |
-| 2.22 | **Commission the credits song** — "Romance del Caballero y el Escudero", two verses, one per character, ~$200–800 | The melody becomes the thing you hum |
+| 2.22 | **Commission the credits song** — "Romance del Caballero y el Escudero", two verses, one per character, ~$200–800 | ✅ Done — `assets/audio/credits_book_truth.wav` and `assets/audio/credits_reality_truth.wav` exist; wired in `audio_director.gd` with character-based arrangement |
 | 2.23 | Performance pass on a **min-spec laptop** | 60 fps at 1080p on a 5-year-old machine |
 | 2.24 | Balance pass: is the windmill fight fair on the 3rd attempt? | It is |
 | 2.25 | **Ship the demo to itch.io.** Free, public, with a Steam page and a trailer. | Someone you don't know plays it for 10 minutes |
