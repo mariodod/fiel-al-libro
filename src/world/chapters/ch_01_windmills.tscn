@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3]
+[gd_scene load_steps=30 format=3]
 
 [ext_resource type="Script" path="res://src/world/slice.gd" id="1_slice"]
 [ext_resource type="Script" path="res://src/world/chapters/ch_01_windmills.gd" id="1_chapter"]
@@ -24,6 +24,9 @@
 [ext_resource type="PackedScene" path="res://src/world/environment_kits/field_kit.tscn" id="25_field_kit"]
 [ext_resource type="PackedScene" path="res://src/world/environment_kits/road_kit.tscn" id="26_road_kit"]
 [ext_resource type="PackedScene" path="res://src/world/environment_kits/inn_kit.tscn" id="27_inn_kit"]
+[ext_resource type="Resource" path="res://src/data/primitives/book_bk_ch01_apertura.tres" id="28_book_apertura"]
+[ext_resource type="Resource" path="res://src/data/primitives/book_bk_ch01_molinos_01.tres" id="29_book_molinos"]
+[ext_resource type="Resource" path="res://src/data/primitives/book_bk_ch01_nombre_01.tres" id="30_book_nombre"]
 
 [sub_resource type="PlaneMesh" id="Plane_ground"]
 size = Vector2(300, 300)
@@ -100,6 +103,21 @@ instance = ExtResource("26_road_kit")
 [node name="InnKit" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 1.5, -40)
 instance = ExtResource("27_inn_kit")
+
+[node name="Book_Apertura" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -30)
+script = ExtResource("2_object")
+data = ExtResource("28_book_apertura")
+
+[node name="Book_Molinos" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, -20)
+script = ExtResource("2_object")
+data = ExtResource("29_book_molinos")
+
+[node name="Book_Nombre" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 0, -10)
+script = ExtResource("2_object")
+data = ExtResource("30_book_nombre")
 
 [node name="Checkpoint" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -12)

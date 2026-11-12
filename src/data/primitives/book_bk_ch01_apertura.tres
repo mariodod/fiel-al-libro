@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="TruthObjectData" load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://src/data/truth_object_data.gd" id="1_data"]
+[ext_resource type="Script" path="res://src/data/truth_face.gd" id="2_face"]
+[ext_resource type="PackedScene" path="res://src/world/forms/rock_reality.tscn" id="rock_reality"]
+[ext_resource type="PackedScene" path="res://src/world/forms/rock_book.tscn" id="rock_book"]
+
+[sub_resource type="Resource" id="RealityFace"]
+script = ExtResource("2_face")
+name_key = &"ui.form.roca"
+description_key = &"ui.face.book_bk_ch01_apertura.reality.desc"
+tell_key = &"ui.face.book_bk_ch01_apertura.reality.tell"
+
+[sub_resource type="Resource" id="BookFace"]
+script = ExtResource("2_face")
+name_key = &"ui.form.libro"
+description_key = &"ui.face.book_bk_ch01_apertura.book.desc"
+tell_key = &"ui.face.book_bk_ch01_apertura.book.tell"
+fragment_id = &"bk.ch01.apertura"
+
+[resource]
+script = ExtResource("1_data")
+id = &"bk.ch01.apertura"
+display_name_key = &"ui.book.bk.ch01.apertura.name"
+reality_form = ExtResource("rock_reality")
+book_form = ExtResource("rock_book")
+reality_face = SubResource("RealityFace")
+book_face = SubResource("BookFace")
+book_form_hovers = true
+tag_height = 3.4
+anamorphosis_id = &""
+anamorphosis_evidence = 1

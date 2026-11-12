@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3]
+[gd_scene load_steps=28 format=3]
 
 [ext_resource type="Script" path="res://src/world/slice.gd" id="1_slice"]
 [ext_resource type="Script" path="res://src/world/chapters/ch_12_magician.gd" id="1_chapter"]
@@ -23,6 +23,7 @@
 [ext_resource type="Resource" path="res://src/data/characters/musician.tres" id="22_musician"]
 [ext_resource type="PackedScene" path="res://src/world/environment_kits/castle_kit.tscn" id="23_castle_kit"]
 [ext_resource type="PackedScene" path="res://src/world/environment_kits/theatre_kit.tscn" id="24_theatre_kit"]
+[ext_resource type="Resource" path="res://src/data/primitives/book_bk_ch12_armas_letras.tres" id="25_book_armas_letras"]
 
 [sub_resource type="PlaneMesh" id="Plane_ground"]
 size = Vector2(300, 300)
@@ -85,6 +86,11 @@ instance = ExtResource("23_castle_kit")
 [node name="TheatreKit" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 0)
 instance = ExtResource("24_theatre_kit")
+
+[node name="Book_ArmasLetras" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -30)
+script = ExtResource("2_object")
+data = ExtResource("25_book_armas_letras")
 
 [node name="Checkpoint" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -12)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3]
+[gd_scene load_steps=28 format=3]
 
 [ext_resource type="Script" path="res://src/world/slice.gd" id="1_slice"]
 [ext_resource type="Script" path="res://src/world/chapters/ch_05_montesinos.gd" id="1_chapter"]
@@ -23,6 +23,7 @@
 [ext_resource type="Resource" path="res://src/data/characters/musician.tres" id="22_musician"]
 [ext_resource type="PackedScene" path="res://src/world/environment_kits/mountain_kit.tscn" id="25_mountain_kit"]
 [ext_resource type="PackedScene" path="res://src/world/environment_kits/cave_kit.tscn" id="26_cave_kit"]
+[ext_resource type="Resource" path="res://src/data/primitives/book_bk_ch05_duena.tres" id="27_book_duena"]
 
 [sub_resource type="PlaneMesh" id="Plane_ground"]
 size = Vector2(300, 300)
@@ -85,6 +86,11 @@ instance = ExtResource("25_mountain_kit")
 [node name="CaveKit" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 1.5, -20)
 instance = ExtResource("26_cave_kit")
+
+[node name="Book_Duena" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -30)
+script = ExtResource("2_object")
+data = ExtResource("27_book_duena")
 
 [node name="Checkpoint" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -12)
