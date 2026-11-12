@@ -18,6 +18,9 @@
 [ext_resource type="Script" path="res://src/ui/manifiesto_reader.gd" id="15_manifiesto_reader"]
 [ext_resource type="Resource" path="res://src/data/characters/innkeeper.tres" id="16_innkeeper"]
 [ext_resource type="Resource" path="res://src/data/characters/musician.tres" id="17_musician"]
+[ext_resource type="PackedScene" path="res://src/world/environment_kits/cliff_kit.tscn" id="18_cliff_kit"]
+[ext_resource type="PackedScene" path="res://src/world/environment_kits/church_kit.tscn" id="19_church_kit"]
+[ext_resource type="PackedScene" path="res://src/world/environment_kits/fog_plane_kit.tscn" id="20_fog_plane_kit"]
 
 [sub_resource type="PlaneMesh" id="Plane_ground"]
 size = Vector2(300, 300)
@@ -72,6 +75,18 @@ data = ExtResource("17_musician")
 
 [node name="MusicianAudio" type="AudioStreamPlayer" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 36)
+
+[node name="CliffKit" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 2, 0)
+instance = ExtResource("18_cliff_kit")
+
+[node name="ChurchKit" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 1.5, -40)
+instance = ExtResource("19_church_kit")
+
+[node name="FogPlaneKit" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+instance = ExtResource("20_fog_plane_kit")
 
 [node name="Checkpoint" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -12)

@@ -21,6 +21,9 @@
 [ext_resource type="Script" path="res://src/ui/manifiesto_reader.gd" id="18_manifiesto_reader"]
 [ext_resource type="Resource" path="res://src/data/characters/innkeeper.tres" id="21_innkeeper"]
 [ext_resource type="Resource" path="res://src/data/characters/musician.tres" id="22_musician"]
+[ext_resource type="PackedScene" path="res://src/world/environment_kits/mountain_kit.tscn" id="25_mountain_kit"]
+[ext_resource type="PackedScene" path="res://src/world/environment_kits/field_kit.tscn" id="26_field_kit"]
+[ext_resource type="PackedScene" path="res://src/world/environment_kits/road_kit.tscn" id="27_road_kit"]
 
 [sub_resource type="PlaneMesh" id="Plane_ground"]
 size = Vector2(300, 300)
@@ -75,6 +78,18 @@ data = ExtResource("22_musician")
 
 [node name="MusicianAudio" type="AudioStreamPlayer" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 36)
+
+[node name="MountainKit" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+instance = ExtResource("25_mountain_kit")
+
+[node name="FieldKit" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -20)
+instance = ExtResource("26_field_kit")
+
+[node name="RoadKit" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0.8, -40)
+instance = ExtResource("27_road_kit")
 
 [node name="Checkpoint" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -12)

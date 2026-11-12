@@ -20,6 +20,8 @@
 [ext_resource type="Resource" path="res://src/data/ventures/venture_montiel_reading.tres" id="17_venture_reading"]
 [ext_resource type="Resource" path="res://src/data/characters/innkeeper.tres" id="18_innkeeper"]
 [ext_resource type="Resource" path="res://src/data/characters/musician.tres" id="19_musician"]
+[ext_resource type="PackedScene" path="res://src/world/environment_kits/river_kit.tscn" id="20_river_kit"]
+[ext_resource type="PackedScene" path="res://src/world/environment_kits/village_kit.tscn" id="21_village_kit"]
 
 [sub_resource type="PlaneMesh" id="Plane_ground"]
 size = Vector2(300, 300)
@@ -74,6 +76,14 @@ data = ExtResource("19_musician")
 
 [node name="MusicianAudio" type="AudioStreamPlayer" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 36)
+
+[node name="RiverKit" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+instance = ExtResource("20_river_kit")
+
+[node name="VillageKit" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 1.5, -30)
+instance = ExtResource("21_village_kit")
 
 [node name="Venture" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 36)
