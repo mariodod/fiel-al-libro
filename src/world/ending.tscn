@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://src/world/ending.gd" id="1_ending"]
+
+[sub_resource type="Font" id="Font_title"]
+size = 40
+
+[sub_resource type="Font" id="Font_body"]
+size = 20
+
+[node name="Ending" type="CanvasLayer"]
+script = ExtResource("1_ending")
+layer = 50
+
+[node name="Background" type="ColorRect" parent="Ending"]
+anchors_preset = 7
+color = Color(0.02, 0.01, 0.01, 0.95)
+
+[node name="Panel" type="Control" parent="Ending"]
+anchors_preset = 7
+size = Vector2(800, 500)
+
+[node name="Title" type="Label" parent="Panel"]
+anchors_preset = 1
+position = Vector2(400, 100)
+text = "Ending"
+theme_override_font_sizes/font_size = 40
+theme_override_colors/font_color = Color(0.94, 0.90, 0.82, 1.0)
+theme_override_alignment/horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="Panel"]
+anchors_preset = 1
+position = Vector2(400, 160)
+text = ""
+theme_override_font_sizes/font_size = 24
+theme_override_colors/font_color = Color(0.85, 0.80, 0.70, 1.0)
+theme_override_alignment/horizontal_alignment = 1
+
+[node name="Text" type="Label" parent="Panel"]
+anchors_preset = 7
+margin_left = 100
+margin_top = 220
+margin_right = 100
+margin_bottom = 200
+autowrap_mode = 2
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(0.90, 0.86, 0.78, 1.0)
+
+[node name="Hint" type="Label" parent="Panel"]
+anchors_preset = 7
+margin_left = 100
+margin_top = 440
+margin_right = 100
+margin_bottom = 470
+text = "Press any key to return to the Yard."
+theme_override_font_sizes/font_size = 16
+theme_override_colors/font_color = Color(0.65, 0.60, 0.52, 1.0)
+theme_override_alignment/horizontal_alignment = 1

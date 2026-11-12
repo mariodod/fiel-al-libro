@@ -168,6 +168,7 @@ func _ready() -> void:
 	EventBus.character_hurt.connect(_on_character_hurt)
 	EventBus.ability_used.connect(_on_ability_used)
 	EventBus.venture_resolved.connect(_on_venture_resolved)
+	EventBus.ensayo_resolved.connect(_on_ensayo_resolved)
 
 	# Wire up pause menu buttons
 	var resume_btn := _pause_menu.get_node_or_null("PauseMenuPanel/PauseMenuResume")
@@ -949,6 +950,13 @@ func _on_venture_resolved(_id: StringName, mode: int) -> void:
 		if not region_id.is_empty():
 			GameState.resolve_region(region_id)
 
+	# If all chapters are completed, show the ending.
+	if GameState.chapters_completed_count() >= RegionGraph.all_chapters().size():
+		GameState.ending_id = GameState.compute_ending()
+		var ending_scene: PackedScene = preload("res://src/world/ending.tscn")
+		get_tree().change_scene_to_packed(ending_scene)
+		return
+
 	# The companion comments on the Venture's fall. The companion is
 	# the character NOT driving — Sancho when Quixote leads, Quixote
 	# when Sancho leads.
@@ -962,6 +970,20 @@ func _on_venture_resolved(_id: StringName, mode: int) -> void:
 			chatter_key = &"dia.sancho.chatter.venture_down"
 		if not chatter_key.is_empty():
 			EventBus.character_spoke.emit(companion.character_id, chatter_key, [])
+
+## The Ensayo is resolved (chapters 9-10). Mark both Ensayo chapters as
+## completed and check if all chapters are done.
+func _on_ensayo_resolved(outcome: int, reasons: Array) -> void:
+	GameState.chapter_completed(&"ch_09_ensayo_setup")
+	GameState.chapter_completed(&"ch_10_ensayo_resolution")
+	RegionGraph.complete_chapter(&"ch_09_ensayo_setup")
+	RegionGraph.complete_chapter(&"ch_10_ensayo_resolution")
+	# If all chapters are completed, show the ending.
+	if GameState.chapters_completed_count() >= RegionGraph.all_chapters().size():
+		GameState.ending_id = GameState.compute_ending()
+		var ending_scene: PackedScene = preload("res://src/world/ending.tscn")
+		get_tree().change_scene_to_packed(ending_scene)
+		return
 
 
 ## Somebody went down in the yard.

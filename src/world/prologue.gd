@@ -18,31 +18,40 @@ var _page: int = 0  # 0 = framing text, 1 = reality variant, 2 = book variant, 3
 
 func _ready() -> void:
 	visible = false
-	_data = preload("res://src/data/prologue.tres")
+	_data = preload("res://src/data/prologue.tres") as Dictionary
 	_show_page(0)
 
 func _show_page(page: int) -> void:
 	_page = page
 	match page:
 		0:
-			_text_label.text = _data.get("text_key", "") and Loc.t(str(_data.get("text_key", ""))) or ""
+			var tk := _data.get("text_key")
+			_text_label.text = tk if tk != null else ""
+			if _text_label.text != "":
+				_text_label.text = Loc.t(_text_label.text)
 			_variant_reality.visible = false
 			_variant_book.visible = false
 			_hint.text = "Press any key to turn the page."
 		1:
 			_text_label.text = ""
-			_variant_reality.text = Loc.t(str(_data.get("variant_reality", "")))
+			var vr := _data.get("variant_reality")
+			_variant_reality.text = vr if vr != null else ""
+			if _variant_reality.text != "":
+				_variant_reality.text = Loc.t(_variant_reality.text)
 			_variant_reality.visible = true
 			_variant_book.visible = false
 			_hint.text = "Press any key to turn the page."
 		2:
 			_text_label.text = ""
 			_variant_reality.visible = false
-			_variant_book.text = Loc.t(str(_data.get("variant_book", "")))
+			var vb := _data.get("variant_book")
+			_variant_book.text = vb if vb != null else ""
+			if _variant_book.text != "":
+				_variant_book.text = Loc.t(_variant_book.text)
 			_variant_book.visible = true
 			_hint.text = "Press any key to enter Chapter 1."
 		3:
-			_queue_free()
+			queue_free()
 
 func show_prologue() -> void:
 	visible = true
