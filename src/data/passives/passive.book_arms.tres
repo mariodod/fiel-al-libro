@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PassiveData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://src/data/passive_data.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"passive.book_arms"
+display_name_key = &"ui.book.bk.ch12.armas_letras.passive.name"
+description_key = &"ui.book.bk.ch12.armas_letras.passive.desc"
+damage_percent = 1.15
+health_bonus = 10.0

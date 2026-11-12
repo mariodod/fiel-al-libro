@@ -35,6 +35,7 @@ Lectura="*res://src/autoload/lectura.gd"
 Verdict="*res://src/autoload/verdict.gd"
 Ensayo="*res://src/autoload/ensayo.gd"
 RegionGraph="*res://src/autoload/region_graph.gd"
+PassiveManager="*res://src/autoload/passive_manager.gd"
 
 [debug]
 

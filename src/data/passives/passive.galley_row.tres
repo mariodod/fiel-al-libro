@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PassiveData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://src/data/passive_data.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"passive.galley_row"
+display_name_key = &"ui.book.bk.ch14.galeotes.passive.name"
+description_key = &"ui.book.bk.ch14.galeotes.passive.desc"
+stamina_bonus = 20.0
+speed_percent = 1.10

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PassiveData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://src/data/passive_data.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"passive.windmill_sight"
+display_name_key = &"ui.book.bk.ch01.molinos.01.passive.name"
+description_key = &"ui.book.bk.ch01.molinos.01.passive.desc"
+dodge_distance_percent = 1.25
+speed_percent = 1.05

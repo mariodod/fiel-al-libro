@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="PassiveData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://src/data/passive_data.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"passive.lion_heart"
+display_name_key = &"ui.book.bk.ch13.leones.passive.name"
+description_key = &"ui.book.bk.ch13.leones.passive.desc"
+health_bonus = 30.0
+damage_percent = 1.10
+poise_bonus = 5.0

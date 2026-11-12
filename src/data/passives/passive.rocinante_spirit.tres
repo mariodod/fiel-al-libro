@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PassiveData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://src/data/passive_data.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"passive.rocinante_spirit"
+display_name_key = &"ui.book.bk.ch04.rocinante.01.passive.name"
+description_key = &"ui.book.bk.ch04.rocinante.01.passive.desc"
+speed_percent = 1.15
+dodge_distance_percent = 1.10

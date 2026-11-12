@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PassiveData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://src/data/passive_data.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"passive.innkeeper_ear"
+display_name_key = &"ui.book.bk.ch03.posada.passive.name"
+description_key = &"ui.book.bk.ch03.posada.passive.desc"
+stamina_bonus = 10.0
+locura_per_second = -1.0

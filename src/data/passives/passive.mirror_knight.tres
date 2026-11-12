@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PassiveData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://src/data/passive_data.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"passive.mirror_knight"
+display_name_key = &"ui.book.bk.ch11.caballero_bosque.passive.name"
+description_key = &"ui.book.bk.ch11.caballero_bosque.passive.desc"
+parry_window_bonus = 0.15
+poise_bonus = 5.0

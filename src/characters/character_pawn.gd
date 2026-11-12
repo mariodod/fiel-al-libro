@@ -92,6 +92,20 @@ const FLASH_SECONDS := 0.18
 ## distance needs over the window you are safe for — see
 ## `_dodge_speed_for()`.
 const DODGE_SPEED := 15.0
+
+## Passive modifier multipliers applied by PassiveManager when the shelf
+## changes. These stack on top of the character's base data.
+var _passive_health_bonus: float = 0.0
+var _passive_health_percent: float = 1.0
+var _passive_stamina_bonus: float = 0.0
+var _passive_stamina_percent: float = 1.0
+var _passive_poise_bonus: float = 0.0
+var _passive_speed_percent: float = 1.0
+var _passive_dodge_distance_percent: float = 1.0
+var _passive_dodge_iframe_percent: float = 1.0
+var _passive_damage_percent: float = 1.0
+var _passive_block_ratio_percent: float = 1.0
+var _passive_parry_window_bonus: float = 0.0
 ## How long before the stamina comes back, after the last thing you spent
 ## it on. GDD.md §7.1: "Shared pool, regenerates after 1s idle".
 const STAMINA_REGEN_DELAY := 1.0
@@ -173,6 +187,8 @@ func _ready() -> void:
 	perceived_layer = Perception.reading_for(character_id, TruthLayer.layer(), second_sight)
 	add_to_group(&"pawns")
 	EventBus.player_spawned.emit(self)
+	PassiveManager.modifiers_changed.connect(_on_passive_modifiers_changed)
+	_apply_passive_modifiers(PassiveManager.modifiers)
 
 
 ## The body mesh, so a hit can be seen.
@@ -338,7 +354,7 @@ func move(input_direction: Vector2, sprint: bool) -> void:
 	var input := Vector3(input_direction.x, 0.0, input_direction.y)
 	_input_direction = input_direction
 	_sprinting = sprint
-	var speed := RUN_SPEED if sprint else WALK_SPEED
+	var speed := run_speed() if sprint else walk_speed()
 	if _blocking:
 		# A guard is not a run.
 		speed *= 0.45
@@ -418,10 +434,10 @@ func dodge() -> void:
 	if direction.length_squared() < 0.001:
 		direction = -global_transform.basis.z
 	_dodge_direction = direction.normalized()
-	_dodge_time = data.dodge.iframe_seconds
-	_iframe_time = data.dodge.iframe_seconds
+	_dodge_time = passive_dodge_iframe()
+	_iframe_time = passive_dodge_iframe()
 	_dodge_cooldown = data.dodge.cooldown
-	_dodge_speed = _dodge_speed_for(data.dodge)
+	_dodge_speed = passive_dodge_distance() / passive_dodge_iframe()
 
 
 ## How fast this dodge throws the character.
@@ -464,7 +480,7 @@ func block(held: bool) -> void:
 	if held and not _blocking:
 		# The guard goes up. For a character who can parry, this is the
 		# window: a blow that lands now is parried, not blocked.
-		_parry_timer = data.parry_window if data != null and data.can_parry else 0.0
+		_parry_timer = passive_parry_window() if data != null and data.can_parry else 0.0
 	_blocking = held
 
 
@@ -701,7 +717,7 @@ func take_damage(amount: float, source: Node = null, poise_damage: float = 0.0) 
 			health -= amount
 			_react_to_hit(source, poise_damage)
 		else:
-			health -= amount * _block_ratio()
+			health -= amount * passive_block_ratio()
 			_push_away(source, 0.5)
 		damaged.emit(amount)
 		if health <= 0.0:
@@ -814,6 +830,79 @@ func revive() -> void:
 	health = max_health
 	stamina = data.max_stamina if data != null else 100.0
 	EventBus.character_revived.emit(character_id)
+
+
+## Apply passive modifiers from the shelf.
+## Called once on _ready() and again whenever the shelf changes.
+func _apply_passive_modifiers(mods: Dictionary) -> void:
+	_passive_health_bonus = float(mods.get("health_bonus", 0.0))
+	_passive_health_percent = float(mods.get("health_percent", 1.0))
+	_passive_stamina_bonus = float(mods.get("stamina_bonus", 0.0))
+	_passive_stamina_percent = float(mods.get("stamina_percent", 1.0))
+	_passive_poise_bonus = float(mods.get("poise_bonus", 0.0))
+	_passive_speed_percent = float(mods.get("speed_percent", 1.0))
+	_passive_dodge_distance_percent = float(mods.get("dodge_distance_percent", 1.0))
+	_passive_dodge_iframe_percent = float(mods.get("dodge_iframe_percent", 1.0))
+	_passive_damage_percent = float(mods.get("damage_percent", 1.0))
+	_passive_block_ratio_percent = float(mods.get("block_ratio_percent", 1.0))
+	_passive_parry_window_bonus = float(mods.get("parry_window_bonus", 0.0))
+
+	# Recompute derived stats with modifiers applied.
+	var base_health := 100.0
+	max_health = base_health * _passive_health_percent + _passive_health_bonus
+	health = minf(health, max_health)
+
+	var base_stamina := data.max_stamina if data != null else 100.0
+	max_stamina = base_stamina * _passive_stamina_percent + _passive_stamina_bonus
+	stamina = minf(stamina, max_stamina)
+
+	var base_poise := data.poise if data != null else 30.0
+	max_poise = base_poise + _passive_poise_bonus
+	poise = minf(poise, max_poise)
+
+
+## React to PassiveManager.modifiers_changed.
+func _on_passive_modifiers_changed() -> void:
+	_apply_passive_modifiers(PassiveManager.modifiers)
+
+
+## The character's walk speed, with passive modifiers applied.
+func walk_speed() -> float:
+	return WALK_SPEED * _passive_speed_percent
+
+
+## The character's run speed, with passive modifiers applied.
+func run_speed() -> float:
+	return RUN_SPEED * _passive_speed_percent
+
+
+## The character's dodge distance, with passive modifiers applied.
+func passive_dodge_distance() -> float:
+	if data == null or data.dodge == null:
+		return 0.0
+	return data.dodge.roll_distance * _passive_dodge_distance_percent
+
+
+## The character's dodge invulnerability window, with passive modifiers applied.
+func passive_dodge_iframe() -> float:
+	if data == null or data.dodge == null:
+		return 0.0
+	return data.dodge.iframe_seconds * _passive_dodge_iframe_percent
+
+
+## The character's damage multiplier, with passive modifiers applied.
+func passive_damage_percent() -> float:
+	return _passive_damage_percent
+
+
+## The character's blocked damage ratio, with passive modifiers applied.
+func passive_block_ratio() -> float:
+	return data.block_damage_ratio * _passive_block_ratio_percent
+
+
+## The character's parry window, with passive modifiers applied.
+func passive_parry_window() -> float:
+	return data.parry_window + _passive_parry_window_bonus
 
 
 ## Can this pawn perceive a given truth? Quixote cannot, while he is deep in
