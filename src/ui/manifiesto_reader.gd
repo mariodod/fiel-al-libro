@@ -82,8 +82,8 @@ func _ensure_detail() -> void:
 		chapter_label.set_name("Chapter")
 		chapter_label.anchors_preset = Control.PRESET_TOP_LEFT
 		chapter_label.position = Vector2(200, 70)
-		chapter_label.theme_override_font_sizes/font_size = 14
-		chapter_label.theme_override_colors/font_color = Color(0.82, 0.80, 0.72, 1.0)
+		chapter_label.add_theme_font_size_override("font_size", 14)
+		chapter_label.add_theme_color_override("font_color", Color(0.82, 0.80, 0.72, 1.0))
 		chapter_label.autowrap_mode = 2
 		_detail.add_child(chapter_label)
 		_chapter_label = chapter_label
@@ -94,8 +94,8 @@ func _ensure_detail() -> void:
 		source_label.set_name("Source")
 		source_label.anchors_preset = Control.PRESET_TOP_LEFT
 		source_label.position = Vector2(200, 95)
-		source_label.theme_override_font_sizes/font_size = 12
-		source_label.theme_override_colors/font_color = Color(0.75, 0.54, 0.24, 1.0)
+		source_label.add_theme_font_size_override("font_size", 12)
+		source_label.add_theme_color_override("font_color", Color(0.75, 0.54, 0.24, 1.0))
 		source_label.autowrap_mode = 2
 		_detail.add_child(source_label)
 		_source_label = source_label

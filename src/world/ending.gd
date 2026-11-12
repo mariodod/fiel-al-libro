@@ -176,4 +176,4 @@ The book wins. Not entirely. But it wins enough.
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept") or event.is_action_pressed("ui_cancel") or event.is_action_pressed("lectura"):
-		_get_tree().change_scene_to_packed(load("res://src/world/slice.tscn"))
+		get_tree().change_scene_to_packed(load("res://src/world/slice.tscn"))

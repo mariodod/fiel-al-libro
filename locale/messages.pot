@@ -1333,6 +1333,246 @@ msgstr ""
 msgid "ui.face.book_stand.book.desc"
 msgstr ""
 
+#. TRANSLATORS: bk.ch01.apertura book in Reality: how it looks.
+msgid "ui.face.book_bk_ch01_apertura.reality.desc"
+msgstr ""
+
+#. TRANSLATORS: bk.ch01.apertura book in Reality: the tell.
+msgid "ui.face.book_bk_ch01_apertura.reality.tell"
+msgstr ""
+
+#. TRANSLATORS: bk.ch01.apertura book in Book: how it looks.
+msgid "ui.face.book_bk_ch01_apertura.book.desc"
+msgstr ""
+
+#. TRANSLATORS: bk.ch01.apertura book in Book: the tell.
+msgid "ui.face.book_bk_ch01_apertura.book.tell"
+msgstr ""
+
+#. TRANSLATORS: bk.ch01.molinos.01 book in Reality: how it looks.
+msgid "ui.face.book_bk_ch01_molinos_01.reality.desc"
+msgstr ""
+
+#. TRANSLATORS: bk.ch01.molinos.01 book in Reality: the tell.
+msgid "ui.face.book_bk_ch01_molinos_01.reality.tell"
+msgstr ""
+
+#. TRANSLATORS: bk.ch01.molinos.01 book in Book: how it looks.
+msgid "ui.face.book_bk_ch01_molinos_01.book.desc"
+msgstr ""
+
+#. TRANSLATORS: bk.ch01.molinos.01 book in Book: the tell.
+msgid "ui.face.book_bk_ch01_molinos_01.book.tell"
+msgstr ""
+
+#. TRANSLATORS: bk.ch01.nombre.01 book in Reality: how it looks.
+msgid "ui.face.book_bk_ch01_nombre_01.reality.desc"
+msgstr ""
+
+#. TRANSLATORS: bk.ch01.nombre.01 book in Reality: the tell.
+msgid "ui.face.book_bk_ch01_nombre_01.reality.tell"
+msgstr ""
+
+#. TRANSLATORS: bk.ch01.nombre.01 book in Book: how it looks.
+msgid "ui.face.book_bk_ch01_nombre_01.book.desc"
+msgstr ""
+
+#. TRANSLATORS: bk.ch01.nombre.01 book in Book: the tell.
+msgid "ui.face.book_bk_ch01_nombre_01.book.tell"
+msgstr ""
+
+#. TRANSLATORS: bk.ch02.caballeros.01 book in Reality: how it looks.
+msgid "ui.face.book_bk_ch02_caballeros_01.reality.desc"
+msgstr ""
+
+#. TRANSLATORS: bk.ch02.caballeros.01 book in Reality: the tell.
+msgid "ui.face.book_bk_ch02_caballeros_01.reality.tell"
+msgstr ""
+
+#. TRANSLATORS: bk.ch02.caballeros.01 book in Book: how it looks.
+msgid "ui.face.book_bk_ch02_caballeros_01.book.desc"
+msgstr ""
+
+#. TRANSLATORS: bk.ch02.caballeros.01 book in Book: the tell.
+msgid "ui.face.book_bk_ch02_caballeros_01.book.tell"
+msgstr ""
+
+#. TRANSLATORS: bk.ch03.posada book in Reality: how it looks.
+msgid "ui.face.book_bk_ch03_posada.reality.desc"
+msgstr ""
+
+#. TRANSLATORS: bk.ch03.posada book in Reality: the tell.
+msgid "ui.face.book_bk_ch03_posada.reality.tell"
+msgstr ""
+
+#. TRANSLATORS: bk.ch03.posada book in Book: how it looks.
+msgid "ui.face.book_bk_ch03_posada.book.desc"
+msgstr ""
+
+#. TRANSLATORS: bk.ch03.posada book in Book: the tell.
+msgid "ui.face.book_bk_ch03_posada.book.tell"
+msgstr ""
+
+#. TRANSLATORS: bk.ch04.rocinante.01 book in Reality: how it looks.
+msgid "ui.face.book_bk_ch04_rocinante_01.reality.desc"
+msgstr ""
+
+#. TRANSLATORS: bk.ch04.rocinante.01 book in Reality: the tell.
+msgid "ui.face.book_bk_ch04_rocinante_01.reality.tell"
+msgstr ""
+
+#. TRANSLATORS: bk.ch04.rocinante.01 book in Book: how it looks.
+msgid "ui.face.book_bk_ch04_rocinante_01.book.desc"
+msgstr ""
+
+#. TRANSLATORS: bk.ch04.rocinante.01 book in Book: the tell.
+msgid "ui.face.book_bk_ch04_rocinante_01.book.tell"
+msgstr ""
+
+#. TRANSLATORS: bk.ch05.duena book in Reality: how it looks.
+msgid "ui.face.book_bk_ch05_duena.reality.desc"
+msgstr ""
+
+#. TRANSLATORS: bk.ch05.duena book in Reality: the tell.
+msgid "ui.face.book_bk_ch05_duena.reality.tell"
+msgstr ""
+
+#. TRANSLATORS: bk.ch05.duena book in Book: how it looks.
+msgid "ui.face.book_bk_ch05_duena.book.desc"
+msgstr ""
+
+#. TRANSLATORS: bk.ch05.duena book in Book: the tell.
+msgid "ui.face.book_bk_ch05_duena.book.tell"
+msgstr ""
+
+#. TRANSLATORS: bk.ch06.pastores book in Reality: how it looks.
+msgid "ui.face.book_bk_ch06_pastores.reality.desc"
+msgstr ""
+
+#. TRANSLATORS: bk.ch06.pastores book in Reality: the tell.
+msgid "ui.face.book_bk_ch06_pastores.reality.tell"
+msgstr ""
+
+#. TRANSLATORS: bk.ch06.pastores book in Book: how it looks.
+msgid "ui.face.book_bk_ch06_pastores.book.desc"
+msgstr ""
+
+#. TRANSLATORS: bk.ch06.pastores book in Book: the tell.
+msgid "ui.face.book_bk_ch06_pastores.book.tell"
+msgstr ""
+
+#. TRANSLATORS: bk.ch07.yanguesas book in Reality: how it looks.
+msgid "ui.face.book_bk_ch07_yanguesas.reality.desc"
+msgstr ""
+
+#. TRANSLATORS: bk.ch07.yanguesas book in Reality: the tell.
+msgid "ui.face.book_bk_ch07_yanguesas.reality.tell"
+msgstr ""
+
+#. TRANSLATORS: bk.ch07.yanguesas book in Book: how it looks.
+msgid "ui.face.book_bk_ch07_yanguesas.book.desc"
+msgstr ""
+
+#. TRANSLATORS: bk.ch07.yanguesas book in Book: the tell.
+msgid "ui.face.book_bk_ch07_yanguesas.book.tell"
+msgstr ""
+
+#. TRANSLATORS: bk.ch09.manuscrito book in Reality: how it looks.
+msgid "ui.face.book_bk_ch09_manuscrito.reality.desc"
+msgstr ""
+
+#. TRANSLATORS: bk.ch09.manuscrito book in Reality: the tell.
+msgid "ui.face.book_bk_ch09_manuscrito.reality.tell"
+msgstr ""
+
+#. TRANSLATORS: bk.ch09.manuscrito book in Book: how it looks.
+msgid "ui.face.book_bk_ch09_manuscrito.book.desc"
+msgstr ""
+
+#. TRANSLATORS: bk.ch09.manuscrito book in Book: the tell.
+msgid "ui.face.book_bk_ch09_manuscrito.book.tell"
+msgstr ""
+
+#. TRANSLATORS: bk.ch10.balsamo book in Reality: how it looks.
+msgid "ui.face.book_bk_ch10_balsamo.reality.desc"
+msgstr ""
+
+#. TRANSLATORS: bk.ch10.balsamo book in Reality: the tell.
+msgid "ui.face.book_bk_ch10_balsamo.reality.tell"
+msgstr ""
+
+#. TRANSLATORS: bk.ch10.balsamo book in Book: how it looks.
+msgid "ui.face.book_bk_ch10_balsamo.book.desc"
+msgstr ""
+
+#. TRANSLATORS: bk.ch10.balsamo book in Book: the tell.
+msgid "ui.face.book_bk_ch10_balsamo.book.tell"
+msgstr ""
+
+#. TRANSLATORS: bk.ch11.caballero_bosque book in Reality: how it looks.
+msgid "ui.face.book_bk_ch11_caballero_bosque.reality.desc"
+msgstr ""
+
+#. TRANSLATORS: bk.ch11.caballero_bosque book in Reality: the tell.
+msgid "ui.face.book_bk_ch11_caballero_bosque.reality.tell"
+msgstr ""
+
+#. TRANSLATORS: bk.ch11.caballero_bosque book in Book: how it looks.
+msgid "ui.face.book_bk_ch11_caballero_bosque.book.desc"
+msgstr ""
+
+#. TRANSLATORS: bk.ch11.caballero_bosque book in Book: the tell.
+msgid "ui.face.book_bk_ch11_caballero_bosque.book.tell"
+msgstr ""
+
+#. TRANSLATORS: bk.ch12.armas_letras book in Reality: how it looks.
+msgid "ui.face.book_bk_ch12_armas_letras.reality.desc"
+msgstr ""
+
+#. TRANSLATORS: bk.ch12.armas_letras book in Reality: the tell.
+msgid "ui.face.book_bk_ch12_armas_letras.reality.tell"
+msgstr ""
+
+#. TRANSLATORS: bk.ch12.armas_letras book in Book: how it looks.
+msgid "ui.face.book_bk_ch12_armas_letras.book.desc"
+msgstr ""
+
+#. TRANSLATORS: bk.ch12.armas_letras book in Book: the tell.
+msgid "ui.face.book_bk_ch12_armas_letras.book.tell"
+msgstr ""
+
+#. TRANSLATORS: bk.ch13.leones book in Reality: how it looks.
+msgid "ui.face.book_bk_ch13_leones.reality.desc"
+msgstr ""
+
+#. TRANSLATORS: bk.ch13.leones book in Reality: the tell.
+msgid "ui.face.book_bk_ch13_leones.reality.tell"
+msgstr ""
+
+#. TRANSLATORS: bk.ch13.leones book in Book: how it looks.
+msgid "ui.face.book_bk_ch13_leones.book.desc"
+msgstr ""
+
+#. TRANSLATORS: bk.ch13.leones book in Book: the tell.
+msgid "ui.face.book_bk_ch13_leones.book.tell"
+msgstr ""
+
+#. TRANSLATORS: bk.ch14.galeotes book in Reality: how it looks.
+msgid "ui.face.book_bk_ch14_galeotes.reality.desc"
+msgstr ""
+
+#. TRANSLATORS: bk.ch14.galeotes book in Reality: the tell.
+msgid "ui.face.book_bk_ch14_galeotes.reality.tell"
+msgstr ""
+
+#. TRANSLATORS: bk.ch14.galeotes book in Book: how it looks.
+msgid "ui.face.book_bk_ch14_galeotes.book.desc"
+msgstr ""
+
+#. TRANSLATORS: bk.ch14.galeotes book in Book: the tell.
+msgid "ui.face.book_bk_ch14_galeotes.book.tell"
+msgstr ""
+
 #. TRANSLATORS: The rock's anamorphosis tell: the detail that does not add up.
 msgid "ui.anamorphosis.rock_weight.tell"
 msgstr ""

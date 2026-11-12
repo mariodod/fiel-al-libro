@@ -1,7 +1,7 @@
-﻿# FIEL AL LIBRO â€” EspaÃ±ol (es-ES, fuente)
-# Idioma fuente. El espaÃ±ol de es-ES es el "original" de la capa de juego.
-# NOTA: es-419 (espaÃ±ol latinoamericano) es un archivo SEPARADO, no una copia.
-#       Tuteo, lÃ©xico propio, registro distinto. Se revisa como traducciÃ³n.
+# FIEL AL LIBRO — Español (es-ES, fuente)
+# Idioma fuente. El español de es-ES es el "original" de la capa de juego.
+# NOTA: es-419 (español latinoamericano) es un archivo SEPARADO, no una copia.
+#       Tuteo, léxico propio, registro distinto. Se revisa como traducción.
 msgid ""
 msgstr ""
 "Project-Id-Version: Fiel al Libro 0.1.0\n"
@@ -27,10 +27,10 @@ msgid "ui.menu.quit"
 msgstr "Cerrar el libro"
 
 msgid "ui.menu.codes"
-msgstr "CÃ³digos"
+msgstr "Códigos"
 
 msgid "ui.menu.codes.hint"
-msgstr "Lee el juego en otro idioma o aÃ±ade tu propia traducciÃ³n."
+msgstr "Lee el juego en otro idioma o añade tu propia traducción."
 
 msgid "ui.prompt.interact"
 msgstr "Examinar"
@@ -39,7 +39,7 @@ msgid "ui.prompt.read"
 msgstr "Leer"
 
 msgid "ui.prompt.switch_character"
-msgstr "Cambiar de compaÃ±ero"
+msgstr "Cambiar de compañero"
 
 msgid "ui.prompt.rest"
 msgstr "Descansar"
@@ -60,16 +60,16 @@ msgid "ui.manuscript.title"
 msgstr "El Manuscrito"
 
 msgid "ui.manuscript.unwritten_page"
-msgstr "Una pÃ¡gina por escribir"
+msgstr "Una página por escribir"
 
 msgid "ui.shelf.title"
-msgstr "La EstanterÃ­a"
+msgstr "La Estantería"
 
 msgid "ui.shelf.empty"
-msgstr "La estanterÃ­a estÃ¡ vacÃ­a. AÃºn no hay nada en que creer."
+msgstr "La estantería está vacía. Aún no hay nada en que creer."
 
 msgid "ui.shelf.equip"
-msgstr "Dejar en la estanterÃ­a"
+msgstr "Dejar en la estantería"
 
 msgid "ui.codex.title"
 msgstr "El Manifiesto"
@@ -84,10 +84,10 @@ msgid "bk.note.translation"
 msgstr "Dicho de otro modo"
 
 msgid "bk.note.translator"
-msgstr "Esta es una versiÃ³n actualizada. Las palabras viejas estÃ¡n arriba."
+msgstr "Esta es una versión actualizada. Las palabras viejas están arriba."
 
 msgid "bk.chapter"
-msgstr "CapÃ­tulo"
+msgstr "Capítulo"
 
 msgid "it.book.cid.name"
 msgstr "Cantar de Mio Cid"
@@ -96,22 +96,22 @@ msgid "it.book.cid.desc"
 msgstr "Homenaje y juramento. Quien lo oye duda antes de golpear."
 
 msgid "it.book.tio_andalus.name"
-msgstr "Leyenda del TÃ­o Andalus"
+msgstr "Leyenda del Tío Andalus"
 
 msgid "it.book.tio_andalus.desc"
-msgstr "Una casa que huele a sangre. La puerta de la bodega no estÃ¡ donde deberÃ­a."
+msgstr "Una casa que huele a sangre. La puerta de la bodega no está donde debería."
 
 msgid "it.book.celestina.name"
 msgstr "La Celestina"
 
 msgid "it.book.celestina.desc"
-msgstr "Cada hilo es un cabo, y cada cabo estÃ¡ en su mano."
+msgstr "Cada hilo es un cabo, y cada cabo está en su mano."
 
 msgid "it.ability.desvelar.name"
 msgstr "Desvelar"
 
 msgid "it.ability.desvelar.desc"
-msgstr "QuÃ­tale a la cosa la piel de libro y mira lo que es de verdad."
+msgstr "Quítale a la cosa la piel de libro y mira lo que es de verdad."
 
 msgid "it.ability.refutar.name"
 msgstr "Refutar"
@@ -123,7 +123,7 @@ msgid "it.ability.juramento.name"
 msgstr "El Juramento"
 
 msgid "it.ability.juramento.desc"
-msgstr "Quien jurÃ³ una vez no rompe su juramento con facilidad."
+msgstr "Quien juró una vez no rompe su juramento con facilidad."
 
 msgid "it.ability.dodge.name"
 msgstr "Esquivar"
@@ -135,13 +135,13 @@ msgid "dia.sancho.bark.001"
 msgstr "Por todos los santos, es un molino."
 
 msgid "dia.sancho.bark.002"
-msgstr "SeÃ±or, si no son mÃ¡s que piedra y madera..."
+msgstr "Señor, si no son más que piedra y madera..."
 
 msgid "dia.quixote.bark.001"
-msgstr "Â¡Ay de ti, animal mortal! Â¡Te cortarÃ© de los hombros!"
+msgstr "¡Ay de ti, animal mortal! ¡Te cortaré de los hombros!"
 
 msgid "dia.quixote.bark.002"
-msgstr "Conozco tu linaje. Conozco los males que habÃ©is hecho en el mundo."
+msgstr "Conozco tu linaje. Conozco los males que habéis hecho en el mundo."
 
 # --- B5: THE REACTIONS -----------------------------------------------------
 # The line a character says when the world moves under them. The key is
@@ -150,19 +150,19 @@ msgstr "Conozco tu linaje. Conozco los males que habÃ©is hecho en el mundo."
 
 #. TRANSLATORS: Quixote sees the windmill as a giant.
 msgid "dia.quixote.reaction.windmill.book"
-msgstr "Â¡Un gigante! Â¡Mirad, un gigante! Â¡En mis libros no sopla el viento!"
+msgstr "¡Un gigante! ¡Mirad, un gigante! ¡En mis libros no sopla el viento!"
 
 #. TRANSLATORS: Quixote sees the windmill as a windmill again.
 msgid "dia.quixote.reaction.windmill.reality"
-msgstr "Â¡Ah! Un molino de viento. Solo un molino. Perdonad, Sancho."
+msgstr "¡Ah! Un molino de viento. Solo un molino. Perdonad, Sancho."
 
 #. TRANSLATORS: Quixote sees the rock as a book.
 msgid "dia.quixote.reaction.rock.book"
-msgstr "Â¡Un libro! Â¡Mirad, un libro! Â¿QuiÃ©n lo ha puesto aquÃ­?"
+msgstr "¡Un libro! ¡Mirad, un libro! ¿Quién lo ha puesto aquí?"
 
 #. TRANSLATORS: Quixote sees the rock as a rock again.
 #. It must NOT name the other truth: the Book reaction is subtle
-#. ("Â¡Un libro! Â¡Mirad, un libro! Â¿QuiÃ©n lo ha puesto aquÃ­?"), and this
+#. ("¡Un libro! ¡Mirad, un libro! ¿Quién lo ha puesto aquí?"), and this
 #. one has to be as subtle as that one. The playtest called the old
 #. wording a dead giveaway.
 msgid "dia.quixote.reaction.rock.reality"
@@ -174,11 +174,11 @@ msgstr "Eh... ese molino se ha puesto gigante."
 
 #. TRANSLATORS: Sancho sees the windmill as a windmill again.
 msgid "dia.sancho.reaction.windmill.reality"
-msgstr "Ya estÃ¡. Un molino, como siempre."
+msgstr "Ya está. Un molino, como siempre."
 
 #. TRANSLATORS: Sancho sees the rock as a book.
 msgid "dia.sancho.reaction.rock.book"
-msgstr "La piedra se ha puesto libro, seÃ±or."
+msgstr "La piedra se ha puesto libro, señor."
 
 #. TRANSLATORS: Sancho sees the rock as a rock again.
 msgid "dia.sancho.reaction.rock.reality"
@@ -190,12 +190,12 @@ msgid "ui.examine.close"
 msgstr "E - Cerrar"
 
 # --- LA CHARLA (B3) -----------------------------------------------------
-# Lo que dice el compaÃ±ero de lo que tiene delante. La clave se compone:
+# Lo que dice el compañero de lo que tiene delante. La clave se compone:
 # dia.<personaje>.chatter.<cosa>.
 
 #. TRANSLATORS: Quixote, looking at the rock. He is formal, and a little mad.
 msgid "dia.quixote.chatter.rock"
-msgstr "Una piedra, Sancho. Aunque maÃ±ana me parezca un libro, y con razÃ³n."
+msgstr "Una piedra, Sancho. Aunque mañana me parezca un libro, y con razón."
 
 #. TRANSLATORS: Quixote, looking at the windmill.
 msgid "dia.quixote.chatter.windmill"
@@ -203,15 +203,15 @@ msgstr "Molinos, Sancho. Y gigantes, si el viento quiere que lo sean."
 
 #. TRANSLATORS: Quixote, looking at the training dummy. He will call it a giant.
 msgid "dia.quixote.chatter.dummy"
-msgstr "Un maniquÃ­, Sancho. Un gigante de madera, si usted lo quiere asÃ­."
+msgstr "Un maniquí, Sancho. Un gigante de madera, si usted lo quiere así."
 
 #. TRANSLATORS: Quixote, when the player locks onto something.
 msgid "dia.quixote.chatter.locked"
-msgstr "Â¡Al gigante, Sancho! Â¿Lo ve? Se mueve solo. Â¡A la batalla!"
+msgstr "¡Al gigante, Sancho! ¿Lo ve? Se mueve solo. ¡A la batalla!"
 
 #. TRANSLATORS: Quixote, when the player goes down.
 msgid "dia.quixote.chatter.down"
-msgstr "Â¡LevÃ¡ntese, Sancho! No es culpa suya: la piedra estaba mal puesta."
+msgstr "¡Levántese, Sancho! No es culpa suya: la piedra estaba mal puesta."
 
 #. TRANSLATORS: Quixote, with nothing in front of him. Line 1 of 3.
 msgid "dia.quixote.chatter.idle.1"
@@ -219,7 +219,7 @@ msgstr "La llanura no dice nada, Sancho. Ni siquiera ella."
 
 #. TRANSLATORS: Quixote, with nothing in front of him. Line 2 of 3.
 msgid "dia.quixote.chatter.idle.2"
-msgstr "Y pensar que de aquÃ­ a un castillo... no, un molino, habremos visto un castillo."
+msgstr "Y pensar que de aquí a un castillo... no, un molino, habremos visto un castillo."
 
 #. TRANSLATORS: Quixote, with nothing in front of him. Line 3 of 3.
 msgid "dia.quixote.chatter.idle.3"
@@ -227,65 +227,65 @@ msgstr "Silencio, Sancho. Es el silencio de antes de una batalla."
 
 #. TRANSLATORS: Sancho, looking at the rock. Plain, practical, not impressed.
 msgid "dia.sancho.chatter.rock"
-msgstr "Una piedra, seÃ±or. De las que hay a montones."
+msgstr "Una piedra, señor. De las que hay a montones."
 
 #. TRANSLATORS: Sancho, looking at the windmill.
 msgid "dia.sancho.chatter.windmill"
-msgstr "Un molino, seÃ±or. De los de siempre, de piedra y de viento."
+msgstr "Un molino, señor. De los de siempre, de piedra y de viento."
 
 #. TRANSLATORS: Sancho, looking at the training dummy. He knows what it is.
 msgid "dia.sancho.chatter.dummy"
-msgstr "Un maniquÃ­, seÃ±or. EstÃ¡ puesto para que le den."
+msgstr "Un maniquí, señor. Está puesto para que le den."
 
 #. TRANSLATORS: Sancho, when the player locks onto something.
 msgid "dia.sancho.chatter.locked"
-msgstr "Ah, Â¿vamos a por Ã©l, seÃ±or? Ay, no lo mueve nadie."
+msgstr "Ah, ¿vamos a por él, señor? Ay, no lo mueve nadie."
 
 #. TRANSLATORS: Sancho, when the player goes down.
 msgid "dia.sancho.chatter.down"
-msgstr "Â¡LevÃ¡ntese, que le estÃ¡n dando! Â¡Y quÃ­tese de en medio!"
+msgstr "¡Levántese, que le están dando! ¡Y quítese de en medio!"
 
 #. TRANSLATORS: Sancho, with nothing in front of him. Line 1 of 3.
 msgid "dia.sancho.chatter.idle.1"
-msgstr "Esto estÃ¡ mÃ¡s quieto que su Rocinante, seÃ±or."
+msgstr "Esto está más quieto que su Rocinante, señor."
 
 #. TRANSLATORS: Sancho, with nothing in front of him. Line 2 of 3.
 msgid "dia.sancho.chatter.idle.2"
-msgstr "AquÃ­ no se ve ni un alma, seÃ±or. Ni un alma de las que buscan."
+msgstr "Aquí no se ve ni un alma, señor. Ni un alma de las que buscan."
 
 #. TRANSLATORS: Sancho, with nothing in front of him. Line 3 of 3.
 msgid "dia.sancho.chatter.idle.3"
-msgstr "Si seguimos asÃ­, llegaremos a la posada antes de que anochezca."
+msgstr "Si seguimos así, llegaremos a la posada antes de que anochezca."
 
 #. TRANSLATORS: Quixote, after a parry. He cannot parry, so this line is
 #. only ever heard if the character who is driving is Sancho.
 msgid "dia.quixote.chatter.parry"
-msgstr "Â¡AhÃ­ lo tengo! Â¡Con un palmo de la frente, Sancho!"
+msgstr "¡Ahí lo tengo! ¡Con un palmo de la frente, Sancho!"
 
 #. TRANSLATORS: Sancho, after a parry.
 msgid "dia.sancho.chatter.parry"
-msgstr "Â¡Le he parado yo, seÃ±or! Â¿Lo ha visto?"
+msgstr "¡Le he parado yo, señor! ¿Lo ha visto?"
 
 #. TRANSLATORS: Sancho, after a Desvelar: he has stripped the Book skin
 #. off a thing and both of them can see what is under it.
 msgid "dia.sancho.chatter.desvelar"
-msgstr "Â¡AhÃ­ estÃ¡ la verdad, seÃ±or! MÃ­rela. MÃ­rela bien."
+msgstr "¡Ahí está la verdad, señor! Mírela. Mírela bien."
 
-#. TRANSLATORS: Quixote, mirando al maniquÃ­ de paja en el patio. Lo llamarÃ¡ un gigante.
+#. TRANSLATORS: Quixote, mirando al maniquí de paja en el patio. Lo llamará un gigante.
 msgid "dia.quixote.chatter.straw_man"
-msgstr "Â¡Un gigante! Sancho, Â¡mira! Un gigante de paja y lienzo."
+msgstr "¡Un gigante! Sancho, ¡mira! Un gigante de paja y lienzo."
 
-#. TRANSLATORS: Sancho, mirando al maniquÃ­ de paja en el patio. Sabe lo que es.
+#. TRANSLATORS: Sancho, mirando al maniquí de paja en el patio. Sabe lo que es.
 msgid "dia.sancho.chatter.straw_man"
-msgstr "Solo un maniquÃ­ de paja, seÃ±or. Relleno de paja, no de maldad."
+msgstr "Solo un maniquí de paja, señor. Relleno de paja, no de maldad."
 
-#. TRANSLATORS: Quixote, cuando el Venture de Montiel ha caÃ­do.
+#. TRANSLATORS: Quixote, cuando el Venture de Montiel ha caído.
 msgid "dia.quixote.chatter.venture_down"
-msgstr "Â¡El gigante ha caÃ­do, Sancho! El molino vuelve a ser un molino."
+msgstr "¡El gigante ha caído, Sancho! El molino vuelve a ser un molino."
 
-#. TRANSLATORS: Sancho, cuando el Venture de Montiel ha caÃ­do.
+#. TRANSLATORS: Sancho, cuando el Venture de Montiel ha caído.
 msgid "dia.sancho.chatter.venture_down"
-msgstr "El molino vuelve a ser un molino, seÃ±or. El gigante ya no es mÃ¡s."
+msgstr "El molino vuelve a ser un molino, señor. El gigante ya no es más."
 
 #. TRANSLATORS: Quixote, with nothing in front of him. Line 4 of 6.
 msgid "dia.quixote.chatter.idle.4"
@@ -293,7 +293,7 @@ msgstr "El viento se mueve, Sancho. Algo se aproxima."
 
 #. TRANSLATORS: Quixote, with nothing in front of him. Line 5 of 6.
 msgid "dia.quixote.chatter.idle.5"
-msgstr "PodrÃ­a pasar toda una vida observando estos llanos."
+msgstr "Podría pasar toda una vida observando estos llanos."
 
 #. TRANSLATORS: Quixote, with nothing in front of him. Line 6 of 6.
 msgid "dia.quixote.chatter.idle.6"
@@ -301,43 +301,43 @@ msgstr "Incluso las piedras tienen historias, Sancho. Solo hay que preguntarles.
 
 #. TRANSLATORS: Sancho, with nothing in front of him. Line 4 of 6.
 msgid "dia.sancho.chatter.idle.4"
-msgstr "El sol sube, seÃ±or. SerÃ­a mejor que siguiÃ©ramos adelante."
+msgstr "El sol sube, señor. Sería mejor que siguiéramos adelante."
 
 #. TRANSLATORS: Sancho, with nothing in front of him. Line 5 of 6.
 msgid "dia.sancho.chatter.idle.5"
-msgstr "PodrÃ­a usar un poco de sombra, seÃ±or. Y quizÃ¡s un bocado."
+msgstr "Podría usar un poco de sombra, señor. Y quizás un bocado."
 
 #. TRANSLATORS: Sancho, with nothing in front of him. Line 6 of 6.
 msgid "dia.sancho.chatter.idle.6"
-msgstr "Esta tierra es vasta, seÃ±or. Y mayormente vacÃ­a."
+msgstr "Esta tierra es vasta, señor. Y mayormente vacía."
 
 msgid "tip.lectura.intro"
-msgstr "Aguanta la pÃ¡gina. Algunas cosas solo se muestran a quien mira con calma."
+msgstr "Aguanta la página. Algunas cosas solo se muestran a quien mira con calma."
 
 msgid "tip.switch.intro"
-msgstr "Cambia de compaÃ±ero. El mundo es el mismo; solo cambia la lectura."
+msgstr "Cambia de compañero. El mundo es el mismo; solo cambia la lectura."
 
 msgid "tip.posada.intro"
-msgstr "Descansa. El camino seguirÃ¡ allÃ­."
+msgstr "Descansa. El camino seguirá allí."
 
 # --- CAPA DE LIBRO -----------------------------------------------------
-# El original de 1605 es CONTENIDO y permanece en espaÃ±ol en todas las
+# El original de 1605 es CONTENIDO y permanece en español en todas las
 # versiones. Solo se traducen las Chains ".modern".
 
 msgid "bk.ch08.molinos.01.modern"
 msgstr ""
 "Y le parecieron unos treinta o cuarenta molinos de gigantica grandeza, "
-"que estÃ¡n en aquel llano, y tan altos y grandes que los adiveles de sus "
-"ailes, que van volteando, parecÃ­an herir a los que estÃ¡n en la riba."
+"que están en aquel llano, y tan altos y grandes que los adiveles de sus "
+"ailes, que van volteando, parecían herir a los que están en la riba."
 "\n"
-"(Nota del traductor: la versiÃ³n definitiva de este pasaje cita el original "
-"de 1605 palabra por palabra y ofrece esta parÃ¡frasis moderna en lugar de "
-"traducir el arcaÃ­smo.)"
+"(Nota del traductor: la versión definitiva de este pasaje cita el original "
+"de 1605 palabra por palabra y ofrece esta paráfrasis moderna en lugar de "
+"traducir el arcaísmo.)"
 
 msgid "bk.ch23.montesinos.01.modern"
 msgstr ""
-"Y le contÃ³ cÃ³mo habÃ­a encontrado cierta cueva encantada en aquel lugar, "
-"y cÃ³mo salÃ­a de ella un caballero, y cÃ³mo le dejaba agora para ir a "
+"Y le contó cómo había encontrado cierta cueva encantada en aquel lugar, "
+"y cómo salía de ella un caballero, y cómo le dejaba agora para ir a "
 "buscarle."
 
 msgid "bk.ch26.galimatias.01.modern"
@@ -349,13 +349,13 @@ msgid "bk.ch50.impertinente.01.modern"
 msgstr ""
 "Porque la historia del curioso impertinente es la que yo quisiera haber "
 "escrito, a no ser que mi pluma no tiene acierto para pintar la hechura "
-"del amor que en ella habÃ­a."
+"del amor que en ella había."
 
 msgid "ui.shelf.count"
-msgstr "%d libro en la estanterÃ­a"
+msgstr "%d libro en la estantería"
 
 msgid "ui.shelf.count.plural"
-msgstr "%d libros en la estanterÃ­a"
+msgstr "%d libros en la estantería"
 
 msgid "ui.library.total"
 msgstr "%d de %d libros hallados"
@@ -364,10 +364,10 @@ msgid "ui.library.total.plural"
 msgstr "%d de %d libros hallados"
 
 msgid "ui.word.page.book"
-msgstr "pÃ¡gina"
+msgstr "página"
 
 msgid "ui.word.page.nav"
-msgstr "pÃ¡gina"
+msgstr "página"
 
 msgid "character.quixote"
 msgstr "Don Quijote"
@@ -379,9 +379,9 @@ msgstr "Sancho"
 msgid "character.innkeeper"
 msgstr "Tabernero"
 
-#. TRANSLATORS: El mÃºsico de la Posada, que toca mÃºsica.
+#. TRANSLATORS: El músico de la Posada, que toca música.
 msgid "character.musician"
-msgstr "MÃºsico"
+msgstr "Músico"
 
 #. META: namespace=ui
 msgid "ui.language.name.es"
@@ -455,7 +455,7 @@ msgstr ""
 
 #. TRANSLATORS: The title of the Week 1-2 grey box HUD.
 msgid "ui.slice.title"
-msgstr "FIEL AL LIBRO â€” caja gris, semanas 1â€“2"
+msgstr "FIEL AL LIBRO — caja gris, semanas 1–2"
 
 #. TRANSLATORS: HUD line: the truth the world is in. Format: %s.
 msgid "ui.slice.line.world"
@@ -463,11 +463,11 @@ msgstr "Verdad del mundo: %s"
 
 #. TRANSLATORS: HUD line: the character you are driving and what they read. Format: %s, %s.
 msgid "ui.slice.line.you"
-msgstr "Conduces: %s â€” lee %s"
+msgstr "Conduces: %s — lee %s"
 
 #. TRANSLATORS: HUD line: the companion and what they read. Format: %s, %s.
 msgid "ui.slice.line.companion"
-msgstr "CompaÃ±ero: %s â€” lee %s"
+msgstr "Compañero: %s — lee %s"
 
 #. TRANSLATORS: HUD line: whether Sancho has the second sight. Format: %s.
 msgid "ui.slice.line.second_sight"
@@ -479,24 +479,24 @@ msgstr "Locura de Quijote: %d (%s)"
 
 #. TRANSLATORS: HUD line: one object and what each character calls it. Format: %s, %s, %s, %s, %s.
 msgid "ui.slice.line.object"
-msgstr "%s â€” %s: %s Â· %s: %s"
+msgstr "%s — %s: %s · %s: %s"
 
 #. TRANSLATORS: Control hint, line 1.
 msgid "ui.slice.help.1"
-msgstr "WASD caminar Â· MayÃºs correr Â· Espacio esquivar Â· LMB/RMB atacar"
+msgstr "WASD caminar · Mayús correr · Espacio esquivar · LMB/RMB atacar"
 
 #. TRANSLATORS: Control hint, line 2.
 msgid "ui.slice.help.2"
-msgstr "TAB cambiar de compaÃ±ero Â· T la verdad del mundo"
+msgstr "TAB cambiar de compañero · T la verdad del mundo"
 
 #. TRANSLATORS: Control hint, line 3.
 msgid "ui.slice.help.3"
-msgstr "V segunda vista Â· L Locura Â· F1 esta ayuda Â· F2 las etiquetas"
+msgstr "V segunda vista · L Locura · F1 esta ayuda · F2 las etiquetas"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
 msgid "bk.ch01.apertura.title"
-msgstr "CapÃ­tulo primero"
+msgstr "Capítulo primero"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
@@ -536,7 +536,7 @@ msgstr "El Manuscrito"
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
 msgid "bk.ch10.balsamo.title"
-msgstr "El BÃ¡lsamo de FierabrÃ¡s"
+msgstr "El Bálsamo de Fierabrás"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
@@ -631,7 +631,7 @@ msgstr "La Condesa Trifaldi"
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
 msgid "bk.ch26.melisendra.title"
-msgstr "Los TÃ­teres de Melisendra"
+msgstr "Los Títeres de Melisendra"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
@@ -646,7 +646,7 @@ msgstr "Leones en el Carro"
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
 msgid "bk.ch31.cueva_hermoso.title"
-msgstr "La Cueva del ErmitaÃ±o"
+msgstr "La Cueva del Ermitaño"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
@@ -699,7 +699,7 @@ msgstr "El Falso Secuelo"
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
 msgid "bk.ch42.maestro_pedro.title"
-msgstr "Los TÃ­teres de Maestro Pedro"
+msgstr "Los Títeres de Maestro Pedro"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
@@ -737,15 +737,15 @@ msgstr "E examinar lo que tienes delante"
 
 #. TRANSLATORS: Control hint, line 5: where the practice yard is.
 msgid "ui.slice.help.5"
-msgstr "Al oeste: el patio y el maniquÃ­ Â· M fijar Â· K reiniciar"
+msgstr "Al oeste: el patio y el maniquí · M fijar · K reiniciar"
 
 #. TRANSLATORS: Control hint, line 6: the guard, the Desvelar and the reset.
 msgid "ui.slice.help.6"
-msgstr "F la guardia (Sancho para el golpe) Â· X desvelar Â· K reiniciar el patio"
+msgstr "F la guardia (Sancho para el golpe) · X desvelar · K reiniciar el patio"
 
 #. TRANSLATORS: HUD line: the training dummy and how much of it is left. Format: %d, %d.
 msgid "ui.slice.line.dummy"
-msgstr "ManiquÃ­: %d/%d"
+msgstr "Maniquí: %d/%d"
 
 #. TRANSLATORS: HUD line: Humanity, and how much is left of it. Format: %d, %d.
 msgid "ui.slice.line.humanity"
@@ -753,15 +753,15 @@ msgstr "Humanidad: %d/%d"
 
 #. TRANSLATORS: The straw man, as the HUD and the lock-on call it.
 msgid "ui.target.strawman"
-msgstr "el espantapÃ¡jaros"
+msgstr "el espantapájaros"
 
 #. TRANSLATORS: HUD line: the character you are driving and how they are. Format: %s, %d, %d, %d, %d.
 msgid "ui.slice.line.vitals"
-msgstr "%s: %d de vida Â· %d de aliento Â· %d de aplomo (/%d)"
+msgstr "%s: %d de vida · %d de aliento · %d de aplomo (/%d)"
 
 #. TRANSLATORS: Shown when a character goes down in the practice yard.
 msgid "ui.slice.down"
-msgstr "EstÃ¡s en el suelo. Pulsa K para levantarte."
+msgstr "Estás en el suelo. Pulsa K para levantarte."
 
 #. TRANSLATORS: HUD line: what the player is locked onto. Format: %s.
 msgid "ui.slice.line.locked"
@@ -773,20 +773,20 @@ msgstr "FIJADO"
 
 #. TRANSLATORS: The training dummy, as the HUD and the lock-on call it.
 msgid "ui.target.dummy"
-msgstr "el maniquÃ­ de entrenamiento"
+msgstr "el maniquí de entrenamiento"
 
 #. TRANSLATORS: Shown when both characters are down: the game is over and
 #. the morning starts again.
 msgid "ui.slice.gameover"
-msgstr "La pÃ¡gina queda en blanco. Se empieza de nuevo."
+msgstr "La página queda en blanco. Se empieza de nuevo."
 
 #. TRANSLATORS: The companion, after picking the player up.
 msgid "dia.quixote.chatter.revive"
-msgstr "Â¡Alzadese, Sancho! AquÃ­ estoy. No fue culpa de nadie."
+msgstr "¡Alzadese, Sancho! Aquí estoy. No fue culpa de nadie."
 
 #. TRANSLATORS: The companion, after picking the player up.
 msgid "dia.sancho.chatter.revive"
-msgstr "Levantese, seÃ±or. Venga, que aÃºn hay molinos que ver."
+msgstr "Levantese, señor. Venga, que aún hay molinos que ver."
 
 #. TRANSLATORS: The name of the light attack.
 msgid "it.ability.attack_light.name"
@@ -798,37 +798,37 @@ msgstr "Ataque pesado"
 
 #. TRANSLATORS: The Examine prompt: what to press to look at a thing.
 msgid "ui.examine.prompt"
-msgstr "E â€” Examinar"
+msgstr "E — Examinar"
 
 #. TRANSLATORS: The Examine panel: the text written on the thing, in
 #. quotation marks. Format: %s.
 msgid "ui.examine.quote"
-msgstr "Â«%sÂ»"
+msgstr "«%s»"
 
 # --- THE FACES: what a character perceives -------------------------------
-# One face per truth, per object. The Examine panel shows ONE of them â€”
-# the one the reader is reading right now â€” and never the other truth and
+# One face per truth, per object. The Examine panel shows ONE of them —
+# the one the reader is reading right now — and never the other truth and
 # never the other character's reading.
 #
 # The "tell" is the seam: the one detail that does not add up. It is the
-# seed of the Lectura system (GDD.md Â§6), and it is the only thing the
+# seed of the Lectura system (GDD.md §6), and it is the only thing the
 # player is meant to notice without a marker.
 
 #. TRANSLATORS: The rock in the Reality truth: how it looks.
 msgid "ui.face.rock.reality.desc"
-msgstr "Una piedra gris del tamaÃ±o de un puÃ±o, con el liquen seco en la parte de arriba y la base hundida en la tierra."
+msgstr "Una piedra gris del tamaño de un puño, con el liquen seco en la parte de arriba y la base hundida en la tierra."
 
 #. TRANSLATORS: The rock in the Reality truth: the one detail that does not add up.
 msgid "ui.face.rock.reality.tell"
-msgstr "Pesa mÃ¡s de lo que deberÃ­a pesar una piedra de ese tamaÃ±o."
+msgstr "Pesa más de lo que debería pesar una piedra de ese tamaño."
 
 #. TRANSLATORS: The rock in the Book truth: how it looks.
 msgid "ui.face.rock.book.desc"
-msgstr "Un libro pequeÃ±o, encuadernado en cuero pardo y atado con una correa. Los cantos de las hojas estÃ¡n dorados y manchan los dedos."
+msgstr "Un libro pequeño, encuadernado en cuero pardo y atado con una correa. Los cantos de las hojas están dorados y manchan los dedos."
 
 #. TRANSLATORS: The rock in the Book truth: the one detail that does not add up.
 msgid "ui.face.rock.book.tell"
-msgstr "Pesa mÃ¡s de lo que deberÃ­a pesar un libro de ese tamaÃ±o."
+msgstr "Pesa más de lo que debería pesar un libro de ese tamaño."
 
 #. TRANSLATORS: The title written on the cover of the book the rock is.
 msgid "ui.face.rock.book.title"
@@ -844,11 +844,11 @@ msgstr "No sopla nada de viento, y sin embargo las aspas se mueven."
 
 #. TRANSLATORS: The windmill in the Book truth: how it looks.
 msgid "ui.face.windmill.book.desc"
-msgstr "Un gigante de los que cuentan las historias, con los brazos tan largos que le rozan el suelo y una cabeza pequeÃ±a, hundida entre los hombros."
+msgstr "Un gigante de los que cuentan las historias, con los brazos tan largos que le rozan el suelo y una cabeza pequeña, hundida entre los hombros."
 
 #. TRANSLATORS: The windmill in the Book truth: the one detail that does not add up.
 msgid "ui.face.windmill.book.tell"
-msgstr "Lo que en Ã©l parece un brazo es un aspa de molino."
+msgstr "Lo que en él parece un brazo es un aspa de molino."
 
 #. TRANSLATORS: The Reality layer: what actually happened.
 msgid "ui.layer.reality"
@@ -860,7 +860,7 @@ msgstr "Libro"
 
 #. TRANSLATORS: The word "on", for a switch.
 msgid "ui.on"
-msgstr "sÃ­"
+msgstr "sí"
 
 #. TRANSLATORS: The word "off", for a switch.
 msgid "ui.off"
@@ -868,7 +868,7 @@ msgstr "no"
 
 #. TRANSLATORS: The lowest madness band: Lucid.
 msgid "ui.locura.lucid"
-msgstr "LÃºcido"
+msgstr "Lúcido"
 
 #. TRANSLATORS: Madness band 2: Displaced.
 msgid "ui.locura.displaced"
@@ -928,7 +928,7 @@ msgstr "La Cueva"
 
 #. TRANSLATORS: What Montesinos is called in the Book layer.
 msgid "ui.form.montesinos_book"
-msgstr "El SueÃ±o"
+msgstr "El Sueño"
 
 #. TRANSLATORS: What the Bridge is called in the Reality layer.
 msgid "ui.form.bridge_reality"
@@ -936,7 +936,7 @@ msgstr "Tablones Podridos"
 
 #. TRANSLATORS: What the Bridge is called in the Book layer.
 msgid "ui.form.bridge_book"
-msgstr "Piedra SÃ³lida"
+msgstr "Piedra Sólida"
 
 #. TRANSLATORS: What Dulcinea is called in the Reality layer.
 msgid "ui.form.dulcinea_reality"
@@ -948,7 +948,7 @@ msgstr "Dulcinea"
 
 #. TRANSLATORS: What the Knight of Mirrors is called in the Reality layer.
 msgid "ui.form.mirrors_reality"
-msgstr "SansÃ³n Carrasco"
+msgstr "Sansón Carrasco"
 
 #. TRANSLATORS: What the Knight of Mirrors is called in the Book layer.
 msgid "ui.form.mirrors_book"
@@ -988,11 +988,11 @@ msgstr "El molino de Montiel"
 
 #. TRANSLATORS: The Venture in the Reality truth: how it looks.
 msgid "ui.face.venture.reality.desc"
-msgstr "El molino de Montiel en pie. La piedra estÃ¡ pulida por el trigo, y la puerta baja se ve abierta de par en par."
+msgstr "El molino de Montiel en pie. La piedra está pulida por el trigo, y la puerta baja se ve abierta de par en par."
 
 #. TRANSLATORS: The Venture in the Reality truth: the one detail that does not add up.
 msgid "ui.face.venture.reality.tell"
-msgstr "Las aspas giran hacia donde uno estÃ¡, y no lo hacen despacio."
+msgstr "Las aspas giran hacia donde uno está, y no lo hacen despacio."
 
 #. TRANSLATORS: The Venture in the Reality truth: the name the manuscript gives it.
 msgid "ui.face.venture.reality.title"
@@ -1000,11 +1000,11 @@ msgstr "El molino de Montiel"
 
 #. TRANSLATORS: The Venture in the Book truth: how it looks.
 msgid "ui.face.venture.book.desc"
-msgstr "El gigante de los molinos de Montiel, con los brazos largos como aspas y una cabeza pequeÃ±a hundida entre los hombros."
+msgstr "El gigante de los molinos de Montiel, con los brazos largos como aspas y una cabeza pequeña hundida entre los hombros."
 
 #. TRANSLATORS: The Venture in the Book truth: the one detail that does not add up.
 msgid "ui.face.venture.book.tell"
-msgstr "Lo que en Ã©l parece un brazo es un aspa de molino, y lo que parece una cabeza es la piedra del eje."
+msgstr "Lo que en él parece un brazo es un aspa de molino, y lo que parece una cabeza es la piedra del eje."
 
 #. TRANSLATORS: The Venture in the Book truth: the name the manuscript gives it.
 msgid "ui.face.venture.book.title"
@@ -1104,13 +1104,13 @@ msgstr "prepara: %s"
 
 #. TRANSLATORS: The Venture of Montiel is over.
 msgid "ui.slice.venture.down"
-msgstr "El molino de Montiel ha caÃ­do."
+msgstr "El molino de Montiel ha caído."
 
-#. TRANSLATORS: The Venture of Montiel is over â€” resolved by truth, not force.
+#. TRANSLATORS: The Venture of Montiel is over — resolved by truth, not force.
 #. The knight's delusion held: the world stayed Book, the giant was real,
 #. and a fragment of the original book is granted.
 msgid "ui.slice.venture.truth"
-msgstr "El molino de Montiel se yergue â€” como gigante."
+msgstr "El molino de Montiel se yergue — como gigante."
 
 #. TRANSLATORS: Toast message shown when the player saves at a checkpoint.
 msgid "ui.slice.saved"
@@ -1130,7 +1130,7 @@ msgstr "Un choque de perspectivas en la posada."
 
 #. TRANSLATORS: The codex note on the Venture Basque in its Book form.
 msgid "ui.codex.venture.basque.book"
-msgstr "Un desafÃ­o caballeresco."
+msgstr "Un desafío caballeresco."
 
 #. TRANSLATORS: The codex note on the Venture Canting Sea in its Reality form.
 msgid "ui.codex.venture.sea.reality"
@@ -1150,11 +1150,11 @@ msgstr "Caballeros caminos de la sierra."
 
 #. TRANSLATORS: The codex note on the Venture Montesinos in its Reality form.
 msgid "ui.codex.venture.montesinos.reality"
-msgstr "Una cueva hÃºmeda con murciÃ©lagos."
+msgstr "Una cueva húmeda con murciélagos."
 
 #. TRANSLATORS: The codex note on the Venture Montesinos in its Book form.
 msgid "ui.codex.venture.montesinos.book"
-msgstr "Una cueva de ensueÃ±o con una muchacha esperando."
+msgstr "Una cueva de ensueño con una muchacha esperando."
 
 #. TRANSLATORS: The codex note on the Venture Bridge in its Reality form.
 msgid "ui.codex.venture.bridge.reality"
@@ -1162,7 +1162,7 @@ msgstr "Tablones podridos sobre un barranco."
 
 #. TRANSLATORS: The codex note on the Venture Bridge in its Book form.
 msgid "ui.codex.venture.bridge.book"
-msgstr "Piedra sÃ³lida sobre el abismo."
+msgstr "Piedra sólida sobre el abismo."
 
 #. TRANSLATORS: The codex note on the Venture Dulcinea in its Reality form.
 msgid "ui.codex.venture.dulcinea.reality"
@@ -1170,11 +1170,11 @@ msgstr "Una campesina llamada Aldonza."
 
 #. TRANSLATORS: The codex note on the Venture Dulcinea in its Book form.
 msgid "ui.codex.venture.dulcinea.book"
-msgstr "Una dama noble radiante y grÃ¡cil."
+msgstr "Una dama noble radiante y grácil."
 
 #. TRANSLATORS: The codex note on the Venture Knight of Mirrors in its Reality form.
 msgid "ui.codex.venture.mirrors.reality"
-msgstr "SansÃ³n Carrasco, caballero espejo."
+msgstr "Sansón Carrasco, caballero espejo."
 
 #. TRANSLATORS: The codex note on the Venture Knight of Mirrors in its Book form.
 msgid "ui.codex.venture.mirrors.book"
@@ -1198,19 +1198,19 @@ msgstr "Falsa caballeria y teatro."
 
 #. TRANSLATORS: The companion, remarking on the Venture.
 msgid "dia.quixote.chatter.venture"
-msgstr "Â¡Un molino! Sancho, un molino de verdad, con su piedra y su trigo. No lo toquÃ©is, que se defiende solo."
+msgstr "¡Un molino! Sancho, un molino de verdad, con su piedra y su trigo. No lo toquéis, que se defiende solo."
 
 #. TRANSLATORS: The companion, remarking on the Venture.
 msgid "dia.sancho.chatter.venture"
-msgstr "Ese molino, mi seÃ±or, no muele trigo. Se mueve hacia nosotros."
+msgstr "Ese molino, mi señor, no muele trigo. Se mueve hacia nosotros."
 
 #. TRANSLATORS: The character says so when the world shows them a mill.
 msgid "dia.quixote.reaction.venture.reality"
-msgstr "Ahora sÃ­: es un molino. Piedra y viento y trigo, y nada mÃ¡s."
+msgstr "Ahora sí: es un molino. Piedra y viento y trigo, y nada más."
 
 #. TRANSLATORS: The character says so when the world shows them a giant.
 msgid "dia.quixote.reaction.venture.book"
-msgstr "Â¡Ese molino es un gigante! Â¡Un gigante con los brazos de piedra! Apartaos, Sancho, que viene."
+msgstr "¡Ese molino es un gigante! ¡Un gigante con los brazos de piedra! Apartaos, Sancho, que viene."
 
 #. TRANSLATORS: The character says so when the world shows them a mill.
 msgid "dia.sancho.reaction.venture.reality"
@@ -1218,7 +1218,7 @@ msgstr "Ah. Un molino. Entonces era eso."
 
 #. TRANSLATORS: The character says so when the world shows them a giant.
 msgid "dia.sancho.reaction.venture.book"
-msgstr "Â¡SeÃ±or! Â¡El molino es un hombre! Â¡Un hombre con los brazos de aspa!"
+msgstr "¡Señor! ¡El molino es un hombre! ¡Un hombre con los brazos de aspa!"
 
 #. TRANSLATORS: The name of Region I: El Camino de la Mancha.
 msgid "ui.region.camino_la_mancha.name"
@@ -1250,19 +1250,259 @@ msgstr "Un simple atril de madera, con algunas hojas sueltas."
 
 #. TRANSLATORS: The book stand in the Book truth: how it looks.
 msgid "ui.face.book_stand.book.desc"
-msgstr "Un atril que sostiene un libro abierto, cuyas pÃ¡ginas revolotean sin viento."
+msgstr "Un atril que sostiene un libro abierto, cuyas páginas revolotean sin viento."
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch01_apertura.reality.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch01_apertura.reality.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch01_apertura.book.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch01_apertura.book.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch01_molinos_01.reality.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch01_molinos_01.reality.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch01_molinos_01.book.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch01_molinos_01.book.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch01_nombre_01.reality.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch01_nombre_01.reality.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch01_nombre_01.book.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch01_nombre_01.book.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch02_caballeros_01.reality.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch02_caballeros_01.reality.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch02_caballeros_01.book.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch02_caballeros_01.book.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch03_posada.reality.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch03_posada.reality.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch03_posada.book.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch03_posada.book.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch04_rocinante_01.reality.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch04_rocinante_01.reality.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch04_rocinante_01.book.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch04_rocinante_01.book.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch05_duena.reality.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch05_duena.reality.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch05_duena.book.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch05_duena.book.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch06_pastores.reality.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch06_pastores.reality.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch06_pastores.book.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch06_pastores.book.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch07_yanguesas.reality.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch07_yanguesas.reality.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch07_yanguesas.book.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch07_yanguesas.book.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch09_manuscrito.reality.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch09_manuscrito.reality.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch09_manuscrito.book.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch09_manuscrito.book.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch10_balsamo.reality.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch10_balsamo.reality.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch10_balsamo.book.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch10_balsamo.book.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch11_caballero_bosque.reality.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch11_caballero_bosque.reality.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch11_caballero_bosque.book.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch11_caballero_bosque.book.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch12_armas_letras.reality.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch12_armas_letras.reality.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch12_armas_letras.book.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch12_armas_letras.book.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch13_leones.reality.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch13_leones.reality.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch13_leones.book.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch13_leones.book.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch14_galeotes.reality.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch14_galeotes.reality.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch14_galeotes.book.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch14_galeotes.book.tell"
+msgstr ""
 
 #. TRANSLATORS: The rock's anamorphosis tell: the detail that does not add up.
 msgid "ui.anamorphosis.rock_weight.tell"
-msgstr "La roca es mucho mÃ¡s pesada de lo que deberÃ­a ser una piedra de su tamaÃ±o."
+msgstr "La roca es mucho más pesada de lo que debería ser una piedra de su tamaño."
 
 #. TRANSLATORS: The windmill's anamorphosis tell: the detail that does not add up.
 msgid "ui.anamorphosis.windmill_sails.tell"
-msgstr "Las aspas se mueven con intenciÃ³n, como si fueran brazos."
+msgstr "Las aspas se mueven con intención, como si fueran brazos."
 
 #. TRANSLATORS: The book stand's anamorphosis tell: the detail that does not add up.
 msgid "ui.anamorphosis.book_stand_pages.tell"
-msgstr "Las pÃ¡ginas se solas, aunque no hay brisa."
+msgstr "Las páginas se solas, aunque no hay brisa."
 
 #. TRANSLATORS: Book title: bk.ch01.apertura
 
@@ -1327,7 +1567,7 @@ msgstr "Apertura Aguda"
 
 #. TRANSLATORS: Book passive description: bk.ch01.apertura
 msgid "ui.book.bk.ch01.apertura.passive.desc"
-msgstr "Ojos agudos leen mÃ¡s."
+msgstr "Ojos agudos leen más."
 
 #. TRANSLATORS: Book codex note: bk.ch01.apertura
 msgid "ui.book.bk.ch01.apertura.codex"
@@ -1339,7 +1579,7 @@ msgstr "Los Molinos"
 
 #. TRANSLATORS: Book description: bk.ch01.molinos.01
 msgid "ui.book.bk.ch01.molinos.01.desc"
-msgstr "La fortuna guÃ­a nuestros asuntos..."
+msgstr "La fortuna guía nuestros asuntos..."
 
 #. TRANSLATORS: Book passive title: bk.ch01.molinos.01
 msgid "ui.book.bk.ch01.molinos.01.passive.name"
@@ -1351,7 +1591,7 @@ msgstr "Ve gigantes en los molinos."
 
 #. TRANSLATORS: Book codex note: bk.ch01.molinos.01
 msgid "ui.book.bk.ch01.molinos.01.codex"
-msgstr "El capÃ­tulo de los molinos de cap. VIII."
+msgstr "El capítulo de los molinos de cap. VIII."
 
 #. TRANSLATORS: Book title: bk.ch01.nombre.01
 msgid "ui.book.bk.ch01.nombre.01.name"
@@ -1379,7 +1619,7 @@ msgstr "Los Caballeros"
 
 #. TRANSLATORS: Book description: bk.ch02.caballeros.01
 msgid "ui.book.bk.ch02.caballeros.01.desc"
-msgstr "Su desatino pasÃ³ las noches enteras..."
+msgstr "Su desatino pasó las noches enteras..."
 
 #. TRANSLATORS: Book passive title: bk.ch02.caballeros.01
 msgid "ui.book.bk.ch02.caballeros.01.passive.name"
@@ -1399,11 +1639,11 @@ msgstr "Rocinante"
 
 #. TRANSLATORS: Book description: bk.ch04.rocinante.01
 msgid "ui.book.bk.ch04.rocinante.01.desc"
-msgstr "Cuatro dÃ­as estuvo pensando..."
+msgstr "Cuatro días estuvo pensando..."
 
 #. TRANSLATORS: Book passive title: bk.ch04.rocinante.01
 msgid "ui.book.bk.ch04.rocinante.01.passive.name"
-msgstr "EspÃ­ritu de Rocinante"
+msgstr "Espíritu de Rocinante"
 
 #. TRANSLATORS: Book passive description: bk.ch04.rocinante.01
 msgid "ui.book.bk.ch04.rocinante.01.passive.desc"
@@ -1423,7 +1663,7 @@ msgstr "La posada donde Quijote es armado caballero."
 
 #. TRANSLATORS: Book passive title: bk.ch03.posada.01
 msgid "ui.book.bk.ch03.posada.passive.name"
-msgstr "OÃ­do del Posadero"
+msgstr "Oído del Posadero"
 
 #. TRANSLATORS: Book passive description: bk.ch03.posada.01
 msgid "ui.book.bk.ch03.posada.passive.desc"
@@ -1435,15 +1675,15 @@ msgstr "La escena de la posada."
 
 #. TRANSLATORS: Book title: bk.ch05.duena.01
 msgid "ui.book.bk.ch05.duena.name"
-msgstr "La DueÃ±a"
+msgstr "La Dueña"
 
 #. TRANSLATORS: Book description: bk.ch05.duena.01
 msgid "ui.book.bk.ch05.duena.desc"
-msgstr "La dueÃ±a que guarda a la dama."
+msgstr "La dueña que guarda a la dama."
 
 #. TRANSLATORS: Book passive title: bk.ch05.duena.01
 msgid "ui.book.bk.ch05.duena.passive.name"
-msgstr "OÃ­do de la DueÃ±a"
+msgstr "Oído de la Dueña"
 
 #. TRANSLATORS: Book passive description: bk.ch05.duena.01
 msgid "ui.book.bk.ch05.duena.passive.desc"
@@ -1451,7 +1691,7 @@ msgstr "Oye lo que dicen las damas."
 
 #. TRANSLATORS: Book codex note: bk.ch05.duena.01
 msgid "ui.book.bk.ch05.duena.codex"
-msgstr "El pasaje de la dueÃ±a."
+msgstr "El pasaje de la dueña."
 
 #. TRANSLATORS: Book title: bk.ch06.pastores.01
 msgid "ui.book.bk.ch06.pastores.name"
@@ -1467,7 +1707,7 @@ msgstr "Vista del Pastor"
 
 #. TRANSLATORS: Book passive description: bk.ch06.pastores.01
 msgid "ui.book.bk.ch06.pastores.passive.desc"
-msgstr "Ve mÃ¡s lejos a travÃ©s del llano."
+msgstr "Ve más lejos a través del llano."
 
 #. TRANSLATORS: Book codex note: bk.ch06.pastores.01
 msgid "ui.book.bk.ch06.pastores.codex"
@@ -1487,7 +1727,7 @@ msgstr "Presencia de Dama"
 
 #. TRANSLATORS: Book passive description: bk.ch07.yanguesas.01
 msgid "ui.book.bk.ch07.yanguesas.passive.desc"
-msgstr "Los nobles te notan mÃ¡s."
+msgstr "Los nobles te notan más."
 
 #. TRANSLATORS: Book codex note: bk.ch07.yanguesas.01
 msgid "ui.book.bk.ch07.yanguesas.codex"
@@ -1503,11 +1743,11 @@ msgstr "El manuscrito hallado en la posada."
 
 #. TRANSLATORS: Book passive title: bk.ch09.manuscrito.01
 msgid "ui.book.bk.ch09.manuscrito.passive.name"
-msgstr "Lector de PÃ¡ginas"
+msgstr "Lector de Páginas"
 
 #. TRANSLATORS: Book passive description: bk.ch09.manuscrito.01
 msgid "ui.book.bk.ch09.manuscrito.passive.desc"
-msgstr "Lee fragmentos mÃ¡s rÃ¡pido."
+msgstr "Lee fragmentos más rápido."
 
 #. TRANSLATORS: Book codex note: bk.ch09.manuscrito.01
 msgid "ui.book.bk.ch09.manuscrito.codex"
@@ -1515,15 +1755,15 @@ msgstr "El fragmento del manuscrito."
 
 #. TRANSLATORS: Book title: bk.ch10.balsamo.01
 msgid "ui.book.bk.ch10.balsamo.name"
-msgstr "El BÃ¡lsamo"
+msgstr "El Bálsamo"
 
 #. TRANSLATORS: Book description: bk.ch10.balsamo.01
 msgid "ui.book.bk.ch10.balsamo.desc"
-msgstr "El bÃ¡lsamo curativo de Quijote."
+msgstr "El bálsamo curativo de Quijote."
 
 #. TRANSLATORS: Book passive title: bk.ch10.balsamo.01
 msgid "ui.book.bk.ch10.balsamo.passive.name"
-msgstr "Cura del BÃ¡lsamo"
+msgstr "Cura del Bálsamo"
 
 #. TRANSLATORS: Book passive description: bk.ch10.balsamo.01
 msgid "ui.book.bk.ch10.balsamo.passive.desc"
@@ -1531,7 +1771,7 @@ msgstr "Recupera salud entre peleas."
 
 #. TRANSLATORS: Book codex note: bk.ch10.balsamo.01
 msgid "ui.book.bk.ch10.balsamo.codex"
-msgstr "La receta del bÃ¡lsamo."
+msgstr "La receta del bálsamo."
 
 #. TRANSLATORS: Book title: bk.ch11.caballero_bosque.01
 msgid "ui.book.bk.ch11.caballero_bosque.name"
@@ -1547,7 +1787,7 @@ msgstr "Caballero Espejo"
 
 #. TRANSLATORS: Book passive description: bk.ch11.caballero_bosque.01
 msgid "ui.book.bk.ch11.caballero_bosque.passive.desc"
-msgstr "Las ventanas de parada se sienten mÃ¡s amplias."
+msgstr "Las ventanas de parada se sienten más amplias."
 
 #. TRANSLATORS: Book codex note: bk.ch11.caballero_bosque.01
 msgid "ui.book.bk.ch11.caballero_bosque.codex"
@@ -1559,7 +1799,7 @@ msgstr "Armas y Letras"
 
 #. TRANSLATORS: Book description: bk.ch12.armas_letras.01
 msgid "ui.book.bk.ch12.armas_letras.desc"
-msgstr "Sobre las armas y las letras en la caballerÃ­a."
+msgstr "Sobre las armas y las letras en la caballería."
 
 #. TRANSLATORS: Book passive title: bk.ch12.armas_letras.01
 msgid "ui.book.bk.ch12.armas_letras.passive.name"
@@ -1583,11 +1823,11 @@ msgstr "Los leones en la jaula."
 
 #. TRANSLATORS: Book passive title: bk.ch13.leones.01
 msgid "ui.book.bk.ch13.leones.passive.name"
-msgstr "CorazÃ³n de LeÃ³n"
+msgstr "Corazón de León"
 
 #. TRANSLATORS: Book passive description: bk.ch13.leones.01
 msgid "ui.book.bk.ch13.leones.passive.desc"
-msgstr "Resuelve mÃ¡s daÃ±o de poise."
+msgstr "Resuelve más daño de poise."
 
 #. TRANSLATORS: Book codex note: bk.ch13.leones.01
 msgid "ui.book.bk.ch13.leones.codex"
@@ -1607,7 +1847,7 @@ msgstr "Remo de Galeote"
 
 #. TRANSLATORS: Book passive description: bk.ch14.galeotes.01
 msgid "ui.book.bk.ch14.galeotes.passive.desc"
-msgstr "MuÃ©vete mÃ¡s rÃ¡pido cuando estÃ¡s herido."
+msgstr "Muévete más rápido cuando estás herido."
 
 #. TRANSLATORS: Book codex note: bk.ch14.galeotes.01
 msgid "ui.book.bk.ch14.galeotes.codex"
@@ -1621,7 +1861,7 @@ msgid "ui.chapter.02.title"
 msgstr "El Vasco"
 
 msgid "ui.chapter.03.title"
-msgstr "El Mar CantÃ¡brico"
+msgstr "El Mar Cantábrico"
 
 msgid "ui.chapter.04.title"
 msgstr "Los Encinados"
@@ -1639,10 +1879,10 @@ msgid "ui.chapter.08.title"
 msgstr "Celestina"
 
 msgid "ui.chapter.09.title"
-msgstr "El Ensayo â€” PreparaciÃ³n"
+msgstr "El Ensayo — Preparación"
 
 msgid "ui.chapter.10.title"
-msgstr "El Ensayo â€” ResoluciÃ³n"
+msgstr "El Ensayo — Resolución"
 
 msgid "ui.chapter.11.title"
 msgstr "El Caballero de los Espejos"
@@ -1658,7 +1898,7 @@ msgid "ui.venture.basque"
 msgstr "El Vasco"
 
 msgid "ui.venture.canting_sea"
-msgstr "El Mar CantÃ¡brico"
+msgstr "El Mar Cantábrico"
 
 msgid "ui.venture.encinados"
 msgstr "Los Encinados"
@@ -1733,19 +1973,19 @@ msgstr "El jugador es descubierto"
 msgid "ensayo.outcome.refuses"
 msgstr "El jugador se niega a escenificarla"
 
-#. TRANSLATORS: El jugador se mantuvo leal; se abre una línea de misiones en la Región V.
+#. TRANSLATORS: El jugador se mantuvo leal; se abre una l�nea de misiones en la Regi�n V.
 msgid "ensayo.outcome.holds_desc"
-msgstr "El probado se mantuvo leal; se abre una línea de misiones en la Región V."
+msgstr "El probado se mantuvo leal; se abre una l�nea de misiones en la Regi�n V."
 
-#. TRANSLATORS: Traición; el probado se quita la vida.
+#. TRANSLATORS: Traici�n; el probado se quita la vida.
 msgid "ensayo.outcome.breaks_desc"
-msgstr "Traición. El probado se quita la vida."
+msgstr "Traici�n. El probado se quita la vida."
 
 #. TRANSLATORS: El examinador es consumido por la prueba.
 msgid "ensayo.outcome.examiner_breaks_desc"
 msgstr "El examinador es consumido por la prueba."
 
-#. TRANSLATORS: Nadie se rompe; anticlímax.
+#. TRANSLATORS: Nadie se rompe; anticl�max.
 msgid "ensayo.outcome.nothing_desc"
 msgstr "Nadie se rompe; no pasa nada."
 
@@ -1784,11 +2024,11 @@ msgstr "Punto medio: el libro prevalece, en parte."
 
 #. TRANSLATORS: Shown when the Manifiesto reader has no collected fragments.
 msgid "ui.manifiesto.empty"
-msgstr "La estanterÃ­a estÃ¡ vacÃ­a."
+msgstr "La estantería está vacía."
 
-#. TRANSLATORS: The manuscript prologue â€” opening page before chapter 1.
+#. TRANSLATORS: The manuscript prologue — opening page before chapter 1.
 msgid "prologue.opening.text"
-msgstr "Tienes entre las manos un libro. Fue escrito en 1605, y te ha estado esperando. La pÃ¡gina que estÃ¡s a punto de leer no es la primera pÃ¡gina â€” es la pÃ¡gina que el libro abre cuando lo recoges. LÃ©ela. VuÃ©lvela. El mundo al otro lado no es el mundo que dejaste."
+msgstr "Tienes entre las manos un libro. Fue escrito en 1605, y te ha estado esperando. La página que estás a punto de leer no es la primera página — es la página que el libro abre cuando lo recoges. Léela. Vuélvela. El mundo al otro lado no es el mundo que dejaste."
 
 msgid "prologue.opening.reality"
 msgstr "Un hombre cabalga por el llano. Los molinos son molinos. La posada es una posada."
@@ -1806,10 +2046,11 @@ msgstr "Anamorfosis detectada"
 
 #. TRANSLATORS: Shown when the player resolves an anamorphosis and gains evidence.
 msgid "ui.slice.anamorphosis_resolved"
-msgstr "Anamorfosis resuelta — +%d evidencia"
+msgstr "Anamorfosis resuelta � +%d evidencia"
 
 #. TRANSLATORS: Shown when the player has enough evidence to use the Verdict.
 msgid "ui.slice.verdict_ready"
 msgstr "Suficiente evidencia para un Veredicto"
+
 
 

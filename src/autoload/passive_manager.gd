@@ -72,7 +72,7 @@ func _compute_modifiers(ids: Array[StringName]) -> Dictionary:
 		m["locura_per_second"] += float(_pd_get(p, "locura_per_second", 0.0))
 	return m
 
-func _pd_get(d: Dictionary, key: String, default: Variant) -> Variant:
+func _pd_get(d: Variant, key: String, default: Variant) -> Variant:
 	var v := d.get(key)
 	return v if v != null else default
 

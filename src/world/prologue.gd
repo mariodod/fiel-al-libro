@@ -13,20 +13,23 @@ extends CanvasLayer
 @onready var _variant_book: Label = $Panel/VariantBook
 @onready var _hint: Label = $Panel/Hint
 
-var _data: Dictionary = {}
+var _data: Variant = {}
 var _page: int = 0  # 0 = framing text, 1 = reality variant, 2 = book variant, 3 = done
 
 func _ready() -> void:
 	visible = false
-	_data = preload("res://src/data/prologue.tres") as Dictionary
+	_data = preload("res://src/data/prologue.tres")
 	_show_page(0)
 
 func _show_page(page: int) -> void:
 	_page = page
 	match page:
 		0:
-			var tk := _data.get("text_key")
-			_text_label.text = tk if tk != null else ""
+			var tk: String = ""
+			var raw := _data.get("text_key")
+			if raw != null:
+				tk = str(raw)
+			_text_label.text = tk
 			if _text_label.text != "":
 				_text_label.text = Loc.t(_text_label.text)
 			_variant_reality.visible = false
@@ -34,8 +37,11 @@ func _show_page(page: int) -> void:
 			_hint.text = "Press any key to turn the page."
 		1:
 			_text_label.text = ""
-			var vr := _data.get("variant_reality")
-			_variant_reality.text = vr if vr != null else ""
+			var vr: String = ""
+			var raw_vr := _data.get("variant_reality")
+			if raw_vr != null:
+				vr = str(raw_vr)
+			_variant_reality.text = vr
 			if _variant_reality.text != "":
 				_variant_reality.text = Loc.t(_variant_reality.text)
 			_variant_reality.visible = true
@@ -44,8 +50,11 @@ func _show_page(page: int) -> void:
 		2:
 			_text_label.text = ""
 			_variant_reality.visible = false
-			var vb := _data.get("variant_book")
-			_variant_book.text = vb if vb != null else ""
+			var vb: String = ""
+			var raw_vb := _data.get("variant_book")
+			if raw_vb != null:
+				vb = str(raw_vb)
+			_variant_book.text = vb
 			if _variant_book.text != "":
 				_variant_book.text = Loc.t(_variant_book.text)
 			_variant_book.visible = true

@@ -1,4 +1,4 @@
-﻿# FIEL AL LIBRO — sample translation template
+# FIEL AL LIBRO � sample translation template
 # This is a WORKING EXAMPLE of the key convention and file format.
 # Regenerate with:
 #   godot --headless --script res://src/tools/extract_strings.gd
@@ -197,7 +197,7 @@ msgstr "The Cid"
 
 #. META: namespace=it
 msgid "it.book.tio_andalus.name"
-msgstr "Tío Andaluz"
+msgstr "T�o Andaluz"
 
 #. META: namespace=it
 msgid "it.book.tio_andalus.desc"
@@ -326,7 +326,7 @@ msgstr "Impertinent (modern)"
 #
 # Use Loc.tp("ui.shelf.count", n) to pick the right one. Never hand-roll
 # "1 libro / N libros" in a script.
-# ────────────────────────────────────────────────────────────────────────
+# ------------------------------------------------------------------------
 
 msgid "ui.shelf.count"
 msgstr "{count} book on the shelf"
@@ -508,7 +508,7 @@ msgstr "Dulcinea"
 
 #. TRANSLATORS: What the Knight of Mirrors is called in the Reality layer.
 msgid "ui.form.mirrors_reality"
-msgstr "Sansón Carrasco"
+msgstr "Sans�n Carrasco"
 
 #. TRANSLATORS: What the Knight of Mirrors is called in the Book layer.
 msgid "ui.form.mirrors_book"
@@ -728,7 +728,7 @@ msgstr "Rocinante"
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
 msgid "bk.ch05.duena.title"
-msgstr "Dueña"
+msgstr "Due�a"
 
 #. TRANSLATORS: The title of a Manifiesto fragment. One per fragment: the
 #. key is the fragment's own id plus ".title".
@@ -1013,12 +1013,12 @@ msgid "ui.examine.quote"
 msgstr ""%s""
 
 # --- THE FACES: what a character perceives -------------------------------
-# One face per truth, per object. The Examine panel shows ONE of them —
-# the one the reader is reading right now — and never the other truth and
+# One face per truth, per object. The Examine panel shows ONE of them �
+# the one the reader is reading right now � and never the other truth and
 # never the other character's reading.
 #
 # The "tell" is the seam: the one detail that does not add up. It is the
-# seed of the Lectura system (GDD.md §6), and it is the only thing the
+# seed of the Lectura system (GDD.md �6), and it is the only thing the
 # player is meant to notice without a marker.
 
 #. TRANSLATORS: The rock in the Reality truth: how it looks.
@@ -1181,7 +1181,7 @@ msgstr "Move:"
 msgid "ui.slice.venture.down"
 msgstr "The Venture is down."
 
-#. TRANSLATORS: The Venture of Montiel is over — resolved by truth, not force.
+#. TRANSLATORS: The Venture of Montiel is over � resolved by truth, not force.
 #. The knight's delusion held: the world stayed Book, the giant was real,
 #. and a fragment of the original book is granted.
 msgid "ui.slice.venture.truth"
@@ -1249,7 +1249,7 @@ msgstr "A noble lady radiant and graceful."
 
 #. TRANSLATORS: The codex note on the Venture Knight of Mirrors in its Reality form.
 msgid "ui.codex.venture.mirrors.reality"
-msgstr "Sansón Carrasco, mirror knight."
+msgstr "Sans�n Carrasco, mirror knight."
 
 #. TRANSLATORS: The codex note on the Venture Knight of Mirrors in its Book form.
 msgid "ui.codex.venture.mirrors.book"
@@ -1331,6 +1331,246 @@ msgstr "A book stand."
 #. TRANSLATORS: The book stand in the Book truth: how it looks.
 msgid "ui.face.book_stand.book.desc"
 msgstr "A book stand."
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch01_apertura.reality.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch01_apertura.reality.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch01_apertura.book.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch01_apertura.book.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch01_molinos_01.reality.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch01_molinos_01.reality.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch01_molinos_01.book.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch01_molinos_01.book.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch01_nombre_01.reality.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch01_nombre_01.reality.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch01_nombre_01.book.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch01_nombre_01.book.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch02_caballeros_01.reality.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch02_caballeros_01.reality.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch02_caballeros_01.book.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch02_caballeros_01.book.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch03_posada.reality.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch03_posada.reality.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch03_posada.book.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch03_posada.book.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch04_rocinante_01.reality.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch04_rocinante_01.reality.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch04_rocinante_01.book.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch04_rocinante_01.book.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch05_duena.reality.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch05_duena.reality.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch05_duena.book.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch05_duena.book.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch06_pastores.reality.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch06_pastores.reality.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch06_pastores.book.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch06_pastores.book.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch07_yanguesas.reality.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch07_yanguesas.reality.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch07_yanguesas.book.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch07_yanguesas.book.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch09_manuscrito.reality.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch09_manuscrito.reality.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch09_manuscrito.book.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch09_manuscrito.book.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch10_balsamo.reality.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch10_balsamo.reality.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch10_balsamo.book.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch10_balsamo.book.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch11_caballero_bosque.reality.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch11_caballero_bosque.reality.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch11_caballero_bosque.book.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch11_caballero_bosque.book.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch12_armas_letras.reality.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch12_armas_letras.reality.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch12_armas_letras.book.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch12_armas_letras.book.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch13_leones.reality.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch13_leones.reality.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch13_leones.book.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch13_leones.book.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch14_galeotes.reality.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch14_galeotes.reality.tell"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch14_galeotes.book.desc"
+msgstr ""
+
+#. TRANSLATORS: Book face key.
+msgid "ui.face.book_bk_ch14_galeotes.book.tell"
+msgstr ""
 
 #. TRANSLATORS: The rock's anamorphosis tell: the detail that does not add up.
 msgid "ui.anamorphosis.rock_weight.tell"
@@ -1670,10 +1910,10 @@ msgid "ui.chapter.08.title"
 msgstr "Celestina"
 
 msgid "ui.chapter.09.title"
-msgstr "The Ensayo — Setup"
+msgstr "The Ensayo � Setup"
 
 msgid "ui.chapter.10.title"
-msgstr "The Ensayo — Resolution"
+msgstr "The Ensayo � Resolution"
 
 msgid "ui.chapter.11.title"
 msgstr "Knight of the Mirrors"
@@ -1817,9 +2057,9 @@ msgstr "Middle ground: the book prevails, partly."
 msgid "ui.manifiesto.empty"
 msgstr "The shelf is empty."
 
-#. TRANSLATORS: The manuscript prologue — opening page before chapter 1.
+#. TRANSLATORS: The manuscript prologue � opening page before chapter 1.
 msgid "prologue.opening.text"
-msgstr "You are holding a book. It was written in 1605, and it has been waiting for you. The page you are about to read is not the first page — it is the page the book opens to when you pick it up. Read it. Turn it. The world on the other side is not the world you left."
+msgstr "You are holding a book. It was written in 1605, and it has been waiting for you. The page you are about to read is not the first page � it is the page the book opens to when you pick it up. Read it. Turn it. The world on the other side is not the world you left."
 
 msgid "prologue.opening.reality"
 msgstr "A man rides across the plain. The windmills are windmills. The inn is an inn."
@@ -1837,11 +2077,13 @@ msgstr "Anamorphosis spotted"
 
 #. TRANSLATORS: Shown when the player resolves an anamorphosis and gains evidence.
 msgid "ui.slice.anamorphosis_resolved"
-msgstr "Anamorphosis resolved — +%d evidence"
+msgstr "Anamorphosis resolved � +%d evidence"
 
 #. TRANSLATORS: Shown when the player has enough evidence to use the Verdict.
 msgid "ui.slice.verdict_ready"
 msgstr "Enough evidence for a Verdict"
+
+
 
 
 

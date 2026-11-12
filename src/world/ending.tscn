@@ -1,12 +1,6 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://src/world/ending.gd" id="1_ending"]
-
-[sub_resource type="Font" id="Font_title"]
-size = 40
-
-[sub_resource type="Font" id="Font_body"]
-size = 20
 
 [node name="Ending" type="CanvasLayer"]
 script = ExtResource("1_ending")
