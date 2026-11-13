@@ -169,7 +169,7 @@ func _on_item_selected(index: int) -> void:
 		if not edition.is_empty():
 			provenance += " — " + edition
 		_source_label.text = "%s %s" % [Loc.t(&"ui.codex.source"), provenance]
-	else if _source_label != null:
+	elif _source_label != null:
 		_source_label.text = ""
 
 	# Modern rendering (localised), falling back to the 1605 original.

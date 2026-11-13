@@ -29,3 +29,6 @@ tag_height = 11.5
 anamorphosis_id = &"windmill_sails"
 anamorphosis_tell_key = &"ui.anamorphosis.windmill_sails.tell"
 anamorphosis_evidence = 1
+anamorphosis_vantage_pos = Vector3(2.0, 0.0, -22.0)
+anamorphosis_vantage_angle = 0.0
+anamorphosis_vantage_radius = 5.0

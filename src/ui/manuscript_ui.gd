@@ -56,7 +56,7 @@ var _pages_container: Control = null
 func _ready() -> void:
 	set_anchors_preset(Control.PRESET_FULL_RECT)
 	visible = false
-	_mouse_filter = Control.MOUSE_FILTER_STOP
+	mouse_filter = Control.MOUSE_FILTER_STOP
 
 	# Find the pages container (a child named "Pages").
 	_pages_container = get_node_or_null("Pages")

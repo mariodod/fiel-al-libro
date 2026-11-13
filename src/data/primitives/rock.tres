@@ -32,3 +32,6 @@ tag_height = 3.4
 anamorphosis_id = &"rock_weight"
 anamorphosis_tell_key = &"ui.anamorphosis.rock_weight.tell"
 anamorphosis_evidence = 1
+anamorphosis_vantage_pos = Vector3(9.0, 0.0, -13.0)
+anamorphosis_vantage_angle = 45.0
+anamorphosis_vantage_radius = 5.0

@@ -23,3 +23,6 @@ tag_height = 1.2
 anamorphosis_id = &"book_stand_pages"
 anamorphosis_tell_key = &"ui.anamorphosis.book_stand_pages.tell"
 anamorphosis_evidence = 1
+anamorphosis_vantage_pos = Vector3(-6.0, 0.0, -8.0)
+anamorphosis_vantage_angle = 45.0
+anamorphosis_vantage_radius = 5.0

@@ -419,6 +419,25 @@ func _build_lectura_hud() -> void:
 	layer.add_child(hud)
 
 
+## Check whether the driven pawn is at an object's anamorphosis vantage point.
+##
+## An anamorphosis is only visible when the player stands at the right
+## place and faces the right way. If no vantage is configured, it is
+## visible from anywhere.
+func _at_vantage_point(data: TruthObjectData, driven: CharacterPawn) -> bool:
+	var vantage := data.anamorphosis_vantage_pos
+	if vantage == Vector3.ZERO:
+		return true
+	var dist := driven.global_position.distance_to(vantage)
+	if dist > data.anamorphosis_vantage_radius:
+		return false
+	# Check facing direction: player must face roughly toward the vantage point
+	var to_vantage := (vantage - driven.global_position).normalized()
+	var facing := -driven.global_transform.basis.z
+	var dot := to_vantage.dot(facing)
+	return dot > 0.5  # within ~60 degrees
+
+
 ## The Biblioteca shelf UI: shows collected and equipped books.
 ##
 ## Opens with the Shelf key (I). Lists all collected books and lets the
@@ -554,7 +573,8 @@ func _unhandled_input(event: InputEvent) -> void:
 					EventBus.object_examined.emit(target.data.id, reader_id)
 					# In Lectura mode, spotting/resolving anamorphoses grants evidence
 					# toward a Verdict.
-					if Lectura.is_active() and not target.data.anamorphosis_id.is_empty():
+					if (Lectura.is_active() and not target.data.anamorphosis_id.is_empty() 
+							and _at_vantage_point(target.data, driven)):
 						var anamorphosis_id := target.data.anamorphosis_id
 						if not Lectura.is_spotted(anamorphosis_id):
 							Lectura.spot(anamorphosis_id)
@@ -693,11 +713,13 @@ func _process(_delta: float) -> void:
 	_update_lock()
 	_update_game_over()
 	_update_hud()
+	# Lectura slows time: investigation is a different mode of attention.
+	Engine.time_scale = 0.5 if Lectura.is_active() else 1.0
 	# Track which character the player is driving, for the credits song
 	# arrangement (GDD.md §14: "the credits song's arrangement depends on
 	# which character you played more").
 	if player != null and player.active_pawn != null:
-		GameState.add_playtime(player.active_pawn.character_id, _delta)
+		GameState.add_playtime(player.active_pawn.character_id, _delta * Engine.time_scale)
 
 
 ## The game is over when BOTH of them are down.

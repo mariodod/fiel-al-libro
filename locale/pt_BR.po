@@ -1617,6 +1617,9 @@ msgstr "Clavilo"
 #. TRANSLATORS: Shown when the player spots an anamorphosis in Lectura mode.
 msgid "ui.slice.anamorphosis_spotted"
 msgstr "Anamorfose detectada"
+#. TRANSLATORS: Shown when the player examines an anamorphosis object from the wrong vantage point in Lectura mode.
+msgid "ui.slice.anamorphosis_wrong_spot"
+msgstr ""
 
 #. TRANSLATORS: Shown when the player resolves an anamorphosis and gains evidence.
 msgid "ui.slice.anamorphosis_resolved"

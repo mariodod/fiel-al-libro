@@ -48,6 +48,13 @@ extends Resource
 ## How much evidence resolving this anamorphosis grants.
 @export var anamorphosis_evidence: int = 1
 
+## Vantage point: where the player must stand to see the anamorphosis.
+## If empty, the anamorphosis is visible from anywhere in Lectura mode.
+@export_group("Vantage")
+@export var anamorphosis_vantage_pos: Vector3 = Vector3.ZERO
+@export var anamorphosis_vantage_angle: float = 0.0  # degrees, yaw the player must face
+@export var anamorphosis_vantage_radius: float = 4.0  # max distance from vantage point
+
 
 ## The face for a truth layer: what it is called, and what it looks like.
 func face_for(layer: int) -> TruthFace:
