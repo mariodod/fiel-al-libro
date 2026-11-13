@@ -13,7 +13,7 @@ msgstr ""
 
 #. TRANSLATORS: Auto-added key
 msgid "ui.menu.continue"
-msgstr "
+msgstr ""
 
 #. TRANSLATORS: Auto-added key
 msgid "ui.menu.load"

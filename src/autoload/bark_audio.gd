@@ -47,7 +47,7 @@ func _key_to_slug(text_key: StringName) -> String:
 
 ## Load and cache a stream by path.
 func _get_stream(path: String) -> AudioStream:
-	var cached := _bark_sounds.get(path)
+	var cached: Variant := _bark_sounds.get(path)
 	if cached != null:
 		return cached
 	var stream := load(path)

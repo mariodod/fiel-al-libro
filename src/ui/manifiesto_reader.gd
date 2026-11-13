@@ -157,7 +157,7 @@ func _on_item_selected(index: int) -> void:
 	var part := int(data.get("part", 0))
 	if _chapter_label != null and chapter > 0:
 		_chapter_label.text = "%s %d — Part %d" % [Loc.t(&"bk.chapter"), chapter, part]
-	else if _chapter_label != null:
+	elif _chapter_label != null:
 		_chapter_label.text = ""
 
 	# Source / provenance.
