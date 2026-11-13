@@ -60,6 +60,10 @@ extends Node3D
 @onready var vitals: VitalsPanel = $HudLayer/Vitals
 @onready var _pause_menu: CanvasLayer = $PauseMenu
 @onready var _codex: CanvasLayer = $CodexLayer
+@onready var _manuscript_ui = $ManuscriptUI
+## The Manuscript UI shell: the unified book-metaphor shell for shelf,
+## codex, dialogue and pause. Opens with Shelf (I), Manifiesto (2) or
+## Pause (P).
 ## The map screen scene, instantiated when the player presses G.
 @onready var _map_screen_scene: PackedScene = load("res://src/world/map_screen.tscn")
 ## The map screen while it is open, null otherwise.
@@ -477,6 +481,11 @@ func _build_characters() -> void:
 # ── Input ───────────────────────────────────────────────────────────────
 
 func _unhandled_input(event: InputEvent) -> void:
+	# When the Manuscript shell is open, it owns all UI input.
+	if _manuscript_ui != null and _manuscript_ui.visible:
+		_handle_manuscript_input(event)
+		return
+
 	if event.is_action_pressed(&"toggle_truth"):
 		# The truth is the knight's delusion, and it is his alone: *"pressing
 		# T with sancho should do nothing. It's a quijote exclusive
@@ -516,6 +525,10 @@ func _unhandled_input(event: InputEvent) -> void:
 			hud.visible = _show_hud
 	elif event.is_action_pressed(&"shelf"):
 		_toggle_shelf()
+	elif event.is_action_pressed(&"manifiesto"):
+		# Open the Codex page of the Manuscript shell.
+		if _manuscript_ui != null:
+			_manuscript_ui.open_codex()
 	elif event.is_action_pressed(&"lectura"):
 		# Lectura mode: slow time, desaturate, reveal anamorphoses.
 		# Only the reader can enter — it is their investigation.
@@ -556,6 +569,19 @@ func _unhandled_input(event: InputEvent) -> void:
 							# Check if enough evidence for a Verdict
 							if Lectura.has_enough_for_verdict():
 								EventBus.toast.emit(&"ui.slice.verdict_ready", [])
+
+
+## Handle UI input when the Manuscript shell is open.
+## Routes shelf/codex/pause/escape through the shell's pages.
+func _handle_manuscript_input(event: InputEvent) -> void:
+	if event.is_action_pressed(&"ui_cancel"):
+		_manuscript_ui.go_back()
+	elif event.is_action_pressed(&"shelf"):
+		_manuscript_ui.open_shelf()
+	elif event.is_action_pressed(&"manifiesto"):
+		_manuscript_ui.open_codex()
+	elif event.is_action_pressed(&"pause"):
+		_manuscript_ui.open_pause()
 
 
 ## Open or close the world map.
@@ -646,21 +672,10 @@ func _quit_to_yard() -> void:
 	TruthLayer.shift_to(TruthLayer.Layer.REALITY, true)
 
 
-## Open or close the Biblioteca shelf: shows collected and equipped books.
+## Open or close the Biblioteca shelf through the Manuscript shell.
 func _toggle_shelf() -> void:
-	# Find the existing shelf UI
-	var shelf := get_node_or_null("ShelfLayer")
-	if shelf != null:
-		shelf.queue_free()
-	else:
-		var layer := CanvasLayer.new()
-		layer.name = "ShelfLayer"
-		layer.layer = 25
-		var ui := Control.new()
-		ui.name = "ShelfUI"
-		ui.set_script(load("res://src/ui/biblioteca_shelf.gd"))
-		layer.add_child(ui)
-		add_child(layer)
+	if _manuscript_ui != null:
+		_manuscript_ui.open_shelf()
 
 
 ## Put the yard back: the dummy stands up, and anyone who fell gets up.
