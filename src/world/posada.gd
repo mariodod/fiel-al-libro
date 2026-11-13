@@ -6,6 +6,6 @@ extends "res://src/world/slice.gd"
 ## See NEXT_STEPS.md §2, task 2.16.
 
 func _ready() -> void:
-	._ready()
+	super._ready()
 	GameState.chapter_started(&"ch_posada")
 	GameState.find_region(&"camino_la_mancha")

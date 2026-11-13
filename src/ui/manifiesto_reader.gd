@@ -161,7 +161,7 @@ func _on_item_selected(index: int) -> void:
 		_chapter_label.text = ""
 
 	# Source / provenance.
-	var source := data.get("source", {})
+	var source: Variant = data.get("source", {})
 	if _source_label != null and source is Dictionary:
 		var work := str(source.get("work", ""))
 		var edition := str(source.get("edition", ""))

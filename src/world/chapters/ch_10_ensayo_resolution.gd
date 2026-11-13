@@ -8,7 +8,7 @@ extends "res://src/world/slice.gd"
 @onready var ensayo_script := preload("res://assets/ensayo/ensayo_script.json")
 
 func _ready() -> void:
-	._ready()
+	super._ready()
 	GameState.chapter_started(&"ch_10_ensayo_resolution")
 	GameState.find_region(&"los_riscos")
 	# Begin the Ensayo simulation phase with the setup carried from chapter 9.

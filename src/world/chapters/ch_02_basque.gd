@@ -6,7 +6,7 @@ extends "res://src/world/slice.gd"
 ## Part I, chapters 2-3. Region I: camino_la_mancha.
 
 func _ready() -> void:
-	._ready()
+	super._ready()
 	GameState.chapter_started(&"ch_02_basque")
 	GameState.find_region(&"camino_la_mancha")
 

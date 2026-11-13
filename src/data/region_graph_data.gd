@@ -27,7 +27,7 @@ func all_regions() -> Array[StringName]:
 ## The chapter that unlocks directly after completing this one (first in unlocks).
 func next_chapter(chapter_id: StringName) -> StringName:
 	var ch := get_chapter(chapter_id)
-	var unlocks := ch.get("unlocks", [])
+	var unlocks: Variant = ch.get("unlocks", [])
 	return unlocks[0] if unlocks.size() > 0 else &""
 
 ## All chapters that become available after completing this one.

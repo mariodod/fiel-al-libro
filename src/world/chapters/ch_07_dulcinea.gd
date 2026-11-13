@@ -6,7 +6,7 @@ extends "res://src/world/slice.gd"
 ## Part I, chapter 7. Region III: el_toboso.
 
 func _ready() -> void:
-	._ready()
+	super._ready()
 	GameState.chapter_started(&"ch_07_dulcinea")
 	GameState.find_region(&"el_toboso")
 

@@ -8,7 +8,7 @@ extends "res://src/world/slice.gd"
 @onready var ensayo_script := preload("res://assets/ensayo/ensayo_script.json")
 
 func _ready() -> void:
-	._ready()
+	super._ready()
 	GameState.chapter_started(&"ch_09_ensayo_setup")
 	GameState.find_region(&"los_riscos")
 	# Begin the Ensayo setup phase once the slice is loaded.
