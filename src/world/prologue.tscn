@@ -8,11 +8,11 @@ script = ExtResource("1_prologue")
 anchors_preset = 7
 layer = 40
 
-[node name="Background" type="ColorRect" parent="Prologue"]
+[node name="Background" type="ColorRect" parent="."]
 anchors_preset = 7
 color = Color(0.05, 0.04, 0.03, 0.92)
 
-[node name="Panel" type="Control" parent="Prologue"]
+[node name="Panel" type="Control" parent="."]
 anchors_preset = 7
 size = Vector2(800, 500)
 
