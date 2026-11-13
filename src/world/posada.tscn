@@ -1,0 +1,295 @@
+[gd_scene load_steps=32 format=3]
+
+[ext_resource type="Script" path="res://src/world/posada.gd" id="1_posada"]
+[ext_resource type="Script" path="res://src/world/slice.gd" id="1_slice"]
+[ext_resource type="PackedScene" path="res://src/ui/manuscript_ui.tscn" id="20_shell"]
+[ext_resource type="Script" path="res://src/world/truth_object.gd" id="2_object"]
+[ext_resource type="Script" path="res://src/characters/character_pawn.gd" id="3_pawn"]
+[ext_resource type="Script" path="res://src/characters/player_controller.gd" id="4_player"]
+[ext_resource type="Script" path="res://src/characters/companion_ai.gd" id="5_ai"]
+[ext_resource type="Script" path="res://src/systems/camera_follow.gd" id="6_camera"]
+[ext_resource type="Resource" path="res://src/data/characters/quixote.tres" id="7_quixote"]
+[ext_resource type="Resource" path="res://src/data/characters/sancho.tres" id="8_sancho"]
+[ext_resource type="PackedScene" path="res://assets/models/quixote.glb" id="9_quixote_rig"]
+[ext_resource type="PackedScene" path="res://assets/models/sancho.glb" id="10_sancho_rig"]
+[ext_resource type="Script" path="res://src/ui/vitals_panel.gd" id="11_vitals"]
+[ext_resource type="Script" path="res://src/ui/manifiesto_reader.gd" id="12_manifiesto_reader"]
+[ext_resource type="Script" path="res://src/ui/biblioteca_shelf.gd" id="13_shelf"]
+[ext_resource type="Resource" path="res://src/data/characters/innkeeper.tres" id="14_innkeeper"]
+[ext_resource type="Resource" path="res://src/data/characters/musician.tres" id="15_musician"]
+[ext_resource type="PackedScene" path="res://src/world/environment_kits/inn_kit.tscn" id="16_inn_kit"]
+[ext_resource type="PackedScene" path="res://src/world/environment_kits/road_kit.tscn" id="17_road_kit"]
+[ext_resource type="PackedScene" path="res://src/world/environment_kits/field_kit.tscn" id="18_field_kit"]
+[ext_resource type="Resource" path="res://src/data/primitives/book_bk_ch03_posada.tres" id="19_book_posada"]
+
+[sub_resource type="PlaneMesh" id="Plane_ground"]
+size = Vector2(300, 300)
+
+[sub_resource type="StandardMaterial3D" id="Mat_ground"]
+albedo_color = Color(0.55, 0.47, 0.31, 1)
+roughness = 0.95
+
+[sub_resource type="BoxShape3D" id="Shape_ground"]
+size = Vector3(300, 1, 300)
+
+[sub_resource type="CapsuleShape3D" id="Shape_body"]
+radius = 0.42
+height = 1.75
+
+[sub_resource type="CapsuleShape3D" id="Shape_sancho"]
+radius = 0.5
+height = 1.6
+
+[node name="Posada" type="Node3D"]
+script = ExtResource("1_posada")
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+mesh = SubResource("Plane_ground")
+material_override = SubResource("Mat_ground")
+
+[node name="GroundBody" type="StaticBody3D" parent="."]
+
+[node name="GroundShape" type="CollisionShape3D" parent="GroundBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("Shape_ground")
+
+[node name="Innkeeper" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -14)
+script = ExtResource("2_object")
+data = ExtResource("14_innkeeper")
+
+[node name="Musician" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -14)
+script = ExtResource("2_object")
+data = ExtResource("15_musician")
+
+[node name="MusicianAudio" type="AudioStreamPlayer" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 36)
+
+[node name="Book_Posada" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -30)
+script = ExtResource("2_object")
+data = ExtResource("19_book_posada")
+
+[node name="InnKit" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 1.5, -40)
+instance = ExtResource("16_inn_kit")
+
+[node name="RoadKit" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0.8, -40)
+instance = ExtResource("17_road_kit")
+
+[node name="FieldKit" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+instance = ExtResource("18_field_kit")
+
+[node name="Checkpoint" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -12)
+
+[node name="CheckpointShape" type="CollisionShape3D" parent="Checkpoint"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("Shape_ground")
+
+[node name="Characters" type="Node3D" parent="."]
+
+[node name="Quixote" type="CharacterBody3D" parent="Characters"]
+script = ExtResource("3_pawn")
+data = ExtResource("7_quixote")
+
+[node name="Rig" parent="Characters/Quixote" instance=ExtResource("9_quixote_rig")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, 0)
+
+[node name="Collider" type="CollisionShape3D" parent="Characters/Quixote"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.88, 0)
+shape = SubResource("Shape_body")
+
+[node name="Sancho" type="CharacterBody3D" parent="Characters"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+script = ExtResource("3_pawn")
+data = ExtResource("8_sancho")
+
+[node name="Rig" parent="Characters/Sancho" instance=ExtResource("10_sancho_rig")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, 0)
+
+[node name="Collider" type="CollisionShape3D" parent="Characters/Sancho"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("Shape_sancho")
+
+[node name="PlayerController" type="Node" parent="."]
+script = ExtResource("4_player")
+
+[node name="CompanionAI" type="Node" parent="."]
+script = ExtResource("5_ai")
+
+[node name="CameraRig" type="Node3D" parent="."]
+script = ExtResource("6_camera")
+distance = 12.0
+height = 5.5
+
+[node name="Camera3D" type="Camera3D" parent="CameraRig"]
+fov = 62.0
+current = true
+
+[node name="HudLayer" type="CanvasLayer" parent="."]
+layer = 20
+
+[node name="Hud" type="Label" parent="HudLayer"]
+offset_left = 16.0
+offset_top = 12.0
+offset_right = 1180.0
+offset_bottom = 460.0
+theme_override_font_sizes/font_size = 16
+theme_override_colors/font_color = Color(0.94, 0.9, 0.8, 1)
+
+[node name="Vitals" type="Control" parent="HudLayer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -260.0
+offset_top = -92.0
+offset_right = -18.0
+offset_bottom = -18.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+script = ExtResource("11_vitals")
+
+[node name="PauseMenu" type="CanvasLayer" parent="."]
+layer = 30
+visible = false
+
+[node name="PauseMenuOverlay" type="ColorRect" parent="PauseMenu"]
+anchors_preset = 3
+color = Color(0.086, 0.078, 0.063, 0.85)
+
+[node name="PauseMenuPanel" type="Control" parent="PauseMenu"]
+anchors_preset = 3
+size = Vector2(400, 300)
+
+[node name="PauseMenuTitle" type="Label" parent="PauseMenuPanel"]
+anchors_preset = 1
+position = Vector2(200, 40)
+text = "PAUSED"
+theme_override_font_sizes/font_size = 32
+theme_override_colors/font_color = Color(0.97, 0.93, 0.83, 1.0)
+theme_override_alignment/horizontal_alignment = 1
+
+[node name="PauseMenuResume" type="Button" parent="PauseMenuPanel"]
+anchors_preset = 3
+position = Vector2(100, 120)
+size = Vector2(200, 40)
+text = "Resume (P)"
+
+[node name="PauseMenuQuit" type="Button" parent="PauseMenuPanel"]
+anchors_preset = 3
+position = Vector2(100, 180)
+size = Vector2(200, 40)
+text = "Quit to Yard"
+
+[node name="CodexLayer" type="CanvasLayer" parent="."]
+layer = 31
+visible = false
+
+[node name="CodexPanel" type="Control" parent="CodexLayer"]
+anchors_preset = 3
+size = Vector2(500, 500)
+
+[node name="CodexTitle" type="Label" parent="CodexPanel"]
+anchors_preset = 1
+position = Vector2(250, 40)
+text = "Manuscript"
+theme_override_font_sizes/font_size = 32
+theme_override_colors/font_color = Color(0.97, 0.93, 0.83, 1.0)
+theme_override_alignment/horizontal_alignment = 1
+
+[node name="CodexClose" type="Button" parent="CodexPanel"]
+anchors_preset = 3
+position = Vector2(200, 440)
+size = Vector2(100, 40)
+text = "Back"
+
+[node name="CodexList" type="ScrollContainer" parent="CodexPanel"]
+anchors_preset = 7
+margin_left = 40
+margin_top = 100
+margin_right = 40
+margin_bottom = 40
+
+[node name="CodexListContainer" type="VBoxContainer" parent="CodexList"]
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="ManifiestoReader" type="Control" parent="."]
+anchors_preset = 3
+visible = false
+script = ExtResource("12_manifiesto_reader")
+
+[node name="Container" type="HSplitContainer" parent="ManifiestoReader"]
+anchors_preset = 3
+
+[node name="List" type="ItemList" parent="Container"]
+size_flags_horizontal = 0
+
+[node name="Detail" type="Control" parent="Container"]
+anchors_preset = 3
+
+[node name="Title" type="Label" parent="Detail"]
+anchors_preset = 1
+position = Vector2(200, 40)
+theme_override_font_sizes/font_size = 28
+theme_override_colors/font_color = Color(0.97, 0.93, 0.83, 1.0)
+theme_override_alignment/horizontal_alignment = 1
+
+[node name="Modern" type="Label" parent="Detail"]
+anchors_preset = 7
+margin_left = 40
+margin_top = 100
+margin_right = 40
+margin_bottom = 40
+autowrap_mode = 2
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(0.90, 0.86, 0.75, 1.0)
+
+[node name="Original" type="Label" parent="Detail"]
+anchors_preset = 7
+margin_left = 40
+margin_top = 200
+margin_right = 40
+margin_bottom = 40
+autowrap_mode = 2
+theme_override_font_sizes/font_size = 16
+theme_override_colors/font_color = Color(0.75, 0.54, 0.24, 1.0)
+
+[node name="Reality" type="Label" parent="Detail"]
+anchors_preset = 7
+margin_left = 40
+margin_top = 300
+margin_right = 40
+margin_bottom = 40
+autowrap_mode = 2
+theme_override_font_sizes/font_size = 16
+theme_override_colors/font_color = Color(0.85, 0.78, 0.60, 1.0)
+
+[node name="Book" type="Label" parent="Detail"]
+anchors_preset = 7
+margin_left = 40
+margin_top = 400
+margin_right = 40
+margin_bottom = 40
+autowrap_mode = 2
+theme_override_font_sizes/font_size = 16
+theme_override_colors/font_color = Color(0.82, 0.80, 0.72, 1.0)
+
+[node name="ShelfLayer" type="CanvasLayer" parent="."]
+layer = 25
+
+[node name="ShelfUI" type="Control" parent="ShelfLayer"]
+anchors_preset = 7
+mouse_filter = 2
+script = ExtResource("13_shelf")
+
+[node name="ManuscriptUI" type="Control" parent="." instance=ExtResource("20_shell")]
+anchors_preset = 7
+visible = false
