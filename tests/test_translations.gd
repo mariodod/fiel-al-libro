@@ -59,7 +59,6 @@ func suite(t):
 	t.test("plurals resolve through the explicit plural key")
 	# Godot has no ngettext, so the plural form is its own key.
 	TranslationServer.set_locale("en")
-	var loc = Loc.new_instance()
-	t.expect_eq(loc.call("tp", &"ui.shelf.count", 1), "1 book on the shelf", "singular")
-	t.expect_eq(loc.call("tp", &"ui.shelf.count", 4), "4 books on the shelf", "plural")
-	t.expect_eq(loc.call("tp", &"ui.shelf.count", 0), "0 books on the shelf", "zero is plural in English")
+	t.expect_eq(tr(&"ui.shelf.count") % [1], "1 book on the shelf", "singular")
+	t.expect_eq(tr(&"ui.shelf.count.plural") % [4], "4 books on the shelf", "plural")
+	t.expect_eq(tr(&"ui.shelf.count.plural") % [0], "0 books on the shelf", "zero is plural in English")

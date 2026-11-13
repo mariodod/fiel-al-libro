@@ -67,7 +67,7 @@ func suite(t):
 	t.expect_almost_eq(object.form_for(1).scale.x, 1.0, 0.001, "the Book form is full size")
 
 	t.test("the data carries both forms")
-	var data = TruthObjectData.new_instance()
+	var data = TruthObjectData.new()
 	data.id = &"windmill"
 	data.reality_face = _face(&"ui.form.molino", &"ui.face.windmill.reality.desc")
 	data.book_face = _face(&"ui.form.gigante", &"ui.face.windmill.book.desc")
@@ -76,7 +76,7 @@ func suite(t):
 	t.expect_true(data.reality_form == null or data.reality_form != null, "reality form slot exists")
 
 	t.test("a data resource with no face has no name")
-	var bare = TruthObjectData.new_instance()
+	var bare = TruthObjectData.new()
 	t.expect_eq(bare.name_key_for(0), &"", "no face, no name")
 	t.expect_eq(bare.face_for(1), null, "no face, no face")
 
@@ -95,7 +95,7 @@ func _make_object():
 	data.reality_form = _pack_form()
 	data.book_form = _pack_form()
 
-	var object = TruthObject.new_instance()
+	var object = TruthObject.new()
 	object.data = data
 	object.setup(data)
 	return object
@@ -103,7 +103,7 @@ func _make_object():
 
 ## A face: a name, a description, and the one detail that does not add up.
 func _face(name_key, description_key):
-	var face = TruthFace.new_instance()
+	var face = TruthFace.new()
 	face.name_key = name_key
 	face.description_key = description_key
 	face.tell_key = &"ui.face.windmill.reality.tell"

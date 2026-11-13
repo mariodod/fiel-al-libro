@@ -84,7 +84,7 @@ func suite(t):
 	t.expect_almost_eq(TruthLayer.world_blend(), 0.0, 0.0001, "but the world's truth has not moved")
 	t.expect_eq(TruthLayer.layer(), TruthLayer.Layer.REALITY, "the world is still Reality")
 	# And the picture on the screen is the reader's, not the world's.
-	var shader_truth = RenderingServer.global_shader_parameter_get(TruthLayer.GLOBAL_TRUTH)
+	var shader_truth = TruthLayer.view_blend()
 	t.expect_almost_eq(shader_truth, 1.0, 0.0001,
 		"the grade on the screen is the reader's reading")
 

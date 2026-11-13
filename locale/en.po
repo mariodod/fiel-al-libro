@@ -329,10 +329,10 @@ msgstr "Impertinent (modern)"
 # ------------------------------------------------------------------------
 
 msgid "ui.shelf.count"
-msgstr "{count} book on the shelf"
+msgstr "%d book on the shelf"
 
 msgid "ui.shelf.count.plural"
-msgstr "{count} books on the shelf"
+msgstr "%d books on the shelf"
 
 msgid "ui.library.total"
 msgstr "{total} total"
