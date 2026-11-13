@@ -431,11 +431,13 @@ func _at_vantage_point(data: TruthObjectData, driven: CharacterPawn) -> bool:
 	var dist := driven.global_position.distance_to(vantage)
 	if dist > data.anamorphosis_vantage_radius:
 		return false
-	# Check facing direction: player must face roughly toward the vantage point
+	# Check facing direction: player must face roughly toward the vantage point.
+	# vantage_angle is in degrees; cos gives the dot-product threshold.
+	var cos_angle := cos(deg_to_rad(data.anamorphosis_vantage_angle))
 	var to_vantage := (vantage - driven.global_position).normalized()
 	var facing := -driven.global_transform.basis.z
 	var dot := to_vantage.dot(facing)
-	return dot > 0.5  # within ~60 degrees
+	return dot > cos_angle
 
 
 ## The Biblioteca shelf UI: shows collected and equipped books.
@@ -593,7 +595,11 @@ func _handle_manuscript_input(event: InputEvent) -> void:
 	if event.is_action_pressed(&"ui_cancel"):
 		_manuscript_ui.go_back()
 	elif event.is_action_pressed(&"shelf"):
-		_manuscript_ui.open_shelf()
+		# The shelf key always toggles the real Biblioteca shelf. If the
+		# shell is open, close it first so the shelf page isn't shadowed
+		# by an empty placeholder page.
+		_manuscript_ui.close()
+		_toggle_shelf()
 	elif event.is_action_pressed(&"manifiesto"):
 		_manuscript_ui.open_codex()
 	elif event.is_action_pressed(&"pause"):
@@ -714,7 +720,9 @@ func _process(_delta: float) -> void:
 	_update_game_over()
 	_update_hud()
 	# Lectura slows time: investigation is a different mode of attention.
-	Engine.time_scale = 0.5 if Lectura.is_active() else 1.0
+	# Do not override an explicit pause (_toggle_pause sets time_scale = 0).
+	if Engine.time_scale > 0.0:
+		Engine.time_scale = 0.5 if Lectura.is_active() else 1.0
 	# Track which character the player is driving, for the credits song
 	# arrangement (GDD.md §14: "the credits song's arrangement depends on
 	# which character you played more").
