@@ -1,4 +1,4 @@
-﻿# Fiel al Libro - it translation
+# Fiel al Libro - it translation
 # 
 # Milestone 4 - Phase 4 Beta localization
 # 
@@ -1422,6 +1422,21 @@ msgstr ""`r`n
 msgid "ui.book.bk.ch14.galeotes.codex"
 msgstr ""`r`n
 #. TRANSLATORS: Auto-added key
+#. TRANSLATORS: Book title: bk.ch01.leyenda_tio_andalus
+msgid "ui.book.bk.ch01.leyenda_tio_andalus.name"
+msgstr ""
+#. TRANSLATORS: Book description: bk.ch01.leyenda_tio_andalus
+msgid "ui.book.bk.ch01.leyenda_tio_andalus.desc"
+msgstr ""
+#. TRANSLATORS: Book passive title: bk.ch01.leyenda_tio_andalus
+msgid "ui.book.bk.ch01.leyenda_tio_andalus.passive.name"
+msgstr ""
+#. TRANSLATORS: Book passive description: bk.ch01.leyenda_tio_andalus
+msgid "ui.book.bk.ch01.leyenda_tio_andalus.passive.desc"
+msgstr ""
+#. TRANSLATORS: Book codex note: bk.ch01.leyenda_tio_andalus
+msgid "ui.book.bk.ch01.leyenda_tio_andalus.codex"
+msgstr ""
 msgid "ui.chapter.01.title"
 msgstr ""`r`n
 #. TRANSLATORS: Auto-added key

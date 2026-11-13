@@ -74,6 +74,7 @@ var _map_screen: MapScreen = null
 @onready var tome: TruthObject = $Tome
 @onready var innkeeper: TruthObject = $Innkeeper
 @onready var musician: TruthObject = $Musician
+@onready var leyenda: TruthObject = $Leyenda
 @onready var _checkpoint: Area3D = $Checkpoint
 @onready var venture: Venture = $Venture
 ## The Venture of Montiel, in the era to the south.
@@ -152,7 +153,7 @@ const LOCURA_LOST := 60.0
 func _ready() -> void:
 	_build_environment()
 	_build_yard()
-	_objects = [windmill, rock, book_stand, tome, innkeeper, musician]
+	_objects = [windmill, rock, book_stand, tome, innkeeper, musician, leyenda]
 	_build_era()
 	_build_characters()
 	venture = $Venture
@@ -422,16 +423,11 @@ func _build_lectura_hud() -> void:
 ##
 ## Opens with the Shelf key (I). Lists all collected books and lets the
 ## player equip up to five. Equipped books grant passive abilities.
+##
+## The ShelfUI node is defined in slice.tscn on ShelfLayer (layer 25);
+## it starts hidden and is shown/hidden by _toggle_shelf().
 func _build_shelf() -> void:
-	var layer := CanvasLayer.new()
-	layer.name = "ShelfLayer"
-	layer.layer = 25
-	add_child(layer)
-
-	var shelf := Control.new()
-	shelf.name = "ShelfUI"
-	shelf.set_script(load("res://src/ui/biblioteca_shelf.gd"))
-	layer.add_child(shelf)
+	pass
 
 
 ## The marker over the locked target.
@@ -672,10 +668,11 @@ func _quit_to_yard() -> void:
 	TruthLayer.shift_to(TruthLayer.Layer.REALITY, true)
 
 
-## Open or close the Biblioteca shelf through the Manuscript shell.
+## Open or close the Biblioteca shelf layer.
 func _toggle_shelf() -> void:
-	if _manuscript_ui != null:
-		_manuscript_ui.open_shelf()
+	var shelf_layer := get_node_or_null("ShelfLayer")
+	if shelf_layer != null:
+		shelf_layer.visible = not shelf_layer.visible
 
 
 ## Put the yard back: the dummy stands up, and anyone who fell gets up.

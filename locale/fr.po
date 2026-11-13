@@ -1843,6 +1843,26 @@ msgstr "DÃ©placez-vous plus vite quand vous Ãªtes blessÃ©."
 msgid "ui.book.bk.ch14.galeotes.codex"
 msgstr "Le passage des forÃ§ats."
 
+#. TRANSLATORS: Book title: bk.ch01.leyenda_tio_andalus
+msgid "ui.book.bk.ch01.leyenda_tio_andalus.name"
+msgstr "La Légende de l'Oncle Andalus"
+
+#. TRANSLATORS: Book description: bk.ch01.leyenda_tio_andalus
+msgid "ui.book.bk.ch01.leyenda_tio_andalus.desc"
+msgstr "Une lÃ©gende andalouse du XVe siÃ¨cle."
+
+#. TRANSLATORS: Book passive title: bk.ch01.leyenda_tio_andalus
+msgid "ui.book.bk.ch01.leyenda_tio_andalus.passive.name"
+msgstr "Esprit Andalous"
+
+#. TRANSLATORS: Book passive description: bk.ch01.leyenda_tio_andalus
+msgid "ui.book.bk.ch01.leyenda_tio_andalus.passive.desc"
+msgstr "Esquivez plus loin, la folie s'Ã©vanouit plus lentement."
+
+#. TRANSLATORS: Book codex note: bk.ch01.leyenda_tio_andalus
+msgid "ui.book.bk.ch01.leyenda_tio_andalus.codex"
+msgstr "Une lÃ©gende du XVe siÃ¨cle d'Andalousie."
+
 #. TRANSLATORS: Chapter titles
 msgid "ui.chapter.01.title"
 msgstr "Les Moulins"

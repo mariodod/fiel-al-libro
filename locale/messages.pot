@@ -1921,6 +1921,26 @@ msgstr ""
 msgid "ui.book.bk.ch14.galeotes.codex"
 msgstr ""
 
+#. TRANSLATORS: Book title: bk.ch01.leyenda_tio_andalus
+msgid "ui.book.bk.ch01.leyenda_tio_andalus.name"
+msgstr ""
+
+#. TRANSLATORS: Book description: bk.ch01.leyenda_tio_andalus
+msgid "ui.book.bk.ch01.leyenda_tio_andalus.desc"
+msgstr ""
+
+#. TRANSLATORS: Book passive title: bk.ch01.leyenda_tio_andalus
+msgid "ui.book.bk.ch01.leyenda_tio_andalus.passive.name"
+msgstr ""
+
+#. TRANSLATORS: Book passive description: bk.ch01.leyenda_tio_andalus
+msgid "ui.book.bk.ch01.leyenda_tio_andalus.passive.desc"
+msgstr ""
+
+#. TRANSLATORS: Book codex note: bk.ch01.leyenda_tio_andalus
+msgid "ui.book.bk.ch01.leyenda_tio_andalus.codex"
+msgstr ""
+
 #. TRANSLATORS: Chapter titles
 msgid "ui.chapter.01.title"
 msgstr ""

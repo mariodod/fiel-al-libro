@@ -1920,6 +1920,26 @@ msgstr "Move faster when wounded."
 msgid "ui.book.bk.ch14.galeotes.codex"
 msgstr "The galley slave passage."
 
+#. TRANSLATORS: Book title: bk.ch01.leyenda_tio_andalus
+msgid "ui.book.bk.ch01.leyenda_tio_andalus.name"
+msgstr "The Legend of Uncle Andalus"
+
+#. TRANSLATORS: Book description: bk.ch01.leyenda_tio_andalus
+msgid "ui.book.bk.ch01.leyenda_tio_andalus.desc"
+msgstr "A fifteenth-century Andalusian legend."
+
+#. TRANSLATORS: Book passive title: bk.ch01.leyenda_tio_andalus
+msgid "ui.book.bk.ch01.leyenda_tio_andalus.passive.name"
+msgstr "Andalusian Wit"
+
+#. TRANSLATORS: Book passive description: bk.ch01.leyenda_tio_andalus
+msgid "ui.book.bk.ch01.leyenda_tio_andalus.passive.desc"
+msgstr "Dodge farther, madness fades slower."
+
+#. TRANSLATORS: Book codex note: bk.ch01.leyenda_tio_andalus
+msgid "ui.book.bk.ch01.leyenda_tio_andalus.codex"
+msgstr "A legend from fifteenth-century Andalusia."
+
 #. TRANSLATORS: Chapter titles
 msgid "ui.chapter.01.title"
 msgstr "The Windmills"

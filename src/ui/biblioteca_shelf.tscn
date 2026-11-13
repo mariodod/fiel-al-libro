@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/ui/biblioteca_shelf.gd" id="1_shelf"]
+
+[node name="ShelfUI" type="Control"]
+anchors_preset = 7
+mouse_filter = 2
+script = ExtResource("1_shelf")
