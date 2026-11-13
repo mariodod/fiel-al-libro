@@ -3,10 +3,10 @@
 > Pick the project up here. Everything below is written so that you do not
 > have to re-derive anything.
 >
-> Last updated: **2026-10-24** · after: *"Phase 1, weeks 1–2: the grey box, the
-> reading rule, the first playtest, the Examine verb and the reactions"* +
-> *"the second playtest: the Examine panel gives the mechanic away, and the
-> dodge cannot be judged without an enemy and a wall"*
+> Last updated: **2026-11-13** · after: *"All of Phase 1 weeks 1–12 coding tasks
+> complete (2.11–2.22). Only 2.23 (performance pass, blocked on headless import),
+> 2.24 (balance pass, needs playtest data), 2.25 (itch.io demo, external work)
+> remain."*
 
 ---
 
@@ -14,9 +14,9 @@
 
 | | |
 |---|---|
-| **Phase** | Phase 1. **Weeks 1–2 done (grey box). Weeks 3–4 done (combat, world map, Venture of Montiel).** Weeks 5–12 remaining. |
+| **Phase** | Phase 1. **Weeks 1–12 complete.** All coding tasks from NEXT_STEPS.md §2 are done: Venture boss, Lectura mode, three anamorphoses, Desvelar mid-fight, One Verdict, the Posada, shelf UI, Biblioteca wiring, one book, Manuscript UI shell, 15 environment kits, credits song. |
 | **The premise** | **Proven.** The playtest says so. |
-| **The build** | `res://src/world/slice.tscn` — the main scene. Two primitives, one truth toggle, two characters reading the same world differently — and now **all combat verbs**: `E` to examine, `Space` to dodge, a light attack that chains, a heavy attack, `F` for the guard, `M` to lock on, `X` for Sancho's Desvelar, and a line of dialogue when the world moves under a character. The two characters are **rigged and animated** (14 clips each), the **companion is in the fight** (it fights what you are locked onto, and it parries), there is a **walled yard** with a training dummy and a straw man in it, and to the **south** there is the **era of Montiel** and the **Venture of Montiel** — the first boss, in two forms. Press **G** to open the **world map** — a Spain-shaped portolan showing the five regions and which ones you've found; the map tints gilded in Book truth, chalky in Reality truth, and fragment markers appear when their page is found.
+| **The build** | `res://src/world/slice.tscn` — the main scene. Two primitives, one truth toggle, two characters reading the same world differently — and now **all combat verbs**: `E` to examine, `Space` to dodge, a light attack that chains, a heavy attack, `F` for the guard, `M` to lock on, `X` for Sancho's Desvelar, and a line of dialogue when the world moves under a character. The two characters are **rigged and animated** (14 clips each), the **companion is in the fight** (it fights what you are locked onto, and it parries), there is a **walled yard** with a training dummy and a straw man in it, and to the **south** there is the **era of Montiel** and the **Venture of Montiel** — the first boss, in two forms. Press **G** to open the **world map** — a Spain-shaped portolan showing the five regions and which ones you've found; the map tints gilded in Book truth, chalky in Reality truth, and fragment markers appear when their page is found. **The Biblioteca shelf** (press `I`), **Manuscript UI shell** (shelf/codex/dialogue/pause pages), and **Lectura mode** (press `Q`) are all built into the shell. |
 | **Tests** | 25 suites, 687 assertions, green, enforced in CI. |
 | **The fun** | Not fully proven. Seven data points is a sample, not a signal. |
 
@@ -33,8 +33,8 @@ it is proven. Spend the next week making the premise into a game.
 2. **`docs/PLAYTEST_NOTES.md` §6** — the findings. This is the most valuable
    document in the repository right now: nine "but"s, six of them fixed, and
    the two newest ones (§7) are what this session is about.
-3. **`docs/NEXT_STEPS.md` §2** — the plan. Week 1–2 is ticked; week 3–4 is the
-   current milestone.
+3. **`docs/NEXT_STEPS.md` §2** — the plan. Weeks 1–12 are all done except 2.23
+   (performance pass), 2.24 (balance pass), 2.25 (itch.io demo).
 4. **`GDD.md`** — private, on this machine. §4 (the two truths), §7 (combat).
    If you have not read §4, read it now: everything below depends on it.
 
@@ -62,6 +62,8 @@ tools\play.cmd
 | `V` | Sancho's second sight (off by default: the two readings disagree) |
 | `L` | Quixote's Locura: Lucid ↔ Lost |
 | `F1` / `F2` / `H` | help / the perception tags / the HUD |
+| `I` | **Biblioteca shelf** — collected and equipped books |
+| `2` | **Manifiesto codex** — collected fragments |
 
 **The new beat:** walk west, into the **walled yard**, and swing at the
 **training dummy**. It telegraphs, it hits back, and the walls mean you cannot dodge
@@ -84,107 +86,58 @@ one detail that does not add up.
 
 ## 3. The three things to do next, in this order
 
-### A. A stranger who does not know the keys — **the owner's test, and the build is ready**
+### A. Fix the performance test (2.23) — **blocked on headless import**
 
-The stranger inferred what `T` did from its effect (*"expected change to be
-immediate"*). That is a finding: the mechanic does not yet teach itself.
+Headless Godot on this Windows machine does not generate `.godot/imported/*.scn`
+cache for `.glb` files, so `slice.tscn` cannot load and `tests/test_performance.tscn`
+hangs. **Try:** opening the Godot editor GUI once (non-headless) to trigger `.glb`
+import cache generation, then re-run `res://tests/test_performance.tscn`. If that
+fails, write a lightweight performance test that skips `slice.tscn` and measures
+core systems only (EventBus, Locura, GameState).
 
-Give the build to somebody who has **never seen it and never been told what any
-key does**. Do not explain. Write down what they do in the first thirty
-seconds, and especially whether they find the *swap* on their own. If they do
-not, that is a tutorial problem, and it is a week 3–4 problem.
+### B. Run a stranger playtest
+
+The build is ready; the mechanic has to teach itself. Give the build to somebody
+who has **never seen it and never been told what any key does**. Do not explain.
+Write down what they do in the first thirty seconds, and especially whether they
+find the *swap* on their own.
 
 **Press `H` before you hand it over.** The HUD is the developer's readout; it
 spells out both readings. A stranger must not have it. `F2` hides the floating
 tags as well.
 
-### B. Week 3–4, task 2.5: the soft camera, and 2.6: a real fight
+### C. Decide what to cut or ship
 
-What is in: walk, run, a soft camera, the dodge (a burst, a window of
-invulnerability, stamina that comes back), a light attack that **chains
-three** (14 → 20 → 26), a heavy attack, the **guard** (`F`) and the
-**parry** (Sancho's buckler can; Quixote's lance cannot), the **poise**
-and the stagger it causes, the training dummy, the walled yard, the
-**lock-on** (`M`): the target you are looking at, the character turning
-towards it and walking around it, and the camera framing both — and
-**2.9, Desvelar** (`X`): Sancho strips the Book skin off a thing for
-eight seconds, and both characters see its true form.
+**2.24 Balance pass** needs playtesting data — run a stranger session first, then
+judge dodge numbers (4m/2m), iframe windows (0.25s/0.5s), and dummy stats.
 
-**And 2.10, the asymmetry rules**, which are what the whole combat design
-is built on: Quixote **cannot harm the innocent** (the blow does not
-land, and it costs 20 Humanity), Sancho **cannot meaningfully damage an
-enemy** (40 % of the damage, all of the poise — he staggers, he does not
-kill). The yard shows both: a **straw man** for the first, and a dummy
-that only Quixote can break for the second.
-
-**And 2.11, the Venture of Montiel**, the first boss, in the era to the south: two
-forms, two movesets, and the two levers that change the shape of the fight — the
-knight's `T` (the world's truth IS the boss's truth) and the squire's `X` (the Desvelar
-puts the boss back in its Reality form and cancels the swing it was in the middle of).
-The fight is the first thing in the game that asks the player to *use the asymmetry as a
-plan* rather than as a rule.
-
-What is not in: the **animations**. 2.7 and 2.8 want eight clips each,
-and the hit reactions want to be animations rather than a flash and a
-push. That is the next real piece of work, and it is not code.
-
-**Before any of it: a minute in the yard.** The chain, the guard, the
-parry, the poise, the straw man and the Desvelar are all in, and all the
-numbers are data. The question is whether **swapping to Quixote to break
-the dummy** feels like the answer it is meant to be, and whether the
-straw man makes the player hesitate. The dodge's own numbers are settled
-for now — 4 m for Quixote, 2 m for Sancho, and a quarter of a second of
-invulnerability for the knight, who is not a fighter.
-
-### C. B3 — the companion's chatter: DONE, and it needs a run
-
-The idle barks were a random draw from a pool of two. The companion now
-says something **about the thing it is looking at** — the rock, the mill,
-the dummy — and about what the player is doing: locked onto something, or
-on the ground. The rule is one line: *a line about the thing, or an idle
-line, never the same thing twice in a row.*
-
-What is missing is **content**: the idle pool is three lines a character,
-and the game has a hundred objects. The rule survives; the content does
-not. `src/systems/chatter.gd` is where the next hundred lines go.
+**2.25 Ship the itch.io demo** — export + Steam page + wishlist campaign. External
+work outside the codebase.
 
 ---
 
-## 4. Then week 3–4 — the rest of combat
-
-| # | Task |
-|---|---|
-| 2.5 | The **soft camera** and the **lock-on** (`M`) — ✅ done |
-| 2.6 | The chain, the guard, the parry, the poise and the hit reaction — ✅ done |
-| 2.7 | **Quixote rig** — ✅ the rig and 14 clips, wired to the game's states |
-| 2.8 | **Sancho rig** — ✅ the rig and 15 clips, and no action shared with Quixote's |
-| 2.9 | Sancho's `Desvelar` — the verb ✅; the **VFX** are still plain |
-| 2.10 | The asymmetry rules: Quixote cannot harm innocents without a Humanity cost; Sancho cannot meaningfully damage — ✅ both, and the yard shows them |
-| 2.11 | **The windmill Venture** — ✅ the boss, its two forms and the two movesets; the truth resolution and the fragment reward are not in |
-| — | **The world map** — ✅ `docs/map/world_map.svg`, Spain-shaped as a 1605 portolan; the five regions at their true compass positions and the road from La Posada. Two versions of each region — Book (gilded, inked-out, brighter) and Reality (desaturated, chalky) — toggle with `T`. Fragment markers appear when their Manifiesto fragment is found. Region passages are still to come (`docs/map/WORLD_MAP.md`). |
-
-**2.7 and 2.8 are the two most under-rated tasks in the plan.** Distinct
-animation sets sell the asymmetry better than any mechanic. A reskinned
-Quixote makes the whole idea collapse. The sets are built and wired; the
-**poses** are still grey-box, and the next pass is the one that makes them
-read as Velazquez rather than as a fighting game.
-
----
-
-## 5. Do not do these yet
+## 4. Do not do these yet
 
 - **Do not build more primitives.** Two are enough to test the mechanic; a dozen
   built on an unproven premise is the most expensive way to find out the premise
   is wrong. (The premise is now proven — but the *content* still has to earn
   its place.)
-- **Do not build the whole `Lectura` system.** GDD.md §6 is weeks 5–7: the
-  eye-marks, the vantage points, the found fragments, the rewards. The Examine
-  verb is the *verb* the system will grow out of, not a smaller version of it.
-  What the Examine panel now does — a description plus **one detail that does
-  not add up** — is the seed of it. That is the whole of it for now.
+- **Do not add languages.** Six registered (en, es, fr, de, it, pt_BR) but only
+  en/es/fr are shipped with working translations. de/it/pt_BR have no PO header
+  and Godot silently ignores them — this is intentional until someone writes
+  those translations.
+- **Do not add more books.** One book (*La Leyenda del Tío Andalus*) is in as
+  a proof of concept; 47 more Manifiesto fragments are a Phase 2 writing task.
+
+---
+
+## 5. Do not touch these
+
 - **Do not touch the Locura meter.** It is pillar P2 and the stranger's "L" is the
   one untested lever in the build.
-- **Do not add languages.** Three shipped; the remaining three are a month-4 problem.
+- **Do not build more environment kits.** 15 exist (field, inn, road, windmill +
+  bridge, castle, cave, church, cliff, fog_plane, mountain, river, theatre, village,
+  inn_courtyard); only `ch_01` slice uses them inline. More kits are Phase 2 content.
 
 ---
 

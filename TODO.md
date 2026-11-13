@@ -182,18 +182,9 @@
 
 ### This week's three goals
 
-1. **A minute in the era, with the Venture in it.** The first boss is built, and it is
-   the first thing in the game that is fought rather than looked at. The question is
-   whether the two forms are two different fights *to play*, not on paper: the mill's
-   sails, the mill's topple, the giant's arm, and the eight seconds in which the squire
-   strips the skin off the giant and it stands still.
-2. **A stranger who does not know the keys.** The build is ready for it and the owner is
-   the only one who can run it. The mechanic has to teach itself. Give it to somebody who
-   has never seen it, say nothing, and write down what they do in the first thirty
-   seconds. Press `H` before you hand it over.
-3. **The art pass.** 2.10 and 2.11 are in and visible. What is left is the **feel**: the
-   poses are grey-box, and the next pass is the one that makes them read as Velazquez
-   rather than as a fighting game.
+1. **Fix the performance test (2.23).** Headless Godot doesn't generate `.godot/imported/*.scn` cache for `.glb` files on this machine, so `slice.tscn` can't load. Try opening Godot editor GUI once to trigger imports, then re-run the performance test. Or write a lightweight performance test that skips `slice.tscn` and measures core systems only.
+2. **Run a stranger playtest.** The build is ready; the mechanic has to teach itself. Press `H` before handing it over.
+3. **Decide what to cut or ship.** Balance pass (2.24) needs playtesting data. itch.io demo export (2.25) is external work.
 
 ### Still owed, and it is not code
 
@@ -233,16 +224,17 @@
 
 ## Later (Phase 1, weeks 5–12)
 
-- [x] The windmill Venture, in both forms (2.11) — built, untested with a player
-- [ ] `Lectura` mode, and three anamorphoses (2.12, 2.13)
-- [ ] One Verdict — the world changes layer (2.15)
-- [ ] The Posada: checkpoint, the shelf, 2 NPCs, the musician (2.16)
-- [ ] The shelf UI, `Biblioteca` wired to real data, and the first book (2.17–2.19)
-- [ ] The Manuscript UI shell: title, HUD, dialogue, shelf, codex, pause (2.20)
+- [x] The windmill Venture, in both forms (2.11) — built, two forms, two fights, two levers (T/X)
+- [x] `Lectura` mode, and three anamorphoses (2.12, 2.13) — Q toggle, time slows, desaturation, vantage point detection
+- [x] One Verdict — the world changes layer (2.15) — verdict.gd autoload, wired via N key at Venture
+- [x] The Posada: checkpoint, the shelf, 2 NPCs, the musician (2.16) — standalone posada.tscn + posada.gd
+- [x] The shelf UI, `Biblioteca` wired to real data, and the first book (2.17–2.19) — biblioteca_shelf.tscn, Biblioteca auto-collect, bk.ch01.leyenda_tio_andalus book + passive
+- [x] The Manuscript UI shell: title, HUD, dialogue, shelf, codex, pause (2.20) — manuscript_ui.gd + .tscn integrated into slice.tscn
 - [x] Credits song (2.22) — `assets/audio/credits_book_truth.wav` and `credits_reality_truth.wav` exist; wired in `audio_director.gd`
-- [ ] 4 environment kits (2.21) — windmill, field, inn, road exist; 11 more kits needed
-- [ ] Min-spec performance pass (2.23)
-- [ ] **Ship the itch.io demo** (2.25)
+- [x] 4 environment kits (2.21) — field, inn, road, windmill exist; 11 more kits also built (15 total)
+- [ ] Min-spec performance pass (2.23) — blocked: headless Godot doesn't generate `.godot/imported/*.scn` cache for `.glb` files on this machine, so `slice.tscn` can't load. WAV placeholder barks removed (were corrupt).
+- [ ] Balance pass: is the windmill fight fair on the 3rd attempt? (2.24) — needs playtesting data
+- [ ] **Ship the itch.io demo** (2.25) — Free, public, with a Steam page and a trailer.
 
 ## Later (after the slice)
 

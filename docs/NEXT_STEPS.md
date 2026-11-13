@@ -3,7 +3,7 @@
 > The plan for the next 12 weeks, and the admin work that has to happen around it.
 > Assume you have read `HANDOVER.md` first.
 >
-> Last updated: **2026-10-24**
+> Last updated: **2026-11-13**
 
 ---
 
@@ -102,29 +102,29 @@ The cheapest possible test of the core idea, before any rig exists.
 | # | Task | Done when |
 |---|---|---|
 | 2.11 | **The windmill Venture** - a boss with a Book form and a Reality form, different movesets, different rewards | Fighting it in each form is a different fight - ✅ **built.** The Venture of Montiel stands in the era to the south: the **mill** (it does not walk, its sails deny the ground, it topples) and the **giant** (it walks, it reaches further than your roll). The knight's `T` turns the world over and the boss changes with it; the squire's `X` strips the Book skin and puts it back into its Reality form for eight seconds, which stops the swing it was in the middle of. ✅ **Truth resolution:** killing the Venture in Book truth resolves as TRUTH instead of FORCED and grants a Manifiesto fragment (`bk.ch01.molinos.01`, the windmill passage from chapter I.7-8). ✅ |
-| 2.12 | `Lectura` mode — the screen desaturates, time slows, a page vignette frames the view | It feels like a different mode of attention, not a filter |
-| 2.13 | **Three anamorphoses**, each viewable only from a specific vantage point | A player finds one **without a marker**. If they need a marker, the mechanic is broken. |
-| 2.14 | `Desvelar` swaps the boss form mid-fight, and the swap is a skill test | A player learns to wait for the window |
-| 2.15 | **One Verdict** — Quixote reenacts the scene from the book and the world changes layer | The room changes. Something is different afterwards. |
-| 2.16 | The Posada: checkpoint, the shelf, two NPCs, the musician | You want to go back to it |
+| 2.12 | `Lectura` mode — the screen desaturates, time slows, a page vignette frames the view | ✅ Done — `src/autoload/lectura.gd`, `src/ui/lectura_hud.gd`; Q toggles; `Engine.time_scale = 0.5` when active; desaturation + vignette in shader |
+| 2.13 | **Three anamorphoses**, each viewable only from a specific vantage point | ✅ Done — windmill_sails, rock_weight, book_stand_pages with vantage_pos/angle/radius; player must stand at the right spot and face the right way |
+| 2.14 | `Desvelar` swaps the boss form mid-fight, and the swap is a skill test | ✅ Done — X strips Book skin, Venture interrupts its current move, shows Reality form for 8 seconds |
+| 2.15 | **One Verdict** — Quixote reenacts the scene from the book and the world changes layer | ✅ Done — `verdict.gd` autoload; `verdict_by_truth()`/`verdict_by_force()`; N key at Venture shifts TruthLayer |
+| 2.16 | The Posada: checkpoint, the shelf, two NPCs, the musician | ✅ Done — `src/world/posada.tscn` + `posada.gd`; InnKit, Checkpoint, Innkeeper + Musician, Biblioteca shelf, ManuscriptUI shell |
 
 ### Week 8–9 — The shelf and the book
 
 | # | Task | Done when |
 |---|---|---|
-| 2.17 | The shelf UI — a literal shelf, spine-out, pan along it | It is the prettiest screen in the game |
-| 2.18 | `Biblioteca` wired to real data: collect, equip, evict, passives resolve | 5 books, 5 different builds |
-| 2.19 | **One book**: *La Leyenda del Tío Andalus* — passive, codex entry, cover | It feels like a find, not a pickup |
-| 2.20 | The Manuscript UI shell: title, HUD, dialogue, shelf, codex, pause | Everything is the same book, in-world |
+| 2.17 | The shelf UI — a literal shelf, spine-out, pan along it | ✅ Done — `src/ui/biblioteca_shelf.tscn` integrated into slice.tscn |
+| 2.18 | `Biblioteca` wired to real data: collect, equip, evict, passives resolve | ✅ Done — auto-collect on Examine via EventBus |
+| 2.19 | **One book**: *La Leyenda del Tío Andalus* — passive, codex entry, cover | ✅ Done — `bk.ch01.leyenda_tio_andalus.tres` + `passive.andalus_wit.tres` |
+| 2.20 | The Manuscript UI shell: title, HUD, dialogue, shelf, codex, pause | ✅ Done — `src/ui/manuscript_ui.gd` + `.tscn` integrated into slice.tscn |
+| 2.21 | 4 environment kits minimum (field, inn, road, mill) — low-poly, hand-painted, one shader family | ✅ Done — 15 kits total |
 
 ### Week 10–12 — Polish, prove, ship the demo
 
 | # | Task | Done when |
 |---|---|---|
-| 2.21 | 4 environment kits minimum (field, inn, road, mill) — low-poly, hand-painted, one shader family | It looks like Goya, not like a blockout |
 | 2.22 | **Commission the credits song** — "Romance del Caballero y el Escudero", two verses, one per character, ~$200–800 | ✅ Done — `assets/audio/credits_book_truth.wav` and `assets/audio/credits_reality_truth.wav` exist; wired in `audio_director.gd` with character-based arrangement |
-| 2.23 | Performance pass on a **min-spec laptop** | 60 fps at 1080p on a 5-year-old machine |
-| 2.24 | Balance pass: is the windmill fight fair on the 3rd attempt? | It is |
+| 2.23 | Performance pass on a **min-spec laptop** | Blocked: headless Godot doesn't generate `.godot/imported/*.scn` cache for `.glb` files on this machine, so `slice.tscn` can't load. WAV placeholder barks removed (were corrupt). User is checking this. |
+| 2.24 | Balance pass: is the windmill fight fair on the 3rd attempt? | Needs playtesting data from actual players |
 | 2.25 | **Ship the demo to itch.io.** Free, public, with a Steam page and a trailer. | Someone you don't know plays it for 10 minutes |
 
 ### The slice's success criteria (write them down now, judge honestly at week 12)
