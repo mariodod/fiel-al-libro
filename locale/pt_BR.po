@@ -1642,6 +1642,42 @@ msgstr "
 msgid "ui.book.bk.ch07.yanguesas.codex"
 msgstr "
 
+#. TRANSLATORS: Book title: bk.ch08.celestina
+msgid "ui.book.bk.ch08.celestina.name"
+msgstr ""
+
+#. TRANSLATORS: Book description: bk.ch08.celestina
+msgid "ui.book.bk.ch08.celestina.desc"
+msgstr ""
+
+#. TRANSLATORS: Book passive title: bk.ch08.celestina
+msgid "ui.book.bk.ch08.celestina.passive.name"
+msgstr ""
+
+#. TRANSLATORS: Book passive description: bk.ch08.celestina
+msgid "ui.book.bk.ch08.celestina.passive.desc"
+msgstr ""
+
+#. TRANSLATORS: Book codex note: bk.ch08.celestina
+msgid "ui.book.bk.ch08.celestina.codex"
+msgstr ""
+
+#. TRANSLATORS: bk.ch08.celestina book in Reality: how it looks.
+msgid "ui.face.book_bk_ch08_celestina.reality.desc"
+msgstr ""
+
+#. TRANSLATORS: bk.ch08.celestina book in Reality: the tell.
+msgid "ui.face.book_bk_ch08_celestina.reality.tell"
+msgstr ""
+
+#. TRANSLATORS: bk.ch08.celestina book in Book: how it looks.
+msgid "ui.face.book_bk_ch08_celestina.book.desc"
+msgstr ""
+
+#. TRANSLATORS: bk.ch08.celestina book in Book: the tell.
+msgid "ui.face.book_bk_ch08_celestina.book.tell"
+msgstr ""
+
 #. TRANSLATORS: Auto-added key
 msgid "ui.book.bk.ch09.manuscrito.name"
 msgstr "
