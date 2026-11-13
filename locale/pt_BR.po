@@ -1,4 +1,4 @@
-# Fiel al Libro - pt_BR translation
+﻿# Fiel al Libro - pt_BR translation
 # 
 # Milestone 4 - Phase 4 Beta localization
 # 
@@ -9,7 +9,7 @@ msgstr ""
 #. TRANSLATORS: Auto-added key
 msgid "ui.menu.new_game"
 msgstr ""
-"Come�ar o manuscrito"
+"Comeï¿½ar o manuscrito"
 
 #. TRANSLATORS: Auto-added key
 msgid "ui.menu.continue"
@@ -595,7 +595,6 @@ msgstr ""`r`n
 msgid "bk.ch37.encantamiento_duquesa.title"
 msgstr ""`r`n
 #. TRANSLATORS: Auto-added key
-msgstr ""`r`n
 #. TRANSLATORS: Auto-added key
 msgid "bk.ch39.sancho_gobernador.title"
 msgstr ""`r`n
@@ -1586,15 +1585,15 @@ msgid "ui.manifiesto.empty"
 msgstr ""`r`n
 #. TRANSLATORS: Auto-added key
 msgid "prologue.opening.text"
-msgstr "Voc� est� segurando um livro. Foi escrito em 1605 e tem esperado por voc�. A p�gina que voc� est� prestes a ler n�o � a primeira p�gina � � a p�gina que o livro abre quando voc� o pega. Leia-a. Vire-a. O mundo do outro lado n�o � o mundo que voc� deixou."
+msgstr "Vocï¿½ estï¿½ segurando um livro. Foi escrito em 1605 e tem esperado por vocï¿½. A pï¿½gina que vocï¿½ estï¿½ prestes a ler nï¿½o ï¿½ a primeira pï¿½gina ï¿½ ï¿½ a pï¿½gina que o livro abre quando vocï¿½ o pega. Leia-a. Vire-a. O mundo do outro lado nï¿½o ï¿½ o mundo que vocï¿½ deixou."
 
 #. TRANSLATORS: Auto-added key
 msgid "prologue.opening.reality"
-msgstr "Um homem cavalga pelo planalto. Os moinhos s�o moinhos. A estalagem � uma estalagem."
+msgstr "Um homem cavalga pelo planalto. Os moinhos sï¿½o moinhos. A estalagem ï¿½ uma estalagem."
 
 #. TRANSLATORS: Auto-added key
 msgid "prologue.opening.book"
-msgstr "Um cavaleiro cavalga pelo planalto. Os moinhos s�o gigantes. A estalagem � um castelo."
+msgstr "Um cavaleiro cavalga pelo planalto. Os moinhos sï¿½o gigantes. A estalagem ï¿½ um castelo."
 
 #. TRANSLATORS: The clavilo (wooden horse) fragment title.
 msgid "bk.ch38.clavilo.title"
@@ -1606,11 +1605,13 @@ msgstr "Anamorfose detectada"
 
 #. TRANSLATORS: Shown when the player resolves an anamorphosis and gains evidence.
 msgid "ui.slice.anamorphosis_resolved"
-msgstr "Anamorfose resolvida � +%d evid�ncia"
+msgstr "Anamorfose resolvida ï¿½ +%d evidï¿½ncia"
 
 #. TRANSLATORS: Shown when the player has enough evidence to use the Verdict.
 msgid "ui.slice.verdict_ready"
-msgstr "Evid�ncia suficiente para um Veredito"
+msgstr "Evidï¿½ncia suficiente para um Veredito"
+
+
 
 
 

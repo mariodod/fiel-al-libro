@@ -1,4 +1,4 @@
-# Fiel al Libro - it translation
+﻿# Fiel al Libro - it translation
 # 
 # Milestone 4 - Phase 4 Beta localization
 # 
@@ -595,7 +595,6 @@ msgstr ""`r`n
 msgid "bk.ch37.encantamiento_duquesa.title"
 msgstr ""`r`n
 #. TRANSLATORS: Auto-added key
-msgstr ""`r`n
 #. TRANSLATORS: Auto-added key
 msgid "bk.ch39.sancho_gobernador.title"
 msgstr ""`r`n
@@ -1586,15 +1585,15 @@ msgid "ui.manifiesto.empty"
 msgstr ""`r`n
 #. TRANSLATORS: Auto-added key
 msgid "prologue.opening.text"
-msgstr "Tieni tra le mani un libro. � stato scritto nel 1605 e ha aspettato te. La pagina che stai per leggere non � la prima pagina � � la pagina che il libro apre quando lo prendi. Leggila. Girala. Il mondo dall'altra parte non � il mondo che hai lasciato."
+msgstr "Tieni tra le mani un libro. ï¿½ stato scritto nel 1605 e ha aspettato te. La pagina che stai per leggere non ï¿½ la prima pagina ï¿½ ï¿½ la pagina che il libro apre quando lo prendi. Leggila. Girala. Il mondo dall'altra parte non ï¿½ il mondo che hai lasciato."
 
 #. TRANSLATORS: Auto-added key
 msgid "prologue.opening.reality"
-msgstr "Un uomo cavalca attraverso la pianura. I mulini sono mulini. La locanda � una locanda."
+msgstr "Un uomo cavalca attraverso la pianura. I mulini sono mulini. La locanda ï¿½ una locanda."
 
 #. TRANSLATORS: Auto-added key
 msgid "prologue.opening.book"
-msgstr "Un cavaliere cavalca attraverso la pianura. I mulini sono giganti. La locanda � un castello."
+msgstr "Un cavaliere cavalca attraverso la pianura. I mulini sono giganti. La locanda ï¿½ un castello."
 
 #. TRANSLATORS: The clavilo (wooden horse) fragment title.
 msgid "bk.ch38.clavilo.title"
@@ -1606,11 +1605,13 @@ msgstr "Anamorfosi rilevata"
 
 #. TRANSLATORS: Shown when the player resolves an anamorphosis and gains evidence.
 msgid "ui.slice.anamorphosis_resolved"
-msgstr "Anamorfosi risolta � +%d prova"
+msgstr "Anamorfosi risolta ï¿½ +%d prova"
 
 #. TRANSLATORS: Shown when the player has enough evidence to use the Verdict.
 msgid "ui.slice.verdict_ready"
 msgstr "Abbastanza prove per un Verdetto"
+
+
 
 
 

@@ -1,4 +1,4 @@
-# Fiel al Libro - de translation
+﻿# Fiel al Libro - de translation
 # 
 # Milestone 4 - Phase 4 Beta localization
 # 
@@ -595,7 +595,6 @@ msgstr ""`r`n
 msgid "bk.ch37.encantamiento_duquesa.title"
 msgstr ""`r`n
 #. TRANSLATORS: Auto-added key
-msgstr ""`r`n
 #. TRANSLATORS: Auto-added key
 msgid "bk.ch39.sancho_gobernador.title"
 msgstr ""`r`n
@@ -1586,15 +1585,15 @@ msgid "ui.manifiesto.empty"
 msgstr ""`r`n
 #. TRANSLATORS: Auto-added key
 msgid "prologue.opening.text"
-msgstr "Du h�ltst ein Buch in den H�nden. Es wurde 1605 geschrieben und hat auf dich gewartet. Die Seite, die du gleich liest, ist nicht die erste Seite � sie ist die Seite, die das Buch aufschl�gt, wenn du es nimmst. Lies sie. Bl�ttere um. Die Welt auf der anderen Seite ist nicht die Welt, die du verlassen hast."
+msgstr "Du hï¿½ltst ein Buch in den Hï¿½nden. Es wurde 1605 geschrieben und hat auf dich gewartet. Die Seite, die du gleich liest, ist nicht die erste Seite ï¿½ sie ist die Seite, die das Buch aufschlï¿½gt, wenn du es nimmst. Lies sie. Blï¿½ttere um. Die Welt auf der anderen Seite ist nicht die Welt, die du verlassen hast."
 
 #. TRANSLATORS: Auto-added key
 msgid "prologue.opening.reality"
-msgstr "Ein Mann reitet �ber die Ebene. Die Windm�hlen sind Windm�hlen. Die Herberge ist eine Herberge."
+msgstr "Ein Mann reitet ï¿½ber die Ebene. Die Windmï¿½hlen sind Windmï¿½hlen. Die Herberge ist eine Herberge."
 
 #. TRANSLATORS: Auto-added key
 msgid "prologue.opening.book"
-msgstr "Ein Ritter reitet �ber die Ebene. Die Windm�hlen sind Riesen. Die Herberge ist ein Schloss."
+msgstr "Ein Ritter reitet ï¿½ber die Ebene. Die Windmï¿½hlen sind Riesen. Die Herberge ist ein Schloss."
 
 #. TRANSLATORS: The clavilo (wooden horse) fragment title.
 msgid "bk.ch38.clavilo.title"
@@ -1606,11 +1605,13 @@ msgstr "Anamorphose entdeckt"
 
 #. TRANSLATORS: Shown when the player resolves an anamorphosis and gains evidence.
 msgid "ui.slice.anamorphosis_resolved"
-msgstr "Anamorphose aufgel�st � +%d Beweis"
+msgstr "Anamorphose aufgelï¿½st ï¿½ +%d Beweis"
 
 #. TRANSLATORS: Shown when the player has enough evidence to use the Verdict.
 msgid "ui.slice.verdict_ready"
-msgstr "Genug Beweise f�r ein Urteil"
+msgstr "Genug Beweise fï¿½r ein Urteil"
+
+
 
 
 
