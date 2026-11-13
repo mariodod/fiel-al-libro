@@ -26,7 +26,7 @@ func _show_page(page: int) -> void:
 	match page:
 		0:
 			var tk: String = ""
-			var raw: Variant := _data.get("text_key")
+			var raw: Variant = _data.get("text_key")
 			if raw != null:
 				tk = str(raw)
 			_text_label.text = tk
@@ -38,7 +38,7 @@ func _show_page(page: int) -> void:
 		1:
 			_text_label.text = ""
 			var vr: String = ""
-			var raw_vr: Variant := _data.get("variant_reality")
+			var raw_vr: Variant = _data.get("variant_reality")
 			if raw_vr != null:
 				vr = str(raw_vr)
 			_variant_reality.text = vr
@@ -51,7 +51,7 @@ func _show_page(page: int) -> void:
 			_text_label.text = ""
 			_variant_reality.visible = false
 			var vb: String = ""
-			var raw_vb: Variant := _data.get("variant_book")
+			var raw_vb: Variant = _data.get("variant_book")
 			if raw_vb != null:
 				vb = str(raw_vb)
 			_variant_book.text = vb

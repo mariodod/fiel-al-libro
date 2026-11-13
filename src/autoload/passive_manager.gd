@@ -73,7 +73,7 @@ func _compute_modifiers(ids: Array[StringName]) -> Dictionary:
 	return m
 
 func _pd_get(d: Variant, key: String, default: Variant) -> Variant:
-	var v: Variant := d.get(key)
+	var v: Variant = d.get(key)
 	return v if v != null else default
 
 func _apply_to_pawns() -> void:
@@ -82,7 +82,7 @@ func _apply_to_pawns() -> void:
 			pawn.apply_passive_modifiers(modifiers)
 
 func get_modifier(key: String, default: Variant = null) -> Variant:
-	var v: Variant := modifiers.get(key)
+	var v: Variant = modifiers.get(key)
 	return v if v != null else default
 
 func get_active_ids() -> Array[StringName]:
