@@ -1,6 +1,7 @@
-[gd_scene load_steps=38 format=3]
+[gd_scene load_steps=39 format=3]
 
 [ext_resource type="Script" path="res://src/world/slice.gd" id="1_slice"]
+[ext_resource type="PackedScene" path="res://src/ui/manuscript_ui.tscn" id="39_shell"]
 [ext_resource type="Script" path="res://src/world/truth_object.gd" id="2_object"]
 [ext_resource type="Script" path="res://src/characters/character_pawn.gd" id="3_pawn"]
 [ext_resource type="Script" path="res://src/characters/player_controller.gd" id="4_player"]
@@ -372,3 +373,9 @@ margin_bottom = 40
 autowrap_mode = 2
 theme_override_font_sizes/font_size = 16
 theme_override_colors/font_color = Color(0.82, 0.80, 0.72, 1.0)
+
+[node name="ManuscriptUI" type="Control" parent="." instance=ExtResource("39_shell")]
+anchors_preset = 7
+layer = 40
+visible = false
+groups = ["manuscript_ui"]
