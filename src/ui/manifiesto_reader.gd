@@ -195,5 +195,7 @@ func _on_item_selected(index: int) -> void:
 		_detail.visible = true
 
 
-## Toggle key binding is handled by the Manuscript UI shell via slice.gd.
-## The reader responds to EventBus.toggle_manifiesto instead.
+## Toggle key binding.
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed(&"manifiesto"):
+		_toggle()
