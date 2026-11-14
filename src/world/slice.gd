@@ -879,6 +879,8 @@ func _update_hud() -> void:
 
 	lines.append("")
 	for object in _objects:
+		if object == null or object.data == null:
+			continue
 		lines.append(Loc.tf(&"ui.slice.line.object", [
 			Loc.t(object.data.title_key()),
 			_character_name(driven),

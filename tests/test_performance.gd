@@ -28,20 +28,25 @@ func _ready() -> void:
 		return
 
 	var scene = packed.instantiate()
+	# Root is busy during _ready — defer adding the child (HANDOVER §7.9).
+	call_deferred("_run_performance_test", scene, t)
+
+
+func _run_performance_test(scene: Node, t: TestHarness) -> void:
 	var tree = get_tree()
 	if tree != null:
 		tree.root.add_child(scene)
 
 	# Let things settle for a few frames.
 	for i in range(10):
-		pass
+		await get_tree().process_frame
 
-	# Measure frames.
+	# Measure frames — actually advancing the tree each frame.
 	var _frame_times: Array[float] = []
 	for i in range(FRAME_COUNT):
-		var start = Time.get_ticks_msec() / 1000.0
-		pass
-		var elapsed = Time.get_ticks_msec() / 1000.0 - start
+		var start: float = Time.get_ticks_msec() / 1000.0
+		await get_tree().process_frame
+		var elapsed: float = Time.get_ticks_msec() / 1000.0 - start
 		_frame_times.append(elapsed)
 
 	if _frame_times.is_empty():
@@ -49,9 +54,9 @@ func _ready() -> void:
 		_report(t)
 		return
 
-	var total_time = 0.0
-	var min_time = _frame_times[0]
-	var max_time = _frame_times[0]
+	var total_time: float = 0.0
+	var min_time: float = _frame_times[0]
+	var max_time: float = _frame_times[0]
 	for ft in _frame_times:
 		total_time += ft
 		if ft < min_time:
@@ -59,10 +64,10 @@ func _ready() -> void:
 		if ft > max_time:
 			max_time = ft
 
-	var avg_frame_time = total_time / _frame_times.size()
-	var avg_fps = 1.0 / avg_frame_time if avg_frame_time > 0 else 0.0
-	var min_fps = 1.0 / max_time if max_time > 0 else 0.0
-	var max_fps = 1.0 / min_time if min_time > 0 else 0.0
+	var avg_frame_time: float = total_time / _frame_times.size()
+	var avg_fps: float = 1.0 / avg_frame_time if avg_frame_time > 0 else 0.0
+	var min_fps: float = 1.0 / max_time if max_time > 0 else 0.0
+	var max_fps: float = 1.0 / min_time if min_time > 0 else 0.0
 
 	print("")
 	print("─── Performance report ───")

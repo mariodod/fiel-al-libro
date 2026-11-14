@@ -46,12 +46,12 @@ func _key_to_slug(text_key: StringName) -> String:
 	return "_".join(suffix)
 
 ## Load and cache a stream by path.
+##
+## Missing files are cached as null so load() is only called once — this
+## avoids Godot logging "Resource file not found" every frame.
 func _get_stream(path: String) -> AudioStream:
-	var cached: Variant = _bark_sounds.get(path)
-	if cached != null:
-		return cached
+	if _bark_sounds.has(path):
+		return _bark_sounds[path]
 	var stream := load(path)
-	if stream == null:
-		return null
 	_bark_sounds[path] = stream
 	return stream
