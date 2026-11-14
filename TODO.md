@@ -243,7 +243,7 @@
 - [x] The Manifiesto facsimile reader (`src/ui/manifiesto_reader.gd`, 48 fragments)
 - [x] The 15 Spanish-myth books with correct public-domain passives
 - [x] The *Ensayo* (D5) — the player-staged simulation (`ch_09`, `ch_10`)
-- [ ] The endings and the manuscript prologue — prologue scene done (`src/world/prologue.*`), endings content not written
+- [x] The endings and the manuscript prologue — prologue scene done (`src/world/prologue.*`), ending content written (`src/world/ending.gd`, 4 endings: el_manuscrito, la_locura_compartida, el_mundo_real, el_libro_gana), locale keys in en/es/fr PO files, `compute_ending()` in GameState, triggered from slice.gd
 - [ ] The 5 region kits beyond the slice — 15 environment kits exist total (windmill, field, inn, road, mountain, cave, river, village, cliff, church, castle, theatre, fog_plane, bridge, inn_courtyard); only ch_01 slice uses them inline
 - [x] Localization to 6 languages (en, es, fr, de, it, pt_BR registered in project.godot)
 - [ ] Steam page, capsule art, trailer, wishlist campaign
