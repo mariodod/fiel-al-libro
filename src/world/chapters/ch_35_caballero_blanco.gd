@@ -12,3 +12,4 @@ func _ready() -> void:
 	GameState.chapter_started(&"ch_35_caballero_blanco")
 	GameState.find_region(&"sierra_morena")
 
+

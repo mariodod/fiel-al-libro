@@ -13,10 +13,11 @@ func _ready() -> void:
 	GameState.find_region(&"el_castillo_del_duque")
 
 func _on_venture_resolved(_id: StringName, mode: int) -> void:
-	._on_venture_resolved(_id, mode)
+	_on_venture_resolved(_id, mode)
 	if _id == &"venture_duke":
 		if mode == VentureData.Resolution.TRUTH:
 			EventBus.toast.emit(&"ui.chapter.13.truth", [])
 		else:
 			EventBus.toast.emit(&"ui.chapter.13.down", [])
+
 
