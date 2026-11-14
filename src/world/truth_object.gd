@@ -37,6 +37,8 @@ var _hover_time: float = 0.0
 var _reveal_time: float = 0.0
 ## The pulsing glow material applied to the revealed Reality form.
 var _reveal_material: ShaderMaterial = null
+## The dissolve material applied to the Book form while the skin is off.
+var _dissolve_material: ShaderMaterial = null
 
 
 func _ready() -> void:
@@ -55,9 +57,12 @@ func _process(delta: float) -> void:
 	if _reveal_time > 0.0:
 		_reveal_time = maxf(0.0, _reveal_time - delta)
 		# Pulse the reveal material while the skin is off.
+		var t := Time.get_ticks_msec() / 1000.0
 		if _reveal_material != null:
-			_reveal_material.set_shader_parameter("time", Time.get_ticks_msec() / 1000.0)
-		# Skin came back on: drop the reveal material.
+			_reveal_material.set_shader_parameter("time", t)
+		if _dissolve_material != null:
+			_dissolve_material.set_shader_parameter("time", t)
+		# Skin came back on: drop both materials.
 		if _reveal_time <= 0.0:
 			_clear_reveal_material()
 	if _driven_externally:
@@ -156,19 +161,33 @@ func is_revealed() -> bool:
 ## Build a pulsing glow material for the revealed Reality form.
 ## The skin comes off: the object glows, hot and visible, until the
 ## reveal time runs out and the Book skin settles back on.
+## GDD.md §5.2: the exposed Reality form should read as hot and real,
+## not just a recolored Book.
 func _build_reveal_material() -> void:
 	var shader := Shader.new()
 	shader.code = """
 		shader_type spatial;
-		render_mode unshaded;
+		render_mode unshaded, cull_disabled;
 
 		uniform float time : hint_range(0, 10);
 		uniform float intensity : hint_range(0, 1);
 
 		void fragment() {
-			float pulse = sin(time * 6.0) * 0.5 + 0.5;
-			ALBEDO = vec3(1.0, 0.85, 0.45);
-			EMISSION = ALBEDO * pulse * intensity * 0.6;
+			// Fast, dramatic pulse between warm reality colors.
+			float pulse = sin(time * 9.0) * 0.5 + 0.5;
+			float color_cycle = sin(time * 2.5) * 0.5 + 0.5;
+
+			vec3 warm = vec3(1.0, 0.85, 0.45);   // warm amber
+			vec3 hot  = vec3(1.0, 0.55, 0.20);   // hot orange
+			vec3 albedo = mix(warm, hot, color_cycle);
+
+			// Rim glow: edges catch the light, making the form read
+			// as solid and exposed rather than flat.
+			float rim = 1.0 - max(0.0, dot(NORMAL, -VIEW));
+			vec3 rim_glow = albedo * rim * pulse * intensity * 0.9;
+
+			ALBEDO = albedo;
+			EMISSION = albedo * pulse * intensity * 1.1 + rim_glow * 0.5;
 		}
 	"""
 	_reveal_material = ShaderMaterial.new()
@@ -176,18 +195,53 @@ func _build_reveal_material() -> void:
 	_reveal_material.set_shader_parameter("intensity", 1.0)
 
 
-## Apply the reveal material to every mesh in the given form.
+## Build a dissolve material for the Book form while the skin is off.
+## The Book form fades away as the Reality form is exposed, so the
+## transition reads as the skin peeling off rather than a hard swap.
+func _build_dissolve_material() -> void:
+	var shader := Shader.new()
+	shader.code = """
+		shader_type spatial;
+		render_mode unshaded, cull_disabled;
+
+		uniform float time : hint_range(0, 10);
+		uniform float intensity : hint_range(0, 1);
+
+		void fragment() {
+			// Dissolve based on a noise threshold that rises over time.
+			// Pixels below the threshold become fully transparent.
+			vec2 uv = UV;
+			float noise = fract(sin(dot(uv, vec2(12.9898, 78.233))) * 43758.5453);
+			float threshold = time * 2.0;
+			float alpha = smoothstep(threshold - 0.3, threshold + 0.1, noise);
+
+			ALBEDO = vec3(1.0, 0.9, 0.8);
+			ALPHA = alpha * (1.0 - intensity * 0.5);
+		}
+	"""
+	_dissolve_material = ShaderMaterial.new()
+	_dissolve_material.shader = shader
+	_dissolve_material.set_shader_parameter("intensity", 1.0)
+
+
+## Apply the reveal material to every mesh in the given form, and the
+## dissolve material to the Book form so it fades away as the skin comes off.
 func _apply_reveal_material(material: ShaderMaterial) -> void:
 	if _reality_form == null:
 		return
 	_apply_material_to_meshes(_reality_form, material)
+	if _book_form != null and _dissolve_material != null:
+		_apply_material_to_meshes(_book_form, _dissolve_material)
 
 
-## Remove the reveal material from every mesh in the given form.
+## Remove the reveal material from every mesh in the given form, and clear
+## the dissolve material from the Book form.
 func _clear_reveal_material() -> void:
 	if _reality_form == null:
 		return
 	_apply_material_to_meshes(_reality_form, null)
+	if _book_form != null:
+		_apply_material_to_meshes(_book_form, null)
 
 
 ## Apply (or clear) a material override on every MeshInstance3D under a node.
