@@ -5,6 +5,8 @@ extends "res://src/world/slice.gd"
 ## The moonlight duel with the Knight of the Mirrors.
 ## Part I, chapter 22. Region V: el_castillo_del_duque.
 
+@onready var fragment_caballero_bosque := preload("res://assets/manifiesto/bk.ch11.caballero_bosque.01.json")
+
 func _ready() -> void:
 	super._ready()
 	GameState.chapter_started(&"ch_11_mirrors")

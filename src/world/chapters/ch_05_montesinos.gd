@@ -5,6 +5,8 @@ extends "res://src/world/slice.gd"
 ## Dulcinea del Toboso is named. Non-combat venture.
 ## Part I, chapter 23. Region II: sierra_morena.
 
+@onready var fragment_duena := preload("res://assets/manifiesto/bk.ch05.duena.01.json")
+
 func _ready() -> void:
 	super._ready()
 	GameState.chapter_started(&"ch_05_montesinos")

@@ -97,21 +97,18 @@ func _init() -> void:
 
 
 ## Normalize text for comparison: lowercase, strip punctuation, collapse whitespace.
+##
+## Avoids character-by-character iteration over the whole string (which is
+## far too slow in GDScript for a ~1 MB reference text). Instead it replaces
+## punctuation with spaces, then collapses runs of spaces with a halving
+## loop, which converges in ~log2(n) passes.
 func _normalize(s: String) -> String:
 	s = s.to_lower()
 	# Replace punctuation with spaces
-	var punct: String = ".,;:¡¿!?()\"'[]{}«»–—…"
+	var punct: String = ".,;:¡¿!?()\"'[]{}«»–—…\n\t\r"
 	for p in punct:
 		s = s.replace(p, " ")
-	# Collapse whitespace
-	var result: String = ""
-	var in_space: bool = false
-	for c in s:
-		if c == " " or c == "\n" or c == "\t" or c == "\r":
-			if not in_space:
-				result += " "
-				in_space = true
-		else:
-			result += c
-			in_space = false
-	return result.strip_edges()
+	# Collapse runs of spaces: each pass halves the number of double spaces
+	while s.contains("  "):
+		s = s.replace("  ", " ")
+	return s.strip_edges()

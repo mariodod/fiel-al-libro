@@ -5,6 +5,8 @@ extends "res://src/world/slice.gd"
 ## Quixote resolves to become a knight-errant.
 ## Part I, chapters 2-3. Region I: camino_la_mancha.
 
+@onready var fragment_caballeros := preload("res://assets/manifiesto/bk.ch02.caballeros.01.json")
+
 func _ready() -> void:
 	super._ready()
 	GameState.chapter_started(&"ch_02_basque")

@@ -6,6 +6,7 @@ extends "res://src/world/slice.gd"
 ## Region IV: los_riscos.
 
 @onready var ensayo_script := preload("res://assets/ensayo/ensayo_script.json")
+@onready var fragment_manuscrito := preload("res://assets/manifiesto/bk.ch09.manuscrito.01.json")
 
 func _ready() -> void:
 	super._ready()

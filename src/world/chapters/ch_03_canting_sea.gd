@@ -5,6 +5,8 @@ extends "res://src/world/slice.gd"
 ## Quixote dubbed a knight at the inn.
 ## Part I, chapter 3. Region I: camino_la_mancha.
 
+@onready var fragment_posada := preload("res://assets/manifiesto/bk.ch03.posada.01.json")
+
 func _ready() -> void:
 	super._ready()
 	GameState.chapter_started(&"ch_03_canting_sea")

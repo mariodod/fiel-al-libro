@@ -5,6 +5,8 @@ extends "res://src/world/slice.gd"
 ## The speech on arms and letters.
 ## Part I, chapter 12. Region V: el_castillo_del_duque.
 
+@onready var fragment_armas_letras := preload("res://assets/manifiesto/bk.ch12.armas_letras.01.json")
+
 func _ready() -> void:
 	super._ready()
 	GameState.chapter_started(&"ch_12_magician")

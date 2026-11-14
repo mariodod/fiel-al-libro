@@ -118,6 +118,18 @@ $raw = $raw -replace "`r`n", "`n"
 
 # Project Gutenberg's licence header and footer are not the book.
 #
+# NOTE ON ENCODING: Invoke-WebRequest's .Content property decodes the
+# response using the server's declared charset. Project Gutenberg serves
+# UTF-8 but does not always declare it, so PowerShell may fall back to
+# Windows-1252 and silently mangle accented characters. Download raw bytes
+# and decode as UTF-8 explicitly instead.
+$webClient = New-Object System.Net.WebClient
+$webClient.Headers.Add("User-Agent", $headers['User-Agent'])
+$bytes = $webClient.DownloadData($gutenberg)
+$raw = [System.Text.Encoding]::UTF8.GetString($bytes)
+
+# Project Gutenberg's licence header and footer are not the book.
+#
 # The book's own part titles are NOT reliable boundaries: the printed text
 # carries running heads, and "parte del ingenioso hidalgo don Quijote de la
 # Mancha" turns up all over the place. The two boundaries that ARE unique

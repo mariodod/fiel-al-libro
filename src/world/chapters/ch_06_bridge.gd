@@ -5,6 +5,8 @@ extends "res://src/world/slice.gd"
 ## Chrysostomus and Marcela among the goatherds.
 ## Part I, chapter 43. Region II: sierra_morena.
 
+@onready var fragment_pastores := preload("res://assets/manifiesto/bk.ch06.pastores.01.json")
+
 func _ready() -> void:
 	super._ready()
 	GameState.chapter_started(&"ch_06_bridge")
