@@ -5,7 +5,7 @@ extends "res://src/world/slice.gd"
 ## Freeing the galley slaves.
 ## Part I, chapter 14. Region V: el_castillo_del_duque.
 
-@onready var fragment_leones := preload("res://assets/manifiesto/bk.ch13.leones.01.json")
+@onready var fragment_leones = preload("res://assets/manifiesto/bk.ch13.leones.01.json")
 
 func _ready() -> void:
 	super._ready()
@@ -19,3 +19,4 @@ func _on_venture_resolved(_id: StringName, mode: int) -> void:
 			EventBus.toast.emit(&"ui.chapter.13.truth", [])
 		else:
 			EventBus.toast.emit(&"ui.chapter.13.down", [])
+

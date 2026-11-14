@@ -22,7 +22,7 @@ func suite(t):
 	t.suite("Chatter")
 
 	# ── The keys ───────────────────────────────────────────────────────
-	var chatter = Chatter.new_instance()
+	var chatter = Chatter.new()
 	t.test("the key is composed")
 	t.expect_eq(chatter.call("key_for", &"sancho", &"rock"), &"dia.sancho.chatter.rock",
 		"the character and the thing")
@@ -101,3 +101,4 @@ func suite(t):
 ## Something was said.
 func _on_spoke(character_id: StringName, text_key: StringName, _args: Array):
 	_spoken.append(text_key)
+

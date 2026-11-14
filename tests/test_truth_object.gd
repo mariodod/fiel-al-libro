@@ -87,7 +87,7 @@ func suite(t):
 
 ## A TruthObject with two empty forms, so the test does not need the art.
 func _make_object():
-	var data = TruthObjectData.new_instance()
+	var data = TruthObjectData.new()
 	data.id = &"test"
 	data.display_name_key = &"ui.object.molino"
 	data.reality_face = _face(&"ui.form.molino", &"ui.face.windmill.reality.desc")

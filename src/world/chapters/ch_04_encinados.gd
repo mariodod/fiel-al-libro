@@ -5,7 +5,7 @@ extends "res://src/world/slice.gd"
 ## Rocinante is named.
 ## Part I. Region II: sierra_morena.
 
-@onready var fragment_rocinante := preload("res://assets/manifiesto/bk.ch04.rocinante.01.json")
+@onready var fragment_rocinante = preload("res://assets/manifiesto/bk.ch04.rocinante.01.json")
 
 func _ready() -> void:
 	super._ready()
@@ -19,3 +19,4 @@ func _on_venture_resolved(_id: StringName, mode: int) -> void:
 			EventBus.toast.emit(&"ui.chapter.04.truth", [])
 		else:
 			EventBus.toast.emit(&"ui.chapter.04.down", [])
+

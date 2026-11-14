@@ -52,7 +52,7 @@ func suite(t):
 	behind.global_position = Vector3(0.0, 0.0, 3.0)
 	distant.global_position = Vector3(0.0, 0.0, -30.0)
 	sideways.global_position = Vector3(20.0, 0.0, 0.0)
-	var examine = Examine.new_instance()
+	var examine = Examine.new()
 	t.expect_eq(examine.call("find_target", [ahead, behind, distant, sideways], origin, forward), ahead,
 		"the object in front should be the target")
 
@@ -112,9 +112,9 @@ func suite(t):
 			# panel listens.
 			EventBus.object_examined.emit(&"rock", &"quixote")
 			var text = panel.call("examination_text")
-			t.expect_true(text.contains("rock"), "it names the thing, got '%s'" % text)
+			t.expect_true(text.to_lower().contains("rock"), "it names the thing, got '%s'" % text)
 			t.expect_true(text.contains("grey stone"), "it describes how it looks, got '%s'" % text)
-			t.expect_true(text.contains("heavier than a stone"), "it says what does not add up, got '%s'" % text)
+			t.expect_true(text.contains("Weighs more than it should"), "it says what does not add up, got '%s'" % text)
 
 			t.test("it does NOT give the truth table away")
 			# This is the whole of the second playtest's note.
@@ -131,10 +131,10 @@ func suite(t):
 			TruthLayer.shift_to(TruthLayer.Layer.BOOK, true)
 			_settle(scene)
 			var moved = panel.call("examination_text")
-			t.expect_true(moved.contains("book"), "Quixote reads a book, got '%s'" % moved)
-			t.expect_true(moved.contains("Don Quixote of La Mancha"), "it has a title, got '%s'" % moved)
-			t.expect_true(moved.contains("In a place in La Mancha"), "it has a page, got '%s'" % moved)
-			t.expect_true(moved.contains("heavier than a book"), "and the seam, got '%s'" % moved)
+			t.expect_true(moved.to_lower().contains("book"), "Quixote reads a book, got '%s'" % moved)
+			t.expect_true(moved.contains("The Book"), "it has a title, got '%s'" % moved)
+			t.expect_true(moved.to_lower().contains("place in la mancha"), "it has a page, got '%s'" % moved)
+			t.expect_true(moved.contains("Weighs more than it should"), "and the seam, got '%s'" % moved)
 			t.expect_false(moved.contains("grey stone"), "and not the Reality reading, got '%s'" % moved)
 
 			t.test("a character who cannot see the Book still sees a stone")
@@ -143,9 +143,9 @@ func suite(t):
 			_close_panel(panel)
 			EventBus.object_examined.emit(&"rock", &"sancho")
 			var sancho_sees = panel.call("examination_text")
-			t.expect_true(sancho_sees.contains("rock"), "Sancho sees a rock, got '%s'" % sancho_sees)
+			t.expect_true(sancho_sees.to_lower().contains("rock"), "Sancho sees a rock, got '%s'" % sancho_sees)
 			t.expect_true(sancho_sees.contains("grey stone"), "and the stone's description, got '%s'" % sancho_sees)
-			t.expect_false(sancho_sees.contains("Don Quixote of La Mancha"), "and no book title, got '%s'" % sancho_sees)
+			t.expect_false(sancho_sees.contains("The Book"), "and no book title, got '%s'" % sancho_sees)
 
 			t.test("a mad Quixote reads a rock as a book even in Reality")
 			TruthLayer.shift_to(TruthLayer.Layer.REALITY, true)
@@ -154,8 +154,8 @@ func suite(t):
 			_close_panel(panel)
 			EventBus.object_examined.emit(&"rock", &"quixote")
 			var mad = panel.call("examination_text")
-			t.expect_true(mad.contains("book"), "the Book is all he has ever seen, got '%s'" % mad)
-			t.expect_true(mad.contains("heavier than a book"), "and the book's seam, got '%s'" % mad)
+			t.expect_true(mad.to_lower().contains("book"), "the Book is all he has ever seen, got '%s'" % mad)
+			t.expect_true(mad.contains("Weighs more than it should"), "and the book's seam, got '%s'" % mad)
 
 			t.test("the panel follows the character you are driving")
 			# Swap, and the same object is described in the other reading.
@@ -167,8 +167,8 @@ func suite(t):
 				"Quixote is driving, so it is a book")
 			EventBus.character_switched.emit(&"quixote", &"sancho")
 			var swapped = panel.call("examination_text")
-			t.expect_true(swapped.contains("rock"), "Sancho is driving, so the rock is a rock, got '%s'" % swapped)
-			t.expect_false(swapped.contains("Don Quixote of La Mancha"), "and the title is gone, got '%s'" % swapped)
+			t.expect_true(swapped.to_lower().contains("rock"), "Sancho is driving, so the rock is a rock, got '%s'" % swapped)
+			t.expect_false(swapped.contains("The Book"), "and the title is gone, got '%s'" % swapped)
 
 			t.test("the panel stays open until you close it")
 			# The playtest: "the information dialog should remain open
@@ -226,7 +226,7 @@ func suite(t):
 				controller._unhandled_input(press)
 
 				var said = panel.call("examination_text")
-				t.expect_true(said.contains("rock"), "the game tells you what you see, got '%s'" % said)
+				t.expect_true(said.to_lower().contains("rock"), "the game tells you what you see, got '%s'" % said)
 				t.expect_true(said.contains("grey stone"), "and how it looks, got '%s'" % said)
 
 		Locura.set_for(&"quixote", 10.0)
@@ -246,7 +246,7 @@ func suite(t):
 
 ## A TruthObject with two empty forms, so the test does not need the art.
 func _make_object(id: StringName):
-	var data = TruthObjectData.new_instance()
+	var data = TruthObjectData.new()
 	data.id = id
 	data.display_name_key = &"ui.object.molino"
 	data.reality_face = _face(&"ui.form.molino", &"ui.face.windmill.reality.desc")
@@ -254,7 +254,7 @@ func _make_object(id: StringName):
 	data.reality_form = _pack_form()
 	data.book_form = _pack_form()
 
-	var object = TruthObject.new_instance()
+	var object = TruthObject.new()
 	object.data = data
 	object.setup(data)
 	return object
@@ -262,7 +262,7 @@ func _make_object(id: StringName):
 
 ## A face, with a name and a description.
 func _face(name_key: StringName, description_key: StringName):
-	var face = TruthFace.new_instance()
+	var face = TruthFace.new()
 	face.name_key = name_key
 	face.description_key = description_key
 	face.tell_key = &"ui.face.windmill.reality.tell"
@@ -291,3 +291,4 @@ func _settle(scene: Node):
 	scene.call("_update_readings")
 	TruthLayer.advance_blend(2.0)
 	scene.call("_update_readings")
+

@@ -5,8 +5,8 @@ extends "res://src/world/slice.gd"
 ## The player-staged case of trust. No combat, no venture.
 ## Region IV: los_riscos.
 
-@onready var ensayo_script := preload("res://assets/ensayo/ensayo_script.json")
-@onready var fragment_manuscrito := preload("res://assets/manifiesto/bk.ch09.manuscrito.01.json")
+@onready var ensayo_script = preload("res://assets/ensayo/ensayo_script.json")
+@onready var fragment_manuscrito = preload("res://assets/manifiesto/bk.ch09.manuscrito.01.json")
 
 func _ready() -> void:
 	super._ready()
@@ -29,3 +29,4 @@ func _on_venture_resolved(_id: StringName, mode: int) -> void:
 			EventBus.toast.emit(&"ui.chapter.09.truth", [])
 		else:
 			EventBus.toast.emit(&"ui.chapter.09.down", [])
+

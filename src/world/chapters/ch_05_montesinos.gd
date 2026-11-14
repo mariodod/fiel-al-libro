@@ -5,7 +5,7 @@ extends "res://src/world/slice.gd"
 ## Dulcinea del Toboso is named. Non-combat venture.
 ## Part I, chapter 23. Region II: sierra_morena.
 
-@onready var fragment_duena := preload("res://assets/manifiesto/bk.ch05.duena.01.json")
+@onready var fragment_duena = preload("res://assets/manifiesto/bk.ch05.duena.01.json")
 
 func _ready() -> void:
 	super._ready()
@@ -19,3 +19,4 @@ func _on_venture_resolved(_id: StringName, mode: int) -> void:
 			EventBus.toast.emit(&"ui.chapter.05.truth", [])
 		else:
 			EventBus.toast.emit(&"ui.chapter.05.down", [])
+

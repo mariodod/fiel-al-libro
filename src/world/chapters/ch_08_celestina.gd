@@ -17,3 +17,4 @@ func _on_venture_resolved(_id: StringName, mode: int) -> void:
 			EventBus.toast.emit(&"ui.chapter.08.truth", [])
 		else:
 			EventBus.toast.emit(&"ui.chapter.08.down", [])
+

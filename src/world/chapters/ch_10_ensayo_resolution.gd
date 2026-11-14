@@ -5,8 +5,8 @@ extends "res://src/world/slice.gd"
 ## The consequence of the Ensayo test. No combat, no venture.
 ## Region IV: los_riscos.
 
-@onready var ensayo_script := preload("res://assets/ensayo/ensayo_script.json")
-@onready var fragment_balsamo := preload("res://assets/manifiesto/bk.ch10.balsamo.01.json")
+@onready var ensayo_script = preload("res://assets/ensayo/ensayo_script.json")
+@onready var fragment_balsamo = preload("res://assets/manifiesto/bk.ch10.balsamo.01.json")
 
 func _ready() -> void:
 	super._ready()
@@ -32,3 +32,4 @@ func _on_venture_resolved(_id: StringName, mode: int) -> void:
 			EventBus.toast.emit(&"ui.chapter.10.truth", [])
 		else:
 			EventBus.toast.emit(&"ui.chapter.10.down", [])
+
