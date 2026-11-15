@@ -1,10 +1,10 @@
 Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
 
-[sync_locales] Template: 680 entries
-[sync_locales] de.po        +165 missing entries appended
-[sync_locales] en.po        +165 missing entries appended
-[sync_locales] es.po        +165 missing entries appended
-[sync_locales] fr.po        +165 missing entries appended
-[sync_locales] it.po        +165 missing entries appended
-[sync_locales] pt_BR.po     +165 missing entries appended
+[sync_locales] Template: 848 entries
+[sync_locales] de.po        +4 missing entries appended
+[sync_locales] en.po        +4 missing entries appended
+[sync_locales] es.po        +4 missing entries appended
+[sync_locales] fr.po        +4 missing entries appended
+[sync_locales] it.po        +4 missing entries appended
+[sync_locales] pt_BR.po     +4 missing entries appended
 [sync_locales] 6 file(s) updated

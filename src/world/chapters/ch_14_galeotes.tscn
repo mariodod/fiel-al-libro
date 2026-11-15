@@ -21,6 +21,8 @@
 [ext_resource type="PackedScene" path="res://src/world/environment_kits/field_kit.tscn" id="18_field_kit"]
 [ext_resource type="PackedScene" path="res://src/world/environment_kits/road_kit.tscn" id="19_road_kit"]
 [ext_resource type="Resource" path="res://src/data/primitives/book_bk_ch14_galeotes.tres" id="20_book_galeotes"]
+[ext_resource type="Script" path="res://src/world/venture.gd" id="21_venture"]
+[ext_resource type="Resource" path="res://src/data/ventures/venture_galeotes.tres" id="22_venture_data"]
 
 [sub_resource type="PlaneMesh" id="Plane_ground"]
 size = Vector2(300, 300)
@@ -56,6 +58,12 @@ shape = SubResource("Shape_ground")
 [node name="Book_Galeotes" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -30)
 script = ExtResource("2_object")
+data = ExtResource("20_book_galeotes")
+
+[node name="Venture" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 30, 0, 0)
+script = ExtResource("21_venture")
+venture = ExtResource("22_venture_data")
 data = ExtResource("20_book_galeotes")
 
 [node name="FieldKit" type="Node3D" parent="."]

@@ -1,9 +1,17 @@
 #!/usr/bin/env python3
 """
 Add missing locale keys to messages.pot for the new book fragments.
+Each fragment needs 5 keys:
+  ui.face.{frag_id}.reality.desc
+  ui.face.{frag_id}.reality.tell
+  ui.face.{frag_id}.book.desc
+  ui.face.{frag_id}.book.tell
+  ui.book.{frag_id}.name
+where frag_id is like bk.ch15.muerto_camino (without .01 suffix)
 """
 
 from pathlib import Path
+import re
 
 POT_PATH = Path("locale/messages.pot")
 
@@ -49,11 +57,9 @@ def read_existing_keys(pot_path):
     keys = set()
     with open(pot_path, 'r', encoding='utf-8') as f:
         content = f.read()
-    # Find all msgid lines
-    import re
     for match in re.finditer(r'^msgid "([^"]*)"$', content, re.MULTILINE):
         key = match.group(1)
-        if key:  # Skip empty msgid ""
+        if key:
             keys.add(key)
     return keys
 
@@ -62,12 +68,15 @@ def generate_missing_keys(existing_keys):
     new_keys = []
     
     for frag_id in FRAGMENT_IDS:
+        # The game uses frag_id without .01 suffix (e.g., bk.ch15.muerto_camino)
+        frag_base = frag_id.replace(".01", "")
+        
         keys = [
-            f'ui.face.{frag_id}.reality.desc',
-            f'ui.face.{frag_id}.reality.tell',
-            f'ui.face.{frag_id}.book.desc',
-            f'ui.face.{frag_id}.book.tell',
-            f'ui.book.{frag_id}.name',
+            f'ui.face.{frag_base}.reality.desc',
+            f'ui.face.{frag_base}.reality.tell',
+            f'ui.face.{frag_base}.book.desc',
+            f'ui.face.{frag_base}.book.tell',
+            f'ui.book.{frag_base}.name',
         ]
         for key in keys:
             if key not in existing_keys:
@@ -94,7 +103,7 @@ def add_keys_to_pot(pot_path, new_keys):
     for key in sorted(new_keys):
         new_entries.append(f'#. META: namespace=ui')
         new_entries.append(f'msgid "{key}"')
-        new_entries.append('msgstr ""')
+        new_entries.append(f'msgstr ""')
         new_entries.append('')
     
     # Insert before the first msgid

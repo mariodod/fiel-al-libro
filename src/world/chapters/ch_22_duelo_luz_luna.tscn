@@ -21,6 +21,8 @@
 [ext_resource type="PackedScene" path="res://src/world/environment_kits/river_kit.tscn" id="18_river_kit"]
 [ext_resource type="PackedScene" path="res://src/world/environment_kits/village_kit.tscn" id="19_village_kit"]
 [ext_resource type="Resource" path="res://src/data/primitives/book_bk.ch22.duelo_luz_luna.01.tres" id="20_book_duelo_luz_luna"]
+[ext_resource type="Script" path="res://src/world/venture.gd" id="21_venture"]
+[ext_resource type="Resource" path="res://src/data/ventures/venture_duelo_luz_luna.tres" id="22_venture_data"]
 
 [sub_resource type="PlaneMesh" id="Plane_ground"]
 size = Vector2(300, 300)
@@ -44,6 +46,12 @@ height = 1.6
 [node name="Book_Duelo_luz_luna" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, -10, 0, -40)
 script = ExtResource("2_object")
+data = ExtResource("20_book_duelo_luz_luna")
+
+[node name="Venture" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 30, 0, 0)
+script = ExtResource("21_venture")
+venture = ExtResource("22_venture_data")
 data = ExtResource("20_book_duelo_luz_luna")
 
 script = ExtResource("1_chapter")

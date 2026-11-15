@@ -10,3 +10,9 @@ ERROR: No config found in file: 'res://locale/pt_BR.po'.
    at: load_translation (core/io/translation_loader_po.cpp:326)
 ERROR: Failed loading resource: res://locale/pt_BR.po.
    at: _load (core/io/resource_loader.cpp:317)
+[sync_locales] de.po has 1 orphan entry/entries: ui.slice.verdict_ready
+[sync_locales] en.po has 1 orphan entry/entries: ui.slice.verdict_ready
+[sync_locales] es.po has 1 orphan entry/entries: ui.slice.verdict_ready
+[sync_locales] fr.po has 1 orphan entry/entries: ui.slice.verdict_ready
+[sync_locales] it.po has 1 orphan entry/entries: ui.slice.verdict_ready
+[sync_locales] pt_BR.po has 1 orphan entry/entries: ui.slice.verdict_ready

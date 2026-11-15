@@ -12,4 +12,12 @@ func _ready() -> void:
 	GameState.chapter_started(&"ch_22_duelo_luz_luna")
 	GameState.find_region(&"el_toboso")
 
+func _on_venture_resolved(_id: StringName, mode: int) -> void:
+	_on_venture_resolved(_id, mode)
+	if _id == &"venture_duelo_luz_luna":
+		if mode == VentureData.Resolution.TRUTH:
+			EventBus.toast.emit(&"ui.chapter.22.truth", [])
+		else:
+			EventBus.toast.emit(&"ui.chapter.22.down", [])
+
 

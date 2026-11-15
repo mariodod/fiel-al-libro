@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="VentureData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://src/data/venture_data.gd" id="1_data"]
+[ext_resource type="Resource" path="res://src/data/enemies/venture_caballero_blanco.tres" id="2_enemy"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"venture_caballero_blanco"
+display_name_key = &"ui.venture.caballero_blanco"
+source_reference = "Don Quijote, parte I, capítulo 35"
+novel_chapter = "I.35"
+enemy = ExtResource("2_enemy")
+is_non_combat = false
+allows_truth_resolution = true
+manifesto_fragments = ["bk.ch35.caballero_blanco.01"]
+rewards = []

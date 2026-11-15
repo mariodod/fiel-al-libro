@@ -21,6 +21,8 @@
 [ext_resource type="PackedScene" path="res://src/world/environment_kits/castle_kit.tscn" id="18_castle_kit"]
 [ext_resource type="PackedScene" path="res://src/world/environment_kits/theatre_kit.tscn" id="19_theatre_kit"]
 [ext_resource type="Resource" path="res://src/data/primitives/book_bk.ch30.leones_carro.01.tres" id="20_book_leones_carro"]
+[ext_resource type="Script" path="res://src/world/venture.gd" id="21_venture"]
+[ext_resource type="Resource" path="res://src/data/ventures/venture_leones_carro.tres" id="22_venture_data"]
 
 [sub_resource type="PlaneMesh" id="Plane_ground"]
 size = Vector2(300, 300)
@@ -44,6 +46,12 @@ height = 1.6
 [node name="Book_Leones_carro" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 30, 0, 20)
 script = ExtResource("2_object")
+data = ExtResource("20_book_leones_carro")
+
+[node name="Venture" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, -30, 0, 20)
+script = ExtResource("21_venture")
+venture = ExtResource("22_venture_data")
 data = ExtResource("20_book_leones_carro")
 
 script = ExtResource("1_chapter")

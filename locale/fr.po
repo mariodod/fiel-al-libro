@@ -2071,8 +2071,6 @@ msgstr "Assez de preuves pour un Verdict"
 
 
 #. TRANSLATORS: The book stand's anamorphosis tell: the detail that does not add up.
-msgid "ui.anamorphosis.book_stand_pages.tell"
-msgstr ""
 
 #. META: namespace=ui
 msgid "ui.book.bk.ch15.muerto_camino.01.name"
@@ -2732,4 +2730,684 @@ msgstr ""
 
 #. META: namespace=ui
 msgid "ui.face.bk.ch50.impertinente.01.reality.tell"
+msgstr ""
+
+#. META: namespace=ui
+#. META: namespace=ui
+msgid "ui.book.bk.ch15.muerto_camino.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.bk.ch16.barca_encantada.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.bk.ch17.hombre_muerto.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.bk.ch18.libros_quemados.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.bk.ch20.dulcinea_encantada.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.bk.ch22.duelo_luz_luna.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.bk.ch23.montesinos.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.bk.ch24.altisidora.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.bk.ch25.conde_altisidora.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.bk.ch26.melisendra.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.bk.ch27.molinos_llenadores.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.bk.ch28.encantada.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.bk.ch29.penitentes.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.bk.ch30.leones_carro.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.bk.ch31.cueva_hermoso.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.bk.ch32.ventura_duque.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.bk.ch33.leones_reales.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.bk.ch34.encantamiento.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.bk.ch35.caballero_blanco.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.bk.ch36.cuidado_sancho.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.bk.ch37.encantamiento_duquesa.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.bk.ch38.clavileño.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.bk.ch39.sancho_gobernador.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.bk.ch40.entierro_rico.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.bk.ch41.oviedo.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.bk.ch42.maestro_pedro.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.bk.ch43.caso_penal.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.bk.ch44.duelo_evitados.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.bk.ch45.encantamiento_sancho.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.bk.ch46.leones_corte.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.bk.ch47.despedida.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.bk.ch48.regreso_pueblo.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.bk.ch50.impertinente.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch15.muerto_camino.book.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch15.muerto_camino.book.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch15.muerto_camino.reality.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch15.muerto_camino.reality.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch16.barca_encantada.book.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch16.barca_encantada.book.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch16.barca_encantada.reality.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch16.barca_encantada.reality.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch17.hombre_muerto.book.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch17.hombre_muerto.book.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch17.hombre_muerto.reality.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch17.hombre_muerto.reality.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch18.libros_quemados.book.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch18.libros_quemados.book.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch18.libros_quemados.reality.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch18.libros_quemados.reality.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch20.dulcinea_encantada.book.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch20.dulcinea_encantada.book.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch20.dulcinea_encantada.reality.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch20.dulcinea_encantada.reality.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch22.duelo_luz_luna.book.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch22.duelo_luz_luna.book.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch22.duelo_luz_luna.reality.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch22.duelo_luz_luna.reality.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch23.montesinos.book.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch23.montesinos.book.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch23.montesinos.reality.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch23.montesinos.reality.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch24.altisidora.book.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch24.altisidora.book.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch24.altisidora.reality.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch24.altisidora.reality.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch25.conde_altisidora.book.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch25.conde_altisidora.book.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch25.conde_altisidora.reality.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch25.conde_altisidora.reality.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch26.melisendra.book.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch26.melisendra.book.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch26.melisendra.reality.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch26.melisendra.reality.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch27.molinos_llenadores.book.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch27.molinos_llenadores.book.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch27.molinos_llenadores.reality.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch27.molinos_llenadores.reality.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch28.encantada.book.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch28.encantada.book.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch28.encantada.reality.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch28.encantada.reality.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch29.penitentes.book.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch29.penitentes.book.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch29.penitentes.reality.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch29.penitentes.reality.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch30.leones_carro.book.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch30.leones_carro.book.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch30.leones_carro.reality.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch30.leones_carro.reality.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch31.cueva_hermoso.book.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch31.cueva_hermoso.book.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch31.cueva_hermoso.reality.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch31.cueva_hermoso.reality.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch32.ventura_duque.book.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch32.ventura_duque.book.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch32.ventura_duque.reality.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch32.ventura_duque.reality.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch33.leones_reales.book.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch33.leones_reales.book.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch33.leones_reales.reality.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch33.leones_reales.reality.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch34.encantamiento.book.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch34.encantamiento.book.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch34.encantamiento.reality.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch34.encantamiento.reality.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch35.caballero_blanco.book.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch35.caballero_blanco.book.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch35.caballero_blanco.reality.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch35.caballero_blanco.reality.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch36.cuidado_sancho.book.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch36.cuidado_sancho.book.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch36.cuidado_sancho.reality.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch36.cuidado_sancho.reality.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch37.encantamiento_duquesa.book.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch37.encantamiento_duquesa.book.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch37.encantamiento_duquesa.reality.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch37.encantamiento_duquesa.reality.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch38.clavileño.book.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch38.clavileño.book.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch38.clavileño.reality.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch38.clavileño.reality.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch39.sancho_gobernador.book.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch39.sancho_gobernador.book.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch39.sancho_gobernador.reality.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch39.sancho_gobernador.reality.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch40.entierro_rico.book.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch40.entierro_rico.book.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch40.entierro_rico.reality.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch40.entierro_rico.reality.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch41.oviedo.book.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch41.oviedo.book.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch41.oviedo.reality.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch41.oviedo.reality.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch42.maestro_pedro.book.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch42.maestro_pedro.book.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch42.maestro_pedro.reality.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch42.maestro_pedro.reality.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch43.caso_penal.book.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch43.caso_penal.book.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch43.caso_penal.reality.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch43.caso_penal.reality.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch44.duelo_evitados.book.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch44.duelo_evitados.book.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch44.duelo_evitados.reality.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch44.duelo_evitados.reality.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch45.encantamiento_sancho.book.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch45.encantamiento_sancho.book.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch45.encantamiento_sancho.reality.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch45.encantamiento_sancho.reality.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch46.leones_corte.book.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch46.leones_corte.book.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch46.leones_corte.reality.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch46.leones_corte.reality.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch47.despedida.book.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch47.despedida.book.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch47.despedida.reality.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch47.despedida.reality.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch48.regreso_pueblo.book.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch48.regreso_pueblo.book.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch48.regreso_pueblo.reality.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch48.regreso_pueblo.reality.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch50.impertinente.book.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch50.impertinente.book.tell"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch50.impertinente.reality.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.face.bk.ch50.impertinente.reality.tell"
+msgstr ""
+
+#. TRANSLATORS: The book stand's anamorphosis tell: the detail that does not add up.
+
+#. TRANSLATORS: Shown when the player has enough evidence to use the Verdict.
+#. META: namespace=ui
+msgid "ui.venture.galeotes"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.venture.duelo_luz_luna"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.venture.leones_carro"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.venture.caballero_blanco"
 msgstr ""
