@@ -20,6 +20,7 @@
 [ext_resource type="Resource" path="res://src/data/characters/musician.tres" id="17_musician"]
 [ext_resource type="PackedScene" path="res://src/world/environment_kits/cliff_kit.tscn" id="18_cliff_kit"]
 [ext_resource type="PackedScene" path="res://src/world/environment_kits/theatre_kit.tscn" id="19_theatre_kit"]
+[ext_resource type="Resource" path="res://src/data/primitives/book_bk.ch27.molinos_llenadores.01.tres" id="20_book_molinos_llenadores"]
 
 [sub_resource type="PlaneMesh" id="Plane_ground"]
 size = Vector2(300, 300)
@@ -40,6 +41,11 @@ radius = 0.5
 height = 1.6
 
 [node name="Chapter27_MolinosLlenadores" type="Node3D"]
+[node name="Book_Molinos_llenadores" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 40, 0, -10)
+script = ExtResource("2_object")
+data = ExtResource("20_book_molinos_llenadores")
+
 script = ExtResource("1_chapter")
 
 [node name="Ground" type="MeshInstance3D" parent="."]

@@ -20,6 +20,7 @@
 [ext_resource type="Resource" path="res://src/data/characters/musician.tres" id="17_musician"]
 [ext_resource type="PackedScene" path="res://src/world/environment_kits/mountain_kit.tscn" id="18_mountain_kit"]
 [ext_resource type="PackedScene" path="res://src/world/environment_kits/cave_kit.tscn" id="19_cave_kit"]
+[ext_resource type="Resource" path="res://src/data/primitives/book_bk.ch36.cuidado_sancho.01.tres" id="20_book_cuidado_sancho"]
 
 [sub_resource type="PlaneMesh" id="Plane_ground"]
 size = Vector2(300, 300)
@@ -40,6 +41,11 @@ radius = 0.5
 height = 1.6
 
 [node name="Chapter36_CuidadoSancho" type="Node3D"]
+[node name="Book_Cuidado_sancho" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, -30, 0, 20)
+script = ExtResource("2_object")
+data = ExtResource("20_book_cuidado_sancho")
+
 script = ExtResource("1_chapter")
 
 [node name="Ground" type="MeshInstance3D" parent="."]

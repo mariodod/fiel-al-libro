@@ -1,0 +1,12 @@
+ERROR: No config found in file: 'res://locale/de.po'.
+   at: load_translation (core/io/translation_loader_po.cpp:326)
+ERROR: Failed loading resource: res://locale/de.po.
+   at: _load (core/io/resource_loader.cpp:317)
+ERROR: No config found in file: 'res://locale/it.po'.
+   at: load_translation (core/io/translation_loader_po.cpp:326)
+ERROR: Failed loading resource: res://locale/it.po.
+   at: _load (core/io/resource_loader.cpp:317)
+ERROR: No config found in file: 'res://locale/pt_BR.po'.
+   at: load_translation (core/io/translation_loader_po.cpp:326)
+ERROR: Failed loading resource: res://locale/pt_BR.po.
+   at: _load (core/io/resource_loader.cpp:317)
