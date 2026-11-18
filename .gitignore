@@ -89,3 +89,5 @@ desktop.ini
 __pycache__/
 *.pyc
 
+# Temporary test output
+ana_*.txt
