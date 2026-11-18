@@ -27,6 +27,8 @@
 
 [ext_resource type="Resource" path="res://src/data/books/bk.ch01.leyenda_tio_andalus.tres" id="26_leyenda"]
 [ext_resource type="PackedScene" path="res://src/ui/manuscript_ui.tscn" id="27_shell"]
+[ext_resource type="Resource" path="res://src/data/anamorphoses/ana.ch12.sound.tres" id="28_ana0"]
+[ext_resource type="Resource" path="res://src/data/anamorphoses/ana.ch12.seam.tres" id="29_ana1"]
 
 [sub_resource type="PlaneMesh" id="Plane_ground"]
 size = Vector2(300, 300)
@@ -252,3 +254,13 @@ data = ExtResource("26_leyenda")
 [node name="ManuscriptUI" type="Control" parent="." instance=ExtResource("27_shell")]
 anchors_preset = 7
 visible = false
+
+[node name="Anamorphosis_Sound" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.0, 0, -12)
+script = ExtResource("2_object")
+data = ExtResource("28_ana0")
+
+[node name="Anamorphosis_Seam" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.0, 0, -12)
+script = ExtResource("2_object")
+data = ExtResource("29_ana1")

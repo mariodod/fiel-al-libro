@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="TruthObjectData" load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://src/data/truth_object_data.gd" id="1_data"]
+[ext_resource type="Script" path="res://src/data/truth_face.gd" id="2_face"]
+[ext_resource type="PackedScene" path="res://src/world/forms/rock_reality.tscn" id="rock_reality"]
+[ext_resource type="PackedScene" path="res://src/world/forms/rock_book.tscn" id="rock_book"]
+
+[sub_resource type="Resource" id="RealityFace"]
+script = ExtResource("2_face")
+name_key = &"ui.form.roca"
+description_key = &"ui.anamorphosis.ana.ch48.shadow.desc"
+tell_key = &"ui.anamorphosis.ana.ch48.shadow.tell"
+
+[sub_resource type="Resource" id="BookFace"]
+script = ExtResource("2_face")
+name_key = &"ui.form.libro"
+description_key = &"ui.anamorphosis.ana.ch48.shadow.desc"
+tell_key = &"ui.anamorphosis.ana.ch48.shadow.tell"
+
+[resource]
+script = ExtResource("1_data")
+id = &"ana.ch48.shadow"
+display_name_key = &"ui.form.roca"
+reality_form = ExtResource("rock_reality")
+book_form = ExtResource("rock_book")
+reality_face = SubResource("RealityFace")
+book_face = SubResource("BookFace")
+book_form_hovers = true
+tag_height = 2.4
+anamorphosis_id = &"ana.ch48.shadow"
+anamorphosis_tell_key = &"ui.anamorphosis.ana.ch48.shadow.tell"
+anamorphosis_evidence = 1
+anamorphosis_vantage_pos = Vector3(-2, 0, -17)
+anamorphosis_vantage_angle = 0.0
+anamorphosis_vantage_radius = 5.0

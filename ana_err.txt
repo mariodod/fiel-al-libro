@@ -1,0 +1,18 @@
+SCRIPT ERROR: Compile Error: Identifier not found: Lectura
+   at: GDScript::reload (res://src/world/truth_object.gd:278)
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+   at: GDScript::reload (res://tools/verify_ana_runtime.gd:0)
+ERROR: Failed to load script "res://tools/verify_ana_runtime.gd" with error "Compilation failed".
+   at: load (modules/gdscript/gdscript_resource_format.cpp:46)
+ERROR: Parse Error: Parse error. [Resource file res://src/world/chapters/ch_14_galeotes.tscn:69]
+   at: _parse_node_tag (scene/resources/resource_format_text.cpp:293)
+   GDScript backtrace (most recent call first):
+       [0] _check (res://tools/verify_ana_runtime.gd:8)
+ERROR: Failed loading resource: res://src/world/chapters/ch_14_galeotes.tscn.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _check (res://tools/verify_ana_runtime.gd:8)
+SCRIPT ERROR: Cannot call method 'instantiate' on a null value.
+   at: _check (res://tools/verify_ana_runtime.gd:9)
+   GDScript backtrace (most recent call first):
+       [0] _check (res://tools/verify_ana_runtime.gd:9)

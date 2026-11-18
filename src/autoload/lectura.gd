@@ -34,6 +34,15 @@ static var _evidence: Dictionary = {}
 static var _total_evidence: int = 0
 
 
+## Clear all Lectura progress. Used by New Game and by the headless suite.
+static func reset() -> void:
+	_active = false
+	_spotted.clear()
+	_resolved.clear()
+	_evidence.clear()
+	_total_evidence = 0
+
+
 ## Whether Lectura mode is active.
 static func is_active() -> bool:
 	return _active

@@ -198,6 +198,7 @@ func reset_progress() -> void:
 	flags.clear()
 	anamorphoses_spotted.clear()
 	anamorphoses_resolved.clear()
+	Lectura.reset()
 	evidence.clear()
 	regions_found.clear()
 	regions_resolved.clear()

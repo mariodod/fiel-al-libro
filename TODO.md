@@ -240,6 +240,13 @@
 - [x] 4 environment kits (2.21) — field, inn, road, windmill exist; 11 more kits also built (15 total)
 - [x] Min-spec performance pass (2.23) — unblocked: running `godot --headless --editor --quit` once generates the `.godot/imported/*.scn` cache for the `.glb` files, after which `slice.tscn` loads. `tests/test_performance.tscn` passes: 300 frames, 137.6 avg fps / 90.9 min, 0 failures. The figure is from this machine, not a 5-year-old laptop — the actual min-spec run is still owed.
 - [ ] Balance pass: is the windmill fight fair on the 3rd attempt? (2.24) — needs playtesting data
+- [x] **Anamorphoses in every chapter** — 94 across 47 scenes (two each), GDD §11.3.
+      `docs/ANAMORPHOSES.md`; tells drafted, evidence and vantage points wired.
+- [ ] **Grant paths for the 29 uncollectable fragments** — only 19 of 48 reachable.
+- [ ] **Continue button** — `ChapterFlow.continue_game()` has no UI caller.
+- [ ] **Settings screen** — language, volume, controls.
+- [ ] **Posada per chapter** — at least one per region's first chapter.
+- [ ] **Distinct bark VO** — blocked on an ElevenLabs API key.
 - [ ] **Ship the itch.io demo** (2.25) — Free, public, with a Steam page and a trailer.
 
 ## Later (after the slice)

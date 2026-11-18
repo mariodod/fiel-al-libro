@@ -21,6 +21,81 @@
 | **The fun** | Not fully proven. Seven data points is a sample, not a signal. |
 | **Recent (Nov 2026)** | Venture art second pass is done: the tower wears a 2K triplanar gouache masonry texture and the sails are real ragged meshes. All six locales load and ship (789 messages each); every fragment, region passage, colophon and chapter intro is translated. The world map shows both readings side by side with a baked PNG. The chapter flow is live from the title's Begin button: prologue → every chapter → ending. The colophon (six original passages, two truths) plays between chapters. |
 
+## 3b. Remaining gaps to a release-complete game (recorded 2026-11-19)
+
+These are the tasks left after the alpha milestone. They are NOT admin work
+and NOT blocked on Credentials unless stated.
+
+- [x] **Anamorphoses in every chapter (done).** 94 across 47 scenes, two each —
+      `docs/ANAMORPHOSES.md`. The original task text follows: GDD §11.3 wants 2–4 per
+      chapter. Today only the grey-box `slice.tscn` has any (3); zero of the 47
+      chapter scenes do. The perception/Lectura mechanic has nothing to find
+      outside the slice. Build: chapter-specific `.tres` with `anamorphosis_*`
+      fields, nodes in every chapter scene, tell keys in six locales.
+- [ ] **Fragment grant paths for the 29 unobtainable fragments.** Only 19 of 48
+      have a grant path (14 venture rewards + 5 region pages). The rest exist as
+      data but can never enter the codex. Give them a home: anamorphosis
+      rewards, examine events, or case resolutions.
+- [ ] **Continue / save-resume UI.** `ChapterFlow.continue_game()` works but no
+      button calls it; the title page has only Begin. Add a Continue button.
+- [ ] **Settings screen.** `ui.menu.settings` exists as a key; no UI for
+      language, volume or controls.
+- [ ] **Posada coverage.** GDD §11.3 wants a Posada every chapter; only 3 scenes
+      have an `InnKit`. At minimum, one per region's first chapter.
+- [ ] **Distinct bark VO** — BLOCKED on an ElevenLabs API key
+      (`tools/generate_barks.py --api-key …`). Every key plays a reused real
+      recording today, not silence.
+
+## 3b. Remaining gaps to a release-complete game (recorded 2026-11-19)
+
+These are the tasks left after the alpha milestone. They are NOT admin work
+and NOT blocked on Credentials unless stated.
+
+- [x] **Anamorphoses in every chapter (done).** 94 across 47 scenes, two each —
+      `docs/ANAMORPHOSES.md`. The original task text follows: GDD §11.3 wants 2–4 per
+      chapter. Today only the grey-box `slice.tscn` has any (3); zero of the 47
+      chapter scenes do. The perception/Lectura mechanic has nothing to find
+      outside the slice. Build: chapter-specific `.tres` with `anamorphosis_*`
+      fields, nodes in every chapter scene, tell keys in six locales.
+- [ ] **Fragment grant paths for the 29 unobtainable fragments.** Only 19 of 48
+      have a grant path (14 venture rewards + 5 region pages). The rest exist as
+      data but can never enter the codex. Give them a home: anamorphosis
+      rewards, examine events, or case resolutions.
+- [ ] **Continue / save-resume UI.** `ChapterFlow.continue_game()` works but no
+      button calls it; the title page has only Begin. Add a Continue button.
+- [ ] **Settings screen.** `ui.menu.settings` exists as a key; no UI for
+      language, volume or controls.
+- [ ] **Posada coverage.** GDD §11.3 wants a Posada every chapter; only 3 scenes
+      have an `InnKit`. At minimum, one per region's first chapter.
+- [ ] **Distinct bark VO** — BLOCKED on an ElevenLabs API key
+      (`tools/generate_barks.py --api-key …`). Every key plays a reused real
+      recording today, not silence.
+
+## 3b. Remaining gaps to a release-complete game (recorded 2026-11-19)
+
+These are the tasks left after the alpha milestone. They are NOT admin work
+and NOT blocked on Credentials unless stated.
+
+- [x] **Anamorphoses in every chapter (done).** 94 across 47 scenes, two each —
+      `docs/ANAMORPHOSES.md`. The original task text follows: GDD §11.3 wants 2–4 per
+      chapter. Today only the grey-box `slice.tscn` has any (3); zero of the 47
+      chapter scenes do. The perception/Lectura mechanic has nothing to find
+      outside the slice. Build: chapter-specific `.tres` with `anamorphosis_*`
+      fields, nodes in every chapter scene, tell keys in six locales.
+- [ ] **Fragment grant paths for the 29 unobtainable fragments.** Only 19 of 48
+      have a grant path (14 venture rewards + 5 region pages). The rest exist as
+      data but can never enter the codex. Give them a home: anamorphosis
+      rewards, examine events, or case resolutions.
+- [ ] **Continue / save-resume UI.** `ChapterFlow.continue_game()` works but no
+      button calls it; the title page has only Begin. Add a Continue button.
+- [ ] **Settings screen.** `ui.menu.settings` exists as a key; no UI for
+      language, volume or controls.
+- [ ] **Posada coverage.** GDD §11.3 wants a Posada every chapter; only 3 scenes
+      have an `InnKit`. At minimum, one per region's first chapter.
+- [ ] **Distinct bark VO** — BLOCKED on an ElevenLabs API key
+      (`tools/generate_barks.py --api-key …`). Every key plays a reused real
+      recording today, not silence.
+
 > **Scene-format gotcha:** a `#` comment between two `[node ...]` blocks in a `.tscn`
 > makes Godot 4.7 silently skip the following node. Keep comments above the first
 > node of a scene. See `docs/ART_BRIEF_VENTURE.md`.

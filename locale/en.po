@@ -126,6 +126,758 @@ msgstr ""
 #. META: namespace=ui
 #. META: namespace=ui
 #. META: namespace=ui
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch01.weight.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch01.weight.tell"
+msgstr "The Windmills: It weighs more than it should."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch01.shadow.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch01.shadow.tell"
+msgstr "The Windmills: The shadow falls towards the light, not away from it."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch02.sound.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch02.sound.tell"
+msgstr "The Basque: It sounds hollow when touched, yet it is solid."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch02.seam.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch02.seam.tell"
+msgstr "The Basque: There is a seam where no seam should be."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch03.dust.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch03.dust.tell"
+msgstr "The Canting Sea: The dust gathers against the wind."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch03.glow.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch03.glow.tell"
+msgstr "The Canting Sea: It glows from within when nothing lights it."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch04.words.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch04.words.tell"
+msgstr "The Encinados: Under the paint are words that do not say what they seem to."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch04.age.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch04.age.tell"
+msgstr "The Encinados: It is new in a place that has been old for centuries."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch05.echo.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch05.echo.tell"
+msgstr "Montesinos: The echo arrives before the voice."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch05.number.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch05.number.tell"
+msgstr "Montesinos: The marks do not count what they seem to count."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch06.weight.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch06.weight.tell"
+msgstr "The Bridge: It weighs more than it should."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch06.shadow.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch06.shadow.tell"
+msgstr "The Bridge: The shadow falls towards the light, not away from it."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch07.sound.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch07.sound.tell"
+msgstr "Dulcinea: It sounds hollow when touched, yet it is solid."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch07.seam.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch07.seam.tell"
+msgstr "Dulcinea: There is a seam where no seam should be."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch08.dust.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch08.dust.tell"
+msgstr "Celestina: The dust gathers against the wind."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch08.glow.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch08.glow.tell"
+msgstr "Celestina: It glows from within when nothing lights it."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch09.words.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch09.words.tell"
+msgstr "The Ensayo ï¿½ Setup: Under the paint are words that do not say what they seem to."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch09.age.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch09.age.tell"
+msgstr "The Ensayo ï¿½ Setup: It is new in a place that has been old for centuries."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch10.echo.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch10.echo.tell"
+msgstr "The Ensayo ï¿½ Resolution: The echo arrives before the voice."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch10.number.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch10.number.tell"
+msgstr "The Ensayo ï¿½ Resolution: The marks do not count what they seem to count."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch11.weight.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch11.weight.tell"
+msgstr "Knight of the Mirrors: It weighs more than it should."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch11.shadow.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch11.shadow.tell"
+msgstr "Knight of the Mirrors: The shadow falls towards the light, not away from it."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch12.sound.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch12.sound.tell"
+msgstr "The Magician: It sounds hollow when touched, yet it is solid."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch12.seam.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch12.seam.tell"
+msgstr "The Magician: There is a seam where no seam should be."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch13.dust.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch13.dust.tell"
+msgstr "The Duke: The dust gathers against the wind."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch13.glow.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch13.glow.tell"
+msgstr "The Duke: It glows from within when nothing lights it."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch14.words.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch14.words.tell"
+msgstr "The Galley Slaves: Under the paint are words that do not say what they seem to."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch14.age.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch14.age.tell"
+msgstr "The Galley Slaves: It is new in a place that has been old for centuries."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch15.echo.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch15.echo.tell"
+msgstr "The Dead Man on the Road: The echo arrives before the voice."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch15.number.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch15.number.tell"
+msgstr "The Dead Man on the Road: The marks do not count what they seem to count."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch16.weight.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch16.weight.tell"
+msgstr "The Enchanted Boat: It weighs more than it should."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch16.shadow.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch16.shadow.tell"
+msgstr "The Enchanted Boat: The shadow falls towards the light, not away from it."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch17.sound.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch17.sound.tell"
+msgstr "The Dead Man, Again: It sounds hollow when touched, yet it is solid."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch17.seam.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch17.seam.tell"
+msgstr "The Dead Man, Again: There is a seam where no seam should be."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch18.dust.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch18.dust.tell"
+msgstr "The Bonfire of Books: The dust gathers against the wind."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch18.glow.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch18.glow.tell"
+msgstr "The Bonfire of Books: It glows from within when nothing lights it."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch20.words.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch20.words.tell"
+msgstr "Dulcinea Enchanted: Under the paint are words that do not say what they seem to."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch20.age.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch20.age.tell"
+msgstr "Dulcinea Enchanted: It is new in a place that has been old for centuries."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch22.echo.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch22.echo.tell"
+msgstr "The Moonlight Duel: The echo arrives before the voice."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch22.number.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch22.number.tell"
+msgstr "The Moonlight Duel: The marks do not count what they seem to count."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch23.weight.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch23.weight.tell"
+msgstr "The Cave of Montesinos: It weighs more than it should."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch23.shadow.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch23.shadow.tell"
+msgstr "The Cave of Montesinos: The shadow falls towards the light, not away from it."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch24.sound.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch24.sound.tell"
+msgstr "Altisidora: It sounds hollow when touched, yet it is solid."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch24.seam.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch24.seam.tell"
+msgstr "Altisidora: There is a seam where no seam should be."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch25.dust.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch25.dust.tell"
+msgstr "The Countess Trifaldi: The dust gathers against the wind."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch25.glow.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch25.glow.tell"
+msgstr "The Countess Trifaldi: It glows from within when nothing lights it."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch26.words.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch26.words.tell"
+msgstr "Melisendra's Puppet Show: Under the paint are words that do not say what they seem to."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch26.age.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch26.age.tell"
+msgstr "Melisendra's Puppet Show: It is new in a place that has been old for centuries."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch27.echo.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch27.echo.tell"
+msgstr "The Fulling Mills: The echo arrives before the voice."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch27.number.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch27.number.tell"
+msgstr "The Fulling Mills: The marks do not count what they seem to count."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch28.weight.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch28.weight.tell"
+msgstr "Dulcinea Disenchanted: It weighs more than it should."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch28.shadow.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch28.shadow.tell"
+msgstr "Dulcinea Disenchanted: The shadow falls towards the light, not away from it."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch29.sound.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch29.sound.tell"
+msgstr "The Penitents in White: It sounds hollow when touched, yet it is solid."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch29.seam.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch29.seam.tell"
+msgstr "The Penitents in White: There is a seam where no seam should be."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch30.dust.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch30.dust.tell"
+msgstr "The Lions on the Road: The dust gathers against the wind."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch30.glow.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch30.glow.tell"
+msgstr "The Lions on the Road: It glows from within when nothing lights it."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch31.words.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch31.words.tell"
+msgstr "Back to the Cave: Under the paint are words that do not say what they seem to."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch31.age.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch31.age.tell"
+msgstr "Back to the Cave: It is new in a place that has been old for centuries."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch32.echo.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch32.echo.tell"
+msgstr "The Duke's Castle: The echo arrives before the voice."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch32.number.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch32.number.tell"
+msgstr "The Duke's Castle: The marks do not count what they seem to count."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch33.weight.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch33.weight.tell"
+msgstr "The Lions at the Castle: It weighs more than it should."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch33.shadow.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch33.shadow.tell"
+msgstr "The Lions at the Castle: The shadow falls towards the light, not away from it."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch34.sound.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch34.sound.tell"
+msgstr "The Enchantment: It sounds hollow when touched, yet it is solid."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch34.seam.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch34.seam.tell"
+msgstr "The Enchantment: There is a seam where no seam should be."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch35.dust.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch35.dust.tell"
+msgstr "The Knight of the White Moon: The dust gathers against the wind."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch35.glow.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch35.glow.tell"
+msgstr "The Knight of the White Moon: It glows from within when nothing lights it."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch36.words.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch36.words.tell"
+msgstr "Sancho's Care: Under the paint are words that do not say what they seem to."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch36.age.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch36.age.tell"
+msgstr "Sancho's Care: It is new in a place that has been old for centuries."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch37.echo.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch37.echo.tell"
+msgstr "The Duchess's Enchantment: The echo arrives before the voice."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch37.number.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch37.number.tell"
+msgstr "The Duchess's Enchantment: The marks do not count what they seem to count."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch38.weight.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch38.weight.tell"
+msgstr "Clavileño: It weighs more than it should."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch38.shadow.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch38.shadow.tell"
+msgstr "Clavileño: The shadow falls towards the light, not away from it."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch39.sound.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch39.sound.tell"
+msgstr "Sancho as Governor: It sounds hollow when touched, yet it is solid."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch39.seam.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch39.seam.tell"
+msgstr "Sancho as Governor: There is a seam where no seam should be."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch40.dust.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch40.dust.tell"
+msgstr "The Burial of the Rich Man: The dust gathers against the wind."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch40.glow.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch40.glow.tell"
+msgstr "The Burial of the Rich Man: It glows from within when nothing lights it."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch41.words.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch41.words.tell"
+msgstr "Oviedo's False Book: Under the paint are words that do not say what they seem to."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch41.age.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch41.age.tell"
+msgstr "Oviedo's False Book: It is new in a place that has been old for centuries."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch42.echo.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch42.echo.tell"
+msgstr "Maestro Pedro's Puppet Show: The echo arrives before the voice."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch42.number.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch42.number.tell"
+msgstr "Maestro Pedro's Puppet Show: The marks do not count what they seem to count."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch43.weight.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch43.weight.tell"
+msgstr "The Criminal Case: It weighs more than it should."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch43.shadow.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch43.shadow.tell"
+msgstr "The Criminal Case: The shadow falls towards the light, not away from it."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch44.sound.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch44.sound.tell"
+msgstr "Duels Avoided: It sounds hollow when touched, yet it is solid."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch44.seam.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch44.seam.tell"
+msgstr "Duels Avoided: There is a seam where no seam should be."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch45.dust.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch45.dust.tell"
+msgstr "Sancho Enchanted: The dust gathers against the wind."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch45.glow.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch45.glow.tell"
+msgstr "Sancho Enchanted: It glows from within when nothing lights it."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch46.words.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch46.words.tell"
+msgstr "The Lions at Court: Under the paint are words that do not say what they seem to."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch46.age.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch46.age.tell"
+msgstr "The Lions at Court: It is new in a place that has been old for centuries."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch47.echo.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch47.echo.tell"
+msgstr "The Farewell: The echo arrives before the voice."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch47.number.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch47.number.tell"
+msgstr "The Farewell: The marks do not count what they seem to count."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch48.weight.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch48.weight.tell"
+msgstr "Return to the Village: It weighs more than it should."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch48.shadow.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch48.shadow.tell"
+msgstr "Return to the Village: The shadow falls towards the light, not away from it."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch50.sound.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch50.sound.tell"
+msgstr "The Curious Impertinent: It sounds hollow when touched, yet it is solid."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch50.seam.desc"
+msgstr "A detail that does not fit. Visible from one spot, and only in Lectura."
+
+#. META: namespace=ui
+msgid "ui.anamorphosis.ana.ch50.seam.tell"
+msgstr "The Curious Impertinent: There is a seam where no seam should be."
+
 msgid "ui.chapter.50.intro"
 msgstr "An interpolated tale about a test of trust that goes wrong."
 

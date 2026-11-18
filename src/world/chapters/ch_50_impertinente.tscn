@@ -24,6 +24,8 @@
 
 [ext_resource type="Resource" path="res://src/data/books/bk.ch01.leyenda_tio_andalus.tres" id="21_leyenda"]
 [ext_resource type="PackedScene" path="res://src/ui/manuscript_ui.tscn" id="22_shell"]
+[ext_resource type="Resource" path="res://src/data/anamorphoses/ana.ch50.sound.tres" id="23_ana0"]
+[ext_resource type="Resource" path="res://src/data/anamorphoses/ana.ch50.seam.tres" id="24_ana1"]
 
 [sub_resource type="PlaneMesh" id="Plane_ground"]
 size = Vector2(300, 300)
@@ -45,7 +47,7 @@ height = 1.6
 
 [node name="Chapter50_Impertinente" type="Node3D"]
 [node name="Book_Impertinente" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 50, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 0)
 script = ExtResource("2_object")
 data = ExtResource("20_book_impertinente")
 
@@ -66,27 +68,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 instance = ExtResource("18_field_kit")
 
 [node name="RoadKit" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 20, 0.8, -40)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0.8, -40)
 instance = ExtResource("19_road_kit")
 
 [node name="Innkeeper" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, -2, 0, -14)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -14)
 script = ExtResource("2_object")
 data = ExtResource("16_innkeeper")
 
 [node name="Musician" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, -4, 0, -14)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -14)
 script = ExtResource("2_object")
 data = ExtResource("17_musician")
 
 [node name="MusicianAudio" type="AudioStreamPlayer" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 36)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 36)
 
 [node name="Checkpoint" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, -12, 0, -12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -12)
 
 [node name="CheckpointShape" type="CollisionShape3D" parent="Checkpoint"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("Shape_ground")
 
 [node name="Characters" type="Node3D" parent="."]
@@ -103,7 +105,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.88, 0)
 shape = SubResource("Shape_body")
 
 [node name="Sancho" type="CharacterBody3D" parent="Characters"]
-transform = Transform3D(1, 0, 0, 0, 1, 2, 0, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
 script = ExtResource("3_pawn")
 data = ExtResource("11_sancho")
 
@@ -233,3 +235,13 @@ data = ExtResource("21_leyenda")
 [node name="ManuscriptUI" type="Control" parent="." instance=ExtResource("22_shell")]
 anchors_preset = 7
 visible = false
+
+[node name="Anamorphosis_Sound" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.0, 0, -12)
+script = ExtResource("2_object")
+data = ExtResource("23_ana0")
+
+[node name="Anamorphosis_Seam" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.0, 0, -12)
+script = ExtResource("2_object")
+data = ExtResource("24_ana1")
