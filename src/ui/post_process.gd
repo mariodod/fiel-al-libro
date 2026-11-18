@@ -33,7 +33,7 @@ extends ColorRect
 ## name starts with '_' as hidden, so it never enters the FileSystem and
 ## FileAccess cannot open it. A file the game reads has to be a file the
 ## game can see.
-@export var page_source: String = "res://assets/manifiesto/bk.ch01.apertura.json"
+@export var page_source: String = "res://assets/manifiesto/bk.ch01.apertura.01.json"
 ## The field of that fragment holding the 1605 original.
 @export var page_field: String = "original_1605"
 

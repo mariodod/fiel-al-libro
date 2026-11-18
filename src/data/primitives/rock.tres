@@ -17,7 +17,7 @@ name_key = &"ui.form.libro"
 description_key = &"ui.face.rock.book.desc"
 tell_key = &"ui.face.rock.book.tell"
 title_key = &"ui.face.rock.book.title"
-fragment_id = &"bk.ch01.apertura"
+fragment_id = &"bk.ch01.apertura.01"
 
 [resource]
 script = ExtResource("1_data")

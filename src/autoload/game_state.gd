@@ -44,6 +44,11 @@ var current_chapter_id: StringName = &""
 # ── Manuscript ──────────────────────────────────────────────────────────
 ## Ids of the 48 Manifiesto fragments the player has found (D7).
 var codex_pages: Array[StringName] = []
+## Region id -> fragment id, loaded lazily from src/data/regions/*.tres.
+## A region's fragment names the place (GDD.md §20.1), so it is granted when
+## the player first sets foot in the region — including the two regions with
+## no Venture to grant it (La Mancha's aperture and the Ensayo's manuscript).
+var _region_fragments: Dictionary = {}
 ## Ids of the pages the game has written for the player (D4/P4).
 var pages_written: Array[StringName] = []
 
@@ -121,6 +126,31 @@ func find_region(id: StringName) -> void:
 	if not regions_found.has(id):
 		regions_found[id] = true
 		EventBus.region_found.emit(id)
+		# The region's own passage is part of finding it, not a Venture drop.
+		grant_codex_page(_region_fragment_for(id))
+
+
+## Grant a Manifiesto page exactly once, notifying listeners so the map's
+## fragment marker can light up immediately.
+func grant_codex_page(id: StringName) -> void:
+	if id.is_empty() or codex_pages.has(id):
+		return
+	codex_pages.append(id)
+	EventBus.codex_page_found.emit(id)
+
+
+## Region id -> its fragment id, read from the region resources once.
+func _region_fragment_for(id: StringName) -> StringName:
+	if _region_fragments.is_empty():
+		var dir := DirAccess.open("res://src/data/regions/")
+		if dir != null:
+			for name in dir.get_files():
+				if not name.ends_with(".tres"):
+					continue
+				var res: RegionData = load("res://src/data/regions/" + name)
+				if res != null and not res.fragment_id.is_empty():
+					_region_fragments[res.id] = res.fragment_id
+	return _region_fragments.get(id, &"")
 
 ## Mark a region as resolved — its Venture's case is closed.
 func resolve_region(id: StringName) -> void:

@@ -73,6 +73,22 @@ marker at all. The values follow region I's pattern: the first fragment in the
 region's chapter range, and the first key venture listed in GDD.md §11.2.
 Region IV is left without a venture because the Ensayo is a case, not a Venture.
 
+### Region pages enter the codex on `find_region`
+
+GDD.md §20.1 calls one fragment per region "the passage that names the place".
+`GameState.find_region()` now grants that region's `fragment_id` through
+`GameState.grant_codex_page()`, which deduplicates and emits
+`EventBus.codex_page_found` so the marker lights immediately. This covers the
+two regions that have no Venture to drop a page — La Mancha's aperture and
+Los Riscos' found manuscript — and makes the other three consistent rather
+than dependent on a Book-truth Venture resolution. Venture page grants use the
+same helper.
+
+The aperture fragment was also given a filename matching its internal id
+(`bk.ch01.apertura.01.json`); `ManifiestoFragment.path_for()` builds the path
+as `<id>.json`, so an id and a filename that disagree make the page unreadable.
+All references were updated.
+
 Two map-screen bugs were fixed alongside this: markers were positioned by
 looking up the region-position table with the *fragment* id instead of the
 region id, and `MapContainer` was a `Node2D` with `set_anchors_preset()` called

@@ -598,9 +598,7 @@ func _die() -> void:
 		# Grant the fragment reward: the page of the original book.
 		if venture.manifesto_fragments.size() > 0:
 			for fragment_id in venture.manifesto_fragments:
-				if not GameState.codex_pages.has(fragment_id):
-					GameState.codex_pages.append(fragment_id)
-					EventBus.codex_page_found.emit(fragment_id)
+				GameState.grant_codex_page(fragment_id)
 	# The reward goes to whoever finished it.
 	var amount := 0
 	if venture != null and venture.enemy != null:

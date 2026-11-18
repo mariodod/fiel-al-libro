@@ -265,7 +265,7 @@ is being written under your feet."*
 
 The 1605 original is **content**: the same words in every build, in every language,
 because it is a quotation and not a translation. It is printed from
-`assets/manifiesto/bk.ch01.apertura.json`, the first real Manifiesto fragment.
+`assets/manifiesto/bk.ch01.apertura.01.json`, the first real Manifiesto fragment.
 
 **It is untested.** The effect was built after the last playtest, so nobody has seen it
 except the two of us. It is a candidate for the next run: does the page make the change

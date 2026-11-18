@@ -58,6 +58,34 @@ func suite(t):
 		t.expect_false(res.name_key.is_empty(), "%s has a name key" % str(res.id))
 		t.expect_false(res.fantasy.is_empty(), "%s has a fantasy" % str(res.id))
 
+	t.test("finding a region grants its own Manifiesto page")
+	var saved_pages := GameState.codex_pages.duplicate()
+	GameState.codex_pages.clear()
+	GameState.regions_found.clear()
+
+	GameState.find_region(&"camino_la_mancha")
+	t.expect_has(GameState.codex_pages, &"bk.ch01.apertura.01",
+		"La Mancha grants the opening passage")
+	GameState.find_region(&"los_riscos")
+	t.expect_has(GameState.codex_pages, &"bk.ch09.manuscrito.01",
+		"Los Riscos grants the found manuscript")
+
+	# A second visit must not duplicate the page.
+	var count := GameState.codex_pages.size()
+	GameState.find_region(&"camino_la_mancha")
+	t.expect_eq(GameState.codex_pages.size(), count, "granting is idempotent")
+
+	# Every region fragment must actually be loadable by id — this is what
+	# makes the codex page readable, not just a string in an array.
+	for res in regions:
+		if res.fragment_id.is_empty():
+			continue
+		t.expect_false(ManifiestoFragment.load_data(res.fragment_id).is_empty(),
+			"%s fragment loads by id" % str(res.id))
+
+	GameState.codex_pages = saved_pages
+	GameState.regions_found.clear()
+
 	t.test("every region has a real fragment id")
 	# Four regions used to carry a stale `fragment_key` property, so they had
 	# no fragment id at all and never showed a marker on the map.

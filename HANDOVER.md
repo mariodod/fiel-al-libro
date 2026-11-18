@@ -337,8 +337,9 @@ leading underscore as "hidden": the file never enters the FileSystem, so it cann
 read at runtime and it is not exported.
 
 That is why the sample Manifiesto fragment was documentation and never content, and why
-the first real fragment is `assets/manifiesto/bk.ch01.apertura.json` — no underscore. If a
-data file has to be read by the game, it must not start with `_`.
+the first real fragment is `assets/manifiesto/bk.ch01.apertura.01.json` — no underscore. If a
+data file has to be read by the game, it must not start with `_`. The filename matches the
+fragment's internal `id` exactly: `ManifiestoFragment.path_for()` builds it as `<id>.json`.
 
 **The sample is gone.** It had been the format documentation, and a format documented by
 a file that no tool can read is a format that drifts: the sample carried the 1615 wording
