@@ -30,6 +30,7 @@ tag_height = 2.4
 anamorphosis_id = &"ana.ch16.shadow"
 anamorphosis_tell_key = &"ui.anamorphosis.ana.ch16.shadow.tell"
 anamorphosis_evidence = 1
+anamorphosis_fragment = &"bk.ch16.barca_encantada.01"
 anamorphosis_vantage_pos = Vector3(-2, 0, -17)
 anamorphosis_vantage_angle = 0.0
 anamorphosis_vantage_radius = 5.0

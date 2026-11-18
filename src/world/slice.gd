@@ -582,7 +582,9 @@ func _unhandled_input(event: InputEvent) -> void:
 							Lectura.spot(anamorphosis_id)
 							EventBus.toast.emit(&"ui.slice.anamorphosis_spotted", [Loc.t(target.data.anamorphosis_tell_key)])
 						elif not Lectura.is_resolved(anamorphosis_id):
-							var evidence := Lectura.resolve(anamorphosis_id, target.data.anamorphosis_evidence)
+							var evidence := Lectura.resolve(anamorphosis_id,
+								target.data.anamorphosis_evidence,
+								target.data.anamorphosis_fragment)
 							EventBus.toast.emit(&"ui.slice.anamorphosis_resolved", [Loc.t(target.data.anamorphosis_tell_key), evidence])
 							# Check if enough evidence for a Verdict
 							if Lectura.has_enough_for_verdict():

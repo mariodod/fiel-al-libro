@@ -54,6 +54,51 @@ func suite(t):
 			"%s tell is translated" % name)
 	t.expect_eq(total, 94, "94 anamorphoses across 47 chapters")
 
+	t.test("every Manifiesto fragment is reachable in the game")
+	var manifesto_dir := DirAccess.open("res://assets/manifiesto/")
+	var fragment_count := 0
+	var unreachable: Array[String] = []
+	for name in manifesto_dir.get_files():
+		if not name.ends_with(".json"):
+			continue
+		fragment_count += 1
+		var id := StringName(name.replace(".json", ""))
+		var reachable := false
+		for res: TruthObjectData in _all_anamorphoses():
+			if res.anamorphosis_fragment == id:
+				reachable = true
+				break
+		for venture_path in _all_venture_data():
+			if venture_path.manifesto_fragments.has(id):
+				reachable = true
+				break
+		for region in _all_regions():
+			if region.fragment_id == id:
+				reachable = true
+				break
+		if not reachable:
+			unreachable.append(id)
+	t.expect_eq(fragment_count, 48, "48 fragments exist")
+	t.expect_eq(unreachable.size(), 0, "none are uncollectable: %s" % str(unreachable))
+
+	t.test("resolving an anamorphosis grants its Manifiesto page")
+	var reward: TruthObjectData = null
+	for res in _all_anamorphoses():
+		if not res.anamorphosis_fragment.is_empty():
+			reward = res
+			break
+	t.expect_true(reward != null, "a reward-bearing anamorphosis exists")
+	if reward != null:
+		GameState.reset_progress()
+		Lectura.reset()
+		t.expect_false(GameState.codex_pages.has(reward.anamorphosis_fragment),
+			"page starts uncollected")
+		Lectura.resolve(reward.anamorphosis_id, reward.anamorphosis_evidence,
+			reward.anamorphosis_fragment)
+		t.expect_has(GameState.codex_pages, reward.anamorphosis_fragment,
+			"the page is granted by reading the seam")
+		Lectura.reset()
+
 	t.test("resolving an anamorphosis grants evidence once")
 	var res: TruthObjectData = load("res://src/data/anamorphoses/ana.ch14.age.tres")
 	t.expect_true(res != null, "a chapter anamorphosis loads")
@@ -73,3 +118,35 @@ func _recurse_names(node: Node, out: Array[Node]) -> void:
 	out.append(node)
 	for child in node.get_children():
 		_recurse_names(child, out)
+
+func _all_anamorphoses() -> Array[TruthObjectData]:
+	var out: Array[TruthObjectData] = []
+	var dir := DirAccess.open("res://src/data/anamorphoses/")
+	for name in dir.get_files():
+		if name.ends_with(".tres"):
+			var res: TruthObjectData = load("res://src/data/anamorphoses/" + name)
+			if res != null:
+				out.append(res)
+	return out
+
+
+func _all_venture_data() -> Array[VentureData]:
+	var out: Array[VentureData] = []
+	var dir := DirAccess.open("res://src/data/ventures/")
+	for name in dir.get_files():
+		if name.ends_with(".tres"):
+			var res = load("res://src/data/ventures/" + name)
+			if res is VentureData:
+				out.append(res)
+	return out
+
+
+func _all_regions() -> Array[RegionData]:
+	var out: Array[RegionData] = []
+	var dir := DirAccess.open("res://src/data/regions/")
+	for name in dir.get_files():
+		if name.ends_with(".tres"):
+			var res: RegionData = load("res://src/data/regions/" + name)
+			if res != null:
+				out.append(res)
+	return out

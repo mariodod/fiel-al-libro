@@ -242,7 +242,9 @@
 - [ ] Balance pass: is the windmill fight fair on the 3rd attempt? (2.24) — needs playtesting data
 - [x] **Anamorphoses in every chapter** — 94 across 47 scenes (two each), GDD §11.3.
       `docs/ANAMORPHOSES.md`; tells drafted, evidence and vantage points wired.
-- [ ] **Grant paths for the 29 uncollectable fragments** — only 19 of 48 reachable.
+- [x] **Grant paths for the uncollectable fragments** — all 48 reachable:
+      29 wired as anamorphosis rewards (`anamorphosis_fragment` on TruthObjectData
+      and a third param to `Lectura.resolve()`).
 - [ ] **Continue button** — `ChapterFlow.continue_game()` has no UI caller.
 - [ ] **Settings screen** — language, volume, controls.
 - [ ] **Posada per chapter** — at least one per region's first chapter.

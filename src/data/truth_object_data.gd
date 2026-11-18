@@ -47,6 +47,10 @@ extends Resource
 @export var anamorphosis_tell_key: StringName = &""
 ## How much evidence resolving this anamorphosis grants.
 @export var anamorphosis_evidence: int = 1
+## A Manifiesto fragment this anamorphosis grants when resolved. Chapters whose
+## fragment has no Venture or region grant path use this: reading the seam
+## grants a page of the book. Empty for fragments granted elsewhere.
+@export var anamorphosis_fragment: StringName = &""
 
 ## Vantage point: where the player must stand to see the anamorphosis.
 ## If empty, the anamorphosis is visible from anywhere in Lectura mode.

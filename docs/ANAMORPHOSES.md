@@ -58,6 +58,18 @@ identity basis with the intended translation; all 847 transforms are now
 well-formed and `test_anamorphoses.gd` instantiates a chapter scene to keep it
 that way.
 
+## Manifiesto rewards
+
+Resolving an anamorphosis also grants a Manifiesto page where that chapter's
+fragment has no Venture or region grant path. The field
+`anamorphosis_fragment` on `TruthObjectData` names the page; `Lectura.resolve()`
+accepts it as a third argument and calls `GameState.grant_codex_page()`.
+
+This closes the collection loop: **all 48 fragments are now reachable** — 14
+venture rewards, 5 region pages, and 29 anamorphosis rewards. `tools/audit_grant_paths.py`
+verifies the count, and `tests/test_anamorphoses.gd` pins that resolving a
+reward-bearing anamorphosis adds the page to the codex exactly once.
+
 ## Still drafted
 
 - Individual tell prose deserves a literary pass (one sentence per discovery).

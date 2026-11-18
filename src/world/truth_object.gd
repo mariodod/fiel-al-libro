@@ -275,7 +275,8 @@ func anamorphosis_id() -> StringName:
 func resolve_anamorphosis() -> int:
 	if data == null or data.anamorphosis_id.is_empty():
 		return 0
-	return Lectura.resolve(data.anamorphosis_id, data.anamorphosis_evidence)
+	return Lectura.resolve(data.anamorphosis_id, data.anamorphosis_evidence,
+		data.anamorphosis_fragment)
 
 
 ## The text of the floating tag.

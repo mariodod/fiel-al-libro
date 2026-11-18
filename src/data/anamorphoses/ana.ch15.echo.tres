@@ -30,6 +30,7 @@ tag_height = 2.4
 anamorphosis_id = &"ana.ch15.echo"
 anamorphosis_tell_key = &"ui.anamorphosis.ana.ch15.echo.tell"
 anamorphosis_evidence = 1
+anamorphosis_fragment = &"bk.ch15.muerto_camino.01"
 anamorphosis_vantage_pos = Vector3(2, 0, -17)
 anamorphosis_vantage_angle = 180.0
 anamorphosis_vantage_radius = 5.0

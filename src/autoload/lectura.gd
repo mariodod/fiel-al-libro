@@ -93,8 +93,10 @@ static func is_resolved(id: StringName) -> bool:
 ## Resolve an anamorphosis and collect its evidence.
 ##
 ## Returns the evidence gained (0 if already resolved).
-## Resolving also marks the anamorphosis as spotted.
-static func resolve(id: StringName, evidence: int = EVIDENCE_PER_ANAMORPHOSIS) -> int:
+## Resolving also marks the anamorphosis as spotted, and grants the Manifiesto
+## fragment wired to it (if any) — reading the seam grants a page of the book.
+static func resolve(id: StringName, evidence: int = EVIDENCE_PER_ANAMORPHOSIS,
+		fragment: StringName = &"") -> int:
 	if _resolved.get(id, false):
 		return 0
 	_resolved[id] = true
@@ -103,6 +105,8 @@ static func resolve(id: StringName, evidence: int = EVIDENCE_PER_ANAMORPHOSIS) -
 	if not _spotted.get(id, false):
 		_spotted[id] = true
 		EventBus.anamorphosis_spotted.emit(id)
+	if not fragment.is_empty():
+		GameState.grant_codex_page(fragment)
 	EventBus.anamorphosis_resolved.emit(id)
 	EventBus.evidence_collected.emit(id, _total_evidence)
 	return evidence
