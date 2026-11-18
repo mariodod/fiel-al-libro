@@ -84,3 +84,8 @@ desktop.ini
 #  Blender scenes, textures, audio and fonts are LFS; the .import sidecar
 #  files stay as plain text so import presets survive a fresh clone.
 # ─────────────────────────────────────────────────────────────────────────
+
+# Python bytecode from the content-generation tools.
+__pycache__/
+*.pyc
+

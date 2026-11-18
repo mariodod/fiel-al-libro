@@ -153,6 +153,13 @@ scaffolding, so it is a new *data shape*, not a new engine system.
 **Your playthrough is a manuscript.** The save file is named after that fiction. Each chapter is
 a written page. The ending is a page you can read.
 
+**D8 — the game stays 3D (locked 2026-11-18).** There will be no 2.5D pivot. The
+two-truths mechanic needs one continuous space that the camera can move around;
+the side-view fallback would discard the thing that makes the game distinctive.
+Invest in the 3D camera, hero-rig poses and environment kits. If a shot is
+awkward, fix the shot — do not re-open the question. (The full rationale is in
+the private `GDD.md` §21, D8; this paragraph is the tracked record.)
+
 ---
 
 ## 6. Architecture: where the key decisions live in code

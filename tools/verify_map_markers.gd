@@ -11,15 +11,21 @@ func _check() -> void:
 	var scene := load("res://src/world/map_screen.tscn") as PackedScene
 	var m := scene.instantiate()
 	root.add_child(m)
-	var container := m.find_child("MapContainer", true, false)
+	var host := m.find_child("MapContainer", true, false)
+
+	for title in ["Reality", "Book"]:
+		var rect := m.find_child(title + "Rect", true, false) as TextureRect
+		var mat := rect.material as ShaderMaterial
+		print(title, "_SHADER: ", "yes" if mat != null else "no")
+		if mat != null:
+			print(title, "_TINT: ", mat.get_shader_parameter("tint"))
+			print(title, "_SAT: ", mat.get_shader_parameter("saturation"))
 
 	gs.find_region(&"camino_la_mancha")
 	gs.find_region(&"los_riscos")
-
-	for child in container.get_children():
-		if not child.name.begins_with("Marker_"):
-			continue
-		var alpha: float = child.color.a
-		print(child.name, " alpha=", alpha, " -> ", "LIT" if alpha > 0.5 else "dark")
-	print("CODEX: ", gs.codex_pages)
+	var lit := 0
+	for marker in host.find_children("Marker_*", "ColorRect", true, false):
+		if marker.color.a > 0.5:
+			lit += 1
+	print("LIT_MARKERS: ", lit, " of ", host.find_children("Marker_*", "ColorRect", true, false).size())
 	quit()

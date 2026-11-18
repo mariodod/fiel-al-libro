@@ -113,7 +113,8 @@
       in Reality truth, and fragment markers appear when their Manifiesto fragment is found.
       Each region now also carries Book/Reality passage keys; the map shows the one for
       the current truth and swaps it on `T`. The wording is drafted, pending the owner's
-      pass against the novel.
+      pass against the novel. The map now shows **both readings side by side** (one SVG,
+      two shader grades) with five fragment markers on each — the GDD §11.4 collectible.
       `tests/test_map_screen.gd` pins region loading and sorting. `src/autoload/game_state.gd`
       tracks `regions_found` and `regions_resolved`.
 - [x] **B19–B22 — the third playtest's four faults.** The Examine panel closed itself

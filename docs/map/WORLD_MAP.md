@@ -54,13 +54,23 @@ version is desaturated, chalky. The SVG is drawn so both can be produced from
 the same drawing: the regions are separate groups, so they can be recoloured
 independently in the shader.
 
+## The two readings (done)
+
+GDD.md §11.4 wants the Book and Reality versions side by side. The map screen
+now shows two maps at once, each drawing the same SVG through
+`assets/shaders/map_variant.gdshader`:
+
+| Map | Tint | Saturation |
+|---|---|---|
+| Reality | cool chalk `(0.94, 0.95, 0.93)` | 0.45 |
+| Book | gilded ochre `(1.0, 0.86, 0.62)` | 1.35 |
+
+Fragment markers are drawn on **both** maps (five each), so filling in the two
+readings is the collectible. The region list still shows the current truth's
+passage and swaps it on `T`.
+
 ## What is missing
 
-- **Two washes per region in the SVG itself.** The map screen already shows the
-  Book or Reality *passage* for each region (press `T`), and tints the map gilded
-  or chalky. What is not done is two separately coloured region washes side by
-  side in one view, as GDD.md §11.4 describes. The vector drawing makes this a
-  shader-uniform change rather than a redraw.
 - **A PNG export.** Godot loads the SVG directly today; a baked PNG at a fixed
   size would be safer for the map screen.
 

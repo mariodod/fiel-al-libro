@@ -96,7 +96,7 @@ func suite(t):
 		var path := "res://assets/manifiesto/%s.json" % str(res.fragment_id)
 		t.expect_true(FileAccess.file_exists(path), "%s fragment file exists" % str(res.id))
 
-	t.test("the map screen builds and shows five fragment markers")
+	t.test("the map screen builds two readings with five markers each")
 	var packed := load(SCENE) as PackedScene
 	t.expect_true(packed != null, "map screen scene loads")
 	if packed != null:
@@ -108,11 +108,16 @@ func suite(t):
 		var container := screen.find_child("MapContainer", true, false)
 		t.expect_true(container != null, "MapContainer is built")
 		if container != null:
-			var markers := 0
-			for child in container.get_children():
-				if str(child.name).begins_with("Marker_"):
-					markers += 1
-			t.expect_eq(markers, 5, "one marker per region")
+			var markers := container.find_children("Marker_*", "ColorRect", true, false)
+			t.expect_eq(markers.size(), 10, "five regions on each of two maps")
+			var reality_host := screen.find_child("RealityHost", true, false)
+			var book_host := screen.find_child("BookHost", true, false)
+			t.expect_true(reality_host != null and book_host != null, "both map hosts exist")
+			if reality_host != null and book_host != null:
+				t.expect_eq(reality_host.find_children("Marker_*", "ColorRect", true, false).size(), 5,
+					"Reality map has five markers")
+				t.expect_eq(book_host.find_children("Marker_*", "ColorRect", true, false).size(), 5,
+					"Book map has five markers")
 		screen.free()
 
 	t.test("regions name a real key venture, except the Ensayo")

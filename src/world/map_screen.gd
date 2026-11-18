@@ -19,16 +19,19 @@ extends CanvasLayer
 var regions: Array[RegionData] = []
 ## Region rows, keyed by region id.
 var region_rows: Dictionary = {}
-## Fragment markers, keyed by region id — small dots on the map.
+## Fragment markers, keyed by "<variant>|<fragment_id>" — dots on both maps.
 var fragment_markers: Dictionary = {}
 
 ## Full-screen tint overlay: Book truth gilds the map, Reality chalkes it.
 var truth_overlay: ColorRect = null
 
-## Map panel, so fragment markers can be positioned relative to the map.
-## A Control, not a Node2D: it parents TextureRect/ColorRect children and
-## needs the container size flags to fill its VBox slot.
-var map_container: Control = null
+## The two map hosts, keyed by "reality" and "book". Both draw the same SVG
+## through a different map_variant.gdshader material (GDD.md §11.4).
+var map_containers: Dictionary = {}
+
+## The source SVG is 1200x800; marker positions below are in a 600x400 space.
+const MAP_SIZE := Vector2(600.0, 400.0)
+const MAP_SCALE := 0.5
 
 
 func _ready() -> void:
@@ -82,36 +85,28 @@ func _build_ui() -> void:
 	container.add_child(map_panel_vb)
 
 	var map_title := Label.new()
-	map_title.text = "The world"
+	map_title.text = "The world — two readings"
 	map_title.add_theme_font_size_override("font_size", 20)
 	map_title.add_theme_color_override("font_color", Color(0.94, 0.9, 0.8, 1.0))
 	map_panel_vb.add_child(map_title)
 
-	var map_container := Control.new()
-	map_container.name = "MapContainer"
-	# Anchors do nothing inside a VBoxContainer; size flags do the centring.
-	map_container.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	map_container.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	map_panel_vb.add_child(map_container)
-
-	var map_rect := TextureRect.new()
-	map_rect.name = "MapRect"
-	if map_texture != null:
-		map_rect.texture = map_texture
-	map_rect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-	map_rect.custom_minimum_size = Vector2(600.0, 400.0)
-	map_rect.expand = true
-	map_rect.set_position(Vector2(300.0, 200.0))  # centre of the 600x400 panel
-	map_container.add_child(map_rect)
+	# Two maps, side by side. GDD.md §11.4: the Book and Reality versions of
+	# each region are a collectible; one SVG, two shader grades.
+	var map_host := HBoxContainer.new()
+	map_host.name = "MapContainer"
+	map_host.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	map_host.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	map_panel_vb.add_child(map_host)
+	_build_variant_map(map_host, "reality", "Reality",
+		Color(0.94, 0.95, 0.93, 1.0), 0.45, 1.06)
+	_build_variant_map(map_host, "book", "Book",
+		Color(1.0, 0.86, 0.62, 1.0), 1.35, 1.0)
 
 	var map_hint := Label.new()
-	map_hint.text = "B / T — turn the world over"
+	map_hint.text = "One map, two readings — fill both in"
 	map_hint.add_theme_font_size_override("font_size", 14)
 	map_hint.add_theme_color_override("font_color", Color(0.75, 0.54, 0.24, 1.0))
 	map_panel_vb.add_child(map_hint)
-
-	# Store the container for marker positioning.
-	self.map_container = map_container
 
 	# ── Right: the regions ─────────────────────────────────────────
 	var region_panel := VBoxContainer.new()
@@ -145,8 +140,8 @@ func _build_ui() -> void:
 	hint.add_theme_color_override("font_color", Color(0.75, 0.54, 0.24, 1.0))
 	add_child(hint)
 
-	# ── Fragment markers on the map ──────────────────────────────────
-	_build_fragment_markers(map_container, map_rect)
+	# ── Fragment markers on both maps ────────────────────────────────
+	_build_fragment_markers(map_host, null)
 
 
 ## Make one row in the region list.
@@ -191,10 +186,49 @@ func _make_region_row(res: RegionData) -> Control:
 	return row
 
 
-## Build the fragment markers: small dots on the map at each region's
-## position, visible once the player has found that region's fragment.
-func _build_fragment_markers(container: Control, map_rect: TextureRect) -> void:
-	# Region centres on the 1200x800 SVG, normalised to the 600x400 map rect.
+## Build one of the two side-by-side maps. The grade is entirely in the
+## shader material; both maps share the same SVG texture.
+func _build_variant_map(host: HBoxContainer, variant: String, title: String,
+		tint: Color, saturation: float, brightness: float) -> void:
+	var column := VBoxContainer.new()
+	column.name = title + "Map"
+	column.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	host.add_child(column)
+
+	var label := Label.new()
+	label.text = title
+	label.add_theme_font_size_override("font_size", 15)
+	label.add_theme_color_override("font_color", tint)
+	column.add_child(label)
+
+	var holder := Control.new()
+	holder.name = title + "Host"
+	holder.custom_minimum_size = MAP_SIZE * MAP_SCALE
+	column.add_child(holder)
+	map_containers[variant] = holder
+
+	var rect := TextureRect.new()
+	rect.name = title + "Rect"
+	if map_texture != null:
+		rect.texture = map_texture
+	rect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	rect.custom_minimum_size = MAP_SIZE * MAP_SCALE
+	rect.expand = true
+	var shader := load("res://assets/shaders/map_variant.gdshader") as Shader
+	if shader != null:
+		var mat := ShaderMaterial.new()
+		mat.shader = shader
+		mat.set_shader_parameter("tint", tint)
+		mat.set_shader_parameter("saturation", saturation)
+		mat.set_shader_parameter("brightness", brightness)
+		rect.material = mat
+	holder.add_child(rect)
+
+
+## Build the fragment markers on both maps. A dot appears when that region's
+## page is in the codex; the collectible is filling in both readings.
+func _build_fragment_markers(_container: Control, _map_rect: TextureRect) -> void:
+	# Region centres in the 600x400 space, scaled to each small map.
 	var positions: Dictionary = {
 		"camino_la_mancha": Vector2(310.0, 180.0),
 		"sierra_morena": Vector2(305.0, 216.0),
@@ -206,16 +240,21 @@ func _build_fragment_markers(container: Control, map_rect: TextureRect) -> void:
 	for res in regions:
 		if res.fragment_id.is_empty():
 			continue
-		var dot := ColorRect.new()
-		dot.name = "Marker_" + str(res.fragment_id)
-		dot.custom_minimum_size = Vector2(8.0, 8.0)
-		# Hidden until the fragment is found.
-		dot.color = Color(0.75, 0.54, 0.24, 0.0)
-		dot.set_position(positions.get(res.id, Vector2(300.0, 200.0)))
-		container.add_child(dot)
-		fragment_markers[res.fragment_id] = dot
+		for variant in map_containers.keys():
+			var host: Control = map_containers[variant]
+			var dot := ColorRect.new()
+			dot.name = "Marker_%s_%s" % [variant, str(res.fragment_id)]
+			dot.custom_minimum_size = Vector2(8.0, 8.0)
+			dot.color = Color(0.75, 0.54, 0.24, 0.0)
+			dot.set_position(positions.get(res.id, Vector2(300.0, 200.0)) * MAP_SCALE)
+			host.add_child(dot)
+			fragment_markers[_marker_key(variant, res.fragment_id)] = dot
+			_show_fragment_marker_for(variant, res.fragment_id,
+				GameState.codex_pages.has(res.fragment_id))
 
-		_show_fragment_marker(res.fragment_id, GameState.codex_pages.has(res.fragment_id))
+
+func _marker_key(variant: String, fragment_id: StringName) -> String:
+	return variant + "|" + str(fragment_id)
 
 
 ## Refresh one row's found state.
@@ -279,16 +318,14 @@ func _on_region_found(id: StringName) -> void:
 				break
 
 
-## Called when a Manifiesto fragment is found — show its marker on the map.
+## Called when a Manifiesto fragment is found — light its dot on both maps.
 func _on_codex_page_found(id: StringName) -> void:
-	var marker: ColorRect = fragment_markers.get(id, null) as ColorRect
-	if marker != null:
-		marker.color = Color(0.75, 0.54, 0.24, 1.0)
+	for variant in map_containers.keys():
+		_show_fragment_marker_for(variant, id, true)
 
 
-## Show or hide a fragment marker based on whether it has been found.
-func _show_fragment_marker(fragment_id: StringName, found: bool) -> void:
-	var marker: ColorRect = fragment_markers.get(fragment_id, null) as ColorRect
+func _show_fragment_marker_for(variant: String, fragment_id: StringName, found: bool) -> void:
+	var marker: ColorRect = fragment_markers.get(_marker_key(variant, fragment_id), null) as ColorRect
 	if marker != null:
 		marker.color = Color(0.75, 0.54, 0.24, 1.0) if found else Color(0.75, 0.54, 0.24, 0.0)
 
