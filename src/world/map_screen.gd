@@ -271,9 +271,12 @@ func _update_truth_overlay() -> void:
 func _on_region_found(id: StringName) -> void:
 	var row: Control = region_rows.get(id, null) as Control
 	if row != null:
-		var idx := regions.find(func(r: RegionData) -> bool: return r.id == id)
-		if idx >= 0:
-			_refresh_row(row, regions[idx])
+		# A plain loop, not find() with a Callable: TypedArray::find with a
+		# lambda is unreliable in this Godot build (see also the sort note).
+		for res in regions:
+			if res.id == id:
+				_refresh_row(row, res)
+				break
 
 
 ## Called when a Manifiesto fragment is found — show its marker on the map.

@@ -101,22 +101,19 @@ func suite(t):
 	t.expect_true(packed != null, "map screen scene loads")
 	if packed != null:
 		var screen := packed.instantiate()
-		var tree := Engine.get_main_loop() as SceneTree
-		if tree != null:
-			tree.root.add_child(screen)
-			# The harness is synchronous; _ready() may not have fired from
-			# add_child yet, so drive it explicitly if the panel is missing.
-			if screen.find_child("MapContainer", true, false) == null:
-				screen._ready()
-			var container := screen.find_child("MapContainer", true, false)
-			t.expect_true(container != null, "MapContainer is built")
-			if container != null:
-				var markers := 0
-				for child in container.get_children():
-					if str(child.name).begins_with("Marker_"):
-						markers += 1
-				t.expect_eq(markers, 5, "one marker per region")
-			screen.queue_free()
+		# Do not add to the tree: the harness is already inside its own
+		# _ready(), so root is busy. Drive _ready() directly, then free the
+		# screen so it does not keep receiving EventBus signals.
+		screen._ready()
+		var container := screen.find_child("MapContainer", true, false)
+		t.expect_true(container != null, "MapContainer is built")
+		if container != null:
+			var markers := 0
+			for child in container.get_children():
+				if str(child.name).begins_with("Marker_"):
+					markers += 1
+			t.expect_eq(markers, 5, "one marker per region")
+		screen.free()
 
 	t.test("regions name a real key venture, except the Ensayo")
 	for res in regions:
