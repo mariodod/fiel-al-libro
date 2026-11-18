@@ -120,8 +120,10 @@ def main():
         parts = bark_key.split(".")
         # parts = ["dia", "quixote", "bark", "001"] or ["dia", "quixote", "chatter", "rock"]
         suffix_parts = parts[2:]  # Remove "dia" and character_id
-        filename = "_".join(suffix_parts) + ".wav"
-        filepath = os.path.join(DIRECTORY, filename)
+        # The runtime builds the path as <character_id>/<slug>.wav with the
+        # dotted slug intact (BarkAudio._key_to_slug), so match it exactly.
+        filename = ".".join(suffix_parts) + ".wav"
+        filepath = os.path.join(DIRECTORY, character_id, filename)
 
         write_wav(filepath, DURATION, SAMPLE_RATE)
         print(f"Created: {filepath}")

@@ -14,11 +14,11 @@ extends Node
 
 const FALLBACK := "es"
 
-## Locales the game ships with. Keep in sync with locale/*.po and with
-## ui.language.name.* keys.
+## Locales the game actually ships with. Keep in sync with the translation
+## list in project.godot and with locale/*.po — a locale in this list with no
+## PO file is a silent fallback to Spanish for a player who selects it.
 const SHIPPED_LOCALES: Array[String] = [
-	"es", "es_419", "en", "fr", "de", "pt_BR",
-	"it", "pl", "ru", "tr", "ja", "ko", "zh_Hans",
+	"es", "en", "fr", "de", "it", "pt_BR",
 ]
 
 
@@ -27,7 +27,8 @@ func _ready() -> void:
 
 
 ## Map the OS locale onto a shipped locale.
-## "es_ES" -> "es", "es_MX" -> "es_419", "pt_PT" -> "pt_BR", "en_GB" -> "en".
+## "es_ES" -> "es", "es_MX" -> "es" (es_419 is not shipped), "pt_PT" -> "pt_BR",
+## "en_GB" -> "en".
 func _detect_system_locale() -> String:
 	var raw := OS.get_locale().replace("-", "_")
 	var parts := raw.split("_")
@@ -37,8 +38,8 @@ func _detect_system_locale() -> String:
 	var candidate := language
 	match language:
 		"es":
-			# Latin America is a first-class translation, not a copy (D7).
-			candidate = "es_419" if country != "" and country != "ES" else "es"
+			# es_419 is designed for but not shipped; use the Castilian PO.
+			candidate = "es"
 		"pt":
 			candidate = "pt_BR"
 		"zh":

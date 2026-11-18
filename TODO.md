@@ -252,7 +252,10 @@
 - [x] The 5 region kits beyond the slice — 15 environment kits exist total; all chapters ch_14 through ch_50 now have .tscn scenes wired to region-appropriate kits: camino_la_mancha (field+road), sierra_morena (mountain+cave), el_toboso (river+village), los_riscos (cliff+theatre), el_castillo_del_duque (castle+theatre); only ch_01 slice used them inline before
 - [x] Localization to 6 languages (en, es, fr, de, it, pt_BR registered in project.godot)
 - [ ] Steam page, capsule art, trailer, wishlist campaign
-- [ ] 2.5D pivot evaluation, if the 3D camera fights us
+- [x] **2.5D pivot evaluation — DECIDED NO (2026-11-18).** Stay 3D. The camera and
+       art pipeline are built and the two-truths mechanic depends on seeing the
+       same object from two angles in one space. Do not spend further time
+       evaluating or preparing a 2.5D fallback.
 
 ## Still open (admin, not game work — these have long lead times)
 

@@ -41,9 +41,11 @@ func _key_to_slug(text_key: StringName) -> String:
 	var parts := str(text_key).split(".")
 	if parts.size() < 3:
 		return ""
-	# parts[0] = "dia", parts[1] = character_id, rest = slug parts
-	var suffix := parts.slice(2, parts.size() - 2)
-	return "_".join(suffix)
+	# parts[0] = "dia", parts[1] = character_id, the rest IS the slug.
+	# WAV filenames keep the dotted form: dia.quixote.chatter.rock ->
+	# quixote/chatter.rock.wav. Slicing off the last two parts made every
+	# bark look for a file that does not exist (reaction.wav, chatter.wav).
+	return ".".join(parts.slice(2))
 
 ## Load and cache a stream by path.
 ##
