@@ -12,6 +12,10 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. META: namespace=ui
+#. META: namespace=ui
+msgid "ui.chapter.ride"
+msgstr "Cabalgando hacia el siguiente capítulo…"
+
 msgid "ui.region.camino_la_mancha.book"
 msgstr "Campos que no se acaban, y en ellos un gigante detrás de cada molino. El camino a la primera venta está empedrado de promesas."
 #. META: namespace=ui

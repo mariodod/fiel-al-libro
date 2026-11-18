@@ -30,6 +30,10 @@ msgstr ""
 
 #. META: namespace=ui
 #. META: namespace=ui
+#. META: namespace=ui
+msgid "ui.chapter.ride"
+msgstr "Riding to the next chapter…"
+
 msgid "ui.region.camino_la_mancha.book"
 msgstr "Endless fields, and a giant behind every windmill. The road to the first inn is paved with promises."
 #. META: namespace=ui

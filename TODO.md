@@ -252,6 +252,12 @@
 - [x] The endings and the manuscript prologue — prologue scene done (`src/world/prologue.*`), ending content written (`src/world/ending.gd`, 4 endings: el_manuscrito, la_locura_compartida, el_mundo_real, el_libro_gana), locale keys in en/es/fr PO files, `compute_ending()` in GameState, triggered from slice.gd
 - [x] The 5 region kits beyond the slice — 15 environment kits exist total; all chapters ch_14 through ch_50 now have .tscn scenes wired to region-appropriate kits: camino_la_mancha (field+road), sierra_morena (mountain+cave), el_toboso (river+village), los_riscos (cliff+theatre), el_castillo_del_duque (castle+theatre); only ch_01 slice used them inline before
 - [x] Localization to 6 languages (en, es, fr, de, it, pt_BR registered in project.godot)
+- [x] **Chapter flow — all content reachable (the alpha milestone).** New
+      `ChapterFlow` autoload: title's Begin button clears progress, plays the
+      prologue, then walks the whole unlock chain chapter by chapter with a
+      2-second ride card; the Ensayo's double completion is handled and the
+      ending fires when the graph is exhausted. All 47 chapter scenes now carry
+      the `Leyenda` and `ManuscriptUI` nodes that `slice.gd` expects.
 - [x] **Base-game script on paper** — `docs/BASE_GAME_SCRIPT.md`, 13 chapters.
 - [x] **Ensayo script, 6 outcomes** — `assets/writing/ensayo.md` + `ensayo_script.json`.
 - [x] **48 fragment modernizations** — verified in all 6 languages, 0 gaps.

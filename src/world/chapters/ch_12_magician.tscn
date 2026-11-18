@@ -25,6 +25,9 @@
 [ext_resource type="PackedScene" path="res://src/world/environment_kits/theatre_kit.tscn" id="24_theatre_kit"]
 [ext_resource type="Resource" path="res://src/data/primitives/book_bk_ch12_armas_letras.tres" id="25_book_armas_letras"]
 
+[ext_resource type="Resource" path="res://src/data/books/bk.ch01.leyenda_tio_andalus.tres" id="26_leyenda"]
+[ext_resource type="PackedScene" path="res://src/ui/manuscript_ui.tscn" id="27_shell"]
+
 [sub_resource type="PlaneMesh" id="Plane_ground"]
 size = Vector2(300, 300)
 
@@ -240,3 +243,12 @@ size_flags_vertical = 1
 anchors_preset = 3
 visible = false
 script = ExtResource("18_manifiesto_reader")
+
+[node name="Leyenda" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 0, -10)
+script = ExtResource("2_object")
+data = ExtResource("26_leyenda")
+
+[node name="ManuscriptUI" type="Control" parent="." instance=ExtResource("27_shell")]
+anchors_preset = 7
+visible = false

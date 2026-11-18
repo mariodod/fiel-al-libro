@@ -77,11 +77,16 @@ signal codex_page_found(id: StringName)
 # ── World flow ──────────────────────────────────────────────────────────
 signal chapter_started(id: StringName)
 signal chapter_completed(id: StringName)
+## A chapter became available after its predecessor was completed. Used by
+## the chapter flow and the map screen.
+signal chapter_unlocked(id: StringName)
 signal venture_started(id: StringName)
 signal venture_resolved(id: StringName, mode: int)
 signal region_found(id: StringName)
 signal region_resolved(id: StringName)
 signal region_loaded(id: StringName)
+## The player has entered a region for the first time in this run.
+signal region_entered(id: StringName)
 signal posada_entered(id: StringName)
 
 # ── Ensayo (player-staged case) ─────────────────────────────────────────

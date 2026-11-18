@@ -166,6 +166,7 @@ the private `GDD.md` §21, D8; this paragraph is the tracked record.)
 
 | Decision | Where it is |
 |---|---|
+| **Chapter flow** | `src/autoload/chapter_flow.gd` — Begin button → prologue → unlock chain → ending; the chapter scenes are now reachable |
 | Global truth layer | `src/autoload/truth_layer.gd` + the `truth_layer` global shader parameter |
 | **The reading rule** | `src/systems/perception.gd` — the world has one truth; each character makes two things of it |
 | **An object with two faces** | `src/world/truth_object.gd` + `src/data/truth_object_data.gd` (`.tres` content) |

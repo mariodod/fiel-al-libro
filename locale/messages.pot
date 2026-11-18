@@ -22,6 +22,10 @@
 #. META: namespace=ui
 #. META: namespace=ui
 #. META: namespace=ui
+#. META: namespace=ui
+msgid "ui.chapter.ride"
+msgstr ""
+
 msgid "ui.region.camino_la_mancha.book"
 msgstr ""
 #. META: namespace=ui

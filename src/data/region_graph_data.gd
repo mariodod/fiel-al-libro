@@ -16,13 +16,20 @@ func get_chapter(chapter_id: StringName) -> Dictionary:
 func get_region(region_id: StringName) -> Dictionary:
 	return regions.get(region_id, {})
 
-## List all chapter IDs in order.
+## List all chapter IDs. Dictionary.keys() is an untyped Array, so it must be
+## converted before returning an Array[StringName].
 func all_chapters() -> Array[StringName]:
-	return chapters.keys()
+	var result: Array[StringName] = []
+	for key in chapters.keys():
+		result.append(StringName(str(key)))
+	return result
 
 ## List all region IDs.
 func all_regions() -> Array[StringName]:
-	return regions.keys()
+	var result: Array[StringName] = []
+	for key in regions.keys():
+		result.append(StringName(str(key)))
+	return result
 
 ## The chapter that unlocks directly after completing this one (first in unlocks).
 func next_chapter(chapter_id: StringName) -> StringName:
@@ -32,5 +39,9 @@ func next_chapter(chapter_id: StringName) -> StringName:
 
 ## All chapters that become available after completing this one.
 func unlocked_by(chapter_id: StringName) -> Array[StringName]:
+	var result: Array[StringName] = []
 	var ch := get_chapter(chapter_id)
-	return ch.get("unlocks", [])
+	var unlocks: Variant = ch.get("unlocks", [])
+	for id in unlocks:
+		result.append(StringName(str(id)))
+	return result

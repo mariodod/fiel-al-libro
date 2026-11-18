@@ -71,8 +71,19 @@ func _ready() -> void:
 	_dialogue_page = _find_child(&"DialoguePage")
 	_pause_page = _find_child(&"PausePage")
 
+	# The title page's Begin button starts the real chapter flow; without this
+	# it is a dead button and the built chapters are unreachable.
+	var start := _find_child(&"TitleStart") as Button
+	if start != null and not start.pressed.is_connected(_on_begin_pressed):
+		start.pressed.connect(_on_begin_pressed)
+
 	# Hide all pages initially.
 	_hide_all_pages()
+
+
+func _on_begin_pressed() -> void:
+	visible = false
+	ChapterFlow.start_new_game()
 
 
 ## Recursively find a descendant node by name.
@@ -207,6 +218,11 @@ func open_title() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if not visible:
+		return
+
+	# Enter/Space on the title page begins a new campaign.
+	if _current_page == PAGE_TITLE and event.is_action_pressed(&"ui_accept"):
+		_on_begin_pressed()
 		return
 
 	# ESC always goes back or closes.

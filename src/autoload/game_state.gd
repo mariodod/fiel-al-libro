@@ -188,6 +188,30 @@ func chapter_started(id: StringName) -> void:
 		EventBus.chapter_started.emit(id)
 
 ## Mark a chapter as completed (Venture/case resolved).
+## Clear all campaign progress for a New Game. ChapterFlow calls this before
+## entering the prologue; the save file is deleted separately.
+func reset_progress() -> void:
+	current_chapter = &""
+	current_region = &""
+	current_posada = &""
+	humanity = HUMANITY_MAX
+	flags.clear()
+	anamorphoses_spotted.clear()
+	anamorphoses_resolved.clear()
+	evidence.clear()
+	regions_found.clear()
+	regions_resolved.clear()
+	chapters_found.clear()
+	chapters_resolved.clear()
+	current_chapter_id = &""
+	codex_pages.clear()
+	pages_written.clear()
+	ending_id = &""
+	author_revealed = false
+	quixote_playtime = 0.0
+	sancho_playtime = 0.0
+
+
 func chapter_completed(id: StringName) -> void:
 	if id.is_empty():
 		return

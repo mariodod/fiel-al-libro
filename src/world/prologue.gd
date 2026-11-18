@@ -1,5 +1,8 @@
 class_name Prologue
 extends CanvasLayer
+## Emitted when the player has read the last page. ChapterFlow awaits it
+## before loading the first chapter.
+signal prologue_finished
 ## The manuscript prologue — the opening page before Chapter 1.
 ##
 ## Displays the prologue content from res://src/data/prologue.tres in three
@@ -60,6 +63,7 @@ func _show_page(page: int) -> void:
 			_variant_book.visible = true
 			_hint.text = "Press any key to enter Chapter 1."
 		3:
+			prologue_finished.emit()
 			queue_free()
 
 func show_prologue() -> void:

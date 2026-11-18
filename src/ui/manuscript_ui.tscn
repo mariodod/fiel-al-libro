@@ -40,7 +40,7 @@ theme_override_alignment/horizontal_alignment = 1
 anchors_preset = 1
 position = Vector2(400, 380)
 size = Vector2(200, 40)
-text = "Begin (I)"
+text = "Begin (Enter)"
 
 [node name="ShelfPage" type="Control" parent="Pages"]
 anchors_preset = 7

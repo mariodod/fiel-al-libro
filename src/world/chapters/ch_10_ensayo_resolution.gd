@@ -26,7 +26,7 @@ func _ready() -> void:
 		Ensayo.start_simulation(&"quixote", &"sancho", &"wife_name", &"tested")
 
 func _on_venture_resolved(_id: StringName, mode: int) -> void:
-	_on_venture_resolved(_id, mode)
+	super._on_venture_resolved(_id, mode)
 	if _id == &"ensayo_resolution":
 		if mode == VentureData.Resolution.TRUTH:
 			EventBus.toast.emit(&"ui.chapter.10.truth", [])

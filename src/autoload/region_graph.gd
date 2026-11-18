@@ -453,6 +453,16 @@ func _ready() -> void:
 	EventBus.chapter_started.emit(start_chapter)
 	EventBus.region_found.emit(current_region)
 
+## Reset progress to a fresh campaign for New Game.
+func reset_progress() -> void:
+	chapters_completed.clear()
+	chapters_unlocked = [start_chapter]
+	current_chapter = start_chapter
+	var ch = chapters.get(start_chapter)
+	current_region = ch.get("region_id", "")
+	chapter_changed.emit(&"", start_chapter)
+
+
 ## ── Unlocking ────────────────────────────────────────────────────────────
 
 ## Mark a chapter as completed and unlock whatever it unlocks.
@@ -519,15 +529,24 @@ func next_chapter(chapter_id: StringName) -> StringName:
 
 ## All chapters that unlock after completing the given one.
 func unlocked_by(chapter_id: StringName) -> Array[StringName]:
-	return chapters.get(chapter_id).get("unlocks")
+	var result: Array[StringName] = []
+	for id in chapters.get(chapter_id).get("unlocks", []):
+		result.append(StringName(str(id)))
+	return result
 
-## All chapters in the graph.
+## All chapters in the graph. Dictionary.keys() is untyped — convert it.
 func all_chapters() -> Array[StringName]:
-	return chapters.keys()
+	var result: Array[StringName] = []
+	for key in chapters.keys():
+		result.append(StringName(str(key)))
+	return result
 
 ## All regions in the graph.
 func all_regions() -> Array[StringName]:
-	return regions.keys()
+	var result: Array[StringName] = []
+	for key in regions.keys():
+		result.append(StringName(str(key)))
+	return result
 
 ## Get chapter data dictionary.
 func get_chapter(chapter_id: StringName) -> Dictionary:

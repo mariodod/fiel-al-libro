@@ -23,7 +23,7 @@ func _ready() -> void:
 	)
 
 func _on_venture_resolved(_id: StringName, mode: int) -> void:
-	_on_venture_resolved(_id, mode)
+	super._on_venture_resolved(_id, mode)
 	if _id == &"ensayo_setup":
 		if mode == VentureData.Resolution.TRUTH:
 			EventBus.toast.emit(&"ui.chapter.09.truth", [])

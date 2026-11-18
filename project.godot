@@ -37,6 +37,7 @@ Ensayo="*res://src/autoload/ensayo.gd"
 RegionGraph="*res://src/autoload/region_graph.gd"
 PassiveManager="*res://src/autoload/passive_manager.gd"
 BarkAudio="*res://src/autoload/bark_audio.gd"
+ChapterFlow="*res://src/autoload/chapter_flow.gd"
 
 [debug]
 
