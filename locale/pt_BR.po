@@ -5,11 +5,15 @@
 #. TRANSLATORS: Auto-added key
 msgid ""
 msgstr ""
+"Project-Id-Version: Fiel al Libro 0.1.0\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#. TRANSLATORS: Auto-added key
 msgid "ui.menu.new_game"
-msgstr ""
-"Comeï¿½ar o manuscrito"
+msgstr "Começar o manuscrito"
 
 #. TRANSLATORS: Auto-added key
 msgid "ui.menu.continue"
@@ -1600,15 +1604,15 @@ msgid "ui.manifiesto.empty"
 msgstr ""`r`n
 #. TRANSLATORS: Auto-added key
 msgid "prologue.opening.text"
-msgstr "Vocï¿½ estï¿½ segurando um livro. Foi escrito em 1605 e tem esperado por vocï¿½. A pï¿½gina que vocï¿½ estï¿½ prestes a ler nï¿½o ï¿½ a primeira pï¿½gina ï¿½ ï¿½ a pï¿½gina que o livro abre quando vocï¿½ o pega. Leia-a. Vire-a. O mundo do outro lado nï¿½o ï¿½ o mundo que vocï¿½ deixou."
+msgstr "Você está segurando um livro. Foi escrito em 1605 e tem esperado por você. A página que você está prestes a ler não é a primeira página — é a página que o livro abre quando você o pega. Leia-a. Vire-a. O mundo do outro lado não é o mundo que você deixou."
 
 #. TRANSLATORS: Auto-added key
 msgid "prologue.opening.reality"
-msgstr "Um homem cavalga pelo planalto. Os moinhos sï¿½o moinhos. A estalagem ï¿½ uma estalagem."
+msgstr "Um homem cavalga pelo planalto. Os moinhos são moinhos. A estalagem é uma estalagem."
 
 #. TRANSLATORS: Auto-added key
 msgid "prologue.opening.book"
-msgstr "Um cavaleiro cavalga pelo planalto. Os moinhos sï¿½o gigantes. A estalagem ï¿½ um castelo."
+msgstr "Um cavaleiro cavalga pelo planalto. Os moinhos são gigantes. A estalagem é um castelo."
 
 #. TRANSLATORS: The clavilo (wooden horse) fragment title.
 msgid "bk.ch38.clavilo.title"
@@ -1623,11 +1627,11 @@ msgstr ""
 
 #. TRANSLATORS: Shown when the player resolves an anamorphosis and gains evidence.
 msgid "ui.slice.anamorphosis_resolved"
-msgstr "Anamorfose resolvida ï¿½ +%d evidï¿½ncia"
+msgstr "Anamorfose resolvida é +%d evidência"
 
 #. TRANSLATORS: Shown when the player has enough evidence to use the Verdict.
 msgid "ui.slice.verdict_ready"
-msgstr "Evidï¿½ncia suficiente para um Veredito"
+msgstr "Evidência suficiente para um Veredito"
 
 
 

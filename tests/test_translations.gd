@@ -27,6 +27,9 @@ func suite(t):
 	t.expect_has(registered, "res://locale/es.po", "Spanish is registered")
 	t.expect_has(registered, "res://locale/en.po", "English is registered")
 	t.expect_has(registered, "res://locale/fr.po", "French is registered")
+	t.expect_has(registered, "res://locale/de.po", "German is registered")
+	t.expect_has(registered, "res://locale/it.po", "Italian is registered")
+	t.expect_has(registered, "res://locale/pt_BR.po", "Brazilian Portuguese is registered")
 
 	t.test("the fallback locale is set")
 	t.expect_eq(ProjectSettings.get_setting("internationalization/locale/fallback", ""), "es", "fallback is Spanish")
@@ -43,9 +46,21 @@ func suite(t):
 	TranslationServer.set_locale("fr")
 	t.expect_eq(tr(&"ui.menu.new_game"), "Commencer le manuscrit", "French")
 
-	t.test("an unshipped locale falls back to Spanish")
+	t.test("German returns its own translated text")
 	TranslationServer.set_locale("de")
-	t.expect_eq(tr(&"ui.menu.new_game"), "Empezar el manuscrito", "German is not shipped, so Spanish is used")
+	t.expect_eq(tr(&"ui.menu.new_game"), "Manuskript beginnen", "German is shipped")
+
+	t.test("Italian returns its own translated text")
+	TranslationServer.set_locale("it")
+	t.expect_eq(tr(&"ui.menu.new_game"), "Iniziare il manoscritto", "Italian is shipped")
+
+	t.test("Brazilian Portuguese returns its own translated text")
+	TranslationServer.set_locale("pt_BR")
+	t.expect_eq(tr(&"ui.menu.new_game"), "Começar o manuscrito", "Brazilian Portuguese is shipped")
+
+	t.test("an unshipped locale falls back to Spanish")
+	TranslationServer.set_locale("xx")
+	t.expect_eq(tr(&"ui.menu.new_game"), "Empezar el manuscrito", "unknown locale falls back to Spanish")
 
 	t.test("contexts are expressed in the key name")
 	# Godot 4.7 cannot translate a msgctxt entry (it creates the key but

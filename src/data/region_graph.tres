@@ -118,8 +118,8 @@ chapters = {
 		"region_id": "camino_la_mancha",
 		"chapter_number": 14,
 		"scene_path": "res://src/world/chapters/ch_14_galeotes.tscn",
-		"venture_id": "",
-		"case_id": "ch_14_galeotes",
+		"venture_id": "venture_galeotes",
+		"case_id": "",
 		"unlocks": ["ch_15_muerto_camino"],
 	},
 	"ch_15_muerto_camino": {

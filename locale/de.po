@@ -5,11 +5,15 @@
 #. TRANSLATORS: Auto-added key
 msgid ""
 msgstr ""
+"Project-Id-Version: Fiel al Libro 0.1.0\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#. TRANSLATORS: Auto-added key
 msgid "ui.menu.new_game"
-msgstr ""
-"Manuskript beginnen"
+msgstr "Manuskript beginnen"
 
 #. TRANSLATORS: Auto-added key
 msgid "ui.menu.continue"
