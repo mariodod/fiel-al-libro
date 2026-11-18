@@ -23,6 +23,386 @@
 #. META: namespace=ui
 #. META: namespace=ui
 #. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+msgid "ui.chapter.50.intro"
+msgstr ""
+
+msgid "ui.chapter.50.title"
+msgstr ""
+
+msgid "ui.chapter.48.intro"
+msgstr ""
+
+msgid "ui.chapter.48.title"
+msgstr ""
+
+msgid "ui.chapter.47.intro"
+msgstr ""
+
+msgid "ui.chapter.47.title"
+msgstr ""
+
+msgid "ui.chapter.46.intro"
+msgstr ""
+
+msgid "ui.chapter.46.title"
+msgstr ""
+
+msgid "ui.chapter.45.intro"
+msgstr ""
+
+msgid "ui.chapter.45.title"
+msgstr ""
+
+msgid "ui.chapter.44.intro"
+msgstr ""
+
+msgid "ui.chapter.44.title"
+msgstr ""
+
+msgid "ui.chapter.43.intro"
+msgstr ""
+
+msgid "ui.chapter.43.title"
+msgstr ""
+
+msgid "ui.chapter.42.intro"
+msgstr ""
+
+msgid "ui.chapter.42.title"
+msgstr ""
+
+msgid "ui.chapter.41.intro"
+msgstr ""
+
+msgid "ui.chapter.41.title"
+msgstr ""
+
+msgid "ui.chapter.40.intro"
+msgstr ""
+
+msgid "ui.chapter.40.title"
+msgstr ""
+
+msgid "ui.chapter.39.intro"
+msgstr ""
+
+msgid "ui.chapter.39.title"
+msgstr ""
+
+msgid "ui.chapter.38.intro"
+msgstr ""
+
+msgid "ui.chapter.38.title"
+msgstr ""
+
+msgid "ui.chapter.37.intro"
+msgstr ""
+
+msgid "ui.chapter.37.title"
+msgstr ""
+
+msgid "ui.chapter.36.intro"
+msgstr ""
+
+msgid "ui.chapter.36.title"
+msgstr ""
+
+msgid "ui.chapter.35.intro"
+msgstr ""
+
+msgid "ui.chapter.35.title"
+msgstr ""
+
+msgid "ui.chapter.34.intro"
+msgstr ""
+
+msgid "ui.chapter.34.title"
+msgstr ""
+
+msgid "ui.chapter.33.intro"
+msgstr ""
+
+msgid "ui.chapter.33.title"
+msgstr ""
+
+msgid "ui.chapter.32.intro"
+msgstr ""
+
+msgid "ui.chapter.32.title"
+msgstr ""
+
+msgid "ui.chapter.31.intro"
+msgstr ""
+
+msgid "ui.chapter.31.title"
+msgstr ""
+
+msgid "ui.chapter.30.intro"
+msgstr ""
+
+msgid "ui.chapter.30.title"
+msgstr ""
+
+msgid "ui.chapter.29.intro"
+msgstr ""
+
+msgid "ui.chapter.29.title"
+msgstr ""
+
+msgid "ui.chapter.28.intro"
+msgstr ""
+
+msgid "ui.chapter.28.title"
+msgstr ""
+
+msgid "ui.chapter.27.intro"
+msgstr ""
+
+msgid "ui.chapter.27.title"
+msgstr ""
+
+msgid "ui.chapter.26.intro"
+msgstr ""
+
+msgid "ui.chapter.26.title"
+msgstr ""
+
+msgid "ui.chapter.25.intro"
+msgstr ""
+
+msgid "ui.chapter.25.title"
+msgstr ""
+
+msgid "ui.chapter.24.intro"
+msgstr ""
+
+msgid "ui.chapter.24.title"
+msgstr ""
+
+msgid "ui.chapter.23.intro"
+msgstr ""
+
+msgid "ui.chapter.23.title"
+msgstr ""
+
+msgid "ui.chapter.22.intro"
+msgstr ""
+
+msgid "ui.chapter.22.title"
+msgstr ""
+
+msgid "ui.chapter.20.intro"
+msgstr ""
+
+msgid "ui.chapter.20.title"
+msgstr ""
+
+msgid "ui.chapter.18.intro"
+msgstr ""
+
+msgid "ui.chapter.18.title"
+msgstr ""
+
+msgid "ui.chapter.17.intro"
+msgstr ""
+
+msgid "ui.chapter.17.title"
+msgstr ""
+
+msgid "ui.chapter.16.intro"
+msgstr ""
+
+msgid "ui.chapter.16.title"
+msgstr ""
+
+msgid "ui.chapter.15.intro"
+msgstr ""
+
+msgid "ui.chapter.15.title"
+msgstr ""
+
+msgid "ui.chapter.14.intro"
+msgstr ""
+
+msgid "ui.chapter.14.title"
+msgstr ""
+
+msgid "ui.chapter.13.intro"
+msgstr ""
+
+msgid "ui.chapter.12.intro"
+msgstr ""
+
+msgid "ui.chapter.11.intro"
+msgstr ""
+
+msgid "ui.chapter.10.intro"
+msgstr ""
+
+msgid "ui.chapter.09.intro"
+msgstr ""
+
+msgid "ui.chapter.08.intro"
+msgstr ""
+
+msgid "ui.chapter.07.intro"
+msgstr ""
+
+msgid "ui.chapter.06.intro"
+msgstr ""
+
+msgid "ui.chapter.05.intro"
+msgstr ""
+
+msgid "ui.chapter.04.intro"
+msgstr ""
+
+msgid "ui.chapter.03.intro"
+msgstr ""
+
+msgid "ui.chapter.02.intro"
+msgstr ""
+
+msgid "ui.chapter.01.intro"
+msgstr ""
+
+msgid "ui.colofon.hint"
+msgstr ""
+
+msgid "ui.colofon.title"
+msgstr ""
+
+msgid "ui.colofon.el_castillo_del_duque.reality"
+msgstr ""
+
+msgid "ui.colofon.el_castillo_del_duque.book"
+msgstr ""
+
+msgid "ui.colofon.los_riscos.reality"
+msgstr ""
+
+msgid "ui.colofon.los_riscos.book"
+msgstr ""
+
+msgid "ui.colofon.el_toboso.reality"
+msgstr ""
+
+msgid "ui.colofon.el_toboso.book"
+msgstr ""
+
+msgid "ui.colofon.sierra_morena.reality"
+msgstr ""
+
+msgid "ui.colofon.sierra_morena.book"
+msgstr ""
+
+msgid "ui.colofon.camino_la_mancha.reality"
+msgstr ""
+
+msgid "ui.colofon.camino_la_mancha.book"
+msgstr ""
+
+msgid "ui.colofon.prologo.reality"
+msgstr ""
+
+msgid "ui.colofon.prologo.book"
+msgstr ""
+
 msgid "ui.chapter.ride"
 msgstr ""
 

@@ -145,7 +145,7 @@ Only if the slice passed. Full plan in `ROADMAP.md`.
 
 | # | Task | Notes |
 |---|---|---|
-| 3.1 | Write the base game's script — **all 13 chapters, on paper** | ✅ **Done (draft):** `docs/BASE_GAME_SCRIPT.md` — chapter-by-chapter spine, Venture per chapter, colophon voice, cut order. Needs the owner's pass on novel sources and colophon copy. |
+| 3.1 | Write the base game's script — **all 13 chapters, on paper** | ✅ **Done (draft):** `docs/BASE_GAME_SCRIPT.md` — chapter-by-chapter spine, Venture per chapter, colophon voice, cut order. Needs the owner's pass on novel sources; the colophons are now written (`docs/COLOPHON.md`). |
 | 3.2 | Write the *Ensayo* script (all 6 outcomes) | ✅ Done — `assets/writing/ensayo.md` + all six outcome narrations in `assets/ensayo/ensayo_script.json`. |
 | 3.3 | Modernize the 48 Manifiesto fragments in Spanish | ✅ Verified: all 48 fragments have a `modern` rendering in all 6 shipped languages (0 gaps). `tools/audit_fragments.py`. |
 | 3.4 | Build the 15 environment kits; produce the 4 hero rigs to quality | ✅ Present: 15 kits and 4 rigs (Quixote, Sancho, venture mill, venture giant). Both heroes have 14/15 authored clips with contact frames — `assets/models/README_animations.md`. |
@@ -163,7 +163,7 @@ Full tiers in `ROADMAP.md` §4. In order:
 2. Dialogue-heavy side quests
 3. Scholar's Notes / extra codex commentary
 4. Steam Workshop support
-5. The "Colofón" between-chapter interstitials
+5. ~~The "Colofón" between-chapter interstitials  *(shipped — no longer a cut candidate)*~~
 6. The *Ensayo* — **as a whole chapter**, not as a system
 7. Six languages → three (es, en, fr)
 8. 15 books → 6

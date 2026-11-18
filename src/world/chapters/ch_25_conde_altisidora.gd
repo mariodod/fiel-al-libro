@@ -9,6 +9,7 @@ extends "res://src/world/slice.gd"
 
 func _ready() -> void:
 	super._ready()
+	EventBus.toast.emit(&"ui.chapter.25.intro", [])
 	GameState.chapter_started(&"ch_25_conde_altisidora")
 	GameState.find_region(&"los_riscos")
 

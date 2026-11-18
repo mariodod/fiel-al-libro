@@ -13,6 +13,386 @@ msgstr ""
 
 #. META: namespace=ui
 #. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+#. META: namespace=ui
+msgid "ui.chapter.50.intro"
+msgstr "Un relato intercalado sobre una prueba de confianza que sale mal."
+
+msgid "ui.chapter.50.title"
+msgstr "El curioso impertinente"
+
+msgid "ui.chapter.48.intro"
+msgstr "Vuelven a casa y él empieza a recobrar el juicio."
+
+msgid "ui.chapter.48.title"
+msgstr "El regreso al pueblo"
+
+msgid "ui.chapter.47.intro"
+msgstr "Se despiden del duque y la duquesa."
+
+msgid "ui.chapter.47.title"
+msgstr "La despedida"
+
+msgid "ui.chapter.46.intro"
+msgstr "Los leones se muestran en la corte; Quixote los observa."
+
+msgid "ui.chapter.46.title"
+msgstr "Los leones en la corte"
+
+msgid "ui.chapter.45.intro"
+msgstr "Sancho es encantado dentro del plan para desencantar a Dulcinea."
+
+msgid "ui.chapter.45.title"
+msgstr "Sancho encantado"
+
+msgid "ui.chapter.44.intro"
+msgstr "Un duelo con el caballero de la blanca luna se evita de algún modo."
+
+msgid "ui.chapter.44.title"
+msgstr "Los duelos evitados"
+
+msgid "ui.chapter.43.intro"
+msgstr "Un caso criminal llega al duque; Quixote lo juzga."
+
+msgid "ui.chapter.43.title"
+msgstr "El caso penal"
+
+msgid "ui.chapter.42.intro"
+msgstr "Los títeres representan moros, y Quixote los ataca."
+
+msgid "ui.chapter.42.title"
+msgstr "El retablo de Maestro Pedro"
+
+msgid "ui.chapter.41.intro"
+msgstr "Un canónigo discute con él sobre una continuación falsa."
+
+msgid "ui.chapter.41.title"
+msgstr "El libro falso de Oviedo"
+
+msgid "ui.chapter.40.intro"
+msgstr "Se topan con el cortejo funerario de un hombre rico."
+
+msgid "ui.chapter.40.title"
+msgstr "El entierro del rico"
+
+msgid "ui.chapter.39.intro"
+msgstr "Sancho toma posesión de su gobierno de la ínsula Barataria."
+
+msgid "ui.chapter.39.title"
+msgstr "Sancho gobernador"
+
+msgid "ui.chapter.38.intro"
+msgstr "Un caballo de madera los lleva en un vuelo que no abandona el suelo."
+
+msgid "ui.chapter.38.title"
+msgstr "Clavileño"
+
+msgid "ui.chapter.37.intro"
+msgstr "La duquesa finge estar encantada y recluta a Sancho."
+
+msgid "ui.chapter.37.title"
+msgstr "El encantamiento de la duquesa"
+
+msgid "ui.chapter.36.intro"
+msgstr "Sancho le cura las heridas después de la derrota."
+
+msgid "ui.chapter.36.title"
+msgstr "El cuidado de Sancho"
+
+msgid "ui.chapter.35.intro"
+msgstr "Un rival lo vence y lo envía a casa por un año."
+
+msgid "ui.chapter.35.title"
+msgstr "El Caballero de la Blanca Luna"
+
+msgid "ui.chapter.34.intro"
+msgstr "Un cuento de dolor conduce al caballo de madera."
+
+msgid "ui.chapter.34.title"
+msgstr "El encantamiento"
+
+msgid "ui.chapter.33.intro"
+msgstr "Sacan dos leones en el castillo del duque."
+
+msgid "ui.chapter.33.title"
+msgstr "Los leones en el castillo"
+
+msgid "ui.chapter.32.intro"
+msgstr "El duque los recibe como huéspedes. Huéspedes no son iguales."
+
+msgid "ui.chapter.32.title"
+msgstr "El castillo del duque"
+
+msgid "ui.chapter.31.intro"
+msgstr "Vuelve a la cueva donde tuvo su visión."
+
+msgid "ui.chapter.31.title"
+msgstr "De vuelta a la cueva"
+
+msgid "ui.chapter.30.intro"
+msgstr "Una carretilla de leones cruza el camino y él los desafía."
+
+msgid "ui.chapter.30.title"
+msgstr "Los leones en el camino"
+
+msgid "ui.chapter.29.intro"
+msgstr "Unos penitentes se toman por criminales; sus arrieros se oponen."
+
+msgid "ui.chapter.29.title"
+msgstr "Los penitentes blancos"
+
+msgid "ui.chapter.28.intro"
+msgstr "Un paje promete desencantar a Dulcinea. Promesa, no resultado."
+
+msgid "ui.chapter.28.title"
+msgstr "El desencanto de Dulcinea"
+
+msgid "ui.chapter.27.intro"
+msgstr "Los molinos llenadores se toman por otro encantamiento."
+
+msgid "ui.chapter.27.title"
+msgstr "Los molinos llenadores"
+
+msgid "ui.chapter.26.intro"
+msgstr "Los títeres de Maestro Pedro son atacados como si fueran reales."
+
+msgid "ui.chapter.26.title"
+msgstr "El retablo de Melisendra"
+
+msgid "ui.chapter.25.intro"
+msgstr "Se cuenta un cuento de dolor, y Altisidora toma su venganza."
+
+msgid "ui.chapter.25.title"
+msgstr "La condesa Trifaldi"
+
+msgid "ui.chapter.24.intro"
+msgstr "Una doncella enamorada le canta; las canciones son un tipo de asedio."
+
+msgid "ui.chapter.24.title"
+msgstr "Altisidora"
+
+msgid "ui.chapter.23.intro"
+msgstr "Baja a la cueva y vuelve con un relato."
+
+msgid "ui.chapter.23.title"
+msgstr "La cueva de Montesinos"
+
+msgid "ui.chapter.22.intro"
+msgstr "Pelea con el Caballero de los Espejos bajo la luna llena."
+
+msgid "ui.chapter.22.title"
+msgstr "El duelo a la luz de la luna"
+
+msgid "ui.chapter.20.intro"
+msgstr "Una campesina se hace pasar por Dulcinea encantada, y él se lo cree."
+
+msgid "ui.chapter.20.title"
+msgstr "Dulcinea encantada"
+
+msgid "ui.chapter.18.intro"
+msgstr "El cura y el barbero queman los libros que lo hicieron."
+
+msgid "ui.chapter.18.title"
+msgstr "La hoguera de los libros"
+
+msgid "ui.chapter.17.intro"
+msgstr "Otro cadáver, otra venganza; Sancho vuelve a disuadirle."
+
+msgid "ui.chapter.17.title"
+msgstr "Otro hombre muerto"
+
+msgid "ui.chapter.16.intro"
+msgstr "Una barca encantada espera en el río. Sancho no cree en ella."
+
+msgid "ui.chapter.16.title"
+msgstr "La barca encantada"
+
+msgid "ui.chapter.15.intro"
+msgstr "Un hombre asesinado junto al camino; la justicia se desvanece en una discusión."
+
+msgid "ui.chapter.15.title"
+msgstr "El hombre muerto en el camino"
+
+msgid "ui.chapter.14.intro"
+msgstr "Libera a los esclavos y por su esfuerzo recibe piedras."
+
+msgid "ui.chapter.14.title"
+msgstr "Los galeotes"
+
+msgid "ui.chapter.13.intro"
+msgstr "Una broma representada como corte, y solo una parte se ríe."
+
+msgid "ui.chapter.12.intro"
+msgstr "Conocer el truco no hace que deje de funcionar."
+
+msgid "ui.chapter.11.intro"
+msgstr "Una imitación pelea contigo con tus propios movimientos."
+
+msgid "ui.chapter.10.intro"
+msgstr "El desenlace pertenece a la prueba que diseñaste, no al mundo."
+
+msgid "ui.chapter.09.intro"
+msgstr "Tú eliges a quién se prueba, quién prueba y qué está en juego."
+
+msgid "ui.chapter.08.intro"
+msgstr "Un caso de galimatías, sin que se descargue un solo golpe."
+
+msgid "ui.chapter.07.intro"
+msgstr "Un nombre gritado desde un campo se vuelve una dama inalcanzable."
+
+msgid "ui.chapter.06.intro"
+msgstr "Lo que parece cargar contra ellos resulta ser un rebaño."
+
+msgid "ui.chapter.05.intro"
+msgstr "Entra en una cueva y vuelve con una visión que nadie puede comprobar."
+
+msgid "ui.chapter.04.intro"
+msgstr "Una paliza se lee como encantamiento en el camino de Montiel."
+
+msgid "ui.chapter.03.intro"
+msgstr "Libera a los galeotes; ellos le responden con piedras."
+
+msgid "ui.chapter.02.intro"
+msgstr "Un trato hecho en una venta se vuelve cuestión de honor."
+
+msgid "ui.chapter.01.intro"
+msgstr "Un molino en el campo se niega a ser solo un molino."
+
+msgid "ui.colofon.hint"
+msgstr "Pulsa cualquier tecla para continuar."
+
+msgid "ui.colofon.title"
+msgstr "Colofón — %s"
+
+msgid "ui.colofon.el_castillo_del_duque.reality"
+msgstr "Era una broma. Dos personas la prepararon y una la pagó. El castillo vuelve a estar vacío; el coste no."
+
+msgid "ui.colofon.el_castillo_del_duque.book"
+msgstr "El duque se rió y el mundo se rió con él. Puedes irte ya, pero seguirás preguntándote quién era el objeto de la broma. Esa pregunta es la última página."
+
+msgid "ui.colofon.los_riscos.reality"
+msgstr "Nadie te obligó a montar esa prueba. Elegiste a quién se lo dirías y qué estaba en juego, y luego miraste el resultado como si le hubiera pasado a otro."
+
+msgid "ui.colofon.los_riscos.book"
+msgstr "Construiste la prueba tú mismo y luego te sorprendió el resultado. El mundo no te guarda rencor: solo conservó las reglas que escribiste."
+
+msgid "ui.colofon.el_toboso.reality"
+msgstr "La muchacha nunca aceptó ser dama. La llamaste así desde un campo, y el campo llevó tu voz más lejos de lo que querías."
+
+msgid "ui.colofon.el_toboso.book"
+msgstr "Diste un nombre a una muchacha y el mundo la hizo dama. Ten cuidado con los nombres: el mundo los guarda más tiempo que quienes los inventaron."
+
+msgid "ui.colofon.sierra_morena.reality"
+msgstr "La cueva era un agujero en una colina. Entraste con miedo y saliste necesitando que te creyeran. La montaña no cambió; cambió tu necesidad."
+
+msgid "ui.colofon.sierra_morena.book"
+msgstr "La montaña guardó sus cuevas para quienes supieron leerlas. Bajaste a una y volviste con una visión que nadie puede refutar. Eso basta."
+
+msgid "ui.colofon.camino_la_mancha.reality"
+msgstr "No había gigantes en el campo. Había polvo, y un hombre que los necesitaba. No descubriste los molinos: decidiste qué eran, y la decisión vivió más que el camino."
+
+msgid "ui.colofon.camino_la_mancha.book"
+msgstr "Creíste que el campo estaba encantado, y así lo estaba. Los molinos guardaron su secreto hasta que les diste un nombre digno de combatirse. Pasa la página: el camino conserva lo que hiciste de él."
+
+msgid "ui.colofon.prologo.reality"
+msgstr "Este libro lo escribió un hombre que quería ser leído. Tú eres solo la última persona que lo sostiene."
+
+msgid "ui.colofon.prologo.book"
+msgstr "Este libro se escribió para que lo leyeras tú. Cada página que vuelves lo vuelve más verdadero."
+
 msgid "ui.chapter.ride"
 msgstr "Cabalgando hacia el siguiente capítulo…"
 

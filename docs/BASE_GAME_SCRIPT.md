@@ -164,9 +164,17 @@ both Locura meters, `Humanity`, `Verdicts` and `TheSecondBook` (GDD §12.2).
 - No writing the novel's wording here. That lives in `assets/manifiesto/*.json`
   and stays verbatim in every language.
 
-## 5. Still owed on this document
+## 5. Colophons — now written
+
+The colophon voice described above each chapter is shipped as six passages
+(prologue + five regions), each in Book and Reality truth, in all six locales.
+They are original game writing, not 1605 quotations — `docs/COLOPHON.md` has
+the reasoning and the key list. `ChapterFlow` shows them between chapters;
+`tests/test_colophon.gd` pins the content.
+
+## 6. Still owed on this document
 
 - [ ] Owner's pass against the 1605 edition for the novel-source column.
-- [ ] Colophon copy for all 13 chapters (currently described by *voice*, not
-      written — they are content, like the fragments).
 - [ ] Region-passage wording: `docs/map/WORLD_MAP.md` marks it as drafted.
+- [ ] The per-chapter intro lines (`ui.chapter.<NN>.intro`, one for each of the
+      47 chapters) are authored at one sentence each and deserve a literary pass.

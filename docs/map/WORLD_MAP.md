@@ -69,10 +69,18 @@ Fragment markers are drawn on **both** maps (five each), so filling in the two
 readings is the collectible. The region list still shows the current truth's
 passage and swaps it on `T`.
 
+## PNG export (done)
+
+`assets/maps/world_map.png` is baked at 1200×800 from the SVG by
+`tools/export_map_png.gd`, and `map_screen.tscn` uses the PNG. The SVG remains
+the editable source; re-run the export after changing it.
+
 ## What is missing
 
-- **A PNG export.** Godot loads the SVG directly today; a baked PNG at a fixed
-  size would be safer for the map screen.
+Nothing blocks the map screen now. The two readings are side by side, region
+passages are drafted, fragment markers light on both maps, and the texture is
+baked. Remaining work on the map is literary (the owner's pass on the region
+passages), not technical.
 
 ## Region records
 

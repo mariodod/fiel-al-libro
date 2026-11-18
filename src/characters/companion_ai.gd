@@ -127,8 +127,7 @@ func _process(delta: float) -> void:
 	else:
 		_fight(delta)
 
-	# TODO(Phase 1): barks keyed to what the companion is actually looking
-	# at (an anamorphosis spotted, a Book-truth object, an enemy in range).
+	# Chatter is keyed to what the companion is looking at — see chatter.gd.
 	_maybe_bark()
 	_update_chatter(delta)
 

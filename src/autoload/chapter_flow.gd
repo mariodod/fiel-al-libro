@@ -20,7 +20,10 @@ signal chapter_loaded(id: StringName)
 signal flow_finished
 
 const PROLOGUE_SCENE := "res://src/world/prologue.tscn"
+const COLOPHON_SCENE := "res://src/world/colophon.tscn"
 const RIDE_SECONDS := 2.0
+## The colophon waits for a keypress, but never traps a player who walks away.
+const COLOPHON_AUTO_SECONDS := 12.0
 
 var active: bool = false
 var transitioning: bool = false
@@ -73,6 +76,7 @@ func _play_prologue() -> void:
 	if prologue.has_signal("prologue_finished"):
 		await prologue.prologue_finished
 	prologue.queue_free()
+	await _show_colophon(&"prologo")
 	goto_chapter(RegionGraph.start_chapter)
 
 
@@ -103,7 +107,7 @@ func _on_chapter_completed(id: StringName) -> void:
 	var next := next_playable_chapter(id)
 	if next.is_empty():
 		return
-	_ride_then(next)
+	_ride_then(id, next)
 
 
 ## The next chapter that still needs playing. The Ensayo completes ch_09 and
@@ -115,15 +119,35 @@ func next_playable_chapter(completed_id: StringName) -> StringName:
 	return next
 
 
-## A 2-second title card with the credits melody, then the next chapter.
-func _ride_then(next: StringName) -> void:
+## A short ride card, the region's colophon page, then the next chapter.
+func _ride_then(completed_id: StringName, next: StringName) -> void:
 	transitioning = true
 	var card := _make_ride_card(next)
 	add_child(card)
 	await get_tree().create_timer(RIDE_SECONDS).timeout
 	card.queue_free()
+
+	var region_id: StringName = RegionGraph.get_chapter(completed_id).get("region_id", &"")
+	if not region_id.is_empty():
+		await _show_colophon(region_id)
+
 	goto_chapter(next)
 	transitioning = false
+
+
+## Show one colophon page and wait for the player (with an auto-advance
+## fallback). GDD.md §12.1: the author's voice between chapters.
+func _show_colophon(region_id: StringName) -> void:
+	var packed := load(COLOPHON_SCENE) as PackedScene
+	if packed == null:
+		return
+	var page := packed.instantiate()
+	add_child(page)
+	if page.has_method("show_colophon"):
+		page.show_colophon(region_id, COLOPHON_AUTO_SECONDS)
+	if page.has_signal("colophon_finished"):
+		await page.colophon_finished
+	page.queue_free()
 
 
 func _make_ride_card(next: StringName) -> CanvasLayer:

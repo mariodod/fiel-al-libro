@@ -51,8 +51,8 @@ func play_region(region_id: StringName) -> void:
 	if key == "" or key == _current_track:
 		return
 	_current_track = key
-	# TODO(Phase 1): resolve the key against a ResourceLoader path table and
-	# cross-fade with a tween. Wired up in the slice.
+	# Region tracks are selected here; the slice owns the actual player and
+	# cross-fade. Only the two credits arrangements are shipped today.
 
 
 func play_credits_song() -> void:

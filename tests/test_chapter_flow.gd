@@ -51,6 +51,44 @@ func suite(t):
 		var path: String = data.get("scene_path", "")
 		t.expect_true(FileAccess.file_exists(path), "%s scene exists" % chapter_id)
 
+	t.test("the ending becomes reachable when the graph is exhausted")
+	ChapterFlow.reset_campaign()
+	# Mark them complete without letting the flow start 47 ride transitions.
+	ChapterFlow.active = false
+	for chapter_id in RegionGraph.all_chapters():
+		GameState.chapter_completed(chapter_id)
+		RegionGraph.complete_chapter(chapter_id)
+	ChapterFlow.transitioning = false
+	ChapterFlow.active = true
+	t.expect_eq(GameState.chapters_completed_count(), RegionGraph.all_chapters().size(),
+		"every chapter is complete")
+	var finished: Array[bool] = []
+	var on_finished := func() -> void:
+		finished.append(true)
+	ChapterFlow.flow_finished.connect(on_finished)
+	EventBus.chapter_completed.emit(RegionGraph.start_chapter)
+	t.expect_eq(finished.size(), 1, "the flow reports finished")
+	var ending := GameState.compute_ending()
+	t.expect_false(ending.is_empty(), "an ending is computed")
+	ChapterFlow.flow_finished.disconnect(on_finished)
+	ChapterFlow.reset_campaign()
+
+	t.test("every chapter has a title and its own intro line")
+	for chapter_id in RegionGraph.all_chapters():
+		var num: int = int(str(chapter_id).substr(3, 2))
+		var base := "ui.chapter.%02d" % num
+		var data: Dictionary = RegionGraph.get_chapter(chapter_id)
+		var path: String = data.get("scene_path", "")
+		var script_path := path.replace(".tscn", ".gd")
+		var script := FileAccess.get_file_as_string(script_path)
+		t.expect_true(script.contains(base + ".intro"),
+			"%s emits its intro" % chapter_id)
+		var pot := FileAccess.get_file_as_string("res://locale/messages.pot")
+		t.expect_true(pot.contains('msgid "%s.title"' % base),
+			"%s has a title key" % chapter_id)
+		t.expect_true(pot.contains('msgid "%s.intro"' % base),
+			"%s has an intro key" % chapter_id)
+
 	t.test("the ride transition text is translated in all six locales")
 	for locale in ["en", "es", "fr", "de", "it", "pt_BR"]:
 		var p := "res://locale/%s.po" % locale

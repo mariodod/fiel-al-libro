@@ -252,6 +252,14 @@
 - [x] The endings and the manuscript prologue — prologue scene done (`src/world/prologue.*`), ending content written (`src/world/ending.gd`, 4 endings: el_manuscrito, la_locura_compartida, el_mundo_real, el_libro_gana), locale keys in en/es/fr PO files, `compute_ending()` in GameState, triggered from slice.gd
 - [x] The 5 region kits beyond the slice — 15 environment kits exist total; all chapters ch_14 through ch_50 now have .tscn scenes wired to region-appropriate kits: camino_la_mancha (field+road), sierra_morena (mountain+cave), el_toboso (river+village), los_riscos (cliff+theatre), el_castillo_del_duque (castle+theatre); only ch_01 slice used them inline before
 - [x] Localization to 6 languages (en, es, fr, de, it, pt_BR registered in project.godot)
+- [x] **Colophon between chapters (GDD §12.1).** Six original passages (prologue
+      + five regions), each in Book and Reality truth, in all six locales.
+      Shown by `ChapterFlow` between chapters — `docs/COLOPHON.md`.
+- [x] **Ending reachability verified** from a complete chapter sequence; all
+      four endings computed from real tracked variables.
+- [x] **Chapter-specific content:** every one of the 47 chapters now has its own
+      title and one-sentence intro (`ui.chapter.<NN>.*`) emitted on chapter start.
+- [x] **Map PNG export** — `assets/maps/world_map.png`, used by the map screen.
 - [x] **Chapter flow — all content reachable (the alpha milestone).** New
       `ChapterFlow` autoload: title's Begin button clears progress, plays the
       prologue, then walks the whole unlock chain chapter by chapter with a

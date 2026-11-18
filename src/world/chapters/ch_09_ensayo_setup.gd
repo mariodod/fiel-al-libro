@@ -10,6 +10,7 @@ extends "res://src/world/slice.gd"
 
 func _ready() -> void:
 	super._ready()
+	EventBus.toast.emit(&"ui.chapter.09.intro", [])
 	GameState.chapter_started(&"ch_09_ensayo_setup")
 	GameState.find_region(&"los_riscos")
 	# Begin the Ensayo setup phase once the slice is loaded.
