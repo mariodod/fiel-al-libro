@@ -26,7 +26,9 @@ var fragment_markers: Dictionary = {}
 var truth_overlay: ColorRect = null
 
 ## Map panel, so fragment markers can be positioned relative to the map.
-var map_container: Node2D = null
+## A Control, not a Node2D: it parents TextureRect/ColorRect children and
+## needs the container size flags to fill its VBox slot.
+var map_container: Control = null
 
 
 func _ready() -> void:
@@ -85,9 +87,11 @@ func _build_ui() -> void:
 	map_title.add_theme_color_override("font_color", Color(0.94, 0.9, 0.8, 1.0))
 	map_panel_vb.add_child(map_title)
 
-	var map_container := Node2D.new()
+	var map_container := Control.new()
 	map_container.name = "MapContainer"
-	map_container.set_anchors_preset(Control.PRESET_CENTER)
+	# Anchors do nothing inside a VBoxContainer; size flags do the centring.
+	map_container.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	map_container.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	map_panel_vb.add_child(map_container)
 
 	var map_rect := TextureRect.new()
@@ -189,7 +193,7 @@ func _make_region_row(res: RegionData) -> Control:
 
 ## Build the fragment markers: small dots on the map at each region's
 ## position, visible once the player has found that region's fragment.
-func _build_fragment_markers(container: Node2D, map_rect: TextureRect) -> void:
+func _build_fragment_markers(container: Control, map_rect: TextureRect) -> void:
 	# Region centres on the 1200x800 SVG, normalised to the 600x400 map rect.
 	var positions: Dictionary = {
 		"camino_la_mancha": Vector2(310.0, 180.0),
@@ -207,7 +211,7 @@ func _build_fragment_markers(container: Node2D, map_rect: TextureRect) -> void:
 		dot.custom_minimum_size = Vector2(8.0, 8.0)
 		# Hidden until the fragment is found.
 		dot.color = Color(0.75, 0.54, 0.24, 0.0)
-		dot.set_position(positions.get(res.fragment_id, Vector2(300.0, 200.0)))
+		dot.set_position(positions.get(res.id, Vector2(300.0, 200.0)))
 		container.add_child(dot)
 		fragment_markers[res.fragment_id] = dot
 

@@ -58,6 +58,48 @@ func suite(t):
 		t.expect_false(res.name_key.is_empty(), "%s has a name key" % str(res.id))
 		t.expect_false(res.fantasy.is_empty(), "%s has a fantasy" % str(res.id))
 
+	t.test("every region has a real fragment id")
+	# Four regions used to carry a stale `fragment_key` property, so they had
+	# no fragment id at all and never showed a marker on the map.
+	for res in regions:
+		t.expect_false(res.fragment_id.is_empty(), "%s has a fragment id" % str(res.id))
+		if res.fragment_id.is_empty():
+			continue
+		var path := "res://assets/manifiesto/%s.json" % str(res.fragment_id)
+		t.expect_true(FileAccess.file_exists(path), "%s fragment file exists" % str(res.id))
+
+	t.test("the map screen builds and shows five fragment markers")
+	var packed := load(SCENE) as PackedScene
+	t.expect_true(packed != null, "map screen scene loads")
+	if packed != null:
+		var screen := packed.instantiate()
+		var tree := Engine.get_main_loop() as SceneTree
+		if tree != null:
+			tree.root.add_child(screen)
+			# The harness is synchronous; _ready() may not have fired from
+			# add_child yet, so drive it explicitly if the panel is missing.
+			if screen.find_child("MapContainer", true, false) == null:
+				screen._ready()
+			var container := screen.find_child("MapContainer", true, false)
+			t.expect_true(container != null, "MapContainer is built")
+			if container != null:
+				var markers := 0
+				for child in container.get_children():
+					if str(child.name).begins_with("Marker_"):
+						markers += 1
+				t.expect_eq(markers, 5, "one marker per region")
+			screen.queue_free()
+
+	t.test("regions name a real key venture, except the Ensayo")
+	for res in regions:
+		if res.id == &"los_riscos":
+			# GDD.md §11.2: the Ensayo is a case, not a Venture.
+			t.expect_true(res.key_venture_id.is_empty(), "the Ensayo has no key venture")
+			continue
+		t.expect_false(res.key_venture_id.is_empty(), "%s has a key venture" % str(res.id))
+		var vpath := "res://src/data/ventures/%s.tres" % str(res.key_venture_id)
+		t.expect_true(ResourceLoader.exists(vpath), "%s venture data exists" % str(res.id))
+
 	t.test("every region has a Book and a Reality passage")
 	for res in regions:
 		t.expect_false(res.book_fantasy_key.is_empty(), "%s has a Book passage key" % str(res.id))

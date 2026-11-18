@@ -64,6 +64,22 @@ independently in the shader.
 - **A PNG export.** Godot loads the SVG directly today; a baked PNG at a fixed
   size would be safer for the map screen.
 
+## Region records
+
+All five region `.tres` files now carry a real `fragment_id` and (except
+region IV) a `key_venture_id`. Four files previously used a stale
+`fragment_key` property that `RegionData` never declared, so they had no map
+marker at all. The values follow region I's pattern: the first fragment in the
+region's chapter range, and the first key venture listed in GDD.md §11.2.
+Region IV is left without a venture because the Ensayo is a case, not a Venture.
+
+Two map-screen bugs were fixed alongside this: markers were positioned by
+looking up the region-position table with the *fragment* id instead of the
+region id, and `MapContainer` was a `Node2D` with `set_anchors_preset()` called
+on it — a Control-only method that aborted `_build_ui()` before any marker was
+created. The container is now a `Control` with size flags, and all five markers
+land on their region coordinates.
+
 ## Region passages (drafted)
 
 Each region carries `book_fantasy_key` and `reality_fantasy_key` in its `.tres`
