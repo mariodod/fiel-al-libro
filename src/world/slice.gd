@@ -186,16 +186,12 @@ func _ready() -> void:
 	if codex_close_btn != null:
 		codex_close_btn.pressed.connect(_toggle_codex)
 
-	# Show the manuscript prologue before Chapter 1. It blocks input until the
-	# player has turned all its pages, then removes itself so the chapter can
-	# begin. GDD.md §6 — the prologue is the opening page of the book.
-	# Skip during headless/test runs.
-	if not OS.has_feature("headless"):
-		var prologue_scene: PackedScene = preload("res://src/world/prologue.tscn")
-		var _prologue := prologue_scene.instantiate()
-		add_child(_prologue)
-		if _prologue.has_method("show_prologue"):
-			_prologue.call("show_prologue")
+	# The title page is the entry point of the campaign: Begin starts a new
+	# manuscript through ChapterFlow (which plays the prologue and enters
+	# Chapter 1), Continue restores the autosave and re-enters the saved chapter.
+	# It would cover the grey-box during headless test runs, so skip there.
+	if DisplayServer.get_name() != "headless" and _manuscript_ui != null:
+		_manuscript_ui.open_title()
 
 # ── World ───────────────────────────────────────────────────────────────
 

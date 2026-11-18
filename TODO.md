@@ -245,7 +245,7 @@
 - [x] **Grant paths for the uncollectable fragments** — all 48 reachable:
       29 wired as anamorphosis rewards (`anamorphosis_fragment` on TruthObjectData
       and a third param to `Lectura.resolve()`).
-- [ ] **Continue button** — `ChapterFlow.continue_game()` has no UI caller.
+- [x] **Continue button** — title page now offers Continue, wired to `ChapterFlow.continue_game()`. It appears only when slot 0 exists, and Enter resumes a saved run instead of starting a new one.
 - [ ] **Settings screen** — language, volume, controls.
 - [ ] **Posada per chapter** — at least one per region's first chapter.
 - [ ] **Distinct bark VO** — blocked on an ElevenLabs API key.

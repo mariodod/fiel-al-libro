@@ -40,8 +40,8 @@ and NOT blocked on Credentials unless stated.
       have a grant path (14 venture rewards + 5 region pages). The rest exist as
       data but can never enter the codex. Give them a home: anamorphosis
       rewards, examine events, or case resolutions.
-- [ ] **Continue / save-resume UI.** `ChapterFlow.continue_game()` works but no
-      button calls it; the title page has only Begin. Add a Continue button.
+- [x] **Continue / save-resume UI (done).** The title page now has a Continue button wired to `ChapterFlow.continue_game()`. It is shown/enabled only when autosave slot 0 exists, refreshes each time the title opens, and is the Enter/Space default when a save exists. The title page is now also the startup screen (Begin runs the prologue through `ChapterFlow`). `DisplayServer.get_name() != "headless"` replaced the broken `OS.has_feature("headless")` guard — the latter is false under this Godot build, which let the title overlay swallow input in the headless suite. New `tests/test_continue_ui.gd` pins the wiring and visibility.
+      Original task: `ChapterFlow.continue_game()` works but no button calls it; the title page has only Begin. Add a Continue button.
 - [ ] **Settings screen.** `ui.menu.settings` exists as a key; no UI for
       language, volume or controls.
 - [ ] **Posada coverage.** GDD §11.3 wants a Posada every chapter; only 3 scenes

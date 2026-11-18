@@ -1184,7 +1184,7 @@ msgstr "Iniziare il manoscritto"
 
 #. TRANSLATORS: Auto-added key
 msgid "ui.menu.continue"
-msgstr ""
+msgstr "Continua"
 
 #. TRANSLATORS: Auto-added key
 msgid "ui.menu.load"

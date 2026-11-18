@@ -42,6 +42,12 @@ position = Vector2(400, 380)
 size = Vector2(200, 40)
 text = "Begin (Enter)"
 
+[node name="TitleContinue" type="Button" parent="Pages/TitlePage"]
+anchors_preset = 1
+position = Vector2(400, 430)
+size = Vector2(200, 40)
+text = "Continue"
+
 [node name="ShelfPage" type="Control" parent="Pages"]
 anchors_preset = 7
 visible = false

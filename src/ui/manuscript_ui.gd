@@ -44,6 +44,7 @@ var _turning: bool = false
 
 ## Child page containers, found lazily.
 var _title_page: Control = null
+var _title_continue: Button = null
 var _shelf_page: Control = null
 var _codex_page: Control = null
 var _dialogue_page: Control = null
@@ -77,6 +78,15 @@ func _ready() -> void:
 	if start != null and not start.pressed.is_connected(_on_begin_pressed):
 		start.pressed.connect(_on_begin_pressed)
 
+	# Continue is the counterpart: it restores the autosave and re-enters the
+	# chapter the player was in. It is hidden when no save exists yet.
+	_title_continue = _find_child(&"TitleContinue") as Button
+	if _title_continue != null:
+		_title_continue.text = Loc.t(&"ui.menu.continue")
+		if not _title_continue.pressed.is_connected(_on_continue_pressed):
+			_title_continue.pressed.connect(_on_continue_pressed)
+		_refresh_title_buttons()
+
 	# Hide all pages initially.
 	_hide_all_pages()
 
@@ -84,6 +94,23 @@ func _ready() -> void:
 func _on_begin_pressed() -> void:
 	visible = false
 	ChapterFlow.start_new_game()
+
+
+func _on_continue_pressed() -> void:
+	if not Manuscrito.has_save(Manuscrito.AUTOSAVE_SLOT):
+		return
+	visible = false
+	ChapterFlow.continue_game()
+
+
+## Show Continue only when there is something to continue. Called whenever the
+## title opens, so a save written since the last visit is picked up.
+func _refresh_title_buttons() -> void:
+	if _title_continue == null:
+		return
+	var has_save := Manuscrito.has_save(Manuscrito.AUTOSAVE_SLOT)
+	_title_continue.visible = has_save
+	_title_continue.disabled = not has_save
 
 
 ## Recursively find a descendant node by name.
@@ -210,6 +237,7 @@ func open_pause() -> void:
 func open_title() -> void:
 	if _turning:
 		return
+	_refresh_title_buttons()
 	visible = true
 	_show_page(PAGE_TITLE)
 
@@ -220,9 +248,14 @@ func _unhandled_input(event: InputEvent) -> void:
 	if not visible:
 		return
 
-	# Enter/Space on the title page begins a new campaign.
+	# Enter/Space on the title page resumes a saved campaign when there is one;
+	# otherwise it begins a new campaign. This keeps the keyboard equivalent of
+	# whichever button is actually on offer.
 	if _current_page == PAGE_TITLE and event.is_action_pressed(&"ui_accept"):
-		_on_begin_pressed()
+		if Manuscrito.has_save(Manuscrito.AUTOSAVE_SLOT):
+			_on_continue_pressed()
+		else:
+			_on_begin_pressed()
 		return
 
 	# ESC always goes back or closes.
