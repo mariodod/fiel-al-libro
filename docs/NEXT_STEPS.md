@@ -145,12 +145,12 @@ Only if the slice passed. Full plan in `ROADMAP.md`.
 
 | # | Task | Notes |
 |---|---|---|
-| 3.1 | Write the base game's script — **all 13 chapters, on paper** | This is a *writing* project. Do it before you build it. |
-| 3.2 | Write the *Ensayo* script (all 6 outcomes) | Early to write, late to build. See `GDD.md` §6.5. |
-| 3.3 | Modernize the 48 Manifiesto fragments in Spanish | The long pole. 288 translations across 6 languages. |
-| 3.4 | Build the 15 environment kits; produce the 4 hero rigs to quality | The expensive part. |
-| 3.5 | Record barks | No full VO. Text-driven with barks. |
-| 3.6 | Localize continuously from here, not in a final sprint | |
+| 3.1 | Write the base game's script — **all 13 chapters, on paper** | ✅ **Done (draft):** `docs/BASE_GAME_SCRIPT.md` — chapter-by-chapter spine, Venture per chapter, colophon voice, cut order. Needs the owner's pass on novel sources and colophon copy. |
+| 3.2 | Write the *Ensayo* script (all 6 outcomes) | ✅ Done — `assets/writing/ensayo.md` + all six outcome narrations in `assets/ensayo/ensayo_script.json`. |
+| 3.3 | Modernize the 48 Manifiesto fragments in Spanish | ✅ Verified: all 48 fragments have a `modern` rendering in all 6 shipped languages (0 gaps). `tools/audit_fragments.py`. |
+| 3.4 | Build the 15 environment kits; produce the 4 hero rigs to quality | ✅ Present: 15 kits and 4 rigs (Quixote, Sancho, venture mill, venture giant). Both heroes have 14/15 authored clips with contact frames — `assets/models/README_animations.md`. |
+| 3.5 | Record barks | 🟡 Placeholder WAVs for every bark key exist and resolve correctly; real voice needs an ElevenLabs API key (`tools/generate_barks.py --api-key …`). Blocked on credentials. |
+| 3.6 | Localize continuously from here, not in a final sprint | ✅ All locale keys present and translated in all 6 PO files; `test_locales.gd` enforces it. |
 | 3.7 | Steam page live, capsule art, trailer, wishlist campaign | Target 3,000 wishlists before 1.0 |
 
 ---

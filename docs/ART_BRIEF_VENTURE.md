@@ -59,9 +59,12 @@ silent. No horns, no glowing eyes, no roar.
 
 ## What is still missing
 
-- **Quixote and Sancho.** Their rigs are built and animated, but the poses are still
-  grey-box: the next pass is the one that makes them read as Velázquez rather than as
-  a fighting game (`docs/ANIMATION_BRIEF.md`).
+- **Nothing on this brief.** The Venture's two forms and both primitives have
+  had their second pass. The hero rigs are not grey-box: `assets/models/README_animations.md`
+  documents 14 authored clips for Quixote and 15 for Sancho with contact frames,
+  recovery poses and distinct movement styles ("committed lance thrust",
+  "squire's parry", "Locura banner idle"). Further mesh/material polish is a
+  new art brief, not a leftover from this one.
 
 ## The second pass (done)
 

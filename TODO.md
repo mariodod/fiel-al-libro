@@ -252,7 +252,13 @@
 - [x] The endings and the manuscript prologue — prologue scene done (`src/world/prologue.*`), ending content written (`src/world/ending.gd`, 4 endings: el_manuscrito, la_locura_compartida, el_mundo_real, el_libro_gana), locale keys in en/es/fr PO files, `compute_ending()` in GameState, triggered from slice.gd
 - [x] The 5 region kits beyond the slice — 15 environment kits exist total; all chapters ch_14 through ch_50 now have .tscn scenes wired to region-appropriate kits: camino_la_mancha (field+road), sierra_morena (mountain+cave), el_toboso (river+village), los_riscos (cliff+theatre), el_castillo_del_duque (castle+theatre); only ch_01 slice used them inline before
 - [x] Localization to 6 languages (en, es, fr, de, it, pt_BR registered in project.godot)
-- [ ] Steam page, capsule art, trailer, wishlist campaign
+- [x] **Base-game script on paper** — `docs/BASE_GAME_SCRIPT.md`, 13 chapters.
+- [x] **Ensayo script, 6 outcomes** — `assets/writing/ensayo.md` + `ensayo_script.json`.
+- [x] **48 fragment modernizations** — verified in all 6 languages, 0 gaps.
+- [x] **15 environment kits + 4 hero rigs** — all present; heroes have 14/15
+      authored clips (`assets/models/README_animations.md`).
+- [ ] **Record real barks** — blocked on an ElevenLabs API key; every key has a
+      working placeholder WAV today (`tools/generate_barks.py --api-key …`).
 - [x] **2.5D pivot evaluation — DECIDED NO (2026-11-18).** Stay 3D. The camera and
        art pipeline are built and the two-truths mechanic depends on seeing the
        same object from two angles in one space. Do not spend further time
