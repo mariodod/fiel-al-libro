@@ -149,7 +149,7 @@ Only if the slice passed. Full plan in `ROADMAP.md`.
 | 3.2 | Write the *Ensayo* script (all 6 outcomes) | ✅ Done — `assets/writing/ensayo.md` + all six outcome narrations in `assets/ensayo/ensayo_script.json`. |
 | 3.3 | Modernize the 48 Manifiesto fragments in Spanish | ✅ Verified: all 48 fragments have a `modern` rendering in all 6 shipped languages (0 gaps). `tools/audit_fragments.py`. |
 | 3.4 | Build the 15 environment kits; produce the 4 hero rigs to quality | ✅ Present: 15 kits and 4 rigs (Quixote, Sancho, venture mill, venture giant). Both heroes have 14/15 authored clips with contact frames — `assets/models/README_animations.md`. |
-| 3.5 | Record barks | 🟡 Placeholder WAVs for every bark key exist and resolve correctly; real voice needs an ElevenLabs API key (`tools/generate_barks.py --api-key …`). Blocked on credentials. |
+| 3.5 | Record barks | 🟡 Every bark key resolves to a **real recorded sound**: missing ones reuse a semantically close bark (`tools/reuse_missing_barks.py`) until distinct VO is recorded. Real per-key voice still needs an ElevenLabs API key (`tools/generate_barks.py --api-key …`). |
 | 3.6 | Localize continuously from here, not in a final sprint | ✅ All locale keys present and translated in all 6 PO files; `test_locales.gd` enforces it. |
 | 3.7 | Steam page live, capsule art, trailer, wishlist campaign | Target 3,000 wishlists before 1.0 |
 

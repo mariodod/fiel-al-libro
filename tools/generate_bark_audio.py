@@ -109,9 +109,20 @@ def write_wav(filepath, duration_seconds=1.0, sample_rate=44100):
         f.write(data)
 
 
-def main():
-    os.makedirs(DIRECTORY, exist_ok=True)
+# Keys with no recording of their own reuse a semantically close existing
+# bark (see tools/reuse_missing_barks.py). Never invent silence for these.
+REUSE_SOURCES = {
+    "chatter.desvelar": "desvelar",
+    "chatter.parry": "parry",
+    "chatter.revive": "revive",
+    "chatter.venture_down": "chatter.venture",
+    "chatter.pebble": "chatter.rock",
+    "reaction.venture.book": "reaction.molinos.book",
+    "reaction.venture.reality": "reaction.molinos.reality",
+}
 
+
+def main():
     for character_id, bark_key in BARK_KEYS:
         # Strip the character prefix from the key for the filename
         # e.g., "dia.quixote.bark.001" -> "bark.001.wav"
@@ -125,10 +136,25 @@ def main():
         filename = ".".join(suffix_parts) + ".wav"
         filepath = os.path.join(DIRECTORY, character_id, filename)
 
-        write_wav(filepath, DURATION, SAMPLE_RATE)
-        print(f"Created: {filepath}")
+        # NEVER overwrite an existing recording with silence. This tool exists
+        # to bootstrap a new checkout; re-running it must not destroy VO.
+        if os.path.exists(filepath):
+            continue
 
-    print(f"\nGenerated {len(BARK_KEYS)} bark audio files in {DIRECTORY}/")
+        slug = ".".join(suffix_parts)
+        source = REUSE_SOURCES.get(slug)
+        if source is not None:
+            source_path = os.path.join(DIRECTORY, character_id, source + ".wav")
+            if os.path.exists(source_path):
+                import shutil
+                shutil.copyfile(source_path, filepath)
+                print(f"Reused {source}.wav -> {filepath}")
+                continue
+
+        write_wav(filepath, DURATION, SAMPLE_RATE)
+        print(f"Created silent placeholder: {filepath}")
+
+    print(f"\nChecked {len(BARK_KEYS)} bark audio files in {DIRECTORY}/")
 
 
 if __name__ == "__main__":

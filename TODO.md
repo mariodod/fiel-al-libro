@@ -257,8 +257,10 @@
 - [x] **48 fragment modernizations** — verified in all 6 languages, 0 gaps.
 - [x] **15 environment kits + 4 hero rigs** — all present; heroes have 14/15
       authored clips (`assets/models/README_animations.md`).
-- [ ] **Record real barks** — blocked on an ElevenLabs API key; every key has a
-      working placeholder WAV today (`tools/generate_barks.py --api-key …`).
+- [ ] **Record distinct barks per key** — blocked on an ElevenLabs API key
+      (`tools/generate_barks.py --api-key …`). Until then, every key plays a real
+      recorded bark: the 14 keys without their own VO reuse a close one
+      (`tools/reuse_missing_barks.py`). No silent placeholders remain.
 - [x] **2.5D pivot evaluation — DECIDED NO (2026-11-18).** Stay 3D. The camera and
        art pipeline are built and the two-truths mechanic depends on seeing the
        same object from two angles in one space. Do not spend further time
