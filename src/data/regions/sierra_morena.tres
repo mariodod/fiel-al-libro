@@ -9,4 +9,6 @@ name_key = &"ui.region.sierra_morena.name"
 chapter = 2
 fantasy = "Dry mountain, bandits, the Cave of Montesinos"
 key_venture_id = &""
+book_fantasy_key = &"ui.region.sierra_morena.book"
+reality_fantasy_key = &"ui.region.sierra_morena.reality"
 fragment_key = &""

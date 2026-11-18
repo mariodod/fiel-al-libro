@@ -11,6 +11,37 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#. META: namespace=ui
+msgid "ui.region.camino_la_mancha.book"
+msgstr "Campos que no se acaban, y en ellos un gigante detrás de cada molino. El camino a la primera venta está empedrado de promesas."
+#. META: namespace=ui
+msgid "ui.region.camino_la_mancha.reality"
+msgstr "Trigo, polvo y molinos que no son más que molinos. La venta tiene una cama y un estante de libros que nadie ha leído."
+#. META: namespace=ui
+msgid "ui.region.sierra_morena.book"
+msgstr "Un muro de montaña seca donde cada cueva escupe un hechizo y cada bandido es un caballero encantado."
+#. META: namespace=ui
+msgid "ui.region.sierra_morena.reality"
+msgstr "Roca desnuda, calor y la boca de una cueva que huele a sudor e incienso. Los bandidos esperan donde el camino se estrecha."
+#. META: namespace=ui
+msgid "ui.region.el_toboso.book"
+msgstr "Un pueblo bajo hechizo, donde una campesina es una dama y el río corre con luz encantada."
+#. META: namespace=ui
+msgid "ui.region.el_toboso.reality"
+msgstr "Agua lenta, casas bajas y una muchacha que no sabe que la han nombrado. El pueblo es corriente; solo él no lo es."
+#. META: namespace=ui
+msgid "ui.region.los_riscos.book"
+msgstr "Acantilados a pique y una iglesia gótica donde un hombre puede poner a juicio un mundo entero."
+#. META: namespace=ui
+msgid "ui.region.los_riscos.reality"
+msgstr "Niebla entre las rocas, una iglesia de piedra fría y un sabio que ha escrito un libro sobre un cuchillo."
+#. META: namespace=ui
+msgid "ui.region.el_castillo_del_duque.book"
+msgstr "Seda, espejos y un duque que representa la caballería como un teatro. Cada pasillo es un decorado; cada criado está en el secreto."
+#. META: namespace=ui
+msgid "ui.region.el_castillo_del_duque.reality"
+msgstr "Un castillo frío de habitaciones doradas, un duque aburrido y dos personas que han decidido creer sus mentiras."
+
 msgid "ui.menu.new_game"
 msgstr "Empezar el manuscrito"
 

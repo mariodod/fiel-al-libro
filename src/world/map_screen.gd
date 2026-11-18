@@ -35,8 +35,9 @@ func _ready() -> void:
 	EventBus.truth_layer_changed.connect(_on_truth_changed)
 	EventBus.region_found.connect(_on_region_found)
 	EventBus.codex_page_found.connect(_on_codex_page_found)
-	# Set the initial overlay from the current truth layer.
+	# Set the initial overlay and passages from the current truth layer.
 	_update_truth_overlay()
+	_update_fantasy_labels()
 
 
 ## Load every region .tres in src/data/regions/.
@@ -164,9 +165,10 @@ func _make_region_row(res: RegionData) -> Control:
 	name.add_theme_color_override("font_color", Color(0.94, 0.9, 0.8, 1.0))
 	row.add_child(name)
 
-	# The fantasy (what the region is).
+	# The passage for the current truth: GDD.md §11.4 wants two reads of
+	# every region, not one. T swaps which one is shown.
 	var fantasy := Label.new()
-	fantasy.text = res.fantasy
+	fantasy.name = "Fantasy"
 	fantasy.add_theme_font_size_override("font_size", 12)
 	fantasy.add_theme_color_override("font_color", Color(0.75, 0.54, 0.24, 1.0))
 	row.add_child(fantasy)
@@ -225,6 +227,28 @@ func _refresh_row(row: Control, res: RegionData) -> void:
 ## differently in Book and Reality — gilded vs chalky.
 func _on_truth_changed(_old: int, _new: int) -> void:
 	_update_truth_overlay()
+	_update_fantasy_labels()
+
+
+## Show the Book or Reality passage for each region, depending on the truth.
+func _update_fantasy_labels() -> void:
+	for id in region_rows.keys():
+		var row := region_rows[id] as Control
+		var label := row.get_node_or_null("Fantasy") as Label
+		if label == null:
+			continue
+		var res: RegionData = null
+		for candidate in regions:
+			if candidate.id == id:
+				res = candidate
+				break
+		if res == null:
+			continue
+		var key := res.book_fantasy_key if TruthLayer.is_book() else res.reality_fantasy_key
+		if key.is_empty():
+			label.text = res.fantasy
+		else:
+			label.text = Loc.t(key)
 
 
 ## Update the full-screen tint based on the current truth layer.

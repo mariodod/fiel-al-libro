@@ -9,4 +9,6 @@ name_key = &"ui.region.el_toboso.name"
 chapter = 3
 fantasy = "Slow river country, the enchanted village"
 key_venture_id = &""
+book_fantasy_key = &"ui.region.el_toboso.book"
+reality_fantasy_key = &"ui.region.el_toboso.reality"
 fragment_key = &""

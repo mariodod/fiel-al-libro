@@ -11,6 +11,37 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
+#. META: namespace=ui
+msgid "ui.region.camino_la_mancha.book"
+msgstr "Endless fields, and a giant behind every windmill. The road to the first inn is paved with promises."
+#. META: namespace=ui
+msgid "ui.region.camino_la_mancha.reality"
+msgstr "Wheat, dust, and windmills that are only windmills. The inn keeps a bed and a shelf of books nobody has read."
+#. META: namespace=ui
+msgid "ui.region.sierra_morena.book"
+msgstr "A wall of dry mountain where every cave mouths a spell and every bandit is an enchanted knight."
+#. META: namespace=ui
+msgid "ui.region.sierra_morena.reality"
+msgstr "Bare rock, heat, and the mouth of a cave that smells of sweat and incense. Bandits wait where the road narrows."
+#. META: namespace=ui
+msgid "ui.region.el_toboso.book"
+msgstr "A village under a spell, where a peasant girl is a lady and the river runs with enchanted light."
+#. META: namespace=ui
+msgid "ui.region.el_toboso.reality"
+msgstr "Slow water, low houses, and a girl who does not know she has been named. The village is ordinary; only he is not."
+#. META: namespace=ui
+msgid "ui.region.los_riscos.book"
+msgstr "Sheer cliffs and a Gothic church where a man may put a whole world on trial."
+#. META: namespace=ui
+msgid "ui.region.los_riscos.reality"
+msgstr "Fog in the rocks, a church of cold stone, and a scholar who has written a book about a knife."
+#. META: namespace=ui
+msgid "ui.region.el_castillo_del_duque.book"
+msgstr "Silk, mirrors, and a duke who stages chivalry as theatre. Every corridor is a set; every servant is in on the joke."
+#. META: namespace=ui
+msgid "ui.region.el_castillo_del_duque.reality"
+msgstr "A cold castle with gilded rooms, a bored duke, and two people who have decided to believe his lies."
+
 msgid "ui.menu.new_game"
 msgstr "Commencer le manuscrit"
 

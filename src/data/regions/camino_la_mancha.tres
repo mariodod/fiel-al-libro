@@ -9,4 +9,6 @@ name_key = &"ui.region.camino_la_mancha.name"
 chapter = 1
 fantasy = "Open wheat plains, a few windmills, the first inn"
 key_venture_id = &"venture_montiel"
+book_fantasy_key = &"ui.region.camino_la_mancha.book"
+reality_fantasy_key = &"ui.region.camino_la_mancha.reality"
 fragment_id = &"bk.ch01.apertura"

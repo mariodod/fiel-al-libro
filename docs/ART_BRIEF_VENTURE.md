@@ -59,14 +59,29 @@ silent. No horns, no glowing eyes, no roar.
 
 ## What is still missing
 
-- **The masonry.** The tower is a flat ochre cylinder; the reference has courses of
-  stone. That is a hand-painted 2K texture on the triplanar material, and it is the
-  next pass, not this one.
-- **The tatter.** The sails are three boxes of decreasing length. They read as ragged
-  at a distance, which is what a silhouette needs, and not much closer.
 - **Quixote and Sancho.** Their rigs are built and animated, but the poses are still
   grey-box: the next pass is the one that makes them read as Velázquez rather than as
   a fighting game (`docs/ANIMATION_BRIEF.md`).
+
+## The second pass (done)
+
+The two grey-box compromises named above are gone:
+
+- **The masonry.** The tower now wears a 2K tileable gouache masonry texture
+  (`assets/textures/windmill_masonry.png`) through a world-space triplanar shader
+  (`assets/shaders/masonry_triplanar.gdshader`). The material is `Mat_masonry` in
+  `src/world/forms/windmill_reality.tscn`. The stacked flat "course" cylinders were
+  removed — the texture does that work with no seams at the eight corners. The PNG
+  is generated deterministically by `tools/generate_masonry_texture.py`; re-running
+  it reproduces the same file.
+- **The tatter.** The three decreasing boxes per sail became one real ragged mesh
+  each, built by `src/world/forms/tattered_sail.gd`. Missing cells widen toward both
+  tips, the edges jitter, and the pattern is a deterministic function of
+  `seed_value`, so it survives scene reloads. The giant's two sail-hands use it too.
+
+**Scene-format gotcha:** a `#` comment between two `[node ...]` blocks in a `.tscn`
+makes Godot 4.7 skip the following node. The masonry comment was removed for this
+reason. Keep comments above the first node of a scene, not between nodes.
 
 ## The other primitive — the rock
 

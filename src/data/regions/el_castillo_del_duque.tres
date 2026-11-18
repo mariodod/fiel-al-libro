@@ -9,4 +9,6 @@ name_key = &"ui.region.el_castillo_del_duque.name"
 chapter = 5
 fantasy = "False chivalry, silk, mirrors, theatre"
 key_venture_id = &""
+book_fantasy_key = &"ui.region.el_castillo_del_duque.book"
+reality_fantasy_key = &"ui.region.el_castillo_del_duque.reality"
 fragment_key = &""

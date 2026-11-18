@@ -21,6 +21,37 @@
 
 #. META: namespace=ui
 #. META: namespace=ui
+#. META: namespace=ui
+msgid "ui.region.camino_la_mancha.book"
+msgstr ""
+#. META: namespace=ui
+msgid "ui.region.camino_la_mancha.reality"
+msgstr ""
+#. META: namespace=ui
+msgid "ui.region.sierra_morena.book"
+msgstr ""
+#. META: namespace=ui
+msgid "ui.region.sierra_morena.reality"
+msgstr ""
+#. META: namespace=ui
+msgid "ui.region.el_toboso.book"
+msgstr ""
+#. META: namespace=ui
+msgid "ui.region.el_toboso.reality"
+msgstr ""
+#. META: namespace=ui
+msgid "ui.region.los_riscos.book"
+msgstr ""
+#. META: namespace=ui
+msgid "ui.region.los_riscos.reality"
+msgstr ""
+#. META: namespace=ui
+msgid "ui.region.el_castillo_del_duque.book"
+msgstr ""
+#. META: namespace=ui
+msgid "ui.region.el_castillo_del_duque.reality"
+msgstr ""
+
 msgid "ui.book.bk.ch15.muerto_camino.name"
 msgstr ""
 

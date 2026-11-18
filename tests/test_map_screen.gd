@@ -58,6 +58,16 @@ func suite(t):
 		t.expect_false(res.name_key.is_empty(), "%s has a name key" % str(res.id))
 		t.expect_false(res.fantasy.is_empty(), "%s has a fantasy" % str(res.id))
 
+	t.test("every region has a Book and a Reality passage")
+	for res in regions:
+		t.expect_false(res.book_fantasy_key.is_empty(), "%s has a Book passage key" % str(res.id))
+		t.expect_false(res.reality_fantasy_key.is_empty(), "%s has a Reality passage key" % str(res.id))
+		var book_text := Loc.t(res.book_fantasy_key)
+		var reality_text := Loc.t(res.reality_fantasy_key)
+		t.expect_false(book_text == str(res.book_fantasy_key), "%s Book passage is translated" % str(res.id))
+		t.expect_false(reality_text == str(res.reality_fantasy_key), "%s Reality passage is translated" % str(res.id))
+		t.expect_false(book_text == reality_text, "%s reads differently in each truth" % str(res.id))
+
 	# ── GameState region tracking ────────────────────────────────────
 	t.test("regions start unfound")
 	t.expect_eq(GameState.regions_found_count(), 0, "no regions found at the start")

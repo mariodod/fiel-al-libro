@@ -1,4 +1,6 @@
-[gd_scene load_steps=15 format=3]
+[gd_scene load_steps=16 format=3]
+
+[ext_resource type="Script" path="res://src/world/forms/tattered_sail.gd" id="1_tatter"]
 
 ; The Book form of the windmill: the giant of the mills.
 ;
@@ -56,10 +58,12 @@ albedo_color = Color(0.43, 0.45, 0.27, 1)
 roughness = 0.88
 
 [sub_resource type="StandardMaterial3D" id="Mat_canvas"]
+cull_mode = 2
 albedo_color = Color(0.87, 0.82, 0.7, 1)
 roughness = 0.9
 
 [sub_resource type="StandardMaterial3D" id="Mat_canvas_torn"]
+cull_mode = 2
 albedo_color = Color(0.75, 0.7, 0.6, 1)
 roughness = 0.95
 
@@ -165,14 +169,12 @@ mesh = SubResource("BoxMesh_forearm")
 material_override = SubResource("Mat_flesh")
 
 [node name="SailHandLeft" type="MeshInstance3D" parent="ShoulderPivotLeft"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18, -5.9, 0.05)
-mesh = SubResource("BoxMesh_sailhand")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18, -7.1, 0.05)
 material_override = SubResource("Mat_canvas")
-
-[node name="SailStripLeft" type="MeshInstance3D" parent="ShoulderPivotLeft"]
-transform = Transform3D(0.94, 0.34, 0, -0.34, 0.94, 0, 0, 0, 1, -0.7, -6.3, 0.1)
-mesh = SubResource("BoxMesh_sailstrip")
-material_override = SubResource("Mat_canvas_torn")
+script = ExtResource("1_tatter")
+length = 2.5
+width = 1.1
+seed_value = 21
 
 [node name="ShoulderPivotRight" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.38, 7.15, 0)
@@ -188,14 +190,12 @@ mesh = SubResource("BoxMesh_forearm")
 material_override = SubResource("Mat_flesh")
 
 [node name="SailHandRight" type="MeshInstance3D" parent="ShoulderPivotRight"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18, -5.9, 0.05)
-mesh = SubResource("BoxMesh_sailhand")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18, -7.1, 0.05)
 material_override = SubResource("Mat_canvas")
-
-[node name="SailStripRight" type="MeshInstance3D" parent="ShoulderPivotRight"]
-transform = Transform3D(0.94, -0.34, 0, 0.34, 0.94, 0, 0, 0, 1, 0.7, -6.3, 0.1)
-mesh = SubResource("BoxMesh_sailstrip")
-material_override = SubResource("Mat_canvas_torn")
+script = ExtResource("1_tatter")
+length = 2.5
+width = 1.1
+seed_value = 33
 
 [node name="Neck" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.72, 0)

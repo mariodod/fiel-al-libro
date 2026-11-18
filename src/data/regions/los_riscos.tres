@@ -9,4 +9,6 @@ name_key = &"ui.region.los_riscos.name"
 chapter = 4
 fantasy = "Sheer cliffs, a Gothic church, fog"
 key_venture_id = &""
+book_fantasy_key = &"ui.region.los_riscos.book"
+reality_fantasy_key = &"ui.region.los_riscos.reality"
 fragment_key = &""

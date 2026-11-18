@@ -111,6 +111,9 @@
       `.tres` files hold region data; `src/world/map_screen.tscn` + `map_screen.gd` is
       the playable map screen (open with `G`): the map tint gilds in Book truth and chalks
       in Reality truth, and fragment markers appear when their Manifiesto fragment is found.
+      Each region now also carries Book/Reality passage keys; the map shows the one for
+      the current truth and swaps it on `T`. The wording is drafted, pending the owner's
+      pass against the novel.
       `tests/test_map_screen.gd` pins region loading and sorting. `src/autoload/game_state.gd`
       tracks `regions_found` and `regions_resolved`.
 - [x] **B19–B22 — the third playtest's four faults.** The Examine panel closed itself
@@ -164,9 +167,11 @@
       faceted stone with dry lichen on top and its base sunk in the earth — and in the
       Book truth a small leather book on the stone the rock was, tied with a strap and
       gilt at the edge. The seam is the same in both: it is heavier than it should be.
-- [ ] **The Venture's art, second pass.** The **masonry** on the tower is a hand-painted
-      2K texture on the triplanar material, and the sails are three boxes that want
-      real tatter.
+- [x] **The Venture's art, second pass.** The tower wears a deterministic 2K gouache
+       masonry texture through a world-space triplanar shader; the flat stacked
+       "course" cylinders are gone. The sails are real ragged meshes with holes,
+       not three decreasing boxes. `assets/textures/windmill_masonry.png`,
+       `assets/shaders/masonry_triplanar.gdshader`, `src/world/forms/tattered_sail.gd`.
 - [x] **The hit reactions.** A blow that lands flashes the body, pushes the character,
       stops the swing, and **shakes the camera**.
 - [x] **`H` hides the HUD.** It is the developer's readout — it spells out both readings.

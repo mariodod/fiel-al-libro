@@ -56,11 +56,19 @@ independently in the shader.
 
 ## What is missing
 
-- **The Book/Reality read of each region.** The SVG has one wash per region;
-  the game needs two. That is the point of drawing it in vector: the wash can
-  be swapped for a shader uniform instead of redrawn.
-- **The region fragments.** GDD.md §20.1: one passage per region that names
-  the place and sets the register. The map is where they live, but the writing
-  is the owner's.
-- **A PNG export.** Godot can load the SVG directly, but a baked PNG at a
-  fixed size is safer for the map screen.
+- **Two washes per region in the SVG itself.** The map screen already shows the
+  Book or Reality *passage* for each region (press `T`), and tints the map gilded
+  or chalky. What is not done is two separately coloured region washes side by
+  side in one view, as GDD.md §11.4 describes. The vector drawing makes this a
+  shader-uniform change rather than a redraw.
+- **A PNG export.** Godot loads the SVG directly today; a baked PNG at a fixed
+  size would be safer for the map screen.
+
+## Region passages (drafted)
+
+Each region carries `book_fantasy_key` and `reality_fantasy_key` in its `.tres`
+(`src/data/regions/`), pointing at `ui.region.<id>.book` / `.reality` in all six
+locales. The map screen shows the passage for the current truth and swaps it on
+`T`. The wording is a **draft**, like the Manifiesto fragments: it needs the
+owner's pass against the novel before it is canonical. The keys and the wiring
+are production.

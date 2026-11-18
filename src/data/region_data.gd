@@ -12,6 +12,10 @@ extends Resource
 @export var name_key: StringName = &""
 @export var chapter: int = 0
 @export var fantasy: String = ""
+## The region as the Book reads it (GDD.md §11.4 — two versions of everything).
+@export var book_fantasy_key: StringName = &""
+## The same region as Reality reads it. The map screen shows one or the other.
+@export var reality_fantasy_key: StringName = &""
 @export var key_venture_id: StringName = &""
 @export var fragment_id: StringName = &""
 

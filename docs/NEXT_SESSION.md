@@ -17,8 +17,13 @@
 | **Phase** | Phase 1. **Weeks 1–12 complete.** All coding tasks from NEXT_STEPS.md §2 are done: Venture boss, Lectura mode, three anamorphoses, Desvelar mid-fight, One Verdict, the Posada, shelf UI, Biblioteca wiring, one book, Manuscript UI shell, 15 environment kits, credits song. |
 | **The premise** | **Proven.** The playtest says so. |
 | **The build** | `res://src/world/slice.tscn` — the main scene. Two primitives, one truth toggle, two characters reading the same world differently — and now **all combat verbs**: `E` to examine, `Space` to dodge, a light attack that chains, a heavy attack, `F` for the guard, `M` to lock on, `X` for Sancho's Desvelar, and a line of dialogue when the world moves under a character. The two characters are **rigged and animated** (14 clips each), the **companion is in the fight** (it fights what you are locked onto, and it parries), there is a **walled yard** with a training dummy and a straw man in it, and to the **south** there is the **era of Montiel** and the **Venture of Montiel** — the first boss, in two forms. Press **G** to open the **world map** — a Spain-shaped portolan showing the five regions and which ones you've found; the map tints gilded in Book truth, chalky in Reality truth, and fragment markers appear when their page is found. **The Biblioteca shelf** (press `I`), **Manuscript UI shell** (shelf/codex/dialogue/pause pages), and **Lectura mode** (press `Q`) are all built into the shell. |
-| **Tests** | 25 suites, 687 assertions, green, enforced in CI. |
+| **Tests** | 25 suites, 859 assertions, green, enforced in CI. |
 | **The fun** | Not fully proven. Seven data points is a sample, not a signal. |
+| **Recent (Nov 2026)** | Venture art second pass is done: the tower wears a 2K triplanar gouache masonry texture and the sails are real ragged meshes. All six locales load and ship (683+ messages each); the ch_15–ch_50 fragment keys are translated in all six. The world map now shows each region's Book or Reality passage and swaps it on `T`. The four combat ventures (ch_14/22/30/35) have working Venture + enemy + FormData resources. |
+
+> **Scene-format gotcha:** a `#` comment between two `[node ...]` blocks in a `.tscn`
+> makes Godot 4.7 silently skip the following node. Keep comments above the first
+> node of a scene. See `docs/ART_BRIEF_VENTURE.md`.
 
 **The one thing that matters:** the mechanic is legible and liked. The *game*
 around it does not exist yet. Do not spend another week proving the premise;
@@ -122,12 +127,15 @@ work outside the codebase.
   built on an unproven premise is the most expensive way to find out the premise
   is wrong. (The premise is now proven — but the *content* still has to earn
   its place.)
-- **Do not add languages.** Six registered (en, es, fr, de, it, pt_BR) but only
-  en/es/fr are shipped with working translations. de/it/pt_BR have no PO header
-  and Godot silently ignores them — this is intentional until someone writes
-  those translations.
-- **Do not add more books.** One book (*La Leyenda del Tío Andalus*) is in as
-  a proof of concept; 47 more Manifiesto fragments are a Phase 2 writing task.
+- **Do not add languages.** Six are registered and shipped (en, es, fr, de, it,
+  pt_BR), all with working translations. Each PO file carries a valid header and
+  loads in Godot (683 messages each). The 165 fragment keys for ch_15–ch_50 are
+  translated in all six locales; en/fr/de/it/pt_BR use English fallback text and
+  es.po carries the Spanish original. Unknown locales fall back to Spanish.
+  Adding a *seventh* language is out of scope until a translator is found.
+- **Do not add more books.** 49 book `.tres` files exist (the originals plus the
+  ch_15–ch_50 fragments). The remaining Manifiesto writing — verifying each
+  fragment against the 1605 edition — is the owner's, not a coding task.
 
 ---
 
