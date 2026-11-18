@@ -91,14 +91,14 @@ one detail that does not add up.
 
 ## 3. The three things to do next, in this order
 
-### A. Fix the performance test (2.23) — **blocked on headless import**
+### A. Run the performance test on a min-spec laptop (2.23) — **unblocked locally**
 
-Headless Godot on this Windows machine does not generate `.godot/imported/*.scn`
-cache for `.glb` files, so `slice.tscn` cannot load and `tests/test_performance.tscn`
-hangs. **Try:** opening the Godot editor GUI once (non-headless) to trigger `.glb`
-import cache generation, then re-run `res://tests/test_performance.tscn`. If that
-fails, write a lightweight performance test that skips `slice.tscn` and measures
-core systems only (EventBus, Locura, GameState).
+`godot --headless --editor --quit` generates the `.godot/imported/*.scn` cache for
+the `.glb` files on this machine, after which `slice.tscn` loads and
+`res://tests/test_performance.tscn` runs: 300 frames, 137.6 avg fps / 90.9 min,
+0 failures. **Still owed:** the same measurement on an actual min-spec laptop —
+this number is from the development machine and is not the 30 fps success
+criterion being met on real hardware.
 
 ### B. Run a stranger playtest
 

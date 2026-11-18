@@ -237,7 +237,7 @@
 - [x] The Manuscript UI shell: title, HUD, dialogue, shelf, codex, pause (2.20) — manuscript_ui.gd + .tscn integrated into slice.tscn
 - [x] Credits song (2.22) — `assets/audio/credits_book_truth.wav` and `credits_reality_truth.wav` exist; wired in `audio_director.gd`
 - [x] 4 environment kits (2.21) — field, inn, road, windmill exist; 11 more kits also built (15 total)
-- [ ] Min-spec performance pass (2.23) — blocked: headless Godot doesn't generate `.godot/imported/*.scn` cache for `.glb` files on this machine, so `slice.tscn` can't load. WAV placeholder barks removed (were corrupt).
+- [x] Min-spec performance pass (2.23) — unblocked: running `godot --headless --editor --quit` once generates the `.godot/imported/*.scn` cache for the `.glb` files, after which `slice.tscn` loads. `tests/test_performance.tscn` passes: 300 frames, 137.6 avg fps / 90.9 min, 0 failures. The figure is from this machine, not a 5-year-old laptop — the actual min-spec run is still owed.
 - [ ] Balance pass: is the windmill fight fair on the 3rd attempt? (2.24) — needs playtesting data
 - [ ] **Ship the itch.io demo** (2.25) — Free, public, with a Steam page and a trailer.
 

@@ -123,7 +123,7 @@ The cheapest possible test of the core idea, before any rig exists.
 | # | Task | Done when |
 |---|---|---|
 | 2.22 | **Commission the credits song** — "Romance del Caballero y el Escudero", two verses, one per character, ~$200–800 | ✅ Done — `assets/audio/credits_book_truth.wav` and `assets/audio/credits_reality_truth.wav` exist; wired in `audio_director.gd` with character-based arrangement |
-| 2.23 | Performance pass on a **min-spec laptop** | Blocked: headless Godot doesn't generate `.godot/imported/*.scn` cache for `.glb` files on this machine, so `slice.tscn` can't load. WAV placeholder barks removed (were corrupt). User is checking this. |
+| 2.23 | Performance pass on a **min-spec laptop** | 🟡 The headless-import blocker is gone: `godot --headless --editor --quit` generates the `.glb` cache, and `test_performance.tscn` now runs (137.6 avg fps / 90.9 min on this machine). The *min-spec laptop* run is still owed. |
 | 2.24 | Balance pass: is the windmill fight fair on the 3rd attempt? | Needs playtesting data from actual players |
 | 2.25 | **Ship the demo to itch.io.** Free, public, with a Steam page and a trailer. | Someone you don't know plays it for 10 minutes |
 
