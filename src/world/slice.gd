@@ -586,6 +586,35 @@ func _unhandled_input(event: InputEvent) -> void:
 							if Lectura.has_enough_for_verdict():
 								EventBus.toast.emit(&"ui.slice.verdict_ready", [])
 
+	elif event.is_action_pressed(&"rest"):
+		_rest_at_posada()
+
+
+## Record which Posada the player is at. Every chapter and the standalone
+## posada.tscn extend this script, so one implementation covers the world.
+func enter_posada() -> void:
+	var id := RegionGraph.posada_id_for(GameState.current_region)
+	if id.is_empty():
+		return
+	GameState.current_posada = id
+	EventBus.posada_entered.emit(id)
+
+
+## Rest at the checkpoint: heal both travellers, mark the Posada and save.
+## Humanity and Locura are deliberately untouched — they are a story cost and
+## a build axis, not damage a night's sleep undoes.
+func _rest_at_posada() -> void:
+	if player == null or player.active_pawn == null or _checkpoint == null:
+		return
+	if _checkpoint.global_position.distance_to(player.active_pawn.global_position) >= 3.0:
+		return
+	for pawn in [player.active_pawn, player.other_pawn]:
+		if pawn != null and pawn.has_method("revive"):
+			pawn.revive()
+	enter_posada()
+	Manuscrito.save_game(0)
+	EventBus.toast.emit(&"ui.slice.rested", [])
+
 
 ## Handle UI input when the Manuscript shell is open.
 ## Routes shelf/codex/pause/escape through the shell's pages.

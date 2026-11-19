@@ -427,6 +427,24 @@ var regions: Dictionary = {
 	},
 }
 
+## The one Posada that serves each region. Taken from the 13 ChapterData
+## resources (ch_01-ch_13), which agree one-to-one on region -> posada.
+## Only those 13 chapters have a ChapterData; RegionGraph knows the region of
+## all 47, so this is the authoritative map for a rest in any chapter.
+const POSADA_BY_REGION: Dictionary = {
+	&"camino_la_mancha": &"villanueva",
+	&"sierra_morena": &"sierra_morena_posada",
+	&"el_toboso": &"toboso_posada",
+	&"los_riscos": &"los_riscos_posada",
+	&"el_castillo_del_duque": &"duque_posada",
+}
+
+
+## The Posada serving a region, or empty if the region is unknown.
+func posada_id_for(region_id: StringName) -> StringName:
+	return POSADA_BY_REGION.get(region_id, &"")
+
+
 ## The starting chapter.
 var start_chapter: StringName = "ch_01_windmills"
 

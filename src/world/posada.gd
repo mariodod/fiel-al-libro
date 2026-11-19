@@ -9,3 +9,5 @@ func _ready() -> void:
 	super._ready()
 	GameState.chapter_started(&"ch_posada")
 	GameState.find_region(&"camino_la_mancha")
+	GameState.current_region = &"camino_la_mancha"
+	enter_posada()

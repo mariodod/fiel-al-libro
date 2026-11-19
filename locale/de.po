@@ -5294,3 +5294,7 @@ msgstr "Keys are physical, so WASD works on every layout."
 #. META: namespace=ui
 msgid "ui.settings.back"
 msgstr "Back"
+
+#. TRANSLATORS: Toast shown when the player rests at the Posada.
+msgid "ui.slice.rested"
+msgstr "Ihr habt geruht."

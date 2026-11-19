@@ -248,7 +248,7 @@
 - [x] **Continue button** — title page now offers Continue, wired to `ChapterFlow.continue_game()`. It appears only when slot 0 exists, and Enter resumes a saved run instead of starting a new one.
 - [x] **Settings screen** — language, volume and a controls sheet, reachable from the title and pause pages. `Settings` autoload persists to `user://settings.cfg`; 12 new locale keys in all six languages.
 - [x] **Posada per chapter** — all 47 chapter scenes now instance `inn_kit.tscn` (GDD §8.1/§11.3). Also fixed 144 kit instances that used the wrong `.tscn` syntax and rendered as empty nodes.
-- [ ] **Posada rest action** — `rest` (R), `posada_entered`, and `GameState.current_posada` exist but are never wired; the Posada is geometry plus the generic checkpoint today.
+- [x] **Posada rest action** — R at the checkpoint heals both travellers, saves, sets `GameState.current_posada` from the region (`RegionGraph.posada_id_for`) and emits `posada_entered`. Humanity and Locura are left alone by design.
 - [ ] **Distinct bark VO** — blocked on an ElevenLabs API key.
 - [ ] **Ship the itch.io demo** (2.25) — Free, public, with a Steam page and a trailer.
 

@@ -4008,3 +4008,7 @@ msgstr "Las teclas son físicas: WASD funciona en cualquier distribución."
 #. META: namespace=ui
 msgid "ui.settings.back"
 msgstr "Volver"
+
+#. TRANSLATORS: Toast shown when the player rests at the Posada.
+msgid "ui.slice.rested"
+msgstr "Has descansado."
