@@ -1552,7 +1552,7 @@ msgstr "MÃºsico"
 
 #. META: namespace=ui
 msgid "ui.language.name.es"
-msgstr ""
+msgstr "Español (España)"
 
 #. META: namespace=ui
 msgid "ui.language.name.es_419"
@@ -1560,19 +1560,19 @@ msgstr ""
 
 #. META: namespace=ui
 msgid "ui.language.name.en"
-msgstr ""
+msgstr "Inglés"
 
 #. META: namespace=ui
 msgid "ui.language.name.fr"
-msgstr ""
+msgstr "Francés"
 
 #. META: namespace=ui
 msgid "ui.language.name.de"
-msgstr ""
+msgstr "Alemán"
 
 #. META: namespace=ui
 msgid "ui.language.name.pt_BR"
-msgstr ""
+msgstr "Portugués (Brasil)"
 
 #. META: namespace=ui
 msgid "ui.language.name.ja"
@@ -1596,7 +1596,7 @@ msgstr ""
 
 #. META: namespace=ui
 msgid "ui.language.name.it"
-msgstr ""
+msgstr "Italiano"
 
 #. META: namespace=ui
 msgid "ui.language.name.tr"
@@ -3960,3 +3960,51 @@ msgstr ""
 #. META: namespace=ui
 msgid "ui.venture.caballero_blanco"
 msgstr ""
+
+#. META: namespace=ui
+msgid "ui.settings.title"
+msgstr "Ajustes"
+
+#. META: namespace=ui
+msgid "ui.settings.language"
+msgstr "Idioma"
+
+#. META: namespace=ui
+msgid "ui.settings.language.hint"
+msgstr "El manuscrito recuerda tu idioma."
+
+#. META: namespace=ui
+msgid "ui.settings.volume"
+msgstr "Volumen"
+
+#. META: namespace=ui
+msgid "ui.settings.audio.master"
+msgstr "General"
+
+#. META: namespace=ui
+msgid "ui.settings.audio.music"
+msgstr "Música"
+
+#. META: namespace=ui
+msgid "ui.settings.audio.sfx"
+msgstr "Efectos"
+
+#. META: namespace=ui
+msgid "ui.settings.audio.voice"
+msgstr "Voces"
+
+#. META: namespace=ui
+msgid "ui.settings.audio.ui"
+msgstr "Interfaz"
+
+#. META: namespace=ui
+msgid "ui.settings.controls"
+msgstr "Controles"
+
+#. META: namespace=ui
+msgid "ui.settings.controls.hint"
+msgstr "Las teclas son físicas: WASD funciona en cualquier distribución."
+
+#. META: namespace=ui
+msgid "ui.settings.back"
+msgstr "Volver"

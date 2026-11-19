@@ -32,6 +32,7 @@ const PAGE_SHELF := &"shelf"
 const PAGE_CODEX := &"codex"
 const PAGE_DIALOGUE := &"dialogue"
 const PAGE_PAUSE := &"pause"
+const PAGE_SETTINGS := &"settings"
 
 ## The order pages appear in the shell's history (for back navigation).
 var _history: Array[StringName] = [PAGE_GAME]
@@ -49,6 +50,7 @@ var _shelf_page: Control = null
 var _codex_page: Control = null
 var _dialogue_page: Control = null
 var _pause_page: Control = null
+var _settings_page: Control = null
 
 ## The page container that holds all page children.
 var _pages_container: Control = null
@@ -71,6 +73,7 @@ func _ready() -> void:
 	_codex_page = _find_child(&"CodexPage")
 	_dialogue_page = _find_child(&"DialoguePage")
 	_pause_page = _find_child(&"PausePage")
+	_settings_page = _find_child(&"SettingsPage")
 
 	# The title page's Begin button starts the real chapter flow; without this
 	# it is a dead button and the built chapters are unreachable.
@@ -86,6 +89,20 @@ func _ready() -> void:
 		if not _title_continue.pressed.is_connected(_on_continue_pressed):
 			_title_continue.pressed.connect(_on_continue_pressed)
 		_refresh_title_buttons()
+
+	# Settings can be reached from the title and from the pause page. The page
+	# itself emits back_pressed so it does not need to know about the shell.
+	for button_name in [&"TitleSettings", &"PauseSettings"]:
+		var settings_button := _find_child(button_name) as Button
+		if settings_button != null:
+			settings_button.text = Loc.t(&"ui.menu.settings")
+			if not settings_button.pressed.is_connected(_on_settings_pressed):
+				settings_button.pressed.connect(_on_settings_pressed)
+	if _settings_page != null and _settings_page.has_signal(&"back_pressed") \
+			and not _settings_page.back_pressed.is_connected(go_back):
+		_settings_page.back_pressed.connect(go_back)
+	if not EventBus.settings_changed.is_connected(_refresh_locale_texts):
+		EventBus.settings_changed.connect(_refresh_locale_texts)
 
 	# Hide all pages initially.
 	_hide_all_pages()
@@ -111,6 +128,21 @@ func _refresh_title_buttons() -> void:
 	var has_save := Manuscrito.has_save(Manuscrito.AUTOSAVE_SLOT)
 	_title_continue.visible = has_save
 	_title_continue.disabled = not has_save
+
+
+func _on_settings_pressed() -> void:
+	open_settings()
+
+
+## Button captions are translated once in _ready; refresh them when the player
+## changes language on the settings page.
+func _refresh_locale_texts() -> void:
+	if _title_continue != null:
+		_title_continue.text = Loc.t(&"ui.menu.continue")
+	for button_name in [&"TitleSettings", &"PauseSettings"]:
+		var settings_button := _find_child(button_name) as Button
+		if settings_button != null:
+			settings_button.text = Loc.t(&"ui.menu.settings")
 
 
 ## Recursively find a descendant node by name.
@@ -175,6 +207,7 @@ func _page_node(page: StringName) -> Control:
 		PAGE_CODEX: return _codex_page
 		PAGE_DIALOGUE: return _dialogue_page
 		PAGE_PAUSE: return _pause_page
+		PAGE_SETTINGS: return _settings_page
 		_: return null
 
 
@@ -231,6 +264,17 @@ func open_pause() -> void:
 		return
 	visible = true
 	_show_page(PAGE_PAUSE)
+
+
+## Open the settings page.
+func open_settings() -> void:
+	if _turning:
+		return
+	if _current_page == PAGE_SETTINGS:
+		close()
+		return
+	visible = true
+	_show_page(PAGE_SETTINGS)
 
 
 ## Open the title page.
@@ -299,5 +343,6 @@ static func suite(harness: TestHarness) -> void:
 	harness.expect_eq(PAGE_SHELF, &"shelf", "shelf page id")
 	harness.expect_eq(PAGE_CODEX, &"codex", "codex page id")
 	harness.expect_eq(PAGE_PAUSE, &"pause", "pause page id")
+	harness.expect_eq(PAGE_SETTINGS, &"settings", "settings page id")
 
 	harness.expect_eq(PAGE_TURN_SECONDS, 0.3, "page turn duration")

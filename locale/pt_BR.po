@@ -1191,7 +1191,7 @@ msgid "ui.menu.load"
 msgstr ""`r`n
 #. TRANSLATORS: Auto-added key
 msgid "ui.menu.settings"
-msgstr ""`r`n
+msgstr "Configurações"`r`n
 #. TRANSLATORS: Auto-added key
 msgid "ui.menu.quit"
 msgstr ""`r`n
@@ -1260,22 +1260,22 @@ msgid "bk.chapter"
 msgstr ""`r`n
 #. TRANSLATORS: Auto-added key
 msgid "ui.language.name.es"
-msgstr ""`r`n
+msgstr "Espanhol (Espanha)"`r`n
 #. TRANSLATORS: Auto-added key
 msgid "ui.language.name.es_419"
 msgstr ""`r`n
 #. TRANSLATORS: Auto-added key
 msgid "ui.language.name.en"
-msgstr ""`r`n
+msgstr "Inglês"`r`n
 #. TRANSLATORS: Auto-added key
 msgid "ui.language.name.fr"
-msgstr ""`r`n
+msgstr "Francês"`r`n
 #. TRANSLATORS: Auto-added key
 msgid "ui.language.name.de"
-msgstr ""`r`n
+msgstr "Alemão"`r`n
 #. TRANSLATORS: Auto-added key
 msgid "ui.language.name.pt_BR"
-msgstr ""`r`n
+msgstr "Português (Brasil)"`r`n
 #. TRANSLATORS: Auto-added key
 msgid "ui.language.name.ja"
 msgstr ""`r`n
@@ -1293,7 +1293,7 @@ msgid "ui.language.name.pl"
 msgstr ""`r`n
 #. TRANSLATORS: Auto-added key
 msgid "ui.language.name.it"
-msgstr ""`r`n
+msgstr "Italiano"`r`n
 #. TRANSLATORS: Auto-added key
 msgid "ui.language.name.tr"
 msgstr ""`r`n
@@ -5246,3 +5246,51 @@ msgstr ""
 #. META: namespace=ui
 msgid "ui.venture.caballero_blanco"
 msgstr ""
+
+#. META: namespace=ui
+msgid "ui.settings.title"
+msgstr "Settings"
+
+#. META: namespace=ui
+msgid "ui.settings.language"
+msgstr "Language"
+
+#. META: namespace=ui
+msgid "ui.settings.language.hint"
+msgstr "The manuscript remembers your language."
+
+#. META: namespace=ui
+msgid "ui.settings.volume"
+msgstr "Volume"
+
+#. META: namespace=ui
+msgid "ui.settings.audio.master"
+msgstr "Master"
+
+#. META: namespace=ui
+msgid "ui.settings.audio.music"
+msgstr "Music"
+
+#. META: namespace=ui
+msgid "ui.settings.audio.sfx"
+msgstr "Effects"
+
+#. META: namespace=ui
+msgid "ui.settings.audio.voice"
+msgstr "Voices"
+
+#. META: namespace=ui
+msgid "ui.settings.audio.ui"
+msgstr "Interface"
+
+#. META: namespace=ui
+msgid "ui.settings.controls"
+msgstr "Controls"
+
+#. META: namespace=ui
+msgid "ui.settings.controls.hint"
+msgstr "Keys are physical, so WASD works on every layout."
+
+#. META: namespace=ui
+msgid "ui.settings.back"
+msgstr "Back"

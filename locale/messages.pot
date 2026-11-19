@@ -3990,3 +3990,51 @@ msgstr ""
 
 \n#. META: namespace=ui\nmsgid "ui.venture.galeotes"
 \n#. META: namespace=ui\nmsgid "ui.venture.duelo_luz_luna"\nmsgstr ""\n\n#. META: namespace=ui\nmsgid "ui.venture.leones_carro"\nmsgstr ""\n\n#. META: namespace=ui\nmsgid "ui.venture.caballero_blanco"\nmsgstr ""\n
+
+#. META: namespace=ui
+msgid "ui.settings.title"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.settings.language"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.settings.language.hint"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.settings.volume"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.settings.audio.master"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.settings.audio.music"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.settings.audio.sfx"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.settings.audio.voice"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.settings.audio.ui"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.settings.controls"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.settings.controls.hint"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.settings.back"
+msgstr ""

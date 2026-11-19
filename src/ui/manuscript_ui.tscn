@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=4 format=3]
 
 [ext_resource type="Script" path="res://src/ui/manuscript_ui.gd" id="1_shell"]
+[ext_resource type="Script" path="res://src/ui/settings_page.gd" id="2_settings"]
 
 [node name="ManuscriptUI" type="Control"]
 anchors_preset = 7
@@ -47,6 +48,12 @@ anchors_preset = 1
 position = Vector2(400, 430)
 size = Vector2(200, 40)
 text = "Continue"
+
+[node name="TitleSettings" type="Button" parent="Pages/TitlePage"]
+anchors_preset = 1
+position = Vector2(400, 480)
+size = Vector2(200, 40)
+text = "Settings"
 
 [node name="ShelfPage" type="Control" parent="Pages"]
 anchors_preset = 7
@@ -137,3 +144,18 @@ anchors_preset = 1
 position = Vector2(100, 180)
 size = Vector2(200, 40)
 text = "Quit to Yard"
+
+[node name="PauseSettings" type="Button" parent="Pages/PausePage/PausePanel"]
+anchors_preset = 1
+position = Vector2(100, 235)
+size = Vector2(200, 40)
+text = "Settings"
+
+[node name="SettingsPage" type="Control" parent="Pages"]
+anchors_preset = 7
+visible = false
+script = ExtResource("2_settings")
+
+[node name="SettingsBackground" type="ColorRect" parent="Pages/SettingsPage"]
+anchors_preset = 7
+color = Color(0.086, 0.078, 0.063, 0.95)

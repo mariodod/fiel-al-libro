@@ -42,8 +42,8 @@ and NOT blocked on Credentials unless stated.
       rewards, examine events, or case resolutions.
 - [x] **Continue / save-resume UI (done).** The title page now has a Continue button wired to `ChapterFlow.continue_game()`. It is shown/enabled only when autosave slot 0 exists, refreshes each time the title opens, and is the Enter/Space default when a save exists. The title page is now also the startup screen (Begin runs the prologue through `ChapterFlow`). `DisplayServer.get_name() != "headless"` replaced the broken `OS.has_feature("headless")` guard — the latter is false under this Godot build, which let the title overlay swallow input in the headless suite. New `tests/test_continue_ui.gd` pins the wiring and visibility.
       Original task: `ChapterFlow.continue_game()` works but no button calls it; the title page has only Begin. Add a Continue button.
-- [ ] **Settings screen.** `ui.menu.settings` exists as a key; no UI for
-      language, volume or controls.
+- [x] **Settings screen (done).** A new Settings page in the Manuscript shell `manuscript_ui.tscn`, reachable from TitleSettings and PauseSettings, offers a six-locale OptionButton, Master/Music/SFX/Voice/UI sliders, and a read-only key sheet generated from InputMap. A new `Settings` autoload persists language and linear volumes to `user://settings.cfg` and applies them at boot; volume changes drive `AudioServer` buses and language changes go through `Loc.set_locale()`. Added 12 `ui.settings.*` keys to the POT and all six POs, filled the empty `ui.menu.settings` and `ui.language.name.*` translations, and added `tests/test_settings.gd`. The controls sheet is a reference, not a rebind UI: bindings are physical keys by design.
+      Original task: `ui.menu.settings` exists as a key; no UI for language, volume or controls.
 - [ ] **Posada coverage.** GDD §11.3 wants a Posada every chapter; only 3 scenes
       have an `InnKit`. At minimum, one per region's first chapter.
 - [ ] **Distinct bark VO** — BLOCKED on an ElevenLabs API key
