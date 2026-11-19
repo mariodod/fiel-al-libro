@@ -247,7 +247,8 @@
       and a third param to `Lectura.resolve()`).
 - [x] **Continue button** — title page now offers Continue, wired to `ChapterFlow.continue_game()`. It appears only when slot 0 exists, and Enter resumes a saved run instead of starting a new one.
 - [x] **Settings screen** — language, volume and a controls sheet, reachable from the title and pause pages. `Settings` autoload persists to `user://settings.cfg`; 12 new locale keys in all six languages.
-- [ ] **Posada per chapter** — at least one per region's first chapter.
+- [x] **Posada per chapter** — all 47 chapter scenes now instance `inn_kit.tscn` (GDD §8.1/§11.3). Also fixed 144 kit instances that used the wrong `.tscn` syntax and rendered as empty nodes.
+- [ ] **Posada rest action** — `rest` (R), `posada_entered`, and `GameState.current_posada` exist but are never wired; the Posada is geometry plus the generic checkpoint today.
 - [ ] **Distinct bark VO** — blocked on an ElevenLabs API key.
 - [ ] **Ship the itch.io demo** (2.25) — Free, public, with a Steam page and a trailer.
 

@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" path="res://src/ui/manuscript_ui.tscn" id="22_shell"]
 [ext_resource type="Resource" path="res://src/data/anamorphoses/ana.ch26.words.tres" id="23_ana0"]
 [ext_resource type="Resource" path="res://src/data/anamorphoses/ana.ch26.age.tres" id="24_ana1"]
+[ext_resource type="PackedScene" path="res://src/world/environment_kits/inn_kit.tscn" id="25_inn_kit"]
 
 [sub_resource type="PlaneMesh" id="Plane_ground"]
 size = Vector2(300, 300)
@@ -63,13 +64,11 @@ material_override = SubResource("Mat_ground")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 shape = SubResource("Shape_ground")
 
-[node name="CliffKit" type="Node3D" parent="."]
+[node name="CliffKit" parent="." instance=ExtResource("18_cliff_kit")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-instance = ExtResource("18_cliff_kit")
 
-[node name="TheatreKit" type="Node3D" parent="."]
+[node name="TheatreKit" parent="." instance=ExtResource("19_theatre_kit")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0.8, -40)
-instance = ExtResource("19_theatre_kit")
 
 [node name="Innkeeper" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -14)
@@ -245,3 +244,6 @@ data = ExtResource("23_ana0")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.0, 0, -12)
 script = ExtResource("2_object")
 data = ExtResource("24_ana1")
+
+[node name="InnKit" parent="." instance=ExtResource("25_inn_kit")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 1.5, -40)

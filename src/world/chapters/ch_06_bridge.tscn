@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" path="res://src/ui/manuscript_ui.tscn" id="29_shell"]
 [ext_resource type="Resource" path="res://src/data/anamorphoses/ana.ch06.weight.tres" id="30_ana0"]
 [ext_resource type="Resource" path="res://src/data/anamorphoses/ana.ch06.shadow.tres" id="31_ana1"]
+[ext_resource type="PackedScene" path="res://src/world/environment_kits/inn_kit.tscn" id="32_inn_kit"]
 
 [sub_resource type="PlaneMesh" id="Plane_ground"]
 size = Vector2(300, 300)
@@ -84,13 +85,11 @@ data = ExtResource("22_musician")
 [node name="MusicianAudio" type="AudioStreamPlayer" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 36)
 
-[node name="BridgeKit" type="Node3D" parent="."]
+[node name="BridgeKit" parent="." instance=ExtResource("25_bridge_kit")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
-instance = ExtResource("25_bridge_kit")
 
-[node name="FieldKit" type="Node3D" parent="."]
+[node name="FieldKit" parent="." instance=ExtResource("26_field_kit")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -20)
-instance = ExtResource("26_field_kit")
 
 [node name="Book_Pastores" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -30)
@@ -264,3 +263,6 @@ data = ExtResource("30_ana0")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.0, 0, -12)
 script = ExtResource("2_object")
 data = ExtResource("31_ana1")
+
+[node name="InnKit" parent="." instance=ExtResource("32_inn_kit")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 1.5, -40)

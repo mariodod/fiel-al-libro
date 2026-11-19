@@ -85,17 +85,14 @@ data = ExtResource("22_musician")
 [node name="MusicianAudio" type="AudioStreamPlayer" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 36)
 
-[node name="FieldKit" type="Node3D" parent="."]
+[node name="FieldKit" parent="." instance=ExtResource("25_field_kit")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-instance = ExtResource("25_field_kit")
 
-[node name="RoadKit" type="Node3D" parent="."]
+[node name="RoadKit" parent="." instance=ExtResource("26_road_kit")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0.8, -40)
-instance = ExtResource("26_road_kit")
 
-[node name="InnKit" type="Node3D" parent="."]
+[node name="InnKit" parent="." instance=ExtResource("27_inn_kit")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 1.5, -40)
-instance = ExtResource("27_inn_kit")
 
 [node name="Book_Posada" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -30)
