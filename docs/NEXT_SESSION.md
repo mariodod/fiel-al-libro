@@ -17,7 +17,7 @@
 | **Phase** | Phase 1. **Weeks 1–12 complete.** All coding tasks from NEXT_STEPS.md §2 are done: Venture boss, Lectura mode, three anamorphoses, Desvelar mid-fight, One Verdict, the Posada, shelf UI, Biblioteca wiring, one book, Manuscript UI shell, 15 environment kits, credits song. |
 | **The premise** | **Proven.** The playtest says so. |
 | **The build** | `res://src/world/slice.tscn` — the main scene. Two primitives, one truth toggle, two characters reading the same world differently — and now **all combat verbs**: `E` to examine, `Space` to dodge, a light attack that chains, a heavy attack, `F` for the guard, `M` to lock on, `X` for Sancho's Desvelar, and a line of dialogue when the world moves under a character. The two characters are **rigged and animated** (14 clips each), the **companion is in the fight** (it fights what you are locked onto, and it parries), there is a **walled yard** with a training dummy and a straw man in it, and to the **south** there is the **era of Montiel** and the **Venture of Montiel** — the first boss, in two forms. Press **G** to open the **world map** — a Spain-shaped portolan showing the five regions and which ones you've found; the map tints gilded in Book truth, chalky in Reality truth, and fragment markers appear when their page is found. **The Biblioteca shelf** (press `I`), **Manuscript UI shell** (shelf/codex/dialogue/pause pages), and **Lectura mode** (press `Q`) are all built into the shell. |
-| **Tests** | 25 suites, 859 assertions, green, enforced in CI. |
+| **Tests** | 34 suites, 2273 assertions, green, enforced in CI. |
 | **The fun** | Not fully proven. Seven data points is a sample, not a signal. |
 | **Recent (Nov 2026)** | Venture art second pass is done: the tower wears a 2K triplanar gouache masonry texture and the sails are real ragged meshes. All six locales load and ship (789 messages each); every fragment, region passage, colophon and chapter intro is translated. The world map shows both readings side by side with a baked PNG. The chapter flow is live from the title's Begin button: prologue → every chapter → ending. The colophon (six original passages, two truths) plays between chapters. |
 
@@ -34,7 +34,7 @@ and NOT blocked on Credentials unless stated.
       fields, nodes in every chapter scene, tell keys in six locales.
 - [x] **Fragment grant paths for the unobtainable fragments (done).** All 48
       reachable: 14 venture rewards + 5 region pages + 29 anamorphosis rewards
-      (the audit found 32 without a path, not 29 — `tools/audit_grant_paths.py`).
+      (the audit found 32 without a path, not 29 — `tools/audit_fragments.py`).
       `Lectura.resolve()` grants `anamorphosis_fragment` on resolution. The
       original task text follows: Only 19 of 48
       have a grant path (14 venture rewards + 5 region pages). The rest exist as

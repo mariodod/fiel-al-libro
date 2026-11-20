@@ -1,9 +1,9 @@
-[gd_scene load_steps=26 format=3]
-
+[gd_scene load_steps=27 format=3]
 [ext_resource type="Script" path="res://src/world/forms/spin_sails.gd" id="1_spin"]
-[ext_resource type="Script" path="res://src/world/forms/tattered_sail.gd" id="2_tatter"]
 [ext_resource type="Shader" path="res://assets/shaders/masonry_triplanar.gdshader" id="3_masonry_shader"]
 [ext_resource type="Texture2D" path="res://assets/textures/windmill_masonry.png" id="4_masonry_tex"]
+
+[ext_resource type="Script" path="res://src/world/forms/tattered_sail.gd" id="2_tatter"]
 
 ; The Reality form of the windmill: the mill of Montiel.
 ;

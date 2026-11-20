@@ -1,6 +1,5 @@
-[gd_scene load_steps=8 format=3]
+[gd_scene load_steps=9 format=3]
 
-[ext_resource type="Script" path="res://src/world/truth_object.gd" id="1_object"]
 
 [sub_resource type="BoxMesh" id="Mesh_wall"]
 size = Vector3(4, 3, 0.5)

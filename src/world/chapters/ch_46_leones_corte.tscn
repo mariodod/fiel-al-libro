@@ -1,32 +1,27 @@
-[gd_scene load_steps=26 format=3]
-
-[ext_resource type="Script" path="res://src/world/slice.gd" id="1_slice"]
+[gd_scene load_steps=27 format=3]
 [ext_resource type="Script" path="res://src/world/chapters/ch_46_leones_corte.gd" id="1_chapter"]
-[ext_resource type="Script" path="res://src/world/truth_object.gd" id="2_object"]
-[ext_resource type="Script" path="res://src/characters/character_pawn.gd" id="3_pawn"]
 [ext_resource type="Script" path="res://src/characters/player_controller.gd" id="4_player"]
 [ext_resource type="Script" path="res://src/characters/companion_ai.gd" id="5_ai"]
 [ext_resource type="Script" path="res://src/systems/camera_follow.gd" id="6_camera"]
-[ext_resource type="Resource" path="res://src/data/primitives/windmill.tres" id="7_windmill"]
-[ext_resource type="Resource" path="res://src/data/primitives/rock.tres" id="8_rock"]
-[ext_resource type="Resource" path="res://src/data/primitives/book_stand.tres" id="9_book_stand"]
 [ext_resource type="Resource" path="res://src/data/characters/quixote.tres" id="10_quixote"]
 [ext_resource type="Resource" path="res://src/data/characters/sancho.tres" id="11_sancho"]
 [ext_resource type="PackedScene" path="res://assets/models/quixote.glb" id="12_quixote_rig"]
 [ext_resource type="PackedScene" path="res://assets/models/sancho.glb" id="13_sancho_rig"]
 [ext_resource type="Script" path="res://src/ui/vitals_panel.gd" id="14_vitals"]
-[ext_resource type="Script" path="res://src/ui/manifiesto_reader.gd" id="15_manifiesto_reader"]
 [ext_resource type="Resource" path="res://src/data/characters/innkeeper.tres" id="16_innkeeper"]
 [ext_resource type="Resource" path="res://src/data/characters/musician.tres" id="17_musician"]
 [ext_resource type="PackedScene" path="res://src/world/environment_kits/field_kit.tscn" id="18_field_kit"]
 [ext_resource type="PackedScene" path="res://src/world/environment_kits/road_kit.tscn" id="19_road_kit"]
 [ext_resource type="Resource" path="res://src/data/primitives/book_bk.ch46.leones_corte.01.tres" id="20_book_leones_corte"]
-
 [ext_resource type="Resource" path="res://src/data/books/bk.ch01.leyenda_tio_andalus.tres" id="21_leyenda"]
 [ext_resource type="PackedScene" path="res://src/ui/manuscript_ui.tscn" id="22_shell"]
 [ext_resource type="Resource" path="res://src/data/anamorphoses/ana.ch46.words.tres" id="23_ana0"]
 [ext_resource type="Resource" path="res://src/data/anamorphoses/ana.ch46.age.tres" id="24_ana1"]
 [ext_resource type="PackedScene" path="res://src/world/environment_kits/inn_kit.tscn" id="25_inn_kit"]
+
+[ext_resource type="Script" path="res://src/world/truth_object.gd" id="2_object"]
+[ext_resource type="Script" path="res://src/characters/character_pawn.gd" id="3_pawn"]
+
 
 [sub_resource type="PlaneMesh" id="Plane_ground"]
 size = Vector2(300, 300)
@@ -220,11 +215,6 @@ margin_bottom = 40
 [node name="CodexListContainer" type="VBoxContainer" parent="CodexLayer/CodexPanel/CodexList"]
 size_flags_horizontal = 1
 size_flags_vertical = 1
-
-[node name="ManifiestoReader" type="Control" parent="."]
-anchors_preset = 3
-visible = false
-script = ExtResource("15_manifiesto_reader")
 
 [node name="Leyenda" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 0, -10)

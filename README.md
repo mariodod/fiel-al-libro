@@ -18,7 +18,7 @@ mad knight and his sane squire.**
 | [`TECH_STACK.md`](TECH_STACK.md) | Engine choice and why, engine configuration, project architecture, asset pipeline, performance budgets, save system, testing/CI, Steam, and the **full i18n pipeline**. |
 | [`ROADMAP.md`](ROADMAP.md) | 12-week vertical slice, 30-month plan, scope-cut tiers, weekly rituals, risk register. |
 | [`TODO.md`](TODO.md) | The live task list. |
-| [`locale/`](locale/) | Working sample translation files: `messages.pot` (template), `en.po`, `es.po`, `fr.po`. |
+| [`locale/`](locale/) | Working sample translation files: `messages.pot` (template) and six shipped PO files: `es`, `en`, `fr`, `de`, `it`, `pt_BR`. |
 | [`assets/manifiesto/`](assets/manifiesto/) | Sample "Book layer" content structure — how a real 1605 fragment is stored, sourced, and modernized per language. |
 | [`tools/`](tools/) | `setup.ps1` (one-command machine setup) and `godot.ps1` (finds the Godot binary and forwards args). |
 
@@ -136,6 +136,6 @@ Locura from Lucid to Lost. Ugly on purpose — it proves the two core systems wo
 | Design | v0.2 — first draft complete, **D1–D7 locked** |
 | Tech plan | v0.1 |
 | Roadmap | v0.1 |
-| Code | 25 suites, 687 assertions, all green |
+| Code | 34 suites, 2273 assertions, all green |
 | Prototype | grey box complete — slice.tscn playable |
 | Next milestone | Week 3–4 combat polish (animations remaining); then weeks 5–12 content |

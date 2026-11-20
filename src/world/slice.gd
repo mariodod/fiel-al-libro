@@ -536,8 +536,9 @@ func _unhandled_input(event: InputEvent) -> void:
 			hud.visible = _show_hud
 	elif event.is_action_pressed(&"shelf"):
 		_toggle_shelf()
-	elif event.is_action_pressed(&"manifiesto"):
-		# Open the Codex page of the Manuscript shell.
+	elif event.is_action_pressed(&"manifiesto") or event.is_action_pressed(&"codex"):
+		# Both the labelled Manifiesto key (2) and the legacy Codex key (C)
+		# open the same page of the Manuscript shell.
 		if _manuscript_ui != null:
 			_manuscript_ui.open_codex()
 	elif event.is_action_pressed(&"lectura"):

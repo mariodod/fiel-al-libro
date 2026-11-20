@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="TruthObjectData" load_steps=7 format=3]
-
 [ext_resource type="Script" path="res://src/data/truth_object_data.gd" id="1_data"]
-[ext_resource type="Script" path="res://src/data/truth_face.gd" id="2_face"]
 [ext_resource type="PackedScene" path="res://src/world/forms/windmill_reality.tscn" id="rock_reality"]
 [ext_resource type="PackedScene" path="res://src/world/forms/windmill_book.tscn" id="rock_book"]
+
+[ext_resource type="Script" path="res://src/data/truth_face.gd" id="2_face"]
 
 [sub_resource type="Resource" id="RealityFace"]
 script = ExtResource("2_face")

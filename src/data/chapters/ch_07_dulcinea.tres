@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ChapterData" load_steps=3 format=3]
-
 [ext_resource type="Script" path="res://src/data/chapter_data.gd" id="1_data"]
 [ext_resource type="Resource" path="res://src/data/ventures/venture_dulcinea.tres" id="2_venture"]
+
 
 [resource]
 script = ExtResource("1_data")

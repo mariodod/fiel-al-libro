@@ -4016,3 +4016,39 @@ msgstr "Has descansado."
 #. META: namespace=bk
 msgid "bk.ch08.celestina.title"
 msgstr "La Celestina"
+
+#. META: namespace=ui
+msgid "ui.ending.el_manuscrito.prose"
+msgstr "Cierras el libro.\n\nLa tinta aún está húmeda en la página. Tu letra, aunque no la reconozcas, cuenta la historia de un hombre que leyó demasiado.\n\nLocura de Quijote: {q}/100\nLocura de Sancho: {s}/100\nLibros reunidos: {books}/15\n\nEl juego es el libro. Tú eres el lector."
+
+#. META: namespace=ui
+msgid "ui.ending.la_locura_compartida.prose"
+msgstr "Cabalgáis juntos, Quijote y Sancho, por una llanura donde la Locura es una forma de verdad.\n\nLocura de Quijote: {q}/100\nLocura de Sancho: {s}/100\n\nCompartisteis el delirio y el mundo se volvió más amable."
+
+#. META: namespace=ui
+msgid "ui.ending.el_mundo_real.prose"
+msgstr "El libro está cerrado. En un estante. Olvidado.\n\nLocura de Quijote: {q}/100\nLocura de Sancho: {s}/100\n\nQueda el campo, el polvo y la memoria de lo que pudo ser."
+
+#. META: namespace=ui
+msgid "ui.ending.el_libro_gana.prose"
+msgstr "El libro gana. No del todo, pero gana lo suficiente.\n\nLocura de Quijote: {q}/100\nLocura de Sancho: {s}/100\nLibros reunidos: {books}/15\n\nCerraste el libro, pero el libro sigue escribiéndote."
+
+#. META: namespace=ui
+msgid "ui.shelf.hint"
+msgstr "Haz clic en un libro para colocarlo. Los libros colocados otorgan pasivas."
+
+#. META: namespace=ui
+msgid "ui.shelf.equipped"
+msgstr "Colocados"
+
+#. META: namespace=ui
+msgid "ui.shelf.collected"
+msgstr "Recogidos"
+
+#. META: namespace=ui
+msgid "ui.shelf.unequip"
+msgstr "Quitar"
+
+#. META: namespace=ui
+msgid "ui.shelf.no_passive"
+msgstr "(sin pasiva)"

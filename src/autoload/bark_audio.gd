@@ -30,6 +30,7 @@ func _on_character_spoke(character_id: StringName, text_key: StringName, args: A
 	if stream == null:
 		return  # No audio file yet — that's OK, placeholder
 	var player := AudioStreamPlayer.new()
+	player.bus = AudioDirector.VOICE_BUS
 	player.stream = stream
 	add_child(player)
 	player.play()

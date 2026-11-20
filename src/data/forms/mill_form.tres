@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="FormData" load_steps=5 format=3]
-
 [ext_resource type="Script" path="res://src/data/form_data.gd" id="1_data"]
 [ext_resource type="PackedScene" path="res://src/world/forms/windmill_reality.tscn" id="2_model"]
 [ext_resource type="Resource" path="res://src/data/moves/mill_sails.tres" id="3_sails"]
 [ext_resource type="Resource" path="res://src/data/moves/mill_topple.tres" id="4_topple"]
+
 
 [resource]
 script = ExtResource("1_data")

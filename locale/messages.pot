@@ -4046,3 +4046,39 @@ msgstr ""
 #. META: namespace=bk
 msgid "bk.ch08.celestina.title"
 msgstr ""
+
+#. META: namespace=ui
+msgid "ui.ending.el_manuscrito.prose"
+msgstr "You close the book.\n\nThe ink is still wet on the page. Your handwriting — though you do not\nremember holding a pen. The adventures of Don Quixote and Sancho Panza,\nthe windmills and the giants, the inn and the enchanted Dulcinea, the\nCave of Montesinos and the Duke's castle: all of it written down, in\na hand that looks like yours but that you do not recognize.\n\nYou have read 1605. You have lived it. And now you understand:\nthere was never a world outside the book. There was only the reader,\nand the reader's desire to see the truth.\n\nQuixote's locura: {q}/100\nSancho's locura: {s}/100\nBooks collected: {books}/15\n\nThe game is the book. You are the reader. The story continues,\nbecause a reader who finishes a book simply starts it again.\n	"
+
+#. META: namespace=ui
+msgid "ui.ending.la_locura_compartida.prose"
+msgstr "You ride together, Quixote and Sancho, across a plain where\nwindmills stretch toward the horizon like giants at attention. The sun\nis setting in Book gold, and there is no Reality left to contradict it.\n\nQuixote adjusts his helmet, grinning. \"Did you see that one, Sancho?\nThat one is a dragon!\"\n\nSancho laughs, adjusting his own nonexistent armor. \"A dragon, master!\nWe shall slay it!\"\n\nThey ride off together, two knights errant chasing giants across a\nplain that will never end. There is no Sancho to bring Quixote home,\nno Quixote to ground Sancho in sense. The two of them have become\nexactly what they set out to be: knights of the Book, forever.\n\nQuixote's locura: {q}/100\nSancho's locura: {s}/100\n\nThe world is the book. The book is the world. And neither of them\nwill ever leave it.\n	"
+
+#. META: namespace=ui
+msgid "ui.ending.el_mundo_real.prose"
+msgstr "The book is closed. Shelved. Forgotten.\n\nQuixote sits in his study in the village, aging quietly, reading\ntreatises on agriculture and husbandry. He no longer sees giants in\nwindmills. He no longer sees princesses in peasant girls. He is,\nonce more, simply Alonso Quixano the Good.\n\nSancho has returned to his wife Teresa and his children. He tells them\nstories sometimes — of a knight, of a squire, of adventures that\nnever happened — but the children laugh and run off to play, and the\nstories remain just stories.\n\nThe world is real again. It is smaller than they remembered. It is\nquieter. It is, in the end, simply the world.\n\nQuixote's locura: {q}/100\nSancho's locura: {s}/100\n\nThe book is shelved. The adventure is over. The real world remains,\nand it is smaller than either of them remembered.\n	"
+
+#. META: namespace=ui
+msgid "ui.ending.el_libro_gana.prose"
+msgstr "The book wins. Not completely, but it wins.\n\nQuixote is cured — mostly. He still reads, still enjoys a good tale,\nbut he no longer mistakes windmills for giants. He lives quietly,\noccasionally glancing at the old books on his shelf with a mixture of\nfondness and embarrassment.\n\nSancho is not cured — not entirely. He still looks at the horizon and\nwonders what might be out there, beyond the village, beyond the road.\nHe does not believe in giants, but he wonders.\n\nThe book is shelved, but not forgotten. Sometimes, on quiet evenings,\nQuixote opens it again. Just to read a page. Just to remember.\n\nQuixote's locura: {q}/100\nSancho's locura: {s}/100\nBooks collected: {books}/15\n\nThe book wins. Not entirely. But it wins enough.\n	"
+
+#. META: namespace=ui
+msgid "ui.shelf.hint"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.shelf.equipped"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.shelf.collected"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.shelf.unequip"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.shelf.no_passive"
+msgstr ""

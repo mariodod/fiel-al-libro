@@ -1,13 +1,8 @@
-[gd_scene load_steps=28 format=3]
-
-[ext_resource type="Script" path="res://src/world/slice.gd" id="1_slice"]
+[gd_scene load_steps=32 format=3]
 [ext_resource type="Script" path="res://src/world/chapters/ch_05_montesinos.gd" id="1_chapter"]
-[ext_resource type="Script" path="res://src/world/truth_object.gd" id="2_object"]
-[ext_resource type="Script" path="res://src/characters/character_pawn.gd" id="3_pawn"]
 [ext_resource type="Script" path="res://src/characters/player_controller.gd" id="4_player"]
 [ext_resource type="Script" path="res://src/characters/companion_ai.gd" id="5_ai"]
 [ext_resource type="Script" path="res://src/systems/camera_follow.gd" id="6_camera"]
-[ext_resource type="Resource" path="res://src/data/primitives/windmill.tres" id="7_windmill"]
 [ext_resource type="Resource" path="res://src/data/primitives/rock.tres" id="8_rock"]
 [ext_resource type="Resource" path="res://src/data/primitives/book_stand.tres" id="9_book_stand"]
 [ext_resource type="Resource" path="res://src/data/characters/quixote.tres" id="10_quixote"]
@@ -18,18 +13,20 @@
 [ext_resource type="Resource" path="res://src/data/ventures/venture_montesinos.tres" id="15_venture_data"]
 [ext_resource type="Resource" path="res://src/data/ventures/venture_montiel_reading.tres" id="16_venture_reading"]
 [ext_resource type="Script" path="res://src/ui/vitals_panel.gd" id="17_vitals"]
-[ext_resource type="Script" path="res://src/ui/manifiesto_reader.gd" id="18_manifiesto_reader"]
 [ext_resource type="Resource" path="res://src/data/characters/innkeeper.tres" id="21_innkeeper"]
 [ext_resource type="Resource" path="res://src/data/characters/musician.tres" id="22_musician"]
 [ext_resource type="PackedScene" path="res://src/world/environment_kits/mountain_kit.tscn" id="25_mountain_kit"]
 [ext_resource type="PackedScene" path="res://src/world/environment_kits/cave_kit.tscn" id="26_cave_kit"]
 [ext_resource type="Resource" path="res://src/data/primitives/book_bk_ch05_duena.tres" id="27_book_duena"]
-
 [ext_resource type="Resource" path="res://src/data/books/bk.ch01.leyenda_tio_andalus.tres" id="28_leyenda"]
 [ext_resource type="PackedScene" path="res://src/ui/manuscript_ui.tscn" id="29_shell"]
 [ext_resource type="Resource" path="res://src/data/anamorphoses/ana.ch05.echo.tres" id="30_ana0"]
 [ext_resource type="Resource" path="res://src/data/anamorphoses/ana.ch05.number.tres" id="31_ana1"]
 [ext_resource type="PackedScene" path="res://src/world/environment_kits/inn_kit.tscn" id="32_inn_kit"]
+
+[ext_resource type="Script" path="res://src/world/truth_object.gd" id="2_object"]
+[ext_resource type="Script" path="res://src/characters/character_pawn.gd" id="3_pawn"]
+
 
 [sub_resource type="PlaneMesh" id="Plane_ground"]
 size = Vector2(300, 300)
@@ -239,11 +236,6 @@ margin_bottom = 40
 [node name="CodexListContainer" type="VBoxContainer" parent="CodexLayer/CodexPanel/CodexList"]
 size_flags_horizontal = 1
 size_flags_vertical = 1
-
-[node name="ManifiestoReader" type="Control" parent="."]
-anchors_preset = 3
-visible = false
-script = ExtResource("18_manifiesto_reader")
 
 [node name="Leyenda" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 0, -10)

@@ -11,10 +11,7 @@ const SFX_BUS := &"SFX"
 const VOICE_BUS := &"Voice"
 const UI_BUS := &"UI"
 
-## Region id → music stream key (resolved from assets/audio/music/).
-var _region_tracks: Dictionary = {}
 var _current_track: String = ""
-var _fade_time: float = 1.2
 
 ## Credits song tracks (GDD.md §14): single player hears the arrangement of
 ## whichever character they played more.
@@ -31,8 +28,6 @@ func _ready() -> void:
 	_ensure_bus(VOICE_BUS)
 	_ensure_bus(UI_BUS)
 
-	# The Book layer gets a subtle layer: page turns and a scratching quill.
-	EventBus.truth_layer_changed.connect(_on_truth_changed)
 
 
 func _ensure_bus(bus_name: StringName) -> void:
@@ -40,19 +35,6 @@ func _ensure_bus(bus_name: StringName) -> void:
 		AudioServer.add_bus()
 		AudioServer.set_bus_name(AudioServer.get_bus_count() - 1, bus_name)
 		AudioServer.set_bus_send(AudioServer.get_bus_count() - 1, &"Master")
-
-
-func register_region_track(region_id: StringName, track_key: String) -> void:
-	_region_tracks[region_id] = track_key
-
-
-func play_region(region_id: StringName) -> void:
-	var key := str(_region_tracks.get(region_id, ""))
-	if key == "" or key == _current_track:
-		return
-	_current_track = key
-	# Region tracks are selected here; the slice owns the actual player and
-	# cross-fade. Only the two credits arrangements are shipped today.
 
 
 func play_credits_song() -> void:
@@ -86,9 +68,3 @@ func _stop_credits() -> void:
 		_credits_stream.stop()
 		_credits_stream.queue_free()
 		_credits_stream = null
-
-
-func _on_truth_changed(_old: int, new_layer: int) -> void:
-	# The Book layer is drier and thinner; Reality is fuller. Implemented as
-	# a bus effect once the audio middleware is in place.
-	pass

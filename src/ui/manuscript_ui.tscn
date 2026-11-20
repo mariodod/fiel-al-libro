@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3]
-
+[gd_scene load_steps=3 format=3]
 [ext_resource type="Script" path="res://src/ui/manuscript_ui.gd" id="1_shell"]
 [ext_resource type="Script" path="res://src/ui/settings_page.gd" id="2_settings"]
+
 
 [node name="ManuscriptUI" type="Control"]
 anchors_preset = 7

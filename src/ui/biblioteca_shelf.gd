@@ -31,7 +31,7 @@ func _build_ui() -> void:
     add_child(root)
 
     var title = Label.new()
-    title.text = "Biblioteca"
+    title.text = Loc.t(&"ui.shelf.title")
     title.add_theme_font_size_override("font_size", 32)
     title.add_theme_color_override("font_color", Color(0.97, 0.93, 0.83, 1.0))
     root.add_child(title)
@@ -45,7 +45,7 @@ func _build_ui() -> void:
     split.add_child(left)
 
     var equipped_label = Label.new()
-    equipped_label.text = "Equipped"
+    equipped_label.text = Loc.t(&"ui.shelf.equipped")
     equipped_label.add_theme_font_size_override("font_size", 20)
     equipped_label.add_theme_color_override("font_color", Color(0.75, 0.54, 0.24, 1.0))
     left.add_child(equipped_label)
@@ -59,7 +59,7 @@ func _build_ui() -> void:
     split.add_child(right)
 
     var collected_label = Label.new()
-    collected_label.text = "Collected"
+    collected_label.text = Loc.t(&"ui.shelf.collected")
     collected_label.add_theme_font_size_override("font_size", 20)
     collected_label.add_theme_color_override("font_color", Color(0.43, 0.45, 0.27, 1.0))
     right.add_child(collected_label)
@@ -69,7 +69,7 @@ func _build_ui() -> void:
     right.add_child(_books_container)
 
     var hint = Label.new()
-    hint.text = "Click a collected book to equip. Equipped books grant passives."
+    hint.text = Loc.t(&"ui.shelf.hint")
     hint.add_theme_font_size_override("font_size", 14)
     hint.add_theme_color_override("font_color", Color(0.6, 0.55, 0.45, 1.0))
     root.add_child(hint)
@@ -89,7 +89,7 @@ func _refresh() -> void:
 
     if _equipped.is_empty():
         var empty = Label.new()
-        empty.text = "(none equipped)"
+        empty.text = Loc.t(&"ui.shelf.empty")
         empty.add_theme_color_override("font_color", Color(0.6, 0.55, 0.45, 1.0))
         _equipped_container.add_child(empty)
 
@@ -128,14 +128,14 @@ func _add_book_row(id: StringName, book: Resource, container: VBoxContainer, equ
     if passive_name != "":
         passive_label.text = passive_name
     else:
-        passive_label.text = "(no passive)"
+        passive_label.text = Loc.t(&"ui.shelf.no_passive")
     row.add_child(passive_label)
 
     var equip_btn = Button.new()
     if equipped:
-        equip_btn.text = "Unequip"
+        equip_btn.text = Loc.t(&"ui.shelf.unequip")
     else:
-        equip_btn.text = "Equip"
+        equip_btn.text = Loc.t(&"ui.shelf.equip")
     equip_btn.add_theme_font_size_override("font_size", 14)
     equip_btn.pressed.connect(func():
         if equipped:

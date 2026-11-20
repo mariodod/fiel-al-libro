@@ -671,7 +671,7 @@ before the 1.0 date for a realistic chance.
 - [x] `EventBus` + `GameState` autoloads with unit tests
 - [x] `CharacterPawn` interface + `PlayerController` + `CompanionAI` (this validates the co-op architecture early)
 - [x] The truth-layer shader — one uniform, three looks
-- [x] `loc.gd` + the PO pipeline + 3 locales (es, en, fr) + `sync_locales.gd` + parity test
+- [x] `loc.gd` + the PO pipeline + 6 locales (es, en, fr, de, it, pt_BR) + `sync_locales.gd` + parity test
 - [x] Save system with atomic writes + version migration
 - [x] The grey-box scene: walk, swap, flip the world
 - [x] Install export templates locally and produce a first Windows build
