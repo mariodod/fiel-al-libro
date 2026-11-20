@@ -25,21 +25,21 @@ roughness = 1.0
 
 [node name="BridgeKit" type="Node3D"]
 
-[node name="Ground" type="MeshInstance3D" parent="BridgeKit"]
+[node name="Ground" type="MeshInstance3D" parent="."]
 mesh = SubResource("Plane_ground")
 material_override = SubResource("Mat_ground")
 
-[node name="Bridge" type="MeshInstance3D" parent="BridgeKit"]
+[node name="Bridge" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.26, 0)
 mesh = SubResource("Mesh_bridge")
 material_override = SubResource("Mat_bridge")
 
-[node name="RailingLeft" type="MeshInstance3D" parent="BridgeKit"]
+[node name="RailingLeft" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6, 0.76, 0)
 mesh = SubResource("Mesh_railing")
 material_override = SubResource("Mat_railing")
 
-[node name="RailingRight" type="MeshInstance3D" parent="BridgeKit"]
+[node name="RailingRight" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6, 0.76, 0)
 mesh = SubResource("Mesh_railing")
 material_override = SubResource("Mat_railing")

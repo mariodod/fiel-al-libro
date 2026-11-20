@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_data")
-id = &"bk.ch08.celestina"
+id = &"bk.ch08.celestina.01"
 display_name_key = &"ui.book.bk.ch08.celestina.name"
 description_key = &"ui.book.bk.ch08.celestina.desc"
 author = &"Anonymous"
@@ -12,5 +12,5 @@ year = &"1605"
 passive_id = &"passive.celestina_charm"
 passive_name_key = &"ui.book.bk.ch08.celestina.passive.name"
 passive_description_key = &"ui.book.bk.ch08.celestina.passive.desc"
-manifesto_fragment = &"bk.ch08.celestina"
+manifesto_fragment = &"bk.ch08.celestina.01"
 codex_note_key = &"ui.book.bk.ch08.celestina.codex"

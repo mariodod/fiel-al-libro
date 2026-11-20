@@ -99,6 +99,12 @@ func save_state() -> Dictionary:
 	}
 
 
+## Fresh campaign: neither traveller starts mad.
+func reset() -> void:
+	_values.clear()
+	load_state({})
+
+
 func load_state(data: Dictionary) -> void:
 	set_for(&"quixote", float(data.get("quixote", 45.0)))
 	set_for(&"sancho", float(data.get("sancho", 0.0)))

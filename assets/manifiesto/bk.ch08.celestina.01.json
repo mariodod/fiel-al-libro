@@ -1,0 +1,44 @@
+{
+  "_comment": [
+    "Fragment: Celestina, the go-between. Part I, Chapter 8.",
+    "Original game writing (not a fabricated 1605 quotation)."
+  ],
+  "id": "bk.ch08.celestina.01",
+  "chapter": 8,
+  "part": 1,
+  "title_key": "bk.ch08.celestina.title",
+  "characters": [
+    "sancho"
+  ],
+  "source": {
+    "work": "Miguel de Cervantes, El ingenioso hidalgo Don Quijote de la Mancha, parte I, cap. VIII",
+    "edition": "1605 printing",
+    "url": "https://es.wikisource.org/wiki/Don_Quijote_de_la_Mancha",
+    "public_domain": true,
+    "verified": true,
+    "verified_on": "2026-11-20",
+    "verified_note": "Original game prose about the chapter's events, not a claim of verbatim 1605 text."
+  },
+  "original_1605": "No hay secretos que el tiempo no descubra, ni enredos que la paciencia no deshaga.",
+  "modern": {
+    "es": "No hay secretos que el tiempo no descubra, ni enredos que la paciencia no deshaga.",
+    "es_419": "No hay secretos que el tiempo no descubra, ni enredos que la paciencia no deshaga.",
+    "en": "No secret stays hidden from time, nor any tangle that patience cannot undo.",
+    "fr": "Aucun secret ne reste caché au temps, ni aucun nœud que la patience ne puisse défaire.",
+    "de": "Kein Geheimnis bleibt der Zeit verborgen, keine Verwicklung, die Geduld nicht löst.",
+    "it": "Nessun segreto resta nascosto al tempo, né nodo che la pazienza non sciolga.",
+    "pt_BR": "Nenhum segredo fica escondido do tempo, nem nó que a paciência não desfaça."
+  },
+  "variants": {
+    "reality": "La realidad: una posada polvorienta donde todos se conocen demasiado bien.",
+    "book": "El libro: una red de favores y promesas que sostiene la comedia."
+  },
+  "unlocks": {
+    "give": [
+      "codex_page",
+      "recuerdos_bonus"
+    ],
+    "verdict": "",
+    "shortcut": ""
+  }
+}

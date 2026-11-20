@@ -67,6 +67,12 @@ func save_state() -> Dictionary:
 	}
 
 
+## Fresh campaign: no recuerdos or milestones.
+func reset() -> void:
+	_recuerdos.clear()
+	_milestones.clear()
+
+
 func load_state(data: Dictionary) -> void:
 	_recuerdos[&"quixote"] = int(data.get("quixote", 0))
 	_recuerdos[&"sancho"] = int(data.get("sancho", 0))

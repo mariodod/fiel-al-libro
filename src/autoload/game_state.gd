@@ -218,7 +218,8 @@ func chapter_completed(id: StringName) -> void:
 		return
 	if not chapters_resolved.has(id):
 		chapters_resolved.append(id)
-		EventBus.chapter_completed.emit(id)
+	# RegionGraph.complete_chapter() emits the signal for a completion so
+	# listeners do not receive the same chapter twice.
 
 ## Is this chapter started/found?
 func chapter_started_flag(id: StringName) -> bool:
@@ -250,41 +251,18 @@ func get_current_chapter() -> StringName:
 ## Maps each Venture to its chapter. Used when a Venture is resolved to
 ## mark the chapter and its region as completed.
 func chapter_for_venture(venture_id: StringName) -> StringName:
-	var venture_to_chapter: Dictionary = {
-		&"venture_montiel": &"ch_01_windmills",
-		&"venture_basque": &"ch_02_basque",
-		&"venture_canting_sea": &"ch_03_canting_sea",
-		&"venture_encinados": &"ch_04_encinados",
-		&"venture_montesinos": &"ch_05_montesinos",
-		&"venture_bridge": &"ch_06_bridge",
-		&"venture_dulcinea": &"ch_07_dulcinea",
-		&"venture_mirrors": &"ch_11_mirrors",
-		&"venture_magician": &"ch_12_magician",
-		&"venture_duke": &"ch_13_duke",
-	}
-	return venture_to_chapter.get(venture_id, &"")
+	# RegionGraph is authoritative for all 47 chapters; the old 10-entry
+	# duplicate silently dropped chapters 14-50.
+	for id in RegionGraph.chapters.keys():
+		var chapter: Dictionary = RegionGraph.chapters[id]
+		if StringName(str(chapter.get("venture_id", ""))) == venture_id:
+			return StringName(str(id))
+	return &""
 
 
-## Get the region id for a chapter id.
-##
-## Used when marking a chapter's region as resolved.
 func region_for_chapter(chapter_id: StringName) -> StringName:
-	var chapter_to_region: Dictionary = {
-		&"ch_01_windmills": &"camino_la_mancha",
-		&"ch_02_basque": &"camino_la_mancha",
-		&"ch_03_canting_sea": &"camino_la_mancha",
-		&"ch_04_encinados": &"sierra_morena",
-		&"ch_05_montesinos": &"sierra_morena",
-		&"ch_06_bridge": &"sierra_morena",
-		&"ch_07_dulcinea": &"el_toboso",
-		&"ch_08_celestina": &"el_toboso",
-		&"ch_09_ensayo_setup": &"los_riscos",
-		&"ch_10_ensayo_resolution": &"los_riscos",
-		&"ch_11_mirrors": &"el_castillo_del_duque",
-		&"ch_12_magician": &"el_castillo_del_duque",
-		&"ch_13_duke": &"el_castillo_del_duque",
-	}
-	return chapter_to_region.get(chapter_id, &"")
+	var chapter: Dictionary = RegionGraph.chapters.get(chapter_id, {})
+	return StringName(str(chapter.get("region_id", "")))
 
 
 

@@ -1,4 +1,4 @@
-﻿# FIEL AL LIBRO â€” sample translation template
+# FIEL AL LIBRO — sample translation template
 # This is a WORKING EXAMPLE of the key convention and file format.
 # Regenerate with:
 #   godot --headless --script res://src/tools/extract_strings.gd
@@ -2842,12 +2842,12 @@ msgid "ui.examine.quote"
 msgstr ""
 
 # --- THE FACES: what a character perceives -------------------------------
-# One face per truth, per object. The Examine panel shows ONE of them â€”
-# the one the reader is reading right now â€” and never the other truth and
+# One face per truth, per object. The Examine panel shows ONE of them —
+# the one the reader is reading right now — and never the other truth and
 # never the other character's reading.
 #
 # The "tell" is the seam: the one detail that does not add up. It is the
-# seed of the Lectura system (GDD.md Â§6), and it is the only thing the
+# seed of the Lectura system (GDD.md §6), and it is the only thing the
 # player is meant to notice without a marker.
 
 #. TRANSLATORS: The rock in the Reality truth: how it looks.
@@ -3010,7 +3010,7 @@ msgstr ""
 msgid "ui.slice.venture.down"
 msgstr ""
 
-#. TRANSLATORS: The Venture of Montiel is over â€” resolved by truth, not force.
+#. TRANSLATORS: The Venture of Montiel is over — resolved by truth, not force.
 #. The knight's delusion held: the world stayed Book, the giant was real,
 #. and a fragment of the original book is granted.
 msgid "ui.slice.venture.truth"
@@ -3942,7 +3942,7 @@ msgstr ""
 msgid "ui.manifiesto.empty"
 msgstr ""
 
-#. TRANSLATORS: The manuscript prologue â€” opening page before chapter 1.
+#. TRANSLATORS: The manuscript prologue — opening page before chapter 1.
 msgid "prologue.opening.text"
 msgstr ""
 
@@ -4041,4 +4041,8 @@ msgstr ""
 
 #. TRANSLATORS: Toast shown when the player rests at the Posada.
 msgid "ui.slice.rested"
+msgstr ""
+
+#. META: namespace=bk
+msgid "bk.ch08.celestina.title"
 msgstr ""

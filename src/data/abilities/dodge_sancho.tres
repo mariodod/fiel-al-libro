@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_data")
-id = &"dodge"
+id = &"dodge_sancho"
 display_name_key = &"it.ability.dodge.name"
 description_key = &"it.ability.dodge.desc"
 kind = 2

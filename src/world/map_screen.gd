@@ -332,6 +332,9 @@ func _show_fragment_marker_for(variant: String, fragment_id: StringName, found: 
 
 ## Close the map.
 func _close() -> void:
+	var host := get_parent()
+	if host != null and host.has_method("clear_map_screen"):
+		host.call("clear_map_screen")
 	queue_free()
 
 

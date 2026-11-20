@@ -32,36 +32,36 @@ roughness = 1.0
 
 [node name="VillageKit" type="Node3D"]
 
-[node name="Ground" type="MeshInstance3D" parent="VillageKit"]
+[node name="Ground" type="MeshInstance3D" parent="."]
 mesh = SubResource("Plane_ground")
 material_override = SubResource("Mat_ground")
 
-[node name="House1Wall" type="MeshInstance3D" parent="VillageKit"]
+[node name="House1Wall" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1.5, -8)
 mesh = SubResource("Mesh_wall")
 material_override = SubResource("Mat_wall")
 
-[node name="House1Roof" type="MeshInstance3D" parent="VillageKit"]
+[node name="House1Roof" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 3, -8)
 mesh = SubResource("Mesh_roof")
 material_override = SubResource("Mat_roof")
 
-[node name="House1Door" type="MeshInstance3D" parent="VillageKit"]
+[node name="House1Door" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 2.4, -8)
 mesh = SubResource("Mesh_door")
 material_override = SubResource("Mat_door")
 
-[node name="House2Wall" type="MeshInstance3D" parent="VillageKit"]
+[node name="House2Wall" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1.5, -8)
 mesh = SubResource("Mesh_wall")
 material_override = SubResource("Mat_wall")
 
-[node name="House2Roof" type="MeshInstance3D" parent="VillageKit"]
+[node name="House2Roof" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 3, -8)
 mesh = SubResource("Mesh_roof")
 material_override = SubResource("Mat_roof")
 
-[node name="House2Door" type="MeshInstance3D" parent="VillageKit"]
+[node name="House2Door" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2.4, -8)
 mesh = SubResource("Mesh_door")
 material_override = SubResource("Mat_door")

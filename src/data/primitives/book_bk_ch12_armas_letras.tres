@@ -16,7 +16,7 @@ script = ExtResource("2_face")
 name_key = &"ui.form.libro"
 description_key = &"ui.face.book_bk_ch12_armas_letras.book.desc"
 tell_key = &"ui.face.book_bk_ch12_armas_letras.book.tell"
-fragment_id = &"bk.ch12.armas_letras"
+fragment_id = &"bk.ch12.armas_letras.01"
 
 [resource]
 script = ExtResource("1_data")

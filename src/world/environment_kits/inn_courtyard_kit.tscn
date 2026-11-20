@@ -32,36 +32,36 @@ roughness = 1.0
 
 [node name="InnCourtyardKit" type="Node3D"]
 
-[node name="Ground" type="MeshInstance3D" parent="InnCourtyardKit"]
+[node name="Ground" type="MeshInstance3D" parent="."]
 mesh = SubResource("Plane_ground")
 material_override = SubResource("Mat_ground")
 
-[node name="WallNorth" type="MeshInstance3D" parent="InnCourtyardKit"]
+[node name="WallNorth" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -10)
 mesh = SubResource("Mesh_wall")
 material_override = SubResource("Mat_wall")
 
-[node name="WallSouth" type="MeshInstance3D" parent="InnCourtyardKit"]
+[node name="WallSouth" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 10)
 mesh = SubResource("Mesh_wall")
 material_override = SubResource("Mat_wall")
 
-[node name="WallEast" type="MeshInstance3D" parent="InnCourtyardKit"]
+[node name="WallEast" type="MeshInstance3D" parent="."]
 transform = Transform3D(0, 0, 1, -1, 0, 0, 0, -1, 0, 10, 1.5, 0)
 mesh = SubResource("Mesh_wall")
 material_override = SubResource("Mat_wall")
 
-[node name="WallWest" type="MeshInstance3D" parent="InnCourtyardKit"]
+[node name="WallWest" type="MeshInstance3D" parent="."]
 transform = Transform3D(0, 0, 1, -1, 0, 0, 0, -1, 0, -10, 1.5, 0)
 mesh = SubResource("Mesh_wall")
 material_override = SubResource("Mat_wall")
 
-[node name="Well" type="MeshInstance3D" parent="InnCourtyardKit"]
+[node name="Well" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.76, 0)
 mesh = SubResource("Mesh_well")
 material_override = SubResource("Mat_well")
 
-[node name="Table" type="MeshInstance3D" parent="InnCourtyardKit"]
+[node name="Table" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 3)
 mesh = SubResource("Mesh_table")
 material_override = SubResource("Mat_table")

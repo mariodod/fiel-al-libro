@@ -33,7 +33,6 @@ const MODERN_FIELD := "modern"
 ##
 ## The list itself is derived — see `shipped_languages()` — and this is
 ## the fallback for a build with no locale files at all.
-const SHIPPED_LANGUAGES: Array[String] = ["es", "en", "fr"]
 
 ## The regional variant of the Spanish, which has its own rendering.
 const SPANISH_VARIANT := "es_419"

@@ -78,7 +78,7 @@ func suite(t):
 				break
 		if not reachable:
 			unreachable.append(id)
-	t.expect_eq(fragment_count, 48, "48 fragments exist")
+	t.expect_eq(fragment_count, 49, "49 fragments exist")
 	t.expect_eq(unreachable.size(), 0, "none are uncollectable: %s" % str(unreachable))
 
 	t.test("resolving an anamorphosis grants its Manifiesto page")

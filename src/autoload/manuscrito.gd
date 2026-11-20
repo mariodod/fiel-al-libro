@@ -40,6 +40,16 @@ func delete_save(slot: int) -> void:
 ## Write the current game state to a slot.
 ## Atomic: writes to a .tmp first, then renames. A crash mid-write can
 ## never leave a half-written save — the worst possible bug.
+func _ensayo_state() -> Dictionary:
+	return {
+		"state": Ensayo.state,
+		"setup": Ensayo.setup.duplicate(true),
+		"current_round": Ensayo.current_round,
+		"current_outcome": int(Ensayo.current_outcome),
+		"outcome_reasons": Ensayo.outcome_reasons.duplicate(),
+	}
+
+
 func save_game(slot: int) -> bool:
 	var payload := {
 		"version": SAVE_VERSION,
@@ -50,6 +60,10 @@ func save_game(slot: int) -> bool:
 		"locura": Locura.save_state(),
 		"memoria": Memoria.save_state(),
 		"biblioteca": Biblioteca.save_state(),
+		"region_graph": RegionGraph.save_state(),
+		"lectura": Lectura.save_state(),
+		"verdict": Verdict.save_state(),
+		"ensayo": _ensayo_state(),
 	}
 
 	var tmp_path := slot_path(slot) + ".tmp"
@@ -90,6 +104,11 @@ func _serialize_game_state() -> Dictionary:
 		"codex_pages": GameState.codex_pages.duplicate(),
 		"pages_written": GameState.pages_written.duplicate(),
 		"ending_id": String(GameState.ending_id),
+		"regions_found": GameState.regions_found.duplicate(true),
+		"regions_resolved": GameState.regions_resolved.duplicate(true),
+		"chapters_found": GameState.chapters_found.duplicate(),
+		"chapters_resolved": GameState.chapters_resolved.duplicate(),
+		"current_chapter_id": String(GameState.current_chapter_id),
 		"author_revealed": GameState.author_revealed,
 		"quixote_playtime": GameState.get_playtime(&"quixote"),
 		"sancho_playtime": GameState.get_playtime(&"sancho"),
@@ -117,6 +136,9 @@ func load_game(slot: int) -> bool:
 
 	var data: Dictionary = parsed
 	var version := int(data.get("version", 0))
+	if version > SAVE_VERSION:
+		push_error("[Manuscrito] Slot %d was written by a newer build (%d > %d)." % [slot, version, SAVE_VERSION])
+		return false
 	if version < SAVE_VERSION:
 		data = _migrate(data, version)
 		if data.is_empty():
@@ -145,6 +167,26 @@ func _migrate(data: Dictionary, from_version: int) -> Dictionary:
 	return data
 
 
+func _sn_array(value: Variant) -> Array[StringName]:
+	var out: Array[StringName] = []
+	if value is Array:
+		for item in value:
+			out.append(StringName(str(item)))
+	return out
+
+
+func _load_ensayo(data: Dictionary) -> void:
+	if data.is_empty():
+		return
+	Ensayo.state = str(data.get("state", "setup"))
+	Ensayo.setup = data.get("setup", {})
+	Ensayo.current_round = int(data.get("current_round", 0))
+	Ensayo.current_outcome = int(data.get("current_outcome", 0)) as Ensayo.Outcome
+	Ensayo.outcome_reasons.clear()
+	for reason in data.get("outcome_reasons", []):
+		Ensayo.outcome_reasons.append(str(reason))
+
+
 func _apply(data: Dictionary) -> void:
 	var gs: Dictionary = data.get("game_state", {})
 
@@ -164,6 +206,11 @@ func _apply(data: Dictionary) -> void:
 		GameState.pages_written.append(StringName(id))
 	GameState.ending_id = StringName(str(gs.get("ending_id", "")))
 	GameState.author_revealed = bool(gs.get("author_revealed", false))
+	GameState.regions_found = gs.get("regions_found", {})
+	GameState.regions_resolved = gs.get("regions_resolved", {})
+	GameState.chapters_found = _sn_array(gs.get("chapters_found", []))
+	GameState.chapters_resolved = _sn_array(gs.get("chapters_resolved", []))
+	GameState.current_chapter_id = StringName(str(gs.get("current_chapter_id", "")))
 	GameState.quixote_playtime = float(gs.get("quixote_playtime", 0.0))
 	GameState.sancho_playtime = float(gs.get("sancho_playtime", 0.0))
 
@@ -171,6 +218,10 @@ func _apply(data: Dictionary) -> void:
 	Locura.load_state(data.get("locura", {}))
 	Memoria.load_state(data.get("memoria", {}))
 	Biblioteca.load_state(data.get("biblioteca", {}))
+	RegionGraph.load_state(data.get("region_graph", {}))
+	Lectura.load_state(data.get("lectura", {}))
+	Verdict.load_state(data.get("verdict", {}))
+	_load_ensayo(data.get("ensayo", {}))
 
 
 # ── Slot metadata (for the "read the manuscript" load screen) ───────────

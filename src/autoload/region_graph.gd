@@ -128,7 +128,7 @@ var chapters: Dictionary = {
 		"region_id": "camino_la_mancha",
 		"chapter_number": 14,
 		"scene_path": "res://src/world/chapters/ch_14_galeotes.tscn",
-		"venture_id": "",
+		"venture_id": "venture_galeotes",
 		"case_id": "",
 		"unlocks": ["ch_15_muerto_camino"],
 	},
@@ -176,7 +176,7 @@ var chapters: Dictionary = {
 		"region_id": "el_toboso",
 		"chapter_number": 22,
 		"scene_path": "res://src/world/chapters/ch_22_duelo_luz_luna.tscn",
-		"venture_id": "",
+		"venture_id": "venture_duelo_luz_luna",
 		"case_id": "",
 		"unlocks": ["ch_23_montesinos"],
 	},
@@ -240,7 +240,7 @@ var chapters: Dictionary = {
 		"region_id": "el_castillo_del_duque",
 		"chapter_number": 30,
 		"scene_path": "res://src/world/chapters/ch_30_leones_carro.tscn",
-		"venture_id": "",
+		"venture_id": "venture_leones_carro",
 		"case_id": "",
 		"unlocks": ["ch_31_cueva_hermoso"],
 	},
@@ -280,7 +280,7 @@ var chapters: Dictionary = {
 		"region_id": "sierra_morena",
 		"chapter_number": 35,
 		"scene_path": "res://src/world/chapters/ch_35_caballero_blanco.tscn",
-		"venture_id": "",
+		"venture_id": "venture_caballero_blanco",
 		"case_id": "",
 		"unlocks": ["ch_36_cuidado_sancho"],
 	},
@@ -442,6 +442,13 @@ const POSADA_BY_REGION: Dictionary = {
 
 ## The Posada serving a region, or empty if the region is unknown.
 func posada_id_for(region_id: StringName) -> StringName:
+	# Prefer the authored data; fall back to the table for later chapters.
+	var region: Dictionary = regions.get(region_id, {})
+	var ids: Array = region.get("chapter_ids", [])
+	for id in ids:
+		var data = chapter_data.get(StringName(str(id)))
+		if data != null and not String(data.posada_id).is_empty():
+			return data.posada_id
 	return POSADA_BY_REGION.get(region_id, &"")
 
 
@@ -462,7 +469,26 @@ var current_chapter: StringName = &""
 ## The region of the current chapter.
 var current_region: StringName = &""
 
+## The authored ChapterData resources (ch_01-ch_13) are the source of the
+## region -> posada relationship; POSADA_BY_REGION is the fallback for the
+## 34 chapters that have no resource file.
+var chapter_data: Dictionary = {}
+
+
+func _load_chapter_data() -> void:
+	var dir := DirAccess.open("res://src/data/chapters/")
+	if dir == null:
+		return
+	for name in dir.get_files():
+		if not name.ends_with(".tres"):
+			continue
+		var data := load("res://src/data/chapters/" + name)
+		if data != null:
+			chapter_data[data.id] = data
+
+
 func _ready() -> void:
+	_load_chapter_data()
 	# Start with the first chapter unlocked.
 	chapters_unlocked = [start_chapter]
 	current_chapter = start_chapter
@@ -470,6 +496,32 @@ func _ready() -> void:
 	current_region = ch.get("region_id")
 	EventBus.chapter_started.emit(start_chapter)
 	EventBus.region_found.emit(current_region)
+
+## Snapshot the progression the graph owns. Without this, Continue restores
+## current_chapter but not the unlocks, and load_chapter() refuses the chapter.
+func save_state() -> Dictionary:
+	return {
+		"chapters_completed": chapters_completed.duplicate(),
+		"chapters_unlocked": chapters_unlocked.duplicate(),
+		"current_chapter": String(current_chapter),
+		"current_region": String(current_region),
+	}
+
+
+func load_state(data: Dictionary) -> void:
+	chapters_completed = _string_names(data.get("chapters_completed", []))
+	chapters_unlocked = _string_names(data.get("chapters_unlocked", []))
+	current_chapter = StringName(str(data.get("current_chapter", "")))
+	current_region = StringName(str(data.get("current_region", "")))
+
+
+func _string_names(value: Variant) -> Array[StringName]:
+	var out: Array[StringName] = []
+	if value is Array:
+		for item in value:
+			out.append(StringName(str(item)))
+	return out
+
 
 ## Reset progress to a fresh campaign for New Game.
 func reset_progress() -> void:

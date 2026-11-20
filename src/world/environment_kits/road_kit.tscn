@@ -18,31 +18,31 @@ roughness = 1.0
 
 [node name="RoadKit" type="Node3D"]
 
-[node name="Ground" type="MeshInstance3D" parent="RoadKit"]
+[node name="Ground" type="MeshInstance3D" parent="."]
 mesh = SubResource("Plane_ground")
 material_override = SubResource("Mat_ground")
 
-[node name="Milestone1" type="MeshInstance3D" parent="RoadKit"]
+[node name="Milestone1" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.8, -20)
 mesh = SubResource("Mesh_milestone")
 material_override = SubResource("Mat_milestone")
 
-[node name="Milestone2" type="MeshInstance3D" parent="RoadKit"]
+[node name="Milestone2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.8, -40)
 mesh = SubResource("Mesh_milestone")
 material_override = SubResource("Mat_milestone")
 
-[node name="Milestone3" type="MeshInstance3D" parent="RoadKit"]
+[node name="Milestone3" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.8, -60)
 mesh = SubResource("Mesh_milestone")
 material_override = SubResource("Mat_milestone")
 
-[node name="Milestone4" type="MeshInstance3D" parent="RoadKit"]
+[node name="Milestone4" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.8, -80)
 mesh = SubResource("Mesh_milestone")
 material_override = SubResource("Mat_milestone")
 
-[node name="Milestone5" type="MeshInstance3D" parent="RoadKit"]
+[node name="Milestone5" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.8, -100)
 mesh = SubResource("Mesh_milestone")
 material_override = SubResource("Mat_milestone")

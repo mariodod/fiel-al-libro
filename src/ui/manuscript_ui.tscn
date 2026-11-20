@@ -133,18 +133,6 @@ theme_override_font_sizes/font_size = 32
 theme_override_colors/font_color = Color(0.97, 0.93, 0.83, 1.0)
 theme_override_alignment/horizontal_alignment = 1
 
-[node name="PauseResume" type="Button" parent="Pages/PausePage/PausePanel"]
-anchors_preset = 1
-position = Vector2(100, 120)
-size = Vector2(200, 40)
-text = "Resume (P / ESC)"
-
-[node name="PauseQuit" type="Button" parent="Pages/PausePage/PausePanel"]
-anchors_preset = 1
-position = Vector2(100, 180)
-size = Vector2(200, 40)
-text = "Quit to Yard"
-
 [node name="PauseSettings" type="Button" parent="Pages/PausePage/PausePanel"]
 anchors_preset = 1
 position = Vector2(100, 235)

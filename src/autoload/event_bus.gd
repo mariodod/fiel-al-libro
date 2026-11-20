@@ -54,7 +54,6 @@ signal object_examined(object_id: StringName, reader_id: StringName)
 
 
 # ── Verdicts (asserting a version of events) ────────────────────────────
-signal verdict_offered(id: StringName)
 signal verdict_resolved(id: StringName, mode: int)
 
 
@@ -70,7 +69,6 @@ signal humanity_lost(amount: int, character_id: StringName)
 # ── Library & manuscript ────────────────────────────────────────────────
 signal book_collected(id: StringName)
 signal shelf_changed(equipped: Array[StringName])
-signal manuscript_page_written(id: StringName)
 signal codex_page_found(id: StringName)
 
 
@@ -80,11 +78,9 @@ signal chapter_completed(id: StringName)
 ## A chapter became available after its predecessor was completed. Used by
 ## the chapter flow and the map screen.
 signal chapter_unlocked(id: StringName)
-signal venture_started(id: StringName)
 signal venture_resolved(id: StringName, mode: int)
 signal region_found(id: StringName)
 signal region_resolved(id: StringName)
-signal region_loaded(id: StringName)
 ## The player has entered a region for the first time in this run.
 signal region_entered(id: StringName)
 signal posada_entered(id: StringName)
@@ -110,6 +106,4 @@ signal toast(text_key: StringName, args: Array)
 signal character_spoke(character_id: StringName, text_key: StringName, args: Array)
 signal game_saved(slot: int)
 signal game_loaded(slot: int)
-signal ending_reached(id: StringName)
 signal settings_changed()
-signal toggle_manifiesto()

@@ -16,11 +16,20 @@ func _ready() -> void:
 	# Begin the Ensayo setup phase once the slice is loaded.
 	# Default setup: Quixote is tested by Sancho; the secret is the wife's name;
 	# the tested is told. These can be overridden by player choice in the UI.
+	# A preloaded .json is a JSON Resource: its parsed content lives in .data.
+	# Dictionary.get() takes one key, and the keys are nested, not dot paths.
+	var defaults: Dictionary = {}
+	if ensayo_script.data is Dictionary:
+		var setup_section: Variant = (ensayo_script.data as Dictionary).get("setup", {})
+		if setup_section is Dictionary:
+			var section: Variant = (setup_section as Dictionary).get("default_setup", {})
+			if section is Dictionary:
+				defaults = section
 	Ensayo.start_setup(
-		ensayo_script.get("setup.default_setup.tested", &"quixote"),
-		ensayo_script.get("setup.default_setup.examiner", &"sancho"),
-		ensayo_script.get("setup.default_setup.secret", &"wife_name"),
-		ensayo_script.get("setup.default_setup.told", &"tested")
+		StringName(str(defaults.get("tested", "quixote"))),
+		StringName(str(defaults.get("examiner", "sancho"))),
+		StringName(str(defaults.get("secret", "wife_name"))),
+		StringName(str(defaults.get("told", "tested")))
 	)
 
 func _on_venture_resolved(_id: StringName, mode: int) -> void:

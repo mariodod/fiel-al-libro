@@ -147,6 +147,13 @@ func save_state() -> Dictionary:
 	}
 
 
+## Fresh campaign: the shelf is empty.
+func reset() -> void:
+	collected.clear()
+	equipped.clear()
+	EventBus.shelf_changed.emit(equipped.duplicate())
+
+
 func load_state(data: Dictionary) -> void:
 	collected.clear()
 	equipped.clear()

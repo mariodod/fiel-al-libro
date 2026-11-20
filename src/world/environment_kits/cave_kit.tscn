@@ -25,26 +25,26 @@ roughness = 1.0
 
 [node name="CaveKit" type="Node3D"]
 
-[node name="Ground" type="MeshInstance3D" parent="CaveKit"]
+[node name="Ground" type="MeshInstance3D" parent="."]
 mesh = SubResource("Plane_ground")
 material_override = SubResource("Mat_ground")
 
-[node name="CaveMouth" type="MeshInstance3D" parent="CaveKit"]
+[node name="CaveMouth" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -5)
 mesh = SubResource("Mesh_cave_mouth")
 material_override = SubResource("Mat_cave")
 
-[node name="Stone1" type="MeshInstance3D" parent="CaveKit"]
+[node name="Stone1" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, -3)
 mesh = SubResource("Mesh_stone")
 material_override = SubResource("Mat_stone")
 
-[node name="Stone2" type="MeshInstance3D" parent="CaveKit"]
+[node name="Stone2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, -3)
 mesh = SubResource("Mesh_stone")
 material_override = SubResource("Mat_stone")
 
-[node name="Stone3" type="MeshInstance3D" parent="CaveKit"]
+[node name="Stone3" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -7)
 mesh = SubResource("Mesh_stone")
 material_override = SubResource("Mat_stone")

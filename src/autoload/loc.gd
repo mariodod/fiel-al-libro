@@ -42,8 +42,6 @@ func _detect_system_locale() -> String:
 			candidate = "es"
 		"pt":
 			candidate = "pt_BR"
-		"zh":
-			candidate = "zh_Hans"
 
 	return candidate if SHIPPED_LOCALES.has(candidate) else FALLBACK
 

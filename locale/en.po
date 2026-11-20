@@ -4046,3 +4046,7 @@ msgstr "Back"
 #. TRANSLATORS: Toast shown when the player rests at the Posada.
 msgid "ui.slice.rested"
 msgstr "You have rested."
+
+#. META: namespace=bk
+msgid "bk.ch08.celestina.title"
+msgstr "Celestina"

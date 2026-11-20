@@ -88,12 +88,13 @@ Books collected: {books}/15
 
 The game is the book. You are the reader. The story continues,
 because a reader who finishes a book simply starts it again.
-"""
+	""".format({"q": q, "s": s, "books": books})
 
 ## La Locura Compartida — Shared Madness.
 ## Both characters high Locura. The world is the book; they are both
 ## knights. The "happy" ending that is also the worse one.
 func _prose_la_locura_compartida() -> String:
+	var books := Biblioteca.collected.size()
 	var q := int(Locura.get_for(&"quixote"))
 	var s := int(Locura.get_for(&"sancho"))
 	return """You ride together, Quixote and Sancho, across a plain where
@@ -116,11 +117,12 @@ Sancho's locura: {s}/100
 
 The world is the book. The book is the world. And neither of them
 will ever leave it.
-"""
+	""".format({"q": q, "s": s, "books": books})
 
 ## El Mundo Real — The Real World.
 ## Both cured, the book shelved. The saddest ending.
 func _prose_el_mundo_real() -> String:
+	var books := Biblioteca.collected.size()
 	var q := int(Locura.get_for(&"quixote"))
 	var s := int(Locura.get_for(&"sancho"))
 	return """The book is closed. Shelved. Forgotten.
@@ -143,7 +145,7 @@ Sancho's locura: {s}/100
 
 The book is shelved. The adventure is over. The real world remains,
 and it is smaller than either of them remembered.
-"""
+	""".format({"q": q, "s": s, "books": books})
 
 ## El Libro Gana — The Book Wins.
 ## Middle ground: the book prevails, partly.
@@ -170,7 +172,7 @@ Sancho's locura: {s}/100
 Books collected: {books}/15
 
 The book wins. Not entirely. But it wins enough.
-"""
+	""".format({"q": q, "s": s, "books": books})
 
 ## ── Input handling ──────────────────────────────────────────────────────
 

@@ -190,7 +190,10 @@ func _ready() -> void:
 	# manuscript through ChapterFlow (which plays the prologue and enters
 	# Chapter 1), Continue restores the autosave and re-enters the saved chapter.
 	# It would cover the grey-box during headless test runs, so skip there.
-	if DisplayServer.get_name() != "headless" and _manuscript_ui != null:
+	# Only the grey-box entry scene is the title screen. Chapter scripts extend
+	# this class and call super._ready(), so they must NOT be covered by it.
+	if DisplayServer.get_name() != "headless" and _manuscript_ui != null \
+			and scene_file_path == "res://src/world/slice.tscn":
 		_manuscript_ui.open_title()
 
 # ── World ───────────────────────────────────────────────────────────────
@@ -494,11 +497,6 @@ func _build_characters() -> void:
 # ── Input ───────────────────────────────────────────────────────────────
 
 func _unhandled_input(event: InputEvent) -> void:
-	# When the Manuscript shell is open, it owns all UI input.
-	if _manuscript_ui != null and _manuscript_ui.visible:
-		_handle_manuscript_input(event)
-		return
-
 	if event.is_action_pressed(&"toggle_truth"):
 		# The truth is the knight's delusion, and it is his alone: *"pressing
 		# T with sancho should do nothing. It's a quijote exclusive
@@ -616,24 +614,13 @@ func _rest_at_posada() -> void:
 	EventBus.toast.emit(&"ui.slice.rested", [])
 
 
-## Handle UI input when the Manuscript shell is open.
-## Routes shelf/codex/pause/escape through the shell's pages.
-func _handle_manuscript_input(event: InputEvent) -> void:
-	if event.is_action_pressed(&"ui_cancel"):
-		_manuscript_ui.go_back()
-	elif event.is_action_pressed(&"shelf"):
-		# The shelf key always toggles the real Biblioteca shelf. If the
-		# shell is open, close it first so the shelf page isn't shadowed
-		# by an empty placeholder page.
-		_manuscript_ui.close()
-		_toggle_shelf()
-	elif event.is_action_pressed(&"manifiesto"):
-		_manuscript_ui.open_codex()
-	elif event.is_action_pressed(&"pause"):
-		_manuscript_ui.open_pause()
-
-
 ## Open or close the world map.
+## The map screen frees itself on ESC; it tells us so we never keep a
+## dangling reference (the next G press used to double-free it).
+func clear_map_screen() -> void:
+	_map_screen = null
+
+
 func _toggle_map() -> void:
 	if _map_screen != null:
 		_map_screen.queue_free()

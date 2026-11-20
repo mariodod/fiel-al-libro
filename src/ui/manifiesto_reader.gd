@@ -27,7 +27,6 @@ func _ready() -> void:
 	# Child nodes are found lazily on first use (see _find_child_by_name)
 	# because nested scene instantiation can delay their availability.
 	EventBus.shelf_changed.connect(_refresh_list)
-	EventBus.toggle_manifiesto.connect(_toggle)
 
 
 ## Recursively find a descendant node by name.

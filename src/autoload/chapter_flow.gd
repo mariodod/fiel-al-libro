@@ -40,6 +40,14 @@ func reset_campaign() -> void:
 	Manuscrito.delete_save(0)
 	GameState.reset_progress()
 	RegionGraph.reset_progress()
+	Locura.reset()
+	Memoria.reset()
+	Biblioteca.reset()
+	Verdict.reset()
+	Lectura.reset()
+	Ensayo.reset()
+	transitioning = false
+	current_chapter = &""
 	active = true
 
 
@@ -56,10 +64,16 @@ func continue_game() -> void:
 		start_new_game()
 		return
 	active = true
+	transitioning = false
+	current_chapter = GameState.current_chapter
 	flow_started.emit()
 	var id := GameState.current_chapter
 	if id.is_empty():
 		id = RegionGraph.start_chapter
+	# A save is proof the player reached this chapter. Never let a stale or
+	# interrupted unlock chain block resuming it.
+	if not RegionGraph.chapters_unlocked.has(id):
+		RegionGraph.chapters_unlocked.append(id)
 	goto_chapter(id)
 
 

@@ -113,12 +113,32 @@ func _build_forms() -> void:
 		return
 	var reality := venture.enemy.reality_form
 	var book := venture.enemy.book_form
-	if reality != null and reality.model_scene != null:
-		_reality_form = reality.model_scene.instantiate()
+	# Most forms have no authored model. A simple capsule keeps the enemy
+	# visible instead of leaving an invisible collider in the yard.
+	if reality != null:
+		_reality_form = reality.model_scene.instantiate() if reality.model_scene != null \
+			else _make_fallback_form(&"reality")
 		add_child(_reality_form)
-	if book != null and book.model_scene != null:
-		_book_form = book.model_scene.instantiate()
+	if book != null:
+		_book_form = book.model_scene.instantiate() if book.model_scene != null \
+			else _make_fallback_form(&"book")
 		add_child(_book_form)
+
+
+func _make_fallback_form(layer: StringName) -> Node3D:
+	var root := Node3D.new()
+	root.name = "FallbackForm_%s" % layer
+	var mesh := MeshInstance3D.new()
+	var capsule := CapsuleMesh.new()
+	capsule.radius = 0.6
+	capsule.height = 2.2
+	mesh.mesh = capsule
+	var material := StandardMaterial3D.new()
+	material.albedo_color = Color(0.45, 0.38, 0.30, 0.9) if layer == &"reality" \
+		else Color(0.78, 0.62, 0.32, 0.9)
+	mesh.material_override = material
+	root.add_child(mesh)
+	return root
 
 
 ## The body, so the character cannot walk through it.

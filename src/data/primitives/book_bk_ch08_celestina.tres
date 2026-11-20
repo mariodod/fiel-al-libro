@@ -16,11 +16,11 @@ script = ExtResource("2_face")
 name_key = &"ui.form.libro"
 description_key = &"ui.face.book_bk_ch08_celestina.book.desc"
 tell_key = &"ui.face.book_bk_ch08_celestina.book.tell"
-fragment_id = &"bk.ch08.celestina"
+fragment_id = &"bk.ch08.celestina.01"
 
 [resource]
 script = ExtResource("1_data")
-id = &"bk.ch08.celestina"
+id = &"bk.ch08.celestina.01"
 display_name_key = &"ui.book.bk.ch08.celestina.name"
 reality_form = ExtResource("rock_reality")
 book_form = ExtResource("rock_book")

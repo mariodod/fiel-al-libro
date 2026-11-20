@@ -25,21 +25,21 @@ roughness = 1.0
 
 [node name="WindmillKit" type="Node3D"]
 
-[node name="Ground" type="MeshInstance3D" parent="WindmillKit"]
+[node name="Ground" type="MeshInstance3D" parent="."]
 mesh = SubResource("Plane_ground")
 material_override = SubResource("Mat_ground")
 
-[node name="Tower" type="MeshInstance3D" parent="WindmillKit"]
+[node name="Tower" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 mesh = SubResource("Mesh_tower")
 material_override = SubResource("Mat_tower")
 
-[node name="Sail1" type="MeshInstance3D" parent="WindmillKit"]
+[node name="Sail1" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
 mesh = SubResource("Mesh_sail")
 material_override = SubResource("Mat_sail")
 
-[node name="Sail2" type="MeshInstance3D" parent="WindmillKit"]
+[node name="Sail2" type="MeshInstance3D" parent="."]
 transform = Transform3D(0, 0, 1, -1, 0, 0, 0, -1, 0, 0, 6, 0)
 mesh = SubResource("Mesh_sail")
 material_override = SubResource("Mat_sail")

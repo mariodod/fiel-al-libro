@@ -187,7 +187,7 @@ color = Color(0.086, 0.078, 0.063, 0.85)
 anchors_preset = 3
 size = Vector2(400, 300)
 
-[node name="PauseMenuTitle" type="Label" parent="PauseMenuPanel"]
+[node name="PauseMenuTitle" type="Label" parent="PauseMenu/PauseMenuPanel"]
 anchors_preset = 1
 position = Vector2(200, 40)
 text = "PAUSED"
@@ -195,13 +195,13 @@ theme_override_font_sizes/font_size = 32
 theme_override_colors/font_color = Color(0.97, 0.93, 0.83, 1.0)
 theme_override_alignment/horizontal_alignment = 1
 
-[node name="PauseMenuResume" type="Button" parent="PauseMenuPanel"]
+[node name="PauseMenuResume" type="Button" parent="PauseMenu/PauseMenuPanel"]
 anchors_preset = 3
 position = Vector2(100, 120)
 size = Vector2(200, 40)
 text = "Resume (P)"
 
-[node name="PauseMenuQuit" type="Button" parent="PauseMenuPanel"]
+[node name="PauseMenuQuit" type="Button" parent="PauseMenu/PauseMenuPanel"]
 anchors_preset = 3
 position = Vector2(100, 180)
 size = Vector2(200, 40)
@@ -215,7 +215,7 @@ visible = false
 anchors_preset = 3
 size = Vector2(500, 500)
 
-[node name="CodexTitle" type="Label" parent="CodexPanel"]
+[node name="CodexTitle" type="Label" parent="CodexLayer/CodexPanel"]
 anchors_preset = 1
 position = Vector2(250, 40)
 text = "Manuscript"
@@ -223,20 +223,20 @@ theme_override_font_sizes/font_size = 32
 theme_override_colors/font_color = Color(0.97, 0.93, 0.83, 1.0)
 theme_override_alignment/horizontal_alignment = 1
 
-[node name="CodexClose" type="Button" parent="CodexPanel"]
+[node name="CodexClose" type="Button" parent="CodexLayer/CodexPanel"]
 anchors_preset = 3
 position = Vector2(200, 440)
 size = Vector2(100, 40)
 text = "Back"
 
-[node name="CodexList" type="ScrollContainer" parent="CodexPanel"]
+[node name="CodexList" type="ScrollContainer" parent="CodexLayer/CodexPanel"]
 anchors_preset = 7
 margin_left = 40
 margin_top = 100
 margin_right = 40
 margin_bottom = 40
 
-[node name="CodexListContainer" type="VBoxContainer" parent="CodexList"]
+[node name="CodexListContainer" type="VBoxContainer" parent="CodexLayer/CodexPanel/CodexList"]
 size_flags_horizontal = 1
 size_flags_vertical = 1
 

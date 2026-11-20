@@ -32,37 +32,37 @@ roughness = 1.0
 
 [node name="InnKit" type="Node3D"]
 
-[node name="WallFront" type="MeshInstance3D" parent="InnKit"]
+[node name="WallFront" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -2)
 mesh = SubResource("Mesh_wall")
 material_override = SubResource("Mat_wall")
 
-[node name="WallBack" type="MeshInstance3D" parent="InnKit"]
+[node name="WallBack" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -5)
 mesh = SubResource("Mesh_wall")
 material_override = SubResource("Mat_wall")
 
-[node name="WallLeft" type="MeshInstance3D" parent="InnKit"]
+[node name="WallLeft" type="MeshInstance3D" parent="."]
 transform = Transform3D(0, 0, 1, -1, 0, 0, 0, -1, 0, -2, 1.5, -3.5)
 mesh = SubResource("Mesh_wall")
 material_override = SubResource("Mat_wall")
 
-[node name="WallRight" type="MeshInstance3D" parent="InnKit"]
+[node name="WallRight" type="MeshInstance3D" parent="."]
 transform = Transform3D(0, 0, 1, -1, 0, 0, 0, -1, 0, 5, 1.5, -3.5)
 mesh = SubResource("Mesh_wall")
 material_override = SubResource("Mat_wall")
 
-[node name="Roof" type="MeshInstance3D" parent="InnKit"]
+[node name="Roof" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 3, -3.5)
 mesh = SubResource("Mesh_roof")
 material_override = SubResource("Mat_roof")
 
-[node name="Door" type="MeshInstance3D" parent="InnKit"]
+[node name="Door" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6, -2)
 mesh = SubResource("Mesh_door")
 material_override = SubResource("Mat_door")
 
-[node name="Sign" type="MeshInstance3D" parent="InnKit"]
+[node name="Sign" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, -2)
 mesh = SubResource("Plane_sign")
 material_override = SubResource("Mat_sign")

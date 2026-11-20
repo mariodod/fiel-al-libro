@@ -19,8 +19,23 @@ var _registry: Dictionary = {}
 var active_ids: Array[StringName] = []
 
 func _ready() -> void:
+	_load_passives()
 	EventBus.shelf_changed.connect(_on_shelf_changed)
 	_on_shelf_changed(Biblioteca.equipped_books())
+
+
+## Passive .tres files are the single source of truth. Without this the
+## registry stays empty and every equipped book is inert.
+func _load_passives() -> void:
+	var dir := DirAccess.open("res://src/data/passives/")
+	if dir == null:
+		return
+	for name in dir.get_files():
+		if not name.ends_with(".tres"):
+			continue
+		var passive := load("res://src/data/passives/" + name)
+		if passive != null:
+			register(passive)
 
 func register(passive: Resource) -> void:
 	if passive == null:

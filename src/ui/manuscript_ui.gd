@@ -78,8 +78,10 @@ func _ready() -> void:
 	# The title page's Begin button starts the real chapter flow; without this
 	# it is a dead button and the built chapters are unreachable.
 	var start := _find_child(&"TitleStart") as Button
-	if start != null and not start.pressed.is_connected(_on_begin_pressed):
-		start.pressed.connect(_on_begin_pressed)
+	if start != null:
+		start.text = "%s (Enter)" % Loc.t(&"ui.menu.new_game")
+		if not start.pressed.is_connected(_on_begin_pressed):
+			start.pressed.connect(_on_begin_pressed)
 
 	# Continue is the counterpart: it restores the autosave and re-enters the
 	# chapter the player was in. It is hidden when no save exists yet.
@@ -139,6 +141,9 @@ func _on_settings_pressed() -> void:
 func _refresh_locale_texts() -> void:
 	if _title_continue != null:
 		_title_continue.text = Loc.t(&"ui.menu.continue")
+	var start := _find_child(&"TitleStart") as Button
+	if start != null:
+		start.text = "%s (Enter)" % Loc.t(&"ui.menu.new_game")
 	for button_name in [&"TitleSettings", &"PauseSettings"]:
 		var settings_button := _find_child(button_name) as Button
 		if settings_button != null:
@@ -300,11 +305,13 @@ func _unhandled_input(event: InputEvent) -> void:
 			_on_continue_pressed()
 		else:
 			_on_begin_pressed()
+		get_viewport().set_input_as_handled()
 		return
 
 	# ESC always goes back or closes.
 	if event.is_action_pressed(&"ui_cancel"):
 		go_back()
+		get_viewport().set_input_as_handled()
 		return
 
 	# Shelf key (I) toggles the shelf page.
@@ -313,6 +320,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			close()
 		else:
 			open_shelf()
+		get_viewport().set_input_as_handled()
 		return
 
 	# Manifiesto key (2) toggles the codex page.
@@ -321,6 +329,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			close()
 		else:
 			open_codex()
+		get_viewport().set_input_as_handled()
 		return
 
 	# Pause key (P) toggles the pause page.
@@ -329,6 +338,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			close()
 		else:
 			open_pause()
+		get_viewport().set_input_as_handled()
 		return
 
 

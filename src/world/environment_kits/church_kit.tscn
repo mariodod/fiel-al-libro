@@ -39,31 +39,31 @@ roughness = 1.0
 
 [node name="ChurchKit" type="Node3D"]
 
-[node name="Ground" type="MeshInstance3D" parent="ChurchKit"]
+[node name="Ground" type="MeshInstance3D" parent="."]
 mesh = SubResource("Plane_ground")
 material_override = SubResource("Mat_ground")
 
-[node name="WallFront" type="MeshInstance3D" parent="ChurchKit"]
+[node name="WallFront" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -6)
 mesh = SubResource("Mesh_wall")
 material_override = SubResource("Mat_wall")
 
-[node name="Tower" type="MeshInstance3D" parent="ChurchKit"]
+[node name="Tower" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 3, -6)
 mesh = SubResource("Mesh_tower")
 material_override = SubResource("Mat_tower")
 
-[node name="Roof" type="MeshInstance3D" parent="ChurchKit"]
+[node name="Roof" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -6)
 mesh = SubResource("Mesh_roof")
 material_override = SubResource("Mat_roof")
 
-[node name="Window1" type="MeshInstance3D" parent="ChurchKit"]
+[node name="Window1" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1.5, -6)
 mesh = SubResource("Mesh_window")
 material_override = SubResource("Mat_window")
 
-[node name="Window2" type="MeshInstance3D" parent="ChurchKit"]
+[node name="Window2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.5, -6)
 mesh = SubResource("Mesh_window")
 material_override = SubResource("Mat_window")

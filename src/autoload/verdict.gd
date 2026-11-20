@@ -136,6 +136,14 @@ static func save_state() -> Dictionary:
 	return out
 
 
+## Fresh campaign: no verdicts have been reached.
+static func reset() -> void:
+	_verdicts.clear()
+	_spotted.clear()
+	_evidence.clear()
+	_total_evidence = 0
+
+
 static func load_state(data: Dictionary) -> void:
 	_verdicts = {}
 	if data != null:

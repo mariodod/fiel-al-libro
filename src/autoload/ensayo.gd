@@ -38,6 +38,16 @@ var motive_options: Array[StringName] = [
 	"need_to_be_right", "fear_of_foolishness"
 ]
 
+## Fresh campaign: the Ensayo has not been staged.
+func reset() -> void:
+	state = "setup"
+	setup = {}
+	interventions = []
+	current_round = 0
+	current_outcome = Outcome.TEST_HELD
+	outcome_reasons = []
+
+
 ## Start Phase 1 setup with the given configuration.
 func start_setup(tested: StringName, examiner: StringName, secret: StringName, told: StringName) -> void:
 	state = "setup"
@@ -130,13 +140,9 @@ func _determine_outcome() -> Outcome:
 			truth_weight += 0.05   # Dialogue builds understanding
 
 	## Locura weighting.
-	var quixote_locura: float = 0.0
-	var sancho_locura: float = 0.0
-	# Note: we can't easily access Locura from here without circular deps;
-	# use GameState flags instead.
-	var locura_quixote: float = float(GameState.get_flag("quixote_locura", 0.0))
-	var locura_sancho: float = float(GameState.get_flag("sancho_locura", 0.0))
-	madness_weight += (quixote_locura + sancho_locura) * 0.001
+	var locura_quixote: float = Locura.get_for(&"quixote")
+	var locura_sancho: float = Locura.get_for(&"sancho")
+	madness_weight += (locura_quixote + locura_sancho) * 0.001
 
 	## Normalize and pick. All weights are raw (not divided by total),
 	## and roll is compared against each weight directly.
@@ -211,7 +217,7 @@ func apply_outcome(outcome: Outcome) -> void:
 		Outcome.NOTHING_HAPPENS:
 			EventBus.ensayo_outcome_nothing.emit()
 		Outcome.PLAYER_CAUGHT:
-			GameState.set_flag("author_revealed", true)
+			GameState.author_revealed = true
 			EventBus.ensayo_outcome_caught.emit()
 		Outcome.REFUSED:
 			GameState.set_flag("ensayo_refused", true)
