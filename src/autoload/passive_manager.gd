@@ -95,10 +95,3 @@ func _apply_to_pawns() -> void:
 	for pawn in get_tree().get_nodes_in_group(&"pawns"):
 		if pawn is CharacterPawn:
 			pawn.apply_passive_modifiers(modifiers)
-
-func get_modifier(key: String, default: Variant = null) -> Variant:
-	var v: Variant = modifiers.get(key)
-	return v if v != null else default
-
-func get_active_ids() -> Array[StringName]:
-	return active_ids.duplicate()

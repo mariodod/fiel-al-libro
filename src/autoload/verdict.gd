@@ -29,12 +29,6 @@ const LOCURA_COST_QUIXOTE = 20
 ## Sancho gains clarity when he speaks the truth.
 const LOCURA_GAIN_SANCHO = -15
 
-## How much Locura Quixote loses when he refutes (rare, but possible).
-const LOCURA_GAIN_QUIXOTE_REFUTE = -10
-
-## How much Locura Sancho gains when he insists (rare, but possible).
-const LOCURA_GAIN_SANCHO_INSIST = 25
-
 ## Verdict resolution modes.
 const VERDICT_NONE = 0
 const VERDICT_TRUTH = 1    ## Quixote insisted, world became Book
@@ -116,17 +110,6 @@ static func verdict_by_force(id: StringName) -> int:
 ##
 ## Returns the verdict mode that was applied, or VERDICT_NONE if already
 ## resolved.
-static func resolve(id: StringName, evidence: int = 1) -> int:
-	if _resolved.get(id, false):
-		return VERDICT_NONE
-
-	_verdicts[id] = VERDICT_TRUTH
-	_spotted[id] = true  # Resolving implies spotting
-	_evidence[id] = evidence
-	_total_evidence += evidence
-	EventBus.verdict_resolved.emit(id, VERDICT_TRUTH)
-	return VERDICT_TRUTH
-
 ## Save / load ─────────────────────────────────────────────────────────
 
 static func save_state() -> Dictionary:

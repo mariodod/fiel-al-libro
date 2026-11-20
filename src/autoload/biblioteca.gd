@@ -90,26 +90,6 @@ func unequip(id: StringName) -> void:
 
 
 ## The passive abilities granted by the equipped shelf.
-func active_passives() -> Array[String]:
-	var out: Array[String] = []
-	for id: StringName in equipped:
-		var book := get_book(id)
-		if book == null:
-			continue
-		var passive: String = str(book.get("passive_id"))
-		if passive != "" and not out.has(passive):
-			out.append(passive)
-	return out
-
-
-func collected_count() -> int:
-	return collected.size()
-
-
-func total_available() -> int:
-	return _registry.size()
-
-
 func get_collected() -> Array[StringName]:
 	return collected.duplicate()
 

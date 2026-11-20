@@ -98,14 +98,6 @@ func get_flag(key: String, default_value: Variant = false) -> Variant:
 
 func has_flag(key: String) -> bool:
 	return flags.has(key) and bool(flags[key])
-
-
-func add_evidence(id: StringName) -> void:
-	var current: int = int(evidence.get(id, 0))
-	evidence[id] = current + 1
-	EventBus.evidence_collected.emit(id, current + 1)
-
-
 func get_evidence_count(id: StringName) -> int:
 	return int(evidence.get(id, 0))
 
@@ -222,17 +214,8 @@ func chapter_completed(id: StringName) -> void:
 	# listeners do not receive the same chapter twice.
 
 ## Is this chapter started/found?
-func chapter_started_flag(id: StringName) -> bool:
-	return chapters_found.has(id)
-
 ## Is this chapter completed/resolved?
-func chapter_completed_flag(id: StringName) -> bool:
-	return chapters_resolved.has(id)
-
 ## How many chapters the player has started.
-func chapters_started_count() -> int:
-	return chapters_found.size()
-
 ## How many chapters are completed.
 func chapters_completed_count() -> int:
 	return chapters_resolved.size()
@@ -242,10 +225,6 @@ func set_current_chapter(id: StringName) -> void:
 	current_chapter_id = id
 
 ## Get the current chapter id.
-func get_current_chapter() -> StringName:
-	return current_chapter_id
-
-
 ## Get the chapter id for a given venture id.
 ##
 ## Maps each Venture to its chapter. Used when a Venture is resolved to
@@ -278,13 +257,6 @@ func spend_humanity(amount: int) -> void:
 
 
 ## Restore Humanity. Used by the "cure" quests that drain Locura (D1).
-func restore_humanity(amount: int) -> void:
-	var before := humanity
-	humanity = mini(HUMANITY_MAX, humanity + amount)
-	if humanity != before:
-		EventBus.humanity_changed.emit(humanity)
-
-
 # ── Ending aggregation (GDD.md §12.2) ───────────────────────────────────
 
 ## The five tracked variables that decide the ending. Kept in one place so

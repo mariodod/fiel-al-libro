@@ -89,15 +89,5 @@ func tp(base_key: StringName, count: int) -> String:
 
 ## True if the current locale reads right-to-left. Not shipped yet, but the
 ## UI is built to survive it (see TECH_STACK.md §7.5).
-func is_rtl() -> bool:
-	return TranslationServer.get_locale().ends_with("ar") or TranslationServer.get_locale().ends_with("he")
-
-
 ## The list of locales the player actually has installed (auto-translations
 ## from the "Codes" folder count).
-func installed_locales() -> Array[String]:
-	var found: Array[String] = []
-	for locale: String in SHIPPED_LOCALES:
-		if TranslationServer.get_translation_object(locale) != null:
-			found.append(locale)
-	return found
