@@ -24,7 +24,7 @@ const KEY_BINDINGS := {
 	"lectura": [KEY_Q],
 	"switch_character": [KEY_TAB],
 	"toggle_truth": [KEY_T],
-	"toggle_second_sight": [KEY_B],
+	"toggle_second_sight": [KEY_V],
 	"toggle_madness": [KEY_L],
 	"toggle_verdict": [KEY_N],
 	"toggle_help": [KEY_F1],
@@ -34,6 +34,11 @@ const KEY_BINDINGS := {
 	"codex": [KEY_C],
 	"rest": [KEY_R],
 	"lock_on": [KEY_M],
+	"desvelar": [KEY_X],
+	"toggle_map": [KEY_G],
+	"pause": [KEY_P],
+	"manifiesto": [KEY_2],
+	"reset_dummy": [KEY_K],
 }
 
 const MOUSE_BINDINGS := {

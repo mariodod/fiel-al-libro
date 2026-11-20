@@ -4082,3 +4082,47 @@ msgstr ""
 #. META: namespace=ui
 msgid "ui.shelf.no_passive"
 msgstr ""
+
+#. META: namespace=ui
+msgid "ui.map.title"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.map.hint"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.map.regions"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.map.close"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.prologue.hint"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.prologue.enter"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.prologue.title"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.ending.title"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.ending.hint"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.colophon.title"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.colophon.hint"
+msgstr ""

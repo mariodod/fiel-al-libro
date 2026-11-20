@@ -4052,3 +4052,47 @@ msgstr "Quitar"
 #. META: namespace=ui
 msgid "ui.shelf.no_passive"
 msgstr "(sin pasiva)"
+
+#. META: namespace=ui
+msgid "ui.map.title"
+msgstr "El mundo: dos lecturas"
+
+#. META: namespace=ui
+msgid "ui.map.hint"
+msgstr "Un mapa, dos lecturas: completa ambas"
+
+#. META: namespace=ui
+msgid "ui.map.regions"
+msgstr "Regiones"
+
+#. META: namespace=ui
+msgid "ui.map.close"
+msgstr "G - cerrar el mapa"
+
+#. META: namespace=ui
+msgid "ui.prologue.hint"
+msgstr "Pulsa cualquier tecla para pasar la pagina."
+
+#. META: namespace=ui
+msgid "ui.prologue.enter"
+msgstr "Pulsa cualquier tecla para entrar en el Capitulo 1."
+
+#. META: namespace=ui
+msgid "ui.prologue.title"
+msgstr "Prologo"
+
+#. META: namespace=ui
+msgid "ui.ending.title"
+msgstr "Final"
+
+#. META: namespace=ui
+msgid "ui.ending.hint"
+msgstr "Pulsa cualquier tecla para volver al patio."
+
+#. META: namespace=ui
+msgid "ui.colophon.title"
+msgstr "Colofon"
+
+#. META: namespace=ui
+msgid "ui.colophon.hint"
+msgstr "Pulsa cualquier tecla para continuar."

@@ -4010,3 +4010,47 @@ msgstr "Unequip"
 #. META: namespace=ui
 msgid "ui.shelf.no_passive"
 msgstr "(no passive)"
+
+#. META: namespace=ui
+msgid "ui.map.title"
+msgstr "The world - two readings"
+
+#. META: namespace=ui
+msgid "ui.map.hint"
+msgstr "One map, two readings - fill both in"
+
+#. META: namespace=ui
+msgid "ui.map.regions"
+msgstr "Regions"
+
+#. META: namespace=ui
+msgid "ui.map.close"
+msgstr "G - close the map"
+
+#. META: namespace=ui
+msgid "ui.prologue.hint"
+msgstr "Press any key to turn the page."
+
+#. META: namespace=ui
+msgid "ui.prologue.enter"
+msgstr "Press any key to enter Chapter 1."
+
+#. META: namespace=ui
+msgid "ui.prologue.title"
+msgstr "Prologue"
+
+#. META: namespace=ui
+msgid "ui.ending.title"
+msgstr "Ending"
+
+#. META: namespace=ui
+msgid "ui.ending.hint"
+msgstr "Press any key to return to the Yard."
+
+#. META: namespace=ui
+msgid "ui.colophon.title"
+msgstr "Colophon"
+
+#. META: namespace=ui
+msgid "ui.colophon.hint"
+msgstr "Press any key to continue."

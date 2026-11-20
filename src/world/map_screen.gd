@@ -114,7 +114,7 @@ func _build_ui() -> void:
 	container.add_child(region_panel)
 
 	var regions_title := Label.new()
-	regions_title.text = "Regions"
+	regions_title.text = Loc.t(&"ui.map.regions")
 	regions_title.add_theme_font_size_override("font_size", 20)
 	regions_title.add_theme_color_override("font_color", Color(0.94, 0.9, 0.8, 1.0))
 	region_panel.add_child(regions_title)

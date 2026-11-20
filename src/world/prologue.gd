@@ -37,7 +37,7 @@ func _show_page(page: int) -> void:
 				_text_label.text = Loc.t(_text_label.text)
 			_variant_reality.visible = false
 			_variant_book.visible = false
-			_hint.text = "Press any key to turn the page."
+			_hint.text = Loc.t(&"ui.prologue.hint")
 		1:
 			_text_label.text = ""
 			var vr: String = ""
@@ -49,7 +49,7 @@ func _show_page(page: int) -> void:
 				_variant_reality.text = Loc.t(_variant_reality.text)
 			_variant_reality.visible = true
 			_variant_book.visible = false
-			_hint.text = "Press any key to turn the page."
+			_hint.text = Loc.t(&"ui.prologue.hint")
 		2:
 			_text_label.text = ""
 			_variant_reality.visible = false
@@ -61,7 +61,7 @@ func _show_page(page: int) -> void:
 			if _variant_book.text != "":
 				_variant_book.text = Loc.t(_variant_book.text)
 			_variant_book.visible = true
-			_hint.text = "Press any key to enter Chapter 1."
+			_hint.text = Loc.t(&"ui.prologue.enter")
 		3:
 			prologue_finished.emit()
 			queue_free()
