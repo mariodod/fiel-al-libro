@@ -10,7 +10,7 @@
     "  simulation    — Chapter 10 content: 5 rounds of interventions with NPC responses",
     "  outcomes      — Narration for all 6 outcomes (TEST_HELD, TEST_BROKEN, EXAMINER_BROKEN, NOTHING_HAPPENS, PLAYER_CAUGHT, REFUSED)",
     "",
-    "Intervention types: dialogue, warning, look, letter",
+    "Intervention types: dialogue, warning, look, letter"
   ],
 
   "setup": {

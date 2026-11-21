@@ -4452,3 +4452,99 @@ msgstr "Un músico, señor."
 #. META: namespace=dia
 msgid "dia.sancho.reaction.musician.reality"
 msgstr "Un hombre con un instrumento, señor."
+
+#. META: namespace=ensayo
+msgid "ensayo.ui.setup_intro"
+msgstr "Prepara la prueba. Ninguna elección es incorrecta; el resultado depende de lo que hagas."
+
+#. META: namespace=ensayo
+msgid "ensayo.ui.field.tested"
+msgstr "Quién es puesto a prueba"
+
+#. META: namespace=ensayo
+msgid "ensayo.ui.field.examiner"
+msgstr "Quién examina"
+
+#. META: namespace=ensayo
+msgid "ensayo.ui.field.secret"
+msgstr "Cuál es el secreto"
+
+#. META: namespace=ensayo
+msgid "ensayo.ui.field.told"
+msgstr "A quién se lo dicen"
+
+#. META: namespace=ensayo
+msgid "ensayo.ui.begin"
+msgstr "Comenzar la prueba"
+
+#. META: namespace=ensayo
+msgid "ensayo.ui.refuse"
+msgstr "Negarse a prepararla"
+
+#. META: namespace=ensayo
+msgid "ensayo.ui.round"
+msgstr "Ronda {n} de {total}"
+
+#. META: namespace=ensayo
+msgid "ensayo.ui.choose"
+msgstr "Elige tus intervenciones"
+
+#. META: namespace=ensayo
+msgid "ensayo.ui.next"
+msgstr "Siguiente ronda"
+
+#. META: namespace=ensayo
+msgid "ensayo.ui.consequence"
+msgstr "La consecuencia"
+
+#. META: namespace=ensayo
+msgid "ensayo.ui.reasons"
+msgstr "Lo que hiciste"
+
+#. META: namespace=ensayo
+msgid "ensayo.ui.continue"
+msgstr "Cerrar el manuscrito"
+
+#. META: namespace=ensayo
+msgid "ensayo.ui.type.dialogue"
+msgstr "Hablar"
+
+#. META: namespace=ensayo
+msgid "ensayo.ui.type.warning"
+msgstr "Advertir"
+
+#. META: namespace=ensayo
+msgid "ensayo.ui.type.look"
+msgstr "Mirar"
+
+#. META: namespace=ensayo
+msgid "ensayo.ui.type.letter"
+msgstr "Carta"
+
+#. META: namespace=ensayo
+msgid "ensayo.ui.motive"
+msgstr "El otro actúa por {motive}"
+
+#. META: namespace=ensayo
+msgid "ensayo.ui.motive.curiosity"
+msgstr "curiosidad"
+
+#. META: namespace=ensayo
+msgid "ensayo.ui.motive.jealousy"
+msgstr "celos"
+
+#. META: namespace=ensayo
+msgid "ensayo.ui.motive.love"
+msgstr "amor"
+
+#. META: namespace=ensayo
+msgid "ensayo.ui.motive.need_to_be_important"
+msgstr "necesidad de importar"
+
+#. META: namespace=ensayo
+msgid "ensayo.ui.motive.need_to_be_right"
+msgstr "necesidad de tener razón"
+
+#. META: namespace=ensayo
+msgid "ensayo.ui.motive.fear_of_foolishness"
+msgstr "miedo a parecer tonto"

@@ -4482,3 +4482,99 @@ msgstr ""
 #. META: namespace=dia
 msgid "dia.sancho.reaction.musician.reality"
 msgstr ""
+
+#. META: namespace=ensayo
+msgid "ensayo.ui.setup_intro"
+msgstr ""
+
+#. META: namespace=ensayo
+msgid "ensayo.ui.field.tested"
+msgstr ""
+
+#. META: namespace=ensayo
+msgid "ensayo.ui.field.examiner"
+msgstr ""
+
+#. META: namespace=ensayo
+msgid "ensayo.ui.field.secret"
+msgstr ""
+
+#. META: namespace=ensayo
+msgid "ensayo.ui.field.told"
+msgstr ""
+
+#. META: namespace=ensayo
+msgid "ensayo.ui.begin"
+msgstr ""
+
+#. META: namespace=ensayo
+msgid "ensayo.ui.refuse"
+msgstr ""
+
+#. META: namespace=ensayo
+msgid "ensayo.ui.round"
+msgstr ""
+
+#. META: namespace=ensayo
+msgid "ensayo.ui.choose"
+msgstr ""
+
+#. META: namespace=ensayo
+msgid "ensayo.ui.next"
+msgstr ""
+
+#. META: namespace=ensayo
+msgid "ensayo.ui.consequence"
+msgstr ""
+
+#. META: namespace=ensayo
+msgid "ensayo.ui.reasons"
+msgstr ""
+
+#. META: namespace=ensayo
+msgid "ensayo.ui.continue"
+msgstr ""
+
+#. META: namespace=ensayo
+msgid "ensayo.ui.type.dialogue"
+msgstr ""
+
+#. META: namespace=ensayo
+msgid "ensayo.ui.type.warning"
+msgstr ""
+
+#. META: namespace=ensayo
+msgid "ensayo.ui.type.look"
+msgstr ""
+
+#. META: namespace=ensayo
+msgid "ensayo.ui.type.letter"
+msgstr ""
+
+#. META: namespace=ensayo
+msgid "ensayo.ui.motive"
+msgstr ""
+
+#. META: namespace=ensayo
+msgid "ensayo.ui.motive.curiosity"
+msgstr ""
+
+#. META: namespace=ensayo
+msgid "ensayo.ui.motive.jealousy"
+msgstr ""
+
+#. META: namespace=ensayo
+msgid "ensayo.ui.motive.love"
+msgstr ""
+
+#. META: namespace=ensayo
+msgid "ensayo.ui.motive.need_to_be_important"
+msgstr ""
+
+#. META: namespace=ensayo
+msgid "ensayo.ui.motive.need_to_be_right"
+msgstr ""
+
+#. META: namespace=ensayo
+msgid "ensayo.ui.motive.fear_of_foolishness"
+msgstr ""

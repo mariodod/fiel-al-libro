@@ -68,15 +68,17 @@ extends Node3D
 @onready var _map_screen_scene: PackedScene = load("res://src/world/map_screen.tscn")
 ## The map screen while it is open, null otherwise.
 var _map_screen: MapScreen = null
-@onready var windmill: TruthObject = $Windmill
-@onready var rock: TruthObject = $Rock
-@onready var book_stand: TruthObject = $BookStand
-@onready var tome: TruthObject = $Tome
-@onready var innkeeper: TruthObject = $Innkeeper
-@onready var musician: TruthObject = $Musician
-@onready var leyenda: TruthObject = $Leyenda
-@onready var _checkpoint: Area3D = $Checkpoint
-@onready var venture: Venture = $Venture
+# Ensayo chapters intentionally omit the windmill, tome and Venture; tolerate
+# their absence instead of logging a missing-node error on every load.
+@onready var windmill: TruthObject = get_node_or_null("Windmill")
+@onready var rock: TruthObject = get_node_or_null("Rock")
+@onready var book_stand: TruthObject = get_node_or_null("BookStand")
+@onready var tome: TruthObject = get_node_or_null("Tome")
+@onready var innkeeper: TruthObject = get_node_or_null("Innkeeper")
+@onready var musician: TruthObject = get_node_or_null("Musician")
+@onready var leyenda: TruthObject = get_node_or_null("Leyenda")
+@onready var _checkpoint: Area3D = get_node_or_null("Checkpoint")
+@onready var venture: Venture = get_node_or_null("Venture")
 ## The Venture of Montiel, in the era to the south.
 
 ## The practice yard: a bounded space with something in it to fight.
@@ -156,10 +158,10 @@ func _ready() -> void:
 	_objects = [windmill, rock, book_stand, tome, innkeeper, musician, leyenda]
 	_build_era()
 	_build_characters()
-	venture = $Venture
-	# The Venture's bar. It is a big thing and it is a long way off, so
-	# its bar is high and wide.
-	_add_bar(venture, 11.0, 2.8)
+	venture = get_node_or_null("Venture")
+	# The Venture's bar. Ensayo chapters have no Venture at all.
+	if venture != null:
+		_add_bar(venture, 11.0, 2.8)
 	_build_post_process()
 	_build_examine_panel()
 	_build_bark_line()
@@ -1030,19 +1032,23 @@ func _on_venture_resolved(_id: StringName, mode: int) -> void:
 		if not chatter_key.is_empty():
 			EventBus.character_spoke.emit(companion.character_id, chatter_key, [])
 
-## The Ensayo is resolved (chapters 9-10). Mark both Ensayo chapters as
-## completed and check if all chapters are done.
-func _on_ensayo_resolved(outcome: int, reasons: Array) -> void:
+## The outcome has been decided, but the player still has to read it. Chapter
+## completion is deferred to complete_ensayo(), called when they close the page.
+func _on_ensayo_resolved(_outcome: int, _reasons: Array) -> void:
+	pass
+
+
+## The player has finished reading the Ensayo: mark both chapters complete and
+## let ChapterFlow advance (or show the ending if this was the last chapter).
+func complete_ensayo() -> void:
 	GameState.chapter_completed(&"ch_09_ensayo_setup")
 	GameState.chapter_completed(&"ch_10_ensayo_resolution")
 	RegionGraph.complete_chapter(&"ch_09_ensayo_setup")
 	RegionGraph.complete_chapter(&"ch_10_ensayo_resolution")
-	# If all chapters are completed, show the ending.
 	if GameState.chapters_completed_count() >= RegionGraph.all_chapters().size():
 		GameState.ending_id = GameState.compute_ending()
 		var ending_scene: PackedScene = preload("res://src/world/ending.tscn")
 		get_tree().change_scene_to_packed(ending_scene)
-		return
 
 
 ## Somebody went down in the yard.

@@ -95,6 +95,17 @@ func next_round() -> void:
 	else:
 		EventBus.ensayo_round_started.emit(current_round)
 
+## A legal, supported outcome: the player refuses to stage the test at all.
+## The gap is recorded on the shelf permanently (GDD §6.5, outcome 6).
+func refuse() -> void:
+	state = "consequence"
+	current_outcome = Outcome.REFUSED
+	interventions = []
+	EventBus.ensayo_resolved.emit(current_outcome, ["The player refused to stage the test."])
+	EventBus.ensayo_consequence.emit(current_outcome)
+	apply_outcome(current_outcome)
+
+
 ## Resolve the Ensayo from setup + interventions.
 func resolve_consequence() -> void:
 	state = "consequence"
