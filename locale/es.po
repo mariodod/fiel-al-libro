@@ -4960,3 +4960,47 @@ msgstr "El Torbellino"
 #. META: namespace=ui
 msgid "ui.venture.autómata"
 msgstr "El Autómata"
+
+#. META: namespace=it
+msgid "it.ability.golpe_lanza.name"
+msgstr "Golpe de Lanza"
+
+#. META: namespace=it
+msgid "it.ability.golpe_lanza.desc"
+msgstr "Un arco ancho de lanza: mucho temple, recuperación lenta."
+
+#. META: namespace=it
+msgid "it.ability.carga_knight.name"
+msgstr "Carga de Knight"
+
+#. META: namespace=it
+msgid "it.ability.carga_knight.desc"
+msgstr "Una carga decidida: si la calculas mal, terminas contra el muro."
+
+#. META: namespace=it
+msgid "it.ability.fase_gigante.name"
+msgstr "Fase de Gigante"
+
+#. META: namespace=it
+msgid "it.ability.fase_gigante.desc"
+msgstr "Con Locura alta el arma crece con la verdad: daño cuando el mundo te cree."
+
+#. META: namespace=it
+msgid "it.ability.golpe_saco.name"
+msgstr "Golpe de Saco"
+
+#. META: namespace=it
+msgid "it.ability.golpe_saco.desc"
+msgstr "Pesado y lento: poco daño, pero un temple enorme."
+
+#. META: namespace=it
+msgid "it.ability.panuelo.name"
+msgstr "Pañuelo"
+
+#. META: namespace=it
+msgid "it.ability.panuelo.desc"
+msgstr "Un trapo atado a un palo: marca al objetivo y revela su forma real."
+
+#. META: namespace=ui
+msgid "ui.ability.used"
+msgstr "Usas %s."

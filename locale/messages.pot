@@ -4990,3 +4990,47 @@ msgstr ""
 #. META: namespace=ui
 msgid "ui.venture.autómata"
 msgstr ""
+
+#. META: namespace=it
+msgid "it.ability.golpe_lanza.name"
+msgstr ""
+
+#. META: namespace=it
+msgid "it.ability.golpe_lanza.desc"
+msgstr ""
+
+#. META: namespace=it
+msgid "it.ability.carga_knight.name"
+msgstr ""
+
+#. META: namespace=it
+msgid "it.ability.carga_knight.desc"
+msgstr ""
+
+#. META: namespace=it
+msgid "it.ability.fase_gigante.name"
+msgstr ""
+
+#. META: namespace=it
+msgid "it.ability.fase_gigante.desc"
+msgstr ""
+
+#. META: namespace=it
+msgid "it.ability.golpe_saco.name"
+msgstr ""
+
+#. META: namespace=it
+msgid "it.ability.golpe_saco.desc"
+msgstr ""
+
+#. META: namespace=it
+msgid "it.ability.panuelo.name"
+msgstr ""
+
+#. META: namespace=it
+msgid "it.ability.panuelo.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.ability.used"
+msgstr ""

@@ -4,6 +4,9 @@
 [ext_resource type="Resource" path="res://src/data/abilities/light_attack.tres" id="3_light"]
 [ext_resource type="Resource" path="res://src/data/abilities/heavy_attack.tres" id="4_heavy"]
 [ext_resource type="Resource" path="res://src/data/abilities/block.tres" id="5_block"]
+[ext_resource type="Resource" path="res://src/data/abilities/golpe_lanza.tres" id="6_ab0"]
+[ext_resource type="Resource" path="res://src/data/abilities/carga_knight.tres" id="7_ab1"]
+[ext_resource type="Resource" path="res://src/data/abilities/fase_gigante.tres" id="8_ab2"]
 
 
 [resource]
@@ -27,3 +30,4 @@ truth_layer_affinity = 1
 can_harm_innocents = false
 companion_aggression = 1.0
 ink_color = Color(0.35, 0.28, 0.22, 1)
+abilities = [ExtResource("6_ab0"), ExtResource("7_ab1"), ExtResource("8_ab2")]

@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="AbilityData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/data/ability_data.gd" id="1_data"]
+
+
+[resource]
+script = ExtResource("1_data")
+id = &"carga_knight"
+display_name_key = &"it.ability.carga_knight.name"
+description_key = &"it.ability.carga_knight.desc"
+kind = 1
+stamina_cost = 34.0
+cooldown = 5.0
+damage = 55.0
+poise_damage = 50.0
+reach = 4.0
+arc_degrees = 45.0
+active_seconds = 0.2
+duration = 0.0
+truth_layer = -1
+min_locura = -1
+min_milestone = 5

@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="AbilityData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/data/ability_data.gd" id="1_data"]
+
+
+[resource]
+script = ExtResource("1_data")
+id = &"refutar"
+display_name_key = &"it.ability.refutar.name"
+description_key = &"it.ability.refutar.desc"
+kind = 4
+stamina_cost = 18.0
+cooldown = 8.0
+damage = 5.0
+poise_damage = 0.0
+reach = 3.0
+arc_degrees = 60.0
+active_seconds = 0.2
+duration = 5.0
+truth_layer = -1
+min_locura = -1
+min_milestone = 4

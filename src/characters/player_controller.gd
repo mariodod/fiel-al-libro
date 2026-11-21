@@ -66,6 +66,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		# you. Quixote has no such gift.
 		if active_pawn.ability(&"desvelar"):
 			active_pawn.play_action(&"desvelar")
+	elif event.is_action_pressed(&"signature"):
+		_use_signature()
 	elif event.is_action_pressed(&"lock_on"):
 		_toggle_lock()
 	elif event.is_action_pressed(&"lectura"):
@@ -269,6 +271,29 @@ func _in_frame(direction: Vector2, forward: Vector3) -> Vector2:
 	var right := Vector3(-f.z, 0.0, f.x)
 	var world := right * direction.x - f * direction.y
 	return Vector2(world.x, world.z).normalized()
+
+
+## The active character's signature verb (GDD §5.1/§5.2). Each pawn owns
+## three; the first one that can legally fire is used. Round-robin makes all
+## three reachable without another input action.
+func _use_signature() -> void:
+	if active_pawn == null or active_pawn.data == null:
+		return
+	var kit: Array = active_pawn.data.abilities
+	if kit.is_empty():
+		return
+	_signature_index = (_signature_index + 1) % kit.size()
+	for offset in range(kit.size()):
+		var ability: AbilityData = kit[(_signature_index + offset) % kit.size()]
+		if ability == null:
+			continue
+		if active_pawn.ability(ability.id):
+			active_pawn.play_action(ability.id)
+			EventBus.toast.emit(&"ui.ability.used", [Loc.t(ability.display_name_key)])
+			return
+
+
+var _signature_index: int = -1
 
 
 ## Swap characters. Free, instant, no pause.

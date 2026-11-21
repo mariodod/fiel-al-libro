@@ -6246,3 +6246,47 @@ msgstr "The Whirlwind"
 #. META: namespace=ui
 msgid "ui.venture.autómata"
 msgstr "The Automaton"
+
+#. META: namespace=it
+msgid "it.ability.golpe_lanza.name"
+msgstr "Lance Strike"
+
+#. META: namespace=it
+msgid "it.ability.golpe_lanza.desc"
+msgstr "A wide lance arc: high poise damage, slow recovery."
+
+#. META: namespace=it
+msgid "it.ability.carga_knight.name"
+msgstr "Knight's Charge"
+
+#. META: namespace=it
+msgid "it.ability.carga_knight.desc"
+msgstr "A committed charge: mistime it and you end in the wall."
+
+#. META: namespace=it
+msgid "it.ability.fase_gigante.name"
+msgstr "Giant's Phase"
+
+#. META: namespace=it
+msgid "it.ability.fase_gigante.desc"
+msgstr "At high Locura the weapon grows with the truth: damage when the world agrees."
+
+#. META: namespace=it
+msgid "it.ability.golpe_saco.name"
+msgstr "Blow of the Sack"
+
+#. META: namespace=it
+msgid "it.ability.golpe_saco.desc"
+msgstr "Heavy and slow: weak damage, huge poise damage."
+
+#. META: namespace=it
+msgid "it.ability.panuelo.name"
+msgstr "The Rag"
+
+#. META: namespace=it
+msgid "it.ability.panuelo.desc"
+msgstr "A rag on a stick: marks the target and reveals its Reality form."
+
+#. META: namespace=ui
+msgid "ui.ability.used"
+msgstr "Usa %s."

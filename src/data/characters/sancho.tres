@@ -5,6 +5,9 @@
 [ext_resource type="Resource" path="res://src/data/abilities/heavy_attack.tres" id="4_heavy"]
 [ext_resource type="Resource" path="res://src/data/abilities/block.tres" id="5_block"]
 [ext_resource type="Resource" path="res://src/data/abilities/desvelar.tres" id="6_desvelar"]
+[ext_resource type="Resource" path="res://src/data/abilities/golpe_saco.tres" id="7_ab0"]
+[ext_resource type="Resource" path="res://src/data/abilities/refutar.tres" id="8_ab1"]
+[ext_resource type="Resource" path="res://src/data/abilities/panuelo.tres" id="9_ab2"]
 
 
 [resource]
@@ -24,8 +27,8 @@ light_attack = ExtResource("3_light")
 heavy_attack = ExtResource("4_heavy")
 dodge = ExtResource("2_dodge")
 block = ExtResource("5_block")
-abilities = Array[AbilityData]([ExtResource("6_desvelar")])
 truth_layer_affinity = 0
 can_harm_innocents = true
 companion_aggression = 0.3
 ink_color = Color(0.3, 0.34, 0.28, 1)
+abilities = [ExtResource("6_desvelar"), ExtResource("7_ab0"), ExtResource("8_ab1"), ExtResource("9_ab2")]

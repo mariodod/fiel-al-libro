@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="AbilityData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/data/ability_data.gd" id="1_data"]
+
+
+[resource]
+script = ExtResource("1_data")
+id = &"golpe_lanza"
+display_name_key = &"it.ability.golpe_lanza.name"
+description_key = &"it.ability.golpe_lanza.desc"
+kind = 1
+stamina_cost = 28.0
+cooldown = 2.4
+damage = 30.0
+poise_damage = 55.0
+reach = 3.4
+arc_degrees = 110.0
+active_seconds = 0.2
+duration = 0.0
+truth_layer = -1
+min_locura = -1
+min_milestone = 3
