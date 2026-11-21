@@ -76,6 +76,16 @@ uniform float ink_smear : hint_range(0.0, 1.0) = 0.35;
 uniform float ink_darken : hint_range(0.0, 1.0) = 0.25;
 group_uniforms;
 
+group_uniforms marginalia;
+// Floating letterforms / ink motes drift through the Book layer (GDD §4.3).
+// page_text carries the real 1605 line, so the drifting glyphs are the
+// actual text, faint and broken up — never a fabricated quotation.
+uniform float mote_amount : hint_range(0.0, 1.0) = 0.55;
+uniform float mote_density : hint_range(0.0, 1.0) = 0.35;
+uniform float mote_speed : hint_range(0.0, 1.0) = 0.35;
+uniform vec4 mote_color : source_color = vec4(0.20, 0.15, 0.10, 1.0);
+group_uniforms;
+
 // ── The page turn ──────────────────────────────────────────────────────
 //  When the world's truth flips, a sheet of paper crosses the screen.
 //
@@ -153,6 +163,38 @@ float edge_detect(vec2 uv, float width) {
 	return sqrt(gx * gx + gy * gy);
 }
 
+// Floating letterforms: sample the real 1605 text at drifting offsets and
+// keep only sparse, faint fragments. A handful of cells per screen so the
+// world reads as a printed page exhaling words, not as a particle system.
+vec3 floating_letters(vec2 uv, float t, float page_text_ready) {
+	if (mote_amount <= 0.001 || page_text_ready <= 0.001) {
+		return vec3(0.0);
+	}
+	vec2 grid = vec2(11.0, 7.0);
+	vec2 cell = floor(uv * grid);
+	float seed = hash21(cell);
+	if (seed > mote_density) {
+		return vec3(0.0);
+	}
+	// Each cell drifts upward and sways; the phase is per-cell.
+	float speed = mote_speed * (0.4 + seed);
+	vec2 drift = vec2(
+		sin(TIME * speed + seed * 6.28) * 0.012,
+		fract(seed + TIME * speed * 0.09));
+	vec2 sample_uv = fract(uv * grid * 0.09 + drift);
+	float glyph = texture(page_text, sample_uv).a;
+	if (glyph <= 0.01) {
+		return vec3(0.0);
+	}
+	// Fade with distance from the cell centre so the fragment is a mote,
+	// not a block of text.
+	vec2 local = fract(uv * grid) - 0.5;
+	float falloff = 1.0 - smoothstep(0.12, 0.5, length(local));
+	float strength = glyph * falloff * mote_amount * t;
+	return mote_color.rgb * strength;
+}
+
+
 void fragment() {
 	// The ColorRect must cover the full viewport (full-rect anchors).
 	vec2 uv = SCREEN_UV;
@@ -222,6 +264,12 @@ void fragment() {
 	//  A sheet crosses the screen from right to left while the world
 	//  changes behind it. The change is not hidden by it: the page is
 	//  there to say "a page turned", not to hide the fact.
+	// ── Floating letterforms (Book Truth) ─────────────────────────────
+	// After the sheet so the printed line is not speckled with motes.
+	if (t > 0.001 && page_turn <= 0.0001) {
+		col += floating_letters(SCREEN_UV, t, page_text_amount);
+	}
+
 	if (page_turn > 0.0001) {
 		float edge = mix(1.30, -0.30, page_turn);
 		// A slight curl: the sheet is not a flat rectangle.
