@@ -51,6 +51,8 @@ extends Resource
 ## fragment has no Venture or region grant path use this: reading the seam
 ## grants a page of the book. Empty for fragments granted elsewhere.
 @export var anamorphosis_fragment: StringName = &""
+## A collectible book granted when this anamorphosis is resolved (GDD §9).
+@export var anamorphosis_book: StringName = &""
 
 ## Vantage point: where the player must stand to see the anamorphosis.
 ## If empty, the anamorphosis is visible from anywhere in Lectura mode.

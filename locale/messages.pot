@@ -4662,3 +4662,243 @@ msgstr ""
 #. META: namespace=ui
 msgid "ui.settings.a11y_hint"
 msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.mio_cid.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.mio_cid.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.mio_cid.passive.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.mio_cid.passive.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.mio_cid.codex"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.pelayo.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.pelayo.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.pelayo.passive.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.pelayo.passive.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.pelayo.codex"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.gatos.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.gatos.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.gatos.passive.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.gatos.passive.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.gatos.codex"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.santo_domingo.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.santo_domingo.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.santo_domingo.passive.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.santo_domingo.passive.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.santo_domingo.codex"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.calila_dimna.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.calila_dimna.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.calila_dimna.passive.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.calila_dimna.passive.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.calila_dimna.codex"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.milagros.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.milagros.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.milagros.passive.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.milagros.passive.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.milagros.codex"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.lazarillo.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.lazarillo.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.lazarillo.passive.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.lazarillo.passive.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.lazarillo.codex"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.tirant.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.tirant.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.tirant.passive.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.tirant.passive.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.tirant.codex"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.tablas.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.tablas.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.tablas.passive.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.tablas.passive.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.tablas.codex"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.buscon.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.buscon.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.buscon.passive.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.buscon.passive.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.buscon.codex"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.don_juan.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.don_juan.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.don_juan.passive.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.don_juan.passive.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.don_juan.codex"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.codice.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.codice.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.codice.passive.name"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.codice.passive.desc"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.book.libro.codice.codex"
+msgstr ""

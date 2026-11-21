@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="BookData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/data/book_data.gd" id="1_data"]
+
+
+[resource]
+script = ExtResource("1_data")
+id = &"libro.mio_cid"
+display_name_key = &"ui.book.libro.mio_cid.name"
+description_key = &"ui.book.libro.mio_cid.desc"
+author = &"Anonymous"
+year = &"1200"
+passive_id = &"passive.mio_cid"
+passive_name_key = &"ui.book.libro.mio_cid.passive.name"
+passive_description_key = &"ui.book.libro.mio_cid.passive.desc"
+codex_note_key = &"ui.book.libro.mio_cid.codex"

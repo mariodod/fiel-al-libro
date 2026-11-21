@@ -272,6 +272,10 @@ func _in_frame(direction: Vector2, forward: Vector3) -> Vector2:
 
 
 ## Swap characters. Free, instant, no pause.
+func _sync_active_pawn() -> void:
+	CharacterPawn._active_pawn_ref = active_pawn
+
+
 func request_swap() -> void:
 	if _swap_cooldown > 0.0 or other_pawn == null:
 		return
@@ -285,6 +289,7 @@ func request_swap() -> void:
 	var previous := active_pawn
 	active_pawn = other_pawn
 	other_pawn = previous
+	_sync_active_pawn()
 	EventBus.character_switched.emit(
 		previous.character_id if previous else &"",
 		active_pawn.character_id if active_pawn else &""

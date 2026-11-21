@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="BookData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/data/book_data.gd" id="1_data"]
+
+
+[resource]
+script = ExtResource("1_data")
+id = &"libro.milagros"
+display_name_key = &"ui.book.libro.milagros.name"
+description_key = &"ui.book.libro.milagros.desc"
+author = &"Alfonso X"
+year = &"1270"
+passive_id = &"passive.milagros"
+passive_name_key = &"ui.book.libro.milagros.passive.name"
+passive_description_key = &"ui.book.libro.milagros.passive.desc"
+codex_note_key = &"ui.book.libro.milagros.codex"

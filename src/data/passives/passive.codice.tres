@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="PassiveData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/data/passive_data.gd" id="1_data"]
+
+
+[resource]
+script = ExtResource("1_data")
+id = &"passive.codice"
+display_name_key = &"ui.book.libro.codice.passive.name"
+description_key = &"ui.book.libro.codice.passive.desc"
+damage_percent = 1.2
+locura_per_second = -0.3

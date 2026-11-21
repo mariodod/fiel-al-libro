@@ -30,6 +30,7 @@ tag_height = 2.4
 anamorphosis_id = &"ana.ch10.echo"
 anamorphosis_tell_key = &"ui.anamorphosis.ana.ch10.echo.tell"
 anamorphosis_evidence = 1
+anamorphosis_book = &"libro.buscon"
 anamorphosis_fragment = &"bk.ch10.balsamo.01"
 anamorphosis_vantage_pos = Vector3(2, 0, -17)
 anamorphosis_vantage_angle = 180.0

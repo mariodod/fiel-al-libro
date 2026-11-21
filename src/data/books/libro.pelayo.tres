@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="BookData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/data/book_data.gd" id="1_data"]
+
+
+[resource]
+script = ExtResource("1_data")
+id = &"libro.pelayo"
+display_name_key = &"ui.book.libro.pelayo.name"
+description_key = &"ui.book.libro.pelayo.desc"
+author = &"Anonymous"
+year = &"1250"
+passive_id = &"passive.pelayo"
+passive_name_key = &"ui.book.libro.pelayo.passive.name"
+passive_description_key = &"ui.book.libro.pelayo.passive.desc"
+codex_note_key = &"ui.book.libro.pelayo.codex"

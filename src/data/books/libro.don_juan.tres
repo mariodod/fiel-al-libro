@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="BookData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/data/book_data.gd" id="1_data"]
+
+
+[resource]
+script = ExtResource("1_data")
+id = &"libro.don_juan"
+display_name_key = &"ui.book.libro.don_juan.name"
+description_key = &"ui.book.libro.don_juan.desc"
+author = &"José Zorrilla"
+year = &"1844"
+passive_id = &"passive.don_juan"
+passive_name_key = &"ui.book.libro.don_juan.passive.name"
+passive_description_key = &"ui.book.libro.don_juan.passive.desc"
+codex_note_key = &"ui.book.libro.don_juan.codex"

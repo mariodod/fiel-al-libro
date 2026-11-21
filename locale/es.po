@@ -4632,3 +4632,243 @@ msgstr "Correr con pulsación"
 #. META: namespace=ui
 msgid "ui.settings.a11y_hint"
 msgstr "Estas opciones no cambian la historia, solo cómo se lee y se mueve."
+
+#. META: namespace=ui
+msgid "ui.book.libro.mio_cid.name"
+msgstr "El Cantar de Mio Cid"
+
+#. META: namespace=ui
+msgid "ui.book.libro.mio_cid.desc"
+msgstr "El destierro del Cid, sus dos caballos y la traición que lo devuelve a la gloria."
+
+#. META: namespace=ui
+msgid "ui.book.libro.mio_cid.passive.name"
+msgstr "El Juramento"
+
+#. META: namespace=ui
+msgid "ui.book.libro.mio_cid.passive.desc"
+msgstr "Los enemigos dudan cuando mantienes la guardia."
+
+#. META: namespace=ui
+msgid "ui.book.libro.mio_cid.codex"
+msgstr "El Cid cabalga aún por las tierras que recuperó."
+
+#. META: namespace=ui
+msgid "ui.book.libro.pelayo.name"
+msgstr "La Crónica de Pelayo"
+
+#. META: namespace=ui
+msgid "ui.book.libro.pelayo.desc"
+msgstr "Covadonga y la cueva que inunda la montaña: el primer Triunfo escrito."
+
+#. META: namespace=ui
+msgid "ui.book.libro.pelayo.passive.name"
+msgstr "La Peña"
+
+#. META: namespace=ui
+msgid "ui.book.libro.pelayo.passive.desc"
+msgstr "La piedra lanzada derriba a un grupo entero."
+
+#. META: namespace=ui
+msgid "ui.book.libro.pelayo.codex"
+msgstr "La peña de Covadonga sigue en pie."
+
+#. META: namespace=ui
+msgid "ui.book.libro.gatos.name"
+msgstr "El Libro de los Gatos"
+
+#. META: namespace=ui
+msgid "ui.book.libro.gatos.desc"
+msgstr "Un bestiario donde los animales dan consejos, no consejos de animales."
+
+#. META: namespace=ui
+msgid "ui.book.libro.gatos.passive.name"
+msgstr "Agilidad"
+
+#. META: namespace=ui
+msgid "ui.book.libro.gatos.passive.desc"
+msgstr "Esquivas más lejos y por más tiempo."
+
+#. META: namespace=ui
+msgid "ui.book.libro.gatos.codex"
+msgstr "El gato observa desde la repisa de la memoria."
+
+#. META: namespace=ui
+msgid "ui.book.libro.santo_domingo.name"
+msgstr "Vida de Santo Domingo de Silos"
+
+#. META: namespace=ui
+msgid "ui.book.libro.santo_domingo.desc"
+msgstr "El milagro del manuscrito illuminado: la tinta como forma de paciencia."
+
+#. META: namespace=ui
+msgid "ui.book.libro.santo_domingo.passive.name"
+msgstr "La Tinta"
+
+#. META: namespace=ui
+msgid "ui.book.libro.santo_domingo.passive.desc"
+msgstr "La locura se drena lentamente mientras lo llevas equipado."
+
+#. META: namespace=ui
+msgid "ui.book.libro.santo_domingo.codex"
+msgstr "La tinta no se seca: siempre está escribiendo."
+
+#. META: namespace=ui
+msgid "ui.book.libro.calila_dimna.name"
+msgstr "Calila e Dimna"
+
+#. META: namespace=ui
+msgid "ui.book.libro.calila_dimna.desc"
+msgstr "El león y el buey, el anillo del rey: cuentos árabes traducidos en Toledo."
+
+#. META: namespace=ui
+msgid "ui.book.libro.calila_dimna.passive.name"
+msgstr "La Astucia"
+
+#. META: namespace=ui
+msgid "ui.book.libro.calila_dimna.passive.desc"
+msgstr "Tus golpes debilitan a quienes rodean al enemigo."
+
+#. META: namespace=ui
+msgid "ui.book.libro.calila_dimna.codex"
+msgstr "El anillo del rey todavía gira en la palma de la memoria."
+
+#. META: namespace=ui
+msgid "ui.book.libro.milagros.name"
+msgstr "El Libro de los Milagros"
+
+#. META: namespace=ui
+msgid "ui.book.libro.milagros.desc"
+msgstr "Cantigas de Santa María: un milagro obrado para un desconocido."
+
+#. META: namespace=ui
+msgid "ui.book.libro.milagros.passive.name"
+msgstr "Milagro"
+
+#. META: namespace=ui
+msgid "ui.book.libro.milagros.passive.desc"
+msgstr "Un golpe rara vez, pero muy fuerte."
+
+#. META: namespace=ui
+msgid "ui.book.libro.milagros.codex"
+msgstr "El milagro no se repite. Por eso cuenta."
+
+#. META: namespace=ui
+msgid "ui.book.libro.lazarillo.name"
+msgstr "Lazarillo de Tormes"
+
+#. META: namespace=ui
+msgid "ui.book.libro.lazarillo.desc"
+msgstr "El ciego, el escudero y la barca: la primera novela picaresca."
+
+#. META: namespace=ui
+msgid "ui.book.libro.lazarillo.passive.name"
+msgstr "El Recipiente"
+
+#. META: namespace=ui
+msgid "ui.book.libro.lazarillo.passive.desc"
+msgstr "Más resistencia: aguanta lo que los demás no pueden."
+
+#. META: namespace=ui
+msgid "ui.book.libro.lazarillo.codex"
+msgstr "El Lazarillo guarda en la boca lo que no cabe en la bolsa."
+
+#. META: namespace=ui
+msgid "ui.book.libro.tirant.name"
+msgstr "Lo Tirant lo Blanch"
+
+#. META: namespace=ui
+msgid "ui.book.libro.tirant.desc"
+msgstr "El mejor caballero del mundo escribe su propio libro."
+
+#. META: namespace=ui
+msgid "ui.book.libro.tirant.passive.name"
+msgstr "Montar"
+
+#. META: namespace=ui
+msgid "ui.book.libro.tirant.passive.desc"
+msgstr "Montas más rápido y puedes invocar tu caballo desde la posada."
+
+#. META: namespace=ui
+msgid "ui.book.libro.tirant.codex"
+msgstr "Tirant no necesita que nadie cante sus hazañas."
+
+#. META: namespace=ui
+msgid "ui.book.libro.tablas.name"
+msgstr "Tablas Alfonsíes"
+
+#. META: namespace=ui
+msgid "ui.book.libro.tablas.desc"
+msgstr "El rey sabio y su cielo: las tablas que revelan el orden de las cosas."
+
+#. META: namespace=ui
+msgid "ui.book.libro.tablas.passive.name"
+msgstr "El Zodíaco"
+
+#. META: namespace=ui
+msgid "ui.book.libro.tablas.passive.desc"
+msgstr "Sientes la capa de verdad de una región antes de entrar en ella."
+
+#. META: namespace=ui
+msgid "ui.book.libro.tablas.codex"
+msgstr "El cielo del rey sabio no miente sobre el libro."
+
+#. META: namespace=ui
+msgid "ui.book.libro.buscon.name"
+msgstr "El Buscón"
+
+#. META: namespace=ui
+msgid "ui.book.libro.buscon.desc"
+msgstr "El pícaro que es criado del inquisidor: la risa como supervivencia."
+
+#. META: namespace=ui
+msgid "ui.book.libro.buscon.passive.name"
+msgstr "La Rapina"
+
+#. META: namespace=ui
+msgid "ui.book.libro.buscon.passive.desc"
+msgstr "Más botín y más recuerdos de cada Ventura."
+
+#. META: namespace=ui
+msgid "ui.book.libro.buscon.codex"
+msgstr "El Buscón se ríe del mismo infierno."
+
+#. META: namespace=ui
+msgid "ui.book.libro.don_juan.name"
+msgstr "Don Juan Tenorio"
+
+#. META: namespace=ui
+msgid "ui.book.libro.don_juan.desc"
+msgstr "El Don Juan que cambia a lo largo del siglo y engaña a la misma muerte."
+
+#. META: namespace=ui
+msgid "ui.book.libro.don_juan.passive.name"
+msgstr "El Convidante"
+
+#. META: namespace=ui
+msgid "ui.book.libro.don_juan.passive.desc"
+msgstr "Atraes a los enemigos a donde tú quieres que estén."
+
+#. META: namespace=ui
+msgid "ui.book.libro.don_juan.codex"
+msgstr "El convidante nunca llega tarde a su propia cena."
+
+#. META: namespace=ui
+msgid "ui.book.libro.codice.name"
+msgstr "Códice — El Ingenioso Hidalgo"
+
+#. META: namespace=ui
+msgid "ui.book.libro.codice.desc"
+msgstr "El libro mismo. La segunda parte que escribes tú al leerlo."
+
+#. META: namespace=ui
+msgid "ui.book.libro.codice.passive.name"
+msgstr "El Veredicto"
+
+#. META: namespace=ui
+msgid "ui.book.libro.codice.passive.desc"
+msgstr "Cada Ventura admite una tercera resolución: la del lector."
+
+#. META: namespace=ui
+msgid "ui.book.libro.codice.codex"
+msgstr "El Códice no termina. Solo cambia de lector."

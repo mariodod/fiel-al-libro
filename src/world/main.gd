@@ -125,6 +125,7 @@ func _build_characters() -> void:
 	player = PlayerController.new()
 	player.name = "PlayerController"
 	player.active_pawn = quixote
+	CharacterPawn._active_pawn_ref = quixote
 	player.other_pawn = sancho
 	add_child(player)
 

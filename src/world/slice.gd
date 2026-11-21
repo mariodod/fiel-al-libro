@@ -486,6 +486,7 @@ func _build_characters() -> void:
 	sancho.companion = quixote
 
 	player.active_pawn = quixote
+	CharacterPawn._active_pawn_ref = quixote
 	player.other_pawn = sancho
 
 	ai.pawn = sancho
@@ -592,7 +593,8 @@ func _unhandled_input(event: InputEvent) -> void:
 						elif not Lectura.is_resolved(anamorphosis_id):
 							var evidence := Lectura.resolve(anamorphosis_id,
 								target.data.anamorphosis_evidence,
-								target.data.anamorphosis_fragment)
+								target.data.anamorphosis_fragment,
+								target.data.anamorphosis_book)
 							EventBus.toast.emit(&"ui.slice.anamorphosis_resolved", [Loc.t(target.data.anamorphosis_tell_key), evidence])
 							# Check if enough evidence for a Verdict
 							if Lectura.has_enough_for_verdict():

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PassiveData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/data/passive_data.gd" id="1_data"]
+
+
+[resource]
+script = ExtResource("1_data")
+id = &"passive.santo_domingo"
+display_name_key = &"ui.book.libro.santo_domingo.passive.name"
+description_key = &"ui.book.libro.santo_domingo.passive.desc"
+locura_per_second = -0.8

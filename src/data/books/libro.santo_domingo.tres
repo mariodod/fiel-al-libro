@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="BookData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/data/book_data.gd" id="1_data"]
+
+
+[resource]
+script = ExtResource("1_data")
+id = &"libro.santo_domingo"
+display_name_key = &"ui.book.libro.santo_domingo.name"
+description_key = &"ui.book.libro.santo_domingo.desc"
+author = &"Anonymous"
+year = &"1100"
+passive_id = &"passive.santo_domingo"
+passive_name_key = &"ui.book.libro.santo_domingo.passive.name"
+passive_description_key = &"ui.book.libro.santo_domingo.passive.desc"
+codex_note_key = &"ui.book.libro.santo_domingo.codex"

@@ -107,6 +107,11 @@ var mount_speed_percent: float = 1.0
 var _passive_dodge_distance_percent: float = 1.0
 var _passive_dodge_iframe_percent: float = 1.0
 var _passive_damage_percent: float = 1.0
+## Locura drained per second by an equipped passive (GDD §9, La Tinta).
+var _passive_locura_per_second: float = 0.0
+
+## The pawn the player is driving, set by PlayerController on swap.
+static var _active_pawn_ref: CharacterPawn = null
 var _passive_block_ratio_percent: float = 1.0
 var _passive_parry_window_bonus: float = 0.0
 ## How long before the stamina comes back, after the last thing you spent
@@ -542,6 +547,10 @@ func _physics_process(delta: float) -> void:
 	_parry_timer = maxf(0.0, _parry_timer - delta)
 	_hurt_timer = maxf(0.0, _hurt_timer - delta)
 	_stagger_timer = maxf(0.0, _stagger_timer - delta)
+	# La Tinta and similar passives drain Locura while equipped. Only the
+	# driven pawn applies it, so it cannot stack twice (GDD §9).
+	if _passive_locura_per_second != 0.0 and is_active_pawn():
+		Locura.add_for(character_id, _passive_locura_per_second * delta)
 	_tick_ability_cooldowns(delta)
 	_update_flash(delta)
 	if _attack_cooldown <= 0.0:
@@ -664,7 +673,7 @@ func _tick_ability_cooldowns(delta: float) -> void:
 ## that keeps the next one from coming straight away.
 func _swing(ability: AbilityData) -> void:
 	_attack_cooldown = maxf(_attack_cooldown, ability.cooldown)
-	var damage := _combo_damage(ability)
+	var damage := _combo_damage(ability) * passive_damage_percent()
 	if ability.kind == AbilityData.Kind.LIGHT:
 		# The chain has a clip of its own: light_1, light_2, light_3.
 		_attack_clip = StringName("light_%d" % _combo_step)
@@ -855,6 +864,7 @@ func _apply_passive_modifiers(mods: Dictionary) -> void:
 	_passive_dodge_distance_percent = float(mods.get("dodge_distance_percent", 1.0))
 	_passive_dodge_iframe_percent = float(mods.get("dodge_iframe_percent", 1.0))
 	_passive_damage_percent = float(mods.get("damage_percent", 1.0))
+	_passive_locura_per_second = float(mods.get("locura_per_second", 0.0))
 	_passive_block_ratio_percent = float(mods.get("block_ratio_percent", 1.0))
 	_passive_parry_window_bonus = float(mods.get("parry_window_bonus", 0.0))
 
@@ -899,6 +909,13 @@ func passive_dodge_iframe() -> float:
 	if data == null or data.dodge == null:
 		return 0.0
 	return data.dodge.iframe_seconds * _passive_dodge_iframe_percent
+
+
+## Is this the pawn the player is currently driving? The active pawn is the
+## one in the player_controller group; the companion is inert for per-second
+## passives so their effects never double.
+func is_active_pawn() -> bool:
+	return _active_pawn_ref == self
 
 
 ## The character's damage multiplier, with passive modifiers applied.
