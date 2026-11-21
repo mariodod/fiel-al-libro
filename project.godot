@@ -32,6 +32,7 @@ Biblioteca="*res://src/autoload/biblioteca.gd"
 Manuscrito="*res://src/autoload/manuscrito.gd"
 AudioDirector="*res://src/autoload/audio_director.gd"
 Settings="*res://src/autoload/settings.gd"
+ThemeApplier="*res://src/autoload/theme_applier.gd"
 TranslationManager="*res://src/autoload/translation_manager.gd"
 Lectura="*res://src/autoload/lectura.gd"
 Verdict="*res://src/autoload/verdict.gd"
@@ -274,3 +275,4 @@ layer_blend_speed={
 "type": "float",
 "value": 1.0
 }
+

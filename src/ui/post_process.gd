@@ -129,8 +129,12 @@ func _build_page_texture() -> void:
 	label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	label.add_theme_font_size_override("font_size", 22)
+	label.add_theme_font_size_override("font_size", 26)
 	label.add_theme_color_override("font_color", Color(0.17, 0.13, 0.10, 1.0))
+	# The 1605 original is set in EB Garamond — the Book-layer face (GDD §15.4).
+	var book_font := load("res://assets/fonts/EBGaramond-Regular.ttf") as Font
+	if book_font != null:
+		label.add_theme_font_override("font", book_font)
 	label.text = line
 	_text_viewport.add_child(label)
 

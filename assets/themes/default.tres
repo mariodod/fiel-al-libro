@@ -1,0 +1,22 @@
+[gd_resource type="Theme" format=3]
+
+[ext_resource type="FontFile" path="res://assets/fonts/EBGaramond-Regular.ttf" id="1_oa4jb"]
+[ext_resource type="FontFile" path="res://assets/fonts/NotoSans-Regular.ttf" id="2_0ecif"]
+
+[sub_resource type="SystemFont" id="SystemFont_hvkdh"]
+font_names = PackedStringArray("Noto Sans CJK SC", "Noto Sans CJK JP", "Noto Sans Arabic", "Microsoft YaHei", "PingFang SC", "Yu Gothic", "Meiryo", "Noto Sans Devanagari", "Arial Unicode MS")
+
+[resource]
+default_font = ExtResource("2_0ecif")
+BookText/fonts/font = ExtResource("1_oa4jb")
+Button/fonts/font = ExtResource("2_0ecif")
+CheckBox/fonts/font = ExtResource("2_0ecif")
+ItemList/fonts/font = ExtResource("2_0ecif")
+Label/fonts/font = ExtResource("2_0ecif")
+LineEdit/fonts/font = ExtResource("2_0ecif")
+OptionButton/fonts/font = ExtResource("2_0ecif")
+RichTextLabel/fonts/font = ExtResource("2_0ecif")
+SystemFallback/fonts/font = SubResource("SystemFont_hvkdh")
+TextEdit/fonts/font = ExtResource("2_0ecif")
+TooltipLabel/fonts/font = ExtResource("2_0ecif")
+Tree/fonts/font = ExtResource("2_0ecif")

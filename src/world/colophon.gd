@@ -22,6 +22,10 @@ var _auto_advance: float = 0.0
 
 func _ready() -> void:
 	layer = 60
+	# The author's page uses the Book-layer face (GDD §15.4).
+	var book_font := load("res://assets/fonts/EBGaramond-Regular.ttf") as Font
+	if book_font != null:
+		_text.add_theme_font_override("font", book_font)
 
 
 ## Show the colophon for a region, in the current truth's voice.

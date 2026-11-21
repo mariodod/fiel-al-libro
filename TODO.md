@@ -323,8 +323,9 @@
 - [ ] Distinct bark VO (blocked on an ElevenLabs key).
 - [x] Shader marginalia: floating letterforms / ink motes drift through the
       Book layer, sampled from the real 1605 page text.
-- [ ] Art/audio production: fonts (Noto Sans + EB Garamond), credits duet,
-      region ambience.
+- [x] Fonts: Noto Sans (UI) + EB Garamond (Book layer) shipped with OFL
+      licenses, a Theme resource and a system fallback for CJK/Arabic.
+- [ ] Art/audio production: credits duet, region ambience.
 
 ## Parked (decide later, don't forget)
 
