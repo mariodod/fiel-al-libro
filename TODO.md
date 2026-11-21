@@ -321,8 +321,10 @@
 - [x] es-419 shipped locale (seven POs) and the Manifiesto validator heuristic
       corrected: all 38 "still in Spanish" warnings were false positives.
 - [ ] Distinct bark VO (blocked on an ElevenLabs key).
+- [x] Shader marginalia: floating letterforms / ink motes drift through the
+      Book layer, sampled from the real 1605 page text.
 - [ ] Art/audio production: fonts (Noto Sans + EB Garamond), credits duet,
-      region ambience, shader marginalia/ink motes.
+      region ambience.
 
 ## Parked (decide later, don't forget)
 
