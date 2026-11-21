@@ -61,6 +61,7 @@ const SUITES: Array[String] = [
 	"res://tests/test_ending_variables.gd",
 	"res://tests/test_progression_gaps.gd",
 	"res://tests/test_mounts_and_ink.gd",
+	"res://tests/test_accessibility.gd",
 ]
 
 var harness := TestHarness.new()

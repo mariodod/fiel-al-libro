@@ -28,6 +28,7 @@ var _lock_candidates: Array[Node] = []
 var _lock_timer: float = 0.0
 ## Reviving the downed companion: seconds left before they are up.
 var _revive_timer: float = 0.0
+var _sprint_toggled: bool = false
 ## How close the player must be to revive the companion.
 const LIFT_DISTANCE := 1.6
 ## How long the player must stand still to revive the companion.
@@ -111,6 +112,10 @@ func _process(delta: float) -> void:
 
 	var direction := Input.get_vector(&"move_left", &"move_right", &"move_forward", &"move_back")
 	var sprint := Input.is_action_pressed(&"sprint")
+	if Settings.toggle_sprint() and Input.is_action_just_pressed(&"sprint"):
+		_sprint_toggled = not _sprint_toggled
+	if Settings.toggle_sprint():
+		sprint = _sprint_toggled
 	active_pawn.move(_in_fight_frame(direction), sprint)
 	active_pawn.block(Input.is_action_pressed(&"block"))
 

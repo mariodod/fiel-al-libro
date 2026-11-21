@@ -4638,3 +4638,27 @@ msgstr ""
 #. META: namespace=ui
 msgid "ui.mount.obstinate"
 msgstr ""
+
+#. META: namespace=ui
+msgid "ui.page.chapter"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.settings.accessibility"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.settings.reduce_ink"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.settings.large_subtitles"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.settings.toggle_sprint"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.settings.a11y_hint"
+msgstr ""

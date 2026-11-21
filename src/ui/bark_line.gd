@@ -62,7 +62,7 @@ func _build_ui() -> void:
 	_line.offset_bottom = -76.0
 	_line.vertical_alignment = VERTICAL_ALIGNMENT_BOTTOM
 	_line.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	_line.add_theme_font_size_override("font_size", 19)
+	_line.add_theme_font_size_override("font_size", 26 if Settings.large_subtitles() else 19)
 	_line.add_theme_color_override("font_color", Color(0.95, 0.91, 0.80, 1.0))
 	_line.add_theme_color_override("font_outline_color", Color(0.09, 0.07, 0.05, 0.9))
 	_line.add_theme_constant_override("outline_size", 6)

@@ -195,7 +195,8 @@ func ink_amount() -> float:
 
 
 func set_ink(amount: float) -> void:
-	_ink = clampf(amount, 0.0, 1.0)
+	var cap := 0.4 if Settings.reduce_ink() else 1.0
+	_ink = clampf(amount, 0.0, cap)
 	RenderingServer.global_shader_parameter_set(GLOBAL_INK, _ink)
 	EventBus.ink_amount_changed.emit(_ink)
 

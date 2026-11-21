@@ -4642,3 +4642,27 @@ msgstr "Dapple"
 #. META: namespace=ui
 msgid "ui.mount.obstinate"
 msgstr "Dapple will not cross. Dismount and continue on foot."
+
+#. META: namespace=ui
+msgid "ui.page.chapter"
+msgstr "Chapter %s is written into the manuscript."
+
+#. META: namespace=ui
+msgid "ui.settings.accessibility"
+msgstr "Accessibility"
+
+#. META: namespace=ui
+msgid "ui.settings.reduce_ink"
+msgstr "Reduce ink"
+
+#. META: namespace=ui
+msgid "ui.settings.large_subtitles"
+msgstr "Large subtitles"
+
+#. META: namespace=ui
+msgid "ui.settings.toggle_sprint"
+msgstr "Toggle sprint"
+
+#. META: namespace=ui
+msgid "ui.settings.a11y_hint"
+msgstr "These options change how the game reads and moves, never the story."

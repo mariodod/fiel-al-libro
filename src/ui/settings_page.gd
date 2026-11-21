@@ -30,6 +30,7 @@ var _back: Button = null
 var _sliders: Dictionary = {}
 var _readouts: Dictionary = {}
 var _localized_labels: Array = []
+var _localized_checks: Array = []
 var _updating := false
 
 
@@ -79,6 +80,19 @@ func _build_ui() -> void:
 	box.add_child(_make_label(&"ui.settings.controls", 22, GOLD_COLOR))
 	box.add_child(_make_label(&"ui.settings.controls.hint", 14, HINT_COLOR))
 	box.add_child(_make_controls_sheet())
+
+	box.add_child(_make_label(&"ui.settings.accessibility", 22, GOLD_COLOR))
+	box.add_child(_make_label(&"ui.settings.a11y_hint", 14, HINT_COLOR))
+	for spec in [[&"reduce_ink", &"ui.settings.reduce_ink"],
+			[&"large_subtitles", &"ui.settings.large_subtitles"],
+			[&"toggle_sprint", &"ui.settings.toggle_sprint"]]:
+		var check := CheckBox.new()
+		check.name = "A11y_%s" % spec[0]
+		check.add_theme_font_size_override("font_size", 15)
+		check.add_theme_color_override("font_color", TEXT_COLOR)
+		_localized_checks.append([check, spec[1], spec[0]])
+		check.toggled.connect(_on_a11y_toggled.bind(spec[0]))
+		box.add_child(check)
 
 	_back = Button.new()
 	_back.name = "SettingsBack"
@@ -163,6 +177,10 @@ func _refresh() -> void:
 
 	for entry in _localized_labels:
 		(entry[0] as Label).text = Loc.t(entry[1] as StringName)
+	for entry in _localized_checks:
+		var check: CheckBox = entry[0]
+		check.text = Loc.t(entry[1] as StringName)
+		check.set_pressed_no_signal(Settings.get_bool(entry[2] as StringName))
 	if _back != null:
 		_back.text = Loc.t(&"ui.settings.back")
 	_updating = false
@@ -172,6 +190,12 @@ func _on_language_selected(index: int) -> void:
 	if _updating or index < 0 or index >= TranslationManager.available_locales.size():
 		return
 	TranslationManager.use_locale(TranslationManager.available_locales[index])
+
+
+func _on_a11y_toggled(value: bool, setting: StringName) -> void:
+	if _updating:
+		return
+	Settings.set_bool(setting, value)
 
 
 func _on_volume_changed(value: float, bus: StringName) -> void:

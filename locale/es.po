@@ -4608,3 +4608,27 @@ msgstr "Rucio"
 #. META: namespace=ui
 msgid "ui.mount.obstinate"
 msgstr "Rucio no quiere pasar. Desmonta y sigue a pie."
+
+#. META: namespace=ui
+msgid "ui.page.chapter"
+msgstr "El capítulo %s queda escrito en el manuscrito."
+
+#. META: namespace=ui
+msgid "ui.settings.accessibility"
+msgstr "Accesibilidad"
+
+#. META: namespace=ui
+msgid "ui.settings.reduce_ink"
+msgstr "Reducir la tinta"
+
+#. META: namespace=ui
+msgid "ui.settings.large_subtitles"
+msgstr "Subtítulos grandes"
+
+#. META: namespace=ui
+msgid "ui.settings.toggle_sprint"
+msgstr "Correr con pulsación"
+
+#. META: namespace=ui
+msgid "ui.settings.a11y_hint"
+msgstr "Estas opciones no cambian la historia, solo cómo se lee y se mueve."

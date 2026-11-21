@@ -220,6 +220,11 @@ func chapter_completed(id: StringName) -> void:
 		return
 	if not chapters_resolved.has(id):
 		chapters_resolved.append(id)
+		# P4 / §12.2: every completed chapter is written into the manuscript
+		# as a page the player can read at the end.
+		var number := str(RegionGraph.chapters.get(id, {}).get("chapter_number", ""))
+		var label := "ch_%s" % number if not number.is_empty() else str(id)
+		write_page(StringName("chapter.%s" % id), Loc.tf(&"ui.page.chapter", [label]))
 	# RegionGraph.complete_chapter() emits the signal for a completion so
 	# listeners do not receive the same chapter twice.
 

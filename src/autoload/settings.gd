@@ -46,6 +46,31 @@ func set_custom_language(locale: String) -> void:
 	save()
 
 
+## Accessibility (GDD §17). These change presentation only, never the story.
+const SECTION_A11Y := "accessibility"
+
+func get_bool(setting: StringName, default: bool = false) -> bool:
+	return bool(_config.get_value(SECTION_A11Y, str(setting), default))
+
+
+func set_bool(setting: StringName, value: bool) -> void:
+	_config.set_value(SECTION_A11Y, str(setting), value)
+	EventBus.settings_changed.emit()
+	save()
+
+
+func reduce_ink() -> bool:
+	return get_bool(&"reduce_ink")
+
+
+func large_subtitles() -> bool:
+	return get_bool(&"large_subtitles")
+
+
+func toggle_sprint() -> bool:
+	return get_bool(&"toggle_sprint")
+
+
 ## Volume as a linear 0..1 value, not decibels — that is what a slider wants.
 func get_volume(bus: StringName) -> float:
 	if not BUSES.has(bus):
