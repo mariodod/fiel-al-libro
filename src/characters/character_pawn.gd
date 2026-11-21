@@ -833,6 +833,13 @@ func revive() -> void:
 	EventBus.character_revived.emit(character_id)
 
 
+## Public entry point for PassiveManager's shelf changes. The underscore
+## variant below does the work; this exists so the manager never reaches into
+## a private method by name.
+func apply_passive_modifiers(mods: Dictionary) -> void:
+	_apply_passive_modifiers(mods)
+
+
 ## Apply passive modifiers from the shelf.
 ## Called once on _ready() and again whenever the shelf changes.
 func _apply_passive_modifiers(mods: Dictionary) -> void:
