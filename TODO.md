@@ -294,6 +294,33 @@
 
 - [ ] **Set up automated cloud backup** (Blobs / Backblaze B2 / Google Drive) — *you are one disk failure from losing two years*
 
+## GDD code-level gaps closed (2026-11-21)
+
+- [x] PassiveManager method-name bug on shelf change.
+- [x] Ensayo made playable end to end (setup / rounds / consequence / refusal).
+- [x] Ending variables sourced from Verdict; Humanity gates the clean ending.
+- [x] Death writes a Manuscrito page; companion revive costs Locura.
+- [x] Milestones unlock heavy attack and Desvelar with a toast.
+- [x] The Ink grows with progress and Book verdicts.
+- [x] Rocinante and Dapple mounts (chase, dismount, obstinate, throwable).
+- [x] Completed chapters are written into the manuscript (P4).
+- [x] Accessibility options (reduce ink, large subtitles, toggle sprint).
+
+## Remaining GDD work — content production, not code
+
+- [ ] The 15 named books of §9 (Mio Cid, Pelayo, Calila e Dimna, Buscón,
+      Códice…) as collectible BookData with authored passives and grant paths.
+      The current books are chapter scene-pages.
+- [ ] Bestiary UI and the remaining §10 draft enemies (weather bosses, mirror
+      copy, triple duel, puppet theatre, "don't fight" bosses). 15 Ventures
+      exist; the draft lists 24.
+- [ ] Signature verbs of §5.1/§5.2 (Refutar, Golpe de Lanza, Rancor, Juramento)
+      as abilities with animations and effects. Only 6 abilities exist.
+- [ ] es-419 shipped locale; 38 fragment passages still in Spanish for it/pt_BR.
+- [ ] Distinct bark VO (blocked on an ElevenLabs key).
+- [ ] Art/audio production: fonts (Noto Sans + EB Garamond), credits duet,
+      region ambience, shader marginalia/ink motes.
+
 ## Parked (decide later, don't forget)
 
 - [ ] Co-op networking (the architecture is already co-op-ready)
