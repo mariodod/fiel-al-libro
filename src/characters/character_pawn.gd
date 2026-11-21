@@ -101,6 +101,9 @@ var _passive_stamina_bonus: float = 0.0
 var _passive_stamina_percent: float = 1.0
 var _passive_poise_bonus: float = 0.0
 var _passive_speed_percent: float = 1.0
+## Set by MountController while riding (GDD §5.4).
+var mounted: bool = false
+var mount_speed_percent: float = 1.0
 var _passive_dodge_distance_percent: float = 1.0
 var _passive_dodge_iframe_percent: float = 1.0
 var _passive_damage_percent: float = 1.0
@@ -876,12 +879,12 @@ func _on_passive_modifiers_changed() -> void:
 
 ## The character's walk speed, with passive modifiers applied.
 func walk_speed() -> float:
-	return WALK_SPEED * _passive_speed_percent
+	return WALK_SPEED * _passive_speed_percent * mount_speed_percent
 
 
 ## The character's run speed, with passive modifiers applied.
 func run_speed() -> float:
-	return RUN_SPEED * _passive_speed_percent
+	return RUN_SPEED * _passive_speed_percent * mount_speed_percent
 
 
 ## The character's dodge distance, with passive modifiers applied.

@@ -4588,3 +4588,23 @@ msgstr "Golpe pesado — rompe la guardia"
 #. META: namespace=ui
 msgid "ui.milestone.verb.desvelar"
 msgstr "Desvelar — quita la piel del libro"
+
+#. META: namespace=ui
+msgid "ui.mount.summoned"
+msgstr "Montas a %s. Pulsa Z para desmontar o lanzar a Rucio."
+
+#. META: namespace=ui
+msgid "ui.mount.dismount"
+msgstr "Desmontas para investigar."
+
+#. META: namespace=ui
+msgid "ui.mount.rocinante"
+msgstr "Rocinante"
+
+#. META: namespace=ui
+msgid "ui.mount.dapple"
+msgstr "Rucio"
+
+#. META: namespace=ui
+msgid "ui.mount.obstinate"
+msgstr "Rucio no quiere pasar. Desmonta y sigue a pie."

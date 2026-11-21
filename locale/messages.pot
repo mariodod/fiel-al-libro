@@ -4618,3 +4618,23 @@ msgstr ""
 #. META: namespace=ui
 msgid "ui.milestone.verb.desvelar"
 msgstr ""
+
+#. META: namespace=ui
+msgid "ui.mount.summoned"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.mount.dismount"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.mount.rocinante"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.mount.dapple"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.mount.obstinate"
+msgstr ""

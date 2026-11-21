@@ -4546,3 +4546,23 @@ msgstr "Heavy attack — break their guard"
 #. META: namespace=ui
 msgid "ui.milestone.verb.desvelar"
 msgstr "Desvelar — strip off the Book skin"
+
+#. META: namespace=ui
+msgid "ui.mount.summoned"
+msgstr "You ride %s. Press Z to dismount, or to throw Dapple."
+
+#. META: namespace=ui
+msgid "ui.mount.dismount"
+msgstr "You dismount to investigate."
+
+#. META: namespace=ui
+msgid "ui.mount.rocinante"
+msgstr "Rocinante"
+
+#. META: namespace=ui
+msgid "ui.mount.dapple"
+msgstr "Dapple"
+
+#. META: namespace=ui
+msgid "ui.mount.obstinate"
+msgstr "Dapple will not cross. Dismount and continue on foot."

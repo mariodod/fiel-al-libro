@@ -34,6 +34,7 @@ const KEY_BINDINGS := {
 	"codex": [KEY_C],
 	"rest": [KEY_R],
 	"lock_on": [KEY_M],
+	"mount": [KEY_Z],
 	"desvelar": [KEY_X],
 	"toggle_map": [KEY_G],
 	"pause": [KEY_P],

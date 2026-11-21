@@ -67,6 +67,7 @@ func continue_game() -> void:
 	transitioning = false
 	current_chapter = GameState.current_chapter
 	flow_started.emit()
+	_refresh_ink()
 	var id := GameState.current_chapter
 	if id.is_empty():
 		id = RegionGraph.start_chapter
@@ -108,9 +109,23 @@ func goto_chapter(id: StringName) -> bool:
 	return true
 
 
+## The Ink spreads as the manuscript fills and as the player insists on the
+## Book (GDD §4.3). It is neither truth: a visible corruption that grows with
+## what the player has done. Called on every chapter completion and on resume.
+func _refresh_ink() -> void:
+	var total := RegionGraph.all_chapters().size()
+	var done := GameState.chapters_completed_count()
+	var progress := float(done) / float(maxi(total, 1))
+	var verdicts := Verdict.truth_count() + Verdict.force_count()
+	var insistence := float(Verdict.truth_count()) / float(maxi(verdicts, 1))
+	var ink: float = clampf(0.08 + progress * 0.62 + insistence * 0.20, 0.0, 1.0)
+	TruthLayer.set_ink(ink)
+
+
 ## Advance after a chapter is completed. slice.gd has already marked it done
 ## in both GameState and RegionGraph by the time this signal fires.
 func _on_chapter_completed(id: StringName) -> void:
+	_refresh_ink()
 	if not active or transitioning:
 		return
 	if GameState.chapters_completed_count() >= RegionGraph.all_chapters().size():

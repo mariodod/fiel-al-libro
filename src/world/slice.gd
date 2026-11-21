@@ -66,6 +66,8 @@ extends Node3D
 ## Pause (P).
 ## The map screen scene, instantiated when the player presses G.
 @onready var _map_screen_scene: PackedScene = load("res://src/world/map_screen.tscn")
+## Rocinante and Dapple (GDD §5.4). Summonable at the Posada checkpoint.
+var _mounts: Node = null
 ## The map screen while it is open, null otherwise.
 var _map_screen: MapScreen = null
 # Ensayo chapters intentionally omit the windmill, tome and Venture; tolerate
@@ -168,6 +170,11 @@ func _ready() -> void:
 	_build_lectura_hud()
 	_build_lock_marker()
 	_build_shelf()
+	var mount_script: Script = load("res://src/systems/mount_controller.gd")
+	_mounts = Node.new()
+	_mounts.name = "MountController"
+	_mounts.set_script(mount_script)
+	add_child(_mounts)
 
 	EventBus.character_switched.connect(_on_character_switched)
 	EventBus.character_died.connect(_on_character_died)
@@ -500,6 +507,9 @@ func _build_characters() -> void:
 # ── Input ───────────────────────────────────────────────────────────────
 
 func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed(&"mount"):
+		_on_mount_pressed()
+		return
 	if event.is_action_pressed(&"toggle_truth"):
 		# The truth is the knight's delusion, and it is his alone: *"pressing
 		# T with sancho should do nothing. It's a quijote exclusive
@@ -1050,6 +1060,27 @@ func complete_ensayo() -> void:
 		GameState.ending_id = GameState.compute_ending()
 		var ending_scene: PackedScene = preload("res://src/world/ending.tscn")
 		get_tree().change_scene_to_packed(ending_scene)
+
+
+## Mounts are a chase, not a teleport: summon at the Posada, ride, dismount
+## to investigate. Dapple can be thrown and refuses some thresholds.
+func _on_mount_pressed() -> void:
+	if _mounts == null or player == null or player.active_pawn == null:
+		return
+	if bool(_mounts.get("mounted")):
+		var mount_id := StringName(str(_mounts.get("mount_id")))
+		if mount_id == &"dapple":
+			var direction := -player.active_pawn.global_transform.basis.z
+			_mounts.call("throw_dapple", direction)
+		else:
+			_mounts.call("dismount")
+		EventBus.toast.emit(&"ui.mount.dismount", [])
+		return
+	# Only at the Posada checkpoint — no summoning inside caves or chapters.
+	if _checkpoint != null and _checkpoint.global_position.distance_to(
+			player.active_pawn.global_position) < 5.0:
+		_mounts.call("mount", player.active_pawn, _checkpoint.global_position)
+		EventBus.toast.emit(&"ui.mount.summoned", [Loc.t(&"ui.mount.%s" % _mounts.get("mount_id"))])
 
 
 ## Milestones are verbs, not stat picks (GDD §8.1). Tell the player which one
