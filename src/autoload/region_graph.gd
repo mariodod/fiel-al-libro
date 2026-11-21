@@ -579,6 +579,11 @@ func load_chapter(chapter_id: StringName) -> PackedScene:
 	current_chapter = chapter_id
 	current_region = ch.get("region_id")
 
+	# Meeting the chapter's Venture counts as meeting its enemy, even before
+	# the fight is won (GDD §10).
+	var venture_id: String = str(ch.get("venture_id", ""))
+	if not str(venture_id).is_empty():
+		GameState.meet_enemy(StringName(str(venture_id)))
 	# Mark the region as entered if it is the first time.
 	if not GameState.region_found(current_region):
 		GameState.find_region(current_region)

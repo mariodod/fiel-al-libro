@@ -4902,3 +4902,91 @@ msgstr ""
 #. META: namespace=ui
 msgid "ui.book.libro.codice.codex"
 msgstr ""
+
+#. META: namespace=ui
+msgid "ui.bestiary.title"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.bestiary.hint"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.bestiary.locked"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.bestiary.locked_detail"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.bestiary.progress"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.bestiary.stats"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.bestiary.reality"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.bestiary.book"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.venture.mercaderes"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.venture.rico_haragon"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.venture.senor_chivos"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.venture.zaida"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.venture.verde_coat"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.venture.melisendra"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.venture.conciliagravios"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.venture.doctor_corregidor"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.venture.cebo"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.venture.gemelos"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.venture.bandidos_sierra"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.venture.duende"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.venture.torbellino"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.venture.autómata"
+msgstr ""

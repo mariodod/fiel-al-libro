@@ -81,6 +81,7 @@ signal chapter_completed(id: StringName)
 ## the chapter flow and the map screen.
 signal chapter_unlocked(id: StringName)
 signal venture_resolved(id: StringName, mode: int)
+signal enemy_met(id: StringName)
 signal region_found(id: StringName)
 signal region_resolved(id: StringName)
 ## The player has entered a region for the first time in this run.

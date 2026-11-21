@@ -44,6 +44,8 @@ var current_chapter_id: StringName = &""
 # ── Manuscript ──────────────────────────────────────────────────────────
 ## Ids of the 48 Manifiesto fragments the player has found (D7).
 var codex_pages: Array[StringName] = []
+## Enemy ids the player has come across, for the Bestiary (GDD §10).
+var enemies_met: Array[StringName] = []
 ## Region id -> fragment id, loaded lazily from src/data/regions/*.tres.
 ## A region's fragment names the place (GDD.md §20.1), so it is granted when
 ## the player first sets foot in the region — including the two regions with
@@ -181,6 +183,18 @@ func write_page(id: StringName, line: String) -> void:
 	pages_written.append(id)
 	EventBus.manuscript_page_written.emit(id, line)
 
+## Mark an enemy as met. Idempotent, so repeated encounters are cheap.
+func meet_enemy(id: StringName) -> void:
+	if id.is_empty() or enemies_met.has(id):
+		return
+	enemies_met.append(id)
+	EventBus.enemy_met.emit(id)
+
+
+func has_met_enemy(id: StringName) -> bool:
+	return enemies_met.has(id)
+
+
 ## Mark a chapter as started (entered).
 func chapter_started(id: StringName) -> void:
 	if id.is_empty():
@@ -208,6 +222,7 @@ func reset_progress() -> void:
 	chapters_resolved.clear()
 	current_chapter_id = &""
 	codex_pages.clear()
+	enemies_met.clear()
 	pages_written.clear()
 	ending_id = &""
 	author_revealed = false

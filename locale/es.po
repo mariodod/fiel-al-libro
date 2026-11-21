@@ -4872,3 +4872,91 @@ msgstr "Cada Ventura admite una tercera resolución: la del lector."
 #. META: namespace=ui
 msgid "ui.book.libro.codice.codex"
 msgstr "El Códice no termina. Solo cambia de lector."
+
+#. META: namespace=ui
+msgid "ui.bestiary.title"
+msgstr "Bestiario"
+
+#. META: namespace=ui
+msgid "ui.bestiary.hint"
+msgstr "Las criaturas del camino. Solo aparecen cuando las has encontrado."
+
+#. META: namespace=ui
+msgid "ui.bestiary.locked"
+msgstr "???"
+
+#. META: namespace=ui
+msgid "ui.bestiary.locked_detail"
+msgstr "Aún no te has cruzado con esta criatura."
+
+#. META: namespace=ui
+msgid "ui.bestiary.progress"
+msgstr "Encontrados: %d de %d"
+
+#. META: namespace=ui
+msgid "ui.bestiary.stats"
+msgstr "Vida %d — Temple %d"
+
+#. META: namespace=ui
+msgid "ui.bestiary.reality"
+msgstr "Realidad"
+
+#. META: namespace=ui
+msgid "ui.bestiary.book"
+msgstr "Libro"
+
+#. META: namespace=ui
+msgid "ui.venture.mercaderes"
+msgstr "Los Mercaderes de la Fair"
+
+#. META: namespace=ui
+msgid "ui.venture.rico_haragon"
+msgstr "El Rico de Haragón"
+
+#. META: namespace=ui
+msgid "ui.venture.senor_chivos"
+msgstr "El Señor de los Chivos"
+
+#. META: namespace=ui
+msgid "ui.venture.zaida"
+msgstr "La Zaida"
+
+#. META: namespace=ui
+msgid "ui.venture.verde_coat"
+msgstr "El Caballero de la Verde Coat"
+
+#. META: namespace=ui
+msgid "ui.venture.melisendra"
+msgstr "Melisendra"
+
+#. META: namespace=ui
+msgid "ui.venture.conciliagravios"
+msgstr "Los Conciliagravios"
+
+#. META: namespace=ui
+msgid "ui.venture.doctor_corregidor"
+msgstr "El Doctor Corregidor"
+
+#. META: namespace=ui
+msgid "ui.venture.cebo"
+msgstr "El Cebo"
+
+#. META: namespace=ui
+msgid "ui.venture.gemelos"
+msgstr "Los Gemelos (Truel)"
+
+#. META: namespace=ui
+msgid "ui.venture.bandidos_sierra"
+msgstr "Los Bandidos de la Sierra Morena"
+
+#. META: namespace=ui
+msgid "ui.venture.duende"
+msgstr "El Duende de Montesinos"
+
+#. META: namespace=ui
+msgid "ui.venture.torbellino"
+msgstr "El Torbellino"
+
+#. META: namespace=ui
+msgid "ui.venture.autómata"
+msgstr "El Autómata"

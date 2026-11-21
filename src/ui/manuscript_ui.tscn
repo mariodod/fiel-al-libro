@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=5 format=3]
 [ext_resource type="Script" path="res://src/ui/manuscript_ui.gd" id="1_shell"]
 [ext_resource type="Script" path="res://src/ui/settings_page.gd" id="2_settings"]
 [ext_resource type="Script" path="res://src/ui/codes_page.gd" id="3_codes"]
+[ext_resource type="Script" path="res://src/ui/bestiary_page.gd" id="4_bestiary"]
 
 
 [node name="ManuscriptUI" type="Control"]
@@ -61,6 +62,12 @@ anchors_preset = 1
 position = Vector2(400, 530)
 size = Vector2(200, 40)
 text = "Codes"
+
+[node name="TitleBestiary" type="Button" parent="Pages/TitlePage"]
+anchors_preset = 1
+position = Vector2(400, 580)
+size = Vector2(200, 40)
+text = "Bestiary"
 
 [node name="ShelfPage" type="Control" parent="Pages"]
 anchors_preset = 7
@@ -169,3 +176,8 @@ script = ExtResource("3_codes")
 [node name="CodesBackground" type="ColorRect" parent="Pages/CodesPage"]
 anchors_preset = 7
 color = Color(0.086, 0.078, 0.063, 0.95)
+
+[node name="BestiaryPage" type="Control" parent="Pages"]
+anchors_preset = 7
+visible = false
+script = ExtResource("4_bestiary")

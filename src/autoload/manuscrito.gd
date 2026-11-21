@@ -102,6 +102,7 @@ func _serialize_game_state() -> Dictionary:
 		"anamorphoses_resolved": GameState.anamorphoses_resolved.duplicate(true),
 		"evidence": GameState.evidence.duplicate(true),
 		"codex_pages": GameState.codex_pages.duplicate(),
+		"enemies_met": GameState.enemies_met.duplicate(),
 		"pages_written": GameState.pages_written.duplicate(),
 		"ending_id": String(GameState.ending_id),
 		"regions_found": GameState.regions_found.duplicate(true),
@@ -210,6 +211,7 @@ func _apply(data: Dictionary) -> void:
 	GameState.regions_resolved = gs.get("regions_resolved", {})
 	GameState.chapters_found = _sn_array(gs.get("chapters_found", []))
 	GameState.chapters_resolved = _sn_array(gs.get("chapters_resolved", []))
+	GameState.enemies_met = _sn_array(gs.get("enemies_met", []))
 	GameState.current_chapter_id = StringName(str(gs.get("current_chapter_id", "")))
 	GameState.quixote_playtime = float(gs.get("quixote_playtime", 0.0))
 	GameState.sancho_playtime = float(gs.get("sancho_playtime", 0.0))

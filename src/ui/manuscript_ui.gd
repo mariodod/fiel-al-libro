@@ -34,6 +34,7 @@ const PAGE_DIALOGUE := &"dialogue"
 const PAGE_PAUSE := &"pause"
 const PAGE_SETTINGS := &"settings"
 const PAGE_CODES := &"codes"
+const PAGE_BESTIARY := &"bestiary"
 
 ## The order pages appear in the shell's history (for back navigation).
 var _history: Array[StringName] = [PAGE_GAME]
@@ -53,6 +54,7 @@ var _dialogue_page: Control = null
 var _pause_page: Control = null
 var _settings_page: Control = null
 var _codes_page: Control = null
+var _bestiary_page: Control = null
 
 ## The page container that holds all page children.
 var _pages_container: Control = null
@@ -77,6 +79,7 @@ func _ready() -> void:
 	_pause_page = _find_child(&"PausePage")
 	_settings_page = _find_child(&"SettingsPage")
 	_codes_page = _find_child(&"CodesPage")
+	_bestiary_page = _find_child(&"BestiaryPage")
 
 	# The title page's Begin button starts the real chapter flow; without this
 	# it is a dead button and the built chapters are unreachable.
@@ -107,7 +110,8 @@ func _ready() -> void:
 			and not _settings_page.back_pressed.is_connected(go_back):
 		_settings_page.back_pressed.connect(go_back)
 
-	# The Codes screen is the in-game translation importer.
+	# The Codes screen is the in-game translation importer; the Bestiary is
+	# the record of creatures met on the road (GDD §10).
 	for button_name in [&"TitleCodes", &"PauseCodes"]:
 		var codes_button := _find_child(button_name) as Button
 		if codes_button != null:
@@ -117,9 +121,14 @@ func _ready() -> void:
 	if _codes_page != null and _codes_page.has_signal(&"back_pressed") \
 			and not _codes_page.back_pressed.is_connected(go_back):
 		_codes_page.back_pressed.connect(go_back)
-	if not EventBus.settings_changed.is_connected(_refresh_locale_texts):
-		EventBus.settings_changed.connect(_refresh_locale_texts)
-
+	var title_bestiary := _find_child(&"TitleBestiary") as Button
+	if title_bestiary != null:
+		title_bestiary.text = Loc.t(&"ui.bestiary.title")
+		if not title_bestiary.pressed.is_connected(_on_bestiary_pressed):
+			title_bestiary.pressed.connect(_on_bestiary_pressed)
+	if _bestiary_page != null and _bestiary_page.has_signal(&"back_pressed") \
+			and not _bestiary_page.back_pressed.is_connected(go_back):
+		_bestiary_page.back_pressed.connect(go_back)
 	# Hide all pages initially.
 	_hide_all_pages()
 
@@ -152,6 +161,10 @@ func _on_settings_pressed() -> void:
 
 func _on_codes_pressed() -> void:
 	open_codes()
+
+
+func _on_bestiary_pressed() -> void:
+	open_bestiary()
 
 
 ## Button captions are translated once in _ready; refresh them when the player
@@ -236,6 +249,7 @@ func _page_node(page: StringName) -> Control:
 		PAGE_PAUSE: return _pause_page
 		PAGE_SETTINGS: return _settings_page
 		PAGE_CODES: return _codes_page
+		PAGE_BESTIARY: return _bestiary_page
 		_: return null
 
 
@@ -316,6 +330,17 @@ func open_codes() -> void:
 	_show_page(PAGE_CODES)
 
 
+## Open the Bestiary page.
+func open_bestiary() -> void:
+	if _turning:
+		return
+	if _current_page == PAGE_BESTIARY:
+		close()
+		return
+	visible = true
+	_show_page(PAGE_BESTIARY)
+
+
 ## Open the title page.
 func open_title() -> void:
 	if _turning:
@@ -389,5 +414,6 @@ static func suite(harness: TestHarness) -> void:
 	harness.expect_eq(PAGE_PAUSE, &"pause", "pause page id")
 	harness.expect_eq(PAGE_SETTINGS, &"settings", "settings page id")
 	harness.expect_eq(PAGE_CODES, &"codes", "codes page id")
+	harness.expect_eq(PAGE_BESTIARY, &"bestiary", "bestiary page id")
 
 	harness.expect_eq(PAGE_TURN_SECONDS, 0.3, "page turn duration")

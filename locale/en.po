@@ -4906,3 +4906,91 @@ msgstr "Every Venture admits a third resolution: the reader's."
 #. META: namespace=ui
 msgid "ui.book.libro.codice.codex"
 msgstr "The Codex does not end. It only changes reader."
+
+#. META: namespace=ui
+msgid "ui.bestiary.title"
+msgstr "Bestiary"
+
+#. META: namespace=ui
+msgid "ui.bestiary.hint"
+msgstr "The creatures of the road. They appear only once you have met them."
+
+#. META: namespace=ui
+msgid "ui.bestiary.locked"
+msgstr "???"
+
+#. META: namespace=ui
+msgid "ui.bestiary.locked_detail"
+msgstr "You have not met this creature yet."
+
+#. META: namespace=ui
+msgid "ui.bestiary.progress"
+msgstr "Met: %d of %d"
+
+#. META: namespace=ui
+msgid "ui.bestiary.stats"
+msgstr "Health %d — Poise %d"
+
+#. META: namespace=ui
+msgid "ui.bestiary.reality"
+msgstr "Reality"
+
+#. META: namespace=ui
+msgid "ui.bestiary.book"
+msgstr "Book"
+
+#. META: namespace=ui
+msgid "ui.venture.mercaderes"
+msgstr "The Merchants of the Fair"
+
+#. META: namespace=ui
+msgid "ui.venture.rico_haragon"
+msgstr "The Rich Man of Haragón"
+
+#. META: namespace=ui
+msgid "ui.venture.senor_chivos"
+msgstr "The Lord of the Goats"
+
+#. META: namespace=ui
+msgid "ui.venture.zaida"
+msgstr "Zaida"
+
+#. META: namespace=ui
+msgid "ui.venture.verde_coat"
+msgstr "The Knight of the Green Coat"
+
+#. META: namespace=ui
+msgid "ui.venture.melisendra"
+msgstr "Melisendra"
+
+#. META: namespace=ui
+msgid "ui.venture.conciliagravios"
+msgstr "The Reconcilers"
+
+#. META: namespace=ui
+msgid "ui.venture.doctor_corregidor"
+msgstr "The Doctor Corregidor"
+
+#. META: namespace=ui
+msgid "ui.venture.cebo"
+msgstr "The Bait"
+
+#. META: namespace=ui
+msgid "ui.venture.gemelos"
+msgstr "The Twins (Truel)"
+
+#. META: namespace=ui
+msgid "ui.venture.bandidos_sierra"
+msgstr "The Bandits of Sierra Morena"
+
+#. META: namespace=ui
+msgid "ui.venture.duende"
+msgstr "The Goblin of Montesinos"
+
+#. META: namespace=ui
+msgid "ui.venture.torbellino"
+msgstr "The Whirlwind"
+
+#. META: namespace=ui
+msgid "ui.venture.autómata"
+msgstr "The Automaton"

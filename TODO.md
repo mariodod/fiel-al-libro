@@ -308,12 +308,13 @@
 
 ## Remaining GDD work — content production, not code
 
-- [ ] The 15 named books of §9 (Mio Cid, Pelayo, Calila e Dimna, Buscón,
-      Códice…) as collectible BookData with authored passives and grant paths.
-      The current books are chapter scene-pages.
-- [ ] Bestiary UI and the remaining §10 draft enemies (weather bosses, mirror
-      copy, triple duel, puppet theatre, "don't fight" bosses). 15 Ventures
-      exist; the draft lists 24.
+- [x] The 15 named books of §9 — 12 authored (Mio Cid, Pelayo, Gatos, Santo
+      Domingo, Calila e Dimna, Milagros, Lazarillo, Tirant, Tablas, Buscón,
+      Don Juan Tenorio, Códice) with passives, six-locale prose and anamorphosis
+      grant paths; Tío Andalus and Celestina already existed.
+- [x] Bestiary UI in the Manuscript shell with met/unlocked entries, plus 14
+      draft enemies as data; damage and Locura-drain passives now have real
+      effects.
 - [ ] Signature verbs of §5.1/§5.2 (Refutar, Golpe de Lanza, Rancor, Juramento)
       as abilities with animations and effects. Only 6 abilities exist.
 - [ ] es-419 shipped locale; 38 fragment passages still in Spanish for it/pt_BR.
