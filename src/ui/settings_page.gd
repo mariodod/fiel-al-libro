@@ -155,9 +155,9 @@ func _refresh() -> void:
 		(_readouts[bus] as Label).text = "%d%%" % roundi(value * 100.0)
 
 	_language.clear()
-	for loc in Loc.SHIPPED_LOCALES:
-		_language.add_item(Loc.locale_display_name(loc))
-	var current := Loc.SHIPPED_LOCALES.find(Settings.get_language())
+	for loc in TranslationManager.available_locales:
+		_language.add_item(TranslationManager.locale_display_name(loc))
+	var current := TranslationManager.available_locales.find(Settings.get_language())
 	if current >= 0:
 		_language.selected = current
 
@@ -169,9 +169,9 @@ func _refresh() -> void:
 
 
 func _on_language_selected(index: int) -> void:
-	if _updating or index < 0 or index >= Loc.SHIPPED_LOCALES.size():
+	if _updating or index < 0 or index >= TranslationManager.available_locales.size():
 		return
-	Settings.set_language(Loc.SHIPPED_LOCALES[index])
+	TranslationManager.use_locale(TranslationManager.available_locales[index])
 
 
 func _on_volume_changed(value: float, bus: StringName) -> void:

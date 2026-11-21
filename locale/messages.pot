@@ -4126,3 +4126,55 @@ msgstr ""
 #. META: namespace=ui
 msgid "ui.colophon.hint"
 msgstr ""
+
+#. META: namespace=ui
+msgid "ui.codes.title"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.codes.language"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.codes.hint"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.codes.import"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.codes.forget"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.codes.imported"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.codes.status.ok"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.codes.status.error"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.codes.status.current"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.codes.error.no_translations"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.codes.error.no_locale"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.codes.error.no_file"
+msgstr ""
+
+#. META: namespace=ui
+msgid "ui.codes.file"
+msgstr ""

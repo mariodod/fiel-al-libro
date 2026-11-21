@@ -1197,10 +1197,10 @@ msgid "ui.menu.quit"
 msgstr ""
 #. TRANSLATORS: Auto-added key
 msgid "ui.menu.codes"
-msgstr ""
+msgstr "Sprachen"
 #. TRANSLATORS: Auto-added key
 msgid "ui.menu.codes.hint"
-msgstr ""
+msgstr "Lies das Spiel in einer anderen Sprache oder füge eine Übersetzung hinzu."
 #. TRANSLATORS: Auto-added key
 msgid "ui.prompt.interact"
 msgstr ""
@@ -5382,3 +5382,55 @@ msgstr "Colophon"
 #. META: namespace=ui
 msgid "ui.colophon.hint"
 msgstr "Press any key to continue."
+
+#. META: namespace=ui
+msgid "ui.codes.title"
+msgstr "Codes — translations"
+
+#. META: namespace=ui
+msgid "ui.codes.language"
+msgstr "Game language"
+
+#. META: namespace=ui
+msgid "ui.codes.hint"
+msgstr "Choose a language, or import a .po translation shared by the community."
+
+#. META: namespace=ui
+msgid "ui.codes.import"
+msgstr "Import a .po file"
+
+#. META: namespace=ui
+msgid "ui.codes.forget"
+msgstr "Remove translation"
+
+#. META: namespace=ui
+msgid "ui.codes.imported"
+msgstr "Imported"
+
+#. META: namespace=ui
+msgid "ui.codes.status.ok"
+msgstr "Imported {count} strings."
+
+#. META: namespace=ui
+msgid "ui.codes.status.error"
+msgstr "Could not import: {error}"
+
+#. META: namespace=ui
+msgid "ui.codes.status.current"
+msgstr "Current language: {locale}"
+
+#. META: namespace=ui
+msgid "ui.codes.error.no_translations"
+msgstr "The file contains no translations."
+
+#. META: namespace=ui
+msgid "ui.codes.error.no_locale"
+msgstr "The file has no language code (missing Language:)."
+
+#. META: namespace=ui
+msgid "ui.codes.error.no_file"
+msgstr "Could not read the file."
+
+#. META: namespace=ui
+msgid "ui.codes.file"
+msgstr "PO file"

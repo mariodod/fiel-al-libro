@@ -22,6 +22,8 @@ func _ready() -> void:
 	var locale := str(_config.get_value(SECTION_LOCALE, "language", ""))
 	if not locale.is_empty() and Loc.SHIPPED_LOCALES.has(locale):
 		Loc.set_locale(locale)
+	# Imported languages are applied by TranslationManager._restore_imported(),
+	# which runs after this autoload is ready.
 	for bus in BUSES:
 		_apply_volume(bus)
 
@@ -32,10 +34,15 @@ func get_language() -> String:
 
 
 func set_language(locale: String) -> void:
-	if not Loc.SHIPPED_LOCALES.has(locale):
-		return
 	_config.set_value(SECTION_LOCALE, "language", locale)
 	Loc.set_locale(locale)
+	save()
+
+
+## Persist a locale imported through the Codes screen. It is applied through
+## Loc by TranslationManager (Settings itself only knows shipped codes).
+func set_custom_language(locale: String) -> void:
+	_config.set_value(SECTION_LOCALE, "language", locale)
 	save()
 
 

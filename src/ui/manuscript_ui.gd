@@ -33,6 +33,7 @@ const PAGE_CODEX := &"codex"
 const PAGE_DIALOGUE := &"dialogue"
 const PAGE_PAUSE := &"pause"
 const PAGE_SETTINGS := &"settings"
+const PAGE_CODES := &"codes"
 
 ## The order pages appear in the shell's history (for back navigation).
 var _history: Array[StringName] = [PAGE_GAME]
@@ -51,6 +52,7 @@ var _codex_page: Control = null
 var _dialogue_page: Control = null
 var _pause_page: Control = null
 var _settings_page: Control = null
+var _codes_page: Control = null
 
 ## The page container that holds all page children.
 var _pages_container: Control = null
@@ -74,6 +76,7 @@ func _ready() -> void:
 	_dialogue_page = _find_child(&"DialoguePage")
 	_pause_page = _find_child(&"PausePage")
 	_settings_page = _find_child(&"SettingsPage")
+	_codes_page = _find_child(&"CodesPage")
 
 	# The title page's Begin button starts the real chapter flow; without this
 	# it is a dead button and the built chapters are unreachable.
@@ -103,6 +106,17 @@ func _ready() -> void:
 	if _settings_page != null and _settings_page.has_signal(&"back_pressed") \
 			and not _settings_page.back_pressed.is_connected(go_back):
 		_settings_page.back_pressed.connect(go_back)
+
+	# The Codes screen is the in-game translation importer.
+	for button_name in [&"TitleCodes", &"PauseCodes"]:
+		var codes_button := _find_child(button_name) as Button
+		if codes_button != null:
+			codes_button.text = Loc.t(&"ui.menu.codes")
+			if not codes_button.pressed.is_connected(_on_codes_pressed):
+				codes_button.pressed.connect(_on_codes_pressed)
+	if _codes_page != null and _codes_page.has_signal(&"back_pressed") \
+			and not _codes_page.back_pressed.is_connected(go_back):
+		_codes_page.back_pressed.connect(go_back)
 	if not EventBus.settings_changed.is_connected(_refresh_locale_texts):
 		EventBus.settings_changed.connect(_refresh_locale_texts)
 
@@ -136,6 +150,10 @@ func _on_settings_pressed() -> void:
 	open_settings()
 
 
+func _on_codes_pressed() -> void:
+	open_codes()
+
+
 ## Button captions are translated once in _ready; refresh them when the player
 ## changes language on the settings page.
 func _refresh_locale_texts() -> void:
@@ -148,6 +166,10 @@ func _refresh_locale_texts() -> void:
 		var settings_button := _find_child(button_name) as Button
 		if settings_button != null:
 			settings_button.text = Loc.t(&"ui.menu.settings")
+	for button_name in [&"TitleCodes", &"PauseCodes"]:
+		var codes_button := _find_child(button_name) as Button
+		if codes_button != null:
+			codes_button.text = Loc.t(&"ui.menu.codes")
 
 
 ## Recursively find a descendant node by name.
@@ -213,6 +235,7 @@ func _page_node(page: StringName) -> Control:
 		PAGE_DIALOGUE: return _dialogue_page
 		PAGE_PAUSE: return _pause_page
 		PAGE_SETTINGS: return _settings_page
+		PAGE_CODES: return _codes_page
 		_: return null
 
 
@@ -280,6 +303,17 @@ func open_settings() -> void:
 		return
 	visible = true
 	_show_page(PAGE_SETTINGS)
+
+
+## Open the Codes (in-game translation importer) page.
+func open_codes() -> void:
+	if _turning:
+		return
+	if _current_page == PAGE_CODES:
+		close()
+		return
+	visible = true
+	_show_page(PAGE_CODES)
 
 
 ## Open the title page.
@@ -354,5 +388,6 @@ static func suite(harness: TestHarness) -> void:
 	harness.expect_eq(PAGE_CODEX, &"codex", "codex page id")
 	harness.expect_eq(PAGE_PAUSE, &"pause", "pause page id")
 	harness.expect_eq(PAGE_SETTINGS, &"settings", "settings page id")
+	harness.expect_eq(PAGE_CODES, &"codes", "codes page id")
 
 	harness.expect_eq(PAGE_TURN_SECONDS, 0.3, "page turn duration")

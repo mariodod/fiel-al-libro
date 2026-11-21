@@ -299,6 +299,6 @@
 - [ ] Co-op networking (the architecture is already co-op-ready)
 - [ ] GodotSteam integration (achievements, cloud saves, rich presence)
 - [ ] Steam Workshop for user-made anamorphosis locations
-- [ ] The "Códigos" screen — in-game translation import
-- [ ] In-game .po import from a file picker
+- [x] The "Códigos" screen — in-game translation import (Codes page + runtime .po importer)
+- [x] In-game .po import from a file picker (FileDialog + PoParser + TranslationManager)
 - [ ] Mobile export (probably never — say so out loud and stop thinking about it)

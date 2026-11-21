@@ -4096,3 +4096,55 @@ msgstr "Colofon"
 #. META: namespace=ui
 msgid "ui.colophon.hint"
 msgstr "Pulsa cualquier tecla para continuar."
+
+#. META: namespace=ui
+msgid "ui.codes.title"
+msgstr "Códigos — traducciones"
+
+#. META: namespace=ui
+msgid "ui.codes.language"
+msgstr "Idioma del juego"
+
+#. META: namespace=ui
+msgid "ui.codes.hint"
+msgstr "Elige un idioma o importa una traducción .po compartida por la comunidad."
+
+#. META: namespace=ui
+msgid "ui.codes.import"
+msgstr "Importar un archivo .po"
+
+#. META: namespace=ui
+msgid "ui.codes.forget"
+msgstr "Quitar traducción"
+
+#. META: namespace=ui
+msgid "ui.codes.imported"
+msgstr "Importado"
+
+#. META: namespace=ui
+msgid "ui.codes.status.ok"
+msgstr "Traducción importada: {count} textos."
+
+#. META: namespace=ui
+msgid "ui.codes.status.error"
+msgstr "No se pudo importar: {error}"
+
+#. META: namespace=ui
+msgid "ui.codes.status.current"
+msgstr "Idioma actual: {locale}"
+
+#. META: namespace=ui
+msgid "ui.codes.error.no_translations"
+msgstr "El archivo no contiene traducciones."
+
+#. META: namespace=ui
+msgid "ui.codes.error.no_locale"
+msgstr "El archivo no indica un idioma (falta Language:)."
+
+#. META: namespace=ui
+msgid "ui.codes.error.no_file"
+msgstr "No se pudo leer el archivo."
+
+#. META: namespace=ui
+msgid "ui.codes.file"
+msgstr "Archivo .po"
