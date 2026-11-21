@@ -309,7 +309,10 @@ static func _all_scripts(dir: DirAccess, prefix: String = "res://src/") -> Array
 ## is NOT one of them: "de la Manche" is French, and a check that
 ## flagged it would be a check nobody trusts.
 static func _looks_spanish(text: String) -> bool:
-	for marker: String in ["ñ", "¿", "¡", " los ", " las ", " una ", " del ", " para "]:
+	# Only markers that cannot occur in a correct IT/PT/FR/DE/EN rendering.
+	# "una" is Italian, "para" Portuguese, "del" Italian, and "ñ" occurs in the
+	# proper name Clavileño — treating those as Spanish caused 38 false warnings.
+	for marker: String in ["¿", "¡", " los ", " las "]:
 		if text.contains(marker):
 			return true
 	return false

@@ -18,7 +18,7 @@ const FALLBACK := "es"
 ## list in project.godot and with locale/*.po — a locale in this list with no
 ## PO file is a silent fallback to Spanish for a player who selects it.
 const SHIPPED_LOCALES: Array[String] = [
-	"es", "en", "fr", "de", "it", "pt_BR",
+	"es", "es_419", "en", "fr", "de", "it", "pt_BR",
 ]
 
 

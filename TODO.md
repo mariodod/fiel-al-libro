@@ -315,9 +315,11 @@
 - [x] Bestiary UI in the Manuscript shell with met/unlocked entries, plus 14
       draft enemies as data; damage and Locura-drain passives now have real
       effects.
-- [ ] Signature verbs of §5.1/§5.2 (Refutar, Golpe de Lanza, Rancor, Juramento)
-      as abilities with animations and effects. Only 6 abilities exist.
-- [ ] es-419 shipped locale; 38 fragment passages still in Spanish for it/pt_BR.
+- [x] Signature verbs of §5.1/§5.2 — six authored as AbilityData (Golpe de
+      Lanza, Carga de Knight, Fase de Gigante, Golpe de Saco, Refutar, Pañuelo)
+      with GDD-faithful gating and a signature input.
+- [x] es-419 shipped locale (seven POs) and the Manifiesto validator heuristic
+      corrected: all 38 "still in Spanish" warnings were false positives.
 - [ ] Distinct bark VO (blocked on an ElevenLabs key).
 - [ ] Art/audio production: fonts (Noto Sans + EB Garamond), credits duet,
       region ambience, shader marginalia/ink motes.
