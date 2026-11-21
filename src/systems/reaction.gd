@@ -31,7 +31,25 @@ static func bark_key(character_id: StringName, object_id: StringName, layer: int
 	if character_id.is_empty() or object_id.is_empty():
 		return &""
 	return StringName("dia.%s.reaction.%s.%s" % [
-		character_id, object_id, "book" if layer == Perception.BOOK else "reality"])
+		character_id, slug_for(object_id), "book" if layer == Perception.BOOK else "reality"])
+
+
+## Book objects carry Manifiesto ids such as "bk.ch14.galeotes" or
+## "bk.ch01.molinos.01", while the authored bark text and WAVs are named after
+## the short subject ("galeotes", "molinos"). Without this normalisation every
+## book reaction built an id that had neither text nor audio.
+static func slug_for(object_id: StringName) -> StringName:
+	var id := str(object_id)
+	if id.begins_with("bk.ch"):
+		var parts := id.split(".")
+		if parts.size() >= 3:
+			id = ".".join(parts.slice(2))
+	if id.ends_with(".01"):
+		id = id.substr(0, id.length() - 3)
+	# The legend book's id names its source, but its bark is about the legend.
+	if id == "leyenda_tio_andalus":
+		id = "leyenda"
+	return StringName(id)
 
 
 ## The direction of a change, as the key's last word.

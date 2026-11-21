@@ -4178,3 +4178,307 @@ msgstr ""
 #. META: namespace=ui
 msgid "ui.codes.file"
 msgstr ""
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.book_stand.book"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.book_stand.reality"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.tome.book"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.tome.reality"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.molinos.book"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.molinos.reality"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.nombre.book"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.nombre.reality"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.caballeros.book"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.caballeros.reality"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.posada.book"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.posada.reality"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.rocinante.book"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.rocinante.reality"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.duena.book"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.duena.reality"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.pastores.book"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.pastores.reality"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.yanguesas.book"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.yanguesas.reality"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.manuscrito.book"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.manuscrito.reality"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.balsamo.book"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.balsamo.reality"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.caballero_bosque.book"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.caballero_bosque.reality"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.armas_letras.book"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.armas_letras.reality"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.leones.book"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.leones.reality"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.galeotes.book"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.galeotes.reality"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.leyenda.book"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.leyenda.reality"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.innkeeper.book"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.innkeeper.reality"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.musician.book"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.musician.reality"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.book_stand.book"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.book_stand.reality"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.tome.book"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.tome.reality"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.molinos.book"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.molinos.reality"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.nombre.book"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.nombre.reality"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.caballeros.book"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.caballeros.reality"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.posada.book"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.posada.reality"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.rocinante.book"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.rocinante.reality"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.duena.book"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.duena.reality"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.pastores.book"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.pastores.reality"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.yanguesas.book"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.yanguesas.reality"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.manuscrito.book"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.manuscrito.reality"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.balsamo.book"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.balsamo.reality"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.caballero_bosque.book"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.caballero_bosque.reality"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.armas_letras.book"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.armas_letras.reality"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.leones.book"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.leones.reality"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.galeotes.book"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.galeotes.reality"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.leyenda.book"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.leyenda.reality"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.innkeeper.book"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.innkeeper.reality"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.musician.book"
+msgstr ""
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.musician.reality"
+msgstr ""

@@ -4106,3 +4106,307 @@ msgstr "Could not read the file."
 #. META: namespace=ui
 msgid "ui.codes.file"
 msgstr "PO file"
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.book_stand.book"
+msgstr "A book. A book!"
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.book_stand.reality"
+msgstr "A lectern. Only a lectern."
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.tome.book"
+msgstr "An enchanted tome. Look!"
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.tome.reality"
+msgstr "An old book. Nothing more."
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.molinos.book"
+msgstr "Giant windmills!"
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.molinos.reality"
+msgstr "Windmills, nothing more."
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.nombre.book"
+msgstr "The name! The name!"
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.nombre.reality"
+msgstr "A name. Only a name."
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.caballeros.book"
+msgstr "Knights-errant!"
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.caballeros.reality"
+msgstr "Some gentlemen. Nothing more."
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.posada.book"
+msgstr "An enchanted inn!"
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.posada.reality"
+msgstr "An inn. Nothing more."
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.rocinante.book"
+msgstr "Rocinante! My noble steed!"
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.rocinante.reality"
+msgstr "A horse. Only a horse."
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.duena.book"
+msgstr "A lady! An enchanted lady!"
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.duena.reality"
+msgstr "A lady. Nothing more."
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.pastores.book"
+msgstr "Shepherds! A flock!"
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.pastores.reality"
+msgstr "Some shepherds. Nothing more."
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.yanguesas.book"
+msgstr "Yanguesas! Maidens!"
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.yanguesas.reality"
+msgstr "Some girls. Nothing more."
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.manuscrito.book"
+msgstr "The manuscript! The sacred book!"
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.manuscrito.reality"
+msgstr "An old book. Nothing more."
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.balsamo.book"
+msgstr "The balm of Fierabras!"
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.balsamo.reality"
+msgstr "A medicine. Nothing more."
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.caballero_bosque.book"
+msgstr "A knight of the forest."
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.caballero_bosque.reality"
+msgstr "A man in the forest."
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.armas_letras.book"
+msgstr "Arms and letters! Both!"
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.armas_letras.reality"
+msgstr "A book about arms and letters."
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.leones.book"
+msgstr "Lions! Fierce beasts!"
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.leones.reality"
+msgstr "Some lions. Nothing more."
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.galeotes.book"
+msgstr "Galley slaves! Prisoners!"
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.galeotes.reality"
+msgstr "Some galley slaves. Nothing more."
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.leyenda.book"
+msgstr "The legend! The story!"
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.leyenda.reality"
+msgstr "A legend. Nothing more."
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.innkeeper.book"
+msgstr "An innkeeper!"
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.innkeeper.reality"
+msgstr "A man. Nothing more."
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.musician.book"
+msgstr "A musician! Music!"
+
+#. META: namespace=dia
+msgid "dia.quixote.reaction.musician.reality"
+msgstr "A man with an instrument."
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.book_stand.book"
+msgstr "A book, sir."
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.book_stand.reality"
+msgstr "A lectern, sir."
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.tome.book"
+msgstr "A tome, sir."
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.tome.reality"
+msgstr "An old book, sir."
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.molinos.book"
+msgstr "Windmills, sir!"
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.molinos.reality"
+msgstr "Windmills, sir."
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.nombre.book"
+msgstr "The name, sir!"
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.nombre.reality"
+msgstr "A name, sir."
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.caballeros.book"
+msgstr "Knights, sir!"
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.caballeros.reality"
+msgstr "Some gentlemen, sir."
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.posada.book"
+msgstr "An inn, sir!"
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.posada.reality"
+msgstr "Una posada, señor."
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.rocinante.book"
+msgstr "Rocinante, sir!"
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.rocinante.reality"
+msgstr "A horse, sir."
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.duena.book"
+msgstr "A lady, sir!"
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.duena.reality"
+msgstr "Una dama, señor."
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.pastores.book"
+msgstr "Shepherds, sir!"
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.pastores.reality"
+msgstr "Unos pastores, señor."
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.yanguesas.book"
+msgstr "Maidens, sir!"
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.yanguesas.reality"
+msgstr "Some girls, sir."
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.manuscrito.book"
+msgstr "The manuscript, sir!"
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.manuscrito.reality"
+msgstr "A book, sir."
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.balsamo.book"
+msgstr "The balm, sir!"
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.balsamo.reality"
+msgstr "A medicine, sir."
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.caballero_bosque.book"
+msgstr "A knight in the forest, sir."
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.caballero_bosque.reality"
+msgstr "A man in the forest, sir."
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.armas_letras.book"
+msgstr "Arms and letters, sir!"
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.armas_letras.reality"
+msgstr "A book, sir."
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.leones.book"
+msgstr "Lions, sir! Fierce beasts!"
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.leones.reality"
+msgstr "Some lions, sir."
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.galeotes.book"
+msgstr "Galley slaves, sir! Prisoners!"
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.galeotes.reality"
+msgstr "Some galley slaves, sir."
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.leyenda.book"
+msgstr "A legend, sir!"
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.leyenda.reality"
+msgstr "A legend, sir."
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.innkeeper.book"
+msgstr "An innkeeper, sir."
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.innkeeper.reality"
+msgstr "A man, sir."
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.musician.book"
+msgstr "A musician, sir."
+
+#. META: namespace=dia
+msgid "dia.sancho.reaction.musician.reality"
+msgstr "A man with an instrument, sir."
