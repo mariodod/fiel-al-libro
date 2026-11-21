@@ -313,6 +313,9 @@ func _help_up(delta: float) -> void:
 		return
 	_revive_timer = 0.0
 	leader.revive()
+	# GDD §7.3: reviving someone requires believing they are still alive, and
+	# that belief costs the reviver a little of their grip on reality.
+	Locura.add_for(pawn.character_id, 8.0)
 	EventBus.character_spoke.emit(pawn.character_id, Chatter.key_for(pawn.character_id, &"revive"), [])
 
 

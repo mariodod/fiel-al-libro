@@ -70,6 +70,8 @@ signal humanity_lost(amount: int, character_id: StringName)
 signal book_collected(id: StringName)
 signal shelf_changed(equipped: Array[StringName])
 signal codex_page_found(id: StringName)
+## A failure was written into the manuscript (GDD §7.3, the unwritten page).
+signal manuscript_page_written(id: StringName, line: String)
 
 
 # ── World flow ──────────────────────────────────────────────────────────

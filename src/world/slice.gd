@@ -176,6 +176,7 @@ func _ready() -> void:
 	EventBus.ability_used.connect(_on_ability_used)
 	EventBus.venture_resolved.connect(_on_venture_resolved)
 	EventBus.ensayo_resolved.connect(_on_ensayo_resolved)
+	EventBus.milestone_reached.connect(_on_milestone_reached)
 
 	# Wire up pause menu buttons
 	var resume_btn := _pause_menu.get_node_or_null("PauseMenuPanel/PauseMenuResume")
@@ -1051,13 +1052,46 @@ func complete_ensayo() -> void:
 		get_tree().change_scene_to_packed(ending_scene)
 
 
-## Somebody went down in the yard.
-##
-## There is no death screen in the grey box — that is a whole system
-## (GDD.md §7.3, the unwritten page). But a character who cannot get up
-## and is not told how is a stuck build, so the yard says so.
+## Milestones are verbs, not stat picks (GDD §8.1). Tell the player which one
+## they just earned so progression reads as perception, not numbers.
+func _on_milestone_reached(character_id: StringName, index: int) -> void:
+	var verb_key := StringName("")
+	match index:
+		1: verb_key = &"ui.milestone.verb.heavy"
+		2: verb_key = &"ui.milestone.verb.desvelar"
+	if verb_key != &"":
+		EventBus.toast.emit(&"ui.milestone.reached", [Loc.t(verb_key)])
+
+
+## Somebody went down. GDD §7.3: they do not respawn at the checkpoint; a
+## Manuscrito page is written at the death site recording the failure. The
+## world then gets them back on their feet so the build is not stuck.
 func _on_character_died(character_id: StringName) -> void:
-	EventBus.toast.emit(&"ui.slice.down", [])
+	var number := (GameState.pages_written.size() % 6) + 1
+	var key := StringName("ui.death.page.%02d" % number)
+	var line := Loc.t(key)
+	var page_id := StringName("death.%s.%s.%d" % [
+		GameState.current_chapter, character_id, GameState.pages_written.size()])
+	GameState.write_page(page_id, line)
+	_drop_death_page(line)
+	EventBus.toast.emit(&"ui.death.page", [line])
+
+
+## A small parchment-coloured marker at the spot, so the failure is legible in
+## the world and not only in the codex. It is scenery, not an interactable.
+func _drop_death_page(line: String) -> void:
+	if player == null or player.active_pawn == null:
+		return
+	var marker := Label3D.new()
+	marker.name = "DeathPage"
+	marker.text = line
+	marker.font_size = 28
+	marker.modulate = Color(0.94, 0.90, 0.82, 0.9)
+	marker.outline_size = 6
+	marker.outline_modulate = Color(0.09, 0.07, 0.05, 0.9)
+	marker.position = player.active_pawn.global_position + Vector3.UP * 1.5
+	marker.billboard = BaseMaterial3D.BILLBOARD_ENABLED
+	add_child(marker)
 
 
 ## A character used an ability.

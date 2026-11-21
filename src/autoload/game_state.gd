@@ -171,6 +171,16 @@ func regions_found_count() -> int:
 func regions_resolved_count() -> int:
 	return regions_resolved.size()
 
+
+## Write a failure into the manuscript. Death does not respawn at the
+## checkpoint: the run back is recorded as a page the player can read later
+## (GDD §7.3). Ids are unique so repeated deaths at one spot keep their lines.
+func write_page(id: StringName, line: String) -> void:
+	if pages_written.has(id):
+		return
+	pages_written.append(id)
+	EventBus.manuscript_page_written.emit(id, line)
+
 ## Mark a chapter as started (entered).
 func chapter_started(id: StringName) -> void:
 	if id.is_empty():
@@ -267,8 +277,9 @@ func ending_variables() -> Dictionary:
 		"quixote_locura": Locura.get_for(&"quixote"),
 		"sancho_locura": Locura.get_for(&"sancho"),
 		"humanity": humanity,
-		"verdicts_truth": int(flags.get("verdicts_truth", 0)),
-		"verdicts_force": int(flags.get("verdicts_force", 0)),
+		# Read Verdict's own state rather than flags nobody writes.
+		"verdicts_truth": Verdict.truth_count(),
+		"verdicts_force": Verdict.force_count(),
 		"second_book": has_flag("found_second_book"),
 		"author_revealed": author_revealed,
 	}
@@ -294,8 +305,10 @@ func compute_ending() -> StringName:
 	if q >= 70 and s >= 70:
 		return &"la_locura_compartida"
 
-	# The real world: both cured, the book shelved. The sad one.
-	if q <= 25 and s <= 25:
+	# The real world: both cured, the book shelved. The sad one — but it is
+	# not available to someone who spent the campaign hurting innocents
+	# (GDD D4: Humanity is a real cost, not a score).
+	if q <= 25 and s <= 25 and humanity_now >= 60:
 		return &"el_mundo_real"
 
 	# Middle ground: the book wins, partly.

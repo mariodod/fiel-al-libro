@@ -8,6 +8,7 @@ id = &"heavy_attack"
 display_name_key = &"it.ability.attack_heavy.name"
 kind = 1
 stamina_cost = 26.0
+min_milestone = 1
 cooldown = 0.9
 damage = 28.0
 poise_damage = 24.0

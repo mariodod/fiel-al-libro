@@ -104,6 +104,8 @@ func suite(t):
 	if rock != null:
 		controller.request_swap()  # Sancho is driving
 		t.expect_eq(controller.active_pawn, sancho, "Sancho has the wheel")
+		# Desvelar is a milestone verb (GDD §8.1): the second memory unlocks it.
+		Memoria.gain(&"sancho", 2, false)
 
 		# Put him in front of the rock, facing it.
 		sancho.global_position = Vector3(11.0, 0.0, -9.0)
