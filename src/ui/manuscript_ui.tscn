@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene load_steps=6 format=3]
 [ext_resource type="Script" path="res://src/ui/manuscript_ui.gd" id="1_shell"]
 [ext_resource type="Script" path="res://src/ui/settings_page.gd" id="2_settings"]
 [ext_resource type="Script" path="res://src/ui/codes_page.gd" id="3_codes"]
 [ext_resource type="Script" path="res://src/ui/bestiary_page.gd" id="4_bestiary"]
+[ext_resource type="Texture2D" path="res://assets/art/title_background.jpg" id="5_title_art"]
 
 
 [node name="ManuscriptUI" type="Control"]
@@ -17,9 +18,12 @@ anchors_preset = 7
 anchors_preset = 7
 visible = false
 
-[node name="TitleBackground" type="ColorRect" parent="Pages/TitlePage"]
-anchors_preset = 7
-color = Color(0.086, 0.078, 0.063, 1.0)
+[node name="TitleBackground" type="TextureRect" parent="Pages/TitlePage"]
+anchors_preset = 15
+texture = ExtResource("5_title_art")
+expand_mode = 1
+stretch_mode = 5
+modulate = Color(1, 1, 1, 0.82)
 
 [node name="TitleText" type="Label" parent="Pages/TitlePage"]
 anchors_preset = 1

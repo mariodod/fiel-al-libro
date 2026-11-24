@@ -325,7 +325,10 @@
       Book layer, sampled from the real 1605 page text.
 - [x] Fonts: Noto Sans (UI) + EB Garamond (Book layer) shipped with OFL
       licenses, a Theme resource and a system fallback for CJK/Arabic.
-- [ ] Art/audio production: credits duet, region ambience.
+- [x] Images: title background, parchment, five region backdrops, book
+      covers and five portraits — shipped and wired into the title page, map,
+      Biblioteca shelf and bark line.
+- [ ] Audio production: credits duet, region ambience.
 
 ## Parked (decide later, don't forget)
 

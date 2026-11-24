@@ -21,6 +21,7 @@ extends Control
 @export var fade_seconds: float = 0.6
 
 var _line: Label = null
+var _portrait: TextureRect = null
 var _hold: float = 0.0
 var _fade: float = 0.0
 
@@ -69,6 +70,18 @@ func _build_ui() -> void:
 	_line.modulate.a = 0.0
 	_line.visible = false
 	add_child(_line)
+	_portrait = TextureRect.new()
+	_portrait.name = "Portrait"
+	_portrait.set_anchors_preset(Control.PRESET_BOTTOM_LEFT)
+	_portrait.offset_left = 24.0
+	_portrait.offset_top = -300.0
+	_portrait.offset_right = 164.0
+	_portrait.offset_bottom = -140.0
+	_portrait.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	_portrait.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	_portrait.modulate.a = 0.0
+	_portrait.visible = false
+	add_child(_portrait)
 
 
 func _process(delta: float) -> void:
@@ -80,14 +93,23 @@ func _process(delta: float) -> void:
 	if _fade > 0.0:
 		_fade -= delta
 		_line.modulate.a = clampf(_fade / maxf(fade_seconds, 0.05), 0.0, 1.0)
+		if _portrait != null:
+			_portrait.modulate.a = _line.modulate.a
 		if _fade <= 0.0:
 			_line.visible = false
+			if _portrait != null:
+				_portrait.visible = false
 
 
 # ── Signals ────────────────────────────────────────────────────────────
 
 ## Somebody spoke. The speaker's name goes on the line.
 func _on_character_spoke(character_id: StringName, text_key: StringName, args: Array) -> void:
+	var path := "res://assets/art/portrait_%s.jpg" % character_id
+	if _portrait != null and ResourceLoader.exists(path):
+		_portrait.texture = load(path) as Texture2D
+		_portrait.visible = _portrait.texture != null
+		_portrait.modulate.a = 1.0
 	var who := _display_name(character_id)
 	var what := Loc.tf(text_key, args)
 	if not who.is_empty():

@@ -114,6 +114,19 @@ func _add_book_row(id: StringName, book: Resource, container: VBoxContainer, equ
     row.add_theme_constant_override("separation", 8)
     container.add_child(row)
 
+    # A painted cover thumbnail, if one was shipped for this book.
+    var slug: String = str(id).split(".")[-1]
+    var cover_path := "res://assets/art/book_%s.jpg" % slug
+    if not ResourceLoader.exists(cover_path):
+        cover_path = "res://assets/art/book.jpg"
+    if ResourceLoader.exists(cover_path):
+        var cover := TextureRect.new()
+        cover.texture = load(cover_path) as Texture2D
+        cover.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+        cover.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+        cover.custom_minimum_size = Vector2(32.0, 44.0)
+        row.add_child(cover)
+
     var name_label = Label.new()
     name_label.custom_minimum_size = Vector2(200, 0)
     name_label.add_theme_font_size_override("font_size", 16)

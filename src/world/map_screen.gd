@@ -150,6 +150,21 @@ func _make_region_row(res: RegionData) -> Control:
 	row.name = "RegionRow_" + str(res.id)
 	row.add_theme_constant_override("separation", 8)
 
+	# A painted preview of the region (GDD §15.1 "gouache on plaster").
+	# Greyed out until the region has been found.
+	var art_path := "res://assets/art/region_%s.jpg" % res.id
+	if ResourceLoader.exists(art_path):
+		var tex := load(art_path) as Texture2D
+		if tex != null:
+			var preview := TextureRect.new()
+			preview.name = "RegionArt"
+			preview.texture = tex
+			preview.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+			preview.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
+			preview.custom_minimum_size = Vector2(64.0, 36.0)
+			preview.modulate = Color(1, 1, 1, 0.0 if not GameState.region_found(res.id) else 0.9)
+			row.add_child(preview)
+
 	# The found marker: a filled dot once the player has found it.
 	var dot := ColorRect.new()
 	dot.custom_minimum_size = Vector2(10.0, 10.0)
@@ -259,11 +274,21 @@ func _marker_key(variant: String, fragment_id: StringName) -> String:
 
 ## Refresh one row's found state.
 func _refresh_row(row: Control, res: RegionData) -> void:
-	var dot := row.get_child(0) as ColorRect
+	var art := row.get_node_or_null("RegionArt") as TextureRect
+	if art != null:
+		art.modulate.a = 0.9 if GameState.region_found(res.id) else 0.0
+	var dot: ColorRect = null
+	var label: Label = null
+	for child in row.get_children():
+		if child is ColorRect and dot == null:
+			dot = child as ColorRect
+		elif child is Label and label == null:
+			label = child as Label
 	var found := GameState.region_found(res.id)
-	dot.color = Color(0.75, 0.54, 0.24, 1.0) if found else Color(0.75, 0.54, 0.24, 0.0)
-	var label := row.get_child(1) as Label
-	label.modulate = Color(1.0, 1.0, 1.0, 1.0) if found else Color(0.4, 0.4, 0.35, 0.5)
+	if dot != null:
+		dot.color = Color(0.75, 0.54, 0.24, 1.0) if found else Color(0.75, 0.54, 0.24, 0.0)
+	if label != null:
+		label.modulate = Color(1.0, 1.0, 1.0, 1.0) if found else Color(0.4, 0.4, 0.35, 0.5)
 
 
 ## Called when the world's truth turns over: the map overlay tints
