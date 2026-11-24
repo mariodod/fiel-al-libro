@@ -1,9 +1,38 @@
 # HANDOVER — Fiel al Libro
 
 > **Read this first if you have not seen this project before.**
+
+
+## Current status (2026-11-24)
+
+> **Authoritative.** Supersedes the historical status notes below.
+
+The base game is feature-complete against `GDD.md` in code and content.
+Commits through `ab78f8a` are pushed to `main`; working tree clean.
+Tests: **50 suites, 3426 asserts, 0 failures** (`godot --headless res://tests/test_runner.tscn`).
+Seven locales ship: `es, es_419, en, fr, de, it, pt_BR`.
+
+**Shipped in the final push:** all 47 chapters with anamorphoses; all 48
+Manifiesto fragments collectable (plus one authored Códice fragment); Continue /
+save-resume UI; Settings (language, volume, accessibility); Posada in every
+chapter with a rest action; in-game Codes translation importer; the full Ensayo
+(set-up → five rounds → consequence → refusal); the named book library (12 new
+GDD books + passives) and Bestiary (14 new draft enemies); signature verbs;
+Rocinante & Dapple mounts; the Ink driver; death pages; milestone verb unlocks;
+es-419; floating letterforms in the truth shader; two OFL fonts with a theme;
+and the painted art set (title, parchment, five regions, book covers, portraits)
+wired into the UI.
+
+**Still open — external work only:** distinct bark VO (ElevenLabs key),
+a produced credits duet and region ambience (audio assets), a human balance /
+playtest pass, and the admin items below (itch.io, Steam, cloud backup, co-op,
+Workshop, mobile). Nothing on the code/content side of the GDD remains.
+
+---
+
 > Written to be sufficient on its own. You should be able to pick this up cold.
 >
-> Last updated: **2026-10-20** · Repo: **https://github.com/mariodod/fiel-al-libro**
+> Last updated: **2026-11-24** · Repo: **https://github.com/mariodod/fiel-al-libro**
 
 ---
 
@@ -17,7 +46,7 @@ The whole game — combat, investigation, progression, collectibles, the DLC pla
 from that one mechanic.
 
 A souls-like by Mordheim, made by a solo developer with no budget, on Godot 4.7, targeting
-PC/Steam first, with 6 languages at launch.
+PC/Steam first, with 7 languages at launch (incl. es-419).
 
 **The thesis:** *A man who believes the world is a book will find a book in every rock. A man
 who believes the world is a book can also be taught that the rock is only a rock — but only by
@@ -58,7 +87,7 @@ someone willing to pay for the lesson with their own mind.*
 | `src/world/map_screen.gd` | The world map screen: `docs/map/world_map.svg` rendered as a TextureRect, region list with found-state dots, open with `G`. |
 | `src/data/` | `Resource` subclasses and the `.tres` content: characters, primitives, moves, forms, ventures, regions. |
 | `reference/` | **Local only, gitignored.** The reference texts: the 1605 first part, the 1615 second part, and the OCR of the 1605 printing. Fetch them with `tools\fetch_reference.ps1`. |
-| `tests/` | 25 suites, 607 assertions. |
+| `tests/` | 50 suites, 3426 asserts, 0 failures. |
 | `locale/` | gettext PO files: es, en, fr + the template. |
 | `assets/` | Shaders, the Manifiesto content format. |
 | `tools/` | `godot.ps1` (locator), `blender.ps1` (locator), `setup.ps1` (one-command setup). |
@@ -465,9 +494,9 @@ There are no trademark filings, domain purchases, or other paid legal steps in t
 
 | | |
 |---|---|
-| **Phase** | Phase 1 complete through week 12 (the vertical slice). **All coding tasks done:** Venture boss, Lectura mode, three anamorphoses, Desvelar mid-fight, One Verdict, the Posada, shelf UI, Biblioteca wiring, one book, Manuscript UI shell, 15 environment kits, credits song. Only 2.23 (performance pass, blocked on headless import), 2.24 (balance pass, needs playtest data), 2.25 (itch.io demo) remain. |
-| **Working code** | ~45+ GDScript files: autoload spine (EventBus, GameState, TruthLayer, Locura, Memoria, Biblioteca, Manuscrito, Ensayo, AudioDirector, Lectura, Verdict), data resources (characters, primitives, moves, forms, ventures, regions, books), character abstraction (PlayerController, CompanionAI, CharacterPawn), the truth-layer shader, the save system, the i18n pipeline (6 languages registered; en/es/fr loaded), the reading rule, the Examine verb, the reactions, the dodge, the swing, the training dummy, the walled yard, the companion AI in combat, Desvelar, hero rigs with animation clips, the week 1–2 grey box, the Venture of Montiel boss in two forms, the world map screen, the Biblioteca shelf, the Manuscript UI shell, Lectura mode. |
-| **Tests** | 25 suites, 687 assertions, all green, enforced in CI. |
+| **Phase** | **Base game feature-complete** against `GDD.md` (see the Current status block at the top). All 47 chapters are reachable through ChapterFlow, with an anamorphosis system, fragment collection, Continue, Settings, the Ensayo, Posada rest, Books/Bestiary, signature verbs, mounts, es-419 and the painted art set. Only external work remains: bark VO (ElevenLabs key), a produced credits duet / ambience, a human balance pass, and the admin items. |
+| **Working code** | ~45+ GDScript files: autoload spine (EventBus, GameState, TruthLayer, Locura, Memoria, Biblioteca, Manuscrito, Ensayo, AudioDirector, Lectura, Verdict), data resources (characters, primitives, moves, forms, ventures, regions, books), character abstraction (PlayerController, CompanionAI, CharacterPawn), the truth-layer shader, the save system, the i18n pipeline (7 locales registered; en/es/fr loaded), the reading rule, the Examine verb, the reactions, the dodge, the swing, the training dummy, the walled yard, the companion AI in combat, Desvelar, hero rigs with animation clips, the week 1–2 grey box, the Venture of Montiel boss in two forms, the world map screen, the Biblioteca shelf, the Manuscript UI shell, Lectura mode. |
+| **Tests** | 50 suites, 3426 asserts, 0 failures, all green, enforced in CI. |
 | **CI** | Green on every push. Produces Windows + Linux builds as artifacts. |
 | **Game content** | Two primitives (windmill/giant, rock/book) as low-poly placeholders, the Venture of Montiel boss (mill and giant forms), a training dummy and walled yard, era of Montiel, world map screen, eight reaction lines in three languages, one real Manifiesto fragment (*bk.ch01.leyenda_tio_andalus*), the Biblioteca shelf UI, the Manuscript UI shell, Lectura mode HUD. Hero rigs built with Blender and wired to game states. No full levels, no full enemy roster, no audio, no credits song yet (WAVs exist but are not shipped as assets). |
 | **Money spent** | €0. Godot is free, assets are CC0, the only planned spend is the credits song (~$200–800). |

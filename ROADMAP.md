@@ -1,5 +1,34 @@
 # FIEL AL LIBRO — Roadmap
 
+
+## Current status (2026-11-24)
+
+> **Authoritative.** Supersedes the historical status notes below.
+
+The base game is feature-complete against `GDD.md` in code and content.
+Commits through `ab78f8a` are pushed to `main`; working tree clean.
+Tests: **50 suites, 3426 asserts, 0 failures** (`godot --headless res://tests/test_runner.tscn`).
+Seven locales ship: `es, es_419, en, fr, de, it, pt_BR`.
+
+**Shipped in the final push:** all 47 chapters with anamorphoses; all 48
+Manifiesto fragments collectable (plus one authored Códice fragment); Continue /
+save-resume UI; Settings (language, volume, accessibility); Posada in every
+chapter with a rest action; in-game Codes translation importer; the full Ensayo
+(set-up → five rounds → consequence → refusal); the named book library (12 new
+GDD books + passives) and Bestiary (14 new draft enemies); signature verbs;
+Rocinante & Dapple mounts; the Ink driver; death pages; milestone verb unlocks;
+es-419; floating letterforms in the truth shader; two OFL fonts with a theme;
+and the painted art set (title, parchment, five regions, book covers, portraits)
+wired into the UI.
+
+**Still open — external work only:** distinct bark VO (ElevenLabs key),
+a produced credits duet and region ambience (audio assets), a human balance /
+playtest pass, and the admin items below (itch.io, Steam, cloud backup, co-op,
+Workshop, mobile). Nothing on the code/content side of the GDD remains.
+
+---
+
+
 > A 3-year plan for one solo developer, with a shippable vertical slice in 12 weeks.
 > Every phase ends with something **public** — a playable build, a demo, a post.
 
@@ -11,7 +40,7 @@ The full vision (5 regions, 24 enemies, 15 books, 3–4 DLCs, 2-player co-op, 15
 **4–6 year project for 3–5 people**. For one person, it is a 3-year project *if* you cut co-op and
 sharply reduce the base game.
 
-**This plan assumes:** no co-op at launch, 6 languages at launch, base game ~8–10 hours, 3 DLCs
+**This plan assumes:** no co-op at launch, 7 languages at launch (incl. es-419), base game ~8–10 hours, 3 DLCs
 post-launch (DLC 1 and 2 as the reliable earners, DLC 3 as the artistic statement).
 
 **Target launch: month 30 from now.**
@@ -92,7 +121,7 @@ See above.
 - The 15 books and the Manifiesto reader.
 - **The Ensayo** (Region IV, ch. 11–12) — the last system built, the first thing cut.
 - The endings and the manuscript prologue.
-- Localization to 6 languages, starting at month 12 (translate as you build, never in a sprint at
+- Localization to 7 locales, starting at month 12 (translate as you build, never in a sprint at
   the end). The 288 Manifiesto modernizations are the long pole — spread them across months 12–18.
 - **Milestone:** "alpha" — all content reachable, all systems in, ugly but complete.
 
@@ -148,7 +177,7 @@ very good reason.
 **Cut early (Tier 3 — nice, not essential):**
 12. The 15 books → 6 books
 13. The credit song's full arrangement → a single guitar + voice
-14. The 6 languages → 3 languages (es, en, fr)
+14. The 7 locales → 3 languages (es, en, fr)
 15. The New Game+ / "Fiel al Libro+" mode
 16. **The Ensayo** (`GDD.md` §6.5) — the player-staged simulation and its 4 non-default outcomes.
     Cut it as a *whole chapter*, not as a system; the rest of the game runs without it.

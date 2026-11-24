@@ -2,8 +2,37 @@
 
 > Pick the project up here. Everything below is written so that you do not
 > have to re-derive anything.
+
+
+## Current status (2026-11-24)
+
+> **Authoritative.** Supersedes the historical status notes below.
+
+The base game is feature-complete against `GDD.md` in code and content.
+Commits through `ab78f8a` are pushed to `main`; working tree clean.
+Tests: **50 suites, 3426 asserts, 0 failures** (`godot --headless res://tests/test_runner.tscn`).
+Seven locales ship: `es, es_419, en, fr, de, it, pt_BR`.
+
+**Shipped in the final push:** all 47 chapters with anamorphoses; all 48
+Manifiesto fragments collectable (plus one authored Códice fragment); Continue /
+save-resume UI; Settings (language, volume, accessibility); Posada in every
+chapter with a rest action; in-game Codes translation importer; the full Ensayo
+(set-up → five rounds → consequence → refusal); the named book library (12 new
+GDD books + passives) and Bestiary (14 new draft enemies); signature verbs;
+Rocinante & Dapple mounts; the Ink driver; death pages; milestone verb unlocks;
+es-419; floating letterforms in the truth shader; two OFL fonts with a theme;
+and the painted art set (title, parchment, five regions, book covers, portraits)
+wired into the UI.
+
+**Still open — external work only:** distinct bark VO (ElevenLabs key),
+a produced credits duet and region ambience (audio assets), a human balance /
+playtest pass, and the admin items below (itch.io, Steam, cloud backup, co-op,
+Workshop, mobile). Nothing on the code/content side of the GDD remains.
+
+---
+
 >
-> Last updated: **2026-11-13** · after: *"All of Phase 1 weeks 1–12 coding tasks
+> Last updated: **2026-11-24** · after: *"All of Phase 1 weeks 1–12 coding tasks
 > complete (2.11–2.22). Only 2.23 (performance pass, blocked on headless import),
 > 2.24 (balance pass, needs playtest data), 2.25 (itch.io demo, external work)
 > remain."*
@@ -17,9 +46,9 @@
 | **Phase** | Phase 1. **Weeks 1–12 complete.** All coding tasks from NEXT_STEPS.md §2 are done: Venture boss, Lectura mode, three anamorphoses, Desvelar mid-fight, One Verdict, the Posada, shelf UI, Biblioteca wiring, one book, Manuscript UI shell, 15 environment kits, credits song. |
 | **The premise** | **Proven.** The playtest says so. |
 | **The build** | `res://src/world/slice.tscn` — the main scene. Two primitives, one truth toggle, two characters reading the same world differently — and now **all combat verbs**: `E` to examine, `Space` to dodge, a light attack that chains, a heavy attack, `F` for the guard, `M` to lock on, `X` for Sancho's Desvelar, and a line of dialogue when the world moves under a character. The two characters are **rigged and animated** (14 clips each), the **companion is in the fight** (it fights what you are locked onto, and it parries), there is a **walled yard** with a training dummy and a straw man in it, and to the **south** there is the **era of Montiel** and the **Venture of Montiel** — the first boss, in two forms. Press **G** to open the **world map** — a Spain-shaped portolan showing the five regions and which ones you've found; the map tints gilded in Book truth, chalky in Reality truth, and fragment markers appear when their page is found. **The Biblioteca shelf** (press `I`), **Manuscript UI shell** (shelf/codex/dialogue/pause pages), and **Lectura mode** (press `Q`) are all built into the shell. |
-| **Tests** | 34 suites, 2273 assertions, green, enforced in CI. |
+| **Tests** | 50 suites, 3426 asserts, green, enforced in CI. |
 | **The fun** | Not fully proven. Seven data points is a sample, not a signal. |
-| **Recent (Nov 2026)** | Venture art second pass is done: the tower wears a 2K triplanar gouache masonry texture and the sails are real ragged meshes. All six locales load and ship (789 messages each); every fragment, region passage, colophon and chapter intro is translated. The world map shows both readings side by side with a baked PNG. The chapter flow is live from the title's Begin button: prologue → every chapter → ending. The colophon (six original passages, two truths) plays between chapters. |
+| **Recent (Nov 2026)** | Venture art second pass is done: the tower wears a 2K triplanar gouache masonry texture and the sails are real ragged meshes. Seven locales load and ship (en, es, es_419, fr, de, it, pt_BR); every fragment, region passage, colophon and chapter intro is translated. The world map shows both readings side by side with a baked PNG. The chapter flow is live from the title's Begin button: prologue → every chapter → ending. The colophon (six original passages, two truths) plays between chapters. |
 
 ## 3b. Remaining gaps to a release-complete game (recorded 2026-11-19)
 
@@ -31,7 +60,7 @@ and NOT blocked on Credentials unless stated.
       chapter. Today only the grey-box `slice.tscn` has any (3); zero of the 47
       chapter scenes do. The perception/Lectura mechanic has nothing to find
       outside the slice. Build: chapter-specific `.tres` with `anamorphosis_*`
-      fields, nodes in every chapter scene, tell keys in six locales.
+      fields, nodes in every chapter scene, tell keys in seven locales.
 - [x] **Fragment grant paths for the unobtainable fragments (done).** All 48
       reachable: 14 venture rewards + 5 region pages + 29 anamorphosis rewards
       (the audit found 32 without a path, not 29 — `tools/audit_fragments.py`).
@@ -160,7 +189,7 @@ work outside the codebase.
 - **Do not add languages.** Six are registered and shipped (en, es, fr, de, it,
   pt_BR), all with working translations. Each PO file carries a valid header and
   loads in Godot (683 messages each). The 165 fragment keys for ch_15–ch_50 are
-  translated in all six locales; en/fr/de/it/pt_BR use English fallback text and
+  translated in all seven locales; en/es_419/fr/de/it/pt_BR use English fallback text and
   es.po carries the Spanish original. Unknown locales fall back to Spanish.
   Adding a *seventh* language is out of scope until a translator is found.
 - **Do not add more books.** 49 book `.tres` files exist (the originals plus the

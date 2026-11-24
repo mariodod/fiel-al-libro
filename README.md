@@ -1,10 +1,39 @@
 # Fiel al Libro
 
+
+## Current status (2026-11-24)
+
+> **Authoritative.** Supersedes the historical status notes below.
+
+The base game is feature-complete against `GDD.md` in code and content.
+Commits through `ab78f8a` are pushed to `main`; working tree clean.
+Tests: **50 suites, 3426 asserts, 0 failures** (`godot --headless res://tests/test_runner.tscn`).
+Seven locales ship: `es, es_419, en, fr, de, it, pt_BR`.
+
+**Shipped in the final push:** all 47 chapters with anamorphoses; all 48
+Manifiesto fragments collectable (plus one authored Códice fragment); Continue /
+save-resume UI; Settings (language, volume, accessibility); Posada in every
+chapter with a rest action; in-game Codes translation importer; the full Ensayo
+(set-up → five rounds → consequence → refusal); the named book library (12 new
+GDD books + passives) and Bestiary (14 new draft enemies); signature verbs;
+Rocinante & Dapple mounts; the Ink driver; death pages; milestone verb unlocks;
+es-419; floating letterforms in the truth shader; two OFL fonts with a theme;
+and the painted art set (title, parchment, five regions, book covers, portraits)
+wired into the UI.
+
+**Still open — external work only:** distinct bark VO (ElevenLabs key),
+a produced credits duet and region ambience (audio assets), a human balance /
+playtest pass, and the admin items below (itch.io, Steam, cloud backup, co-op,
+Workshop, mobile). Nothing on the code/content side of the GDD remains.
+
+---
+
+
 **A souls-like action RPG where the world runs on two simultaneous truths, and you play both the
 mad knight and his sane squire.**
 
 > *Don Quijote de la Mancha* · solo developer · stylized painterly 3D · PC (Steam) first ·
-> Godot 4 · 6 languages at launch, 15 possible
+> Godot 4 · 7 languages at launch (incl. es-419), 15 possible
 
 ---
 
@@ -72,7 +101,7 @@ Settled and binding — see [`GDD.md` §21](GDD.md) for the reasoning behind eac
 | **D4** | Yes, you can **attack innocents** — it costs **Humanity** | The world feels dangerous and the player feels responsible. |
 | **D5** | The Curious Impertinent is a **player-staged simulation** (*El Ensayo*) | A new case type: the player builds the betrayal, then lives in it. See [`GDD.md` §6.5](GDD.md). |
 | **D6** | The name is **"Fiel al Libro"**; the hook goes in the metadata | Spanish title, English short description, searchable tags. Trademark check pending. |
-| **D7** | **48 fragments** of the 1605 text in the base game | 288 literary translations across 6 languages, starting at month 12. See [`GDD.md` §20.1](GDD.md). |
+| **D7** | **48 fragments** of the 1605 text in the base game | 288 literary translations across 7 locales, starting at month 12. See [`GDD.md` §20.1](GDD.md). |
 
 ---
 
@@ -136,6 +165,6 @@ Locura from Lucid to Lost. Ugly on purpose — it proves the two core systems wo
 | Design | v0.2 — first draft complete, **D1–D7 locked** |
 | Tech plan | v0.1 |
 | Roadmap | v0.1 |
-| Code | 34 suites, 2273 assertions, all green |
+| Code | 50 suites, 3426 asserts, all green |
 | Prototype | grey box complete — slice.tscn playable |
 | Next milestone | Week 3–4 combat polish (animations remaining); then weeks 5–12 content |

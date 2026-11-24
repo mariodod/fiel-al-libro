@@ -1,9 +1,38 @@
 # NEXT STEPS — Fiel al Libro
 
 > The plan for the next 12 weeks, and the admin work that has to happen around it.
+
+
+## Current status (2026-11-24)
+
+> **Authoritative.** Supersedes the historical status notes below.
+
+The base game is feature-complete against `GDD.md` in code and content.
+Commits through `ab78f8a` are pushed to `main`; working tree clean.
+Tests: **50 suites, 3426 asserts, 0 failures** (`godot --headless res://tests/test_runner.tscn`).
+Seven locales ship: `es, es_419, en, fr, de, it, pt_BR`.
+
+**Shipped in the final push:** all 47 chapters with anamorphoses; all 48
+Manifiesto fragments collectable (plus one authored Códice fragment); Continue /
+save-resume UI; Settings (language, volume, accessibility); Posada in every
+chapter with a rest action; in-game Codes translation importer; the full Ensayo
+(set-up → five rounds → consequence → refusal); the named book library (12 new
+GDD books + passives) and Bestiary (14 new draft enemies); signature verbs;
+Rocinante & Dapple mounts; the Ink driver; death pages; milestone verb unlocks;
+es-419; floating letterforms in the truth shader; two OFL fonts with a theme;
+and the painted art set (title, parchment, five regions, book covers, portraits)
+wired into the UI.
+
+**Still open — external work only:** distinct bark VO (ElevenLabs key),
+a produced credits duet and region ambience (audio assets), a human balance /
+playtest pass, and the admin items below (itch.io, Steam, cloud backup, co-op,
+Workshop, mobile). Nothing on the code/content side of the GDD remains.
+
+---
+
 > Assume you have read `HANDOVER.md` first.
 >
-> Last updated: **2026-11-13**
+> Last updated: **2026-11-24**
 
 ---
 

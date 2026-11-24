@@ -1,5 +1,34 @@
 # FIEL AL LIBRO — Technical Plan
 
+
+## Current status (2026-11-24)
+
+> **Authoritative.** Supersedes the historical status notes below.
+
+The base game is feature-complete against `GDD.md` in code and content.
+Commits through `ab78f8a` are pushed to `main`; working tree clean.
+Tests: **50 suites, 3426 asserts, 0 failures** (`godot --headless res://tests/test_runner.tscn`).
+Seven locales ship: `es, es_419, en, fr, de, it, pt_BR`.
+
+**Shipped in the final push:** all 47 chapters with anamorphoses; all 48
+Manifiesto fragments collectable (plus one authored Códice fragment); Continue /
+save-resume UI; Settings (language, volume, accessibility); Posada in every
+chapter with a rest action; in-game Codes translation importer; the full Ensayo
+(set-up → five rounds → consequence → refusal); the named book library (12 new
+GDD books + passives) and Bestiary (14 new draft enemies); signature verbs;
+Rocinante & Dapple mounts; the Ink driver; death pages; milestone verb unlocks;
+es-419; floating letterforms in the truth shader; two OFL fonts with a theme;
+and the painted art set (title, parchment, five regions, book covers, portraits)
+wired into the UI.
+
+**Still open — external work only:** distinct bark VO (ElevenLabs key),
+a produced credits duet and region ambience (audio assets), a human balance /
+playtest pass, and the admin items below (itch.io, Steam, cloud backup, co-op,
+Workshop, mobile). Nothing on the code/content side of the GDD remains.
+
+---
+
+
 > Engine, tools, project architecture, performance budgets, and the internationalization pipeline.
 > Target: **one solo developer, no budget, PC (Steam) first, stylized painterly 3D.**
 >
@@ -347,7 +376,7 @@ new machine re-imports with default settings** and your meshes break. Fix this:
   - **Run them:** `godot --headless res://tests/test_runner.tscn` → exit 0 = green.
     The suite runs as a *scene*, not via `--script`, so Godot's autoloads exist exactly as they
     do in a real run.
-  - Current state: 25 suites, 607 assertions, 0 failures.
+  - Current state: 50 suites, 3426 asserts, 0 failures, 0 failures.
 - **CI (GitHub Actions), on every push to `main`:**
   1. Headless Godot import check → fails if a scene/resource/script is broken.
   2. Run the test suite.
@@ -671,7 +700,7 @@ before the 1.0 date for a realistic chance.
 - [x] `EventBus` + `GameState` autoloads with unit tests
 - [x] `CharacterPawn` interface + `PlayerController` + `CompanionAI` (this validates the co-op architecture early)
 - [x] The truth-layer shader — one uniform, three looks
-- [x] `loc.gd` + the PO pipeline + 6 locales (es, en, fr, de, it, pt_BR) + `sync_locales.gd` + parity test
+- [x] `loc.gd` + the PO pipeline + 7 locales (es, en, fr, de, it, pt_BR) + `sync_locales.gd` + parity test
 - [x] Save system with atomic writes + version migration
 - [x] The grey-box scene: walk, swap, flip the world
 - [x] Install export templates locally and produce a first Windows build
@@ -701,7 +730,7 @@ before the 1.0 date for a realistic chance.
 - [ ] The 15 books + the Manifiesto facsimile reader
 - [ ] Endings & the manuscript prologue
 - [ ] Steam page, demo, wishlist push
-- [ ] Localization to 6 languages
+- [ ] Localization to 7 locales
 
 ---
 

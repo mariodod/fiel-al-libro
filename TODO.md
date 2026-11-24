@@ -1,5 +1,34 @@
 # TODO — Fiel al Libro
 
+
+## Current status (2026-11-24)
+
+> **Authoritative.** Supersedes the historical status notes below.
+
+The base game is feature-complete against `GDD.md` in code and content.
+Commits through `ab78f8a` are pushed to `main`; working tree clean.
+Tests: **50 suites, 3426 asserts, 0 failures** (`godot --headless res://tests/test_runner.tscn`).
+Seven locales ship: `es, es_419, en, fr, de, it, pt_BR`.
+
+**Shipped in the final push:** all 47 chapters with anamorphoses; all 48
+Manifiesto fragments collectable (plus one authored Códice fragment); Continue /
+save-resume UI; Settings (language, volume, accessibility); Posada in every
+chapter with a rest action; in-game Codes translation importer; the full Ensayo
+(set-up → five rounds → consequence → refusal); the named book library (12 new
+GDD books + passives) and Bestiary (14 new draft enemies); signature verbs;
+Rocinante & Dapple mounts; the Ink driver; death pages; milestone verb unlocks;
+es-419; floating letterforms in the truth shader; two OFL fonts with a theme;
+and the painted art set (title, parchment, five regions, book covers, portraits)
+wired into the UI.
+
+**Still open — external work only:** distinct bark VO (ElevenLabs key),
+a produced credits duet and region ambience (audio assets), a human balance /
+playtest pass, and the admin items below (itch.io, Steam, cloud backup, co-op,
+Workshop, mobile). Nothing on the code/content side of the GDD remains.
+
+---
+
+
 > Three goals per week. No more. Update this file on Monday.
 > See `ROADMAP.md` §6 for the weekly ritual.
 > **Picking this up? Read `docs/NEXT_SESSION.md` first.**
@@ -261,9 +290,9 @@
 - [x] The *Ensayo* (D5) — the player-staged simulation (`ch_09`, `ch_10`)
 - [x] The endings and the manuscript prologue — prologue scene done (`src/world/prologue.*`), ending content written (`src/world/ending.gd`, 4 endings: el_manuscrito, la_locura_compartida, el_mundo_real, el_libro_gana), locale keys in en/es/fr PO files, `compute_ending()` in GameState, triggered from slice.gd
 - [x] The 5 region kits beyond the slice — 15 environment kits exist total; all chapters ch_14 through ch_50 now have .tscn scenes wired to region-appropriate kits: camino_la_mancha (field+road), sierra_morena (mountain+cave), el_toboso (river+village), los_riscos (cliff+theatre), el_castillo_del_duque (castle+theatre); only ch_01 slice used them inline before
-- [x] Localization to 6 languages (en, es, fr, de, it, pt_BR registered in project.godot)
+- [x] Localization to 7 locales (en, es, fr, de, it, pt_BR registered in project.godot)
 - [x] **Colophon between chapters (GDD §12.1).** Six original passages (prologue
-      + five regions), each in Book and Reality truth, in all six locales.
+      + five regions), each in Book and Reality truth, in all seven locales.
       Shown by `ChapterFlow` between chapters — `docs/COLOPHON.md`.
 - [x] **Ending reachability verified** from a complete chapter sequence; all
       four endings computed from real tracked variables.
@@ -278,7 +307,7 @@
       the `Leyenda` and `ManuscriptUI` nodes that `slice.gd` expects.
 - [x] **Base-game script on paper** — `docs/BASE_GAME_SCRIPT.md`, 13 chapters.
 - [x] **Ensayo script, 6 outcomes** — `assets/writing/ensayo.md` + `ensayo_script.json`.
-- [x] **48 fragment modernizations** — verified in all 6 languages, 0 gaps.
+- [x] **48 fragment modernizations** — verified in all 7 locales, 0 gaps.
 - [x] **15 environment kits + 4 hero rigs** — all present; heroes have 14/15
       authored clips (`assets/models/README_animations.md`).
 - [ ] **Record distinct barks per key** — blocked on an ElevenLabs API key
